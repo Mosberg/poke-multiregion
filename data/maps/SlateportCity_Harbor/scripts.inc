@@ -538,3 +538,43 @@ SlateportCity_Harbor_Text_HandedScannerToStern:
 SlateportCity_Harbor_Text_ThisWillHelpResearch:
 	.string "CAPT. STERN: Thanks, {PLAYER}{KUN}!\n"
 	.string "This will help our research a lot!$"
+
+@ --- POKE-MIGRATOR: INTER-REGION FERRY TO VERMILION ---
+Common_EventScript_FerryToVermilion::
+	msgbox Common_Text_FerrySailToVermilion, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Common_EventScript_FerryCancel
+	message Common_Text_PleaseBoardFerry
+	waitmessage
+	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FerryBoardNorth
+	waitmovement 0
+	playse SE_SHIP
+	fadescreen FADE_TO_BLACK
+	delay 60
+	warp MAP_VERMILION_CITY, 23, 33
+	waitstate
+	release
+	end
+
+Common_EventScript_FerryCancel::
+	msgbox Common_Text_FerryComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+Common_Movement_FerryBoardNorth:
+	walk_up
+	walk_up
+	step_end
+
+Common_Text_FerrySailToVermilion:
+	.string "The S.S. Tidal can now sail across the\n"
+	.string "ocean to Vermilion City in Kanto!\p"
+	.string "Would you like to set sail for Kanto?$"
+
+Common_Text_PleaseBoardFerry:
+	.string "Right away! Please board the ship.$"
+
+Common_Text_FerryComeAgain:
+	.string "We hope to see you again soon!$"

@@ -3002,3 +3002,12 @@
 	getbraillestringwidth \text
 	call EventScript_BrailleCursorWaitButton
 	.endm
+
+@ --- POKE-MIGRATOR COMPATIBILITY MACROS ---
+.macro preparemsg msg:req
+	message \msg
+.endm
+
+.macro famecheckermsg person:req, index:req
+	@ Stubbed for Emerald migration compatibility
+.endm

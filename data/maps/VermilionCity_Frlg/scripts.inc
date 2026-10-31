@@ -394,3 +394,61 @@ VermilionCity_Text_Route2AideHasPackageForYou::
 	.string "If you're in the ROUTE 2 area,\n"
 	.string "please look for him.$"
 
+
+@ --- POKE-MIGRATOR: KANTO DEPARTURE TO HOENN ---
+VermilionCity_Port_EventScript_Attendant::
+	lock
+	faceplayer
+	goto_if_unset FLAG_SYS_GAME_CLEAR, VermilionCity_Port_EventScript_ShipUnderRepair
+	msgbox VermilionCity_Port_Text_SailToHoenn, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VermilionCity_Port_EventScript_Cancel
+	message VermilionCity_Port_Text_Boarding
+	waitmessage
+	applymovement VAR_LAST_TALKED, VermilionCity_Port_Movement_StepAside
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, VermilionCity_Port_Movement_Board
+	waitmovement 0
+	playse SE_SHIP
+	fadescreen FADE_TO_BLACK
+	delay 60
+	warp MAP_SLATEPORT_CITY_HARBOR, 8, 11
+	waitstate
+	release
+	end
+
+VermilionCity_Port_EventScript_ShipUnderRepair::
+	msgbox VermilionCity_Port_Text_ShipUnderRepair, MSGBOX_DEFAULT
+	release
+	end
+
+VermilionCity_Port_EventScript_Cancel::
+	msgbox VermilionCity_Port_Text_Cancel, MSGBOX_DEFAULT
+	release
+	end
+
+VermilionCity_Port_Movement_StepAside:
+	walk_left
+	walk_in_place_faster_right
+	step_end
+
+VermilionCity_Port_Movement_Board:
+	walk_up
+	walk_up
+	step_end
+
+VermilionCity_Port_Text_SailToHoenn:
+	.string "Ahoy! The Seagallop Ferry is prepared\n"
+	.string "for long-distance voyages to Slateport\l"
+	.string "Harbor in the Hoenn region!\p"
+	.string "Would you like to sail to Hoenn?$"
+
+VermilionCity_Port_Text_Boarding:
+	.string "All aboard! Bound for Hoenn!$"
+
+VermilionCity_Port_Text_Cancel:
+	.string "Let me know if your travel plans change.$"
+
+VermilionCity_Port_Text_ShipUnderRepair:
+	.string "The long-distance ocean liner is\n"
+	.string "currently undergoing engine maintenance.\l"
+	.string "Please check back later!$"

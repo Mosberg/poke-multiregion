@@ -24,7 +24,11 @@ SixIsland_DottedHole_SapphireRoom_EventScript_Sapphire::
 	setvar VAR_0x8005, 0
 	setvar VAR_0x8006, 12
 	setvar VAR_0x8007, 3
-	special ShakeScreen
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 3
+	special DoCameraShakeEffect
 	delay 60
 	call_if_eq VAR_FACING, DIR_NORTH, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireNorth
 	call_if_eq VAR_FACING, DIR_SOUTH, SixIsland_DottedHole_SapphireRoom_EventScript_ThiefLookAtSapphireSouth

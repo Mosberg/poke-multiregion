@@ -97,7 +97,11 @@ SevenIsland_SevaultCanyon_TanobyKey_EventScript_SwitchPressed::
 	setvar VAR_0x8005, 1
 	setvar VAR_0x8006, 8
 	setvar VAR_0x8007, 3
-	special ShakeScreen
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 3
+	special DoCameraShakeEffect
 	delay 60
 	return
 
@@ -106,13 +110,21 @@ SevenIsland_SevaultCanyon_TanobyKey_EventScript_PuzzleSolvedShakeScreen::
 	setvar VAR_0x8005, 2
 	setvar VAR_0x8006, 10
 	setvar VAR_0x8007, 3
-	special ShakeScreen
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 3
+	special DoCameraShakeEffect
 	delay 60
 	setvar VAR_0x8004, 3
 	setvar VAR_0x8005, 3
 	setvar VAR_0x8006, 12
 	setvar VAR_0x8007, 2
-	special ShakeScreen
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 3
+	special DoCameraShakeEffect
 	delay 60
 	playse SE_LAVARIDGE_FALL_WARP
 	waitse

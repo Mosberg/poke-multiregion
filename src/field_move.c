@@ -4,6 +4,7 @@
 #include "fldeff.h"
 #include "fldeff_misc.h"
 #include "party_menu.h"
+#include "regions.h"
 #include "strings.h"
 #include "constants/field_move.h"
 #include "constants/moves.h"
@@ -19,8 +20,25 @@ static bool32 IsAlwaysTrue(enum FieldMove fieldMove)
     return TRUE;
 }
 
+// --- POKE-MIGRATOR: REGIONAL FIELD MOVE BADGES ---
+// Badge index (0 = first gym) each move needs in Kanto; the Hoenn index stays in gFieldMoveInfo[].arg.
+static const u8 sKantoFieldMoveBadge[FIELD_MOVES_COUNT] =
+{
+    [FIELD_MOVE_CUT] = 1,
+    [FIELD_MOVE_FLASH] = 0,
+    [FIELD_MOVE_ROCK_SMASH] = 5,
+    [FIELD_MOVE_STRENGTH] = 3,
+    [FIELD_MOVE_SURF] = 4,
+    [FIELD_MOVE_FLY] = 2,
+    [FIELD_MOVE_DIVE] = 6,
+    [FIELD_MOVE_WATERFALL] = 6,
+};
+
 static bool32 HasBadgeForFieldMove(enum FieldMove fieldMove)
 {
+    // Kanto gym badges are FLAG_BADGE09_GET..FLAG_BADGE16_GET
+    if (GetCurrentRegion() == REGION_KANTO)
+        return FlagGet(FLAG_BADGE09_GET + sKantoFieldMoveBadge[fieldMove]);
     return FlagGet(gFieldMoveInfo[fieldMove].arg + FLAG_BADGE01_GET);
 }
 
