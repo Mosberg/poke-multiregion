@@ -1,4 +1,5 @@
 #include "global.h"
+#include "ai_bridge.h"
 #include "main.h"
 #include "malloc.h"
 #include "battle.h"
@@ -597,7 +598,7 @@ u32 BattleAI_ChooseMoveIndex(enum BattlerId battler)
     TestRunner_Battle_CheckAiMoveScores(battler);
     #endif // TESTING
 
-    return chosen.moveIndex;
+    return AiBridge_Override(battler, chosen.moveIndex); // POKE-MULTIREGION: external AI hook
 }
 
 static void CopyBattlerDataToAIParty(u32 bPosition, enum BattleTrainer trainer)

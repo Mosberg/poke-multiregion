@@ -23,6 +23,7 @@ SYMBOLS = {
     "gBackupMapLayout": 0x03002510,    # {s32 width; s32 height; u16 *map}
     "sWarpDestination": 0x02031348,    # {s8 group; s8 num; s8 warpId; s16 x; s16 y}
     "gSpecialVar_Result": 0x0200156E,
+    "gAiBridgeMailbox": 0x02000004,    # struct AiBridgeMailbox, see pokemultiregion/include/ai_bridge.h
     "CB2_LoadMap": 0x08190B38,
     "CB2_Overworld": 0x08193CD0,
 }
