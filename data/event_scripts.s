@@ -600,7 +600,7 @@ gStdScripts_End::
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
 
-.if IS_FRLG
+.if 1  @ POKE-MULTIREGION: Kanto map scripts are always assembled
 
 @ FRLG scripts
 	.include "data/maps/BattleColosseum_2P_Frlg/scripts.inc"

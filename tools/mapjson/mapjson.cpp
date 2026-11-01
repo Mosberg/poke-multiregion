@@ -182,7 +182,7 @@ string generate_map_header_text(Json map_data, Json layouts_data) {
 
     if (version == "ruby")
         text << "\t.byte " << json_to_string(map_data, "show_map_name") << "\n";
-    else if (version == "emerald" || version == "firered")
+    else if (version == "emerald" || version == "firered" || version == "multiregion")
     {
         text << "\tmap_header_flags "
              << "allow_cycling=" << json_to_string(map_data, "allow_cycling") << ", "
@@ -743,7 +743,7 @@ void process_groups(string groups_filepath, vector<string> &map_filepaths, strin
         string region = json_to_string(map_data, "region", true);
 
         if (region.empty()) {
-            if (version == "emerald")
+            if (version == "emerald" || version == "multiregion")
                 region = "REGION_HOENN";
             else if (version == "firered")
                 region = "REGION_KANTO";
@@ -785,7 +785,7 @@ string generate_layout_headers_text(Json layouts_data) {
         string layout_version = json_to_string(layout, "layout_version", true);
 
         if (layout_version.empty()) {
-            if (version == "emerald")
+            if (version == "emerald" || version == "multiregion")
                 layout_version = "emerald";
             else if (version == "firered")
                 layout_version = "frlg";
@@ -843,7 +843,7 @@ string generate_layouts_table_text(Json layouts_data) {
             continue;
         string layout_version = json_to_string(layout, "layout_version", true);
         if (layout_version.empty()) {
-            if (version == "emerald")
+            if (version == "emerald" || version == "multiregion")
                 layout_version = "emerald";
             else if (version == "firered")
                 layout_version = "frlg";
@@ -942,8 +942,8 @@ int main(int argc, char *argv[]) {
 
     char *version_arg = argv[2];
     version = string(version_arg);
-    if (version != "emerald" && version != "ruby" && version != "firered")
-        FATAL_ERROR("ERROR: <game-version> must be 'emerald', 'firered', or 'ruby'.\n");
+    if (version != "emerald" && version != "ruby" && version != "firered" && version != "multiregion")
+        FATAL_ERROR("ERROR: <game-version> must be 'emerald', 'firered', 'multiregion', or 'ruby'.\n");
 
     char *mode_arg = argv[1];
     string mode(mode_arg);

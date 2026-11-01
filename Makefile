@@ -20,6 +20,16 @@ ifeq (leafgreen, $(or $(BUILD), $(MAKECMDGOALS)))
 endif
 endif
 
+# One ROM holding both regions: compiled as Emerald (IS_FRLG stays 0, so the code defaults to Hoenn behaviour)
+# but with the map data of both games (mapjson "multiregion" keeps Hoenn and Kanto maps and layouts).
+ifeq (multiregion, $(or $(BUILD), $(MAKECMDGOALS)))
+	GAME_VERSION 	:= EMERALD
+	TITLE       	:= POKE MULTI
+	GAME_CODE   	:= BPEE
+	BUILD_NAME  	:= multiregion
+	MAP_VERSION 	:= multiregion
+endif
+
 # GBA rom header
 MAKER_CODE  := 01
 REVISION    := 0
@@ -592,6 +602,7 @@ $(ROM): $(ELF)
 emerald: all
 firered: all
 leafgreen: all
+multiregion: all
 # Symbol file (`make syms`)
 $(SYM): $(ELF)
 	$(OBJDUMP) -t $< | sort -u | grep -E "^0[2389]" | $(PERL) -p -e 's/^(\w{8}) (\w).{6} \S+\t(\w{8}) (\S+)$$/\1 \2 \3 \4/g' > $@
