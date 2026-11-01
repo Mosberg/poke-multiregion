@@ -77,6 +77,14 @@ runs. Use `backend="bridge"` for the Gym env until the bindings are built:
 `states/stage0_start.ss1` is a real savestate in Red's house (Kanto start). Record the other stages with
 `record_state.py`.
 
+## Map smoke test
+
+`python map_smoke_test.py ../pokemultiregion --filter _Frlg` warps into every Kanto map and checks the player
+arrives and the overworld callback is still running. Result on the current ROM: **414 of 417 clean**. Union Room
+shows the expected "no link adapter" error screen; Five Island and Viridian Pokemon Center 1F tripped once
+(summary-screen callback) but loaded fine when warped to again, so they look like leftover state from the
+previous map rather than map bugs. This proves the maps load; it does not prove their scripts play correctly.
+
 ## Bugs found while verifying
 
 - The reference feature extractor permuted channels itself, but SB3 already hands the policy channels-first,
