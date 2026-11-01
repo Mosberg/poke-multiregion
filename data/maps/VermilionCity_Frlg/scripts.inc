@@ -50,9 +50,7 @@ VermilionCity_EventScript_FerrySailor::
 	lock
 	faceplayer
 	goto_if_eq VAR_MAP_SCENE_VERMILION_CITY, 3, VermilionCity_EventScript_CheckSeagallopPresent
-	msgbox VermilionCity_Text_WelcomeToTheSSAnne
-	release
-	end
+	goto Multiregion_EventScript_SailToHoenn
 
 VermilionCity_EventScript_CheckHasMysticTicket::
 	goto_if_unset FLAG_ENABLE_SHIP_NAVEL_ROCK, EventScript_SetResultFalse

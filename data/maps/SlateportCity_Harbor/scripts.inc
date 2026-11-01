@@ -260,6 +260,7 @@ SlateportCity_Harbor_Movement_BoardFerryNorth:
 SlateportCity_Harbor_EventScript_Sailor::
 	lock
 	faceplayer
+	goto Multiregion_EventScript_SailToKanto
 	goto_if_unset FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_SailorNoAbnormalWeather
 	setvar VAR_0x8004, 0
 	call_if_set FLAG_DEFEATED_KYOGRE, SlateportCity_Harbor_EventScript_CountDefeatedLegendary

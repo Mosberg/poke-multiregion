@@ -1035,6 +1035,7 @@ gStdScripts_End::
 	.include "data/scripts/day_care_frlg.inc"
 	.include "data/text/day_care_frlg.inc"
 	.include "data/scripts/seagallop.inc"
+	.include "data/scripts/multiregion.inc"
 	.include "data/scripts/static_pokemon.inc"
 	.include "data/scripts/aide.inc"
 	.include "data/scripts/pokemon_mansion.inc"
