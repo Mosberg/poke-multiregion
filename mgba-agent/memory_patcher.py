@@ -27,12 +27,15 @@ def inject_item(b: Bridge, pocket: str, slot: int, item_id: int, quantity: int):
     print(f"[+] {pocket}[{slot}] = item {item_id} x{quantity}")
 
 
-def give_mon(b: Bridge, species: int, level: int, moves, slot: int = 0, hp: int = 150, otid: int = 0x12345678, pid: int = 0x00ABCDEF):
+def give_mon(b: Bridge, species: int, level: int, moves, slot: int = 0, hp: int = 150, otid: int = None, pid: int = 0x00ABCDEF):
     """Writes a valid struct Pokemon into a party slot (checksum, encryption and party count included).
 
-    Stats are written directly, so the Pokemon is a stat-block you choose, not one the game computed.
+    Stats are written directly, so the Pokemon is a stat-block you choose, not one the game computed. By default the OT id
+    is the player's, so it obeys at any level; pass another otid to test traded-Pokemon obedience.
     """
     from pkmn_decrypt import BLOCK_ORDERS
+    if otid is None:      # the player's own trainer id (SaveBlock2+0x0A): a different OT counts as traded and disobeys
+        otid = b.u32(b.sb2() + 0x0A)
     g = struct.pack("<HHI", species & 0x7FF, 0, 1 + level ** 3) + bytes([0, 70]) + bytes(2)
     a = struct.pack("<HHHH", *(list(moves) + [0] * 4)[:4]) + bytes([25, 25, 25, 25])
     e = bytes(12)

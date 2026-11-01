@@ -91,8 +91,12 @@ Played through the bridge: Kanto start -> Pallet Town -> Oak's scene and lab -> 
 his real FireRed team (Geodude lv10 with Tackle/Defense Curl) and sets a flag in the Kanto trainer block, not Hoenn's;
 Brock gives the Boulder Badge (`FLAG_BADGE09_GET` set, Hoenn `BADGE01` untouched), prize money and a TM.
 `memory_patcher.give_mon` builds a valid party member (checksum + encryption) so a fresh save can fight. The injected
-test mon kept falling asleep in battle (cause not found, probably my hand-built struct), so the test clears
-`gBattleMons[0].status1` each turn. `states/post_brock.ss1` is a savestate right after beating Brock.
+test mon first kept falling asleep: it was level 40 with a foreign OT and 0 badges, i.e. a disobedient traded Pokemon
+(thanks for the explanation). `give_mon` now uses the player's own trainer id by default.
+
+Obedience, tested live with a level-18 foreign-OT Pokemon in Kanto: 0 badges -> disobeys (cap 10); Kanto badge 9 ->
+obeys (cap 20); Hoenn badge 1 only -> still disobeys. Own-OT level 40 with 0 badges obeys. So the regional obedience
+patch reads the right badge set per region. `states/post_brock.ss1` is a savestate right after beating Brock.
 
 ## Bugs found while verifying
 
