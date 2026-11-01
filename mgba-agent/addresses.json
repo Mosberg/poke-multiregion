@@ -1,0 +1,19 @@
+{
+  "symbols": {
+    "gMain": 50357968,
+    "gSaveBlock1Ptr": 50352596,
+    "gSaveBlock2Ptr": 50352592,
+    "gPlayerParty": 33758352,
+    "gPlayerPartyCount": 33758336,
+    "gEnemyParty": 33758952,
+    "gEnemyPartyCount": 33758337,
+    "gBattleMons": 33555696,
+    "gBattleTypeFlags": 33554636,
+    "gBattleOutcome": 33554648,
+    "gBackupMapLayout": 50341136,
+    "sWarpDestination": 33756056,
+    "gSpecialVar_Result": 33559918,
+    "CB2_LoadMap": 135860052,
+    "CB2_Overworld": 135872748
+  }
+}

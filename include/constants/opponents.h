@@ -2,6 +2,13 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #include "constants/battle_partner.h"
+// POKE-MULTIREGION: Hoenn and Kanto trainers share one table. Kanto trainer ids are offset so they never
+// collide with Hoenn ids; the defeated flags of Kanto trainers live in their own band (see flags.h).
+#if IS_FRLG
+#define KANTO_TRAINER_BASE 0
+#else
+#define KANTO_TRAINER_BASE 864
+#endif
 #include "constants/opponents_frlg.h"
 
 #define TRAINER_NONE                          0
@@ -871,7 +878,7 @@
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG
 #define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_FRLG
 #else
-#define TRAINERS_COUNT                      TRAINERS_COUNT_EMERALD
+#define TRAINERS_COUNT                      (KANTO_TRAINER_BASE+TRAINERS_COUNT_FRLG)
 #define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_EMERALD
 #endif
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

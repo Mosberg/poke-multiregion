@@ -234,6 +234,7 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 #include "data/trainers_frlg.h"
 #else
 #include "data/trainers.h"
+#include "data/trainers_frlg.h" // POKE-MULTIREGION: Kanto trainers at KANTO_TRAINER_BASE + id
 #endif
 };
 #endif

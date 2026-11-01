@@ -38,8 +38,8 @@ SB1 = {
     "money": 0x490,                    # u32, XOR with SaveBlock2.encryptionKey
     "bag_items": 0x560, "bag_key_items": 0x5D8, "bag_poke_balls": 0x650,
     "bag_tms_hms": 0x690, "bag_berries": 0x790,
-    "flags": 0x1270,                   # 392 bytes (300 original + 92 Kanto band)
-    "vars": 0x13F8,
+    "flags": 0x1270,                   # 469 bytes (300 original + Kanto band + 624 Kanto trainer flags)
+    "vars": 0x1446,
 }
 SB2 = {"player_gender": 0x08, "encryption_key": 0xAC}
 

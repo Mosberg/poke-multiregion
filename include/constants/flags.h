@@ -3883,7 +3883,10 @@
 #undef FLAG_WORLD_MAP_BIRTH_ISLAND_EXTERIOR
 #define FLAG_WORLD_MAP_BIRTH_ISLAND_EXTERIOR (FLAG_KANTO_START + 0x2D5)
 #endif
-#define FLAG_KANTO_END                     (FLAG_KANTO_START + 0x2D5)
+// Defeated flags for Kanto trainers (TRAINERS_COUNT_FRLG = 624 of them), see GetTrainerFlagId()
+#define FLAG_KANTO_TRAINERS_START          (FLAG_KANTO_START + 0x2D6)
+#define FLAG_KANTO_TRAINERS_COUNT          624
+#define FLAG_KANTO_END                     (FLAG_KANTO_TRAINERS_START + FLAG_KANTO_TRAINERS_COUNT - 1)
 #undef FLAGS_COUNT
 #define FLAGS_COUNT                        (FLAG_KANTO_END + 1)
 
