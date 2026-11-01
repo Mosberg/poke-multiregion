@@ -1,0 +1,67 @@
+# mgba-agent: AI control and RL toolkit for pokemultiregion.gba
+
+Everything from `.docs/To give LLM tools and coding agents like.md`, rebuilt for **this** ROM
+(`../pokemultiregion/pokemultiregion.gba`, Emerald-based pokeemerald-expansion with Kanto added).
+
+The document used vanilla FireRed v1.0 addresses. Those are wrong for this ROM, so every address and
+struct offset here comes from the real build (`addresses.py`; `refresh_addresses.py` regenerates the
+symbol addresses after a rebuild). Other corrections to the document are listed at the bottom.
+
+## Pieces
+
+| File | What it is |
+| --- | --- |
+| `lua/mgba_agent_bridge.lua` | TCP control server that runs inside mGBA (read/write RAM, buttons, frames, screenshots, states) |
+| `lua/watcher.lua` | logs map, tile, battle flag and lead HP once a second |
+| `mgba_client.py` | Python client for the bridge |
+| `mgba_mcp_server.py` | MCP server: memory, buttons, screenshots, savestates, `game_state`, `party`, `battle_state` |
+| `agent_common.py`, `gemini_agent_loop.py`, `lmstudio_agent_controller.py` | screenshot + RAM agents (Gemini, local LM Studio with A* `goto`) |
+| `pkmn_decrypt.py` | 100-byte `struct Pokemon` decoder (expansion's bit-packed layout) |
+| `battle_engine.py` | `gBattleMons` parser, outcome and status flags |
+| `pathfinding.py` | collision map from `gBackupMapLayout` plus A* |
+| `memory_patcher.py` | money, bag items, event flags, best-effort warp |
+| `headless_mgba.py`, `mgba_gym_env.py` | headless core and Gymnasium env (9 actions, screen + 9 telemetry values) |
+| `train_distributed.py`, `curriculum_engine.py`, `custom_policy.py` | PPO over `SubprocVecEnv`, flag-based curriculum, Impala CNN + frame stack |
+| `evaluate_policy.py`, `export_onnx.py`, `onnx_runner.py` | live HUD evaluation, ONNX export, ONNX Runtime inference |
+| `tests/test_units.py` | offline tests (decrypt, battle parse, A*, collision parse, flag ids) |
+
+## Quick start
+
+1. Install: `pip install -r requirements.txt`
+2. Open the ROM in mGBA, then **Tools -> Scripting -> File -> Load script** and pick `lua/mgba_agent_bridge.lua`.
+   The scripting console prints `listening on port 8888`.
+3. Register the MCP server with Claude Code:
+   `claude mcp add mgba -- python C:/Projects/Games/Poke-Migrator/mgba-agent/mgba_mcp_server.py`
+   (other clients: `{"mcpServers": {"mgba": {"command": "python", "args": [".../mgba_mcp_server.py"]}}}`).
+4. Offline sanity check: `python -m unittest discover -s tests -v`.
+
+## Bridge protocol
+
+One line per command, one line back (`OK ...` or `ERR ...`): `READ8|16|32 addr`, `WRITE8|16|32 addr value`,
+`READBLOCK addr len`, `WRITEBLOCK addr hex`, `PRESS button [frames]`, `SETKEYS mask`, `STEP frames`,
+`SCREENSHOT path`, `SAVESTATE n`, `LOADSTATE n`, `SAVEFILE path`, `LOADFILE path`, `FRAME`, `TITLE`.
+
+## Memory map highlights (pokemultiregion)
+
+- `gSaveBlock1Ptr` 0x030051D4 and `gSaveBlock2Ptr` 0x030051D0 are pointers; always dereference.
+- SaveBlock1: x/y at +0/+2, map group/num at +4/+5, money +0x490, bag +0x560, flags +0x1270 (392 bytes), vars +0x13F8.
+- Money is XORed with SaveBlock2+0xAC (the encryption key); bag quantities with its low 16 bits.
+- `gPlayerParty` 0x02031C40 (6 x 100 bytes), `gBattleMons` 0x020004F0 (4 x 140 bytes), `gBattleOutcome` 0x020000D8.
+- In battle: bit 1 of the byte at `gMain + 0x439`.
+- Badges: Hoenn flags 0x867-0x86E, Kanto 0x961-0x968 (`FLAG_BADGE09_GET`..`16`).
+
+## Corrections to the source document
+
+- Offsets: all FireRed v1.0 addresses replaced (they would read garbage here).
+- `status1`/`status2` offsets, stat-stage position and the party struct tail (`level` is followed by a padding byte) were wrong.
+- Pokemon data is bit-packed in expansion (species 11 bits, moves 11, item 10, experience 21).
+- Bridge: `client:hasdata()` and `emu:runFrame()` in a callback do not exist or recurse; it now uses the documented `received` socket callbacks and a deferred `STEP` reply. `READ16` was used by the agents but missing from the bridge.
+- `libmgba` through ctypes cannot work (opaque `mCore`); the headless env uses mGBA's Python bindings.
+- `VecFrameStack` stacks only the keys listed in `channels_order`; the document's claim was off.
+- Warping by writing a "pending transition flag" is not how the game works; `warp_player` sets the destination and jumps to `CB2_LoadMap`.
+
+## Verification status
+
+Verified here: the unit tests, and that the ROM, the symbol addresses and the struct offsets come from the real
+build. **Not verified**: the Lua bridge against a running mGBA, the headless bindings, and any training run
+(nothing but Python's standard library is installed on this machine; the ML stack and the `mgba` bindings are not).
