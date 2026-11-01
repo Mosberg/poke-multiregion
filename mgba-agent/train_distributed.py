@@ -14,7 +14,9 @@ from typing import Callable
 import torch
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import BaseCallback, CheckpointCallback
-from stable_baselines3.common.vec_env import SubprocVecEnv, VecFrameStack, VecMonitor
+from stable_baselines3.common.vec_env import SubprocVecEnv, VecMonitor
+
+from vec_wrappers import ScreenFrameStack
 
 from mgba_gym_env import PokemonMultiRegionEnv
 
@@ -48,8 +50,7 @@ def build_vec_env(rom: str, num_envs: int, frame_skip: int = 6, stack: int = 1, 
     vec = SubprocVecEnv([make_env(rom, i, state_path, frame_skip) for i in range(num_envs)], start_method="spawn")
     vec = VecMonitor(vec, filename="runs/monitor_logs")
     if stack > 1:
-        # only the screen is stacked; telemetry stays a single 9-vector so the ONNX export matches
-        vec = VecFrameStack(vec, n_stack=stack, channels_order={"screen": "last"})
+        vec = ScreenFrameStack(vec, n_stack=stack)    # screen only; telemetry stays a single 9-vector (matches the ONNX export)
     return vec
 
 

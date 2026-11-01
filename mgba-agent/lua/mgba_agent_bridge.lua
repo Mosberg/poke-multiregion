@@ -136,7 +136,7 @@ local function onFrame()
 end
 
 local err
-server, err = socket.bind(nil, PORT)
+server, err = socket.bind("127.0.0.1", PORT)   -- loopback only: this bridge can write RAM
 if not server then
   console:error("[agent bridge] cannot bind port " .. PORT .. ": " .. tostring(err))
 else

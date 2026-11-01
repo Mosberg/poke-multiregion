@@ -8,7 +8,6 @@ from PIL import Image
 
 from addresses import FLAGS, SB1, SYMBOLS
 from battle_engine import get_battle_engine_state
-from headless_mgba import HeadlessEnv
 
 # 9 discrete actions -> GBA key masks
 GBA_KEYS = {0: 0, 1: 1, 2: 2, 3: 4, 4: 8, 5: 16, 6: 32, 7: 64, 8: 128}
@@ -18,11 +17,17 @@ SCREEN_SHAPE = (80, 120, 1)
 class PokemonMultiRegionEnv(gym.Env):
     metadata = {"render_modes": ["rgb_array"], "render_fps": 60}
 
-    def __init__(self, rom_path: str, state_path: Optional[str] = None, frame_skip: int = 6, max_episode_steps: int = 20_000):
+    def __init__(self, rom_path: str = "", state_path: Optional[str] = None, frame_skip: int = 6,
+                 max_episode_steps: int = 20_000, backend: str = "headless"):
         super().__init__()
         self.rom_path, self.state_path = rom_path, state_path
         self.frame_skip, self.max_episode_steps = frame_skip, max_episode_steps
-        self.core = HeadlessEnv(rom_path)
+        if backend == "bridge":                      # a running mGBA with lua/mgba_agent_bridge.lua loaded
+            from bridge_backend import BridgeEnv
+            self.core = BridgeEnv(rom_path)
+        else:                                       # needs the `mgba` Python bindings
+            from headless_mgba import HeadlessEnv
+            self.core = HeadlessEnv(rom_path)
         self.action_space = spaces.Discrete(9)
         self.observation_space = spaces.Dict({
             "screen": spaces.Box(0, 255, SCREEN_SHAPE, np.uint8),

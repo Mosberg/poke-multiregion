@@ -57,11 +57,29 @@ One line per command, one line back (`OK ...` or `ERR ...`): `READ8|16|32 addr`,
 - Pokemon data is bit-packed in expansion (species 11 bits, moves 11, item 10, experience 21).
 - Bridge: `client:hasdata()` and `emu:runFrame()` in a callback do not exist or recurse; it now uses the documented `received` socket callbacks and a deferred `STEP` reply. `READ16` was used by the agents but missing from the bridge.
 - `libmgba` through ctypes cannot work (opaque `mCore`); the headless env uses mGBA's Python bindings.
-- `VecFrameStack` stacks only the keys listed in `channels_order`; the document's claim was off.
+- SB3's `VecFrameStack` cannot stack just one key of a dict observation (it demands an entry for every key, including the 1-D telemetry), so `vec_wrappers.ScreenFrameStack` stacks only the screen.
 - Warping by writing a "pending transition flag" is not how the game works; `warp_player` sets the destination and jumps to `CB2_LoadMap`.
 
-## Verification status
+## Verification status (tested against a running mGBA 0.10.5 with this ROM)
 
-Verified here: the unit tests, and that the ROM, the symbol addresses and the struct offsets come from the real
-build. **Not verified**: the Lua bridge against a running mGBA, the headless bindings, and any training run
-(nothing but Python's standard library is installed on this machine; the ML stack and the `mgba` bindings are not).
+Verified live: every bridge command (read/write/blocks/press/step/screenshot/savestate files), money, bag items
+and flag patching (offsets confirmed by round trip), `warp_player` (Pallet house -> Vermilion dock), the
+collision map plus A* walking, the MCP tools, the Gym env against SB3's `check_env`, a PPO run with the Impala
+extractor and frame stack (128 steps), and ONNX export with 20/20 action parity against PyTorch.
+
+Not verified: `party` decoding on a real Pokemon (only synthetic structs, the test save has no party yet),
+battle parsing in a real battle, the Gemini and LM Studio loops (need an API key / a local server), the
+headless `mgba` bindings (they cannot be installed here: no wheel, no cmake, no sudo in WSL), and long training
+runs. Use `backend="bridge"` for the Gym env until the bindings are built:
+
+    PokemonMultiRegionEnv(state_path="states/stage0_start.ss1", backend="bridge")
+
+`states/stage0_start.ss1` is a real savestate in Red's house (Kanto start). Record the other stages with
+`record_state.py`.
+
+## Bugs found while verifying
+
+- The reference feature extractor permuted channels itself, but SB3 already hands the policy channels-first,
+  normalised images, so it built a network with 120 input channels. Fixed.
+- The bridge bound to every network interface (it can write RAM); it now binds to 127.0.0.1.
+- `mcp` 2.x renamed `FastMCP` to `MCPServer`; the server supports both.

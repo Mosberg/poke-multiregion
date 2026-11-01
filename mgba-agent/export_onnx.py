@@ -16,7 +16,8 @@ class OnnxDeployablePolicy(nn.Module):
         self.policy = policy
 
     def forward(self, screen: torch.Tensor, telemetry: torch.Tensor):
-        features = self.policy.extract_features({"screen": screen, "telemetry": telemetry})
+        # public input is (B, H, W, C) uint8 like the env emits; the policy wants channels-first (SB3 normalises inside)
+        features = self.policy.extract_features({"screen": screen.permute(0, 3, 1, 2), "telemetry": telemetry})
         if isinstance(features, tuple):               # separate pi/vf extractors
             features = features[0]
         latent_pi = self.policy.mlp_extractor.forward_actor(features)
@@ -30,7 +31,7 @@ def export_policy_to_onnx(model_path: str, output: str, stack: int = 4):
     wrapper = OnnxDeployablePolicy(model.policy)
     dummy = (torch.zeros((1, 80, 120, stack), dtype=torch.uint8), torch.zeros((1, 9), dtype=torch.float32))
     torch.onnx.export(
-        wrapper, dummy, output, opset_version=17,
+        wrapper, dummy, output, opset_version=17, dynamo=False,
         input_names=["screen", "telemetry"], output_names=["action", "action_probabilities"],
         dynamic_axes={n: {0: "batch_size"} for n in ("screen", "telemetry", "action", "action_probabilities")},
     )

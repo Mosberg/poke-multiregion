@@ -1,12 +1,15 @@
 """MCP server exposing mGBA (via lua/mgba_agent_bridge.lua) as tools for Claude Code, Gemini CLI, Copilot...
 
 Register it with:  claude mcp add mgba -- python C:/Projects/Games/Poke-Migrator/mgba-agent/mgba_mcp_server.py
-Requires `pip install mcp`.
+Requires `pip install mcp` (works with mcp 1.x and 2.x).
 """
 import os
 import tempfile
 
-from mcp.server.fastmcp import FastMCP
+try:                                           # mcp 2.x renamed FastMCP to MCPServer
+    from mcp.server.mcpserver import MCPServer as FastMCP
+except ImportError:                            # mcp 1.x
+    from mcp.server.fastmcp import FastMCP
 
 from addresses import FLAGS
 from battle_engine import get_battle_engine_state

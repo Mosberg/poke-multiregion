@@ -1,4 +1,8 @@
-"""Impala-style residual CNN + telemetry MLP feature extractor for the dict observation."""
+"""Impala-style residual CNN + telemetry MLP feature extractor for the dict observation.
+
+The reference version assumed channels-last raw pixels and permuted them itself. Inside SB3 the screen already
+arrives as (B, C, H, W) floats in [0, 1], so that permute silently built a nonsense network (120 input channels).
+"""
 import torch
 import torch.nn as nn
 from gymnasium import spaces
@@ -33,7 +37,8 @@ class GbaMultiInputExtractor(BaseFeaturesExtractor):
 
     def __init__(self, observation_space: spaces.Dict, features_dim: int = 512):
         super().__init__(observation_space, features_dim)
-        h, w, channels = observation_space.spaces["screen"].shape
+        # SB3 hands the policy channels-first, already /255-normalised images (VecTransposeImage + preprocess_obs)
+        channels, h, w = observation_space.spaces["screen"].shape
         self.visual = nn.Sequential(ImpalaBlock(channels, 16), ImpalaBlock(16, 32), ImpalaBlock(32, 32),
                                     nn.ReLU(), nn.Flatten())
         with torch.no_grad():
@@ -44,5 +49,4 @@ class GbaMultiInputExtractor(BaseFeaturesExtractor):
         self.fuse = nn.Sequential(nn.Linear(256 + 64, features_dim), nn.ReLU())
 
     def forward(self, obs: dict) -> torch.Tensor:
-        screen = obs["screen"].permute(0, 3, 1, 2).float() / 255.0   # SB3 passes channels-last Box through unchanged
-        return self.fuse(torch.cat([self.visual_fc(self.visual(screen)), self.telemetry(obs["telemetry"].float())], dim=1))
+        return self.fuse(torch.cat([self.visual_fc(self.visual(obs["screen"])), self.telemetry(obs["telemetry"].float())], dim=1))
