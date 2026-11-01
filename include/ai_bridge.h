@@ -25,7 +25,7 @@ struct AiBridgeMailbox
     /*0x0F*/ u16 aiMoves[4];
     /*0x17*/ u8 action;          // 0-3: move slot to use. Anything else keeps the built-in choice
     /*0x18*/ u8 enabled;         // written by the external side
-    /*0x19*/ u8 timeoutFrames;   // how long to wait for an answer (0 = 60)
+    /*0x19*/ u8 timeoutFrames;   // how long to wait for an answer, in units of 8 frames (0 = 8 units = ~1 s)
     /*0x1A*/ u8 builtInChoice;   // the move slot the normal AI picked
     /*0x1B*/ u8 aiPp[4];
     /*0x1F*/ u8 playerLevel;

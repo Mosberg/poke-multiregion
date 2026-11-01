@@ -41,7 +41,7 @@ u32 AiBridge_Override(u32 battler, u32 moveIndex)
     mb->action = 0xFF;
     mb->status = AI_BRIDGE_REQUEST;
 
-    timeout = mb->timeoutFrames ? mb->timeoutFrames : 60;
+    timeout = (mb->timeoutFrames ? mb->timeoutFrames : 8) * 8; // the field counts 8-frame units: up to ~34 s
     for (frames = 0; frames < timeout && mb->status == AI_BRIDGE_REQUEST; frames++)
         VBlankIntrWait();
 

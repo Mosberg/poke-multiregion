@@ -19,7 +19,7 @@ a = ap.parse_args()
 b = Bridge()
 mb = SYMBOLS["gAiBridgeMailbox"]
 b.w8(mb + 0x18, 1)          # enabled
-b.w8(mb + 0x19, 120)        # wait up to 120 frames for an answer
+b.w8(mb + 0x19, 15)         # wait up to 15 x 8 = 120 frames for an answer
 end = time.time() + a.seconds
 while time.time() < end:
     if b.u8(mb) == 1:       # REQUEST
