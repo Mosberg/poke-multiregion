@@ -85,6 +85,15 @@ shows the expected "no link adapter" error screen; Five Island and Viridian Poke
 (summary-screen callback) but loaded fine when warped to again, so they look like leftover state from the
 previous map rather than map bugs. This proves the maps load; it does not prove their scripts play correctly.
 
+## Playtest log (pokemultiregion)
+
+Played through the bridge: Kanto start -> Pallet Town -> Oak's scene and lab -> Pewter Gym. Camper Liam fights with
+his real FireRed team (Geodude lv10 with Tackle/Defense Curl) and sets a flag in the Kanto trainer block, not Hoenn's;
+Brock gives the Boulder Badge (`FLAG_BADGE09_GET` set, Hoenn `BADGE01` untouched), prize money and a TM.
+`memory_patcher.give_mon` builds a valid party member (checksum + encryption) so a fresh save can fight. The injected
+test mon kept falling asleep in battle (cause not found, probably my hand-built struct), so the test clears
+`gBattleMons[0].status1` each turn. `states/post_brock.ss1` is a savestate right after beating Brock.
+
 ## Bugs found while verifying
 
 - The reference feature extractor permuted channels itself, but SB3 already hands the policy channels-first,

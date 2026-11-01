@@ -27,6 +27,31 @@ def inject_item(b: Bridge, pocket: str, slot: int, item_id: int, quantity: int):
     print(f"[+] {pocket}[{slot}] = item {item_id} x{quantity}")
 
 
+def give_mon(b: Bridge, species: int, level: int, moves, slot: int = 0, hp: int = 150, otid: int = 0x12345678, pid: int = 0x00ABCDEF):
+    """Writes a valid struct Pokemon into a party slot (checksum, encryption and party count included).
+
+    Stats are written directly, so the Pokemon is a stat-block you choose, not one the game computed.
+    """
+    from pkmn_decrypt import BLOCK_ORDERS
+    g = struct.pack("<HHI", species & 0x7FF, 0, 1 + level ** 3) + bytes([0, 70]) + bytes(2)
+    a = struct.pack("<HHHH", *(list(moves) + [0] * 4)[:4]) + bytes([25, 25, 25, 25])
+    e = bytes(12)
+    m = struct.pack("<BBHI", 0, 0, 0, 31 | 31 << 5 | 31 << 10 | 31 << 15 | 31 << 20 | 31 << 25) + bytes(4)
+    plain = b"".join({"G": g, "A": a, "E": e, "M": m}[c] for c in BLOCK_ORDERS[pid % 24])
+    checksum = sum(struct.unpack("<24H", plain)) & 0xFFFF
+    key = pid ^ otid
+    secure = b"".join(struct.pack("<I", struct.unpack_from("<I", plain, i)[0] ^ key) for i in range(0, 48, 4))
+    header = (struct.pack("<II", pid, otid) + bytes([0xCE, 0xBF, 0xCD, 0xCE, 0xFF]) + bytes(5) + bytes([0, 0b10])
+              + bytes([0xCC, 0xBF, 0xBE, 0xFF]) + bytes(3) + bytes([0]) + struct.pack("<HH", checksum, 0))   # nickname "TEST", OT "RED"
+    tail = struct.pack("<IBBHHHHHHH", 0, level, 0, hp, hp, 90, 90, 90, 90, 90)
+    raw = header + secure + tail
+    assert len(raw) == 100, len(raw)
+    b.write(SYMBOLS["gPlayerParty"] + slot * 100, raw)
+    count = b.u8(SYMBOLS["gPlayerPartyCount"])
+    b.w8(SYMBOLS["gPlayerPartyCount"], max(count, slot + 1))
+    print(f"[+] party[{slot}] = species {species} lv{level}")
+
+
 def set_flag(b: Bridge, flag_id: int, value: bool = True):
     addr = b.sb1() + SB1["flags"] + flag_id // 8
     cur = b.u8(addr)
