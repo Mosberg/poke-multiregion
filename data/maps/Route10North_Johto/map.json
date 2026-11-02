@@ -51,7 +51,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route10North_Johto_PowerPlantSign_Entry"
     },
     {
       "type": "sign",
@@ -59,7 +59,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route10North_Johto_Route10PokecenterSign_Entry"
     }
   ]
 }

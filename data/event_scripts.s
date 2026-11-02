@@ -607,6 +607,7 @@ gStdScripts_End::
 
 @ POKE-CRYSTAL-BEGIN
 	.include "data/scripts/johto_stubs.inc"
+	.include "data/scripts/johto_common.inc"
 	.include "data/maps/OlivinePokecenter1F_Johto/scripts.inc"
 	.include "data/maps/OlivineGym_Johto/scripts.inc"
 	.include "data/maps/OlivineTimsHouse_Johto/scripts.inc"
@@ -991,6 +992,13 @@ gStdScripts_End::
 	.include "data/maps/MrPokemonsHouse_Johto/scripts.inc"
 	.include "data/maps/Route31VioletGate_Johto/scripts.inc"
 @ POKE-CRYSTAL-END
+
+
+
+
+
+
+
 
 
 	.include "data/maps/TradeCenter_Frlg/scripts.inc"

@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_Route36OfficerScriptContest_Entry",
+      "flag": "FLAG_JOHTO_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -39,8 +39,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant1BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_1B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -52,8 +52,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant2BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_2B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -65,8 +65,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant3BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_3B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -78,8 +78,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant4BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_4B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -91,8 +91,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant5BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_5B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -104,8 +104,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant6BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_6B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -117,8 +117,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant7BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_7B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -130,8 +130,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant8BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_8B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -143,8 +143,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant9BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_9B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -156,8 +156,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_BugCatchingContestant10BScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_10B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
@@ -169,8 +169,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route36NationalParkGate_Johto_Route36NationalParkGateOfficerScript_Entry",
+      "flag": "FLAG_JOHTO_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
     }
   ],
   "warp_events": [

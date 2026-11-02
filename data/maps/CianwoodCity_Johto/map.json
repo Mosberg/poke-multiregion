@@ -32,7 +32,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityYoungster_Entry",
       "flag": "0"
     },
     {
@@ -45,7 +45,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityPokefanM_Entry",
       "flag": "0"
     },
     {
@@ -58,7 +58,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityLass_Entry",
       "flag": "0"
     },
     {
@@ -71,7 +71,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityRock_Entry",
       "flag": "0"
     },
     {
@@ -84,7 +84,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityRock_Entry",
       "flag": "0"
     },
     {
@@ -97,7 +97,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityRock_Entry",
       "flag": "0"
     },
     {
@@ -110,7 +110,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityRock_Entry",
       "flag": "0"
     },
     {
@@ -123,7 +123,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityRock_Entry",
       "flag": "0"
     },
     {
@@ -136,7 +136,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityRock_Entry",
       "flag": "0"
     },
     {
@@ -149,7 +149,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CianwoodCity_Johto_CianwoodCityChucksWife_Entry",
       "flag": "0"
     },
     {
@@ -163,7 +163,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_CIANWOOD_CITY_EUSINE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -176,7 +176,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_SAW_SUICUNE_AT_CIANWOOD_CITY"
     }
   ],
   "warp_events": [
@@ -230,7 +230,17 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_CIANWOOD_CITY",
+      "var_value": "1",
+      "script": "CianwoodCity_Johto_CianwoodCitySuicuneAndEusine_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -238,7 +248,7 @@
       "y": 34,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CianwoodCity_Johto_CianwoodCitySign_Entry"
     },
     {
       "type": "sign",
@@ -246,7 +256,7 @@
       "y": 45,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CianwoodCity_Johto_CianwoodGymSign_Entry"
     },
     {
       "type": "sign",
@@ -254,7 +264,7 @@
       "y": 43,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CianwoodCity_Johto_CianwoodPokecenterSign_Entry"
     },
     {
       "type": "sign",
@@ -262,7 +272,7 @@
       "y": 47,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CianwoodCity_Johto_CianwoodPharmacySign_Entry"
     },
     {
       "type": "sign",
@@ -270,7 +280,7 @@
       "y": 32,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CianwoodCity_Johto_CianwoodPhotoStudioSign_Entry"
     },
     {
       "type": "sign",
@@ -278,7 +288,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CianwoodCity_Johto_CianwoodPokeSeerSign_Entry"
     },
     {
       "type": "sign",

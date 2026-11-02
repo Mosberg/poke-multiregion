@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "FastShipB1F_Johto_FastShipB1FSailorScript_Entry",
+      "flag": "FLAG_JOHTO_FAST_SHIP_B1F_SAILOR_LEFT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -39,8 +39,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "FastShipB1F_Johto_FastShipB1FSailorScript_Entry",
+      "flag": "FLAG_JOHTO_FAST_SHIP_B1F_SAILOR_RIGHT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -53,7 +53,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_FIRST_TRIP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -66,7 +66,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_FIRST_TRIP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -79,7 +79,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_FIRST_TRIP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -92,7 +92,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_EASTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -105,7 +105,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_EASTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
@@ -118,7 +118,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_EASTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -131,7 +131,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
@@ -144,7 +144,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -157,7 +157,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -170,7 +170,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND"
     }
   ],
   "warp_events": [
@@ -189,7 +189,26 @@
       "dest_warp_id": "11"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_FAST_SHIP_B1F",
+      "var_value": "0",
+      "script": "FastShipB1F_Johto_FastShipB1FSailorBlocksLeft_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_FAST_SHIP_B1F",
+      "var_value": "0",
+      "script": "FastShipB1F_Johto_FastShipB1FSailorBlocksRight_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -197,7 +216,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "FastShipB1F_Johto_FastShipB1FTrashcan_Entry"
     }
   ]
 }

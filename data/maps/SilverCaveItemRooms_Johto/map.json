@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_SILVER_CAVE_ITEM_ROOMS_MAX_REVIVE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_SILVER_CAVE_ITEM_ROOMS_FULL_RESTORE"
     }
   ],
   "warp_events": [

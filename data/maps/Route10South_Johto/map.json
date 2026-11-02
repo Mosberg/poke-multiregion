@@ -71,7 +71,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route10South_Johto_Route10Sign_Entry"
     }
   ]
 }

@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route30_Johto_YoungsterJoey_ImportantBattleScript_Entry",
+      "flag": "FLAG_JOHTO_ROUTE_30_BATTLE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_30_YOUNGSTER_JOEY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route30_Johto_Route30YoungsterScript_Entry",
       "flag": "0"
     },
     {
@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_30_BATTLE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -116,7 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_30_BATTLE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -128,7 +128,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route30_Johto_Route30FruitTree1_Entry",
       "flag": "0"
     },
     {
@@ -141,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route30_Johto_Route30FruitTree2_Entry",
       "flag": "0"
     },
     {
@@ -154,7 +154,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route30_Johto_Route30CooltrainerFScript_Entry",
       "flag": "0"
     },
     {
@@ -168,7 +168,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_30_ANTIDOTE"
     }
   ],
   "warp_events": [
@@ -195,7 +195,7 @@
       "y": 43,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route30_Johto_Route30Sign_Entry"
     },
     {
       "type": "sign",
@@ -203,7 +203,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route30_Johto_MrPokemonsHouseDirectionsSign_Entry"
     },
     {
       "type": "sign",
@@ -211,7 +211,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route30_Johto_MrPokemonsHouseSign_Entry"
     },
     {
       "type": "sign",
@@ -219,7 +219,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route30_Johto_Route30TrainerTips_Entry"
     },
     {
       "type": "sign",

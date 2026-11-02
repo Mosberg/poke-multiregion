@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "SilverCaveRoom3_Johto_Red_Entry",
+      "flag": "FLAG_JOHTO_RED_IN_MT_SILVER"
     }
   ],
   "warp_events": [

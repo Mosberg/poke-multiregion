@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TimeCapsule_Johto_TimeCapsuleFriendScript_Entry",
+      "flag": "FLAG_TEMP_11"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -39,8 +39,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TimeCapsule_Johto_TimeCapsuleFriendScript_Entry",
+      "flag": "FLAG_TEMP_12"
     }
   ],
   "warp_events": [
@@ -67,7 +67,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TimeCapsule_Johto_TimeCapsuleConsoleScript_Entry"
     },
     {
       "type": "sign",
@@ -75,7 +75,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TimeCapsule_Johto_TimeCapsuleConsoleScript_Entry"
     }
   ]
 }

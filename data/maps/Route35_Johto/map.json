@@ -141,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route35_Johto_TrainerOfficerDirk_Entry",
       "flag": "0"
     },
     {
@@ -154,7 +154,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route35_Johto_Route35FruitTree_Entry",
       "flag": "0"
     },
     {
@@ -168,7 +168,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_35_TM_ROLLOUT"
     }
   ],
   "warp_events": [
@@ -202,7 +202,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route35_Johto_Route35Sign_Entry"
     },
     {
       "type": "sign",
@@ -210,7 +210,7 @@
       "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route35_Johto_Route35Sign_Entry"
     }
   ]
 }

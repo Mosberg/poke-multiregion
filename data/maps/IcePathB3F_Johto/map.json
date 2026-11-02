@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ICE_PATH_B3F_NEVERMELTICE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "IcePathB3F_Johto_IcePathB3FRock_Entry",
       "flag": "0"
     }
   ],

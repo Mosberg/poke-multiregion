@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "VermilionPort_Johto_VermilionPortSailorAtGangwayScript_Entry",
+      "flag": "FLAG_JOHTO_VERMILION_PORT_SAILOR_AT_GANGWAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "VermilionPort_Johto_VermilionPortSailorScript_Entry",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "VermilionPort_Johto_VermilionPortSuperNerdScript_Entry",
       "flag": "0"
     }
   ],
@@ -72,7 +72,17 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_VERMILION_PORT",
+      "var_value": "0",
+      "script": "VermilionPort_Johto_VermilionPortWalkUpToShipScript_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

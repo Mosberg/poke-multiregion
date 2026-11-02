@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_Entry",
       "flag": "0"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FLassScript_Entry",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStore5F_Johto_Mike_Entry",
       "flag": "0"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FPokefanMScript_Entry",
       "flag": "0"
     },
     {
@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStore5F_Johto_Carrie_Entry",
       "flag": "0"
     },
     {
@@ -91,8 +91,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY"
     }
   ],
   "warp_events": [
@@ -126,7 +126,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FDirectory_Entry"
     },
     {
       "type": "sign",
@@ -134,7 +134,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FElevatorButton_Entry"
     }
   ]
 }

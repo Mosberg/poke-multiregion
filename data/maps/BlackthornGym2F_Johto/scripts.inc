@@ -1,2 +1,19 @@
 BlackthornGym2F_Johto_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, BlackthornGym2F_Johto_OnTransition
 	.byte 0
+
+BlackthornGym2F_Johto_OnTransition:
+	call BlackthornGym2F_Johto_BlackthornGym2FSetUpStoneTableCallback_Sub
+	end
+
+BlackthornGym2F_Johto_BlackthornGymBoulder_Entry::
+	lockall
+	goto BlackthornGym2F_Johto_BlackthornGymBoulder
+
+
+BlackthornGym2F_Johto_BlackthornGymBoulder:
+	goto Johto_Std_StrengthBoulderScript
+
+BlackthornGym2F_Johto_BlackthornGym2FSetUpStoneTableCallback_Sub:
+	@ TODO unsupported: writecmdqueue .CommandQueue
+	return

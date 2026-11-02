@@ -52,8 +52,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "flag": "FLAG_JOHTO_BOULDER_IN_BLACKTHORN_GYM_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -65,8 +65,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "flag": "FLAG_JOHTO_BOULDER_IN_BLACKTHORN_GYM_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -78,8 +78,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "flag": "FLAG_JOHTO_BOULDER_IN_BLACKTHORN_GYM_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
       "flag": "0"
     },
     {
@@ -104,7 +104,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
       "flag": "0"
     },
     {
@@ -117,7 +117,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
       "flag": "0"
     }
   ],

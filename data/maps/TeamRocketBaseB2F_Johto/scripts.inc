@@ -1,2 +1,329 @@
 TeamRocketBaseB2F_Johto_MapScripts::
 	.byte 0
+
+TeamRocketBaseB2F_Johto_RocketElectrode1_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_RocketElectrode1
+
+TeamRocketBaseB2F_Johto_RocketElectrode2_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_RocketElectrode2
+
+TeamRocketBaseB2F_Johto_RocketElectrode3_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_RocketElectrode3
+
+TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript
+
+TeamRocketBaseB2F_Johto_LanceHealsScript1_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_LanceHealsScript1
+
+TeamRocketBaseB2F_Johto_LanceHealsScript2_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_LanceHealsScript2
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFLeft_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_RocketBaseBossFLeft
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFRight_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_RocketBaseBossFRight
+
+TeamRocketBaseB2F_Johto_RocketBaseCantLeaveScript_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_RocketBaseCantLeaveScript
+
+TeamRocketBaseB2F_Johto_RocketBaseLancesSideScript_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_RocketBaseLancesSideScript
+
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFLeft:
+	setobjectxyperm 3, 9, 13
+	goto TeamRocketBaseB2F_Johto_RocketBaseBossFScript
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFRight:
+	setobjectxyperm 2, 21, 16
+	setobjectxyperm 1, 21, 16
+	setobjectxyperm 4, 10, 13
+	setobjectxyperm 3, 10, 13
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFScript:
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_EXECUTIVE
+	addobject 2
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_EXECUTIVE
+	addobject 1
+	message TeamRocketBaseB2F_Johto_RocketBaseExecutiveFHoldItText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, TeamRocketBaseB2F_Johto_RocketBasePlayerApproachesBossFMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	applymovement 2, TeamRocketBaseB2F_Johto_RocketBaseBossFApproachesPlayerMovement
+	waitmovement 2
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Up
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB2F_Johto_RocketBaseGruntApproachesPlayerMovement
+	waitmovement 1
+	message TeamRocketBaseB2F_Johto_RocketBaseBossFThrashText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	playmoncry SPECIES_DRAGONITE, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement 2, Johto_Movement_Face_Left
+	waitmovement 2
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_DRAGONITE
+	addobject 4
+	applymovement 4, TeamRocketBaseB2F_Johto_RocketBaseDragoniteAttacksMovement
+	waitmovement 4
+	applymovement 2, TeamRocketBaseB2F_Johto_RocketBaseBossFHitMovement
+	waitmovement 2
+	applymovement 1, TeamRocketBaseB2F_Johto_RocketBaseGruntProtectsBossFMovement
+	waitmovement 1
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_LANCE
+	addobject 3
+	applymovement 3, TeamRocketBaseB2F_Johto_RocketBaseLanceApproachesBossFMovement
+	waitmovement 3
+	message TeamRocketBaseB2F_Johto_RocketBaseLanceShareFunText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 2, TeamRocketBaseB2F_Johto_RocketBaseBossFFacesPlayerMovement
+	waitmovement 2
+	message TeamRocketBaseB2F_Johto_RocketBaseBossDontMeddleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 1, TeamRocketBaseB2F_Johto_RocketBaseGruntBattlesLanceMovement
+	waitmovement 1
+	applymovement 2, TeamRocketBaseB2F_Johto_RocketBaseBossFBattlesPlayerMovement
+	waitmovement 2
+	@ TODO unsupported: winlosstext RocketBaseBossWinText, 0
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB2F_Johto_RocketBaseCantLeaveScript:
+	applymovement OBJ_EVENT_ID_PLAYER, TeamRocketBaseB2F_Johto_RocketBasePlayerCantLeaveElectrodesMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	releaseall
+	end
+
+TeamRocketBaseB2F_Johto_RocketBaseLancesSideScript:
+	message TeamRocketBaseB2F_Johto_RocketBaseLancesSideText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, TeamRocketBaseB2F_Johto_RocketBasePlayerCantGoRightMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	releaseall
+	end
+
+TeamRocketBaseB2F_Johto_LanceHealsScript1:
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Up
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto TeamRocketBaseB2F_Johto_LanceHealsCommon
+
+TeamRocketBaseB2F_Johto_LanceHealsScript2:
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 3, Johto_Movement_Face_Left
+	waitmovement 3
+
+TeamRocketBaseB2F_Johto_LanceHealsCommon:
+	message TeamRocketBaseB2F_Johto_LanceHealsText1
+	waitmessage
+	waitbuttonpress
+	closemessage
+	@ TODO unsupported: special FadeOutToWhite
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB2F_Johto_RocketElectrode1:
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
+	waitmoncry
+	@ TODO unsupported: loadwildmon ELECTRODE, 23
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB2F_Johto_RocketElectrode2:
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
+	waitmoncry
+	@ TODO unsupported: loadwildmon ELECTRODE, 23
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB2F_Johto_RocketElectrode3:
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
+	waitmoncry
+	@ TODO unsupported: loadwildmon ELECTRODE, 23
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript:
+	goto_if_set FLAG_JOHTO_CLEARED_ROCKET_HIDEOUT, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Deactivated
+	message TeamRocketBaseB2F_Johto_RocketBaseB2FTransmitterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Deactivated:
+	message TeamRocketBaseB2F_Johto_RocketBaseB2FDeactivateTransmitterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB2F_Johto_RocketBasePlayerApproachesBossFMovement:
+	walk_down
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFApproachesPlayerMovement:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	face_down
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseGruntApproachesPlayerMovement:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseDragoniteAttacksMovement:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFHitMovement:
+	lock_facing_direction
+	jump_right
+	unlock_facing_direction
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFFacesPlayerMovement:
+	walk_slow_down
+	face_left
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseLanceApproachesBossFMovement:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFBattlesPlayerMovement:
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseGruntBattlesLanceMovement:
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseGruntProtectsBossFMovement:
+	walk_fast_left
+	walk_fast_up
+	face_left
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBasePlayerCantLeaveElectrodesMovement:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBasePlayerCantGoRightMovement:
+	walk_left
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseExecutiveFHoldItText:
+	.string "Hold it right\n"
+	.string "there!$"
+
+TeamRocketBaseB2F_Johto_RocketBaseBossFThrashText:
+	.string "We can't have a\n"
+	.string "brat like you on\l"
+	.string "the loose."
+	.string "\pIt's harmful to\n"
+	.string "TEAM ROCKET's\l"
+	.string "pride, you see."
+	.string "\pHowever strong you\n"
+	.string "may be, you can't"
+	.string "\ptake both of us at\n"
+	.string "the same time."
+	.string "\pSorry, baby. Now\n"
+	.string "get ready to be\l"
+	.string "thrashed.$"
+
+TeamRocketBaseB2F_Johto_RocketBaseLanceShareFunText:
+	.string "Hey! Don't be so\n"
+	.string "selfish. Spread\l"
+	.string "the fun around.$"
+
+TeamRocketBaseB2F_Johto_RocketBaseBossDontMeddleText:
+	.string "What? You had an\n"
+	.string "accomplice?"
+	.string "\pWhere is your\n"
+	.string "sense of honor?"
+	.string "\pAs the interim\n"
+	.string "boss in place of"
+	.string "\pGIOVANNI, I'll\n"
+	.string "show you how wrong"
+	.string "\pit is to meddle\n"
+	.string "with TEAM ROCKET!$"
+
+TeamRocketBaseB2F_Johto_RocketBaseLancesSideText:
+	.string "LANCE: Leave this\n"
+	.string "side to me.$"
+
+TeamRocketBaseB2F_Johto_LanceHealsText1:
+	.string "LANCE: Are you all\n"
+	.string "right?"
+	.string "\pYour POKéMON are\n"
+	.string "hurt and tired."
+	.string "\pHere, give them\n"
+	.string "some of my medi-\l"
+	.string "cine.$"
+
+TeamRocketBaseB2F_Johto_RocketBaseB2FTransmitterText:
+	.string "It's the radio\n"
+	.string "transmitter that's"
+	.string "\psending the\n"
+	.string "sinister signal."
+	.string "\pIt's working at\n"
+	.string "full capacity.$"
+
+TeamRocketBaseB2F_Johto_RocketBaseB2FDeactivateTransmitterText:
+	.string "The radio trans-\n"
+	.string "mitter has finally"
+	.string "\pstopped its evil\n"
+	.string "broadcast.$"

@@ -1,2 +1,10 @@
 MountMortar1FInside_Johto_MapScripts::
 	.byte 0
+
+MountMortar1FInside_Johto_MountMortar1FBoulder_Entry::
+	lockall
+	goto MountMortar1FInside_Johto_MountMortar1FBoulder
+
+
+MountMortar1FInside_Johto_MountMortar1FBoulder:
+	goto Johto_Std_StrengthBoulderScript

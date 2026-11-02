@@ -39,7 +39,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route22_Johto_VictoryRoadEntranceSign_Entry"
     }
   ]
 }

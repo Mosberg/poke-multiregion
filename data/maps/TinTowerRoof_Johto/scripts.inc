@@ -1,2 +1,36 @@
 TinTowerRoof_Johto_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, TinTowerRoof_Johto_OnTransition
 	.byte 0
+
+TinTowerRoof_Johto_OnTransition:
+	call TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Sub
+	end
+
+TinTowerRoof_Johto_TinTowerHoOh_Entry::
+	lockall
+	goto TinTowerRoof_Johto_TinTowerHoOh
+
+
+TinTowerRoof_Johto_TinTowerHoOh:
+	faceplayer
+	message TinTowerRoof_Johto_HoOhText
+	waitmessage
+	playmoncry SPECIES_HO_OH, CRY_MODE_NORMAL
+	waitmoncry
+	delay 15
+	closemessage
+	setflag FLAG_JOHTO_FOUGHT_HO_OH
+	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	goto Johto_EventScript_Unimplemented
+
+TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Sub:
+	goto_if_set FLAG_JOHTO_FOUGHT_HO_OH, TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Sub
+	@ TODO unsupported: checkitem RAINBOW_WING
+	return
+
+TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Sub:
+	removeobject 1
+	return
+
+TinTowerRoof_Johto_HoOhText:
+	.string "Shaoooh!$"

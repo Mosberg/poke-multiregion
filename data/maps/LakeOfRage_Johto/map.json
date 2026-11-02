@@ -32,8 +32,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "LakeOfRage_Johto_LakeOfRageLanceScript_Entry",
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_LANCE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -45,7 +45,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "LakeOfRage_Johto_LakeOfRageGrampsScript_Entry",
       "flag": "0"
     },
     {
@@ -58,7 +58,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "LakeOfRage_Johto_LakeOfRageSuperNerdScript_Entry",
       "flag": "0"
     },
     {
@@ -71,7 +71,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "LakeOfRage_Johto_LakeOfRageCooltrainerFScript_Entry",
       "flag": "0"
     },
     {
@@ -85,7 +85,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_CIVILIANS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -98,7 +98,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_CIVILIANS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
@@ -111,7 +111,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_CIVILIANS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
@@ -124,7 +124,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_CIVILIANS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -136,8 +136,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "LakeOfRage_Johto_RedGyarados_Entry",
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_RED_GYARADOS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -149,8 +149,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "LakeOfRage_Johto_WesleyScript_Entry",
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -163,7 +163,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_ELIXER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -176,7 +176,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_LAKE_OF_RAGE_TM_DETECT"
     }
   ],
   "warp_events": [
@@ -203,7 +203,7 @@
       "y": 27,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "LakeOfRage_Johto_LakeOfRageSign_Entry"
     },
     {
       "type": "sign",
@@ -211,7 +211,7 @@
       "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "LakeOfRage_Johto_MagikarpHouseSignScript_Entry"
     },
     {
       "type": "sign",

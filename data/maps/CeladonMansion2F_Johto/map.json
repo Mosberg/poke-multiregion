@@ -54,7 +54,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CeladonMansion2F_Johto_CeladonMansion2FComputer_Entry"
     },
     {
       "type": "sign",
@@ -62,7 +62,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CeladonMansion2F_Johto_CeladonMansion2FMeetingRoomSign_Entry"
     },
     {
       "type": "sign",
@@ -70,7 +70,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CeladonMansion2F_Johto_CeladonMansion2FBookshelf_Entry"
     }
   ]
 }

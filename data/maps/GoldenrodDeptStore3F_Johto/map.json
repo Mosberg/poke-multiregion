@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStore3F_Johto_GoldenrodDeptStore3FClerkScript_Entry",
       "flag": "0"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStore3F_Johto_GoldenrodDeptStore3FSuperNerdScript_Entry",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStore3F_Johto_GoldenrodDeptStore3FRockerScript_Entry",
       "flag": "0"
     }
   ],
@@ -87,7 +87,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodDeptStore3F_Johto_GoldenrodDeptStore3FDirectory_Entry"
     },
     {
       "type": "sign",
@@ -95,7 +95,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodDeptStore3F_Johto_GoldenrodDeptStore3FElevatorButton_Entry"
     }
   ]
 }

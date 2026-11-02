@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "CinnabarIsland_Johto_CinnabarIslandBlue_Entry",
+      "flag": "FLAG_JOHTO_BLUE_IN_CINNABAR"
     }
   ],
   "warp_events": [
@@ -58,7 +58,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CinnabarIsland_Johto_CinnabarIslandPokecenterSign_Entry"
     },
     {
       "type": "sign",
@@ -66,7 +66,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CinnabarIsland_Johto_CinnabarIslandGymSign_Entry"
     },
     {
       "type": "sign",
@@ -74,7 +74,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CinnabarIsland_Johto_CinnabarIslandSign_Entry"
     },
     {
       "type": "sign",

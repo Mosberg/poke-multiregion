@@ -1,2 +1,36 @@
 WhirlIslandLugiaChamber_Johto_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, WhirlIslandLugiaChamber_Johto_OnTransition
 	.byte 0
+
+WhirlIslandLugiaChamber_Johto_OnTransition:
+	call WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Sub
+	end
+
+WhirlIslandLugiaChamber_Johto_Lugia_Entry::
+	lockall
+	goto WhirlIslandLugiaChamber_Johto_Lugia
+
+
+WhirlIslandLugiaChamber_Johto_Lugia:
+	faceplayer
+	message WhirlIslandLugiaChamber_Johto_LugiaText
+	waitmessage
+	playmoncry SPECIES_LUGIA, CRY_MODE_NORMAL
+	waitmoncry
+	delay 15
+	closemessage
+	setflag FLAG_JOHTO_FOUGHT_LUGIA
+	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	goto Johto_EventScript_Unimplemented
+
+WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Sub:
+	goto_if_set FLAG_JOHTO_FOUGHT_LUGIA, WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Sub
+	@ TODO unsupported: checkitem SILVER_WING
+	return
+
+WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Sub:
+	removeobject 1
+	return
+
+WhirlIslandLugiaChamber_Johto_LugiaText:
+	.string "Gyaaas!$"

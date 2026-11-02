@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_EASTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_EASTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -53,7 +53,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -66,7 +66,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_FIRST_TRIP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -78,8 +78,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "FastShipCabins_NNW_NNE_NE_Johto_FastShipLazySailorScript_Entry",
+      "flag": "FLAG_JOHTO_FAST_SHIP_CABINS_NNW_NNE_NE_SAILOR"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
@@ -92,7 +92,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_EASTBOUND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -105,7 +105,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND"
     }
   ],
   "warp_events": [
@@ -139,7 +139,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "FastShipCabins_NNW_NNE_NE_Johto_FastShipCabins_NNW_NNE_NETrashcan_Entry"
     },
     {
       "type": "sign",
@@ -147,7 +147,7 @@
       "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "FastShipCabins_NNW_NNE_NE_Johto_FastShipCabins_NNW_NNE_NETrashcan_Entry"
     },
     {
       "type": "sign",
@@ -155,7 +155,7 @@
       "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "FastShipCabins_NNW_NNE_NE_Johto_FastShipCabins_NNW_NNE_NETrashcan_Entry"
     }
   ]
 }

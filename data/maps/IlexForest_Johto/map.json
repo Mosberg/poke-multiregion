@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "IlexForest_Johto_IlexForestFarfetchdScript_Entry",
+      "flag": "FLAG_JOHTO_ILEX_FOREST_FARFETCHD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -39,8 +39,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "IlexForest_Johto_IlexForestCharcoalApprenticeScript_Entry",
+      "flag": "FLAG_JOHTO_ILEX_FOREST_APPRENTICE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
@@ -52,8 +52,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "IlexForest_Johto_IlexForestCharcoalMasterScript_Entry",
+      "flag": "FLAG_JOHTO_ILEX_FOREST_CHARCOAL_MASTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "IlexForest_Johto_IlexForestHeadbuttGuyScript_Entry",
       "flag": "0"
     },
     {
@@ -79,7 +79,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ILEX_FOREST_REVIVE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -92,7 +92,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ILEX_FOREST_KURT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -104,8 +104,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "IlexForest_Johto_IlexForestLassScript_Entry",
+      "flag": "FLAG_JOHTO_ILEX_FOREST_LASS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -131,7 +131,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ILEX_FOREST_X_ATTACK"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -144,7 +144,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ILEX_FOREST_ANTIDOTE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -157,7 +157,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ILEX_FOREST_ETHER"
     }
   ],
   "warp_events": [
@@ -191,7 +191,7 @@
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "IlexForest_Johto_IlexForestSignpost_Entry"
     },
     {
       "type": "sign",
@@ -223,7 +223,7 @@
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Johto_EventScript_StubSign"
+      "script": "IlexForest_Johto_IlexForestShrineScript_Entry"
     }
   ]
 }

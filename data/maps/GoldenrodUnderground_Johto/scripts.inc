@@ -1,2 +1,127 @@
 GoldenrodUnderground_Johto_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, GoldenrodUnderground_Johto_OnTransition
 	.byte 0
+
+GoldenrodUnderground_Johto_OnTransition:
+	call GoldenrodUnderground_Johto_GoldenrodUndergroundResetSwitchesCallback_Sub
+	call GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Sub
+	end
+
+GoldenrodUnderground_Johto_BargainMerchantScript_Entry::
+	lockall
+	goto GoldenrodUnderground_Johto_BargainMerchantScript
+
+GoldenrodUnderground_Johto_OlderHaircutBrotherScript_Entry::
+	lockall
+	goto GoldenrodUnderground_Johto_OlderHaircutBrotherScript
+
+GoldenrodUnderground_Johto_YoungerHaircutBrotherScript_Entry::
+	lockall
+	goto GoldenrodUnderground_Johto_YoungerHaircutBrotherScript
+
+GoldenrodUnderground_Johto_BitterMerchantScript_Entry::
+	lockall
+	goto GoldenrodUnderground_Johto_BitterMerchantScript
+
+GoldenrodUnderground_Johto_BasementDoorScript_Entry::
+	lockall
+	goto GoldenrodUnderground_Johto_BasementDoorScript
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundNoEntrySign_Entry::
+	lockall
+	goto GoldenrodUnderground_Johto_GoldenrodUndergroundNoEntrySign
+
+
+GoldenrodUnderground_Johto_BitterMerchantScript:
+	@ TODO unsupported: readvar VAR_WEEKDAY
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUnderground_Johto_BargainMerchantScript:
+	goto_if_set FLAG_JOHTO_ENGINE_GOLDENROD_UNDERGROUND_MERCHANT_CLOSED, GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed
+	@ TODO unsupported: readvar VAR_WEEKDAY
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUnderground_Johto_OlderHaircutBrotherScript:
+	@ TODO unsupported: readvar VAR_WEEKDAY
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUnderground_Johto_YoungerHaircutBrotherScript:
+	@ TODO unsupported: readvar VAR_WEEKDAY
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUnderground_Johto_BasementDoorScript:
+	goto_if_set FLAG_JOHTO_USED_BASEMENT_KEY, GoldenrodUnderground_Johto_BasementDoorScript_Open
+	checkitem ITEM_BASEMENT_KEY, 1
+	goto_if_ne VAR_RESULT, 0, GoldenrodUnderground_Johto_BasementDoorScript_Unlock
+	message GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorsLockedText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUnderground_Johto_BasementDoorScript_Unlock:
+	@ TODO unsupported: playsound SFX_TRANSACTION
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUnderground_Johto_BasementDoorScript_Open:
+	message GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorIsOpenText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed:
+	message GoldenrodUnderground_Johto_GoldenrodUndergroundWeAreNotOpenTodayText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundNoEntrySign:
+	message GoldenrodUnderground_Johto_GoldenrodUndergroundNoEntryText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundResetSwitchesCallback_Sub:
+	clearflag FLAG_JOHTO_SWITCH_1
+	clearflag FLAG_JOHTO_SWITCH_2
+	clearflag FLAG_JOHTO_SWITCH_3
+	clearflag FLAG_JOHTO_EMERGENCY_SWITCH
+	clearflag FLAG_JOHTO_DOOR_1_OPEN
+	clearflag FLAG_JOHTO_DOOR_2_OPEN
+	clearflag FLAG_JOHTO_DOOR_3_OPEN
+	clearflag FLAG_JOHTO_DOOR_4_OPEN
+	clearflag FLAG_JOHTO_DOOR_5_OPEN
+	clearflag FLAG_JOHTO_DOOR_6_OPEN
+	clearflag FLAG_JOHTO_DOOR_7_OPEN
+	clearflag FLAG_JOHTO_DOOR_8_OPEN
+	clearflag FLAG_JOHTO_DOOR_9_OPEN
+	clearflag FLAG_JOHTO_DOOR_10_OPEN
+	clearflag FLAG_JOHTO_DOOR_11_OPEN
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: writemem wUndergroundSwitchPositions
+	return
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Sub:
+	@ TODO unsupported: readvar VAR_WEEKDAY
+	return
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorsLockedText:
+	.string "The door's locked…$"
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorIsOpenText:
+	.string "The door is open.$"
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundWeAreNotOpenTodayText:
+	.string "We're not open\n"
+	.string "today.$"
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundNoEntryText:
+	.string "NO ENTRY BEYOND\n"
+	.string "THIS POINT$"

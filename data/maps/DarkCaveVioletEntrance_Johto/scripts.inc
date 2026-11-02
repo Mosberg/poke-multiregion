@@ -1,2 +1,10 @@
 DarkCaveVioletEntrance_Johto_MapScripts::
 	.byte 0
+
+DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceRock_Entry::
+	lockall
+	goto DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceRock
+
+
+DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceRock:
+	goto Johto_Std_SmashRockScript

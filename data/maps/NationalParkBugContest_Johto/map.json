@@ -26,8 +26,8 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant1AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_1A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -39,8 +39,8 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant2AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_2A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -52,8 +52,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant3AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_3A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -65,8 +65,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant4AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_4A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -78,8 +78,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant5AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_5A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -91,8 +91,8 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant6AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_6A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -104,8 +104,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant7AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_7A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -117,8 +117,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant8AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_8A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -130,8 +130,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant9AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_9A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -143,8 +143,8 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "NationalParkBugContest_Johto_BugCatchingContestant10AScript_Entry",
+      "flag": "FLAG_JOHTO_BUG_CATCHING_CONTESTANT_10A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -157,7 +157,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_NATIONAL_PARK_PARLYZ_HEAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -170,7 +170,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_NATIONAL_PARK_TM_DIG"
     }
   ],
   "warp_events": [
@@ -211,7 +211,7 @@
       "y": 44,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "NationalParkBugContest_Johto_NationalParkBugContestRelaxationSquareSign_Entry"
     },
     {
       "type": "sign",
@@ -219,7 +219,7 @@
       "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "NationalParkBugContest_Johto_NationalParkBugContestBattleNoticeSign_Entry"
     },
     {
       "type": "sign",
@@ -235,7 +235,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "NationalParkBugContest_Johto_NationalParkBugContestTrainerTipsSign_Entry"
     }
   ]
 }

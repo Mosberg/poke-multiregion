@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberFisherScript_Entry",
+      "flag": "FLAG_JOHTO_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
@@ -39,8 +39,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberTeacherScript_Entry",
+      "flag": "FLAG_JOHTO_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -52,8 +52,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberGrampsScript_Entry",
+      "flag": "FLAG_JOHTO_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS"
     }
   ],
   "warp_events": [
@@ -129,7 +129,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -137,7 +137,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -145,7 +145,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -153,7 +153,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -161,7 +161,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -169,7 +169,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -177,7 +177,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -185,7 +185,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -193,7 +193,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -201,7 +201,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -209,7 +209,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -217,7 +217,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -225,7 +225,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -233,7 +233,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -241,7 +241,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -249,7 +249,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -257,7 +257,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -265,7 +265,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -273,7 +273,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -281,7 +281,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -289,7 +289,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -297,7 +297,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -305,7 +305,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -313,7 +313,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -321,7 +321,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     },
     {
       "type": "sign",
@@ -329,7 +329,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphInnerChamber_Johto_RuinsOfAlphInnerChamberStatue_Entry"
     }
   ]
 }

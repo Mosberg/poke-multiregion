@@ -37,7 +37,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "PewterCity_Johto_PewterCityCooltrainerFScript_Entry",
       "flag": "0"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "PewterCity_Johto_PewterCityBugCatcherScript_Entry",
       "flag": "0"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "PewterCity_Johto_PewterCityGrampsScript_Entry",
       "flag": "0"
     },
     {
@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "PewterCity_Johto_PewterCityFruitTree1_Entry",
       "flag": "0"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "PewterCity_Johto_PewterCityFruitTree2_Entry",
       "flag": "0"
     }
   ],
@@ -138,7 +138,7 @@
       "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "PewterCity_Johto_PewterCitySign_Entry"
     },
     {
       "type": "sign",
@@ -146,7 +146,7 @@
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "PewterCity_Johto_PewterGymSign_Entry"
     },
     {
       "type": "sign",
@@ -154,7 +154,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "PewterCity_Johto_PewterMuseumSign_Entry"
     },
     {
       "type": "sign",
@@ -162,7 +162,7 @@
       "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "PewterCity_Johto_PewterCityMtMoonGiftShopSign_Entry"
     },
     {
       "type": "sign",
@@ -170,7 +170,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "PewterCity_Johto_PewterCityWelcomeSign_Entry"
     },
     {
       "type": "sign",
@@ -178,7 +178,7 @@
       "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "PewterCity_Johto_PewterCityPokecenterSign_Entry"
     },
     {
       "type": "sign",
@@ -186,7 +186,7 @@
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "PewterCity_Johto_PewterCityMartSign_Entry"
     }
   ]
 }

@@ -3890,4 +3890,6 @@
 #undef FLAGS_COUNT
 #define FLAGS_COUNT                        (FLAG_KANTO_END + 1)
 
+#include "constants/johto_flags.h"
+
 #endif // GUARD_CONSTANTS_FLAGS_H

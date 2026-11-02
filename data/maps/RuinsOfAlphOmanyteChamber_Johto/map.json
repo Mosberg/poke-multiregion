@@ -61,7 +61,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberAncientReplica_Entry"
     },
     {
       "type": "sign",
@@ -69,7 +69,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberAncientReplica_Entry"
     },
     {
       "type": "sign",
@@ -77,7 +77,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberPuzzle_Entry"
     },
     {
       "type": "sign",
@@ -85,7 +85,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberDescriptionSign_Entry"
     },
     {
       "type": "sign",
@@ -93,7 +93,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberWallPatternLeft_Entry"
     },
     {
       "type": "sign",
@@ -101,7 +101,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberWallPatternRight_Entry"
     }
   ]
 }

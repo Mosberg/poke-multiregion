@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "AzaleaTown_Johto_AzaleaTownRocket1Script_Entry",
+      "flag": "FLAG_JOHTO_AZALEA_TOWN_SLOWPOKETAIL_ROCKET"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -50,7 +50,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "AzaleaTown_Johto_AzaleaTownGrampsScript_Entry",
       "flag": "0"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "AzaleaTown_Johto_AzaleaTownTeacherScript_Entry",
       "flag": "0"
     },
     {
@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "AzaleaTown_Johto_AzaleaTownYoungsterScript_Entry",
       "flag": "0"
     },
     {
@@ -89,8 +89,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "AzaleaTown_Johto_AzaleaTownSlowpokeScript_Entry",
+      "flag": "FLAG_JOHTO_AZALEA_TOWN_SLOWPOKES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -102,8 +102,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "AzaleaTown_Johto_AzaleaTownSlowpokeScript_Entry",
+      "flag": "FLAG_JOHTO_AZALEA_TOWN_SLOWPOKES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -115,8 +115,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "AzaleaTown_Johto_AzaleaTownSlowpokeScript_Entry",
+      "flag": "FLAG_JOHTO_AZALEA_TOWN_SLOWPOKES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -128,8 +128,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "AzaleaTown_Johto_AzaleaTownSlowpokeScript_Entry",
+      "flag": "FLAG_JOHTO_AZALEA_TOWN_SLOWPOKES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -141,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "AzaleaTown_Johto_WhiteApricornTree_Entry",
       "flag": "0"
     },
     {
@@ -155,7 +155,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_RIVAL_AZALEA_TOWN"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -167,8 +167,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "AzaleaTown_Johto_AzaleaTownRocket2Script_Entry",
+      "flag": "FLAG_JOHTO_SLOWPOKE_WELL_ROCKETS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -180,8 +180,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "AzaleaTown_Johto_AzaleaTownKurtScript_Entry",
+      "flag": "FLAG_JOHTO_AZALEA_TOWN_KURT"
     }
   ],
   "warp_events": [
@@ -242,7 +242,35 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_AZALEA_TOWN",
+      "var_value": "1",
+      "script": "AzaleaTown_Johto_AzaleaTownRivalBattleScene1_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_AZALEA_TOWN",
+      "var_value": "1",
+      "script": "AzaleaTown_Johto_AzaleaTownRivalBattleScene2_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_AZALEA_TOWN",
+      "var_value": "2",
+      "script": "AzaleaTown_Johto_AzaleaTownCelebiScene_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -250,7 +278,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "AzaleaTown_Johto_AzaleaTownSign_Entry"
     },
     {
       "type": "sign",
@@ -258,7 +286,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "AzaleaTown_Johto_KurtsHouseSign_Entry"
     },
     {
       "type": "sign",
@@ -266,7 +294,7 @@
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "AzaleaTown_Johto_AzaleaGymSign_Entry"
     },
     {
       "type": "sign",
@@ -274,7 +302,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "AzaleaTown_Johto_SlowpokeWellSign_Entry"
     },
     {
       "type": "sign",
@@ -282,7 +310,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "AzaleaTown_Johto_CharcoalKilnSign_Entry"
     },
     {
       "type": "sign",
@@ -290,7 +318,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "AzaleaTown_Johto_AzaleaTownPokecenterSign_Entry"
     },
     {
       "type": "sign",
@@ -298,7 +326,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "AzaleaTown_Johto_AzaleaTownMartSign_Entry"
     },
     {
       "type": "sign",
@@ -306,7 +334,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "AzaleaTown_Johto_AzaleaTownIlextForestSign_Entry"
     },
     {
       "type": "sign",

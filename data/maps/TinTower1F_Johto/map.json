@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_SUICUNE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_RAIKOU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -53,7 +53,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_ENTEI"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -65,8 +65,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TinTower1F_Johto_TinTower1FEusine_Entry",
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_EUSINE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -78,8 +78,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TinTower1F_Johto_TinTower1FSage1Script_Entry",
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_WISE_TRIO_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -91,8 +91,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TinTower1F_Johto_TinTower1FSage2Script_Entry",
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_WISE_TRIO_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -104,8 +104,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TinTower1F_Johto_TinTower1FSage3Script_Entry",
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_WISE_TRIO_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -117,8 +117,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TinTower1F_Johto_TinTower1FSage4Script_Entry",
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_WISE_TRIO_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -130,8 +130,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TinTower1F_Johto_TinTower1FSage5Script_Entry",
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_WISE_TRIO_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -143,8 +143,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TinTower1F_Johto_TinTower1FSage6Script_Entry",
+      "flag": "FLAG_JOHTO_TIN_TOWER_1F_WISE_TRIO_2"
     }
   ],
   "warp_events": [

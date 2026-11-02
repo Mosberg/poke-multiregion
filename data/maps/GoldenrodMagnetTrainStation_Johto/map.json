@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerScript_Entry",
       "flag": "0"
     },
     {
@@ -39,8 +39,8 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationGentlemanScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_TRAIN_STATION_GENTLEMAN"
     }
   ],
   "warp_events": [
@@ -73,6 +73,16 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_GOLDENROD_MAGNET_TRAIN_STATION",
+      "var_value": "0",
+      "script": "GoldenrodMagnetTrainStation_Johto_Script_ArriveFromSaffron_Entry"
+    }
+  ],
   "bg_events": []
 }

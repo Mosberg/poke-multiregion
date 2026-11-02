@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodDeptStoreRoof_Johto_GoldenrodDeptStoreRoofClerkScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_SALE_OFF"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStoreRoof_Johto_GoldenrodDeptStoreRoofPokefanFScript_Entry",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodDeptStoreRoof_Johto_GoldenrodDeptStoreRoofFisherScript_Entry",
       "flag": "0"
     },
     {
@@ -65,8 +65,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodDeptStoreRoof_Johto_GoldenrodDeptStoreRoofTwinScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_SALE_ON"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -78,8 +78,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodDeptStoreRoof_Johto_GoldenrodDeptStoreRoofSuperNerdScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_SALE_ON"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -91,8 +91,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodDeptStoreRoof_Johto_GoldenrodDeptStoreRoofPokefanMScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_SALE_OFF"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
@@ -104,8 +104,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodDeptStoreRoof_Johto_GoldenrodDeptStoreRoofTeacherScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_SALE_OFF"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
@@ -117,8 +117,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodDeptStoreRoof_Johto_GoldenrodDeptStoreRoofBugCatcherScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_SALE_OFF"
     }
   ],
   "warp_events": [
@@ -138,7 +138,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodDeptStoreRoof_Johto_Binoculars1_Entry"
     },
     {
       "type": "sign",
@@ -146,7 +146,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodDeptStoreRoof_Johto_Binoculars2_Entry"
     },
     {
       "type": "sign",
@@ -154,7 +154,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodDeptStoreRoof_Johto_Binoculars3_Entry"
     },
     {
       "type": "sign",
@@ -162,7 +162,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodDeptStoreRoof_Johto_PokeDollVendingMachine_Entry"
     }
   ]
 }

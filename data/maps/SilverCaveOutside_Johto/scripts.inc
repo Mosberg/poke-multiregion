@@ -1,2 +1,34 @@
 SilverCaveOutside_Johto_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SilverCaveOutside_Johto_OnTransition
 	.byte 0
+
+SilverCaveOutside_Johto_OnTransition:
+	call SilverCaveOutside_Johto_SilverCaveOutsideFlypointCallback_Sub
+	end
+
+SilverCaveOutside_Johto_MtSilverPokecenterSign_Entry::
+	lockall
+	goto SilverCaveOutside_Johto_MtSilverPokecenterSign
+
+SilverCaveOutside_Johto_MtSilverSign_Entry::
+	lockall
+	goto SilverCaveOutside_Johto_MtSilverSign
+
+
+SilverCaveOutside_Johto_MtSilverPokecenterSign:
+	goto Johto_Std_PokecenterSignScript
+
+SilverCaveOutside_Johto_MtSilverSign:
+	message SilverCaveOutside_Johto_MtSilverSignText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+SilverCaveOutside_Johto_SilverCaveOutsideFlypointCallback_Sub:
+	setflag FLAG_JOHTO_ENGINE_FLYPOINT_SILVER_CAVE
+	return
+
+SilverCaveOutside_Johto_MtSilverSignText:
+	.string "MT.SILVER$"

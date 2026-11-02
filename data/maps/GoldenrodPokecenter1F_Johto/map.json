@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1FNurseScript_Entry",
       "flag": "0"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1FGameboyKidScript_Entry",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1FLassScript_Entry",
       "flag": "0"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1FPokefanF_Entry",
       "flag": "0"
     }
   ],
@@ -99,6 +99,25 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_GOLDENROD_POKECENTER_1F",
+      "var_value": "0",
+      "script": "GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1F_GSBallSceneLeft_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_GOLDENROD_POKECENTER_1F",
+      "var_value": "0",
+      "script": "GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1F_GSBallSceneRight_Entry"
+    }
+  ],
   "bg_events": []
 }

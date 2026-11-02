@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "BlackthornCity_Johto_BlackthornSuperNerdScript_Entry",
+      "flag": "FLAG_JOHTO_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "BlackthornCity_Johto_BlackthornSuperNerdScript_Entry",
+      "flag": "FLAG_JOHTO_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -63,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "BlackthornCity_Johto_BlackthornGramps1Script_Entry",
+      "flag": "FLAG_JOHTO_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -76,8 +76,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "BlackthornCity_Johto_BlackthornGramps2Script_Entry",
+      "flag": "FLAG_JOHTO_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "BlackthornCity_Johto_BlackthornBlackBeltScript_Entry",
       "flag": "0"
     },
     {
@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "BlackthornCity_Johto_BlackthornCooltrainerF1Script_Entry",
       "flag": "0"
     },
     {
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "BlackthornCity_Johto_BlackthornYoungsterScript_Entry",
       "flag": "0"
     },
     {
@@ -128,8 +128,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "BlackthornCity_Johto_SantosScript_Entry",
+      "flag": "FLAG_JOHTO_BLACKTHORN_CITY_SANTOS_OF_SATURDAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
@@ -141,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "BlackthornCity_Johto_BlackthornCooltrainerF2Script_Entry",
       "flag": "0"
     }
   ],
@@ -211,7 +211,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "BlackthornCity_Johto_BlackthornCitySign_Entry"
     },
     {
       "type": "sign",
@@ -219,7 +219,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "BlackthornCity_Johto_BlackthornGymSign_Entry"
     },
     {
       "type": "sign",
@@ -227,7 +227,7 @@
       "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "BlackthornCity_Johto_MoveDeletersHouseSign_Entry"
     },
     {
       "type": "sign",
@@ -235,7 +235,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "BlackthornCity_Johto_DragonDensSign_Entry"
     },
     {
       "type": "sign",
@@ -243,7 +243,7 @@
       "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "BlackthornCity_Johto_BlackthornCityTrainerTips_Entry"
     },
     {
       "type": "sign",
@@ -251,7 +251,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "BlackthornCity_Johto_BlackthornCityMartSign_Entry"
     },
     {
       "type": "sign",
@@ -259,7 +259,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "BlackthornCity_Johto_BlackthornCityPokecenterSign_Entry"
     }
   ]
 }

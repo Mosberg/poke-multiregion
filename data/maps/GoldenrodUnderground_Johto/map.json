@@ -79,7 +79,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_GOLDENROD_UNDERGROUND_COIN_CASE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -91,8 +91,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodUnderground_Johto_BargainMerchantScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -104,8 +104,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodUnderground_Johto_OlderHaircutBrotherScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -117,8 +117,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodUnderground_Johto_YoungerHaircutBrotherScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
@@ -130,8 +130,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodUnderground_Johto_BitterMerchantScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRANNY"
     }
   ],
   "warp_events": [
@@ -186,7 +186,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodUnderground_Johto_BasementDoorScript_Entry"
     },
     {
       "type": "sign",
@@ -194,7 +194,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodUnderground_Johto_GoldenrodUndergroundNoEntrySign_Entry"
     },
     {
       "type": "sign",

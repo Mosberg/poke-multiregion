@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "DayCare_Johto_DayCareManScript_Inside_Entry",
+      "flag": "FLAG_JOHTO_DAY_CARE_MAN_IN_DAY_CARE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "DayCare_Johto_DayCareLadyScript_Entry",
       "flag": "0"
     }
   ],
@@ -81,7 +81,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "DayCare_Johto_DayCareBookshelf_Entry"
     },
     {
       "type": "sign",
@@ -89,7 +89,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "DayCare_Johto_DayCareBookshelf_Entry"
     }
   ]
 }

@@ -1,2 +1,303 @@
 GoldenrodUndergroundSwitchRoomEntrances_Johto_MapScripts::
 	.byte 0
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrancesTeacherScript_Entry::
+	lockall
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrancesTeacherScript
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript_Entry::
+	lockall
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch1Script_Entry::
+	lockall
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch1Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch2Script_Entry::
+	lockall
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch2Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch3Script_Entry::
+	lockall
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch3Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_EmergencySwitchScript_Entry::
+	lockall
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_EmergencySwitchScript
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalScene1_Entry::
+	lockall
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalScene1
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalScene2_Entry::
+	lockall
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalScene2
+
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript:
+	faceplayer
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrancesTeacherScript:
+	faceplayer
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_TeacherText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalScene1:
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	fadeoutbgm 4
+	delay 15
+	playse SE_EXIT
+	clearflag FLAG_JOHTO_RIVAL_GOLDENROD_UNDERGROUND
+	addobject 11
+	waitse
+	applymovement 11, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalApproachMovement1
+	waitmovement 11
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	call GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Sub
+	applymovement 11, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalRetreatMovement1
+	waitmovement 11
+	playse SE_EXIT
+	removeobject 11
+	setvar VAR_JOHTO_SCENE_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1
+	waitse
+	fadedefaultbgm
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalScene2:
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	fadeoutbgm 4
+	delay 15
+	playse SE_EXIT
+	clearflag FLAG_JOHTO_RIVAL_GOLDENROD_UNDERGROUND
+	addobject 11
+	waitse
+	applymovement 11, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalApproachMovement2
+	waitmovement 11
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	call GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Sub
+	applymovement 11, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalRetreatMovement2
+	waitmovement 11
+	playse SE_EXIT
+	removeobject 11
+	setvar VAR_JOHTO_SCENE_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1
+	waitse
+	fadedefaultbgm
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch1Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Switch1
+	waitmessage
+	waitbuttonpress
+	goto_if_set FLAG_JOHTO_SWITCH_1, GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch1Script_On
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OffTurnOn
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle
+	@ TODO unsupported: readmem wUndergroundSwitchPositions
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch1Script_On:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OnTurnOff
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle
+	@ TODO unsupported: readmem wUndergroundSwitchPositions
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch2Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Switch2
+	waitmessage
+	waitbuttonpress
+	goto_if_set FLAG_JOHTO_SWITCH_2, GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch2Script_On
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OffTurnOn
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle
+	@ TODO unsupported: readmem wUndergroundSwitchPositions
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch2Script_On:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OnTurnOff
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle
+	@ TODO unsupported: readmem wUndergroundSwitchPositions
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch3Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Switch3
+	waitmessage
+	waitbuttonpress
+	goto_if_set FLAG_JOHTO_SWITCH_3, GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch3Script_On
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OffTurnOn
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle
+	@ TODO unsupported: readmem wUndergroundSwitchPositions
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch3Script_On:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OnTurnOff
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle
+	@ TODO unsupported: readmem wUndergroundSwitchPositions
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_EmergencySwitchScript:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Emergency
+	waitmessage
+	waitbuttonpress
+	goto_if_set FLAG_JOHTO_EMERGENCY_SWITCH, GoldenrodUndergroundSwitchRoomEntrances_Johto_EmergencySwitchScript_On
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OffTurnOn
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle
+	setvar VAR_RESULT, 7
+	@ TODO unsupported: writemem wUndergroundSwitchPositions
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_EmergencySwitchScript_On:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OnTurnOff
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: writemem wUndergroundSwitchPositions
+	goto Johto_EventScript_Unimplemented
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_DontToggle:
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Sub:
+	goto_if_set FLAG_JOHTO_RIVAL_BURNED_TOWER, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Continue_Sub
+	setflag FLAG_JOHTO_RIVAL_BURNED_TOWER
+	setvar VAR_JOHTO_SCENE_BURNED_TOWER_1F, 1
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Continue_Sub:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBeforeText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_RIVAL_GOLDENROD_UNDERGROUND
+	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Totodile_Sub
+	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Chikorita_Sub
+	@ TODO unsupported: winlosstext UndergroundRivalWinText, UndergroundRivalLossText
+	return
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Totodile_Sub:
+	@ TODO unsupported: winlosstext UndergroundRivalWinText, UndergroundRivalLossText
+	return
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Chikorita_Sub:
+	@ TODO unsupported: winlosstext UndergroundRivalWinText, UndergroundRivalLossText
+	return
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalApproachMovement1:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalApproachMovement2:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalRetreatMovement1:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalRetreatMovement2:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBeforeText:
+	.string "Hold it!"
+	.string "\pI saw you, so I\n"
+	.string "tailed you."
+	.string "\pI don't need you\n"
+	.string "underfoot while I"
+	.string "\ptake care of TEAM\n"
+	.string "ROCKET."
+	.string "\p…Wait a second.\n"
+	.string "You beat me be-\l"
+	.string "fore, didn't you?"
+	.string "\pThat was just a\n"
+	.string "fluke."
+	.string "\pBut I repay my\n"
+	.string "debts!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText:
+	.string "I was challenged\n"
+	.string "to a battle down-\l"
+	.string "stairs."
+	.string "\pIt's rough down\n"
+	.string "there. You'd\l"
+	.string "better be careful.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_TeacherText:
+	.string "There are some\n"
+	.string "shops downstairs…"
+	.string "\pBut there are\n"
+	.string "also trainers."
+	.string "\pI'm scared to go\n"
+	.string "down there.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Switch1:
+	.string "It's labeled\n"
+	.string "SWITCH 1.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OffTurnOn:
+	.string "It's OFF.\n"
+	.string "Turn it ON?$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OnTurnOff:
+	.string "It's ON.\n"
+	.string "Turn it OFF?$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Switch2:
+	.string "It's labeled\n"
+	.string "SWITCH 2.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Switch3:
+	.string "It's labeled\n"
+	.string "SWITCH 3.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Emergency:
+	.string "It's labeled\n"
+	.string "EMERGENCY.$"

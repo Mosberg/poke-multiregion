@@ -42,7 +42,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route29_Johto_CatchingTutorialDudeScript_Entry",
       "flag": "0"
     },
     {
@@ -55,7 +55,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route29_Johto_Route29YoungsterScript_Entry",
       "flag": "0"
     },
     {
@@ -68,7 +68,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route29_Johto_Route29TeacherScript_Entry",
       "flag": "0"
     },
     {
@@ -81,7 +81,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route29_Johto_Route29FruitTree_Entry",
       "flag": "0"
     },
     {
@@ -94,7 +94,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route29_Johto_Route29FisherScript_Entry",
       "flag": "0"
     },
     {
@@ -107,7 +107,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route29_Johto_Route29CooltrainerMScript_Entry",
       "flag": "0"
     },
     {
@@ -120,8 +120,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "Route29_Johto_TuscanyScript_Entry",
+      "flag": "FLAG_JOHTO_ROUTE_29_TUSCANY_OF_TUESDAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -134,7 +134,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_29_POTION"
     }
   ],
   "warp_events": [
@@ -146,7 +146,26 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 53,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_ROUTE_29",
+      "var_value": "1",
+      "script": "Route29_Johto_Route29Tutorial1_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 53,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_ROUTE_29",
+      "var_value": "1",
+      "script": "Route29_Johto_Route29Tutorial2_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -154,7 +173,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route29_Johto_Route29Sign1_Entry"
     },
     {
       "type": "sign",
@@ -162,7 +181,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route29_Johto_Route29Sign2_Entry"
     }
   ]
 }

@@ -52,6 +52,16 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TRAINER_HOUSE_B1F",
+      "var_value": "0",
+      "script": "TrainerHouseB1F_Johto_TrainerHouseReceptionistScript_Entry"
+    }
+  ],
   "bg_events": []
 }

@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_EXECUTIVE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_EXECUTIVE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -53,7 +53,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_LANCE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -66,7 +66,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_DRAGONITE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -78,8 +78,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TeamRocketBaseB2F_Johto_RocketElectrode1_Entry",
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -91,8 +91,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TeamRocketBaseB2F_Johto_RocketElectrode2_Entry",
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -104,8 +104,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "TeamRocketBaseB2F_Johto_RocketElectrode3_Entry",
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -118,7 +118,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -131,7 +131,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -144,7 +144,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -157,7 +157,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -170,7 +170,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -183,7 +183,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -196,7 +196,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_TM_THIEF"
     }
   ],
   "warp_events": [
@@ -236,7 +236,89 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "0",
+      "script": "TeamRocketBaseB2F_Johto_LanceHealsScript1_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "0",
+      "script": "TeamRocketBaseB2F_Johto_LanceHealsScript2_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "1",
+      "script": "TeamRocketBaseB2F_Johto_RocketBaseBossFLeft_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "1",
+      "script": "TeamRocketBaseB2F_Johto_RocketBaseBossFRight_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "2",
+      "script": "TeamRocketBaseB2F_Johto_RocketBaseCantLeaveScript_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "2",
+      "script": "TeamRocketBaseB2F_Johto_RocketBaseCantLeaveScript_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "2",
+      "script": "TeamRocketBaseB2F_Johto_RocketBaseLancesSideScript_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "2",
+      "script": "TeamRocketBaseB2F_Johto_RocketBaseLancesSideScript_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F",
+      "var_value": "2",
+      "script": "TeamRocketBaseB2F_Johto_RocketBaseLancesSideScript_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -260,7 +342,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -268,7 +350,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -276,7 +358,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -284,7 +366,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -292,7 +374,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -300,7 +382,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -308,7 +390,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -316,7 +398,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -324,7 +406,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -332,7 +414,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -340,7 +422,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -348,7 +430,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -356,7 +438,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -364,7 +446,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -372,7 +454,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -380,7 +462,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -388,7 +470,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -396,7 +478,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -404,7 +486,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",
@@ -412,7 +494,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry"
     },
     {
       "type": "sign",

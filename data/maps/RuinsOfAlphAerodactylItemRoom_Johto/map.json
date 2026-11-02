@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_PICKED_UP_GOLD_BERRY_FROM_AERODACTYL_ITEM_ROOM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_PICKED_UP_MOON_STONE_FROM_AERODACTYL_ITEM_ROOM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -53,7 +53,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_PICKED_UP_HEAL_POWDER_FROM_AERODACTYL_ITEM_ROOM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -66,7 +66,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_PICKED_UP_ENERGY_ROOT_FROM_AERODACTYL_ITEM_ROOM"
     }
   ],
   "warp_events": [
@@ -107,7 +107,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphAerodactylItemRoom_Johto_RuinsOfAlphAerodactylItemRoomAncientReplica_Entry"
     },
     {
       "type": "sign",
@@ -115,7 +115,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RuinsOfAlphAerodactylItemRoom_Johto_RuinsOfAlphAerodactylItemRoomAncientReplica_Entry"
     }
   ]
 }

@@ -33,7 +33,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RedsHouse2F_Johto_RedsHouse2FN64Script_Entry"
     },
     {
       "type": "sign",
@@ -41,7 +41,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "RedsHouse2F_Johto_RedsHouse2FPCScript_Entry"
     }
   ]
 }

@@ -1,2 +1,711 @@
 TeamRocketBaseB1F_Johto_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, TeamRocketBaseB1F_Johto_OnTransition
 	.byte 0
+
+TeamRocketBaseB1F_Johto_OnTransition:
+	call TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHideSecurityGruntCallback_Sub
+	end
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecurityCamera_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecurityCamera
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FBookshelf_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_TeamRocketBaseB1FBookshelf
+
+TeamRocketBaseB1F_Johto_SecurityCamera1a_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_SecurityCamera1a
+
+TeamRocketBaseB1F_Johto_SecurityCamera1b_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_SecurityCamera1b
+
+TeamRocketBaseB1F_Johto_SecurityCamera2a_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_SecurityCamera2a
+
+TeamRocketBaseB1F_Johto_SecurityCamera2b_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_SecurityCamera2b
+
+TeamRocketBaseB1F_Johto_SecurityCamera3a_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_SecurityCamera3a
+
+TeamRocketBaseB1F_Johto_SecurityCamera3b_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_SecurityCamera3b
+
+TeamRocketBaseB1F_Johto_SecurityCamera4_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_SecurityCamera4
+
+TeamRocketBaseB1F_Johto_SecurityCamera5_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_SecurityCamera5
+
+TeamRocketBaseB1F_Johto_ExplodingTrap1_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap1
+
+TeamRocketBaseB1F_Johto_ExplodingTrap2_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap2
+
+TeamRocketBaseB1F_Johto_ExplodingTrap3_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap3
+
+TeamRocketBaseB1F_Johto_ExplodingTrap4_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap4
+
+TeamRocketBaseB1F_Johto_ExplodingTrap5_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap5
+
+TeamRocketBaseB1F_Johto_ExplodingTrap6_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap6
+
+TeamRocketBaseB1F_Johto_ExplodingTrap7_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap7
+
+TeamRocketBaseB1F_Johto_ExplodingTrap8_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap8
+
+TeamRocketBaseB1F_Johto_ExplodingTrap9_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap9
+
+TeamRocketBaseB1F_Johto_ExplodingTrap10_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap10
+
+TeamRocketBaseB1F_Johto_ExplodingTrap11_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap11
+
+TeamRocketBaseB1F_Johto_ExplodingTrap12_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap12
+
+TeamRocketBaseB1F_Johto_ExplodingTrap13_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap13
+
+TeamRocketBaseB1F_Johto_ExplodingTrap14_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap14
+
+TeamRocketBaseB1F_Johto_ExplodingTrap15_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap15
+
+TeamRocketBaseB1F_Johto_ExplodingTrap16_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap16
+
+TeamRocketBaseB1F_Johto_ExplodingTrap17_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap17
+
+TeamRocketBaseB1F_Johto_ExplodingTrap18_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap18
+
+TeamRocketBaseB1F_Johto_ExplodingTrap19_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap19
+
+TeamRocketBaseB1F_Johto_ExplodingTrap20_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap20
+
+TeamRocketBaseB1F_Johto_ExplodingTrap21_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap21
+
+TeamRocketBaseB1F_Johto_ExplodingTrap22_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_ExplodingTrap22
+
+
+TeamRocketBaseB1F_Johto_SecurityCamera1a:
+	goto_if_set FLAG_JOHTO_SECURITY_CAMERA_1, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	goto_if_set FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 19, 2
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement1
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 19, 2
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement1
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	setflag FLAG_JOHTO_SECURITY_CAMERA_1
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_SecurityCamera1b:
+	goto_if_set FLAG_JOHTO_SECURITY_CAMERA_1, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	goto_if_set FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 19, 3
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement1
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 19, 3
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement1
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	setflag FLAG_JOHTO_SECURITY_CAMERA_1
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_SecurityCamera2a:
+	goto_if_set FLAG_JOHTO_SECURITY_CAMERA_2, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	goto_if_set FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 4, 7
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement2
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm 1, 12, 5
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement3
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	setflag FLAG_JOHTO_SECURITY_CAMERA_2
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_SecurityCamera2b:
+	goto_if_set FLAG_JOHTO_SECURITY_CAMERA_2, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	goto_if_set FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 4, 8
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement4
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm 1, 12, 5
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement5
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	setflag FLAG_JOHTO_SECURITY_CAMERA_2
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_SecurityCamera3a:
+	goto_if_set FLAG_JOHTO_SECURITY_CAMERA_3, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	goto_if_set FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 19, 6
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement1
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm 1, 25, 11
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement6
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	setflag FLAG_JOHTO_SECURITY_CAMERA_3
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_SecurityCamera3b:
+	goto_if_set FLAG_JOHTO_SECURITY_CAMERA_3, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	goto_if_set FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 19, 7
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement1
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm 1, 25, 12
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement7
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	setflag FLAG_JOHTO_SECURITY_CAMERA_3
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_SecurityCamera4:
+	goto_if_set FLAG_JOHTO_SECURITY_CAMERA_4, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	goto_if_set FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 17, 16
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement1
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm 1, 25, 11
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement8
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	setflag FLAG_JOHTO_SECURITY_CAMERA_4
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_SecurityCamera5:
+	goto_if_set FLAG_JOHTO_SECURITY_CAMERA_5, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	goto_if_set FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	setobjectxyperm 1, 3, 16
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement1
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	call TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playbgm MUS_DUMMY, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm 1, 14, 16
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
+	addobject 1
+	applymovement 1, TeamRocketBaseB1F_Johto_SecurityCameraMovement9
+	waitmovement 1
+	call TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub
+	goto_if_eq VAR_RESULT, TRUE, TeamRocketBaseB1F_Johto_NoSecurityCamera
+	setflag FLAG_JOHTO_SECURITY_CAMERA_5
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_NoSecurityCamera:
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_ExplodingTrap1:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_1, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap2:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_2, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap3:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_3, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap4:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_4, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap5:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_5, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap6:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_6, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap7:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_7, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap8:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_8, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap9:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_9, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap10:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_10, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap11:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_11, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap12:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_12, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap13:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_13, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap14:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_14, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap15:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_15, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap16:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_16, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap17:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_17, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap18:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_18, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap19:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_19, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap20:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_20, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap21:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_21, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_ExplodingTrap22:
+	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_22, TeamRocketBaseB1F_Johto_NoExplodingTrap
+	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
+	@ TODO unsupported: reloadmapafterbattle 
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_NoExplodingTrap:
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecurityCamera:
+	message TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecurityCameraText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FBookshelf:
+	goto Johto_Std_TeamRocketOathScript
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch:
+	goto_if_set FLAG_JOHTO_TURNED_OFF_SECURITY_CAMERAS, TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_SecretSwitchOff
+	message TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitchText
+	waitmessage
+	@ TODO unsupported: playsound SFX_TALLY
+	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_SecretSwitchOff:
+	message TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSwitchOffText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHideSecurityGruntCallback_Sub:
+	removeobject 1
+	return
+
+TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub:
+	message TeamRocketBaseB1F_Johto_CameraGrunt1SeenText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	@ TODO unsupported: winlosstext CameraGrunt1BeatenText, 0
+	return
+
+TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub:
+	message TeamRocketBaseB1F_Johto_CameraGrunt2SeenText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	@ TODO unsupported: winlosstext CameraGrunt2BeatenText, 0
+	return
+
+TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub:
+	@ TODO unsupported: playsound SFX_LICK
+	return
+
+TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub:
+	@ TODO unsupported: special FadeOutToWhite
+	return
+
+TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub:
+	@ TODO unsupported: special FadeOutToWhite
+	return
+
+TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub:
+	@ TODO unsupported: special FadeOutToWhite
+	return
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement1:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement2:
+	walk_fast_up
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	face_right
+	step_end
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement3:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement4:
+	jump_up
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	face_right
+	step_end
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement5:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement6:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement7:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement8:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB1F_Johto_SecurityCameraMovement9:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+TeamRocketBaseB1F_Johto_CameraGrunt1SeenText:
+	.string "Hey!\n"
+	.string "Intruder alert!$"
+
+TeamRocketBaseB1F_Johto_CameraGrunt2SeenText:
+	.string "It's my turn!\n"
+	.string "There's no escape!$"
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecurityCameraText:
+	.string "It's a PERSIAN\n"
+	.string "statue…"
+	.string "\pIts eyes are oddly\n"
+	.string "shiny.$"
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitchText:
+	.string "A secret switch!\n"
+	.string "Better press it.$"
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSwitchOffText:
+	.string "The switch is\n"
+	.string "turned off.$"

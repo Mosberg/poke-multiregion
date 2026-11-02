@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCoinVendorScript_Entry",
       "flag": "0"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerTMVendorScript_Entry",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerPrizeMonVendorScript_Entry",
       "flag": "0"
     },
     {
@@ -65,20 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 8,
-      "y": 7,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerPharmacistScript_Entry",
       "flag": "0"
     },
     {
@@ -91,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerPokefanM1Script_Entry",
       "flag": "0"
     },
     {
@@ -104,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCooltrainerMScript_Entry",
       "flag": "0"
     },
     {
@@ -117,7 +104,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerPokefanFScript_Entry",
       "flag": "0"
     },
     {
@@ -130,7 +117,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCooltrainerFScript_Entry",
       "flag": "0"
     },
     {
@@ -143,7 +130,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerGentlemanScript_Entry",
       "flag": "0"
     },
     {
@@ -156,7 +143,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerPokefanM2Script_Entry",
       "flag": "0"
     },
     {
@@ -169,8 +156,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "GoldenrodGameCorner_Johto_MoveTutorInsideScript_Entry",
+      "flag": "FLAG_JOHTO_GOLDENROD_GAME_CORNER_MOVE_TUTOR"
     }
   ],
   "warp_events": [
@@ -197,7 +184,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -205,7 +192,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -213,7 +200,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -221,7 +208,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -229,7 +216,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -237,7 +224,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -245,7 +232,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -253,7 +240,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerLuckySlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -261,7 +248,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -269,7 +256,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -277,7 +264,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -285,7 +272,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -293,7 +280,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -301,7 +288,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -309,7 +296,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -317,7 +304,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -325,7 +312,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -333,7 +320,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -341,7 +328,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -349,7 +336,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -357,7 +344,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -365,7 +352,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -373,7 +360,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -381,7 +368,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -389,7 +376,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -397,7 +384,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -405,7 +392,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -413,7 +400,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -421,7 +408,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -429,7 +416,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript_Entry"
     },
     {
       "type": "sign",
@@ -437,7 +424,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
-      "script": "Johto_EventScript_StubSign"
+      "script": "GoldenrodGameCorner_Johto_GoldenrodGameCornerLeftTheirDrinkScript_Entry"
     }
   ]
 }

@@ -26,7 +26,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SlowpokeWellB2F_Johto_SlowpokeWellB2FGymGuideScript_Entry",
       "flag": "0"
     },
     {
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_SLOWPOKE_WELL_B2F_TM_RAIN_DANCE"
     }
   ],
   "warp_events": [

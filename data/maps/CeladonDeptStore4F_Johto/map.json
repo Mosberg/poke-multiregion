@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CeladonDeptStore4F_Johto_CeladonDeptStore4FClerkScript_Entry",
       "flag": "0"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CeladonDeptStore4F_Johto_CeladonDeptStore4FSuperNerdScript_Entry",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CeladonDeptStore4F_Johto_CeladonDeptStore4FYoungsterScript_Entry",
       "flag": "0"
     }
   ],
@@ -87,7 +87,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CeladonDeptStore4F_Johto_CeladonDeptStore4FDirectory_Entry"
     },
     {
       "type": "sign",
@@ -95,7 +95,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CeladonDeptStore4F_Johto_CeladonDeptStore4FElevatorButton_Entry"
     }
   ]
 }

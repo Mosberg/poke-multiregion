@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "CherrygroveCity_Johto_CherrygroveCityGuideGent_Entry",
+      "flag": "FLAG_JOHTO_GUIDE_GENT_IN_HIS_HOUSE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_RIVAL_CHERRYGROVE_CITY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CherrygroveCity_Johto_CherrygroveTeacherScript_Entry",
       "flag": "0"
     },
     {
@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CherrygroveCity_Johto_CherrygroveYoungsterScript_Entry",
       "flag": "0"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "CherrygroveCity_Johto_MysticWaterGuy_Entry",
       "flag": "0"
     }
   ],
@@ -130,7 +130,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_CHERRYGROVE_CITY",
+      "var_value": "1",
+      "script": "CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_CHERRYGROVE_CITY",
+      "var_value": "1",
+      "script": "CherrygroveCity_Johto_CherrygroveRivalSceneSouth_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -138,7 +157,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CherrygroveCity_Johto_CherrygroveCitySign_Entry"
     },
     {
       "type": "sign",
@@ -146,7 +165,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CherrygroveCity_Johto_GuideGentsHouseSign_Entry"
     },
     {
       "type": "sign",
@@ -154,7 +173,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CherrygroveCity_Johto_CherrygroveCityMartSign_Entry"
     },
     {
       "type": "sign",
@@ -162,7 +181,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "CherrygroveCity_Johto_CherrygroveCityPokecenterSign_Entry"
     }
   ]
 }

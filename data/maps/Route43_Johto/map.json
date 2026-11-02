@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route43_Johto_Route43FruitTree_Entry",
       "flag": "0"
     },
     {
@@ -129,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_43_MAX_ETHER"
     }
   ],
   "warp_events": [
@@ -177,7 +177,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route43_Johto_Route43Sign1_Entry"
     },
     {
       "type": "sign",
@@ -185,7 +185,7 @@
       "y": 49,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route43_Johto_Route43Sign2_Entry"
     },
     {
       "type": "sign",
@@ -193,7 +193,7 @@
       "y": 38,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route43_Johto_Route43TrainerTips_Entry"
     }
   ]
 }

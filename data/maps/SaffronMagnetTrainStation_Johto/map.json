@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerScript_Entry",
       "flag": "0"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationGymGuideScript_Entry",
       "flag": "0"
     },
     {
@@ -52,8 +52,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationTeacherScript_Entry",
+      "flag": "FLAG_JOHTO_SAFFRON_TRAIN_STATION_POPULATION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -65,8 +65,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationLassScript_Entry",
+      "flag": "FLAG_JOHTO_SAFFRON_TRAIN_STATION_POPULATION"
     }
   ],
   "warp_events": [
@@ -99,6 +99,16 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_SAFFRON_MAGNET_TRAIN_STATION",
+      "var_value": "0",
+      "script": "SaffronMagnetTrainStation_Johto_Script_ArriveFromGoldenrod_Entry"
+    }
+  ],
   "bg_events": []
 }

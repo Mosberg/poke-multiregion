@@ -42,8 +42,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "MahoganyTown_Johto_MahoganyTownPokefanMScript_Entry",
+      "flag": "FLAG_JOHTO_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -55,7 +55,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MahoganyTown_Johto_MahoganyTownGrampsScript_Entry",
       "flag": "0"
     },
     {
@@ -68,8 +68,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "MahoganyTown_Johto_MahoganyTownFisherScript_Entry",
+      "flag": "FLAG_JOHTO_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -81,8 +81,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "MahoganyTown_Johto_MahoganyTownLassScript_Entry",
+      "flag": "FLAG_JOHTO_MAHOGANY_MART_OWNERS"
     }
   ],
   "warp_events": [
@@ -122,7 +122,26 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_MAHOGANY_TOWN",
+      "var_value": "0",
+      "script": "MahoganyTown_Johto_MahoganyTownTryARageCandyBarScript_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_MAHOGANY_TOWN",
+      "var_value": "0",
+      "script": "MahoganyTown_Johto_MahoganyTownTryARageCandyBarScript_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -130,7 +149,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "MahoganyTown_Johto_MahoganyTownSign_Entry"
     },
     {
       "type": "sign",
@@ -138,7 +157,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "MahoganyTown_Johto_MahoganyTownRagecandybarSign_Entry"
     },
     {
       "type": "sign",
@@ -146,7 +165,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "MahoganyTown_Johto_MahoganyGymSign_Entry"
     },
     {
       "type": "sign",
@@ -154,7 +173,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "MahoganyTown_Johto_MahoganyTownPokecenterSign_Entry"
     }
   ]
 }

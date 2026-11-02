@@ -42,7 +42,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "LavenderTown_Johto_LavenderTownPokefanMScript_Entry",
       "flag": "0"
     },
     {
@@ -55,7 +55,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "LavenderTown_Johto_LavenderTownTeacherScript_Entry",
       "flag": "0"
     },
     {
@@ -68,7 +68,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "LavenderTown_Johto_LavenderTownGrampsScript_Entry",
       "flag": "0"
     },
     {
@@ -81,7 +81,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "LavenderTown_Johto_LavenderTownYoungsterScript_Entry",
       "flag": "0"
     }
   ],
@@ -144,7 +144,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "LavenderTown_Johto_LavenderTownSign_Entry"
     },
     {
       "type": "sign",
@@ -152,7 +152,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "LavenderTown_Johto_KantoRadioStationSign_Entry"
     },
     {
       "type": "sign",
@@ -160,7 +160,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "LavenderTown_Johto_VolunteerPokemonHouseSign_Entry"
     },
     {
       "type": "sign",
@@ -168,7 +168,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "LavenderTown_Johto_SoulHouseSign_Entry"
     },
     {
       "type": "sign",
@@ -176,7 +176,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "LavenderTown_Johto_LavenderPokecenterSignText_Entry"
     },
     {
       "type": "sign",
@@ -184,7 +184,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "LavenderTown_Johto_LavenderMartSignText_Entry"
     }
   ]
 }

@@ -116,7 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_27_TM_SOLARBEAM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -129,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_ROUTE_27_RARE_CANDY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -141,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route27_Johto_Route27FisherScript_Entry",
       "flag": "0"
     }
   ],
@@ -168,7 +168,26 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_ROUTE_27",
+      "var_value": "0",
+      "script": "Route27_Johto_FirstStepIntoKantoLeftScene_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_ROUTE_27",
+      "var_value": "0",
+      "script": "Route27_Johto_FirstStepIntoKantoRightScene_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -176,7 +195,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "Route27_Johto_TohjoFallsSign_Entry"
     }
   ]
 }

@@ -66,7 +66,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_UNION_CAVE_B2F_ELIXER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -79,7 +79,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_UNION_CAVE_B2F_HYPER_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -91,8 +91,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "UnionCaveB2F_Johto_UnionCaveLapras_Entry",
+      "flag": "FLAG_JOHTO_UNION_CAVE_B2F_LAPRAS"
     }
   ],
   "warp_events": [

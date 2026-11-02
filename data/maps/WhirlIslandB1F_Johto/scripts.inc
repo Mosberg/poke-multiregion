@@ -1,2 +1,10 @@
 WhirlIslandB1F_Johto_MapScripts::
 	.byte 0
+
+WhirlIslandB1F_Johto_WhirlIslandB1FBoulder_Entry::
+	lockall
+	goto WhirlIslandB1F_Johto_WhirlIslandB1FBoulder
+
+
+WhirlIslandB1F_Johto_WhirlIslandB1FBoulder:
+	goto Johto_Std_StrengthBoulderScript

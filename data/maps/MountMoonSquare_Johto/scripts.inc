@@ -1,2 +1,53 @@
 MountMoonSquare_Johto_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MountMoonSquare_Johto_OnTransition
 	.byte 0
+
+MountMoonSquare_Johto_OnTransition:
+	call MountMoonSquare_Johto_MountMoonSquareDisappearMoonStoneCallback_Sub
+	call MountMoonSquare_Johto_MountMoonSquareDisappearRockCallback_Sub
+	end
+
+MountMoonSquare_Johto_MtMoonSquareRock_Entry::
+	lockall
+	goto MountMoonSquare_Johto_MtMoonSquareRock
+
+MountMoonSquare_Johto_DontLitterSign_Entry::
+	lockall
+	goto MountMoonSquare_Johto_DontLitterSign
+
+MountMoonSquare_Johto_ClefairyDance_Entry::
+	lockall
+	goto MountMoonSquare_Johto_ClefairyDance
+
+
+MountMoonSquare_Johto_ClefairyDance:
+	goto_if_set FLAG_JOHTO_ENGINE_MT_MOON_SQUARE_CLEFAIRY, MountMoonSquare_Johto_ClefairyDance_NoDancing
+	@ TODO unsupported: readvar VAR_WEEKDAY
+	goto Johto_EventScript_Unimplemented
+
+MountMoonSquare_Johto_ClefairyDance_NoDancing:
+	releaseall
+	end
+
+MountMoonSquare_Johto_DontLitterSign:
+	message MountMoonSquare_Johto_DontLitterSignText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+MountMoonSquare_Johto_MtMoonSquareRock:
+	goto Johto_Std_SmashRockScript
+
+MountMoonSquare_Johto_MountMoonSquareDisappearMoonStoneCallback_Sub:
+	setflag FLAG_JOHTO_MOUNT_MOON_SQUARE_HIDDEN_MOON_STONE
+	return
+
+MountMoonSquare_Johto_MountMoonSquareDisappearRockCallback_Sub:
+	removeobject 3
+	return
+
+MountMoonSquare_Johto_DontLitterSignText:
+	.string "MT.MOON SQUARE\n"
+	.string "DON'T LITTER$"

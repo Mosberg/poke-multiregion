@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "ViridianGym_Johto_ViridianGymBlueScript_Entry",
+      "flag": "FLAG_JOHTO_VIRIDIAN_GYM_BLUE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -39,8 +39,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "script": "ViridianGym_Johto_ViridianGymGuideScript_Entry",
+      "flag": "FLAG_JOHTO_VIRIDIAN_GYM_BLUE"
     }
   ],
   "warp_events": [
@@ -67,7 +67,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "ViridianGym_Johto_ViridianGymStatue_Entry"
     },
     {
       "type": "sign",
@@ -75,7 +75,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "ViridianGym_Johto_ViridianGymStatue_Entry"
     }
   ]
 }

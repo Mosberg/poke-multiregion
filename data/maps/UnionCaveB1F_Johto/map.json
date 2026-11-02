@@ -79,7 +79,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_UNION_CAVE_B1F_TM_SWIFT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "UnionCaveB1F_Johto_UnionCaveB1FBoulder_Entry",
       "flag": "0"
     },
     {
@@ -105,7 +105,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_UNION_CAVE_B1F_X_DEFEND"
     }
   ],
   "warp_events": [

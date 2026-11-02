@@ -47,7 +47,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronCity_Johto_SaffronCityLass1Script_Entry",
       "flag": "0"
     },
     {
@@ -60,7 +60,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronCity_Johto_SaffronCityPokefanMScript_Entry",
       "flag": "0"
     },
     {
@@ -73,7 +73,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronCity_Johto_SaffronCityCooltrainerMScript_Entry",
       "flag": "0"
     },
     {
@@ -86,7 +86,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronCity_Johto_SaffronCityCooltrainerFScript_Entry",
       "flag": "0"
     },
     {
@@ -99,7 +99,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronCity_Johto_SaffronCityFisherScript_Entry",
       "flag": "0"
     },
     {
@@ -112,7 +112,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronCity_Johto_SaffronCityYoungster1Script_Entry",
       "flag": "0"
     },
     {
@@ -125,7 +125,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronCity_Johto_SaffronCityYoungster2Script_Entry",
       "flag": "0"
     },
     {
@@ -138,7 +138,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SaffronCity_Johto_SaffronCityLass2Script_Entry",
       "flag": "0"
     }
   ],
@@ -257,7 +257,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "SaffronCity_Johto_SaffronCitySign_Entry"
     },
     {
       "type": "sign",
@@ -265,7 +265,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "SaffronCity_Johto_SaffronGymSign_Entry"
     },
     {
       "type": "sign",
@@ -273,7 +273,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "SaffronCity_Johto_FightingDojoSign_Entry"
     },
     {
       "type": "sign",
@@ -281,7 +281,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "SaffronCity_Johto_SilphCoSign_Entry"
     },
     {
       "type": "sign",
@@ -289,7 +289,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "SaffronCity_Johto_MrPsychicsHouseSign_Entry"
     },
     {
       "type": "sign",
@@ -297,7 +297,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "SaffronCity_Johto_SaffronCityMagnetTrainStationSign_Entry"
     },
     {
       "type": "sign",
@@ -305,7 +305,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "SaffronCity_Johto_SaffronCityPokecenterSign_Entry"
     },
     {
       "type": "sign",
@@ -313,7 +313,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "SaffronCity_Johto_SaffronCityMartSign_Entry"
     }
   ]
 }

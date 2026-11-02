@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "OlivineCity_Johto_OlivineCitySailor1Script_Entry",
       "flag": "0"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "OlivineCity_Johto_OlivineCityStandingYoungsterScript_Entry",
       "flag": "0"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "OlivineCity_Johto_OlivineCitySailor2Script_Entry",
       "flag": "0"
     },
     {
@@ -77,7 +77,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Johto_EventScript_Stub",
-      "flag": "0"
+      "flag": "FLAG_JOHTO_RIVAL_OLIVINE_CITY"
     }
   ],
   "warp_events": [
@@ -159,7 +159,26 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_OLIVINE_CITY",
+      "var_value": "0",
+      "script": "OlivineCity_Johto_OlivineCityRivalSceneTop_Entry"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_JOHTO_SCENE_OLIVINE_CITY",
+      "var_value": "0",
+      "script": "OlivineCity_Johto_OlivineCityRivalSceneBottom_Entry"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -167,7 +186,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "OlivineCity_Johto_OlivineCitySign_Entry"
     },
     {
       "type": "sign",
@@ -175,7 +194,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "OlivineCity_Johto_OlivineCityPortSign_Entry"
     },
     {
       "type": "sign",
@@ -183,7 +202,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "OlivineCity_Johto_OlivineGymSign_Entry"
     },
     {
       "type": "sign",
@@ -191,7 +210,7 @@
       "y": 28,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "OlivineCity_Johto_OlivineLighthouseSign_Entry"
     },
     {
       "type": "sign",
@@ -199,7 +218,7 @@
       "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "OlivineCity_Johto_OlivineCityBattleTowerSign_Entry"
     },
     {
       "type": "sign",
@@ -207,7 +226,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "OlivineCity_Johto_OlivineCityPokecenterSign_Entry"
     },
     {
       "type": "sign",
@@ -215,7 +234,7 @@
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "script": "OlivineCity_Johto_OlivineCityMartSign_Entry"
     }
   ]
 }
