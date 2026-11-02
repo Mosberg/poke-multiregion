@@ -71,6 +71,19 @@ limit is, where it came from, and what was done about it. New limits are appende
 | Mobile/link features | Mobile adapter, link/trade, card flip, Pokegear radio are Crystal-only systems with no GBA counterpart. |
 | VS Code extension | Panels/dashboard/chat participant are unit-tested only; no live UI test, no real model calls. |
 
+## Embedded emulator (extension v2.1)
+
+| Limit | Detail |
+|---|---|
+| Core | gba-kit 0.9.0 (pre-1.0, MIT, TypeScript): HLE BIOS, no cartridge RTC/GPIO (Johto time-of-day and weekday checks see no clock), no link cable. The Pokemon Emerald-based ROM boots, runs ~250 fps headless and ~60 fps in the panel. |
+| Save states | gba-kit states (gzip JSON, ~MBs); not interchangeable with native mGBA `.ss*` files. States recorded under mGBA must be re-recorded (`new_game_kanto.py`). |
+| Audio | 32768 Hz stereo through a ScriptProcessorNode (deprecated API, fine in Electron); needs a click in the panel first (autoplay policy); muted above 1x speed. |
+| Display | frames are copied worker -> extension host -> webview (about 9 MB/s at 60 fps). |
+| Trust | the extension is disabled in Restricted Mode (untrusted workspaces). |
+| Single instance | one embedded emulator per VS Code window; the bridge port must be free (falls back to a random port, then writes it to the workspace setting). |
+| STEP semantics | `STEP n` runs n frames immediately (turbo), unlike mGBA where it waits real time; the screen jumps ahead. |
+| Memory writes | go through the debugger `poke` (bypass hardware write rules) and refetch overwritten code. |
+
 ## How this file is maintained
 
 Append a row whenever a new limit is hit (engine cap, size budget, tool restriction, approximation made to fit).

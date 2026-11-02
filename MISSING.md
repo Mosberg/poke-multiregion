@@ -70,6 +70,13 @@ Plus:
 - Not played: Totodile/Chikorita choices, Elm's call-back scenes, rival ambush at Cherrygrove, Mr. Pokemon's house, Violet City gym, any gym fight, Johto save/continue round trip
 - Johto wild encounters: the encounter fired but species/levels were not checked against the table
 
+## Embedded emulator
+
+- Cartridge RTC (needed for real time-of-day/weekday behaviour in Johto scripts), link cable, rewind, cheats, breakpoints/memory viewer panels (gba-kit has the debug adapter and debug UI packages; not wired in), a Debug Adapter (DAP) integration for the decomp's `.elf`
+- Native-mGBA savestate import
+- Live testing of keyboard/gamepad and audio in the webview beyond the screen (verified: screen, toolbar, bridge protocol, Python tools)
+- Worker crash recovery and a visible error banner in the screen
+
 ## Tooling and extension
 
 - VS Code extension UI (views, dashboard, chat participant, real model calls) untested
