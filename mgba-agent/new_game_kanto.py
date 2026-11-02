@@ -1,6 +1,6 @@
 """Start a fresh game through the bridge and record states/stage0_start.ss1 (Kanto start, Red's house 2F).
 
-    python new_game_kanto.py [--hoenn]
+    python new_game_kanto.py [--johto | --hoenn]
 
 Needs mGBA on a title screen with a fresh/empty save and lua/mgba_agent_bridge.lua loaded. Savestates are tied to one
 ROM build, so run this again after every rebuild of the ROM (refresh_addresses.py first).
@@ -13,7 +13,8 @@ from addresses import SYMBOLS
 from mgba_client import Bridge
 
 b = Bridge()
-hoenn = "--hoenn" in sys.argv
+region = "hoenn" if "--hoenn" in sys.argv else "johto" if "--johto" in sys.argv else "kanto"
+hoenn = region == "hoenn"
 
 
 def cb2():
@@ -42,12 +43,16 @@ for _ in range(10):                                       # the player starts fa
     b.press("B", 5); b.step(60)
 for _ in range(3):
     hold(16, 30)
+# the region menu: Kanto / Johto / Hoenn, cursor starts on Hoenn. A dismisses the question text, then UP moves towards Kanto.
+ups = {"kanto": 2, "johto": 1, "hoenn": 0}[region]
+b.step(150)
+b.press("A", 4); b.step(90)
+for _ in range(ups):
+    hold(64, 5); b.step(20)
 n = 0
-while b.player_position()[2:] == start and n < 40:        # answer the region question
-    if hoenn and n == 4:
-        hold(128, 5)                                      # move the cursor to NO
+while b.player_position()[2:] == start and n < 40:
     b.press("A", 4)
-    b.step(20)
+    b.step(30)
     n += 1
 b.step(150)
 path = Path(__file__).parent / "states" / "stage0_start.ss1"
