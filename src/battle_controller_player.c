@@ -1,4 +1,5 @@
 #include "global.h"
+#include "regions.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_arena.h"
@@ -1084,7 +1085,7 @@ void HandleMoveSwitching(enum BattlerId battler)
             }
         }
 
-        if (IS_FRLG && gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
+        if (IS_FRLG_CTX && gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
             gBattlerControllerFuncs[battler] = OakOldManHandleInputChooseMove;
         else
             gBattlerControllerFuncs[battler] = HandleInputChooseMove;

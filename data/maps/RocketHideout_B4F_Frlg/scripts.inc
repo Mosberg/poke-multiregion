@@ -166,13 +166,21 @@ RocketHideout_B4F_Text_Grunt3PostBattle::
 	.string "I'm sorry I failed you!$"
 
 RocketHideout_B4F_Text_Grunt1Intro::
-	.string "The elevator doesn't work?\n"
-	.string "Who has the LIFT KEY?$"
+	.string "JESSIE: Prepare for trouble!\n"
+	.string "JAMES: And make it double!\p"
+	.string "JESSIE: To protect the world from\n"
+	.string "devastation!\p"
+	.string "JAMES: To unite all peoples within\n"
+	.string "our nation!\p"
+	.string "JESSIE: Team Rocket blasts off at the\n"
+	.string "speed of light!$"
 
 RocketHideout_B4F_Text_Grunt1Defeat::
-	.string "No!$"
+	.string "JESSIE: We're blasting off again!$"
 
 RocketHideout_B4F_Text_Grunt1PostBattle::
 	.string "Oh, no!\n"
 	.string "I dropped the LIFT KEY!$"
 
+
+@ POKE-YELLOW-JJ

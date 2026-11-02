@@ -194,12 +194,17 @@ MtMoon_B2F_Text_Grunt3PostBattle::
 	.string "and scram!$"
 
 MtMoon_B2F_Text_Grunt4Intro::
-	.string "Little kids shouldn't be messing\n"
-	.string "around with grown-ups!\p"
-	.string "It could be bad news!$"
+	.string "JESSIE: Prepare for trouble!\n"
+	.string "JAMES: And make it double!\p"
+	.string "JESSIE: To protect the world from\n"
+	.string "devastation!\p"
+	.string "JAMES: To unite all peoples within\n"
+	.string "our nation!\p"
+	.string "JESSIE: Team Rocket blasts off at the\n"
+	.string "speed of light!$"
 
 MtMoon_B2F_Text_Grunt4Defeat::
-	.string "I'm steamed!$"
+	.string "JESSIE: We're blasting off again!$"
 
 MtMoon_B2F_Text_Grunt4PostBattle::
 	.string "POKéMON lived here long before\n"
@@ -217,3 +222,5 @@ MtMoon_B2F_Text_ObtainedHelixFossil::
 MtMoon_B2F_Text_ObtainedDomeFossil::
 	.string "Obtained the DOME FOSSIL!$"
 
+
+@ POKE-YELLOW-JJ

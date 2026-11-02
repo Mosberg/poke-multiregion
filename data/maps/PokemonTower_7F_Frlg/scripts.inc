@@ -258,10 +258,17 @@ PokemonTower_7F_Text_Grunt2PostBattle::
 	.string "You stay out of our business!$"
 
 PokemonTower_7F_Text_Grunt3Intro::
-	.string "You're not saving anyone, kid!$"
+	.string "JESSIE: Prepare for trouble!\n"
+	.string "JAMES: And make it double!\p"
+	.string "JESSIE: To protect the world from\n"
+	.string "devastation!\p"
+	.string "JAMES: To unite all peoples within\n"
+	.string "our nation!\p"
+	.string "JESSIE: Team Rocket blasts off at the\n"
+	.string "speed of light!$"
 
 PokemonTower_7F_Text_Grunt3Defeat::
-	.string "Don't fight us ROCKETS!$"
+	.string "JESSIE: We're blasting off again!$"
 
 PokemonTower_7F_Text_Grunt3PostBattle::
 	.string "You're not getting away with this!$"
@@ -280,3 +287,5 @@ PokemonTower_7F_Text_MrFujiThankYouFollowMe::
 	.string "Follow me to my home, POKéMON\n"
 	.string "HOUSE, at the foot of this tower.$"
 
+
+@ POKE-YELLOW-JJ

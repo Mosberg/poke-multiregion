@@ -475,6 +475,11 @@ PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle::
 	removeobject LOCALID_OAKS_LAB_RIVAL
 	playse SE_EXIT
 	fadedefaultbgm
+	@ POKE-YELLOW: Blue's Eevee path. Won -> Flareon (Route 22 may upgrade it to Jolteon), lost or drew -> Vaporeon.
+	@ The rival variants are reused: 0 = CHARMANDER = Flareon, 1 = BULBASAUR = Jolteon, 2 = SQUIRTLE = Vaporeon.
+	specialvar VAR_RESULT, GetBattleOutcome
+	setvar VAR_STARTER_MON, 2
+	call_if_eq VAR_RESULT, 1, PalletTown_ProfessorOaksLab_EventScript_EeveePathFlareon
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 4
 	setflag FLAG_BEAT_RIVAL_IN_OAKS_LAB
 	releaseall
@@ -1068,8 +1073,8 @@ PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall::
 	lock
 	faceplayer
 	setvar PLAYER_STARTER_NUM, 0
-	setvar PLAYER_STARTER_SPECIES, SPECIES_BULBASAUR
-	setvar RIVAL_STARTER_SPECIES, SPECIES_CHARMANDER
+	setvar PLAYER_STARTER_SPECIES, SPECIES_PIKACHU
+	setvar RIVAL_STARTER_SPECIES, SPECIES_EEVEE
 	setvar RIVAL_STARTER_ID, LOCALID_CHARMANDER_BALL
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2, PalletTown_ProfessorOaksLab_EventScript_ConfirmStarterChoice
@@ -1211,8 +1216,8 @@ PalletTown_ProfessorOaksLab_EventScript_SquirtleBall::
 	lock
 	faceplayer
 	setvar PLAYER_STARTER_NUM, 1
-	setvar PLAYER_STARTER_SPECIES, SPECIES_SQUIRTLE
-	setvar RIVAL_STARTER_SPECIES, SPECIES_BULBASAUR
+	setvar PLAYER_STARTER_SPECIES, SPECIES_PIKACHU
+	setvar RIVAL_STARTER_SPECIES, SPECIES_EEVEE
 	setvar RIVAL_STARTER_ID, LOCALID_BULBASAUR_BALL
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2, PalletTown_ProfessorOaksLab_EventScript_ConfirmStarterChoice
@@ -1224,8 +1229,8 @@ PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
 	lock
 	faceplayer
 	setvar PLAYER_STARTER_NUM, 2
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CHARMANDER
-	setvar RIVAL_STARTER_SPECIES, SPECIES_SQUIRTLE
+	setvar PLAYER_STARTER_SPECIES, SPECIES_PIKACHU
+	setvar RIVAL_STARTER_SPECIES, SPECIES_EEVEE
 	setvar RIVAL_STARTER_ID, LOCALID_SQUIRTLE_BALL
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2, PalletTown_ProfessorOaksLab_EventScript_ConfirmStarterChoice
@@ -1374,16 +1379,10 @@ PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne::
 	.string "Oh, that's right, I told you to\n"
 	.string "come! Just wait!\p"
 	.string "Here, {PLAYER}.\p"
-	.string "There are three POKéMON here.\p"
-	.string "Haha!\p"
-	.string "The POKéMON are held inside\n"
-	.string "these POKé BALLS.\p"
-	.string "When I was young, I was a serious\n"
-	.string "POKéMON TRAINER.\p"
-	.string "But now, in my old age, I have\n"
-	.string "only these three left.\p"
-	.string "You can have one.\n"
-	.string "Go on, choose!$"
+	.string "There are two POKéMON here: EEVEE and\n"
+	.string "a PIKACHU I caught recently.\p"
+	.string "They're inside POKé BALLS on the\n"
+	.string "table. Choose when you're ready.$"
 
 PalletTown_ProfessorOaksLab_Text_OakBePatientRival::
 	.string "OAK: Be patient, {RIVAL}.\n"
@@ -1391,32 +1390,30 @@ PalletTown_ProfessorOaksLab_Text_OakBePatientRival::
 
 PalletTown_ProfessorOaksLab_Text_OakWhichOneWillYouChoose::
 	.string "OAK: Now, {PLAYER}.\p"
-	.string "Inside those three POKé BALLS are\n"
-	.string "POKéMON.\p"
-	.string "Which one will you choose for\n"
-	.string "yourself?$"
+	.string "That PIKACHU is for you.\p"
+	.string "Take any of the POKé BALLS.$"
 
 PalletTown_ProfessorOaksLab_Text_OakHeyDontGoAwayYet::
 	.string "OAK: Hey!\n"
 	.string "Don't go away yet!$"
 
 PalletTown_ProfessorOaksLab_Text_OakChoosingCharmander::
-	.string "Ah! CHARMANDER is your choice.\n"
-	.string "You should raise it patiently.\p"
-	.string "So, {PLAYER}, you're claiming the\n"
-	.string "FIRE POKéMON CHARMANDER?$"
+	.string "I see! PIKACHU is your choice.\n"
+	.string "It's an ELECTRIC POKéMON, and a fine one.\p"
+	.string "So, {PLAYER}, you want to go with\n"
+	.string "PIKACHU?$"
 
 PalletTown_ProfessorOaksLab_Text_OakChoosingSquirtle::
-	.string "Hm! SQUIRTLE is your choice.\n"
-	.string "It's one worth raising.\p"
-	.string "So, {PLAYER}, you've decided on the\n"
-	.string "WATER POKéMON SQUIRTLE?$"
+	.string "I see! PIKACHU is your choice.\n"
+	.string "It's an ELECTRIC POKéMON, and a fine one.\p"
+	.string "So, {PLAYER}, you want to go with\n"
+	.string "PIKACHU?$"
 
 PalletTown_ProfessorOaksLab_Text_OakChoosingBulbasaur::
-	.string "I see! BULBASAUR is your choice.\n"
-	.string "It's very easy to raise.\p"
+	.string "I see! PIKACHU is your choice.\n"
+	.string "It's an ELECTRIC POKéMON, and a fine one.\p"
 	.string "So, {PLAYER}, you want to go with\n"
-	.string "the GRASS POKéMON BULBASAUR?$"
+	.string "PIKACHU?$"
 
 PalletTown_ProfessorOaksLab_Text_OakThisMonIsEnergetic::
 	.string "This POKéMON is really quite\n"
@@ -1655,3 +1652,8 @@ PalletTown_ProfessorOaksLab_Text_RivalIllCompleteThePokedex::
 	.string "ONE ISLAND first…\p"
 	.string "Anyways, I'm outta here!$"
 
+
+@ POKE-YELLOW
+PalletTown_ProfessorOaksLab_EventScript_EeveePathFlareon::
+	setvar VAR_STARTER_MON, 0
+	return

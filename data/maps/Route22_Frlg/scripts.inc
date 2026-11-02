@@ -33,6 +33,9 @@ Route22_EventScript_EarlyRival::
 	call_if_eq VAR_STARTER_MON, 2, Route22_EventScript_EarlyRivalSquirtle
 	call_if_eq VAR_STARTER_MON, 1, Route22_EventScript_EarlyRivalBulbasaur
 	call_if_eq VAR_STARTER_MON, 0, Route22_EventScript_EarlyRivalCharmander
+	@ POKE-YELLOW: beating Blue here turns a Flareon path into Jolteon
+	specialvar VAR_RESULT, GetBattleOutcome
+	call_if_eq VAR_RESULT, 1, Route22_EventScript_EeveePathJolteon
 	msgbox Route22_Text_EarlyRivalPostBattle
 	closemessage
 	delay 10
@@ -299,3 +302,12 @@ Route22_Text_LeagueGateSign::
 	.string "POKéMON LEAGUE\n"
 	.string "Front Gate$"
 
+
+@ POKE-YELLOW
+Route22_EventScript_EeveePathJolteon::
+	goto_if_ne VAR_STARTER_MON, 0, Route22_EventScript_EeveePathUnchanged
+	setvar VAR_STARTER_MON, 1
+	return
+
+Route22_EventScript_EeveePathUnchanged::
+	return

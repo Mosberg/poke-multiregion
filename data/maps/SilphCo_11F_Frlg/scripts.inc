@@ -197,12 +197,17 @@ SilphCo_11F_Text_GiovanniPostBattle::
 	.string "I must go, but I shall return!$"
 
 SilphCo_11F_Text_Grunt2Intro::
-	.string "Stop right there!\n"
-	.string "Don't you move!$"
+	.string "JESSIE: Prepare for trouble!\n"
+	.string "JAMES: And make it double!\p"
+	.string "JESSIE: To protect the world from\n"
+	.string "devastation!\p"
+	.string "JAMES: To unite all peoples within\n"
+	.string "our nation!\p"
+	.string "JESSIE: Team Rocket blasts off at the\n"
+	.string "speed of light!$"
 
 SilphCo_11F_Text_Grunt2Defeat::
-	.string "Don't…\n"
-	.string "Please!$"
+	.string "JESSIE: We're blasting off again!$"
 
 SilphCo_11F_Text_Grunt2PostBattle::
 	.string "So, you want to see my BOSS?$"
@@ -226,3 +231,5 @@ SilphCo_11F_Text_FloorSign::
 	.string "SILPH CO. HEAD OFFICE\n"
 	.string "11F$"
 
+
+@ POKE-YELLOW-JJ

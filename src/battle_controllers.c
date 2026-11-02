@@ -1,4 +1,5 @@
 #include "global.h"
+#include "regions.h"
 #include "battle.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
@@ -159,7 +160,7 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     BattleAI_SetupItems();
     BattleAI_SetupFlags();
 
-    if (!IS_FRLG && gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
+    if (!IS_FRLG_CTX && gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
         CreateWildMon(SPECIES_ZIGZAGOON, 2);
 }
 
@@ -290,8 +291,8 @@ static void InitBtlControllersInternal(void)
             else if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
                 SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_0), SetControllerToSafari);
             else if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL)
-                SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_0), IS_FRLG ? SetControllerToOakOrOldMan : SetControllerToWally);
-            else if (IS_FRLG && (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE))
+                SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_0), IS_FRLG_CTX ? SetControllerToOakOrOldMan : SetControllerToWally);
+            else if (IS_FRLG_CTX && (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE))
                 SetBattlerControllerFunc(gBattlerPositions[B_BATTLER_0], SetControllerToOakOrOldMan);
             else if (isAIvsAI)
                 SetBattlerControllerFunc(GetBattlerPosition(B_BATTLER_0), SetControllerToPlayerPartner);
@@ -2201,7 +2202,7 @@ void Controller_WaitForHealthBar(enum BattlerId battler)
         if (IsOnPlayerSide(battler))
             HandleLowHpMusicChange(GetBattlerMon(battler), battler);
 
-        if (IS_FRLG && GetBattlerSide(battler) == B_SIDE_OPPONENT && !BtlCtrl_OakOldMan_TestState2Flag(1) && (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE))
+        if (IS_FRLG_CTX && GetBattlerSide(battler) == B_SIDE_OPPONENT && !BtlCtrl_OakOldMan_TestState2Flag(1) && (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE))
         {
             BtlCtrl_OakOldMan_SetState2Flag(1);
             gBattlerControllerFuncs[battler] = PrintOakText_InflictingDamageIsKey;

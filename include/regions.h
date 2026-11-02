@@ -18,4 +18,8 @@ static inline enum Region GetCurrentRegion(void)
     return GetRegionForSectionId(gMapHeader.regionMapSectionId);
 }
 
+// POKE-MULTIREGION: behaviour that FireRed implements with a compile-time IS_FRLG (first-battle tutorial, old man) must
+// also apply to battles fought in Kanto when the ROM is built as Emerald.
+#define IS_FRLG_CTX (IS_FRLG || GetCurrentRegion() == REGION_KANTO)
+
 #endif // GUARD_REGIONS_H
