@@ -405,3 +405,109 @@ const u16 gMetatileAttributes_PokemonLeague[] = INCBIN_U16("data/tilesets/second
 const u16 gMetatiles_HallOfFame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame_frlg/metatiles.bin");
 const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame_frlg/metatile_attributes.bin");
 
+// POKE-CRYSTAL-BEGIN
+const u16 gMetatiles_CrystalAerodactylWordRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_aerodactyl_word_room/metatiles.bin");
+const u16 gMetatileAttributes_CrystalAerodactylWordRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_aerodactyl_word_room/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalBattleTowerInside[] = INCBIN_U16("data/tilesets/secondary/crystal_battle_tower_inside/metatiles.bin");
+const u16 gMetatileAttributes_CrystalBattleTowerInside[] = INCBIN_U16("data/tilesets/secondary/crystal_battle_tower_inside/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalBattleTowerOutside[] = INCBIN_U16("data/tilesets/secondary/crystal_battle_tower_outside/metatiles.bin");
+const u16 gMetatileAttributes_CrystalBattleTowerOutside[] = INCBIN_U16("data/tilesets/secondary/crystal_battle_tower_outside/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalCave[] = INCBIN_U16("data/tilesets/secondary/crystal_cave/metatiles.bin");
+const u16 gMetatileAttributes_CrystalCave[] = INCBIN_U16("data/tilesets/secondary/crystal_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalChampionsRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_champions_room/metatiles.bin");
+const u16 gMetatileAttributes_CrystalChampionsRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_champions_room/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalDarkCave[] = INCBIN_U16("data/tilesets/secondary/crystal_dark_cave/metatiles.bin");
+const u16 gMetatileAttributes_CrystalDarkCave[] = INCBIN_U16("data/tilesets/secondary/crystal_dark_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalEliteFourRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_elite_four_room/metatiles.bin");
+const u16 gMetatileAttributes_CrystalEliteFourRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_elite_four_room/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalFacility[] = INCBIN_U16("data/tilesets/secondary/crystal_facility/metatiles.bin");
+const u16 gMetatileAttributes_CrystalFacility[] = INCBIN_U16("data/tilesets/secondary/crystal_facility/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalForest[] = INCBIN_U16("data/tilesets/secondary/crystal_forest/metatiles.bin");
+const u16 gMetatileAttributes_CrystalForest[] = INCBIN_U16("data/tilesets/secondary/crystal_forest/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalGameCorner[] = INCBIN_U16("data/tilesets/secondary/crystal_game_corner/metatiles.bin");
+const u16 gMetatileAttributes_CrystalGameCorner[] = INCBIN_U16("data/tilesets/secondary/crystal_game_corner/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalGate[] = INCBIN_U16("data/tilesets/secondary/crystal_gate/metatiles.bin");
+const u16 gMetatileAttributes_CrystalGate[] = INCBIN_U16("data/tilesets/secondary/crystal_gate/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalHoOhWordRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_ho_oh_word_room/metatiles.bin");
+const u16 gMetatileAttributes_CrystalHoOhWordRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_ho_oh_word_room/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalHouse[] = INCBIN_U16("data/tilesets/secondary/crystal_house/metatiles.bin");
+const u16 gMetatileAttributes_CrystalHouse[] = INCBIN_U16("data/tilesets/secondary/crystal_house/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalIcePath[] = INCBIN_U16("data/tilesets/secondary/crystal_ice_path/metatiles.bin");
+const u16 gMetatileAttributes_CrystalIcePath[] = INCBIN_U16("data/tilesets/secondary/crystal_ice_path/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalJohto[] = INCBIN_U16("data/tilesets/secondary/crystal_johto/metatiles.bin");
+const u16 gMetatileAttributes_CrystalJohto[] = INCBIN_U16("data/tilesets/secondary/crystal_johto/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalJohtoModern[] = INCBIN_U16("data/tilesets/secondary/crystal_johto_modern/metatiles.bin");
+const u16 gMetatileAttributes_CrystalJohtoModern[] = INCBIN_U16("data/tilesets/secondary/crystal_johto_modern/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalKabutoWordRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_kabuto_word_room/metatiles.bin");
+const u16 gMetatileAttributes_CrystalKabutoWordRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_kabuto_word_room/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalKanto[] = INCBIN_U16("data/tilesets/secondary/crystal_kanto/metatiles.bin");
+const u16 gMetatileAttributes_CrystalKanto[] = INCBIN_U16("data/tilesets/secondary/crystal_kanto/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalLab[] = INCBIN_U16("data/tilesets/secondary/crystal_lab/metatiles.bin");
+const u16 gMetatileAttributes_CrystalLab[] = INCBIN_U16("data/tilesets/secondary/crystal_lab/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalLighthouse[] = INCBIN_U16("data/tilesets/secondary/crystal_lighthouse/metatiles.bin");
+const u16 gMetatileAttributes_CrystalLighthouse[] = INCBIN_U16("data/tilesets/secondary/crystal_lighthouse/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalMansion[] = INCBIN_U16("data/tilesets/secondary/crystal_mansion/metatiles.bin");
+const u16 gMetatileAttributes_CrystalMansion[] = INCBIN_U16("data/tilesets/secondary/crystal_mansion/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalMart[] = INCBIN_U16("data/tilesets/secondary/crystal_mart/metatiles.bin");
+const u16 gMetatileAttributes_CrystalMart[] = INCBIN_U16("data/tilesets/secondary/crystal_mart/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalOmanyteWordRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_omanyte_word_room/metatiles.bin");
+const u16 gMetatileAttributes_CrystalOmanyteWordRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_omanyte_word_room/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalPark[] = INCBIN_U16("data/tilesets/secondary/crystal_park/metatiles.bin");
+const u16 gMetatileAttributes_CrystalPark[] = INCBIN_U16("data/tilesets/secondary/crystal_park/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalPlayersHouse[] = INCBIN_U16("data/tilesets/secondary/crystal_players_house/metatiles.bin");
+const u16 gMetatileAttributes_CrystalPlayersHouse[] = INCBIN_U16("data/tilesets/secondary/crystal_players_house/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalPlayersRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_players_room/metatiles.bin");
+const u16 gMetatileAttributes_CrystalPlayersRoom[] = INCBIN_U16("data/tilesets/secondary/crystal_players_room/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalPokecenter[] = INCBIN_U16("data/tilesets/secondary/crystal_pokecenter/metatiles.bin");
+const u16 gMetatileAttributes_CrystalPokecenter[] = INCBIN_U16("data/tilesets/secondary/crystal_pokecenter/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalPokecomCenter[] = INCBIN_U16("data/tilesets/secondary/crystal_pokecom_center/metatiles.bin");
+const u16 gMetatileAttributes_CrystalPokecomCenter[] = INCBIN_U16("data/tilesets/secondary/crystal_pokecom_center/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalPort[] = INCBIN_U16("data/tilesets/secondary/crystal_port/metatiles.bin");
+const u16 gMetatileAttributes_CrystalPort[] = INCBIN_U16("data/tilesets/secondary/crystal_port/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalRadioTower[] = INCBIN_U16("data/tilesets/secondary/crystal_radio_tower/metatiles.bin");
+const u16 gMetatileAttributes_CrystalRadioTower[] = INCBIN_U16("data/tilesets/secondary/crystal_radio_tower/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalRuinsOfAlph[] = INCBIN_U16("data/tilesets/secondary/crystal_ruins_of_alph/metatiles.bin");
+const u16 gMetatileAttributes_CrystalRuinsOfAlph[] = INCBIN_U16("data/tilesets/secondary/crystal_ruins_of_alph/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalTower[] = INCBIN_U16("data/tilesets/secondary/crystal_tower/metatiles.bin");
+const u16 gMetatileAttributes_CrystalTower[] = INCBIN_U16("data/tilesets/secondary/crystal_tower/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalTraditionalHouse[] = INCBIN_U16("data/tilesets/secondary/crystal_traditional_house/metatiles.bin");
+const u16 gMetatileAttributes_CrystalTraditionalHouse[] = INCBIN_U16("data/tilesets/secondary/crystal_traditional_house/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalTrainStation[] = INCBIN_U16("data/tilesets/secondary/crystal_train_station/metatiles.bin");
+const u16 gMetatileAttributes_CrystalTrainStation[] = INCBIN_U16("data/tilesets/secondary/crystal_train_station/metatile_attributes.bin");
+
+const u16 gMetatiles_CrystalUnderground[] = INCBIN_U16("data/tilesets/secondary/crystal_underground/metatiles.bin");
+const u16 gMetatileAttributes_CrystalUnderground[] = INCBIN_U16("data/tilesets/secondary/crystal_underground/metatile_attributes.bin");
+// POKE-CRYSTAL-END

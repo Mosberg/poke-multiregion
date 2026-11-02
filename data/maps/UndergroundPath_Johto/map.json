@@ -1,0 +1,54 @@
+{
+  "id": "MAP_JOHTO_UNDERGROUND_PATH",
+  "name": "UndergroundPath_Johto",
+  "layout": "LAYOUT_JOHTO_UNDERGROUND_PATH",
+  "music": "MUS_LITTLEROOT",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_JOHTO_UNDERGROUND_PATH",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_JOHTO_ROUTE_5_UNDERGROUND_PATH_ENTRANCE",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 3,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_JOHTO_ROUTE_6_UNDERGROUND_PATH_ENTRANCE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Johto_EventScript_StubSign"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Johto_EventScript_StubSign"
+    }
+  ]
+}
