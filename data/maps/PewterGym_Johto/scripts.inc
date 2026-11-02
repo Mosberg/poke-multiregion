@@ -83,8 +83,7 @@ PewterGym_Johto_PewterGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 PewterGym_Johto_PewterGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, BROCK, BROCK1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 PewterGym_Johto_BrockIntroText:
 	.string "BROCK: Wow, it's\n"

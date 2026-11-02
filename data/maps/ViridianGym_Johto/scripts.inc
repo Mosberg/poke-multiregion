@@ -67,8 +67,7 @@ ViridianGym_Johto_ViridianGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 ViridianGym_Johto_ViridianGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, BLUE, BLUE1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 ViridianGym_Johto_LeaderBlueBeforeText:
 	.string "BLUE: Yo! Finally\n"

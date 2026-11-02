@@ -109,8 +109,9 @@ Route36_Johto_Route36RockSmashGuyScript_ClearedSudowoodo:
 	message Route36_Johto_RockSmashGuyText2
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_ROCK_SMASH
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, Route36_Johto_Route36RockSmashGuyScript_NoRoomForTM
+	setflag FLAG_JOHTO_GOT_TM08_ROCK_SMASH
 
 Route36_Johto_Route36RockSmashGuyScript_AlreadyGotRockSmash:
 	message Route36_Johto_RockSmashGuyText3

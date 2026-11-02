@@ -84,8 +84,12 @@ Route43Gate_Johto_OfficerScript_GuardWithSludgeBomb:
 	message Route43Gate_Johto_OfficerText_FoundTM
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_SLUDGE_BOMB
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_SLUDGE_BOMB
+	goto_if_eq VAR_RESULT, 0, Route43Gate_Johto_OfficerScript_GuardWithSludgeBomb_NoRoomForSludgeBomb
+	setflag FLAG_JOHTO_GOT_TM36_SLUDGE_BOMB
+	closemessage
+	releaseall
+	end
 
 Route43Gate_Johto_OfficerScript_GuardWithSludgeBomb_GotSludgeBomb:
 	message Route43Gate_Johto_OfficerText_AvoidGrass

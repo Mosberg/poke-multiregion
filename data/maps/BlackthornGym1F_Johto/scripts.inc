@@ -52,8 +52,18 @@ BlackthornGym1F_Johto_BlackthornGymClairScript_AlreadyGotBadge:
 	message BlackthornGym1F_Johto_BlackthornGymClairText_YouKeptMeWaiting
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: giveitem TM_DRAGONBREATH
+	additem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, BlackthornGym1F_Johto_BlackthornGymClairScript_BagFull
+	@ TODO unsupported: getitemname STRING_BUFFER_3, TM_DRAGONBREATH
 	goto Johto_EventScript_Unimplemented
+
+BlackthornGym1F_Johto_BlackthornGymClairScript_BagFull:
+	message BlackthornGym1F_Johto_BlackthornGymClairText_BagFull
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 BlackthornGym1F_Johto_BlackthornGymClairScript_GotTM24:
 	message BlackthornGym1F_Johto_BlackthornGymClairText_League
@@ -131,8 +141,7 @@ BlackthornGym1F_Johto_BlackthornGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 BlackthornGym1F_Johto_BlackthornGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, CLAIR, CLAIR1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 BlackthornGym1F_Johto_ClairIntroText:
 	.string "I am CLAIR."
@@ -191,6 +200,10 @@ BlackthornGym1F_Johto_BlackthornGymClairText_YouKeptMeWaiting:
 	.string "You've kept me\n"
 	.string "waiting!"
 	.string "\pHere! Take this!$"
+
+BlackthornGym1F_Johto_BlackthornGymClairText_BagFull:
+	.string "What is this? You\n"
+	.string "don't have room?$"
 
 BlackthornGym1F_Johto_BlackthornGymClairText_League:
 	.string "What's the matter?"

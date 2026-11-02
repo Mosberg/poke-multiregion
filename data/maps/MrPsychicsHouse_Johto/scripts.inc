@@ -16,8 +16,9 @@ MrPsychicsHouse_Johto_MrPsychic:
 	message MrPsychicsHouse_Johto_MrPsychicText1
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_PSYCHIC_M
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, MrPsychicsHouse_Johto_MrPsychic_Done
+	setflag FLAG_JOHTO_GOT_TM29_PSYCHIC
 
 MrPsychicsHouse_Johto_MrPsychic_AlreadyGotItem:
 	message MrPsychicsHouse_Johto_MrPsychicText2

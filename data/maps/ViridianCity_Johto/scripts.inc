@@ -92,8 +92,9 @@ ViridianCity_Johto_ViridianCityDreamEaterFisher:
 	message ViridianCity_Johto_ViridianCityDreamEaterFisherText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_DREAM_EATER
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, ViridianCity_Johto_ViridianCityDreamEaterFisher_NoRoomForDreamEater
+	setflag FLAG_JOHTO_GOT_TM42_DREAM_EATER
 
 ViridianCity_Johto_ViridianCityDreamEaterFisher_GotDreamEater:
 	message ViridianCity_Johto_ViridianCityDreamEaterFisherGotDreamEaterText

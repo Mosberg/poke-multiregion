@@ -41,8 +41,15 @@ CianwoodGym_Johto_CianwoodGymChuckScript_FightDone:
 	message CianwoodGym_Johto_ChuckExplainBadgeText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_DYNAMICPUNCH
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, CianwoodGym_Johto_CianwoodGymChuckScript_BagFull
+	setflag FLAG_JOHTO_GOT_TM01_DYNAMICPUNCH
+	message CianwoodGym_Johto_ChuckExplainTMText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 CianwoodGym_Johto_CianwoodGymChuckScript_AlreadyGotTM:
 	message CianwoodGym_Johto_ChuckAfterText
@@ -122,8 +129,7 @@ CianwoodGym_Johto_CianwoodGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 CianwoodGym_Johto_CianwoodGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, CHUCK, CHUCK1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 CianwoodGym_Johto_CianwoodGymMovement_ChuckChucksBoulder:
 	walk_fast_left
@@ -157,6 +163,14 @@ CianwoodGym_Johto_ChuckExplainBadgeText:
 	.string "a battle."
 	.string "\pHere, take this\n"
 	.string "too!$"
+
+CianwoodGym_Johto_ChuckExplainTMText:
+	.string "That is DYNAMIC-\n"
+	.string "PUNCH."
+	.string "\pIt doesn't always\n"
+	.string "hit, but when it"
+	.string "\pdoes, it causes\n"
+	.string "confusion!$"
 
 CianwoodGym_Johto_ChuckAfterText:
 	.string "WAHAHAH! I enjoyed\n"

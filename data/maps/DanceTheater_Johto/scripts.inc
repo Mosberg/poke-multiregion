@@ -131,8 +131,14 @@ DanceTheater_Johto_DanceTheaterSurfGuy_GetSurf:
 	message DanceTheater_Johto_SurfGuyLikeADanceText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem HM_SURF
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_HM_SURF
+	setflag FLAG_JOHTO_GOT_HM03_SURF
+	message DanceTheater_Johto_SurfGuySurfExplanationText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 DanceTheater_Johto_SurfGuyAlreadyGaveSurf:
 	message DanceTheater_Johto_SurfGuyElegantKimonoGirlsText
@@ -287,6 +293,12 @@ DanceTheater_Johto_SurfGuyLikeADanceText:
 	.string "\pI want you to have\n"
 	.string "this. Don't worry\l"
 	.string "--take it!$"
+
+DanceTheater_Johto_SurfGuySurfExplanationText:
+	.string "That's SURF."
+	.string "\pIt's a move that\n"
+	.string "lets POKéMON swim\l"
+	.string "across water.$"
 
 DanceTheater_Johto_SurfGuyElegantKimonoGirlsText:
 	.string "I wish my POKéMON\n"

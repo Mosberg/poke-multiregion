@@ -40,8 +40,27 @@ DragonsDenB1F_Johto_DragonsDenB1F_ClairScene:
 	message DragonsDenB1F_Johto_ClairText_GiveDragonbreathDragonDen
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: giveitem TM_DRAGONBREATH
+	additem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, DragonsDenB1F_Johto_DragonsDenB1F_ClairScene_BagFull
+	@ TODO unsupported: getitemname STRING_BUFFER_3, TM_DRAGONBREATH
 	goto Johto_EventScript_Unimplemented
+
+DragonsDenB1F_Johto_DragonsDenB1F_ClairScene_BagFull:
+	message DragonsDenB1F_Johto_ClairText_NoRoom
+	waitmessage
+	waitbuttonpress
+	closemessage
+
+DragonsDenB1F_Johto_DragonsDenB1F_ClairScene_FinishClair:
+	applymovement 2, DragonsDenB1F_Johto_MovementDragonsDen_ClairWalksAway
+	waitmovement 2
+	fadeoutbgm 4
+	delay 30
+	fadedefaultbgm
+	removeobject 2
+	setvar VAR_JOHTO_SCENE_DRAGONS_DEN_B1F, 0
+	releaseall
+	end
 
 DragonsDenB1F_Johto_TrainerCooltrainermDarin::
 	trainerbattle_single TRAINER_JOHTO_COOLTRAINERM_DARIN, DragonsDenB1F_Johto_CooltrainermDarinSeenText, DragonsDenB1F_Johto_CooltrainermDarinBeatenText
@@ -180,6 +199,13 @@ DragonsDenB1F_Johto_MovementDragonsDen_ClairWalksToYou:
 	walk_slow_right
 	step_end
 
+DragonsDenB1F_Johto_MovementDragonsDen_ClairWalksAway:
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	step_end
+
 DragonsDenB1F_Johto_ClairText_Wait:
 	.string "Wait!$"
 
@@ -188,6 +214,14 @@ DragonsDenB1F_Johto_ClairText_GiveDragonbreathDragonDen:
 	.string "about this."
 	.string "\pHere, take this as\n"
 	.string "my apology.$"
+
+DragonsDenB1F_Johto_ClairText_NoRoom:
+	.string "Oh? You don't have\n"
+	.string "any room for this."
+	.string "\pI'm going back to\n"
+	.string "the GYM, so make"
+	.string "\proom, then come\n"
+	.string "see me there.$"
 
 DragonsDenB1F_Johto_DragonShrineSignpostText:
 	.string "DRAGON SHRINE"

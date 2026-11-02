@@ -54,6 +54,7 @@ limit is, where it came from, and what was done about it. New limits are appende
 | Sprites | Crystal overworld sprites are mapped to the nearest existing expansion sprite by name; many NPCs share generic sprites. |
 | Sound | Crystal music/SFX map to a small hand-made table of existing songs and effects; unmapped songs play `MUS_DUMMY`. |
 | Fonts | Crystal's shared font tiles are not converted; the scroll prompt shows as a heart glyph in dialogue. |
+| Gift TMs | Crystal TMs whose move is not a TM in the expansion (Mud-Slap, Thunderpunch, Fire/Ice Punch...) | Gift scripts hand out a Nugget instead; Marts skip those entries. |
 | Rival name | Fixed to `SILVER`; `special NameRival` is a no-op. |
 | Johto badges/HMs | Johto gyms give nothing the engine tracks separately yet (no `REGION_JOHTO`). |
 

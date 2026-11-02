@@ -35,8 +35,9 @@ CeladonGym_Johto_CeladonGymErikaScript_FightDone:
 	message CeladonGym_Johto_ErikaExplainTMText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_GIGA_DRAIN
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_GIGA_DRAIN
+	goto_if_eq VAR_RESULT, 0, CeladonGym_Johto_CeladonGymErikaScript_GotGigaDrain
+	setflag FLAG_JOHTO_GOT_TM19_GIGA_DRAIN
 
 CeladonGym_Johto_CeladonGymErikaScript_GotGigaDrain:
 	message CeladonGym_Johto_ErikaAfterBattleText
@@ -126,8 +127,7 @@ CeladonGym_Johto_CeladonGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 CeladonGym_Johto_CeladonGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, ERIKA, ERIKA1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 CeladonGym_Johto_ErikaBeforeBattleText:
 	.string "ERIKA: Hello…\n"

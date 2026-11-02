@@ -92,8 +92,9 @@ IlexForest_Johto_IlexForestHeadbuttGuyScript:
 	message IlexForest_Johto_Text_HeadbuttIntro
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_HEADBUTT
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, IlexForest_Johto_IlexForestHeadbuttGuyScript_BagFull
+	setflag FLAG_JOHTO_GOT_TM02_HEADBUTT
 
 IlexForest_Johto_IlexForestHeadbuttGuyScript_AlreadyGotHeadbutt:
 	message IlexForest_Johto_Text_HeadbuttOutro

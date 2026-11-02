@@ -61,8 +61,9 @@ FuchsiaGym_Johto_FuchsiaGymJanineScript_AfterBattle:
 	message FuchsiaGym_Johto_JanineText_ToxicSpeech
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_TOXIC
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_TOXIC
+	goto_if_eq VAR_RESULT, 0, FuchsiaGym_Johto_FuchsiaGymJanineScript_AfterTM
+	setflag FLAG_JOHTO_GOT_TM06_TOXIC
 
 FuchsiaGym_Johto_FuchsiaGymJanineScript_AfterTM:
 	message FuchsiaGym_Johto_JanineText_ApplyMyself
@@ -219,8 +220,7 @@ FuchsiaGym_Johto_FuchsiaGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 FuchsiaGym_Johto_FuchsiaGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, JANINE, JANINE1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 FuchsiaGym_Johto_Movement_NinjaSpin:
 	face_down

@@ -20,8 +20,14 @@ Route28SteelWingHouse_Johto_Celebrity:
 	message Route28SteelWingHouse_Johto_CelebrityText1
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_STEEL_WING
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_STEEL_WING
+	goto_if_eq VAR_RESULT, 0, Route28SteelWingHouse_Johto_Celebrity_Done
+	setflag FLAG_JOHTO_GOT_TM47_STEEL_WING
+
+Route28SteelWingHouse_Johto_Celebrity_Done:
+	closemessage
+	releaseall
+	end
 
 Route28SteelWingHouse_Johto_Celebrity_AlreadyGotItem:
 	message Route28SteelWingHouse_Johto_CelebrityText2

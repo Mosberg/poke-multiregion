@@ -16,8 +16,15 @@ LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuy:
 	message LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuyText1
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_HIDDEN_POWER
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_HIDDEN_POWER
+	goto_if_eq VAR_RESULT, 0, LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuy_Done
+	setflag FLAG_JOHTO_GOT_TM10_HIDDEN_POWER
+	message LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuyText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuy_AlreadyGotItem:
 	message LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuyText3
@@ -43,6 +50,17 @@ LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuyText1:
 	.string "power with your"
 	.string "\pPOKéMON.\n"
 	.string "Take this, child.$"
+
+LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuyText2:
+	.string "Do you see it? It\n"
+	.string "is HIDDEN POWER!"
+	.string "\pIt draws out the\n"
+	.string "power of POKéMON\l"
+	.string "for attacking."
+	.string "\pRemember this: its\n"
+	.string "type and power de-\l"
+	.string "pend on the POKé-\l"
+	.string "MON using it.$"
 
 LakeOfRageHiddenPowerHouse_Johto_HiddenPowerGuyText3:
 	.string "I am meditating…$"

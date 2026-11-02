@@ -184,8 +184,7 @@ CeruleanGym_Johto_CeruleanGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 CeruleanGym_Johto_CeruleanGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, MISTY, MISTY1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 CeruleanGym_Johto_CeruleanGymGruntRunsDownMovement:
 	walk_fast_down

@@ -113,7 +113,6 @@ Route31_Johto_Route31CheckMomCallCallback_Cb:
 	return
 
 Route31_Johto_Route31CheckMomCallCallback_DoMomCall_Cb:
-	@ TODO unsupported: specialphonecall SPECIALCALL_WORRIED
 	return
 
 Route31_Johto_Route31CooltrainerMText:

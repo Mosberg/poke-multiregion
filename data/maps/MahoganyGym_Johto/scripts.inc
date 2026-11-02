@@ -29,8 +29,8 @@ MahoganyGym_Johto_MahoganyGymPryceScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_GLACIERBADGE
-	@ TODO unsupported: readvar VAR_BADGES
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	call MahoganyGym_Johto_MahoganyGymActivateRockets_Sub
 
 MahoganyGym_Johto_MahoganyGymPryceScript_FightDone:
 	goto_if_set FLAG_JOHTO_GOT_TM16_ICY_WIND, MahoganyGym_Johto_PryceScript_Defeat
@@ -42,8 +42,15 @@ MahoganyGym_Johto_MahoganyGymPryceScript_FightDone:
 	message MahoganyGym_Johto_PryceText_GlacierBadgeSpeech
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_ICY_WIND
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, MahoganyGym_Johto_MahoganyGym_NoRoomForIcyWind
+	setflag FLAG_JOHTO_GOT_TM16_ICY_WIND
+	message MahoganyGym_Johto_PryceText_IcyWindSpeech
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 MahoganyGym_Johto_PryceScript_Defeat:
 	message MahoganyGym_Johto_PryceText_CherishYourPokemon
@@ -153,8 +160,18 @@ MahoganyGym_Johto_MahoganyGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 MahoganyGym_Johto_MahoganyGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, PRYCE, PRYCE1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
+
+MahoganyGym_Johto_MahoganyGymActivateRockets_Sub:
+	goto_if_eq VAR_RESULT, 7, MahoganyGym_Johto_MahoganyGymActivateRockets_RadioTowerRockets_Sub
+	goto_if_eq VAR_RESULT, 6, MahoganyGym_Johto_MahoganyGymActivateRockets_GoldenrodRockets_Sub
+	return
+
+MahoganyGym_Johto_MahoganyGymActivateRockets_GoldenrodRockets_Sub:
+	goto Johto_Std_GoldenrodRocketsScript_Sub
+
+MahoganyGym_Johto_MahoganyGymActivateRockets_RadioTowerRockets_Sub:
+	goto Johto_Std_RadioTowerRocketsScript_Sub
 
 MahoganyGym_Johto_PryceText_Intro:
 	.string "POKéMON have many\n"
@@ -202,6 +219,15 @@ MahoganyGym_Johto_PryceText_GlacierBadgeSpeech:
 	.string "real whirlpools."
 	.string "\pAnd this… This is\n"
 	.string "a gift from me!$"
+
+MahoganyGym_Johto_PryceText_IcyWindSpeech:
+	.string "That TM contains\n"
+	.string "ICY WIND."
+	.string "\pIt inflicts damage\n"
+	.string "and lowers speed."
+	.string "\pIt demonstrates\n"
+	.string "the harshness of\l"
+	.string "winter.$"
 
 MahoganyGym_Johto_PryceText_CherishYourPokemon:
 	.string "When the ice and\n"

@@ -3,7 +3,7 @@
 Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
 Hard caps and approximations live in LIMITS.md.
 
-## Johto: scripts (514 commands still become "not converted yet")
+## Johto: scripts (456 commands still become "not converted yet")
 
 Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
 
@@ -49,6 +49,12 @@ Plus:
 - Pokemon Center PC / Pokegear start-menu entry
 - Day/night palettes and Crystal palette time system
 - Johto Pokemon (Gen 2) mon data is the expansion's own; Crystal-specific moves/learnsets are not applied
+
+## Johto: gyms and progression
+
+- Violet Gym plays (Falkner, badge text, after-talk); the badge is only a `FLAG_JOHTO_ENGINE_ZEPHYRBADGE` flag with no gameplay effect, `VAR_BADGES` is always 0 so the Rocket-activation branch never runs
+- Mud-Slap TM replaced by a Nugget; Mystery Egg, Clear Bell, S.S. Ticket, Red Scale, Pink Bow, mail items do not exist as items
+- Gym puzzle/guide scripts, Sprout Tower, Mr. Pokemon quest, Cherrygrove rival ambush untested
 
 ## Kanto / Yellow
 

@@ -116,8 +116,9 @@ Route32_Johto_Route32RoarTMGuyScript:
 	message Route32_Johto_Text_RoarIntro
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_ROAR
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_ROAR
+	goto_if_eq VAR_RESULT, 0, Route32_Johto_Route32RoarTMGuyScript_Finish
+	setflag FLAG_JOHTO_GOT_TM05_ROAR
 
 Route32_Johto_Route32RoarTMGuyScript_AlreadyHaveRoar:
 	message Route32_Johto_Text_RoarOutro

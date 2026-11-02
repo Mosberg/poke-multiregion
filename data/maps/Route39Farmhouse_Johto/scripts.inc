@@ -56,8 +56,9 @@ Route39Farmhouse_Johto_FarmerFScript_GiveSnore:
 	message Route39Farmhouse_Johto_FarmerFText_HealedMiltank
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_SNORE
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, Route39Farmhouse_Johto_FarmerFScript_NoRoomForSnore
+	setflag FLAG_JOHTO_GOT_TM13_SNORE_FROM_MOOMOO_FARM
 
 Route39Farmhouse_Johto_FarmerFScript_GotSnore:
 	message Route39Farmhouse_Johto_FarmerFText_SnoreSpeech

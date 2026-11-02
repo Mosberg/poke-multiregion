@@ -109,7 +109,11 @@ Johto_Mart_CELADON_2F_2:
 
 	.align 2
 Johto_Mart_CELADON_3F:
-
+	.2byte ITEM_TM_HIDDEN_POWER
+	.2byte ITEM_TM_SUNNY_DAY
+	.2byte ITEM_TM_PROTECT
+	.2byte ITEM_TM_RAIN_DANCE
+	.2byte ITEM_TM_SANDSTORM
 	.2byte ITEM_NONE
 
 	.align 2
@@ -502,9 +506,37 @@ Johto_Std_GameCornerCoinVendorScript:
 	releaseall
 	end
 
+Johto_Std_GoldenrodRocketsScript_Sub:
+	clearflag FLAG_JOHTO_GOLDENROD_CITY_ROCKET_TAKEOVER
+	return
+
 Johto_Std_GymStatue1Script:
-	@ TODO unsupported: getcurlandmarkname STRING_BUFFER_3
-	goto Johto_EventScript_Unimplemented
+	message Johto_Std_GymStatue_CityGymText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Johto_Std_GymStatue2Script:
+	message Johto_Std_GymStatue_CityGymText
+	waitmessage
+	waitbuttonpress
+	message Johto_Std_GymStatue_WinningTrainersText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Johto_Std_GymStatue_CityGymText:
+	.string "{STR_VAR_1}\n"
+	.string "POKéMON GYM$"
+
+Johto_Std_GymStatue_WinningTrainersText:
+	.string "LEADER: {STR_VAR_2}"
+	.string "\pWINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 
 Johto_Std_HappinessCheckScript:
 	faceplayer
@@ -753,6 +785,16 @@ Johto_Std_Radio1Script:
 Johto_Std_Radio2Script:
 	@ TODO unsupported: setval MAPRADIO_LUCKY_CHANNEL
 	goto Johto_EventScript_Unimplemented
+
+Johto_Std_RadioTowerRocketsScript_Sub:
+	setflag FLAG_JOHTO_ENGINE_ROCKETS_IN_RADIO_TOWER
+	setflag FLAG_JOHTO_GOLDENROD_CITY_CIVILIANS
+	setflag FLAG_JOHTO_RADIO_TOWER_BLACKBELT_BLOCKS_STAIRS
+	clearflag FLAG_JOHTO_RADIO_TOWER_ROCKET_TAKEOVER
+	clearflag FLAG_JOHTO_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
+	setflag FLAG_JOHTO_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
+	setvar VAR_JOHTO_SCENE_MAHOGANY_TOWN, 1
+	return
 
 Johto_Std_ReceivedItemText:
 	.string "{PLAYER} received\n"

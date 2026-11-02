@@ -112,8 +112,26 @@ VermilionPort_Johto_VermilionPortWalkUpToShipScript:
 	message VermilionPort_Johto_VermilionPortAskTicketText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: checkitem S_S_TICKET
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_SS_TICKET, 1
+	goto_if_eq VAR_RESULT, 0, VermilionPort_Johto_VermilionPortWalkUpToShipScript_NoTicket
+	message VermilionPort_Johto_VermilionPortSSTicketText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_TEMP_12
+	applymovement OBJ_EVENT_ID_PLAYER, VermilionPort_Johto_VermilionPortApproachFastShipMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto VermilionPort_Johto_VermilionPortSailorAtGangwayScript
+
+VermilionPort_Johto_VermilionPortWalkUpToShipScript_NoTicket:
+	message VermilionPort_Johto_VermilionPortNoTicketText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, VermilionPort_Johto_VermilionPortCannotEnterFastShipMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	releaseall
+	end
 
 VermilionPort_Johto_VermilionPortWalkUpToShipScript_NextShipWednesday:
 	message VermilionPort_Johto_VermilionPortSailWednesdayText
@@ -173,8 +191,24 @@ VermilionPort_Johto_VermilionPortSailorScript:
 	message VermilionPort_Johto_VermilionPortAskTicketText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: checkitem S_S_TICKET
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_SS_TICKET, 1
+	goto_if_eq VAR_RESULT, 0, VermilionPort_Johto_VermilionPortSailorScript_NoTicket
+	message VermilionPort_Johto_VermilionPortSSTicketText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_TEMP_12
+	applymovement OBJ_EVENT_ID_PLAYER, VermilionPort_Johto_VermilionPortApproachFastShipRightMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto VermilionPort_Johto_VermilionPortSailorAtGangwayScript
+
+VermilionPort_Johto_VermilionPortSailorScript_NoTicket:
+	message VermilionPort_Johto_VermilionPortNoTicketText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 VermilionPort_Johto_VermilionPortSailorScript_NextShipWednesday:
 	message VermilionPort_Johto_VermilionPortSailWednesdayText
@@ -218,6 +252,24 @@ VermilionPort_Johto_VermilionPortCannotEnterFastShipMovement:
 	face_left
 	step_end
 
+VermilionPort_Johto_VermilionPortApproachFastShipMovement:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+VermilionPort_Johto_VermilionPortApproachFastShipRightMovement:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 VermilionPort_Johto_VermilionPortDepartingText:
 	.string "We're departing\n"
 	.string "soon. Please get\l"
@@ -240,6 +292,22 @@ VermilionPort_Johto_VermilionPortAskTicketText:
 VermilionPort_Johto_VermilionPortComeAgainText:
 	.string "We hope to see you\n"
 	.string "again!$"
+
+VermilionPort_Johto_VermilionPortSSTicketText:
+	.string "{PLAYER} flashed\n"
+	.string "the S.S.TICKET."
+	.string "\pThat's it.\n"
+	.string "Thank you!$"
+
+VermilionPort_Johto_VermilionPortNoTicketText:
+	.string "{PLAYER} tried to\n"
+	.string "show the S.S.\l"
+	.string "TICKET…"
+	.string "\p…But no TICKET!"
+	.string "\pSorry!\n"
+	.string "You may board only"
+	.string "\pif you have an\n"
+	.string "S.S.TICKET.$"
 
 VermilionPort_Johto_VermilionPortSailWednesdayText:
 	.string "The FAST SHIP will\n"

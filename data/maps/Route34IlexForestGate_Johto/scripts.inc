@@ -54,8 +54,9 @@ Route34IlexForestGate_Johto_Route34IlexForestGateTeacherScript:
 	message Route34IlexForestGate_Johto_Route34IlexForestGateTeacherText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_SWEET_SCENT
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, Route34IlexForestGate_Johto_Route34IlexForestGateTeacherScript_NoRoom
+	setflag FLAG_JOHTO_GOT_TM12_SWEET_SCENT
 
 Route34IlexForestGate_Johto_Route34IlexForestGateTeacherScript_GotSweetScent:
 	message Route34IlexForestGate_Johto_Route34IlexForestGateTeacher_GotSweetScent

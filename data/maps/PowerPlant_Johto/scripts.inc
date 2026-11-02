@@ -152,8 +152,17 @@ PowerPlant_Johto_PowerPlantManager_ReturnedMachinePart:
 	message PowerPlant_Johto_PowerPlantManagerTakeThisTMText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_ZAP_CANNON
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, PowerPlant_Johto_PowerPlantManager_NoRoom
+	setflag FLAG_JOHTO_GOT_TM07_ZAP_CANNON
+	message PowerPlant_Johto_PowerPlantManagerTM07IsZapCannonText
+	waitmessage
+	waitbuttonpress
+
+PowerPlant_Johto_PowerPlantManager_NoRoom:
+	closemessage
+	releaseall
+	end
 
 PowerPlant_Johto_PowerPlantManager_GotZapCannon:
 	message PowerPlant_Johto_PowerPlantManagerMyBelovedGeneratorText
@@ -248,6 +257,16 @@ PowerPlant_Johto_PowerPlantManagerTakeThisTMText:
 	.string "Wahah! Thanks!"
 	.string "\pHere! Take this TM\n"
 	.string "as a reward!$"
+
+PowerPlant_Johto_PowerPlantManagerTM07IsZapCannonText:
+	.string "MANAGER: TM07 is\n"
+	.string "my ZAP CANNON."
+	.string "\pIt's a powerful\n"
+	.string "technique!"
+	.string "\pIt's not what any-\n"
+	.string "one would consider"
+	.string "\paccurate, but it\n"
+	.string "packs a wallop!$"
 
 PowerPlant_Johto_PowerPlantManagerMyBelovedGeneratorText:
 	.string "MANAGER: My be-\n"

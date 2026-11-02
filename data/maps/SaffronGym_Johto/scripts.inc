@@ -131,8 +131,7 @@ SaffronGym_Johto_SaffronGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 SaffronGym_Johto_SaffronGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, SABRINA, SABRINA1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 SaffronGym_Johto_SabrinaIntroText:
 	.string "SABRINA: I knew\n"

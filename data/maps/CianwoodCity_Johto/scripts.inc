@@ -82,8 +82,12 @@ CianwoodCity_Johto_CianwoodCityChucksWife_BeatChuck:
 	message CianwoodCity_Johto_ChucksWifeGiveHMText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem HM_FLY
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_HM_FLY
+	goto_if_eq VAR_RESULT, 0, CianwoodCity_Johto_CianwoodCityChucksWife_Done
+	setflag FLAG_JOHTO_GOT_HM02_FLY
+	message CianwoodCity_Johto_ChucksWifeFlySpeechText
+	waitmessage
+	waitbuttonpress
 
 CianwoodCity_Johto_CianwoodCityChucksWife_GotFly:
 	message CianwoodCity_Johto_ChucksWifeChubbyText
@@ -202,6 +206,14 @@ CianwoodCity_Johto_ChucksWifeGiveHMText:
 	.string "GYM BADGE!"
 	.string "\pThen you should\n"
 	.string "take this HM.$"
+
+CianwoodCity_Johto_ChucksWifeFlySpeechText:
+	.string "Teach FLY to your\n"
+	.string "POKéMON."
+	.string "\pYou will be able\n"
+	.string "to FLY instantly"
+	.string "\pto anywhere you \n"
+	.string "have visited.$"
 
 CianwoodCity_Johto_ChucksWifeChubbyText:
 	.string "My husband lost to\n"

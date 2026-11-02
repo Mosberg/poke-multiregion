@@ -127,8 +127,7 @@ VermilionGym_Johto_VermilionGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 VermilionGym_Johto_VermilionGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, LT_SURGE, LT_SURGE1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
 
 VermilionGym_Johto_LtSurgeIntroText:
 	.string "SURGE: Hey, you\n"

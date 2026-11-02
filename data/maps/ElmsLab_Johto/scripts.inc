@@ -459,8 +459,14 @@ ElmsLab_Johto_ElmGiveTicketScript:
 	message ElmsLab_Johto_ElmGiveTicketText1
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem S_S_TICKET
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_SS_TICKET
+	setflag FLAG_JOHTO_GOT_SS_TICKET_FROM_ELM
+	message ElmsLab_Johto_ElmGiveTicketText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 ElmsLab_Johto_AideScript_WalkPotion1:
 	applymovement 2, ElmsLab_Johto_AideWalksRight1
@@ -1041,6 +1047,17 @@ ElmsLab_Johto_ElmGiveTicketText1:
 	.string "S.S.TICKET."
 	.string "\pNow you can catch\n"
 	.string "POKéMON in KANTO.$"
+
+ElmsLab_Johto_ElmGiveTicketText2:
+	.string "The ship departs\n"
+	.string "from OLIVINE CITY."
+	.string "\pBut you knew that\n"
+	.string "already, {PLAYER}."
+	.string "\pAfter all, you've\n"
+	.string "traveled all over\l"
+	.string "with your POKéMON."
+	.string "\pGive my regards to\n"
+	.string "PROF.OAK in KANTO!$"
 
 ElmsLab_Johto_AideText_GiveYouPotion:
 	.string "{PLAYER}, I want\n"

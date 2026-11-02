@@ -38,8 +38,11 @@ EcruteakGym_Johto_EcruteakGymMortyScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_FOGBADGE
-	@ TODO unsupported: readvar VAR_BADGES
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	call EcruteakGym_Johto_EcruteakGymActivateRockets_Sub
+	setvar VAR_JOHTO_SCENE_ECRUTEAK_TIN_TOWER_ENTRANCE, 1
+	setflag FLAG_JOHTO_RANG_CLEAR_BELL_1
+	setflag FLAG_JOHTO_RANG_CLEAR_BELL_2
 
 EcruteakGym_Johto_EcruteakGymMortyScript_FightDone:
 	goto_if_set FLAG_JOHTO_GOT_TM30_SHADOW_BALL, EcruteakGym_Johto_EcruteakGymMortyScript_GotShadowBall
@@ -50,8 +53,15 @@ EcruteakGym_Johto_EcruteakGymMortyScript_FightDone:
 	message EcruteakGym_Johto_MortyText_FogBadgeSpeech
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_SHADOW_BALL
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_SHADOW_BALL
+	goto_if_eq VAR_RESULT, 0, EcruteakGym_Johto_EcruteakGymMortyScript_NoRoomForShadowBall
+	setflag FLAG_JOHTO_GOT_TM30_SHADOW_BALL
+	message EcruteakGym_Johto_MortyText_ShadowBallSpeech
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 EcruteakGym_Johto_EcruteakGymMortyScript_GotShadowBall:
 	message EcruteakGym_Johto_MortyFightDoneText
@@ -164,8 +174,18 @@ EcruteakGym_Johto_EcruteakGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 EcruteakGym_Johto_EcruteakGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, MORTY, MORTY1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
+
+EcruteakGym_Johto_EcruteakGymActivateRockets_Sub:
+	goto_if_eq VAR_RESULT, 7, EcruteakGym_Johto_EcruteakGymActivateRockets_RadioTowerRockets_Sub
+	goto_if_eq VAR_RESULT, 6, EcruteakGym_Johto_EcruteakGymActivateRockets_GoldenrodRockets_Sub
+	return
+
+EcruteakGym_Johto_EcruteakGymActivateRockets_GoldenrodRockets_Sub:
+	goto Johto_Std_GoldenrodRocketsScript_Sub
+
+EcruteakGym_Johto_EcruteakGymActivateRockets_RadioTowerRockets_Sub:
+	goto Johto_Std_RadioTowerRocketsScript_Sub
 
 EcruteakGym_Johto_EcruteakGymPlayerStepUpMovement:
 	walk_up
@@ -231,6 +251,14 @@ EcruteakGym_Johto_MortyText_FogBadgeSpeech:
 	.string "move anytime."
 	.string "\pI want you to have\n"
 	.string "this too.$"
+
+EcruteakGym_Johto_MortyText_ShadowBallSpeech:
+	.string "It's SHADOW BALL.\n"
+	.string "It causes damage"
+	.string "\pand may reduce\n"
+	.string "SPCL.DEF."
+	.string "\pUse it if it\n"
+	.string "appeals to you.$"
 
 EcruteakGym_Johto_MortyFightDoneText:
 	.string "I see…"

@@ -20,8 +20,8 @@ OlivineCafe_Johto_OlivineCafeStrengthSailorScript:
 	message OlivineCafe_Johto_OlivineCafeStrengthSailorText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem HM_STRENGTH
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_HM_STRENGTH
+	setflag FLAG_JOHTO_GOT_HM04_STRENGTH
 
 OlivineCafe_Johto_OlivineCafeStrengthSailorScript_GotStrength:
 	message OlivineCafe_Johto_OlivineCafeStrengthSailorText_GotStrength

@@ -39,8 +39,15 @@ SproutTower3F_Johto_SageLiScript:
 	message SproutTower3F_Johto_SageLiTakeThisFlashText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem HM_FLASH
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_HM_FLASH
+	setflag FLAG_JOHTO_GOT_HM05_FLASH
+	setflag FLAG_JOHTO_BEAT_SAGE_LI
+	message SproutTower3F_Johto_SageLiFlashExplanationText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 SproutTower3F_Johto_SageLiScript_GotFlash:
 	message SproutTower3F_Johto_SageLiAfterBattleText
@@ -137,6 +144,15 @@ SproutTower3F_Johto_SageLiTakeThisFlashText:
 	.string "this move."
 	.string "\pTake this FLASH\n"
 	.string "HM.$"
+
+SproutTower3F_Johto_SageLiFlashExplanationText:
+	.string "FLASH illuminates\n"
+	.string "even the darkest\l"
+	.string "of all places."
+	.string "\pBut to use it out\n"
+	.string "of battle, you"
+	.string "\pneed the BADGE\n"
+	.string "from VIOLET's GYM.$"
 
 SproutTower3F_Johto_SageLiAfterBattleText:
 	.string "I hope you learn\n"

@@ -123,8 +123,26 @@ OlivinePort_Johto_OlivinePortWalkUpToShipScript_FirstTime:
 	message OlivinePort_Johto_OlivinePortAskTicketText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: checkitem S_S_TICKET
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_SS_TICKET, 1
+	goto_if_eq VAR_RESULT, 0, OlivinePort_Johto_OlivinePortWalkUpToShipScript_NoTicket
+	message OlivinePort_Johto_OlivinePortFlashTicketText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_TEMP_12
+	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Johto_OlivinePortApproachFastShipFirstTimeMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto OlivinePort_Johto_OlivinePortSailorAtGangwayScript
+
+OlivinePort_Johto_OlivinePortWalkUpToShipScript_NoTicket:
+	message OlivinePort_Johto_OlivinePortNoTicketText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Johto_OlivinePortCannotEnterFastShipMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	releaseall
+	end
 
 OlivinePort_Johto_OlivinePortWalkUpToShipScript_NextShipMonday:
 	message OlivinePort_Johto_OlivinePortMondayShipText
@@ -187,8 +205,31 @@ OlivinePort_Johto_OlivinePortSailorAfterHOFScript_FirstTime:
 	message OlivinePort_Johto_OlivinePortAskTicketText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: checkitem S_S_TICKET
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_SS_TICKET, 1
+	goto_if_eq VAR_RESULT, 0, OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NoTicket
+	message OlivinePort_Johto_OlivinePortFlashTicketText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_TEMP_12
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_eq VAR_RESULT, DIR_EAST, OlivinePort_Johto_OlivinePortSailorAfterHOFScript_Right
+	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Johto_OlivinePortApproachFastShipAfterHOFMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto OlivinePort_Johto_OlivinePortSailorAtGangwayScript
+
+OlivinePort_Johto_OlivinePortSailorAfterHOFScript_Right:
+	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Johto_OlivinePortApproachFastShipAfterHOFRightMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto OlivinePort_Johto_OlivinePortSailorAtGangwayScript
+
+OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NoTicket:
+	message OlivinePort_Johto_OlivinePortNoTicketText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NextShipMonday:
 	message OlivinePort_Johto_OlivinePortMondayShipText
@@ -272,6 +313,42 @@ OlivinePort_Johto_OlivinePortCannotEnterFastShipMovement:
 	face_left
 	step_end
 
+OlivinePort_Johto_OlivinePortApproachFastShipFirstTimeMovement:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+OlivinePort_Johto_OlivinePortApproachFastShipAfterHOFMovement:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+OlivinePort_Johto_OlivinePortApproachFastShipAfterHOFRightMovement:
+	walk_up
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 OlivinePort_Johto_OlivinePortSailorGetOnBoardText:
 	.string "We're departing\n"
 	.string "soon. Please get\l"
@@ -294,6 +371,22 @@ OlivinePort_Johto_OlivinePortAskTicketText:
 OlivinePort_Johto_OlivinePortComeAgainText:
 	.string "We hope to see you\n"
 	.string "again!$"
+
+OlivinePort_Johto_OlivinePortFlashTicketText:
+	.string "{PLAYER} flashed\n"
+	.string "the S.S.TICKET."
+	.string "\pThat's it.\n"
+	.string "Thank you!$"
+
+OlivinePort_Johto_OlivinePortNoTicketText:
+	.string "{PLAYER} tried to\n"
+	.string "show the S.S.\l"
+	.string "TICKET…"
+	.string "\p…But no TICKET!"
+	.string "\pSorry!\n"
+	.string "You may board only"
+	.string "\pif you have an\n"
+	.string "S.S.TICKET.$"
 
 OlivinePort_Johto_OlivinePortMondayShipText:
 	.string "The FAST SHIP will\n"

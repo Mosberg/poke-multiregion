@@ -29,8 +29,8 @@ AzaleaGym_Johto_AzaleaGymBugsyScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_HIVEBADGE
-	@ TODO unsupported: readvar VAR_BADGES
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	call AzaleaGym_Johto_AzaleaGymActivateRockets_Sub
 
 AzaleaGym_Johto_AzaleaGymBugsyScript_FightDone:
 	goto_if_set FLAG_JOHTO_GOT_TM49_FURY_CUTTER, AzaleaGym_Johto_AzaleaGymBugsyScript_GotFuryCutter
@@ -41,8 +41,15 @@ AzaleaGym_Johto_AzaleaGymBugsyScript_FightDone:
 	message AzaleaGym_Johto_BugsyText_HiveBadgeSpeech
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_FURY_CUTTER
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, AzaleaGym_Johto_AzaleaGymBugsyScript_NoRoomForFuryCutter
+	setflag FLAG_JOHTO_GOT_TM49_FURY_CUTTER
+	message AzaleaGym_Johto_BugsyText_FuryCutterSpeech
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 AzaleaGym_Johto_AzaleaGymBugsyScript_GotFuryCutter:
 	message AzaleaGym_Johto_BugsyText_BugMonsAreDeep
@@ -152,8 +159,18 @@ AzaleaGym_Johto_AzaleaGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 AzaleaGym_Johto_AzaleaGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, BUGSY, BUGSY1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
+
+AzaleaGym_Johto_AzaleaGymActivateRockets_Sub:
+	goto_if_eq VAR_RESULT, 7, AzaleaGym_Johto_AzaleaGymActivateRockets_RadioTowerRockets_Sub
+	goto_if_eq VAR_RESULT, 6, AzaleaGym_Johto_AzaleaGymActivateRockets_GoldenrodRockets_Sub
+	return
+
+AzaleaGym_Johto_AzaleaGymActivateRockets_GoldenrodRockets_Sub:
+	goto Johto_Std_GoldenrodRocketsScript_Sub
+
+AzaleaGym_Johto_AzaleaGymActivateRockets_RadioTowerRockets_Sub:
+	goto Johto_Std_RadioTowerRocketsScript_Sub
 
 AzaleaGym_Johto_BugsyText_INeverLose:
 	.string "I'm BUGSY!\n"
@@ -195,6 +212,18 @@ AzaleaGym_Johto_BugsyText_HiveBadgeSpeech:
 	.string "of battle too."
 	.string "\pHere, I also want\n"
 	.string "you to have this.$"
+
+AzaleaGym_Johto_BugsyText_FuryCutterSpeech:
+	.string "TM49 contains\n"
+	.string "FURY CUTTER."
+	.string "\pIf you don't miss,\n"
+	.string "it gets stronger\l"
+	.string "every turn."
+	.string "\pThe longer your\n"
+	.string "battle goes, the\l"
+	.string "better it gets."
+	.string "\pIsn't that great?\n"
+	.string "I discovered it!$"
 
 AzaleaGym_Johto_BugsyText_BugMonsAreDeep:
 	.string "Bug POKéMON are\n"

@@ -29,16 +29,23 @@ OlivineGym_Johto_OlivineGymJasmineScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_MINERALBADGE
-	@ TODO unsupported: readvar VAR_BADGES
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	call OlivineGym_Johto_OlivineGymActivateRockets_Sub
 
 OlivineGym_Johto_OlivineGymJasmineScript_FightDone:
 	goto_if_set FLAG_JOHTO_GOT_TM23_IRON_TAIL, OlivineGym_Johto_OlivineGymJasmineScript_GotIronTail
 	message OlivineGym_Johto_Jasmine_BadgeSpeech
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_IRON_TAIL
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_IRON_TAIL
+	goto_if_eq VAR_RESULT, 0, OlivineGym_Johto_OlivineGymJasmineScript_NoRoomForIronTail
+	setflag FLAG_JOHTO_GOT_TM23_IRON_TAIL
+	message OlivineGym_Johto_Jasmine_IronTailSpeech
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 OlivineGym_Johto_OlivineGymJasmineScript_GotIronTail:
 	message OlivineGym_Johto_Jasmine_GoodLuck
@@ -82,8 +89,18 @@ OlivineGym_Johto_OlivineGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 OlivineGym_Johto_OlivineGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, JASMINE, JASMINE1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
+
+OlivineGym_Johto_OlivineGymActivateRockets_Sub:
+	goto_if_eq VAR_RESULT, 7, OlivineGym_Johto_OlivineGymActivateRockets_RadioTowerRockets_Sub
+	goto_if_eq VAR_RESULT, 6, OlivineGym_Johto_OlivineGymActivateRockets_GoldenrodRockets_Sub
+	return
+
+OlivineGym_Johto_OlivineGymActivateRockets_GoldenrodRockets_Sub:
+	goto Johto_Std_GoldenrodRocketsScript_Sub
+
+OlivineGym_Johto_OlivineGymActivateRockets_RadioTowerRockets_Sub:
+	goto Johto_Std_RadioTowerRocketsScript_Sub
 
 OlivineGym_Johto_Jasmine_SteelTypeIntro:
 	.string "…Thank you for\n"
@@ -123,6 +140,11 @@ OlivineGym_Johto_Jasmine_BadgeSpeech:
 	.string "DEFENSE."
 	.string "\p…Um… Please take\n"
 	.string "this too…$"
+
+OlivineGym_Johto_Jasmine_IronTailSpeech:
+	.string "…You could use\n"
+	.string "that TM to teach\l"
+	.string "IRON TAIL.$"
 
 OlivineGym_Johto_Jasmine_GoodLuck:
 	.string "Um… I don't know\n"

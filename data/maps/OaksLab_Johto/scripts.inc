@@ -48,7 +48,8 @@ OaksLab_Johto_Oak:
 	setflag FLAG_JOHTO_TALKED_TO_OAK_IN_KANTO
 
 OaksLab_Johto_Oak_CheckBadges:
-	@ TODO unsupported: readvar VAR_BADGES
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: ifequal NUM_BADGES, .OpenMtSilver
 	goto Johto_EventScript_Unimplemented
 
 OaksLab_Johto_Oak_CheckPokedex:

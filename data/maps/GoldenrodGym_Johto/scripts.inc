@@ -56,15 +56,22 @@ GoldenrodGym_Johto_GoldenrodGymWhitneyScript_StoppedCrying:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_PLAINBADGE
-	@ TODO unsupported: readvar VAR_BADGES
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	call GoldenrodGym_Johto_GoldenrodGymActivateRockets_Sub
 
 GoldenrodGym_Johto_GoldenrodGymWhitneyScript_GotPlainBadge:
 	message GoldenrodGym_Johto_WhitneyPlainBadgeText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem TM_ATTRACT
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_TM_ATTRACT
+	goto_if_eq VAR_RESULT, 0, GoldenrodGym_Johto_GoldenrodGymWhitneyScript_NoRoomForAttract
+	setflag FLAG_JOHTO_GOT_TM45_ATTRACT
+	message GoldenrodGym_Johto_WhitneyAttractText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 GoldenrodGym_Johto_GoldenrodGymWhitneyScript_GotAttract:
 	message GoldenrodGym_Johto_WhitneyGoodCryText
@@ -177,8 +184,18 @@ GoldenrodGym_Johto_GoldenrodGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 GoldenrodGym_Johto_GoldenrodGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, WHITNEY, WHITNEY1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
+
+GoldenrodGym_Johto_GoldenrodGymActivateRockets_Sub:
+	goto_if_eq VAR_RESULT, 7, GoldenrodGym_Johto_GoldenrodGymActivateRockets_RadioTowerRockets_Sub
+	goto_if_eq VAR_RESULT, 6, GoldenrodGym_Johto_GoldenrodGymActivateRockets_GoldenrodRockets_Sub
+	return
+
+GoldenrodGym_Johto_GoldenrodGymActivateRockets_GoldenrodRockets_Sub:
+	goto Johto_Std_GoldenrodRocketsScript_Sub
+
+GoldenrodGym_Johto_GoldenrodGymActivateRockets_RadioTowerRockets_Sub:
+	goto Johto_Std_RadioTowerRocketsScript_Sub
 
 GoldenrodGym_Johto_BridgetWalksUpMovement:
 	walk_left
@@ -237,6 +254,15 @@ GoldenrodGym_Johto_WhitneyPlainBadgeText:
 	.string "SPEED."
 	.string "\pOh, you can have\n"
 	.string "this too!$"
+
+GoldenrodGym_Johto_WhitneyAttractText:
+	.string "It's ATTRACT!\n"
+	.string "It makes full use"
+	.string "\pof a POKéMON's\n"
+	.string "charm."
+	.string "\pIsn't it just per-\n"
+	.string "fect for a cutie\l"
+	.string "like me?$"
 
 GoldenrodGym_Johto_WhitneyGoodCryText:
 	.string "Ah, that was a\n"

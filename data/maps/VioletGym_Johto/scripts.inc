@@ -29,16 +29,26 @@ VioletGym_Johto_VioletGymFalknerScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_ZEPHYRBADGE
-	@ TODO unsupported: readvar VAR_BADGES
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	call VioletGym_Johto_VioletGymActivateRockets_Sub
 
 VioletGym_Johto_VioletGymFalknerScript_FightDone:
 	goto_if_set FLAG_JOHTO_GOT_TM31_MUD_SLAP, VioletGym_Johto_VioletGymFalknerScript_SpeechAfterTM
 	setflag FLAG_JOHTO_BEAT_BIRD_KEEPER_ROD
 	setflag FLAG_JOHTO_BEAT_BIRD_KEEPER_ABE
 	setvar VAR_JOHTO_SCENE_ELMS_LAB, 2
-	@ TODO unsupported: specialphonecall SPECIALCALL_ASSISTANT
-	goto Johto_EventScript_Unimplemented
+	message VioletGym_Johto_FalknerZephyrBadgeText
+	waitmessage
+	waitbuttonpress
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, VioletGym_Johto_VioletGymFalknerScript_NoRoomForMudSlap
+	setflag FLAG_JOHTO_GOT_TM31_MUD_SLAP
+	message VioletGym_Johto_FalknerTMMudSlapText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 VioletGym_Johto_VioletGymFalknerScript_SpeechAfterTM:
 	message VioletGym_Johto_FalknerFightDoneText
@@ -103,8 +113,18 @@ VioletGym_Johto_VioletGymStatue:
 	goto Johto_Std_GymStatue1Script
 
 VioletGym_Johto_VioletGymStatue_Beaten:
-	@ TODO unsupported: gettrainername STRING_BUFFER_4, FALKNER, FALKNER1
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_GymStatue2Script
+
+VioletGym_Johto_VioletGymActivateRockets_Sub:
+	goto_if_eq VAR_RESULT, 7, VioletGym_Johto_VioletGymActivateRockets_RadioTowerRockets_Sub
+	goto_if_eq VAR_RESULT, 6, VioletGym_Johto_VioletGymActivateRockets_GoldenrodRockets_Sub
+	return
+
+VioletGym_Johto_VioletGymActivateRockets_GoldenrodRockets_Sub:
+	goto Johto_Std_GoldenrodRocketsScript_Sub
+
+VioletGym_Johto_VioletGymActivateRockets_RadioTowerRockets_Sub:
+	goto Johto_Std_RadioTowerRocketsScript_Sub
 
 VioletGym_Johto_FalknerIntroText:
 	.string "I'm FALKNER, the\n"
@@ -136,6 +156,35 @@ VioletGym_Johto_FalknerWinLossText:
 VioletGym_Johto_ReceivedZephyrBadgeText:
 	.string "{PLAYER} received\n"
 	.string "ZEPHYRBADGE.$"
+
+VioletGym_Johto_FalknerZephyrBadgeText:
+	.string "ZEPHYRBADGE\n"
+	.string "raises the attack\l"
+	.string "power of POKéMON."
+	.string "\pIt also enables\n"
+	.string "POKéMON to use"
+	.string "\pFLASH, if they\n"
+	.string "have it, anytime."
+	.string "\pHere--take this\n"
+	.string "too.$"
+
+VioletGym_Johto_FalknerTMMudSlapText:
+	.string "By using a TM, a\n"
+	.string "POKéMON will"
+	.string "\pinstantly learn a\n"
+	.string "new move."
+	.string "\pThink before you\n"
+	.string "act--a TM can be\l"
+	.string "used only once."
+	.string "\pTM31 contains\n"
+	.string "MUD-SLAP."
+	.string "\pIt reduces the\n"
+	.string "enemy's accuracy"
+	.string "\pwhile it causes\n"
+	.string "damage."
+	.string "\pIn other words, it\n"
+	.string "is both defensive\l"
+	.string "and offensive.$"
 
 VioletGym_Johto_FalknerFightDoneText:
 	.string "There are POKéMON\n"
