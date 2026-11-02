@@ -114,7 +114,7 @@ TeamRocketBaseB3F_Johto_RocketBaseBoss:
 	closemessage
 	applymovement 2, TeamRocketBaseB3F_Johto_RocketBaseBossApproachesPlayerMovement
 	waitmovement 2
-	@ TODO unsupported: winlosstext ExecutiveM4BeatenText, 0
+	@ TODO unsupported: setlasttalked TEAMROCKETBASEB3F_ROCKET1
 	goto Johto_EventScript_Unimplemented
 
 TeamRocketBaseB3F_Johto_RocketBaseMurkrow:
@@ -123,6 +123,68 @@ TeamRocketBaseB3F_Johto_RocketBaseMurkrow:
 	waitbuttonpress
 	closemessage
 	setflag FLAG_JOHTO_LEARNED_HAIL_GIOVANNI
+	releaseall
+	end
+
+TeamRocketBaseB3F_Johto_SlowpokeTailGrunt::
+	trainerbattle_single TRAINER_JOHTO_GRUNTF_GRUNTF_5, TeamRocketBaseB3F_Johto_GruntF5SeenText, TeamRocketBaseB3F_Johto_GruntF5BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTF_5
+	lock
+	faceplayer
+	goto TeamRocketBaseB3F_Johto_GruntF5Script
+
+TeamRocketBaseB3F_Johto_GruntF5Script:
+	message TeamRocketBaseB3F_Johto_GruntF5AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_LEARNED_SLOWPOKETAIL
+	releaseall
+	end
+
+TeamRocketBaseB3F_Johto_RaticateTailGrunt::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_28, TeamRocketBaseB3F_Johto_GruntM28SeenText, TeamRocketBaseB3F_Johto_GruntM28BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_28
+	lock
+	faceplayer
+	goto TeamRocketBaseB3F_Johto_GruntM28Script
+
+TeamRocketBaseB3F_Johto_GruntM28Script:
+	message TeamRocketBaseB3F_Johto_GruntM28AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_LEARNED_RATICATE_TAIL
+	releaseall
+	end
+
+TeamRocketBaseB3F_Johto_TrainerScientistRoss::
+	trainerbattle_single TRAINER_JOHTO_SCIENTIST_ROSS, TeamRocketBaseB3F_Johto_ScientistRossSeenText, TeamRocketBaseB3F_Johto_ScientistRossBeatenText
+	setflag FLAG_JOHTO_BEAT_SCIENTIST_ROSS
+	lock
+	faceplayer
+	goto TeamRocketBaseB3F_Johto_TrainerScientistRoss_Script
+
+TeamRocketBaseB3F_Johto_TrainerScientistRoss_Script:
+	message TeamRocketBaseB3F_Johto_ScientistRossAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB3F_Johto_TrainerScientistMitch::
+	trainerbattle_single TRAINER_JOHTO_SCIENTIST_MITCH, TeamRocketBaseB3F_Johto_ScientistMitchSeenText, TeamRocketBaseB3F_Johto_ScientistMitchBeatenText
+	setflag FLAG_JOHTO_BEAT_SCIENTIST_MITCH
+	lock
+	faceplayer
+	goto TeamRocketBaseB3F_Johto_TrainerScientistMitch_Script
+
+TeamRocketBaseB3F_Johto_TrainerScientistMitch_Script:
+	message TeamRocketBaseB3F_Johto_ScientistMitchAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
 	releaseall
 	end
 
@@ -259,7 +321,97 @@ TeamRocketBaseB3F_Johto_ExecutiveM4BeforeText:
 	.string "one disturb this\l"
 	.string "place!$"
 
+TeamRocketBaseB3F_Johto_ExecutiveM4BeatenText:
+	.string "I… I couldn't do a\n"
+	.string "thing…"
+	.string "\pGIOVANNI, please\n"
+	.string "forgive me…$"
+
 TeamRocketBaseB3F_Johto_RocketBaseMurkrowText:
 	.string "MURKROW: The\n"
 	.string "password is…"
 	.string "\pHAIL GIOVANNI.$"
+
+TeamRocketBaseB3F_Johto_GruntF5SeenText:
+	.string "Do I know the\n"
+	.string "password?"
+	.string "\pMaybe."
+	.string "\pBut no weakling's\n"
+	.string "going to get it!$"
+
+TeamRocketBaseB3F_Johto_GruntF5BeatenText:
+	.string "All right. Stop.\n"
+	.string "I'll tell you.$"
+
+TeamRocketBaseB3F_Johto_GruntF5AfterBattleText:
+	.string "The password to\n"
+	.string "the boss's room is"
+	.string "\pSLOWPOKETAIL."
+	.string "\pBut it's useless\n"
+	.string "unless you have\l"
+	.string "two passwords.$"
+
+TeamRocketBaseB3F_Johto_GruntM28SeenText:
+	.string "Hyuck-hyuck-hyuck!"
+	.string "\pYou're challenging\n"
+	.string "me to a battle?"
+	.string "\pHah! You're nuts,\n"
+	.string "but you have guts!"
+	.string "\pI like that!"
+	.string "\pIf you can beat\n"
+	.string "me, I'll tell you"
+	.string "\pa password to the\n"
+	.string "boss's room!$"
+
+TeamRocketBaseB3F_Johto_GruntM28BeatenText:
+	.string "Hyuck-hyuck-hyuck!\n"
+	.string "You're good!$"
+
+TeamRocketBaseB3F_Johto_GruntM28AfterBattleText:
+	.string "Hyuck-hyuck-hyuck!"
+	.string "\pThe password to\n"
+	.string "the boss's room…"
+	.string "\pUh…, I think it is\n"
+	.string "RATICATE TAIL.$"
+
+TeamRocketBaseB3F_Johto_ScientistRossSeenText:
+	.string "I used to work for\n"
+	.string "SILPH, but now I"
+	.string "\prun research for\n"
+	.string "TEAM ROCKET."
+	.string "\pA meddlesome child\n"
+	.string "like you needs to\l"
+	.string "be punished.$"
+
+TeamRocketBaseB3F_Johto_ScientistRossBeatenText:
+	.string "A mere tactical\n"
+	.string "error cost me…$"
+
+TeamRocketBaseB3F_Johto_ScientistRossAfterBattleText:
+	.string "A radio signal\n"
+	.string "that drives POKé-\l"
+	.string "MON mad…"
+	.string "\pMy experiment is a\n"
+	.string "complete success."
+	.string "\pMy promotion is\n"
+	.string "assured. This loss"
+	.string "\pmeans absolutely\n"
+	.string "nothing.$"
+
+TeamRocketBaseB3F_Johto_ScientistMitchSeenText:
+	.string "I don't care that\n"
+	.string "POKéMON are hurt\l"
+	.string "by our experiment.$"
+
+TeamRocketBaseB3F_Johto_ScientistMitchBeatenText:
+	.string "Thinking is my\n"
+	.string "strong suit, not\l"
+	.string "battling.$"
+
+TeamRocketBaseB3F_Johto_ScientistMitchAfterBattleText:
+	.string "If we turn up the\n"
+	.string "power of our radio"
+	.string "\psignal for broad-\n"
+	.string "cast nationwide…"
+	.string "\pThe very thought\n"
+	.string "excites me!$"

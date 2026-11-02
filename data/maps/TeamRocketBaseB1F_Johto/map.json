@@ -37,9 +37,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "TeamRocketBaseB1F_Johto_TrainerGruntM16",
       "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION"
     },
     {
@@ -50,9 +50,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "TeamRocketBaseB1F_Johto_TrainerScientistJed",
       "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_POPULATION"
     },
     {

@@ -58,6 +58,21 @@ SproutTower1F_Johto_SproutTower1FTeacherScript:
 	releaseall
 	end
 
+SproutTower1F_Johto_TrainerSageChow::
+	trainerbattle_single TRAINER_JOHTO_SAGE_CHOW, SproutTower1F_Johto_SageChowSeenText, SproutTower1F_Johto_SageChowBeatenText
+	setflag FLAG_JOHTO_BEAT_SAGE_CHOW
+	lock
+	faceplayer
+	goto SproutTower1F_Johto_TrainerSageChow_Script
+
+SproutTower1F_Johto_TrainerSageChow_Script:
+	message SproutTower1F_Johto_SageChowAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 SproutTower1F_Johto_SproutTower1FStatue:
 	message SproutTower1F_Johto_SproutTower1FStatueText
 	waitmessage
@@ -65,6 +80,23 @@ SproutTower1F_Johto_SproutTower1FStatue:
 	closemessage
 	releaseall
 	end
+
+SproutTower1F_Johto_SageChowSeenText:
+	.string "We stand guard in\n"
+	.string "this tower."
+	.string "\pHere, we express\n"
+	.string "our gratitude to\l"
+	.string "honor all POKéMON.$"
+
+SproutTower1F_Johto_SageChowBeatenText:
+	.string "Th-Thank you!$"
+
+SproutTower1F_Johto_SageChowAfterBattleText:
+	.string "All living beings\n"
+	.string "coexist through\l"
+	.string "cooperation."
+	.string "\pWe must always be\n"
+	.string "thankful for this.$"
 
 SproutTower1F_Johto_SproutTower1FSage1Text:
 	.string "Only if you reach\n"

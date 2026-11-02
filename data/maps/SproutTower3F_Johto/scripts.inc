@@ -35,11 +35,60 @@ SproutTower3F_Johto_SageLiScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext SageLiBeatenText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_SAGE_LI, SproutTower3F_Johto_SageLiBeatenText
+	message SproutTower3F_Johto_SageLiTakeThisFlashText
+	waitmessage
+	waitbuttonpress
+	@ TODO unsupported: verbosegiveitem HM_FLASH
 	goto Johto_EventScript_Unimplemented
 
 SproutTower3F_Johto_SageLiScript_GotFlash:
 	message SproutTower3F_Johto_SageLiAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+SproutTower3F_Johto_TrainerSageJin::
+	trainerbattle_single TRAINER_JOHTO_SAGE_JIN, SproutTower3F_Johto_SageJinSeenText, SproutTower3F_Johto_SageJinBeatenText
+	setflag FLAG_JOHTO_BEAT_SAGE_JIN
+	lock
+	faceplayer
+	goto SproutTower3F_Johto_TrainerSageJin_Script
+
+SproutTower3F_Johto_TrainerSageJin_Script:
+	message SproutTower3F_Johto_SageJinAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+SproutTower3F_Johto_TrainerSageTroy::
+	trainerbattle_single TRAINER_JOHTO_SAGE_TROY, SproutTower3F_Johto_SageTroySeenText, SproutTower3F_Johto_SageTroyBeatenText
+	setflag FLAG_JOHTO_BEAT_SAGE_TROY
+	lock
+	faceplayer
+	goto SproutTower3F_Johto_TrainerSageTroy_Script
+
+SproutTower3F_Johto_TrainerSageTroy_Script:
+	message SproutTower3F_Johto_SageTroyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+SproutTower3F_Johto_TrainerSageNeal::
+	trainerbattle_single TRAINER_JOHTO_SAGE_NEAL, SproutTower3F_Johto_SageNealSeenText, SproutTower3F_Johto_SageNealBeatenText
+	setflag FLAG_JOHTO_BEAT_SAGE_NEAL
+	lock
+	faceplayer
+	goto SproutTower3F_Johto_TrainerSageNeal_Script
+
+SproutTower3F_Johto_TrainerSageNeal_Script:
+	message SproutTower3F_Johto_SageNealAfterBattleText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -78,10 +127,65 @@ SproutTower3F_Johto_SageLiSeenText:
 	.string "\pyour POKéMON and\n"
 	.string "you!$"
 
+SproutTower3F_Johto_SageLiBeatenText:
+	.string "Ah, excellent!$"
+
+SproutTower3F_Johto_SageLiTakeThisFlashText:
+	.string "You and your POKé-\n"
+	.string "MON should have"
+	.string "\pno problem using\n"
+	.string "this move."
+	.string "\pTake this FLASH\n"
+	.string "HM.$"
+
 SproutTower3F_Johto_SageLiAfterBattleText:
 	.string "I hope you learn\n"
 	.string "and grow from your\l"
 	.string "journey.$"
+
+SproutTower3F_Johto_SageJinSeenText:
+	.string "I train to find\n"
+	.string "enlightenment in\l"
+	.string "POKéMON!$"
+
+SproutTower3F_Johto_SageJinBeatenText:
+	.string "My training is\n"
+	.string "incomplete…$"
+
+SproutTower3F_Johto_SageJinAfterBattleText:
+	.string "As POKéMON grow\n"
+	.string "stronger, so does\l"
+	.string "the trainer."
+	.string "\pNo, wait. As the\n"
+	.string "trainer grows"
+	.string "\pstronger, so do\n"
+	.string "the POKéMON.$"
+
+SproutTower3F_Johto_SageTroySeenText:
+	.string "Let me see how\n"
+	.string "much you trust\l"
+	.string "your POKéMON.$"
+
+SproutTower3F_Johto_SageTroyBeatenText:
+	.string "Yes, your trust is\n"
+	.string "real!$"
+
+SproutTower3F_Johto_SageTroyAfterBattleText:
+	.string "It is not far to\n"
+	.string "the ELDER.$"
+
+SproutTower3F_Johto_SageNealSeenText:
+	.string "The ELDER's HM\n"
+	.string "lights even pitch-\l"
+	.string "black darkness.$"
+
+SproutTower3F_Johto_SageNealBeatenText:
+	.string "It is my head that\n"
+	.string "is bright!$"
+
+SproutTower3F_Johto_SageNealAfterBattleText:
+	.string "Let there be light\n"
+	.string "on your journey.$"
 
 SproutTower3F_Johto_SproutTower3FPaintingText:
 	.string "It's a powerful\n"

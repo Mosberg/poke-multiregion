@@ -3,7 +3,7 @@ Route16_Johto_MapScripts::
 	.byte 0
 
 Route16_Johto_OnTransition:
-	call Route16_Johto_Route16AlwaysOnBikeCallback_Sub
+	call Route16_Johto_Route16AlwaysOnBikeCallback_Cb
 	end
 
 Route16_Johto_CyclingRoadSign_Entry::
@@ -19,7 +19,7 @@ Route16_Johto_CyclingRoadSign:
 	releaseall
 	end
 
-Route16_Johto_Route16AlwaysOnBikeCallback_Sub:
+Route16_Johto_Route16AlwaysOnBikeCallback_Cb:
 	@ TODO unsupported: readvar VAR_YCOORD
 	return
 

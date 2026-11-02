@@ -78,11 +78,63 @@ CeruleanGym_Johto_CeruleanGymMistyScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext MistyWinLossText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_MISTY_MISTY1, CeruleanGym_Johto_MistyWinLossText
+	setflag FLAG_JOHTO_BEAT_MISTY
+	setflag FLAG_JOHTO_BEAT_SWIMMERF_DIANA
+	setflag FLAG_JOHTO_BEAT_SWIMMERF_BRIANA
+	setflag FLAG_JOHTO_BEAT_SWIMMERM_PARKER
+	message CeruleanGym_Johto_ReceivedCascadeBadgeText
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 CeruleanGym_Johto_CeruleanGymMistyScript_FightDone:
 	message CeruleanGym_Johto_MistyFightDoneText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+CeruleanGym_Johto_TrainerSwimmerfDiana::
+	trainerbattle_single TRAINER_JOHTO_SWIMMERF_DIANA, CeruleanGym_Johto_SwimmerfDianaSeenText, CeruleanGym_Johto_SwimmerfDianaBeatenText
+	setflag FLAG_JOHTO_BEAT_SWIMMERF_DIANA
+	lock
+	faceplayer
+	goto CeruleanGym_Johto_TrainerSwimmerfDiana_Script
+
+CeruleanGym_Johto_TrainerSwimmerfDiana_Script:
+	message CeruleanGym_Johto_SwimmerfDianaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+CeruleanGym_Johto_TrainerSwimmerfBriana::
+	trainerbattle_single TRAINER_JOHTO_SWIMMERF_BRIANA, CeruleanGym_Johto_SwimmerfBrianaSeenText, CeruleanGym_Johto_SwimmerfBrianaBeatenText
+	setflag FLAG_JOHTO_BEAT_SWIMMERF_BRIANA
+	lock
+	faceplayer
+	goto CeruleanGym_Johto_TrainerSwimmerfBriana_Script
+
+CeruleanGym_Johto_TrainerSwimmerfBriana_Script:
+	message CeruleanGym_Johto_SwimmerfBrianaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+CeruleanGym_Johto_TrainerSwimmermParker::
+	trainerbattle_single TRAINER_JOHTO_SWIMMERM_PARKER, CeruleanGym_Johto_SwimmermParkerSeenText, CeruleanGym_Johto_SwimmermParkerBeatenText
+	setflag FLAG_JOHTO_BEAT_SWIMMERM_PARKER
+	lock
+	faceplayer
+	goto CeruleanGym_Johto_TrainerSwimmermParker_Script
+
+CeruleanGym_Johto_TrainerSwimmermParker_Script:
+	message CeruleanGym_Johto_SwimmermParkerAfterBattleText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -209,6 +261,18 @@ CeruleanGym_Johto_MistyIntroText:
 	.string "\pMy water-type\n"
 	.string "POKéMON are tough!$"
 
+CeruleanGym_Johto_MistyWinLossText:
+	.string "MISTY: You really\n"
+	.string "are good…"
+	.string "\pI'll admit that\n"
+	.string "you are skilled…"
+	.string "\pHere you go. It's\n"
+	.string "CASCADEBADGE.$"
+
+CeruleanGym_Johto_ReceivedCascadeBadgeText:
+	.string "{PLAYER} received\n"
+	.string "CASCADEBADGE.$"
+
 CeruleanGym_Johto_MistyFightDoneText:
 	.string "MISTY: Are there\n"
 	.string "many strong train-\l"
@@ -218,6 +282,51 @@ CeruleanGym_Johto_MistyFightDoneText:
 	.string "travel one day, so"
 	.string "\pI can battle some\n"
 	.string "skilled trainers.$"
+
+CeruleanGym_Johto_SwimmerfDianaSeenText:
+	.string "Sorry about being\n"
+	.string "away. Let's get on\l"
+	.string "with it!$"
+
+CeruleanGym_Johto_SwimmerfDianaBeatenText:
+	.string "I give up! You're\n"
+	.string "the winner!$"
+
+CeruleanGym_Johto_SwimmerfDianaAfterBattleText:
+	.string "I'll be swimming\n"
+	.string "quietly.$"
+
+CeruleanGym_Johto_SwimmerfBrianaSeenText:
+	.string "Don't let my ele-\n"
+	.string "gant swimming un-\l"
+	.string "nerve you.$"
+
+CeruleanGym_Johto_SwimmerfBrianaBeatenText:
+	.string "Ooh, you calmly\n"
+	.string "disposed of me…$"
+
+CeruleanGym_Johto_SwimmerfBrianaAfterBattleText:
+	.string "Don't be too smug\n"
+	.string "about beating me."
+	.string "\pMISTY will destroy\n"
+	.string "you if you get\l"
+	.string "complacent.$"
+
+CeruleanGym_Johto_SwimmermParkerSeenText:
+	.string "Glub…"
+	.string "\pI'm first! Come\n"
+	.string "and get me!$"
+
+CeruleanGym_Johto_SwimmermParkerBeatenText:
+	.string "This can't be…$"
+
+CeruleanGym_Johto_SwimmermParkerAfterBattleText:
+	.string "MISTY has gotten\n"
+	.string "much better in the\l"
+	.string "past few years."
+	.string "\pDon't let your\n"
+	.string "guard down, or\l"
+	.string "you'll be crushed!$"
 
 CeruleanGym_Johto_CeruleanGymGuideText:
 	.string "Yo! CHAMP in\n"

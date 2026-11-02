@@ -3,7 +3,7 @@ IlexForest_Johto_MapScripts::
 	.byte 0
 
 IlexForest_Johto_OnTransition:
-	call IlexForest_Johto_IlexForestFarfetchdCallback_Sub
+	call IlexForest_Johto_IlexForestFarfetchdCallback_Cb
 	end
 
 IlexForest_Johto_IlexForestFarfetchdScript_Entry::
@@ -105,6 +105,21 @@ IlexForest_Johto_IlexForestHeadbuttGuyScript_BagFull:
 	releaseall
 	end
 
+IlexForest_Johto_TrainerBugCatcherWayne::
+	trainerbattle_single TRAINER_JOHTO_BUG_CATCHER_WAYNE, IlexForest_Johto_BugCatcherWayneSeenText, IlexForest_Johto_BugCatcherWayneBeatenText
+	setflag FLAG_JOHTO_BEAT_BUG_CATCHER_WAYNE
+	lock
+	faceplayer
+	goto IlexForest_Johto_TrainerBugCatcherWayne_Script
+
+IlexForest_Johto_TrainerBugCatcherWayne_Script:
+	message IlexForest_Johto_BugCatcherWayneAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 IlexForest_Johto_IlexForestLassScript:
 	faceplayer
 	message IlexForest_Johto_Text_IlexForestLass
@@ -138,12 +153,12 @@ IlexForest_Johto_IlexForestShrineScript_DontDoCelebiEvent:
 	releaseall
 	end
 
-IlexForest_Johto_IlexForestFarfetchdCallback_Sub:
-	goto_if_set FLAG_JOHTO_GOT_HM01_CUT, IlexForest_Johto_IlexForestFarfetchdCallback_Static_Sub
+IlexForest_Johto_IlexForestFarfetchdCallback_Cb:
+	goto_if_set FLAG_JOHTO_GOT_HM01_CUT, IlexForest_Johto_IlexForestFarfetchdCallback_Static_Cb
 	@ TODO unsupported: readmem wFarfetchdPosition
 	return
 
-IlexForest_Johto_IlexForestFarfetchdCallback_Static_Sub:
+IlexForest_Johto_IlexForestFarfetchdCallback_Static_Cb:
 	return
 
 IlexForest_Johto_IlexForestApprenticeIntroText:
@@ -233,3 +248,23 @@ IlexForest_Johto_Text_IlexForestShrine:
 	.string "\pIt's in honor of\n"
 	.string "the forest's\l"
 	.string "protector…$"
+
+IlexForest_Johto_BugCatcherWayneSeenText:
+	.string "Don't sneak up on\n"
+	.string "me like that!"
+	.string "\pYou frightened a\n"
+	.string "POKéMON away!$"
+
+IlexForest_Johto_BugCatcherWayneBeatenText:
+	.string "I hadn't seen that\n"
+	.string "POKéMON before…$"
+
+IlexForest_Johto_BugCatcherWayneAfterBattleText:
+	.string "A POKéMON I've\n"
+	.string "never seen before"
+	.string "\pfell out of the\n"
+	.string "tree when I used\l"
+	.string "HEADBUTT."
+	.string "\pI ought to use\n"
+	.string "HEADBUTT in other\l"
+	.string "places too.$"

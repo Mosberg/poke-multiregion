@@ -24,9 +24,9 @@
       "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "FastShipCabins_SW_SSW_NW_Johto_TrainerFirebreatherLyle",
       "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_FIRST_TRIP"
     },
     {
@@ -37,9 +37,9 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "FastShipCabins_SW_SSW_NW_Johto_TrainerBugCatcherKen",
       "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND"
     },
     {
@@ -50,9 +50,9 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "FastShipCabins_SW_SSW_NW_Johto_TrainerBeautyCassie",
       "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_EASTBOUND"
     },
     {
@@ -63,9 +63,9 @@
       "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "FastShipCabins_SW_SSW_NW_Johto_TrainerGuitaristClyde",
       "flag": "FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND"
     }
   ],

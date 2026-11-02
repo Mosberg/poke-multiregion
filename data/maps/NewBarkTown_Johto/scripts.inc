@@ -3,7 +3,7 @@ NewBarkTown_Johto_MapScripts::
 	.byte 0
 
 NewBarkTown_Johto_OnTransition:
-	call NewBarkTown_Johto_NewBarkTownFlypointCallback_Sub
+	call NewBarkTown_Johto_NewBarkTownFlypointCallback_Cb
 	end
 
 NewBarkTown_Johto_NewBarkTownTeacherScript_Entry::
@@ -202,7 +202,7 @@ NewBarkTown_Johto_NewBarkTownElmsHouseSign:
 	releaseall
 	end
 
-NewBarkTown_Johto_NewBarkTownFlypointCallback_Sub:
+NewBarkTown_Johto_NewBarkTownFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_NEW_BARK
 	clearflag FLAG_JOHTO_FIRST_TIME_BANKING_WITH_MOM
 	return

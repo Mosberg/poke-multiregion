@@ -28,7 +28,14 @@ WillsRoom_Johto_WillScript_Battle:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext WillScript_WillBeatenText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_WILL_WILL1, WillsRoom_Johto_WillScript_WillBeatenText
+	setflag FLAG_JOHTO_BEAT_ELITE_4_WILL
+	message WillsRoom_Johto_WillScript_WillDefeatText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	playse SE_DOOR
+	@ TODO unsupported: changeblock 4, 2, $16
 	goto Johto_EventScript_Unimplemented
 
 WillsRoom_Johto_WillScript_AfterBattle:
@@ -63,6 +70,10 @@ WillsRoom_Johto_WillScript_WillBeforeText:
 	.string "getting better!"
 	.string "\pLosing is not an\n"
 	.string "option!$"
+
+WillsRoom_Johto_WillScript_WillBeatenText:
+	.string "I… I can't…\n"
+	.string "believe it…$"
 
 WillsRoom_Johto_WillScript_WillDefeatText:
 	.string "Even though I was\n"

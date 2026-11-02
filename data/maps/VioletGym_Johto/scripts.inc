@@ -21,7 +21,11 @@ VioletGym_Johto_VioletGymFalknerScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext FalknerWinLossText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_FALKNER_FALKNER1, VioletGym_Johto_FalknerWinLossText
+	setflag FLAG_JOHTO_BEAT_FALKNER
+	message VioletGym_Johto_ReceivedZephyrBadgeText
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 VioletGym_Johto_VioletGymFalknerScript_FightDone:
@@ -38,6 +42,36 @@ VioletGym_Johto_VioletGymFalknerScript_SpeechAfterTM:
 	waitbuttonpress
 
 VioletGym_Johto_VioletGymFalknerScript_NoRoomForMudSlap:
+	closemessage
+	releaseall
+	end
+
+VioletGym_Johto_TrainerBirdKeeperRod::
+	trainerbattle_single TRAINER_JOHTO_BIRD_KEEPER_ROD, VioletGym_Johto_BirdKeeperRodSeenText, VioletGym_Johto_BirdKeeperRodBeatenText
+	setflag FLAG_JOHTO_BEAT_BIRD_KEEPER_ROD
+	lock
+	faceplayer
+	goto VioletGym_Johto_TrainerBirdKeeperRod_Script
+
+VioletGym_Johto_TrainerBirdKeeperRod_Script:
+	message VioletGym_Johto_BirdKeeperRodAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+VioletGym_Johto_TrainerBirdKeeperAbe::
+	trainerbattle_single TRAINER_JOHTO_BIRD_KEEPER_ABE, VioletGym_Johto_BirdKeeperAbeSeenText, VioletGym_Johto_BirdKeeperAbeBeatenText
+	setflag FLAG_JOHTO_BEAT_BIRD_KEEPER_ABE
+	lock
+	faceplayer
+	goto VioletGym_Johto_TrainerBirdKeeperAbe_Script
+
+VioletGym_Johto_TrainerBirdKeeperAbe_Script:
+	message VioletGym_Johto_BirdKeeperAbeAfterBattleText
+	waitmessage
+	waitbuttonpress
 	closemessage
 	releaseall
 	end
@@ -85,6 +119,20 @@ VioletGym_Johto_FalknerIntroText:
 	.string "\pmagnificent bird\n"
 	.string "POKéMON!$"
 
+VioletGym_Johto_FalknerWinLossText:
+	.string "…Darn! My dad's\n"
+	.string "cherished bird\l"
+	.string "POKéMON…"
+	.string "\pAll right.\n"
+	.string "Take this."
+	.string "\pIt's the official\n"
+	.string "POKéMON LEAGUE\l"
+	.string "ZEPHYRBADGE.$"
+
+VioletGym_Johto_ReceivedZephyrBadgeText:
+	.string "{PLAYER} received\n"
+	.string "ZEPHYRBADGE.$"
+
 VioletGym_Johto_FalknerFightDoneText:
 	.string "There are POKéMON\n"
 	.string "GYMS in cities and\l"
@@ -96,6 +144,39 @@ VioletGym_Johto_FalknerFightDoneText:
 	.string "harder to become"
 	.string "\pthe greatest bird\n"
 	.string "master!$"
+
+VioletGym_Johto_BirdKeeperRodSeenText:
+	.string "The keyword is\n"
+	.string "guts!"
+	.string "\pThose here are\n"
+	.string "training night and"
+	.string "\pday to become bird\n"
+	.string "POKéMON masters."
+	.string "\pCome on!$"
+
+VioletGym_Johto_BirdKeeperRodBeatenText:
+	.string "Gaaah!$"
+
+VioletGym_Johto_BirdKeeperRodAfterBattleText:
+	.string "FALKNER's skills\n"
+	.string "are for real!"
+	.string "\pDon't get cocky\n"
+	.string "just because you\l"
+	.string "beat me!$"
+
+VioletGym_Johto_BirdKeeperAbeSeenText:
+	.string "Let me see if you\n"
+	.string "are good enough to\l"
+	.string "face FALKNER!$"
+
+VioletGym_Johto_BirdKeeperAbeBeatenText:
+	.string "This can't be\n"
+	.string "true!$"
+
+VioletGym_Johto_BirdKeeperAbeAfterBattleText:
+	.string "This is pathetic,\n"
+	.string "losing to some\l"
+	.string "rookie trainer…$"
 
 VioletGym_Johto_VioletGymGuideText:
 	.string "Hey! I'm no train-\n"

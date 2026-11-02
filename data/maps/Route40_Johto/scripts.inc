@@ -3,7 +3,7 @@ Route40_Johto_MapScripts::
 	.byte 0
 
 Route40_Johto_OnTransition:
-	call Route40_Johto_Route40MonicaCallback_Sub
+	call Route40_Johto_Route40MonicaCallback_Cb
 	end
 
 Route40_Johto_Route40Rock_Entry::
@@ -34,6 +34,66 @@ Route40_Johto_Route40Sign_Entry::
 	lockall
 	goto Route40_Johto_Route40Sign
 
+
+Route40_Johto_TrainerSwimmerfElaine::
+	trainerbattle_single TRAINER_JOHTO_SWIMMERF_ELAINE, Route40_Johto_SwimmerfElaineSeenText, Route40_Johto_SwimmerfElaineBeatenText
+	setflag FLAG_JOHTO_BEAT_SWIMMERF_ELAINE
+	lock
+	faceplayer
+	goto Route40_Johto_TrainerSwimmerfElaine_Script
+
+Route40_Johto_TrainerSwimmerfElaine_Script:
+	message Route40_Johto_SwimmerfElaineAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route40_Johto_TrainerSwimmerfPaula::
+	trainerbattle_single TRAINER_JOHTO_SWIMMERF_PAULA, Route40_Johto_SwimmerfPaulaSeenText, Route40_Johto_SwimmerfPaulaBeatenText
+	setflag FLAG_JOHTO_BEAT_SWIMMERF_PAULA
+	lock
+	faceplayer
+	goto Route40_Johto_TrainerSwimmerfPaula_Script
+
+Route40_Johto_TrainerSwimmerfPaula_Script:
+	message Route40_Johto_SwimmerfPaulaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route40_Johto_TrainerSwimmermSimon::
+	trainerbattle_single TRAINER_JOHTO_SWIMMERM_SIMON, Route40_Johto_SwimmermSimonSeenText, Route40_Johto_SwimmermSimonBeatenText
+	setflag FLAG_JOHTO_BEAT_SWIMMERM_SIMON
+	lock
+	faceplayer
+	goto Route40_Johto_TrainerSwimmermSimon_Script
+
+Route40_Johto_TrainerSwimmermSimon_Script:
+	message Route40_Johto_SwimmermSimonAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route40_Johto_TrainerSwimmermRandall::
+	trainerbattle_single TRAINER_JOHTO_SWIMMERM_RANDALL, Route40_Johto_SwimmermRandallSeenText, Route40_Johto_SwimmermRandallBeatenText
+	setflag FLAG_JOHTO_BEAT_SWIMMERM_RANDALL
+	lock
+	faceplayer
+	goto Route40_Johto_TrainerSwimmermRandall_Script
+
+Route40_Johto_TrainerSwimmermRandall_Script:
+	message Route40_Johto_SwimmermRandallAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route40_Johto_Route40Lass1Script:
 	faceplayer
@@ -93,10 +153,67 @@ Route40_Johto_Route40Sign:
 Route40_Johto_Route40Rock:
 	goto Johto_Std_SmashRockScript
 
-Route40_Johto_Route40MonicaCallback_Sub:
+Route40_Johto_Route40MonicaCallback_Cb:
 	clearflag FLAG_JOHTO_BATTLE_TOWER_OPEN_CIVILIANS
 	@ TODO unsupported: readvar VAR_WEEKDAY
 	return
+
+Route40_Johto_SwimmermSimonSeenText:
+	.string "You have to warm\n"
+	.string "up before going\l"
+	.string "into the water."
+	.string "\pThat's basic.$"
+
+Route40_Johto_SwimmermSimonBeatenText:
+	.string "OK! Uncle! I give!$"
+
+Route40_Johto_SwimmermSimonAfterBattleText:
+	.string "CIANWOOD CITY is\n"
+	.string "a good distance\l"
+	.string "away from here.$"
+
+Route40_Johto_SwimmermRandallSeenText:
+	.string "Hey, you're young\n"
+	.string "and fit!"
+	.string "\pDon't ride your\n"
+	.string "POKéMON! Swim!$"
+
+Route40_Johto_SwimmermRandallBeatenText:
+	.string "Uh-oh. I lost…$"
+
+Route40_Johto_SwimmermRandallAfterBattleText:
+	.string "Swimming exercises\n"
+	.string "your entire body.\l"
+	.string "It's healthy.$"
+
+Route40_Johto_SwimmerfElaineSeenText:
+	.string "Are you going to\n"
+	.string "CIANWOOD?"
+	.string "\pHow about a quick\n"
+	.string "battle first?$"
+
+Route40_Johto_SwimmerfElaineBeatenText:
+	.string "I lost that one!$"
+
+Route40_Johto_SwimmerfElaineAfterBattleText:
+	.string "I'd say I'm a bet-\n"
+	.string "ter swimmer than\l"
+	.string "you. Yeah!$"
+
+Route40_Johto_SwimmerfPaulaSeenText:
+	.string "No inner tube for\n"
+	.string "me."
+	.string "\pI'm hanging on to\n"
+	.string "a sea POKéMON!$"
+
+Route40_Johto_SwimmerfPaulaBeatenText:
+	.string "Ooh, I'm feeling\n"
+	.string "dizzy!$"
+
+Route40_Johto_SwimmerfPaulaAfterBattleText:
+	.string "While I float like\n"
+	.string "this, the waves\l"
+	.string "carry me along.$"
 
 Route40_Johto_Route40Lass1Text:
 	.string "Although you can't\n"

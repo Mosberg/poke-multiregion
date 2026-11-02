@@ -133,6 +133,58 @@ NationalPark_Johto_NationalParkGameboyKidScript:
 	releaseall
 	end
 
+NationalPark_Johto_TrainerSchoolboyJack1::
+	trainerbattle_single TRAINER_JOHTO_SCHOOLBOY_JACK1, NationalPark_Johto_SchoolboyJack1SeenText, NationalPark_Johto_SchoolboyJack1BeatenText
+	setflag FLAG_JOHTO_BEAT_SCHOOLBOY_JACK
+	lock
+	faceplayer
+	goto NationalPark_Johto_TrainerSchoolboyJack1_Script
+
+NationalPark_Johto_TrainerSchoolboyJack1_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
+	goto Johto_EventScript_Unimplemented
+
+NationalPark_Johto_TrainerPokefanmWilliam::
+	trainerbattle_single TRAINER_JOHTO_POKEFANM_WILLIAM, NationalPark_Johto_PokefanmWilliamSeenText, NationalPark_Johto_PokefanmWilliamBeatenText
+	setflag FLAG_JOHTO_BEAT_POKEFANM_WILLIAM
+	lock
+	faceplayer
+	goto NationalPark_Johto_TrainerPokefanmWilliam_Script
+
+NationalPark_Johto_TrainerPokefanmWilliam_Script:
+	message NationalPark_Johto_PokefanmWilliamAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+NationalPark_Johto_TrainerPokefanfBeverly1::
+	trainerbattle_single TRAINER_JOHTO_POKEFANF_BEVERLY1, NationalPark_Johto_PokefanfBeverly1SeenText, NationalPark_Johto_PokefanfBeverly1BeatenText
+	setflag FLAG_JOHTO_BEAT_POKEFANF_BEVERLY
+	lock
+	faceplayer
+	goto NationalPark_Johto_TrainerPokefanfBeverly1_Script
+
+NationalPark_Johto_TrainerPokefanfBeverly1_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
+	goto Johto_EventScript_Unimplemented
+
+NationalPark_Johto_TrainerLassKrise::
+	trainerbattle_single TRAINER_JOHTO_LASS_KRISE, NationalPark_Johto_LassKriseSeenText, NationalPark_Johto_LassKriseBeatenText
+	setflag FLAG_JOHTO_BEAT_LASS_KRISE
+	lock
+	faceplayer
+	goto NationalPark_Johto_TrainerLassKrise_Script
+
+NationalPark_Johto_TrainerLassKrise_Script:
+	message NationalPark_Johto_LassKriseAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 NationalPark_Johto_NationalParkRelaxationSquareSign:
 	message NationalPark_Johto_NationalParkRelaxationSquareText
 	waitmessage
@@ -219,6 +271,58 @@ NationalPark_Johto_NationalParkGameboyKidText:
 	.string "out stuff like"
 	.string "\pMAIL and your PC\n"
 	.string "BOXES.$"
+
+NationalPark_Johto_SchoolboyJack1SeenText:
+	.string "The world of\n"
+	.string "POKéMON is deep."
+	.string "\pThere are still\n"
+	.string "lots of things we\l"
+	.string "don't know."
+	.string "\pBut I know more\n"
+	.string "than you do!$"
+
+NationalPark_Johto_SchoolboyJack1BeatenText:
+	.string "Wha-wha-what?$"
+
+NationalPark_Johto_PokefanfBeverly1SeenText:
+	.string "My POKéMON are\n"
+	.string "simply darling."
+	.string "\pLet me tell you\n"
+	.string "how proud my\l"
+	.string "darlings make me.$"
+
+NationalPark_Johto_PokefanfBeverly1BeatenText:
+	.string "I can beat you in\n"
+	.string "pride, but…$"
+
+NationalPark_Johto_PokefanmWilliamSeenText:
+	.string "We adore our POKé-\n"
+	.string "MON, even if they\l"
+	.string "dislike us."
+	.string "\pThat's what being\n"
+	.string "a FAN is about.$"
+
+NationalPark_Johto_PokefanmWilliamBeatenText:
+	.string "M-my POKéMON!$"
+
+NationalPark_Johto_PokefanmWilliamAfterBattleText:
+	.string "I lost the battle,\n"
+	.string "but my POKéMON win"
+	.string "\pthe prize for\n"
+	.string "being most lovely.$"
+
+NationalPark_Johto_LassKriseSeenText:
+	.string "Hello? Why are you\n"
+	.string "staring at me?"
+	.string "\pOh, a battle?$"
+
+NationalPark_Johto_LassKriseBeatenText:
+	.string "…Hmmm…$"
+
+NationalPark_Johto_LassKriseAfterBattleText:
+	.string "I thought you were\n"
+	.string "staring at me\l"
+	.string "because I'm cute!$"
 
 NationalPark_Johto_NationalParkRelaxationSquareText:
 	.string "RELAXATION SQUARE\n"

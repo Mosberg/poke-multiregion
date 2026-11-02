@@ -3,7 +3,7 @@ PlayersHouse2F_Johto_MapScripts::
 	.byte 0
 
 PlayersHouse2F_Johto_OnTransition:
-	call PlayersHouse2F_Johto_PlayersHouse2FInitializeRoomCallback_Sub
+	call PlayersHouse2F_Johto_PlayersHouse2FInitializeRoomCallback_Cb
 	end
 
 PlayersHouse2F_Johto_PlayersHouseGameConsoleScript_Entry::
@@ -97,12 +97,12 @@ PlayersHouse2F_Johto_PlayersHousePCScript_Warp:
 	@ TODO unsupported: warp NONE, 0, 0
 	goto Johto_EventScript_Unimplemented
 
-PlayersHouse2F_Johto_PlayersHouse2FInitializeRoomCallback_Sub:
+PlayersHouse2F_Johto_PlayersHouse2FInitializeRoomCallback_Cb:
 	setflag FLAG_TEMP_18
-	goto_if_set FLAG_JOHTO_INITIALIZED_EVENTS, PlayersHouse2F_Johto_PlayersHouse2FInitializeRoomCallback_SkipInitialization_Sub
-	goto Johto_Std_InitializeEventsScript_Sub
+	goto_if_set FLAG_JOHTO_INITIALIZED_EVENTS, PlayersHouse2F_Johto_PlayersHouse2FInitializeRoomCallback_SkipInitialization_Cb
+	goto Johto_Std_InitializeEventsScript_Cb
 
-PlayersHouse2F_Johto_PlayersHouse2FInitializeRoomCallback_SkipInitialization_Sub:
+PlayersHouse2F_Johto_PlayersHouse2FInitializeRoomCallback_SkipInitialization_Cb:
 	return
 
 PlayersHouse2F_Johto_PlayersRadioText1:

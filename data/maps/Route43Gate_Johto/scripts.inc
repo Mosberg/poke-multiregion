@@ -4,7 +4,7 @@ Route43Gate_Johto_MapScripts::
 	.byte 0
 
 Route43Gate_Johto_OnTransition:
-	call Route43Gate_Johto_Route43GateCheckIfRocketsCallback_Sub
+	call Route43Gate_Johto_Route43GateCheckIfRocketsCallback_Cb
 	end
 
 Route43Gate_Johto_OnFrame:
@@ -97,12 +97,12 @@ Route43Gate_Johto_OfficerScript_GuardWithSludgeBomb_NoRoomForSludgeBomb:
 	releaseall
 	end
 
-Route43Gate_Johto_Route43GateCheckIfRocketsCallback_Sub:
-	goto_if_set FLAG_JOHTO_CLEARED_ROCKET_HIDEOUT, Route43Gate_Johto_Route43GateCheckIfRocketsCallback_NoRockets_Sub
+Route43Gate_Johto_Route43GateCheckIfRocketsCallback_Cb:
+	goto_if_set FLAG_JOHTO_CLEARED_ROCKET_HIDEOUT, Route43Gate_Johto_Route43GateCheckIfRocketsCallback_NoRockets_Cb
 	@ TODO unsupported: setmapscene ROUTE_43, 0
 	return
 
-Route43Gate_Johto_Route43GateCheckIfRocketsCallback_NoRockets_Sub:
+Route43Gate_Johto_Route43GateCheckIfRocketsCallback_NoRockets_Cb:
 	@ TODO unsupported: setmapscene ROUTE_43, 1
 	return
 

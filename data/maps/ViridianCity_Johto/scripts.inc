@@ -3,7 +3,7 @@ ViridianCity_Johto_MapScripts::
 	.byte 0
 
 ViridianCity_Johto_OnTransition:
-	call ViridianCity_Johto_ViridianCityFlypointCallback_Sub
+	call ViridianCity_Johto_ViridianCityFlypointCallback_Cb
 	end
 
 ViridianCity_Johto_ViridianCityCoffeeGramps_Entry::
@@ -152,7 +152,7 @@ ViridianCity_Johto_ViridianCityPokecenterSign:
 ViridianCity_Johto_ViridianCityMartSign:
 	goto Johto_Std_MartSignScript
 
-ViridianCity_Johto_ViridianCityFlypointCallback_Sub:
+ViridianCity_Johto_ViridianCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_VIRIDIAN
 	return
 

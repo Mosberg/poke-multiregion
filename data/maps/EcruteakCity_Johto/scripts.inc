@@ -3,7 +3,7 @@ EcruteakCity_Johto_MapScripts::
 	.byte 0
 
 EcruteakCity_Johto_OnTransition:
-	call EcruteakCity_Johto_EcruteakCityFlypointCallback_Sub
+	call EcruteakCity_Johto_EcruteakCityFlypointCallback_Cb
 	end
 
 EcruteakCity_Johto_EcruteakCityGramps1Script_Entry::
@@ -190,7 +190,7 @@ EcruteakCity_Johto_EcruteakCityPokecenterSign:
 EcruteakCity_Johto_EcruteakCityMartSign:
 	goto Johto_Std_MartSignScript
 
-EcruteakCity_Johto_EcruteakCityFlypointCallback_Sub:
+EcruteakCity_Johto_EcruteakCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_ECRUTEAK
 	return
 

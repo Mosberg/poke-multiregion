@@ -3,7 +3,7 @@ CinnabarIsland_Johto_MapScripts::
 	.byte 0
 
 CinnabarIsland_Johto_OnTransition:
-	call CinnabarIsland_Johto_CinnabarIslandFlypointCallback_Sub
+	call CinnabarIsland_Johto_CinnabarIslandFlypointCallback_Cb
 	end
 
 CinnabarIsland_Johto_CinnabarIslandBlue_Entry::
@@ -51,7 +51,7 @@ CinnabarIsland_Johto_CinnabarIslandSign:
 CinnabarIsland_Johto_CinnabarIslandPokecenterSign:
 	goto Johto_Std_PokecenterSignScript
 
-CinnabarIsland_Johto_CinnabarIslandFlypointCallback_Sub:
+CinnabarIsland_Johto_CinnabarIslandFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_CINNABAR
 	return
 

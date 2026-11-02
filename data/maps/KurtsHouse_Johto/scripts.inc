@@ -3,7 +3,7 @@ KurtsHouse_Johto_MapScripts::
 	.byte 0
 
 KurtsHouse_Johto_OnTransition:
-	call KurtsHouse_Johto_KurtsHouseKurtCallback_Sub
+	call KurtsHouse_Johto_KurtsHouseKurtCallback_Cb
 	end
 
 KurtsHouse_Johto_Kurt1_Entry::
@@ -388,27 +388,23 @@ KurtsHouse_Johto_KurtsHouseBookshelf:
 KurtsHouse_Johto_KurtsHouseRadio:
 	goto Johto_Std_Radio2Script
 
-KurtsHouse_Johto_KurtsHouseKurtCallback_Sub:
-	goto_if_unset FLAG_JOHTO_CLEARED_SLOWPOKE_WELL, KurtsHouse_Johto_KurtsHouseKurtCallback_Done_Sub
-	goto_if_set FLAG_JOHTO_FOREST_IS_RESTLESS, KurtsHouse_Johto_KurtsHouseKurtCallback_Done_Sub
-	goto_if_set FLAG_JOHTO_ENGINE_KURT_MAKING_BALLS, KurtsHouse_Johto_KurtsHouseKurtCallback_MakingBalls_Sub
-	removeobject 4
+KurtsHouse_Johto_KurtsHouseKurtCallback_Cb:
+	goto_if_unset FLAG_JOHTO_CLEARED_SLOWPOKE_WELL, KurtsHouse_Johto_KurtsHouseKurtCallback_Done_Cb
+	goto_if_set FLAG_JOHTO_FOREST_IS_RESTLESS, KurtsHouse_Johto_KurtsHouseKurtCallback_Done_Cb
+	goto_if_set FLAG_JOHTO_ENGINE_KURT_MAKING_BALLS, KurtsHouse_Johto_KurtsHouseKurtCallback_MakingBalls_Cb
+	setflag FLAG_JOHTO_KURTS_HOUSE_KURT_2
 	clearflag FLAG_JOHTO_KURTS_HOUSE_KURT_1
-	addobject 1
-	removeobject 5
+	setflag FLAG_JOHTO_KURTS_HOUSE_GRANDDAUGHTER_2
 	clearflag FLAG_JOHTO_KURTS_HOUSE_GRANDDAUGHTER_1
-	addobject 2
 	return
 
-KurtsHouse_Johto_KurtsHouseKurtCallback_MakingBalls_Sub:
-	removeobject 1
+KurtsHouse_Johto_KurtsHouseKurtCallback_MakingBalls_Cb:
+	setflag FLAG_JOHTO_KURTS_HOUSE_KURT_1
 	clearflag FLAG_JOHTO_KURTS_HOUSE_KURT_2
-	addobject 4
-	removeobject 2
+	setflag FLAG_JOHTO_KURTS_HOUSE_GRANDDAUGHTER_1
 	clearflag FLAG_JOHTO_KURTS_HOUSE_GRANDDAUGHTER_2
-	addobject 5
 
-KurtsHouse_Johto_KurtsHouseKurtCallback_Done_Sub:
+KurtsHouse_Johto_KurtsHouseKurtCallback_Done_Cb:
 	return
 
 KurtsHouse_Johto_KurtsHouseKurtMakingBallsMustWaitText:

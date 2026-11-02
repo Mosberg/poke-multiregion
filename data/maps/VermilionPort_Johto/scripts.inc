@@ -4,7 +4,7 @@ VermilionPort_Johto_MapScripts::
 	.byte 0
 
 VermilionPort_Johto_OnTransition:
-	call VermilionPort_Johto_VermilionPortFlypointCallback_Sub
+	call VermilionPort_Johto_VermilionPortFlypointCallback_Cb
 	end
 
 VermilionPort_Johto_OnFrame:
@@ -103,7 +103,7 @@ VermilionPort_Johto_VermilionPortSuperNerdScript:
 	releaseall
 	end
 
-VermilionPort_Johto_VermilionPortFlypointCallback_Sub:
+VermilionPort_Johto_VermilionPortFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_VERMILION
 	return
 

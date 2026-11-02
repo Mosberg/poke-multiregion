@@ -21,7 +21,11 @@ AzaleaGym_Johto_AzaleaGymBugsyScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext BugsyText_ResearchIncomplete, 0
+	trainerbattle_no_intro TRAINER_JOHTO_BUGSY_BUGSY1, AzaleaGym_Johto_BugsyText_ResearchIncomplete
+	setflag FLAG_JOHTO_BEAT_BUGSY
+	message AzaleaGym_Johto_Text_ReceivedHiveBadge
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 AzaleaGym_Johto_AzaleaGymBugsyScript_FightDone:
@@ -42,6 +46,81 @@ AzaleaGym_Johto_AzaleaGymBugsyScript_GotFuryCutter:
 	waitbuttonpress
 
 AzaleaGym_Johto_AzaleaGymBugsyScript_NoRoomForFuryCutter:
+	closemessage
+	releaseall
+	end
+
+AzaleaGym_Johto_TrainerTwinsAmyandmay1::
+	trainerbattle_single TRAINER_JOHTO_TWINS_AMYANDMAY1, AzaleaGym_Johto_TwinsAmyandmay1SeenText, AzaleaGym_Johto_TwinsAmyandmay1BeatenText
+	setflag FLAG_JOHTO_BEAT_TWINS_AMY_AND_MAY
+	lock
+	faceplayer
+	goto AzaleaGym_Johto_TrainerTwinsAmyandmay1_AfterScript
+
+AzaleaGym_Johto_TrainerTwinsAmyandmay1_AfterScript:
+	message AzaleaGym_Johto_TwinsAmyandmay1AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+AzaleaGym_Johto_TrainerTwinsAmyandmay2::
+	trainerbattle_single TRAINER_JOHTO_TWINS_AMYANDMAY2, AzaleaGym_Johto_TwinsAmyandmay2SeenText, AzaleaGym_Johto_TwinsAmyandmay2BeatenText
+	setflag FLAG_JOHTO_BEAT_TWINS_AMY_AND_MAY
+	lock
+	faceplayer
+	goto AzaleaGym_Johto_TrainerTwinsAmyandmay2_AfterScript
+
+AzaleaGym_Johto_TrainerTwinsAmyandmay2_AfterScript:
+	message AzaleaGym_Johto_TwinsAmyandmay2AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+AzaleaGym_Johto_TrainerBugCatcherBenny::
+	trainerbattle_single TRAINER_JOHTO_BUG_CATCHER_BUG_CATCHER_BENNY, AzaleaGym_Johto_BugCatcherBennySeenText, AzaleaGym_Johto_BugCatcherBennyBeatenText
+	setflag FLAG_JOHTO_BEAT_BUG_CATCHER_BENNY
+	lock
+	faceplayer
+	goto AzaleaGym_Johto_TrainerBugCatcherBenny_AfterScript
+
+AzaleaGym_Johto_TrainerBugCatcherBenny_AfterScript:
+	message AzaleaGym_Johto_BugCatcherBennyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+AzaleaGym_Johto_TrainerBugCatcherAl::
+	trainerbattle_single TRAINER_JOHTO_BUG_CATCHER_AL, AzaleaGym_Johto_BugCatcherAlSeenText, AzaleaGym_Johto_BugCatcherAlBeatenText
+	setflag FLAG_JOHTO_BEAT_BUG_CATCHER_AL
+	lock
+	faceplayer
+	goto AzaleaGym_Johto_TrainerBugCatcherAl_AfterScript
+
+AzaleaGym_Johto_TrainerBugCatcherAl_AfterScript:
+	message AzaleaGym_Johto_BugCatcherAlAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+AzaleaGym_Johto_TrainerBugCatcherJosh::
+	trainerbattle_single TRAINER_JOHTO_BUG_CATCHER_JOSH, AzaleaGym_Johto_BugCatcherJoshSeenText, AzaleaGym_Johto_BugCatcherJoshBeatenText
+	setflag FLAG_JOHTO_BEAT_BUG_CATCHER_JOSH
+	lock
+	faceplayer
+	goto AzaleaGym_Johto_TrainerBugCatcherJosh_AfterScript
+
+AzaleaGym_Johto_TrainerBugCatcherJosh_AfterScript:
+	message AzaleaGym_Johto_BugCatcherJoshAfterBattleText
+	waitmessage
+	waitbuttonpress
 	closemessage
 	releaseall
 	end
@@ -85,6 +164,19 @@ AzaleaGym_Johto_BugsyText_INeverLose:
 	.string "what I've learned\l"
 	.string "from my studies.$"
 
+AzaleaGym_Johto_BugsyText_ResearchIncomplete:
+	.string "Whoa, amazing!\n"
+	.string "You're an expert\l"
+	.string "on POKéMON!"
+	.string "\pMy research isn't\n"
+	.string "complete yet."
+	.string "\pOK, you win. Take\n"
+	.string "this BADGE.$"
+
+AzaleaGym_Johto_Text_ReceivedHiveBadge:
+	.string "{PLAYER} received\n"
+	.string "HIVEBADGE.$"
+
 AzaleaGym_Johto_BugsyText_HiveBadgeSpeech:
 	.string "Do you know the\n"
 	.string "benefits of HIVE-\l"
@@ -107,6 +199,81 @@ AzaleaGym_Johto_BugsyText_BugMonsAreDeep:
 	.string "be explored."
 	.string "\pStudy your favor-\n"
 	.string "ites thoroughly.$"
+
+AzaleaGym_Johto_BugCatcherBennySeenText:
+	.string "Bug POKéMON evolve\n"
+	.string "young. So they get"
+	.string "\pstronger that much\n"
+	.string "faster.$"
+
+AzaleaGym_Johto_BugCatcherBennyBeatenText:
+	.string "Just evolving\n"
+	.string "isn't enough!$"
+
+AzaleaGym_Johto_BugCatcherBennyAfterBattleText:
+	.string "POKéMON become\n"
+	.string "stronger if they\l"
+	.string "evolve. Really!$"
+
+AzaleaGym_Johto_BugCatcherAlSeenText:
+	.string "Bug POKéMON are\n"
+	.string "cool and tough!"
+	.string "\pI'll prove it to\n"
+	.string "you!$"
+
+AzaleaGym_Johto_BugCatcherAlBeatenText:
+	.string "You proved how\n"
+	.string "tough you are…$"
+
+AzaleaGym_Johto_BugCatcherAlAfterBattleText:
+	.string "They're so cool,\n"
+	.string "but most girls"
+	.string "\pdon't like bug\n"
+	.string "POKéMON."
+	.string "\pI don't know why…$"
+
+AzaleaGym_Johto_BugCatcherJoshSeenText:
+	.string "You saved all the\n"
+	.string "SLOWPOKE? Whew,\l"
+	.string "you're mighty!"
+	.string "\pBut my grown-up\n"
+	.string "POKéMON are pretty\l"
+	.string "tough too!$"
+
+AzaleaGym_Johto_BugCatcherJoshBeatenText:
+	.string "Urrgggh!$"
+
+AzaleaGym_Johto_BugCatcherJoshAfterBattleText:
+	.string "I guess I should\n"
+	.string "teach them better\l"
+	.string "moves…$"
+
+AzaleaGym_Johto_TwinsAmyandmay1SeenText:
+	.string "AMY: Hi! Are you\n"
+	.string "challenging the\l"
+	.string "LEADER? No way!$"
+
+AzaleaGym_Johto_TwinsAmyandmay1BeatenText:
+	.string "AMY & MAY: Oh,\n"
+	.string "double goodness!$"
+
+AzaleaGym_Johto_TwinsAmyandmay1AfterBattleText:
+	.string "AMY: You're\n"
+	.string "really strong!$"
+
+AzaleaGym_Johto_TwinsAmyandmay2SeenText:
+	.string "MAY: You want to\n"
+	.string "see the LEADER?\l"
+	.string "We come first!$"
+
+AzaleaGym_Johto_TwinsAmyandmay2BeatenText:
+	.string "AMY & MAY: Oh,\n"
+	.string "double goodness!$"
+
+AzaleaGym_Johto_TwinsAmyandmay2AfterBattleText:
+	.string "MAY: Our bug POKé-\n"
+	.string "MON lost! Oh, what\l"
+	.string "a shame.$"
 
 AzaleaGym_Johto_AzaleaGymGuideText:
 	.string "Yo, challenger!"

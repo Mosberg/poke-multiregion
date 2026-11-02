@@ -3,7 +3,7 @@ OlivineCity_Johto_MapScripts::
 	.byte 0
 
 OlivineCity_Johto_OnTransition:
-	call OlivineCity_Johto_OlivineCityFlypointCallback_Sub
+	call OlivineCity_Johto_OlivineCityFlypointCallback_Cb
 	end
 
 OlivineCity_Johto_OlivineCitySailor1Script_Entry::
@@ -184,7 +184,7 @@ OlivineCity_Johto_OlivineCityPokecenterSign:
 OlivineCity_Johto_OlivineCityMartSign:
 	goto Johto_Std_MartSignScript
 
-OlivineCity_Johto_OlivineCityFlypointCallback_Sub:
+OlivineCity_Johto_OlivineCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_OLIVINE
 	return
 

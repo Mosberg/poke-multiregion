@@ -10,6 +10,7 @@
 #define KANTO_TRAINER_BASE 864
 #endif
 #include "constants/opponents_frlg.h"
+#include "constants/opponents_johto.h"
 
 #define TRAINER_NONE                          0
 #define TRAINER_SAWYER_1                      1
@@ -878,7 +879,7 @@
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG
 #define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_FRLG
 #else
-#define TRAINERS_COUNT                      (KANTO_TRAINER_BASE+TRAINERS_COUNT_FRLG)
+#define TRAINERS_COUNT                      (JOHTO_TRAINER_BASE+TRAINERS_COUNT_JOHTO+1)
 #define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_EMERALD
 #endif
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

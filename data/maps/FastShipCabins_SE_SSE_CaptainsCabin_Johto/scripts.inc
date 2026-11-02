@@ -97,6 +97,111 @@ FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterAfter:
 	releaseall
 	end
 
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanmColin::
+	trainerbattle_single TRAINER_JOHTO_POKEFANM_COLIN, FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmColinSeenText, FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmColinBeatenText
+	setflag FLAG_JOHTO_BEAT_POKEFANM_COLIN
+	lock
+	faceplayer
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanmColin_Script
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanmColin_Script:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmColinAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerTwinsMegandpeg1::
+	trainerbattle_single TRAINER_JOHTO_TWINS_MEGANDPEG1, FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg1SeenText, FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg1BeatenText
+	setflag FLAG_JOHTO_BEAT_TWINS_MEG_AND_PEG
+	lock
+	faceplayer
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerTwinsMegandpeg1_Script
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerTwinsMegandpeg1_Script:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg1AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerTwinsMegandpeg2::
+	trainerbattle_single TRAINER_JOHTO_TWINS_MEGANDPEG2, FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg2SeenText, FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg2BeatenText
+	setflag FLAG_JOHTO_BEAT_TWINS_MEG_AND_PEG
+	lock
+	faceplayer
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerTwinsMegandpeg2_Script
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerTwinsMegandpeg2_Script:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg2AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPsychicRodney::
+	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_RODNEY, FastShipCabins_SE_SSE_CaptainsCabin_Johto_PsychicRodneySeenText, FastShipCabins_SE_SSE_CaptainsCabin_Johto_PsychicRodneyBeatenText
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_RODNEY
+	lock
+	faceplayer
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPsychicRodney_Script
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPsychicRodney_Script:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_PsychicRodneyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanmJeremy::
+	trainerbattle_single TRAINER_JOHTO_POKEFANM_JEREMY, FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmJeremySeenText, FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmJeremyBeatenText
+	setflag FLAG_JOHTO_BEAT_POKEFANM_JEREMY
+	lock
+	faceplayer
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanmJeremy_Script
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanmJeremy_Script:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmJeremyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanfGeorgia::
+	trainerbattle_single TRAINER_JOHTO_POKEFANF_GEORGIA, FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanfGeorgiaSeenText, FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanfGeorgiaBeatenText
+	setflag FLAG_JOHTO_BEAT_POKEFANF_GEORGIA
+	lock
+	faceplayer
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanfGeorgia_Script
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerPokefanfGeorgia_Script:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanfGeorgiaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerSupernerdShawn::
+	trainerbattle_single TRAINER_JOHTO_SUPER_NERD_SHAWN, FastShipCabins_SE_SSE_CaptainsCabin_Johto_SupernerdShawnSeenText, FastShipCabins_SE_SSE_CaptainsCabin_Johto_SupernerdShawnBeatenText
+	setflag FLAG_JOHTO_BEAT_SUPER_NERD_SHAWN
+	lock
+	faceplayer
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerSupernerdShawn_Script
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerSupernerdShawn_Script:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_SupernerdShawnAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 FastShipCabins_SE_SSE_CaptainsCabin_Johto_FastShipCaptainsCabinTrashcan:
 	goto Johto_Std_TrashCanScript
 
@@ -152,3 +257,98 @@ FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterHasToFindGrandpaTex
 FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterHadFunText:
 	.string "I had lots of fun\n"
 	.string "playing!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmColinSeenText:
+	.string "Hey, kid! Want to\n"
+	.string "battle with me?$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmColinBeatenText:
+	.string "You're strong!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmColinAfterBattleText:
+	.string "You're traveling\n"
+	.string "all alone?"
+	.string "\pIsn't your mom\n"
+	.string "worried?$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg1SeenText:
+	.string "You think I'm a\n"
+	.string "baby?\l"
+	.string "That's not fair!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg1BeatenText:
+	.string "Oh! We lost!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg1AfterBattleText:
+	.string "Baby is a rude\n"
+	.string "name to call us\l"
+	.string "girls!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg2SeenText:
+	.string "I'm not a baby!"
+	.string "\pThat's not nice to\n"
+	.string "say to a lady!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg2BeatenText:
+	.string "Oh! We lost!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_TwinsMegandpeg2AfterBattleText:
+	.string "Sometimes, kids\n"
+	.string "are smarter than\l"
+	.string "grown-ups!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PsychicRodneySeenText:
+	.string "Ssh! My brain is\n"
+	.string "picking up radio\l"
+	.string "signals!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PsychicRodneyBeatenText:
+	.string "…I hear some-\n"
+	.string "thing!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PsychicRodneyAfterBattleText:
+	.string "I get it. You can\n"
+	.string "hear JOHTO's radio\l"
+	.string "on the FAST SHIP.$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmJeremySeenText:
+	.string "What do you think?\n"
+	.string "My POKéMON are\l"
+	.string "beautiful, yes?$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmJeremyBeatenText:
+	.string "Oh, no! My beauti-\n"
+	.string "ful POKéMON!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanmJeremyAfterBattleText:
+	.string "I must go to the\n"
+	.string "POKéMON SALON and\l"
+	.string "fix them up nice!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanfGeorgiaSeenText:
+	.string "I'm going to shop\n"
+	.string "at the DEPT.STORE\l"
+	.string "and then…$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanfGeorgiaBeatenText:
+	.string "What was I going\n"
+	.string "to do?$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_PokefanfGeorgiaAfterBattleText:
+	.string "Oh, yes! I have to\n"
+	.string "get my POKéMON out\l"
+	.string "of DAY-CARE!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SupernerdShawnSeenText:
+	.string "What kinds of POKé\n"
+	.string "BALLS do you have\l"
+	.string "with you?$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SupernerdShawnBeatenText:
+	.string "Wait! Stop! Don't!\n"
+	.string "Please!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SupernerdShawnAfterBattleText:
+	.string "You should use the\n"
+	.string "right BALLS to fit\l"
+	.string "the situation.$"

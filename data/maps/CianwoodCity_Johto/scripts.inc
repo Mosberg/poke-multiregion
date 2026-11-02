@@ -3,7 +3,7 @@ CianwoodCity_Johto_MapScripts::
 	.byte 0
 
 CianwoodCity_Johto_OnTransition:
-	call CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Sub
+	call CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Cb
 	end
 
 CianwoodCity_Johto_CianwoodCityYoungster_Entry::
@@ -168,13 +168,13 @@ CianwoodCity_Johto_CianwoodPokecenterSign:
 CianwoodCity_Johto_CianwoodCityRock:
 	goto Johto_Std_SmashRockScript
 
-CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Sub:
+CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_CIANWOOD
 	setflag FLAG_JOHTO_EUSINE_IN_BURNED_TOWER
-	goto_if_unset FLAG_JOHTO_FOUGHT_EUSINE, CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Done_Sub
-	removeobject 11
+	goto_if_unset FLAG_JOHTO_FOUGHT_EUSINE, CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Done_Cb
+	setflag FLAG_JOHTO_CIANWOOD_CITY_EUSINE
 
-CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Done_Sub:
+CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Done_Cb:
 	return
 
 CianwoodCity_Johto_ChucksWifeEasierToFlyText:

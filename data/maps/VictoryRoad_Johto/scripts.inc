@@ -62,15 +62,15 @@ VictoryRoad_Johto_VictoryRoadRivalNext_Sub:
 	setflag FLAG_JOHTO_RIVAL_VICTORY_ROAD
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, VictoryRoad_Johto_VictoryRoadRivalNext_GotTotodile_Sub
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, VictoryRoad_Johto_VictoryRoadRivalNext_GotChikorita_Sub
-	@ TODO unsupported: winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
+	@ TODO unsupported: setlasttalked VICTORYROAD_RIVAL
 	return
 
 VictoryRoad_Johto_VictoryRoadRivalNext_GotTotodile_Sub:
-	@ TODO unsupported: winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
+	@ TODO unsupported: setlasttalked VICTORYROAD_RIVAL
 	return
 
 VictoryRoad_Johto_VictoryRoadRivalNext_GotChikorita_Sub:
-	@ TODO unsupported: winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
+	@ TODO unsupported: setlasttalked VICTORYROAD_RIVAL
 	return
 
 VictoryRoad_Johto_VictoryRoadRivalBattleApproachMovement1:
@@ -136,3 +136,14 @@ VictoryRoad_Johto_VictoryRoadRivalBeforeText:
 	.string "I'm invincible!"
 	.string "\p{PLAYER}!\n"
 	.string "I challenge you!$"
+
+VictoryRoad_Johto_VictoryRoadRivalDefeatText:
+	.string "…I couldn't win…"
+	.string "\pI gave it every-\n"
+	.string "thing I had…"
+	.string "\pWhat you possess,\n"
+	.string "and what I lack…"
+	.string "\pI'm beginning to\n"
+	.string "understand what"
+	.string "\pthat dragon master\n"
+	.string "said to me…$"

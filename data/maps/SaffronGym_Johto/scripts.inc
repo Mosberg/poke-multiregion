@@ -21,11 +21,79 @@ SaffronGym_Johto_SaffronGymSabrinaScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext SabrinaWinLossText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_SABRINA_SABRINA1, SaffronGym_Johto_SabrinaWinLossText
+	setflag FLAG_JOHTO_BEAT_SABRINA
+	setflag FLAG_JOHTO_BEAT_MEDIUM_REBECCA
+	setflag FLAG_JOHTO_BEAT_MEDIUM_DORIS
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_FRANKLIN
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_JARED
+	message SaffronGym_Johto_ReceivedMarshBadgeText
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 SaffronGym_Johto_SaffronGymSabrinaScript_FightDone:
 	message SaffronGym_Johto_SabrinaFightDoneText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+SaffronGym_Johto_TrainerMediumRebecca::
+	trainerbattle_single TRAINER_JOHTO_MEDIUM_REBECCA, SaffronGym_Johto_MediumRebeccaSeenText, SaffronGym_Johto_MediumRebeccaBeatenText
+	setflag FLAG_JOHTO_BEAT_MEDIUM_REBECCA
+	lock
+	faceplayer
+	goto SaffronGym_Johto_TrainerMediumRebecca_Script
+
+SaffronGym_Johto_TrainerMediumRebecca_Script:
+	message SaffronGym_Johto_MediumRebeccaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+SaffronGym_Johto_TrainerPsychicFranklin::
+	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_FRANKLIN, SaffronGym_Johto_PsychicFranklinSeenText, SaffronGym_Johto_PsychicFranklinBeatenText
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_FRANKLIN
+	lock
+	faceplayer
+	goto SaffronGym_Johto_TrainerPsychicFranklin_Script
+
+SaffronGym_Johto_TrainerPsychicFranklin_Script:
+	message SaffronGym_Johto_PsychicFranklinAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+SaffronGym_Johto_TrainerMediumDoris::
+	trainerbattle_single TRAINER_JOHTO_MEDIUM_DORIS, SaffronGym_Johto_MediumDorisSeenText, SaffronGym_Johto_MediumDorisBeatenText
+	setflag FLAG_JOHTO_BEAT_MEDIUM_DORIS
+	lock
+	faceplayer
+	goto SaffronGym_Johto_TrainerMediumDoris_Script
+
+SaffronGym_Johto_TrainerMediumDoris_Script:
+	message SaffronGym_Johto_MediumDorisAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+SaffronGym_Johto_TrainerPsychicJared::
+	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_JARED, SaffronGym_Johto_PsychicJaredSeenText, SaffronGym_Johto_PsychicJaredBeatenText
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_JARED
+	lock
+	faceplayer
+	goto SaffronGym_Johto_TrainerPsychicJared_Script
+
+SaffronGym_Johto_TrainerPsychicJared_Script:
+	message SaffronGym_Johto_PsychicJaredAfterBattleText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -77,6 +145,23 @@ SaffronGym_Johto_SabrinaIntroText:
 	.string "I will show you my\l"
 	.string "psychic powers!$"
 
+SaffronGym_Johto_SabrinaWinLossText:
+	.string "SABRINA: Your\n"
+	.string "power…"
+	.string "\pIt far exceeds\n"
+	.string "what I foresaw…"
+	.string "\pMaybe it isn't\n"
+	.string "possible to fully"
+	.string "\ppredict what the\n"
+	.string "future holds…"
+	.string "\pOK, you win. You\n"
+	.string "earned yourself\l"
+	.string "MARSHBADGE.$"
+
+SaffronGym_Johto_ReceivedMarshBadgeText:
+	.string "{PLAYER} received\n"
+	.string "MARSHBADGE.$"
+
 SaffronGym_Johto_SabrinaFightDoneText:
 	.string "SABRINA: Your love\n"
 	.string "for your POKéMON"
@@ -86,6 +171,63 @@ SaffronGym_Johto_SabrinaFightDoneText:
 	.string "I think, is also a"
 	.string "\pkind of psychic\n"
 	.string "power…$"
+
+SaffronGym_Johto_MediumRebeccaSeenText:
+	.string "The power of all\n"
+	.string "those you defeated\l"
+	.string "comes to me!$"
+
+SaffronGym_Johto_MediumRebeccaBeatenText:
+	.string "Strong…\n"
+	.string "Far too strong…$"
+
+SaffronGym_Johto_MediumRebeccaAfterBattleText:
+	.string "What is the source\n"
+	.string "of your power?$"
+
+SaffronGym_Johto_PsychicFranklinSeenText:
+	.string "Psychic power is\n"
+	.string "the power of your\l"
+	.string "soul.$"
+
+SaffronGym_Johto_PsychicFranklinBeatenText:
+	.string "Your soul has more\n"
+	.string "power than mine!$"
+
+SaffronGym_Johto_PsychicFranklinAfterBattleText:
+	.string "You made your soul\n"
+	.string "stronger, not just\l"
+	.string "your abilities.$"
+
+SaffronGym_Johto_MediumDorisSeenText:
+	.string "Fufufufu…\n"
+	.string "I see it clearly."
+	.string "\pI can see into\n"
+	.string "your soul!$"
+
+SaffronGym_Johto_MediumDorisBeatenText:
+	.string "Though I read you,\n"
+	.string "I still lost…$"
+
+SaffronGym_Johto_MediumDorisAfterBattleText:
+	.string "Darn! I forgot\n"
+	.string "that I predicted I\l"
+	.string "would lose to you.$"
+
+SaffronGym_Johto_PsychicJaredSeenText:
+	.string "The FIGHTING DOJO\n"
+	.string "next door was once\l"
+	.string "this city's GYM.$"
+
+SaffronGym_Johto_PsychicJaredBeatenText:
+	.string "I was no match…$"
+
+SaffronGym_Johto_PsychicJaredAfterBattleText:
+	.string "KARATE KING, the\n"
+	.string "master of the"
+	.string "\pFIGHTING DOJO, was\n"
+	.string "just destroyed by\l"
+	.string "SABRINA.$"
 
 SaffronGym_Johto_SaffronGymGuideText:
 	.string "Yo, CHAMP in\n"

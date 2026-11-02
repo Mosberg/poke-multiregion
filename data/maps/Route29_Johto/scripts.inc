@@ -3,7 +3,7 @@ Route29_Johto_MapScripts::
 	.byte 0
 
 Route29_Johto_OnTransition:
-	call Route29_Johto_Route29TuscanyCallback_Sub
+	call Route29_Johto_Route29TuscanyCallback_Cb
 	end
 
 Route29_Johto_CatchingTutorialDudeScript_Entry::
@@ -190,14 +190,14 @@ Route29_Johto_Route29FruitTree:
 	@ TODO unsupported: fruittree FRUITTREE_ROUTE_29
 	goto Johto_EventScript_Unimplemented
 
-Route29_Johto_Route29TuscanyCallback_Sub:
-	goto_if_set FLAG_JOHTO_ENGINE_ZEPHYRBADGE, Route29_Johto_Route29TuscanyCallback_DoesTuscanyAppear_Sub
+Route29_Johto_Route29TuscanyCallback_Cb:
+	goto_if_set FLAG_JOHTO_ENGINE_ZEPHYRBADGE, Route29_Johto_Route29TuscanyCallback_DoesTuscanyAppear_Cb
 
-Route29_Johto_Route29TuscanyCallback_TuscanyDisappears_Sub:
-	removeobject 7
+Route29_Johto_Route29TuscanyCallback_TuscanyDisappears_Cb:
+	setflag FLAG_JOHTO_ROUTE_29_TUSCANY_OF_TUESDAY
 	return
 
-Route29_Johto_Route29TuscanyCallback_DoesTuscanyAppear_Sub:
+Route29_Johto_Route29TuscanyCallback_DoesTuscanyAppear_Cb:
 	@ TODO unsupported: readvar VAR_WEEKDAY
 	return
 

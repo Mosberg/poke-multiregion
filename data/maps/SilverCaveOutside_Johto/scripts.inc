@@ -3,7 +3,7 @@ SilverCaveOutside_Johto_MapScripts::
 	.byte 0
 
 SilverCaveOutside_Johto_OnTransition:
-	call SilverCaveOutside_Johto_SilverCaveOutsideFlypointCallback_Sub
+	call SilverCaveOutside_Johto_SilverCaveOutsideFlypointCallback_Cb
 	end
 
 SilverCaveOutside_Johto_MtSilverPokecenterSign_Entry::
@@ -26,7 +26,7 @@ SilverCaveOutside_Johto_MtSilverSign:
 	releaseall
 	end
 
-SilverCaveOutside_Johto_SilverCaveOutsideFlypointCallback_Sub:
+SilverCaveOutside_Johto_SilverCaveOutsideFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_SILVER_CAVE
 	return
 

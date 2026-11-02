@@ -3,7 +3,7 @@ MahoganyTown_Johto_MapScripts::
 	.byte 0
 
 MahoganyTown_Johto_OnTransition:
-	call MahoganyTown_Johto_MahoganyTownFlypointCallback_Sub
+	call MahoganyTown_Johto_MahoganyTownFlypointCallback_Cb
 	end
 
 MahoganyTown_Johto_MahoganyTownPokefanMScript_Entry::
@@ -139,10 +139,6 @@ MahoganyTown_Johto_MahoganyGymSign:
 MahoganyTown_Johto_MahoganyTownPokecenterSign:
 	goto Johto_Std_PokecenterSignScript
 
-MahoganyTown_Johto_MahoganyTownFlypointCallback_Sub:
-	setflag FLAG_JOHTO_ENGINE_FLYPOINT_MAHOGANY
-	return
-
 MahoganyTown_Johto_RageCandyBarMerchantScript_Sub:
 	goto_if_set FLAG_JOHTO_CLEARED_ROCKET_HIDEOUT, MahoganyTown_Johto_RageCandyBarMerchantScript_ClearedRocketHideout_Sub
 	call MahoganyTown_Johto_RageCandyBarMerchantScript_SellRageCandyBars_Sub
@@ -159,6 +155,10 @@ MahoganyTown_Johto_RageCandyBarMerchantScript_SellRageCandyBars_Sub:
 	message MahoganyTown_Johto_RageCandyBarMerchantTryOneText
 	waitmessage
 	@ TODO unsupported: special PlaceMoneyTopRight
+	return
+
+MahoganyTown_Johto_MahoganyTownFlypointCallback_Cb:
+	setflag FLAG_JOHTO_ENGINE_FLYPOINT_MAHOGANY
 	return
 
 MahoganyTown_Johto_MahoganyTownPlayerStepLeftMovement:

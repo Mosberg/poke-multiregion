@@ -3,7 +3,7 @@ TinTowerRoof_Johto_MapScripts::
 	.byte 0
 
 TinTowerRoof_Johto_OnTransition:
-	call TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Sub
+	call TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Cb
 	end
 
 TinTowerRoof_Johto_TinTowerHoOh_Entry::
@@ -23,13 +23,13 @@ TinTowerRoof_Johto_TinTowerHoOh:
 	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	goto Johto_EventScript_Unimplemented
 
-TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Sub:
-	goto_if_set FLAG_JOHTO_FOUGHT_HO_OH, TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Sub
+TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Cb:
+	goto_if_set FLAG_JOHTO_FOUGHT_HO_OH, TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Cb
 	@ TODO unsupported: checkitem RAINBOW_WING
 	return
 
-TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Sub:
-	removeobject 1
+TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Cb:
+	setflag FLAG_JOHTO_TIN_TOWER_ROOF_HO_OH
 	return
 
 TinTowerRoof_Johto_HoOhText:

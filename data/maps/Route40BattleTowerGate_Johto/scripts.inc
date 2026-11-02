@@ -3,7 +3,7 @@ Route40BattleTowerGate_Johto_MapScripts::
 	.byte 0
 
 Route40BattleTowerGate_Johto_OnTransition:
-	call Route40BattleTowerGate_Johto_RouteBattleTowerGateShowSailorCallback_Sub
+	call Route40BattleTowerGate_Johto_RouteBattleTowerGateShowSailorCallback_Cb
 	end
 
 Route40BattleTowerGate_Johto_Route40BattleTowerGateRockerScript_Entry::
@@ -33,7 +33,7 @@ Route40BattleTowerGate_Johto_Route40BattleTowerGateTwinScript:
 	releaseall
 	end
 
-Route40BattleTowerGate_Johto_RouteBattleTowerGateShowSailorCallback_Sub:
+Route40BattleTowerGate_Johto_RouteBattleTowerGateShowSailorCallback_Cb:
 	clearflag FLAG_JOHTO_BATTLE_TOWER_OPEN_CIVILIANS
 	return
 

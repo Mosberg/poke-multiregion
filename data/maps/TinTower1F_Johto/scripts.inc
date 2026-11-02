@@ -4,7 +4,7 @@ TinTower1F_Johto_MapScripts::
 	.byte 0
 
 TinTower1F_Johto_OnTransition:
-	call TinTower1F_Johto_TinTower1FNPCsCallback_Sub
+	call TinTower1F_Johto_TinTower1FNPCsCallback_Cb
 	end
 
 TinTower1F_Johto_OnFrame:
@@ -151,31 +151,29 @@ TinTower1F_Johto_TinTower1FEusine:
 	releaseall
 	end
 
-TinTower1F_Johto_TinTower1FNPCsCallback_Sub:
-	goto_if_set FLAG_JOHTO_GOT_RAINBOW_WING, TinTower1F_Johto_TinTower1FNPCsCallback_GotRainbowWing_Sub
-	goto_if_unset FLAG_JOHTO_BEAT_ELITE_FOUR, TinTower1F_Johto_TinTower1FNPCsCallback_FaceBeasts_Sub
+TinTower1F_Johto_TinTower1FNPCsCallback_Cb:
+	goto_if_set FLAG_JOHTO_GOT_RAINBOW_WING, TinTower1F_Johto_TinTower1FNPCsCallback_GotRainbowWing_Cb
+	goto_if_unset FLAG_JOHTO_BEAT_ELITE_FOUR, TinTower1F_Johto_TinTower1FNPCsCallback_FaceBeasts_Cb
 	@ TODO unsupported: special BeastsCheck
 	return
 
-TinTower1F_Johto_TinTower1FNPCsCallback_GotRainbowWing_Sub:
-	goto_if_unset FLAG_JOHTO_FOUGHT_HO_OH, TinTower1F_Johto_TinTower1FNPCsCallback_Done_Sub
+TinTower1F_Johto_TinTower1FNPCsCallback_GotRainbowWing_Cb:
+	goto_if_unset FLAG_JOHTO_FOUGHT_HO_OH, TinTower1F_Johto_TinTower1FNPCsCallback_Done_Cb
 	clearflag FLAG_JOHTO_TIN_TOWER_1F_EUSINE
-	addobject 4
 
-TinTower1F_Johto_TinTower1FNPCsCallback_Done_Sub:
+TinTower1F_Johto_TinTower1FNPCsCallback_Done_Cb:
 	return
 
-TinTower1F_Johto_TinTower1FNPCsCallback_FaceBeasts_Sub:
-	goto_if_set FLAG_JOHTO_FOUGHT_SUICUNE, TinTower1F_Johto_TinTower1FNPCsCallback_FoughtSuicune_Sub
+TinTower1F_Johto_TinTower1FNPCsCallback_FaceBeasts_Cb:
+	goto_if_set FLAG_JOHTO_FOUGHT_SUICUNE, TinTower1F_Johto_TinTower1FNPCsCallback_FoughtSuicune_Cb
 	clearflag FLAG_JOHTO_TIN_TOWER_1F_SUICUNE
-	addobject 1
 	@ TODO unsupported: setval RAIKOU
 	return
 
-TinTower1F_Johto_TinTower1FNPCsCallback_FoughtSuicune_Sub:
-	removeobject 1
-	removeobject 2
-	removeobject 3
+TinTower1F_Johto_TinTower1FNPCsCallback_FoughtSuicune_Cb:
+	setflag FLAG_JOHTO_TIN_TOWER_1F_SUICUNE
+	setflag FLAG_JOHTO_TIN_TOWER_1F_RAIKOU
+	setflag FLAG_JOHTO_TIN_TOWER_1F_ENTEI
 	clearflag FLAG_JOHTO_TIN_TOWER_1F_WISE_TRIO_1
 	setflag FLAG_JOHTO_TIN_TOWER_1F_WISE_TRIO_2
 	return

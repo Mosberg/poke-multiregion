@@ -3,7 +3,7 @@ Route31_Johto_MapScripts::
 	.byte 0
 
 Route31_Johto_OnTransition:
-	call Route31_Johto_Route31CheckMomCallCallback_Sub
+	call Route31_Johto_Route31CheckMomCallCallback_Cb
 	end
 
 Route31_Johto_Route31MailRecipientScript_Entry::
@@ -30,6 +30,17 @@ Route31_Johto_DarkCaveSign_Entry::
 	lockall
 	goto Route31_Johto_DarkCaveSign
 
+
+Route31_Johto_TrainerBugCatcherWade1::
+	trainerbattle_single TRAINER_JOHTO_BUG_CATCHER_WADE1, Route31_Johto_BugCatcherWade1SeenText, Route31_Johto_BugCatcherWade1BeatenText
+	setflag FLAG_JOHTO_BEAT_BUG_CATCHER_WADE
+	lock
+	faceplayer
+	goto Route31_Johto_TrainerBugCatcherWade1_Script
+
+Route31_Johto_TrainerBugCatcherWade1_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_BUG_CATCHER_WADE
+	goto Johto_EventScript_Unimplemented
 
 Route31_Johto_Route31MailRecipientScript:
 	faceplayer
@@ -97,11 +108,11 @@ Route31_Johto_Route31FruitTree:
 	@ TODO unsupported: fruittree FRUITTREE_ROUTE_31
 	goto Johto_EventScript_Unimplemented
 
-Route31_Johto_Route31CheckMomCallCallback_Sub:
-	goto_if_unset FLAG_JOHTO_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST, Route31_Johto_Route31CheckMomCallCallback_DoMomCall_Sub
+Route31_Johto_Route31CheckMomCallCallback_Cb:
+	goto_if_unset FLAG_JOHTO_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST, Route31_Johto_Route31CheckMomCallCallback_DoMomCall_Cb
 	return
 
-Route31_Johto_Route31CheckMomCallCallback_DoMomCall_Sub:
+Route31_Johto_Route31CheckMomCallCallback_DoMomCall_Cb:
 	@ TODO unsupported: specialphonecall SPECIALCALL_WORRIED
 	return
 
@@ -110,6 +121,14 @@ Route31_Johto_Route31CooltrainerMText:
 	.string "\pIf POKéMON could\n"
 	.string "light it up, I'd\l"
 	.string "explore it.$"
+
+Route31_Johto_BugCatcherWade1SeenText:
+	.string "I caught a bunch\n"
+	.string "of POKéMON. Let me\l"
+	.string "battle with you!$"
+
+Route31_Johto_BugCatcherWade1BeatenText:
+	.string "Awwwww…$"
 
 Route31_Johto_Text_Route31SleepyMan:
 	.string "… Hnuurg… Huh?"

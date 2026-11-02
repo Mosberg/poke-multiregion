@@ -3,7 +3,7 @@ CeladonCity_Johto_MapScripts::
 	.byte 0
 
 CeladonCity_Johto_OnTransition:
-	call CeladonCity_Johto_CeladonCityFlypointCallback_Sub
+	call CeladonCity_Johto_CeladonCityFlypointCallback_Cb
 	end
 
 CeladonCity_Johto_CeladonCityFisherScript_Entry::
@@ -195,7 +195,7 @@ CeladonCity_Johto_CeladonCityTrainerTips:
 CeladonCity_Johto_CeladonCityPokecenterSign:
 	goto Johto_Std_PokecenterSignScript
 
-CeladonCity_Johto_CeladonCityFlypointCallback_Sub:
+CeladonCity_Johto_CeladonCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_CELADON
 	return
 

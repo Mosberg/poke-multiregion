@@ -3,7 +3,7 @@ RuinsOfAlphOutside_Johto_MapScripts::
 	.byte 0
 
 RuinsOfAlphOutside_Johto_OnTransition:
-	call RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_Sub
+	call RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_Cb
 	end
 
 RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistScript_Entry::
@@ -112,6 +112,21 @@ RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideYoungster2Script:
 	releaseall
 	end
 
+RuinsOfAlphOutside_Johto_TrainerPsychicNathan::
+	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_NATHAN, RuinsOfAlphOutside_Johto_PsychicNathanSeenText, RuinsOfAlphOutside_Johto_PsychicNathanBeatenText
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_NATHAN
+	lock
+	faceplayer
+	goto RuinsOfAlphOutside_Johto_TrainerPsychicNathan_Script
+
+RuinsOfAlphOutside_Johto_TrainerPsychicNathan_Script:
+	message RuinsOfAlphOutside_Johto_PsychicNathanAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideMysteryChamberSign:
 	message RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideMysteryChamberSignText
 	waitmessage
@@ -136,17 +151,17 @@ RuinsOfAlphOutside_Johto_RuinsOfAlphResearchCenterSign:
 	releaseall
 	end
 
-RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_Sub:
-	goto_if_set FLAG_JOHTO_ENGINE_UNOWN_DEX, RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_NoScientist_Sub
-	goto_if_set FLAG_JOHTO_MADE_UNOWN_APPEAR_IN_RUINS, RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_MaybeScientist_Sub
-	goto RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_NoScientist_Sub
+RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_Cb:
+	goto_if_set FLAG_JOHTO_ENGINE_UNOWN_DEX, RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_NoScientist_Cb
+	goto_if_set FLAG_JOHTO_MADE_UNOWN_APPEAR_IN_RUINS, RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_MaybeScientist_Cb
+	goto RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_NoScientist_Cb
 
-RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_MaybeScientist_Sub:
+RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_MaybeScientist_Cb:
 	@ TODO unsupported: readvar VAR_UNOWNCOUNT
 	return
 
-RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_NoScientist_Sub:
-	removeobject 2
+RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistCallback_NoScientist_Cb:
+	setflag FLAG_JOHTO_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
 	setvar VAR_JOHTO_SCENE_RUINS_OF_ALPH_OUTSIDE, 0
 	return
 
@@ -187,6 +202,17 @@ RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideScientistText:
 	.string "\pI know! Let me up-\n"
 	.string "grade your POKé-\l"
 	.string "DEX. Follow me.$"
+
+RuinsOfAlphOutside_Johto_PsychicNathanSeenText:
+	.string "Hmmm… This is a\n"
+	.string "strange place.$"
+
+RuinsOfAlphOutside_Johto_PsychicNathanBeatenText:
+	.string "…$"
+
+RuinsOfAlphOutside_Johto_PsychicNathanAfterBattleText:
+	.string "I like thinking\n"
+	.string "here.$"
 
 RuinsOfAlphOutside_Johto_RuinsOfAlphOutsideMysteryChamberSignText:
 	.string "MYSTERY STONE\n"

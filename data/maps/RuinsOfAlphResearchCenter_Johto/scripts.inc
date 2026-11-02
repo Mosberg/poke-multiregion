@@ -4,7 +4,7 @@ RuinsOfAlphResearchCenter_Johto_MapScripts::
 	.byte 0
 
 RuinsOfAlphResearchCenter_Johto_OnTransition:
-	call RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterScientistCallback_Sub
+	call RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterScientistCallback_Cb
 	end
 
 RuinsOfAlphResearchCenter_Johto_OnFrame:
@@ -99,7 +99,7 @@ RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterBookshelf:
 	releaseall
 	end
 
-RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterScientistCallback_Sub:
+RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterScientistCallback_Cb:
 	copyvar VAR_RESULT, VAR_JOHTO_SCENE_RUINS_OF_ALPH_RESEARCH_CENTER
 	@ TODO unsupported: ifequal SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX, .ShowScientist
 	return

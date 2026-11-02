@@ -3,7 +3,7 @@ AzaleaTown_Johto_MapScripts::
 	.byte 0
 
 AzaleaTown_Johto_OnTransition:
-	call AzaleaTown_Johto_AzaleaTownFlypointCallback_Sub
+	call AzaleaTown_Johto_AzaleaTownFlypointCallback_Cb
 	end
 
 AzaleaTown_Johto_AzaleaTownRocket1Script_Entry::
@@ -122,15 +122,15 @@ AzaleaTown_Johto_AzaleaTownRivalBattleScript:
 	setflag FLAG_JOHTO_RIVAL_AZALEA_TOWN
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, AzaleaTown_Johto_AzaleaTownRivalBattleScript_Totodile
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, AzaleaTown_Johto_AzaleaTownRivalBattleScript_Chikorita
-	@ TODO unsupported: winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
+	@ TODO unsupported: setlasttalked AZALEATOWN_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 AzaleaTown_Johto_AzaleaTownRivalBattleScript_Totodile:
-	@ TODO unsupported: winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
+	@ TODO unsupported: setlasttalked AZALEATOWN_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 AzaleaTown_Johto_AzaleaTownRivalBattleScript_Chikorita:
-	@ TODO unsupported: winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
+	@ TODO unsupported: setlasttalked AZALEATOWN_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 AzaleaTown_Johto_AzaleaTownRocket1Script:
@@ -286,7 +286,7 @@ AzaleaTown_Johto_WhiteApricornTree:
 	@ TODO unsupported: fruittree FRUITTREE_AZALEA_TOWN
 	goto Johto_EventScript_Unimplemented
 
-AzaleaTown_Johto_AzaleaTownFlypointCallback_Sub:
+AzaleaTown_Johto_AzaleaTownFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_AZALEA
 	return
 
@@ -329,6 +329,14 @@ AzaleaTown_Johto_AzaleaTownRivalBeforeText:
 	.string "\pYou're not joking?\n"
 	.string "Then let's see how\l"
 	.string "good you are.$"
+
+AzaleaTown_Johto_AzaleaTownRivalWinText:
+	.string "… Humph! Useless\n"
+	.string "POKéMON!"
+	.string "\pListen, you. You\n"
+	.string "only won because"
+	.string "\pmy POKéMON were\n"
+	.string "weak.$"
 
 AzaleaTown_Johto_AzaleaTownRocket1Text:
 	.string "It's unsafe to go\n"

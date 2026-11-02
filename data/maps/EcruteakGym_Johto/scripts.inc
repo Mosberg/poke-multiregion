@@ -30,7 +30,11 @@ EcruteakGym_Johto_EcruteakGymMortyScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext MortyWinLossText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_MORTY_MORTY1, EcruteakGym_Johto_MortyWinLossText
+	setflag FLAG_JOHTO_BEAT_MORTY
+	message EcruteakGym_Johto_Text_ReceivedFogBadge
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 EcruteakGym_Johto_EcruteakGymMortyScript_FightDone:
@@ -69,6 +73,66 @@ EcruteakGym_Johto_EcruteakGymClosed:
 	waitmovement OBJ_EVENT_ID_PLAYER
 	@ TODO unsupported: special FadeOutToWhite
 	goto Johto_EventScript_Unimplemented
+
+EcruteakGym_Johto_TrainerSageJeffrey::
+	trainerbattle_single TRAINER_JOHTO_SAGE_JEFFREY, EcruteakGym_Johto_SageJeffreySeenText, EcruteakGym_Johto_SageJeffreyBeatenText
+	setflag FLAG_JOHTO_BEAT_SAGE_JEFFREY
+	lock
+	faceplayer
+	goto EcruteakGym_Johto_TrainerSageJeffrey_Script
+
+EcruteakGym_Johto_TrainerSageJeffrey_Script:
+	message EcruteakGym_Johto_SageJeffreyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+EcruteakGym_Johto_TrainerSagePing::
+	trainerbattle_single TRAINER_JOHTO_SAGE_PING, EcruteakGym_Johto_SagePingSeenText, EcruteakGym_Johto_SagePingBeatenText
+	setflag FLAG_JOHTO_BEAT_SAGE_PING
+	lock
+	faceplayer
+	goto EcruteakGym_Johto_TrainerSagePing_Script
+
+EcruteakGym_Johto_TrainerSagePing_Script:
+	message EcruteakGym_Johto_SagePingAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+EcruteakGym_Johto_TrainerMediumMartha::
+	trainerbattle_single TRAINER_JOHTO_MEDIUM_MARTHA, EcruteakGym_Johto_MediumMarthaSeenText, EcruteakGym_Johto_MediumMarthaBeatenText
+	setflag FLAG_JOHTO_BEAT_MEDIUM_MARTHA
+	lock
+	faceplayer
+	goto EcruteakGym_Johto_TrainerMediumMartha_Script
+
+EcruteakGym_Johto_TrainerMediumMartha_Script:
+	message EcruteakGym_Johto_MediumMarthaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+EcruteakGym_Johto_TrainerMediumGrace::
+	trainerbattle_single TRAINER_JOHTO_MEDIUM_GRACE, EcruteakGym_Johto_MediumGraceSeenText, EcruteakGym_Johto_MediumGraceBeatenText
+	setflag FLAG_JOHTO_BEAT_MEDIUM_GRACE
+	lock
+	faceplayer
+	goto EcruteakGym_Johto_TrainerMediumGrace_Script
+
+EcruteakGym_Johto_TrainerMediumGrace_Script:
+	message EcruteakGym_Johto_MediumGraceAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 EcruteakGym_Johto_EcruteakGymGuideScript:
 	faceplayer
@@ -139,6 +203,16 @@ EcruteakGym_Johto_MortyIntroText:
 	.string "help me reach that\l"
 	.string "level!$"
 
+EcruteakGym_Johto_MortyWinLossText:
+	.string "I'm not good\n"
+	.string "enough yet…"
+	.string "\pAll right. This\n"
+	.string "BADGE is yours.$"
+
+EcruteakGym_Johto_Text_ReceivedFogBadge:
+	.string "{PLAYER} received\n"
+	.string "FOGBADGE.$"
+
 EcruteakGym_Johto_MortyText_FogBadgeSpeech:
 	.string "By having FOG-\n"
 	.string "BADGE, POKéMON up"
@@ -161,6 +235,66 @@ EcruteakGym_Johto_MortyFightDoneText:
 	.string "than I."
 	.string "\pI envy you for\n"
 	.string "that…$"
+
+EcruteakGym_Johto_SageJeffreySeenText:
+	.string "I spent the spring\n"
+	.string "with my POKéMON."
+	.string "\pThen summer, fall\n"
+	.string "and winter…"
+	.string "\pThen spring came\n"
+	.string "again. We have"
+	.string "\plived together\n"
+	.string "for a long time.$"
+
+EcruteakGym_Johto_SageJeffreyBeatenText:
+	.string "Wins and losses, I\n"
+	.string "experienced both.$"
+
+EcruteakGym_Johto_SageJeffreyAfterBattleText:
+	.string "Where did POKéMON\n"
+	.string "come from?$"
+
+EcruteakGym_Johto_SagePingSeenText:
+	.string "Can you inflict\n"
+	.string "any damage on our\l"
+	.string "POKéMON?$"
+
+EcruteakGym_Johto_SagePingBeatenText:
+	.string "Ah! Well done!$"
+
+EcruteakGym_Johto_SagePingAfterBattleText:
+	.string "We use only ghost-\n"
+	.string "type POKéMON."
+	.string "\pNo normal-type\n"
+	.string "attack can harm\l"
+	.string "them!$"
+
+EcruteakGym_Johto_MediumMarthaSeenText:
+	.string "I shall win!$"
+
+EcruteakGym_Johto_MediumMarthaBeatenText:
+	.string "I, I, I lost!$"
+
+EcruteakGym_Johto_MediumMarthaAfterBattleText:
+	.string "The one who wants\n"
+	.string "to win most--will!$"
+
+EcruteakGym_Johto_MediumGraceSeenText:
+	.string "Stumped by our in-\n"
+	.string "visible floor?"
+	.string "\pDefeat me if you\n"
+	.string "want a hint!$"
+
+EcruteakGym_Johto_MediumGraceBeatenText:
+	.string "Wha-what?$"
+
+EcruteakGym_Johto_MediumGraceAfterBattleText:
+	.string "Fine. I shall tell\n"
+	.string "you the secret of"
+	.string "\pthe invisible\n"
+	.string "floor."
+	.string "\pThe path is right\n"
+	.string "before our eyes!$"
 
 EcruteakGym_Johto_EcruteakGymGuideText:
 	.string "The trainers here\n"

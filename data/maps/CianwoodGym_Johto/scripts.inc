@@ -54,6 +54,66 @@ CianwoodGym_Johto_CianwoodGymChuckScript_BagFull:
 	releaseall
 	end
 
+CianwoodGym_Johto_TrainerBlackbeltYoshi::
+	trainerbattle_single TRAINER_JOHTO_BLACKBELT_T_YOSHI, CianwoodGym_Johto_BlackbeltYoshiSeenText, CianwoodGym_Johto_BlackbeltYoshiBeatenText
+	setflag FLAG_JOHTO_BEAT_BLACKBELT_YOSHI
+	lock
+	faceplayer
+	goto CianwoodGym_Johto_TrainerBlackbeltYoshi_Script
+
+CianwoodGym_Johto_TrainerBlackbeltYoshi_Script:
+	message CianwoodGym_Johto_BlackbeltYoshiAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+CianwoodGym_Johto_TrainerBlackbeltLao::
+	trainerbattle_single TRAINER_JOHTO_BLACKBELT_T_LAO, CianwoodGym_Johto_BlackbeltLaoSeenText, CianwoodGym_Johto_BlackbeltLaoBeatenText
+	setflag FLAG_JOHTO_BEAT_BLACKBELT_LAO
+	lock
+	faceplayer
+	goto CianwoodGym_Johto_TrainerBlackbeltLao_Script
+
+CianwoodGym_Johto_TrainerBlackbeltLao_Script:
+	message CianwoodGym_Johto_BlackbeltLaoAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+CianwoodGym_Johto_TrainerBlackbeltNob::
+	trainerbattle_single TRAINER_JOHTO_BLACKBELT_T_NOB, CianwoodGym_Johto_BlackbeltNobSeenText, CianwoodGym_Johto_BlackbeltNobBeatenText
+	setflag FLAG_JOHTO_BEAT_BLACKBELT_NOB
+	lock
+	faceplayer
+	goto CianwoodGym_Johto_TrainerBlackbeltNob_Script
+
+CianwoodGym_Johto_TrainerBlackbeltNob_Script:
+	message CianwoodGym_Johto_BlackbeltNobAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+CianwoodGym_Johto_TrainerBlackbeltLung::
+	trainerbattle_single TRAINER_JOHTO_BLACKBELT_T_LUNG, CianwoodGym_Johto_BlackbeltLungSeenText, CianwoodGym_Johto_BlackbeltLungBeatenText
+	setflag FLAG_JOHTO_BEAT_BLACKBELT_LUNG
+	lock
+	faceplayer
+	goto CianwoodGym_Johto_TrainerBlackbeltLung_Script
+
+CianwoodGym_Johto_TrainerBlackbeltLung_Script:
+	message CianwoodGym_Johto_BlackbeltLungAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 CianwoodGym_Johto_CianwoodGymBoulder:
 	goto Johto_Std_StrengthBoulderScript
 
@@ -106,3 +166,55 @@ CianwoodGym_Johto_ChuckAfterText:
 	.string "\pFrom now on, I'm\n"
 	.string "going to train 24\l"
 	.string "hours a day!$"
+
+CianwoodGym_Johto_BlackbeltYoshiSeenText:
+	.string "My POKéMON and I\n"
+	.string "are bound togeth-\l"
+	.string "er by friendship."
+	.string "\pOur bond will\n"
+	.string "never be broken!$"
+
+CianwoodGym_Johto_BlackbeltYoshiBeatenText:
+	.string "This isn't real!$"
+
+CianwoodGym_Johto_BlackbeltYoshiAfterText:
+	.string "You seem to have a\n"
+	.string "strong bond with\l"
+	.string "your POKéMON too!$"
+
+CianwoodGym_Johto_BlackbeltLaoSeenText:
+	.string "We martial artists\n"
+	.string "fear nothing!$"
+
+CianwoodGym_Johto_BlackbeltLaoBeatenText:
+	.string "That's shocking!$"
+
+CianwoodGym_Johto_BlackbeltLaoAfterText:
+	.string "Fighting POKéMON\n"
+	.string "are afraid of psy-\l"
+	.string "chics…$"
+
+CianwoodGym_Johto_BlackbeltNobSeenText:
+	.string "Words are useless.\n"
+	.string "Let your fists do\l"
+	.string "the talking!$"
+
+CianwoodGym_Johto_BlackbeltNobBeatenText:
+	.string "…$"
+
+CianwoodGym_Johto_BlackbeltNobAfterText:
+	.string "I lost! \n"
+	.string "I'm speechless!$"
+
+CianwoodGym_Johto_BlackbeltLungSeenText:
+	.string "My raging fists\n"
+	.string "will shatter your\l"
+	.string "POKéMON!$"
+
+CianwoodGym_Johto_BlackbeltLungBeatenText:
+	.string "I got shattered!$"
+
+CianwoodGym_Johto_BlackbeltLungAfterText:
+	.string "My POKéMON lost…\n"
+	.string "My… my pride is\l"
+	.string "shattered…$"

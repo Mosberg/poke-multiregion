@@ -4,7 +4,7 @@ ElmsLab_Johto_MapScripts::
 	.byte 0
 
 ElmsLab_Johto_OnTransition:
-	call ElmsLab_Johto_ElmsLabMoveElmCallback_Sub
+	call ElmsLab_Johto_ElmsLabMoveElmCallback_Cb
 	end
 
 ElmsLab_Johto_OnFrame:
@@ -631,14 +631,6 @@ ElmsLab_Johto_ElmsLabPC:
 ElmsLab_Johto_ElmsLabBookshelf:
 	goto Johto_Std_DifficultBookshelfScript
 
-ElmsLab_Johto_ElmsLabMoveElmCallback_Sub:
-	copyvar VAR_RESULT, VAR_JOHTO_SCENE_ELMS_LAB
-	goto_if_ne VAR_RESULT, 0, ElmsLab_Johto_ElmsLabMoveElmCallback_Skip_Sub
-	setobjectxyperm 1, 3, 4
-
-ElmsLab_Johto_ElmsLabMoveElmCallback_Skip_Sub:
-	return
-
 ElmsLab_Johto_AideScript_GivePotion_Sub:
 	message ElmsLab_Johto_AideText_GiveYouPotion
 	waitmessage
@@ -666,6 +658,14 @@ ElmsLab_Johto_AideScript_GiveYouBalls_Sub:
 
 ElmsLab_Johto_AideScript_ReceiveTheBalls_Sub:
 	goto Johto_Std_ReceiveItemScript_Sub
+
+ElmsLab_Johto_ElmsLabMoveElmCallback_Cb:
+	copyvar VAR_RESULT, VAR_JOHTO_SCENE_ELMS_LAB
+	goto_if_ne VAR_RESULT, 0, ElmsLab_Johto_ElmsLabMoveElmCallback_Skip_Cb
+	setobjectxyperm 1, 3, 4
+
+ElmsLab_Johto_ElmsLabMoveElmCallback_Skip_Cb:
+	return
 
 ElmsLab_Johto_ElmsLab_WalkUpToElmMovement:
 	walk_up

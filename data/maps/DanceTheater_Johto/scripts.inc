@@ -22,6 +22,81 @@ DanceTheater_Johto_DanceTheaterFancyPanel_Entry::
 	goto DanceTheater_Johto_DanceTheaterFancyPanel
 
 
+DanceTheater_Johto_TrainerKimonoGirlNaoko::
+	trainerbattle_single TRAINER_JOHTO_KIMONO_GIRL_NAOKO, DanceTheater_Johto_KimonoGirlNaokoSeenText, DanceTheater_Johto_KimonoGirlNaokoBeatenText
+	setflag FLAG_JOHTO_BEAT_KIMONO_GIRL_NAOKO
+	lock
+	faceplayer
+	goto DanceTheater_Johto_TrainerKimonoGirlNaoko_Script
+
+DanceTheater_Johto_TrainerKimonoGirlNaoko_Script:
+	message DanceTheater_Johto_KimonoGirlNaokoAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+DanceTheater_Johto_TrainerKimonoGirlSayo::
+	trainerbattle_single TRAINER_JOHTO_KIMONO_GIRL_SAYO, DanceTheater_Johto_KimonoGirlSayoSeenText, DanceTheater_Johto_KimonoGirlSayoBeatenText
+	setflag FLAG_JOHTO_BEAT_KIMONO_GIRL_SAYO
+	lock
+	faceplayer
+	goto DanceTheater_Johto_TrainerKimonoGirlSayo_Script
+
+DanceTheater_Johto_TrainerKimonoGirlSayo_Script:
+	message DanceTheater_Johto_KimonoGirlSayoAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+DanceTheater_Johto_TrainerKimonoGirlZuki::
+	trainerbattle_single TRAINER_JOHTO_KIMONO_GIRL_ZUKI, DanceTheater_Johto_KimonoGirlZukiSeenText, DanceTheater_Johto_KimonoGirlZukiBeatenText
+	setflag FLAG_JOHTO_BEAT_KIMONO_GIRL_ZUKI
+	lock
+	faceplayer
+	goto DanceTheater_Johto_TrainerKimonoGirlZuki_Script
+
+DanceTheater_Johto_TrainerKimonoGirlZuki_Script:
+	message DanceTheater_Johto_KimonoGirlZukiAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+DanceTheater_Johto_TrainerKimonoGirlKuni::
+	trainerbattle_single TRAINER_JOHTO_KIMONO_GIRL_KUNI, DanceTheater_Johto_KimonoGirlKuniSeenText, DanceTheater_Johto_KimonoGirlKuniBeatenText
+	setflag FLAG_JOHTO_BEAT_KIMONO_GIRL_KUNI
+	lock
+	faceplayer
+	goto DanceTheater_Johto_TrainerKimonoGirlKuni_Script
+
+DanceTheater_Johto_TrainerKimonoGirlKuni_Script:
+	message DanceTheater_Johto_KimonoGirlKuniAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+DanceTheater_Johto_TrainerKimonoGirlMiki::
+	trainerbattle_single TRAINER_JOHTO_KIMONO_GIRL_MIKI, DanceTheater_Johto_KimonoGirlMikiSeenText, DanceTheater_Johto_KimonoGirlMikiBeatenText
+	setflag FLAG_JOHTO_BEAT_KIMONO_GIRL_MIKI
+	lock
+	faceplayer
+	goto DanceTheater_Johto_TrainerKimonoGirlMiki_Script
+
+DanceTheater_Johto_TrainerKimonoGirlMiki_Script:
+	message DanceTheater_Johto_KimonoGirlMikiAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 DanceTheater_Johto_DanceTheaterSurfGuy:
 	faceplayer
 	message DanceTheater_Johto_SurfGuyNeverLeftAScratchText
@@ -102,6 +177,83 @@ DanceTheater_Johto_DanceTheaterFancyPanel:
 	closemessage
 	releaseall
 	end
+
+DanceTheater_Johto_KimonoGirlNaokoSeenText:
+	.string "You have lovely\n"
+	.string "POKéMON. May I see\l"
+	.string "them in battle?$"
+
+DanceTheater_Johto_KimonoGirlNaokoBeatenText:
+	.string "Oh, you are very\n"
+	.string "strong.$"
+
+DanceTheater_Johto_KimonoGirlNaokoAfterBattleText:
+	.string "I enjoyed that\n"
+	.string "bout. I would like\l"
+	.string "to see you again.$"
+
+DanceTheater_Johto_KimonoGirlSayoSeenText:
+	.string "I always dance\n"
+	.string "with my POKéMON."
+	.string "\pOf course, I also\n"
+	.string "train them.$"
+
+DanceTheater_Johto_KimonoGirlSayoBeatenText:
+	.string "Oh, so close!\n"
+	.string "I almost had you.$"
+
+DanceTheater_Johto_KimonoGirlSayoAfterBattleText:
+	.string "Rhythm is impor-\n"
+	.string "tant for both"
+	.string "\pdancing and POKé-\n"
+	.string "MON.$"
+
+DanceTheater_Johto_KimonoGirlZukiSeenText:
+	.string "Isn't my barrette\n"
+	.string "pretty?"
+	.string "\pOh. A POKéMON\n"
+	.string "battle?$"
+
+DanceTheater_Johto_KimonoGirlZukiBeatenText:
+	.string "I don't have any\n"
+	.string "POKéMON left…$"
+
+DanceTheater_Johto_KimonoGirlZukiAfterBattleText:
+	.string "I put a different\n"
+	.string "flower in my bar-\l"
+	.string "rette every month.$"
+
+DanceTheater_Johto_KimonoGirlKuniSeenText:
+	.string "Oh, you're a cute\n"
+	.string "trainer. Would you\l"
+	.string "like to battle?$"
+
+DanceTheater_Johto_KimonoGirlKuniBeatenText:
+	.string "You're stronger\n"
+	.string "than you look.$"
+
+DanceTheater_Johto_KimonoGirlKuniAfterBattleText:
+	.string "I trained a lot,\n"
+	.string "so I thought I was"
+	.string "\pa capable trainer.\n"
+	.string "I guess I'm not.$"
+
+DanceTheater_Johto_KimonoGirlMikiSeenText:
+	.string "Do you like my\n"
+	.string "dancing? I'm good\l"
+	.string "at POKéMON too.$"
+
+DanceTheater_Johto_KimonoGirlMikiBeatenText:
+	.string "Ooh, you're good\n"
+	.string "at POKéMON too.$"
+
+DanceTheater_Johto_KimonoGirlMikiAfterBattleText:
+	.string "I can keep dancing\n"
+	.string "because there are"
+	.string "\ppeople who enjoy\n"
+	.string "what I do."
+	.string "\pMy POKéMON keep my\n"
+	.string "spirits up too.$"
 
 DanceTheater_Johto_SurfGuyNeverLeftAScratchText:
 	.string "Not only are the\n"

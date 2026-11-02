@@ -3,7 +3,7 @@ GoldenrodGameCorner_Johto_MapScripts::
 	.byte 0
 
 GoldenrodGameCorner_Johto_OnTransition:
-	call GoldenrodGameCorner_Johto_GoldenrodGameCornerMoveTutorCallback_Sub
+	call GoldenrodGameCorner_Johto_GoldenrodGameCornerMoveTutorCallback_Cb
 	end
 
 GoldenrodGameCorner_Johto_GoldenrodGameCornerCoinVendorScript_Entry::
@@ -184,7 +184,7 @@ GoldenrodGameCorner_Johto_GoldenrodGameCornerCardFlipMachineScript:
 	@ TODO unsupported: special CardFlip
 	goto Johto_EventScript_Unimplemented
 
-GoldenrodGameCorner_Johto_GoldenrodGameCornerMoveTutorCallback_Sub:
+GoldenrodGameCorner_Johto_GoldenrodGameCornerMoveTutorCallback_Cb:
 	@ TODO unsupported: iffalse .finish
 	return
 

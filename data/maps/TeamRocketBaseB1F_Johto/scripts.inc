@@ -3,7 +3,7 @@ TeamRocketBaseB1F_Johto_MapScripts::
 	.byte 0
 
 TeamRocketBaseB1F_Johto_OnTransition:
-	call TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHideSecurityGruntCallback_Sub
+	call TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHideSecurityGruntCallback_Cb
 	end
 
 TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_Entry::
@@ -406,136 +406,188 @@ TeamRocketBaseB1F_Johto_NoSecurityCamera:
 TeamRocketBaseB1F_Johto_ExplodingTrap1:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_1, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_1
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap2:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_2, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_2
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap3:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_3, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_3
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap4:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_4, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_4
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap5:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_5, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_5
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap6:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_6, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_6
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap7:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_7, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_7
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap8:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_8, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_8
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap9:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_9, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_9
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap10:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_10, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_10
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap11:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_11, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_11
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap12:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_12, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_12
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap13:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_13, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_13
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap14:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_14, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_14
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap15:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_15, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_15
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap16:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_16, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_16
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap17:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_17, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_17
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap18:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_18, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_18
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap19:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_19, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_19
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap20:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_20, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_20
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap21:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_21, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_21
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_ExplodingTrap22:
 	goto_if_set FLAG_JOHTO_EXPLODING_TRAP_22, TeamRocketBaseB1F_Johto_NoExplodingTrap
 	call TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub
-	@ TODO unsupported: reloadmapafterbattle 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_EXPLODING_TRAP_22
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_NoExplodingTrap:
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_TrainerScientistJed::
+	trainerbattle_single TRAINER_JOHTO_SCIENTIST_JED, TeamRocketBaseB1F_Johto_ScientistJedSeenText, TeamRocketBaseB1F_Johto_ScientistJedBeatenText
+	setflag FLAG_JOHTO_BEAT_SCIENTIST_JED
+	lock
+	faceplayer
+	goto TeamRocketBaseB1F_Johto_TrainerScientistJed_Script
+
+TeamRocketBaseB1F_Johto_TrainerScientistJed_Script:
+	message TeamRocketBaseB1F_Johto_ScientistJedAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_TrainerGruntM16::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_16, TeamRocketBaseB1F_Johto_GruntM16SeenText, TeamRocketBaseB1F_Johto_GruntM16BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_16
+	lock
+	faceplayer
+	goto TeamRocketBaseB1F_Johto_TrainerGruntM16_Script
+
+TeamRocketBaseB1F_Johto_TrainerGruntM16_Script:
+	message TeamRocketBaseB1F_Johto_GruntM16AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
 	releaseall
 	end
 
@@ -565,16 +617,12 @@ TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_SecretSwitchOff:
 	releaseall
 	end
 
-TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHideSecurityGruntCallback_Sub:
-	removeobject 1
-	return
-
 TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub:
 	message TeamRocketBaseB1F_Johto_CameraGrunt1SeenText
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext CameraGrunt1BeatenText, 0
+	@ TODO unsupported: setlasttalked TEAMROCKETBASEB1F_ROCKET1
 	return
 
 TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub:
@@ -582,7 +630,7 @@ TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext CameraGrunt2BeatenText, 0
+	@ TODO unsupported: setlasttalked TEAMROCKETBASEB1F_ROCKET1
 	return
 
 TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub:
@@ -599,6 +647,10 @@ TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub:
 
 TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub:
 	@ TODO unsupported: special FadeOutToWhite
+	return
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHideSecurityGruntCallback_Cb:
+	setflag FLAG_JOHTO_TEAM_ROCKET_BASE_SECURITY_GRUNTS
 	return
 
 TeamRocketBaseB1F_Johto_SecurityCameraMovement1:
@@ -692,9 +744,61 @@ TeamRocketBaseB1F_Johto_CameraGrunt1SeenText:
 	.string "Hey!\n"
 	.string "Intruder alert!$"
 
+TeamRocketBaseB1F_Johto_CameraGrunt1BeatenText:
+	.string "Dang… I failed…$"
+
 TeamRocketBaseB1F_Johto_CameraGrunt2SeenText:
 	.string "It's my turn!\n"
 	.string "There's no escape!$"
+
+TeamRocketBaseB1F_Johto_CameraGrunt2BeatenText:
+	.string "Surveillance cams\n"
+	.string "are in the POKéMON\l"
+	.string "statues."
+	.string "\pWe'll keep appear-\n"
+	.string "ing until you trip\l"
+	.string "a secret switch.$"
+
+TeamRocketBaseB1F_Johto_ScientistJedSeenText:
+	.string "This was once a\n"
+	.string "ninja hideout."
+	.string "\pThere are traps to\n"
+	.string "confound intruders\l"
+	.string "like you.$"
+
+TeamRocketBaseB1F_Johto_ScientistJedBeatenText:
+	.string "I get it…$"
+
+TeamRocketBaseB1F_Johto_ScientistJedAfterBattleText:
+	.string "All right. I'll\n"
+	.string "divulge a secret\l"
+	.string "about our hideout."
+	.string "\pThat thing on the\n"
+	.string "floor up ahead is\l"
+	.string "a warp panel."
+	.string "\pIf you step on it,\n"
+	.string "you'll be warped"
+	.string "\pback to the en-\n"
+	.string "trance.$"
+
+TeamRocketBaseB1F_Johto_GruntM16SeenText:
+	.string "Heheh. Feeling\n"
+	.string "lucky, punk?"
+	.string "\pGo ahead, take\n"
+	.string "another step."
+	.string "\pWe've got traps\n"
+	.string "set in the floor!$"
+
+TeamRocketBaseB1F_Johto_GruntM16BeatenText:
+	.string "Kaboom!$"
+
+TeamRocketBaseB1F_Johto_GruntM16AfterBattleText:
+	.string "I don't even know\n"
+	.string "where the traps\l"
+	.string "are planted."
+	.string "\pYou'll just have\n"
+	.string "to collect your\l"
+	.string "courage and walk.$"
 
 TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecurityCameraText:
 	.string "It's a PERSIAN\n"

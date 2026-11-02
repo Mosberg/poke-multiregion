@@ -3,13 +3,58 @@ GoldenrodUndergroundWarehouse_Johto_MapScripts::
 	.byte 0
 
 GoldenrodUndergroundWarehouse_Johto_OnTransition:
-	call GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseResetSwitchesCallback_Sub
+	call GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseResetSwitchesCallback_Cb
 	end
 
 GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseDirectorScript_Entry::
 	lockall
 	goto GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseDirectorScript
 
+
+GoldenrodUndergroundWarehouse_Johto_TrainerGruntM24::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_24, GoldenrodUndergroundWarehouse_Johto_GruntM24SeenText, GoldenrodUndergroundWarehouse_Johto_GruntM24BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_24
+	lock
+	faceplayer
+	goto GoldenrodUndergroundWarehouse_Johto_TrainerGruntM24_Script
+
+GoldenrodUndergroundWarehouse_Johto_TrainerGruntM24_Script:
+	message GoldenrodUndergroundWarehouse_Johto_GruntM24AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundWarehouse_Johto_TrainerGruntM14::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_14, GoldenrodUndergroundWarehouse_Johto_GruntM14SeenText, GoldenrodUndergroundWarehouse_Johto_GruntM14BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_14
+	lock
+	faceplayer
+	goto GoldenrodUndergroundWarehouse_Johto_TrainerGruntM14_Script
+
+GoldenrodUndergroundWarehouse_Johto_TrainerGruntM14_Script:
+	message GoldenrodUndergroundWarehouse_Johto_GruntM14AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundWarehouse_Johto_TrainerGruntM15::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_15, GoldenrodUndergroundWarehouse_Johto_GruntM15SeenText, GoldenrodUndergroundWarehouse_Johto_GruntM15BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_15
+	lock
+	faceplayer
+	goto GoldenrodUndergroundWarehouse_Johto_TrainerGruntM15_Script
+
+GoldenrodUndergroundWarehouse_Johto_TrainerGruntM15_Script:
+	message GoldenrodUndergroundWarehouse_Johto_GruntM15AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseDirectorScript:
 	faceplayer
@@ -34,7 +79,7 @@ GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseDirectorScript_
 	releaseall
 	end
 
-GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseResetSwitchesCallback_Sub:
+GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseResetSwitchesCallback_Cb:
 	clearflag FLAG_JOHTO_SWITCH_1
 	clearflag FLAG_JOHTO_SWITCH_2
 	clearflag FLAG_JOHTO_SWITCH_3
@@ -53,6 +98,54 @@ GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseResetSwitchesCa
 	setvar VAR_RESULT, 0
 	@ TODO unsupported: writemem wUndergroundSwitchPositions
 	return
+
+GoldenrodUndergroundWarehouse_Johto_GruntM24SeenText:
+	.string "How did you get\n"
+	.string "this far?"
+	.string "\pI guess it can't\n"
+	.string "be helped. I'll\l"
+	.string "dispose of you.$"
+
+GoldenrodUndergroundWarehouse_Johto_GruntM24BeatenText:
+	.string "I got disposed of…$"
+
+GoldenrodUndergroundWarehouse_Johto_GruntM24AfterBattleText:
+	.string "TEAM ROCKET will\n"
+	.string "keep going, wait-\l"
+	.string "ing for the return\l"
+	.string "of GIOVANNI."
+	.string "\pWe'll do whatever\n"
+	.string "it takes.$"
+
+GoldenrodUndergroundWarehouse_Johto_GruntM14SeenText:
+	.string "You're not going\n"
+	.string "any farther!"
+	.string "\pI don't show mercy\n"
+	.string "to my enemies, not\l"
+	.string "even brats!$"
+
+GoldenrodUndergroundWarehouse_Johto_GruntM14BeatenText:
+	.string "Blast it!$"
+
+GoldenrodUndergroundWarehouse_Johto_GruntM14AfterBattleText:
+	.string "I lost…"
+	.string "\pPlease forgive me,\n"
+	.string "GIOVANNI!$"
+
+GoldenrodUndergroundWarehouse_Johto_GruntM15SeenText:
+	.string "Hyuck-hyuck-hyuck!\n"
+	.string "I remember you!"
+	.string "\pYou got me good\n"
+	.string "at our hideout!$"
+
+GoldenrodUndergroundWarehouse_Johto_GruntM15BeatenText:
+	.string "Hyuck-hyuck-hyuck!\n"
+	.string "So, that's how?$"
+
+GoldenrodUndergroundWarehouse_Johto_GruntM15AfterBattleText:
+	.string "Hyuck-hyuck-hyuck!\n"
+	.string "That was a blast!\l"
+	.string "I'll remember you!$"
 
 GoldenrodUndergroundWarehouse_Johto_DirectorIntroText:
 	.string "DIRECTOR: Who?\n"

@@ -1061,7 +1061,9 @@ static void TryUpdateGymLeaderRematchFromTrainer(void)
 static inline u16 GetTrainerFlagId(u16 trainerId)
 {
 #if !IS_FRLG
-    if (trainerId >= KANTO_TRAINER_BASE && trainerId < TRAINERS_COUNT)
+    if (trainerId >= JOHTO_TRAINER_BASE && trainerId < TRAINERS_COUNT)
+        return FLAG_JOHTO_TRAINERS_START + (trainerId - JOHTO_TRAINER_BASE);
+    if (trainerId >= KANTO_TRAINER_BASE && trainerId < JOHTO_TRAINER_BASE)
         return FLAG_KANTO_TRAINERS_START + (trainerId - KANTO_TRAINER_BASE);
 #endif
     return TRAINER_FLAGS_START + trainerId;

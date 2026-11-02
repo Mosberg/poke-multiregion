@@ -4,7 +4,7 @@ TimeCapsule_Johto_MapScripts::
 	.byte 0
 
 TimeCapsule_Johto_OnTransition:
-	call TimeCapsule_Johto_TimeCapsuleSetWhichChrisCallback_Sub
+	call TimeCapsule_Johto_TimeCapsuleSetWhichChrisCallback_Cb
 	end
 
 TimeCapsule_Johto_OnFrame:
@@ -38,6 +38,6 @@ TimeCapsule_Johto_TimeCapsuleFriendScript:
 	@ TODO unsupported: writetext .FriendReadyText
 	goto Johto_EventScript_Unimplemented
 
-TimeCapsule_Johto_TimeCapsuleSetWhichChrisCallback_Sub:
+TimeCapsule_Johto_TimeCapsuleSetWhichChrisCallback_Cb:
 	@ TODO unsupported: special CableClubCheckWhichChris
 	return

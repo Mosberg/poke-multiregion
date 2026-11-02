@@ -3,7 +3,7 @@ WhirlIslandLugiaChamber_Johto_MapScripts::
 	.byte 0
 
 WhirlIslandLugiaChamber_Johto_OnTransition:
-	call WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Sub
+	call WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Cb
 	end
 
 WhirlIslandLugiaChamber_Johto_Lugia_Entry::
@@ -23,13 +23,13 @@ WhirlIslandLugiaChamber_Johto_Lugia:
 	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	goto Johto_EventScript_Unimplemented
 
-WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Sub:
-	goto_if_set FLAG_JOHTO_FOUGHT_LUGIA, WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Sub
+WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Cb:
+	goto_if_set FLAG_JOHTO_FOUGHT_LUGIA, WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Cb
 	@ TODO unsupported: checkitem SILVER_WING
 	return
 
-WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Sub:
-	removeobject 1
+WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Cb:
+	setflag FLAG_JOHTO_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
 	return
 
 WhirlIslandLugiaChamber_Johto_LugiaText:

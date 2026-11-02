@@ -62,6 +62,47 @@ Route30_Johto_YoungsterJoey_ImportantBattleScript:
 	releaseall
 	end
 
+Route30_Johto_TrainerYoungsterJoey::
+	trainerbattle_single TRAINER_JOHTO_YOUNGSTER_JOEY1, Route30_Johto_YoungsterJoey1SeenText, Route30_Johto_YoungsterJoey1BeatenText
+	setflag FLAG_JOHTO_BEAT_YOUNGSTER_JOEY
+	lock
+	faceplayer
+	goto Route30_Johto_TrainerYoungsterJoey_Script
+
+Route30_Johto_TrainerYoungsterJoey_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_YOUNGSTER_JOEY
+	goto Johto_EventScript_Unimplemented
+
+Route30_Johto_TrainerYoungsterMikey::
+	trainerbattle_single TRAINER_JOHTO_YOUNGSTER_MIKEY, Route30_Johto_YoungsterMikeySeenText, Route30_Johto_YoungsterMikeyBeatenText
+	setflag FLAG_JOHTO_BEAT_YOUNGSTER_MIKEY
+	lock
+	faceplayer
+	goto Route30_Johto_TrainerYoungsterMikey_Script
+
+Route30_Johto_TrainerYoungsterMikey_Script:
+	message Route30_Johto_YoungsterMikeyAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route30_Johto_TrainerBugCatcherDon::
+	trainerbattle_single TRAINER_JOHTO_BUG_CATCHER_DON, Route30_Johto_BugCatcherDonSeenText, Route30_Johto_BugCatcherDonBeatenText
+	setflag FLAG_JOHTO_BEAT_BUG_CATCHER_DON
+	lock
+	faceplayer
+	goto Route30_Johto_TrainerBugCatcherDon_Script
+
+Route30_Johto_TrainerBugCatcherDon_Script:
+	message Route30_Johto_BugCatcherDonAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route30_Johto_Route30YoungsterScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GAVE_MYSTERY_EGG_TO_ELM, Route30_Johto_Route30YoungsterScript_CompletedEggQuest
@@ -149,6 +190,52 @@ Route30_Johto_Text_ThisIsABigBattle:
 	.string "What? This is a\n"
 	.string "big battle!\l"
 	.string "Leave me alone!$"
+
+Route30_Johto_YoungsterJoey1SeenText:
+	.string "I just lost, so\n"
+	.string "I'm trying to find\l"
+	.string "more POKéMON."
+	.string "\pWait! You look\n"
+	.string "weak! Come on,\l"
+	.string "let's battle!$"
+
+Route30_Johto_YoungsterJoey1BeatenText:
+	.string "Ack! I lost again!\n"
+	.string "Doggone it!$"
+
+Route30_Johto_YoungsterMikeySeenText:
+	.string "You're a POKéMON\n"
+	.string "trainer, right?"
+	.string "\pThen you have to\n"
+	.string "battle!$"
+
+Route30_Johto_YoungsterMikeyBeatenText:
+	.string "That's strange.\n"
+	.string "I won before.$"
+
+Route30_Johto_YoungsterMikeyAfterText:
+	.string "Becoming a good\n"
+	.string "trainer is really\l"
+	.string "tough."
+	.string "\pI'm going to bat-\n"
+	.string "tle other people\l"
+	.string "to get better.$"
+
+Route30_Johto_BugCatcherDonSeenText:
+	.string "Instead of a bug\n"
+	.string "POKéMON, I found\l"
+	.string "a trainer!$"
+
+Route30_Johto_BugCatcherDonBeatenText:
+	.string "Argh! You're too\n"
+	.string "strong!$"
+
+Route30_Johto_BugCatcherDonAfterText:
+	.string "I ran out of POKé\n"
+	.string "BALLS while I was\l"
+	.string "catching POKéMON."
+	.string "\pI should've bought\n"
+	.string "some more…$"
 
 Route30_Johto_Route30YoungsterText_DirectionsToMrPokemonsHouse:
 	.string "MR.POKéMON's\n"

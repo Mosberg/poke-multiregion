@@ -28,7 +28,14 @@ KogasRoom_Johto_KogaScript_Battle:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext KogaScript_KogaBeatenText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_KOGA_KOGA1, KogasRoom_Johto_KogaScript_KogaBeatenText
+	setflag FLAG_JOHTO_BEAT_ELITE_4_KOGA
+	message KogasRoom_Johto_KogaScript_KogaDefeatText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	playse SE_DOOR
+	@ TODO unsupported: changeblock 4, 2, $16
 	goto Johto_EventScript_Unimplemented
 
 KogasRoom_Johto_KogaScript_AfterBattle:
@@ -65,6 +72,11 @@ KogasRoom_Johto_KogaScript_KogaBeforeText:
 	.string "merely about brute"
 	.string "\pforce--you shall\n"
 	.string "see soon enough!$"
+
+KogasRoom_Johto_KogaScript_KogaBeatenText:
+	.string "Ah!\n"
+	.string "You have proven\l"
+	.string "your worth!$"
 
 KogasRoom_Johto_KogaScript_KogaDefeatText:
 	.string "I subjected you to\n"

@@ -21,11 +21,31 @@ PewterGym_Johto_PewterGymBrockScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext BrockWinLossText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_BROCK_BROCK1, PewterGym_Johto_BrockWinLossText
+	setflag FLAG_JOHTO_BEAT_BROCK
+	setflag FLAG_JOHTO_BEAT_CAMPER_JERRY
+	message PewterGym_Johto_ReceivedBoulderBadgeText
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 PewterGym_Johto_PewterGymBrockScript_FightDone:
 	message PewterGym_Johto_BrockFightDoneText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+PewterGym_Johto_TrainerCamperJerry::
+	trainerbattle_single TRAINER_JOHTO_CAMPER_JERRY, PewterGym_Johto_CamperJerrySeenText, PewterGym_Johto_CamperJerryBeatenText
+	setflag FLAG_JOHTO_BEAT_CAMPER_JERRY
+	lock
+	faceplayer
+	goto PewterGym_Johto_TrainerCamperJerry_Script
+
+PewterGym_Johto_TrainerCamperJerry_Script:
+	message PewterGym_Johto_CamperJerryAfterBattleText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -75,6 +95,20 @@ PewterGym_Johto_BrockIntroText:
 	.string "any damage."
 	.string "\pCome on!$"
 
+PewterGym_Johto_BrockWinLossText:
+	.string "BROCK: Your POKé-\n"
+	.string "MON's powerful at-\l"
+	.string "tacks overcame my\l"
+	.string "rock-hard defense…"
+	.string "\pYou're stronger\n"
+	.string "than I expected…"
+	.string "\pGo ahead--take\n"
+	.string "this BADGE.$"
+
+PewterGym_Johto_ReceivedBoulderBadgeText:
+	.string "{PLAYER} received\n"
+	.string "BOULDERBADGE.$"
+
 PewterGym_Johto_BrockFightDoneText:
 	.string "BROCK: The world\n"
 	.string "is huge. There are"
@@ -84,6 +118,29 @@ PewterGym_Johto_BrockFightDoneText:
 	.string "I'm going to be-\l"
 	.string "come a lot strong-\l"
 	.string "er too.$"
+
+PewterGym_Johto_CamperJerrySeenText:
+	.string "The trainers of\n"
+	.string "this GYM use rock-\l"
+	.string "type POKéMON."
+	.string "\pThe rock-type has\n"
+	.string "high DEFENSE."
+	.string "\pBattles could end\n"
+	.string "up going a long"
+	.string "\ptime. Are you\n"
+	.string "ready for this?$"
+
+PewterGym_Johto_CamperJerryBeatenText:
+	.string "I have to win\n"
+	.string "these battles…$"
+
+PewterGym_Johto_CamperJerryAfterBattleText:
+	.string "Hey, you! Trainer\n"
+	.string "from JOHTO! BROCK"
+	.string "\pis tough. He'll\n"
+	.string "punish you if you"
+	.string "\pdon't take him\n"
+	.string "seriously.$"
 
 PewterGym_Johto_PewterGymGuideText:
 	.string "Yo! CHAMP in\n"

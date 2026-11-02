@@ -3,7 +3,7 @@ GoldenrodDeptStoreB1F_Johto_MapScripts::
 	.byte 0
 
 GoldenrodDeptStoreB1F_Johto_OnTransition:
-	call GoldenrodDeptStoreB1F_Johto_GoldenRodDeptStoreUnblockCallback_Sub
+	call GoldenrodDeptStoreB1F_Johto_GoldenRodDeptStoreUnblockCallback_Cb
 	end
 
 GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FBlackBelt1Script_Entry::
@@ -60,7 +60,7 @@ GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FMachopScript:
 	releaseall
 	end
 
-GoldenrodDeptStoreB1F_Johto_GoldenRodDeptStoreUnblockCallback_Sub:
+GoldenrodDeptStoreB1F_Johto_GoldenRodDeptStoreUnblockCallback_Cb:
 	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_WAREHOUSE_BLOCKED_OFF
 	return
 

@@ -3,7 +3,7 @@ Route23_Johto_MapScripts::
 	.byte 0
 
 Route23_Johto_OnTransition:
-	call Route23_Johto_Route23FlypointCallback_Sub
+	call Route23_Johto_Route23FlypointCallback_Cb
 	end
 
 Route23_Johto_IndigoPlateauSign_Entry::
@@ -19,7 +19,7 @@ Route23_Johto_IndigoPlateauSign:
 	releaseall
 	end
 
-Route23_Johto_Route23FlypointCallback_Sub:
+Route23_Johto_Route23FlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_INDIGO_PLATEAU
 	return
 

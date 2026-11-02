@@ -3,7 +3,7 @@ BattleTowerOutside_Johto_MapScripts::
 	.byte 0
 
 BattleTowerOutside_Johto_OnTransition:
-	call BattleTowerOutside_Johto_BattleTowerOutsideShowCiviliansCallback_Sub
+	call BattleTowerOutside_Johto_BattleTowerOutsideShowCiviliansCallback_Cb
 	end
 
 BattleTowerOutside_Johto_BattleTowerOutsideYoungsterScript_Entry::
@@ -58,7 +58,7 @@ BattleTowerOutside_Johto_BattleTowerOutsideSign:
 	releaseall
 	end
 
-BattleTowerOutside_Johto_BattleTowerOutsideShowCiviliansCallback_Sub:
+BattleTowerOutside_Johto_BattleTowerOutsideShowCiviliansCallback_Cb:
 	clearflag FLAG_JOHTO_BATTLE_TOWER_OPEN_CIVILIANS
 	return
 

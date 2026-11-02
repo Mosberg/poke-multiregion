@@ -3,7 +3,7 @@ LavenderTown_Johto_MapScripts::
 	.byte 0
 
 LavenderTown_Johto_OnTransition:
-	call LavenderTown_Johto_LavenderTownFlypointCallback_Sub
+	call LavenderTown_Johto_LavenderTownFlypointCallback_Cb
 	end
 
 LavenderTown_Johto_LavenderTownPokefanMScript_Entry::
@@ -121,7 +121,7 @@ LavenderTown_Johto_LavenderPokecenterSignText:
 LavenderTown_Johto_LavenderMartSignText:
 	goto Johto_Std_MartSignScript
 
-LavenderTown_Johto_LavenderTownFlypointCallback_Sub:
+LavenderTown_Johto_LavenderTownFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_LAVENDER
 	return
 

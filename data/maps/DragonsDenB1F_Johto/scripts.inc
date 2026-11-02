@@ -3,7 +3,7 @@ DragonsDenB1F_Johto_MapScripts::
 	.byte 0
 
 DragonsDenB1F_Johto_OnTransition:
-	call DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_Sub
+	call DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_Cb
 	end
 
 DragonsDenB1F_Johto_DragonsDenB1FDragonFangScript_Entry::
@@ -42,6 +42,66 @@ DragonsDenB1F_Johto_DragonsDenB1F_ClairScene:
 	waitbuttonpress
 	@ TODO unsupported: giveitem TM_DRAGONBREATH
 	goto Johto_EventScript_Unimplemented
+
+DragonsDenB1F_Johto_TrainerCooltrainermDarin::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERM_DARIN, DragonsDenB1F_Johto_CooltrainermDarinSeenText, DragonsDenB1F_Johto_CooltrainermDarinBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_DARIN
+	lock
+	faceplayer
+	goto DragonsDenB1F_Johto_TrainerCooltrainermDarin_Script
+
+DragonsDenB1F_Johto_TrainerCooltrainermDarin_Script:
+	message DragonsDenB1F_Johto_CooltrainermDarinAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+DragonsDenB1F_Johto_TrainerCooltrainerfCara::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERF_CARA, DragonsDenB1F_Johto_CooltrainerfCaraSeenText, DragonsDenB1F_Johto_CooltrainerfCaraBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERF_CARA
+	lock
+	faceplayer
+	goto DragonsDenB1F_Johto_TrainerCooltrainerfCara_Script
+
+DragonsDenB1F_Johto_TrainerCooltrainerfCara_Script:
+	message DragonsDenB1F_Johto_CooltrainerfCaraAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+DragonsDenB1F_Johto_TrainerTwinsLeaandpia1::
+	trainerbattle_single TRAINER_JOHTO_TWINS_LEAANDPIA1, DragonsDenB1F_Johto_TwinsLeaandpia1SeenText, DragonsDenB1F_Johto_TwinsLeaandpia1BeatenText
+	setflag FLAG_JOHTO_BEAT_TWINS_LEA_AND_PIA
+	lock
+	faceplayer
+	goto DragonsDenB1F_Johto_TrainerTwinsLeaandpia1_Script
+
+DragonsDenB1F_Johto_TrainerTwinsLeaandpia1_Script:
+	message DragonsDenB1F_Johto_TwinsLeaandpia1AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+DragonsDenB1F_Johto_TrainerTwinsLeaandpia2::
+	trainerbattle_single TRAINER_JOHTO_TWINS_LEAANDPIA1, DragonsDenB1F_Johto_TwinsLeaandpia2SeenText, DragonsDenB1F_Johto_TwinsLeaandpia2BeatenText
+	setflag FLAG_JOHTO_BEAT_TWINS_LEA_AND_PIA
+	lock
+	faceplayer
+	goto DragonsDenB1F_Johto_TrainerTwinsLeaandpia2_Script
+
+DragonsDenB1F_Johto_TrainerTwinsLeaandpia2_Script:
+	message DragonsDenB1F_Johto_TwinsLeaandpia2AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 DragonsDenB1F_Johto_DragonsDenB1FDragonFangScript:
 	additem ITEM_DRAGON_FANG
@@ -97,12 +157,12 @@ DragonsDenB1F_Johto_DragonShrineSignpost:
 	releaseall
 	end
 
-DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_Sub:
-	goto_if_set FLAG_JOHTO_BEAT_RIVAL_IN_MT_MOON, DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_CheckDay_Sub
-	removeobject 3
+DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_Cb:
+	goto_if_set FLAG_JOHTO_BEAT_RIVAL_IN_MT_MOON, DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_CheckDay_Cb
+	setflag FLAG_JOHTO_RIVAL_DRAGONS_DEN
 	return
 
-DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_CheckDay_Sub:
+DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_CheckDay_Cb:
 	@ TODO unsupported: readvar VAR_WEEKDAY
 	return
 
@@ -148,6 +208,62 @@ DragonsDenB1F_Johto_RivalText_Training2:
 	.string "\pWhew…"
 	.string "\pLearn to stay out\n"
 	.string "of my way…$"
+
+DragonsDenB1F_Johto_CooltrainermDarinSeenText:
+	.string "You! How dare you\n"
+	.string "enter uninvited!$"
+
+DragonsDenB1F_Johto_CooltrainermDarinBeatenText:
+	.string "S-strong!$"
+
+DragonsDenB1F_Johto_CooltrainermDarinAfterBattleText:
+	.string "The SHRINE ahead\n"
+	.string "is home to the"
+	.string "\pMASTER of our\n"
+	.string "dragon-user clan."
+	.string "\pYou're not allowed\n"
+	.string "to just go in!$"
+
+DragonsDenB1F_Johto_CooltrainerfCaraSeenText:
+	.string "You shouldn't be\n"
+	.string "in here!$"
+
+DragonsDenB1F_Johto_CooltrainerfCaraBeatenText:
+	.string "Oh yikes, I lost!$"
+
+DragonsDenB1F_Johto_CooltrainerfCaraAfterBattleText:
+	.string "Soon I'm going to\n"
+	.string "get permission"
+	.string "\pfrom our MASTER to\n"
+	.string "use dragons."
+	.string "\pWhen I do, I'm\n"
+	.string "going to become an"
+	.string "\padmirable dragon\n"
+	.string "trainer and gain"
+	.string "\pour MASTER's\n"
+	.string "approval.$"
+
+DragonsDenB1F_Johto_TwinsLeaandpia1SeenText:
+	.string "It's a stranger we\n"
+	.string "don't know.$"
+
+DragonsDenB1F_Johto_TwinsLeaandpia1BeatenText:
+	.string "Ouchies.$"
+
+DragonsDenB1F_Johto_TwinsLeaandpia1AfterBattleText:
+	.string "It was like having\n"
+	.string "to battle LANCE.$"
+
+DragonsDenB1F_Johto_TwinsLeaandpia2SeenText:
+	.string "Who are you?$"
+
+DragonsDenB1F_Johto_TwinsLeaandpia2BeatenText:
+	.string "Meanie.$"
+
+DragonsDenB1F_Johto_TwinsLeaandpia2AfterBattleText:
+	.string "We'll tell on you."
+	.string "\pMASTER will be\n"
+	.string "angry with you.$"
 
 DragonsDenB1F_Johto_Text_FoundDragonFang:
 	.string "{PLAYER} found\n"

@@ -4,7 +4,7 @@ TradeCenter_Johto_MapScripts::
 	.byte 0
 
 TradeCenter_Johto_OnTransition:
-	call TradeCenter_Johto_TradeCenterSetWhichChrisCallback_Sub
+	call TradeCenter_Johto_TradeCenterSetWhichChrisCallback_Cb
 	end
 
 TradeCenter_Johto_OnFrame:
@@ -30,6 +30,6 @@ TradeCenter_Johto_TradeCenterConsoleScript:
 	@ TODO unsupported: special TradeCenter
 	goto Johto_EventScript_Unimplemented
 
-TradeCenter_Johto_TradeCenterSetWhichChrisCallback_Sub:
+TradeCenter_Johto_TradeCenterSetWhichChrisCallback_Cb:
 	@ TODO unsupported: special CableClubCheckWhichChris
 	return

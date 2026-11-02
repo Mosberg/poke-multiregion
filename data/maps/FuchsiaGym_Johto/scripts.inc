@@ -39,7 +39,13 @@ FuchsiaGym_Johto_FuchsiaGymJanineScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext JanineText_ToughOne, 0
+	trainerbattle_no_intro TRAINER_JOHTO_JANINE_JANINE1, FuchsiaGym_Johto_JanineText_ToughOne
+	setflag FLAG_JOHTO_BEAT_JANINE
+	setflag FLAG_JOHTO_BEAT_LASS_ALICE
+	setflag FLAG_JOHTO_BEAT_LASS_LINDA
+	setflag FLAG_JOHTO_BEAT_PICNICKER_CINDY
+	setflag FLAG_JOHTO_BEAT_CAMPER_BARRY
+	@ TODO unsupported: special LoadUsedSpritesGFX
 	goto Johto_EventScript_Unimplemented
 
 FuchsiaGym_Johto_FuchsiaGymJanineScript_FightDone:
@@ -76,8 +82,15 @@ FuchsiaGym_Johto_LassAliceScript_AliceUnmasked:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext LassAliceBeatenText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_LASS_ALICE, FuchsiaGym_Johto_LassAliceBeatenText
+	goto_if_set FLAG_JOHTO_BEAT_LASS_ALICE, FuchsiaGym_Johto_LassAliceScript_AliceBecomesJanine
+	setflag FLAG_JOHTO_BEAT_LASS_ALICE
+	releaseall
+	end
+
+FuchsiaGym_Johto_LassAliceScript_AliceBecomesJanine:
+	releaseall
+	end
 
 FuchsiaGym_Johto_LassAliceScript_AliceAfterScript:
 	message FuchsiaGym_Johto_LassAliceAfterText
@@ -102,8 +115,15 @@ FuchsiaGym_Johto_LassLindaScript_LindaUnmasked:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext LassLindaBeatenText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_LASS_LINDA, FuchsiaGym_Johto_LassLindaBeatenText
+	goto_if_set FLAG_JOHTO_BEAT_LASS_LINDA, FuchsiaGym_Johto_LassLindaScript_LindaBecomesJanine
+	setflag FLAG_JOHTO_BEAT_LASS_LINDA
+	releaseall
+	end
+
+FuchsiaGym_Johto_LassLindaScript_LindaBecomesJanine:
+	releaseall
+	end
 
 FuchsiaGym_Johto_LassLindaScript_LindaAfterScript:
 	message FuchsiaGym_Johto_LassLindaAfterText
@@ -128,8 +148,15 @@ FuchsiaGym_Johto_PicnickerCindyScript_CindyUnmasked:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext PicnickerCindyBeatenText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_PICNICKER_CINDY, FuchsiaGym_Johto_PicnickerCindyBeatenText
+	goto_if_set FLAG_JOHTO_BEAT_PICNICKER_CINDY, FuchsiaGym_Johto_PicnickerCindyScript_CindyBecomesJanine
+	setflag FLAG_JOHTO_BEAT_PICNICKER_CINDY
+	releaseall
+	end
+
+FuchsiaGym_Johto_PicnickerCindyScript_CindyBecomesJanine:
+	releaseall
+	end
 
 FuchsiaGym_Johto_PicnickerCindyScript_CindyAfterScript:
 	message FuchsiaGym_Johto_PicnickerCindyAfterText
@@ -154,8 +181,15 @@ FuchsiaGym_Johto_CamperBarryScript_BarryUnmasked:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext CamperBarryBeatenText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_CAMPER_BARRY, FuchsiaGym_Johto_CamperBarryBeatenText
+	goto_if_set FLAG_JOHTO_BEAT_CAMPER_BARRY, FuchsiaGym_Johto_CamperBarryScript_BarryBecomesJanine
+	setflag FLAG_JOHTO_BEAT_CAMPER_BARRY
+	releaseall
+	end
+
+FuchsiaGym_Johto_CamperBarryScript_BarryBecomesJanine:
+	releaseall
+	end
 
 FuchsiaGym_Johto_CamperBarryScript_BarryAfterScript:
 	message FuchsiaGym_Johto_CamperBarryAfterText
@@ -216,6 +250,13 @@ FuchsiaGym_Johto_JanineText_DisappointYou:
 	.string "\pJANINE of FUCHSIA\n"
 	.string "GYM, that's me!$"
 
+FuchsiaGym_Johto_JanineText_ToughOne:
+	.string "JANINE: You're a\n"
+	.string "tough one. You\l"
+	.string "definitely won…"
+	.string "\pHere's SOULBADGE.\n"
+	.string "Take it.$"
+
 FuchsiaGym_Johto_JanineText_ToxicSpeech:
 	.string "JANINE: You're so\n"
 	.string "tough! I have a\l"
@@ -241,6 +282,9 @@ FuchsiaGym_Johto_LassAliceBeforeText:
 	.string "\pNo, I'm not!\n"
 	.string "Gotcha, sucker!$"
 
+FuchsiaGym_Johto_LassAliceBeatenText:
+	.string "I had you fooled…$"
+
 FuchsiaGym_Johto_LassAliceAfterText:
 	.string "How will you dis-\n"
 	.string "tinguish our real\l"
@@ -249,6 +293,10 @@ FuchsiaGym_Johto_LassAliceAfterText:
 FuchsiaGym_Johto_LassLindaBeforeText:
 	.string "Fooled you!\n"
 	.string "Hahaha!$"
+
+FuchsiaGym_Johto_LassLindaBeatenText:
+	.string "Ooh… I lost…\n"
+	.string "You're not weak…$"
 
 FuchsiaGym_Johto_LassLindaAfterText:
 	.string "Well? Wasn't my\n"
@@ -260,6 +308,10 @@ FuchsiaGym_Johto_PicnickerCindyBeforeText:
 	.string "was real?"
 	.string "\pLet's battle!$"
 
+FuchsiaGym_Johto_PicnickerCindyBeatenText:
+	.string "Darn it!\n"
+	.string "I wanted to win!$"
+
 FuchsiaGym_Johto_PicnickerCindyAfterText:
 	.string "You must be\n"
 	.string "getting tired.$"
@@ -268,6 +320,10 @@ FuchsiaGym_Johto_CamperBarryBeforeText:
 	.string "Wahahaha!"
 	.string "\pYou betcha!\n"
 	.string "I'm JANINE!$"
+
+FuchsiaGym_Johto_CamperBarryBeatenText:
+	.string "My disguise was\n"
+	.string "right on! Dang!$"
 
 FuchsiaGym_Johto_CamperBarryAfterText:
 	.string "Hey, you. Was my\n"

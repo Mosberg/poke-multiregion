@@ -112,7 +112,7 @@ TeamRocketBaseB2F_Johto_RocketBaseBossFScript:
 	waitmovement 1
 	applymovement 2, TeamRocketBaseB2F_Johto_RocketBaseBossFBattlesPlayerMovement
 	waitmovement 2
-	@ TODO unsupported: winlosstext RocketBaseBossWinText, 0
+	@ TODO unsupported: setlasttalked TEAMROCKETBASEB2F_ROCKET_GIRL
 	goto Johto_EventScript_Unimplemented
 
 TeamRocketBaseB2F_Johto_RocketBaseCantLeaveScript:
@@ -149,6 +149,51 @@ TeamRocketBaseB2F_Johto_LanceHealsCommon:
 	closemessage
 	@ TODO unsupported: special FadeOutToWhite
 	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB2F_Johto_TrainerGruntM17::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_17, TeamRocketBaseB2F_Johto_GruntM17SeenText, TeamRocketBaseB2F_Johto_GruntM17BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_17
+	lock
+	faceplayer
+	goto TeamRocketBaseB2F_Johto_TrainerGruntM17_Script
+
+TeamRocketBaseB2F_Johto_TrainerGruntM17_Script:
+	message TeamRocketBaseB2F_Johto_GruntM17AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB2F_Johto_TrainerGruntM18::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_18, TeamRocketBaseB2F_Johto_GruntM18SeenText, TeamRocketBaseB2F_Johto_GruntM18BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_18
+	lock
+	faceplayer
+	goto TeamRocketBaseB2F_Johto_TrainerGruntM18_Script
+
+TeamRocketBaseB2F_Johto_TrainerGruntM18_Script:
+	message TeamRocketBaseB2F_Johto_GruntM18AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB2F_Johto_TrainerGruntM19::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_19, TeamRocketBaseB2F_Johto_GruntM19SeenText, TeamRocketBaseB2F_Johto_GruntM19BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_19
+	lock
+	faceplayer
+	goto TeamRocketBaseB2F_Johto_TrainerGruntM19_Script
+
+TeamRocketBaseB2F_Johto_TrainerGruntM19_Script:
+	message TeamRocketBaseB2F_Johto_GruntM19AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 TeamRocketBaseB2F_Johto_RocketElectrode1:
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
@@ -301,6 +346,15 @@ TeamRocketBaseB2F_Johto_RocketBaseBossDontMeddleText:
 	.string "\pit is to meddle\n"
 	.string "with TEAM ROCKET!$"
 
+TeamRocketBaseB2F_Johto_RocketBaseBossWinText:
+	.string "Tch, you really\n"
+	.string "are strong."
+	.string "\pIt's too bad."
+	.string "\pIf you were to\n"
+	.string "join TEAM ROCKET,"
+	.string "\pyou could become\n"
+	.string "an EXECUTIVE.$"
+
 TeamRocketBaseB2F_Johto_RocketBaseLancesSideText:
 	.string "LANCE: Leave this\n"
 	.string "side to me.$"
@@ -313,6 +367,59 @@ TeamRocketBaseB2F_Johto_LanceHealsText1:
 	.string "\pHere, give them\n"
 	.string "some of my medi-\l"
 	.string "cine.$"
+
+TeamRocketBaseB2F_Johto_GruntM17SeenText:
+	.string "The door won't\n"
+	.string "open?"
+	.string "\pWell, duh.\n"
+	.string "It has to have a"
+	.string "\ppassword that only\n"
+	.string "TEAM ROCKET knows.$"
+
+TeamRocketBaseB2F_Johto_GruntM17BeatenText:
+	.string "What? I lost?$"
+
+TeamRocketBaseB2F_Johto_GruntM17AfterBattleText:
+	.string "Heh, I'm just a\n"
+	.string "GRUNT."
+	.string "\pI don't know the\n"
+	.string "password. Too bad\l"
+	.string "for you.$"
+
+TeamRocketBaseB2F_Johto_GruntM18SeenText:
+	.string "Oh, a kid? I don't\n"
+	.string "really like this,"
+	.string "\pbut eliminate you\n"
+	.string "I must.$"
+
+TeamRocketBaseB2F_Johto_GruntM18BeatenText:
+	.string "I knew I'd lose…$"
+
+TeamRocketBaseB2F_Johto_GruntM18AfterBattleText:
+	.string "I got wiped out on\n"
+	.string "the last mission\l"
+	.string "by a kid too."
+	.string "\pWhen we were ab-\n"
+	.string "ducting POKéMON,"
+	.string "\pthis kid with long\n"
+	.string "red hair and mean-"
+	.string "\plooking eyes just\n"
+	.string "creamed me…$"
+
+TeamRocketBaseB2F_Johto_GruntM19SeenText:
+	.string "You rotten little\n"
+	.string "pest!$"
+
+TeamRocketBaseB2F_Johto_GruntM19BeatenText:
+	.string "Grrrr…$"
+
+TeamRocketBaseB2F_Johto_GruntM19AfterBattleText:
+	.string "Heh, only the boss\n"
+	.string "knows the password\l"
+	.string "for that door."
+	.string "\pWhere's the boss?\n"
+	.string "Who knows? Go look\l"
+	.string "for yourself.$"
 
 TeamRocketBaseB2F_Johto_RocketBaseB2FTransmitterText:
 	.string "It's the radio\n"

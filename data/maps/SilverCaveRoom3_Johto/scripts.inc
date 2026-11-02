@@ -13,9 +13,22 @@ SilverCaveRoom3_Johto_Red:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext RedWinLossText, RedWinLossText
+	trainerbattle_no_intro TRAINER_JOHTO_RED_RED1, SilverCaveRoom3_Johto_RedWinLossText
+	fadeoutbgm 4
+	message SilverCaveRoom3_Johto_RedLeavesText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	@ TODO unsupported: special FadeOutToBlack
 	goto Johto_EventScript_Unimplemented
 
 SilverCaveRoom3_Johto_RedSeenText:
+	.string "<……>\n"
+	.string "<……>$"
+
+SilverCaveRoom3_Johto_RedWinLossText:
+	.string "…$"
+
+SilverCaveRoom3_Johto_RedLeavesText:
 	.string "<……>\n"
 	.string "<……>$"

@@ -4,8 +4,8 @@ Colosseum_Johto_MapScripts::
 	.byte 0
 
 Colosseum_Johto_OnTransition:
-	call Colosseum_Johto_ColosseumSetWhichChrisCallback_Sub
-	call Colosseum_Johto_ColosseumPreparePokecenter2FCallback_Sub
+	call Colosseum_Johto_ColosseumSetWhichChrisCallback_Cb
+	call Colosseum_Johto_ColosseumPreparePokecenter2FCallback_Cb
 	end
 
 Colosseum_Johto_OnFrame:
@@ -39,10 +39,10 @@ Colosseum_Johto_CableClubFriendScript:
 	@ TODO unsupported: writetext .FriendReadyText
 	goto Johto_EventScript_Unimplemented
 
-Colosseum_Johto_ColosseumSetWhichChrisCallback_Sub:
+Colosseum_Johto_ColosseumSetWhichChrisCallback_Cb:
 	@ TODO unsupported: special CableClubCheckWhichChris
 	return
 
-Colosseum_Johto_ColosseumPreparePokecenter2FCallback_Sub:
+Colosseum_Johto_ColosseumPreparePokecenter2FCallback_Cb:
 	setvar VAR_JOHTO_SCENE_POKECENTER_2F, 2
 	return

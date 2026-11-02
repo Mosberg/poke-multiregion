@@ -58,6 +58,88 @@ Route27_Johto_Route27FisherScript:
 	releaseall
 	end
 
+Route27_Johto_TrainerPsychicGilbert::
+	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_GILBERT, Route27_Johto_PsychicGilbertSeenText, Route27_Johto_PsychicGilbertBeatenText
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_GILBERT
+	lock
+	faceplayer
+	goto Route27_Johto_TrainerPsychicGilbert_Script
+
+Route27_Johto_TrainerPsychicGilbert_Script:
+	message Route27_Johto_PsychicGilbertAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route27_Johto_TrainerBirdKeeperJose2::
+	trainerbattle_single TRAINER_JOHTO_BIRD_KEEPER_JOSE2, Route27_Johto_BirdKeeperJose2SeenText, Route27_Johto_BirdKeeperJose2BeatenText
+	setflag FLAG_JOHTO_BEAT_BIRD_KEEPER_JOSE2
+	lock
+	faceplayer
+	goto Route27_Johto_TrainerBirdKeeperJose2_Script
+
+Route27_Johto_TrainerBirdKeeperJose2_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
+	goto Johto_EventScript_Unimplemented
+
+Route27_Johto_TrainerCooltrainermBlake::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERM_BLAKE, Route27_Johto_CooltrainermBlakeSeenText, Route27_Johto_CooltrainermBlakeBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_BLAKE
+	lock
+	faceplayer
+	goto Route27_Johto_TrainerCooltrainermBlake_Script
+
+Route27_Johto_TrainerCooltrainermBlake_Script:
+	message Route27_Johto_CooltrainermBlakeAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route27_Johto_TrainerCooltrainermBrian::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERM_BRIAN, Route27_Johto_CooltrainermBrianSeenText, Route27_Johto_CooltrainermBrianBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_BRIAN
+	lock
+	faceplayer
+	goto Route27_Johto_TrainerCooltrainermBrian_Script
+
+Route27_Johto_TrainerCooltrainermBrian_Script:
+	message Route27_Johto_CooltrainermBrianAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route27_Johto_TrainerCooltrainerfReena::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERF_REENA1, Route27_Johto_CooltrainerfReenaSeenText, Route27_Johto_CooltrainerfReenaBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERF_REENA
+	lock
+	faceplayer
+	goto Route27_Johto_TrainerCooltrainerfReena_Script
+
+Route27_Johto_TrainerCooltrainerfReena_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA
+	goto Johto_EventScript_Unimplemented
+
+Route27_Johto_TrainerCooltrainerfMegan::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERF_MEGAN, Route27_Johto_CooltrainerfMeganSeenText, Route27_Johto_CooltrainerfMeganBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERF_MEGAN
+	lock
+	faceplayer
+	goto Route27_Johto_TrainerCooltrainerfMegan_Script
+
+Route27_Johto_TrainerCooltrainerfMegan_Script:
+	message Route27_Johto_CooltrainerfMeganAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route27_Johto_TohjoFallsSign:
 	message Route27_Johto_TohjoFallsSignText
 	waitmessage
@@ -86,6 +168,92 @@ Route27_Johto_Route27FisherText:
 	.string "KANTO."
 	.string "\pCheck your POKé-\n"
 	.string "GEAR MAP and see.$"
+
+Route27_Johto_CooltrainermBlakeSeenText:
+	.string "You look pretty\n"
+	.string "strong.\l"
+	.string "Let me battle you!$"
+
+Route27_Johto_CooltrainermBlakeBeatenText:
+	.string "Yow!$"
+
+Route27_Johto_CooltrainermBlakeAfterBattleText:
+	.string "If you prevail on\n"
+	.string "this harsh trek,"
+	.string "\pthe truth will be\n"
+	.string "revealed!"
+	.string "\pHeh, sorry, I just\n"
+	.string "wanted to say\l"
+	.string "something cool.$"
+
+Route27_Johto_CooltrainermBrianSeenText:
+	.string "Hm? You're good,\n"
+	.string "aren't you?$"
+
+Route27_Johto_CooltrainermBrianBeatenText:
+	.string "Just as I thought!$"
+
+Route27_Johto_CooltrainermBrianAfterBattleText:
+	.string "A good trainer can\n"
+	.string "recognize other\l"
+	.string "good trainers.$"
+
+Route27_Johto_CooltrainerfReenaSeenText:
+	.string "You shouldn't\n"
+	.string "underestimate the"
+	.string "\pwild POKéMON in\n"
+	.string "these parts.$"
+
+Route27_Johto_CooltrainerfReenaBeatenText:
+	.string "Oh! You're much\n"
+	.string "too strong!$"
+
+Route27_Johto_CooltrainerfMeganSeenText:
+	.string "It's rare to see\n"
+	.string "anyone come here."
+	.string "\pAre you training\n"
+	.string "on your own?$"
+
+Route27_Johto_CooltrainerfMeganBeatenText:
+	.string "Oh! You're really\n"
+	.string "strong!$"
+
+Route27_Johto_CooltrainerfMeganAfterBattleText:
+	.string "I'm checking out\n"
+	.string "pre- and post-\l"
+	.string "evolution POKéMON."
+	.string "\pEvolution really\n"
+	.string "does make POKéMON\l"
+	.string "stronger."
+	.string "\pBut evolved forms\n"
+	.string "also learn moves\l"
+	.string "later on.$"
+
+Route27_Johto_PsychicGilbertSeenText:
+	.string "Don't say a thing!"
+	.string "\pLet me guess what\n"
+	.string "you're thinking."
+	.string "\pMmmmmmm…"
+	.string "\pI got it! You're\n"
+	.string "on the POKéMON\l"
+	.string "LEAGUE challenge!$"
+
+Route27_Johto_PsychicGilbertBeatenText:
+	.string "You're too much!$"
+
+Route27_Johto_PsychicGilbertAfterBattleText:
+	.string "With your skills,\n"
+	.string "you'll do well at\l"
+	.string "the LEAGUE."
+	.string "\pThat's what my\n"
+	.string "premonition says.$"
+
+Route27_Johto_BirdKeeperJose2SeenText:
+	.string "Tweet! Tweet!\n"
+	.string "Tetweet!$"
+
+Route27_Johto_BirdKeeperJose2BeatenText:
+	.string "Tweet!$"
 
 Route27_Johto_TohjoFallsSignText:
 	.string "TOHJO FALLS"

@@ -3,7 +3,7 @@ GoldenrodDeptStore5F_Johto_MapScripts::
 	.byte 0
 
 GoldenrodDeptStore5F_Johto_OnTransition:
-	call GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_Sub
+	call GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_Cb
 	end
 
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_Entry::
@@ -88,7 +88,7 @@ GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FDirectory:
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FElevatorButton:
 	goto Johto_Std_ElevatorButtonScript
 
-GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_Sub:
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_Cb:
 	@ TODO unsupported: readvar VAR_WEEKDAY
 	return
 

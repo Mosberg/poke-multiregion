@@ -36,6 +36,62 @@ Route39_Johto_Route39Miltank:
 	releaseall
 	end
 
+Route39_Johto_TrainerPokefanmDerek::
+	trainerbattle_single TRAINER_JOHTO_POKEFANM_DEREK1, Route39_Johto_PokefanmDerekSeenText, Route39_Johto_PokefanmDerekBeatenText
+	setflag FLAG_JOHTO_BEAT_POKEFANM_DEREK
+	lock
+	faceplayer
+	goto Route39_Johto_TrainerPokefanmDerek_Script
+
+Route39_Johto_TrainerPokefanmDerek_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_POKEFANM_DEREK
+	goto Johto_EventScript_Unimplemented
+
+Route39_Johto_TrainerPokefanfRuth::
+	trainerbattle_single TRAINER_JOHTO_POKEFANF_RUTH, Route39_Johto_PokefanfRuthSeenText, Route39_Johto_PokefanfRuthBeatenText
+	setflag FLAG_JOHTO_BEAT_POKEFANF_RUTH
+	lock
+	faceplayer
+	goto Route39_Johto_TrainerPokefanfRuth_Script
+
+Route39_Johto_TrainerPokefanfRuth_Script:
+	message Route39_Johto_PokefanfRuthAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route39_Johto_TrainerSailorEugene::
+	trainerbattle_single TRAINER_JOHTO_SAILOR_EUGENE, Route39_Johto_SailorEugeneSeenText, Route39_Johto_SailorEugeneBeatenText
+	setflag FLAG_JOHTO_BEAT_SAILOR_EUGENE
+	lock
+	faceplayer
+	goto Route39_Johto_TrainerSailorEugene_Script
+
+Route39_Johto_TrainerSailorEugene_Script:
+	message Route39_Johto_SailorEugeneAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route39_Johto_TrainerPsychicNorman::
+	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_NORMAN, Route39_Johto_PsychicNormanSeenText, Route39_Johto_PsychicNormanBeatenText
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_NORMAN
+	lock
+	faceplayer
+	goto Route39_Johto_TrainerPsychicNorman_Script
+
+Route39_Johto_TrainerPsychicNorman_Script:
+	message Route39_Johto_PsychicNormanAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route39_Johto_TrainerPokefanfJaime:
 	faceplayer
 	setvar VAR_0x8004, 4
@@ -46,8 +102,11 @@ Route39_Johto_TrainerPokefanfJaime:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext PokefanfJaimeBeatenText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_POKEFANF_JAIME, Route39_Johto_PokefanfJaimeBeatenText
+	setflag FLAG_JOHTO_BEAT_POKEFANF_JAIME
+	closemessage
+	releaseall
+	end
 
 Route39_Johto_TrainerPokefanfJaime_Beaten:
 	message Route39_Johto_PokefanfJaimeAfterBattleText
@@ -96,6 +155,67 @@ Route39_Johto_Route39FruitTree:
 Route39_Johto_Route39MiltankText:
 	.string "MILTANK: Mooo!$"
 
+Route39_Johto_SailorEugeneSeenText:
+	.string "I just got back to\n"
+	.string "OLIVINE."
+	.string "\pSo how about a\n"
+	.string "POKéMON battle?$"
+
+Route39_Johto_SailorEugeneBeatenText:
+	.string "Awaaargh!$"
+
+Route39_Johto_SailorEugeneAfterBattleText:
+	.string "My POKéMON were\n"
+	.string "caught and raised\l"
+	.string "overseas."
+	.string "\pThey're my compan-\n"
+	.string "ions on those long\l"
+	.string "voyages.$"
+
+Route39_Johto_PokefanmDerekSeenText:
+	.string "This is a good\n"
+	.string "time to brag about\l"
+	.string "my PIKACHU!$"
+
+Route39_Johto_PokefanmDerekBeatenText:
+	.string "I had no time to\n"
+	.string "show off PIKACHU…$"
+
+Route39_Johto_PokefanfRuthSeenText:
+	.string "Such darling\n"
+	.string "POKéMON."
+	.string "\pLet's show our\n"
+	.string "POKéMON together\l"
+	.string "at the same time.$"
+
+Route39_Johto_PokefanfRuthBeatenText:
+	.string "I don't mind\n"
+	.string "losing.$"
+
+Route39_Johto_PokefanfRuthAfterBattleText:
+	.string "Do you know about\n"
+	.string "baby POKéMON?"
+	.string "\pI bet they're just\n"
+	.string "adorable!$"
+
+Route39_Johto_PsychicNormanSeenText:
+	.string "Let me see what\n"
+	.string "your POKéMON are\l"
+	.string "capable of.$"
+
+Route39_Johto_PsychicNormanBeatenText:
+	.string "Ooh, your POKéMON\n"
+	.string "have potential.$"
+
+Route39_Johto_PsychicNormanAfterBattleText:
+	.string "You know how POKé-\n"
+	.string "MON have different\l"
+	.string "abilities?"
+	.string "\pPeople are like\n"
+	.string "that too. Every-\l"
+	.string "one has different\l"
+	.string "potential.$"
+
 Route39_Johto_PokefanfJaimeHopeItGetsDarkText:
 	.string "Ufufufu… I hope it\n"
 	.string "gets dark soon.$"
@@ -104,6 +224,10 @@ Route39_Johto_PokefanfJaimeSeenText:
 	.string "You came at just\n"
 	.string "the right time."
 	.string "\pLet's battle.$"
+
+Route39_Johto_PokefanfJaimeBeatenText:
+	.string "Oh, how disap-\n"
+	.string "pointing…$"
 
 Route39_Johto_PokefanfJaimeAfterBattleText:
 	.string "I met my MEOWTH at\n"

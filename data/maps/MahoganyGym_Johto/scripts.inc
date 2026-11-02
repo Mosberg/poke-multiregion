@@ -21,7 +21,11 @@ MahoganyGym_Johto_MahoganyGymPryceScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext PryceText_Impressed, 0
+	trainerbattle_no_intro TRAINER_JOHTO_PRYCE_PRYCE1, MahoganyGym_Johto_PryceText_Impressed
+	setflag FLAG_JOHTO_BEAT_PRYCE
+	message MahoganyGym_Johto_Text_ReceivedGlacierBadge
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 MahoganyGym_Johto_MahoganyGymPryceScript_FightDone:
@@ -43,6 +47,81 @@ MahoganyGym_Johto_PryceScript_Defeat:
 	waitbuttonpress
 
 MahoganyGym_Johto_MahoganyGym_NoRoomForIcyWind:
+	closemessage
+	releaseall
+	end
+
+MahoganyGym_Johto_TrainerSkierRoxanne::
+	trainerbattle_single TRAINER_JOHTO_SKIER_ROXANNE, MahoganyGym_Johto_SkierRoxanneSeenText, MahoganyGym_Johto_SkierRoxanneBeatenText
+	setflag FLAG_JOHTO_BEAT_SKIER_ROXANNE
+	lock
+	faceplayer
+	goto MahoganyGym_Johto_TrainerSkierRoxanne_Script
+
+MahoganyGym_Johto_TrainerSkierRoxanne_Script:
+	message MahoganyGym_Johto_SkierRoxanneAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+MahoganyGym_Johto_TrainerSkierClarissa::
+	trainerbattle_single TRAINER_JOHTO_SKIER_CLARISSA, MahoganyGym_Johto_SkierClarissaSeenText, MahoganyGym_Johto_SkierClarissaBeatenText
+	setflag FLAG_JOHTO_BEAT_SKIER_CLARISSA
+	lock
+	faceplayer
+	goto MahoganyGym_Johto_TrainerSkierClarissa_Script
+
+MahoganyGym_Johto_TrainerSkierClarissa_Script:
+	message MahoganyGym_Johto_SkierClarissaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+MahoganyGym_Johto_TrainerBoarderRonald::
+	trainerbattle_single TRAINER_JOHTO_BOARDER_RONALD, MahoganyGym_Johto_BoarderRonaldSeenText, MahoganyGym_Johto_BoarderRonaldBeatenText
+	setflag FLAG_JOHTO_BEAT_BOARDER_RONALD
+	lock
+	faceplayer
+	goto MahoganyGym_Johto_TrainerBoarderRonald_Script
+
+MahoganyGym_Johto_TrainerBoarderRonald_Script:
+	message MahoganyGym_Johto_BoarderRonaldAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+MahoganyGym_Johto_TrainerBoarderBrad::
+	trainerbattle_single TRAINER_JOHTO_BOARDER_BRAD, MahoganyGym_Johto_BoarderBradSeenText, MahoganyGym_Johto_BoarderBradBeatenText
+	setflag FLAG_JOHTO_BEAT_BOARDER_BRAD
+	lock
+	faceplayer
+	goto MahoganyGym_Johto_TrainerBoarderBrad_Script
+
+MahoganyGym_Johto_TrainerBoarderBrad_Script:
+	message MahoganyGym_Johto_BoarderBradAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+MahoganyGym_Johto_TrainerBoarderDouglas::
+	trainerbattle_single TRAINER_JOHTO_BOARDER_DOUGLAS, MahoganyGym_Johto_BoarderDouglasSeenText, MahoganyGym_Johto_BoarderDouglasBeatenText
+	setflag FLAG_JOHTO_BEAT_BOARDER_DOUGLAS
+	lock
+	faceplayer
+	goto MahoganyGym_Johto_TrainerBoarderDouglas_Script
+
+MahoganyGym_Johto_TrainerBoarderDouglas_Script:
+	message MahoganyGym_Johto_BoarderDouglasAfterBattleText
+	waitmessage
+	waitbuttonpress
 	closemessage
 	releaseall
 	end
@@ -95,6 +174,20 @@ MahoganyGym_Johto_PryceText_Intro:
 	.string "\pshall demonstrate\n"
 	.string "my power!$"
 
+MahoganyGym_Johto_PryceText_Impressed:
+	.string "Ah, I am impressed\n"
+	.string "by your prowess."
+	.string "\pWith your strong\n"
+	.string "will, I know you"
+	.string "\pwill overcome all\n"
+	.string "life's obstacles."
+	.string "\pYou are worthy of\n"
+	.string "this BADGE!$"
+
+MahoganyGym_Johto_Text_ReceivedGlacierBadge:
+	.string "{PLAYER} received\n"
+	.string "GLACIERBADGE.$"
+
 MahoganyGym_Johto_PryceText_GlacierBadgeSpeech:
 	.string "That BADGE will\n"
 	.string "raise the SPECIAL\l"
@@ -116,6 +209,84 @@ MahoganyGym_Johto_PryceText_CherishYourPokemon:
 	.string "years to come."
 	.string "\pCherish your time\n"
 	.string "together!$"
+
+MahoganyGym_Johto_BoarderRonaldSeenText:
+	.string "I'll freeze your\n"
+	.string "POKéMON, so you\l"
+	.string "can't do a thing!$"
+
+MahoganyGym_Johto_BoarderRonaldBeatenText:
+	.string "Darn. I couldn't\n"
+	.string "do a thing.$"
+
+MahoganyGym_Johto_BoarderRonaldAfterBattleText:
+	.string "I think there's a\n"
+	.string "move a POKéMON"
+	.string "\pcan use while it's\n"
+	.string "frozen.$"
+
+MahoganyGym_Johto_BoarderBradSeenText:
+	.string "This GYM has a\n"
+	.string "slippery floor."
+	.string "\pIt's fun, isn't\n"
+	.string "it?"
+	.string "\pBut hey--we're\n"
+	.string "not playing games\l"
+	.string "here!$"
+
+MahoganyGym_Johto_BoarderBradBeatenText:
+	.string "Do you see how\n"
+	.string "serious we are?$"
+
+MahoganyGym_Johto_BoarderBradAfterBattleText:
+	.string "This GYM is great.\n"
+	.string "I love boarding\l"
+	.string "with my POKéMON!$"
+
+MahoganyGym_Johto_BoarderDouglasSeenText:
+	.string "I know PRYCE's\n"
+	.string "secret.$"
+
+MahoganyGym_Johto_BoarderDouglasBeatenText:
+	.string "OK. I'll tell you\n"
+	.string "PRYCE's secret.$"
+
+MahoganyGym_Johto_BoarderDouglasAfterBattleText:
+	.string "The secret behind\n"
+	.string "PRYCE's power…"
+	.string "\pHe meditates under\n"
+	.string "a waterfall daily"
+	.string "\pto strengthen his\n"
+	.string "mind and body.$"
+
+MahoganyGym_Johto_SkierRoxanneSeenText:
+	.string "To get to PRYCE,\n"
+	.string "our GYM LEADER,"
+	.string "\pyou need to think\n"
+	.string "before you skate.$"
+
+MahoganyGym_Johto_SkierRoxanneBeatenText:
+	.string "I wouldn't lose to\n"
+	.string "you in skiing!$"
+
+MahoganyGym_Johto_SkierRoxanneAfterBattleText:
+	.string "If you don't skate\n"
+	.string "with precision,"
+	.string "\pyou won't get far\n"
+	.string "in this GYM.$"
+
+MahoganyGym_Johto_SkierClarissaSeenText:
+	.string "Check out my\n"
+	.string "parallel turn!$"
+
+MahoganyGym_Johto_SkierClarissaBeatenText:
+	.string "No! You made me\n"
+	.string "wipe out!$"
+
+MahoganyGym_Johto_SkierClarissaAfterBattleText:
+	.string "I shouldn't have\n"
+	.string "been bragging\l"
+	.string "about my skiing…$"
 
 MahoganyGym_Johto_MahoganyGymGuideText:
 	.string "PRYCE is a veteran\n"

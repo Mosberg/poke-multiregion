@@ -3,7 +3,7 @@ PalletTown_Johto_MapScripts::
 	.byte 0
 
 PalletTown_Johto_OnTransition:
-	call PalletTown_Johto_PalletTownFlypointCallback_Sub
+	call PalletTown_Johto_PalletTownFlypointCallback_Cb
 	end
 
 PalletTown_Johto_PalletTownTeacherScript_Entry::
@@ -81,7 +81,7 @@ PalletTown_Johto_BluesHouseSign:
 	releaseall
 	end
 
-PalletTown_Johto_PalletTownFlypointCallback_Sub:
+PalletTown_Johto_PalletTownFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_PALLET
 	return
 

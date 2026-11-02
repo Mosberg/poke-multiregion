@@ -21,7 +21,11 @@ ViridianGym_Johto_ViridianGymBlueScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext LeaderBlueWinText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_BLUE_BLUE1, ViridianGym_Johto_LeaderBlueWinText
+	setflag FLAG_JOHTO_BEAT_BLUE
+	message ViridianGym_Johto_Text_ReceivedEarthBadge
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 ViridianGym_Johto_ViridianGymBlueScript_FightDone:
@@ -80,6 +84,19 @@ ViridianGym_Johto_LeaderBlueBeforeText:
 	.string "now."
 	.string "\pReady, JOHTO\n"
 	.string "CHAMP?$"
+
+ViridianGym_Johto_LeaderBlueWinText:
+	.string "BLUE: What?"
+	.string "\pHow the heck did I\n"
+	.string "lose to you?"
+	.string "\p…"
+	.string "\pTch, all right…\n"
+	.string "Here, take this--\l"
+	.string "it's EARTHBADGE.$"
+
+ViridianGym_Johto_Text_ReceivedEarthBadge:
+	.string "{PLAYER} received\n"
+	.string "EARTHBADGE.$"
 
 ViridianGym_Johto_LeaderBlueEpilogueText:
 	.string "BLUE: Listen, you."

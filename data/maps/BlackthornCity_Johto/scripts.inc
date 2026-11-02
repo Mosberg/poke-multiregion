@@ -3,8 +3,8 @@ BlackthornCity_Johto_MapScripts::
 	.byte 0
 
 BlackthornCity_Johto_OnTransition:
-	call BlackthornCity_Johto_BlackthornCityFlypointCallback_Sub
-	call BlackthornCity_Johto_BlackthornCitySantosCallback_Sub
+	call BlackthornCity_Johto_BlackthornCityFlypointCallback_Cb
+	call BlackthornCity_Johto_BlackthornCitySantosCallback_Cb
 	end
 
 BlackthornCity_Johto_BlackthornSuperNerdScript_Entry::
@@ -220,11 +220,11 @@ BlackthornCity_Johto_BlackthornCityPokecenterSign:
 BlackthornCity_Johto_BlackthornCityMartSign:
 	goto Johto_Std_MartSignScript
 
-BlackthornCity_Johto_BlackthornCityFlypointCallback_Sub:
+BlackthornCity_Johto_BlackthornCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_BLACKTHORN
 	return
 
-BlackthornCity_Johto_BlackthornCitySantosCallback_Sub:
+BlackthornCity_Johto_BlackthornCitySantosCallback_Cb:
 	@ TODO unsupported: readvar VAR_WEEKDAY
 	return
 

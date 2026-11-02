@@ -22,8 +22,22 @@ BlackthornGym1F_Johto_BlackthornGymClairScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext ClairWinText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_CLAIR_CLAIR1, BlackthornGym1F_Johto_ClairWinText
+	setflag FLAG_JOHTO_BEAT_CLAIR
+	message BlackthornGym1F_Johto_ClairText_GoToDragonsDen
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_PAUL
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_CODY
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_MIKE
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERF_FRAN
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERF_LOLA
+	clearflag FLAG_JOHTO_MAHOGANY_MART_OWNERS
+	setflag FLAG_JOHTO_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
+	clearflag FLAG_JOHTO_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
+	releaseall
+	end
 
 BlackthornGym1F_Johto_BlackthornGymClairScript_FightDone:
 	message BlackthornGym1F_Johto_ClairText_TooMuchToExpect
@@ -43,6 +57,51 @@ BlackthornGym1F_Johto_BlackthornGymClairScript_AlreadyGotBadge:
 
 BlackthornGym1F_Johto_BlackthornGymClairScript_GotTM24:
 	message BlackthornGym1F_Johto_BlackthornGymClairText_League
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+BlackthornGym1F_Johto_TrainerCooltrainermPaul::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERM_PAUL, BlackthornGym1F_Johto_CooltrainermPaulSeenText, BlackthornGym1F_Johto_CooltrainermPaulBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_PAUL
+	lock
+	faceplayer
+	goto BlackthornGym1F_Johto_TrainerCooltrainermPaul_Script
+
+BlackthornGym1F_Johto_TrainerCooltrainermPaul_Script:
+	message BlackthornGym1F_Johto_CooltrainermPaulAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+BlackthornGym1F_Johto_TrainerCooltrainermMike::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERM_MIKE, BlackthornGym1F_Johto_CooltrainermMikeSeenText, BlackthornGym1F_Johto_CooltrainermMikeBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_MIKE
+	lock
+	faceplayer
+	goto BlackthornGym1F_Johto_TrainerCooltrainermMike_Script
+
+BlackthornGym1F_Johto_TrainerCooltrainermMike_Script:
+	message BlackthornGym1F_Johto_CooltrainermMikeAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+BlackthornGym1F_Johto_TrainerCooltrainerfLola::
+	trainerbattle_single TRAINER_JOHTO_COOLTRAINERF_LOLA, BlackthornGym1F_Johto_CooltrainerfLolaSeenText, BlackthornGym1F_Johto_CooltrainerfLolaBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERF_LOLA
+	lock
+	faceplayer
+	goto BlackthornGym1F_Johto_TrainerCooltrainerfLola_Script
+
+BlackthornGym1F_Johto_TrainerCooltrainerfLola_Script:
+	message BlackthornGym1F_Johto_CooltrainerfLolaAfterBattleText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -92,6 +151,37 @@ BlackthornGym1F_Johto_ClairIntroText:
 	.string "\ppower against any\n"
 	.string "opponent!$"
 
+BlackthornGym1F_Johto_ClairWinText:
+	.string "I lost?"
+	.string "\pI don't believe\n"
+	.string "it. There must be\l"
+	.string "some mistake…$"
+
+BlackthornGym1F_Johto_ClairText_GoToDragonsDen:
+	.string "I won't admit\n"
+	.string "this."
+	.string "\pI may have lost,\n"
+	.string "but you're still"
+	.string "\pnot ready for the\n"
+	.string "POKéMON LEAGUE."
+	.string "\pI know. You should\n"
+	.string "take the dragon\l"
+	.string "user challenge."
+	.string "\pBehind this GYM is\n"
+	.string "a place called\l"
+	.string "DRAGON'S DEN."
+	.string "\pThere is a small\n"
+	.string "shrine at its"
+	.string "\pcenter.\n"
+	.string "Go there."
+	.string "\pIf you can prove\n"
+	.string "that you've lost"
+	.string "\pyour lazy ideals,\n"
+	.string "I will recognize"
+	.string "\pyou as a trainer\n"
+	.string "worthy of a GYM\l"
+	.string "BADGE!$"
+
 BlackthornGym1F_Johto_ClairText_TooMuchToExpect:
 	.string "What's the matter?"
 	.string "\pIs it too much to\n"
@@ -123,6 +213,54 @@ BlackthornGym1F_Johto_BlackthornGymClairText_League:
 	.string "to you!"
 	.string "\pGive it every-\n"
 	.string "thing you've got.$"
+
+BlackthornGym1F_Johto_CooltrainermPaulSeenText:
+	.string "Your first battle\n"
+	.string "against dragons?"
+	.string "\pI'll show you how\n"
+	.string "tough they are!$"
+
+BlackthornGym1F_Johto_CooltrainermPaulBeatenText:
+	.string "My dragon POKéMON\n"
+	.string "lost?$"
+
+BlackthornGym1F_Johto_CooltrainermPaulAfterBattleText:
+	.string "LANCE told you\n"
+	.string "that he'd like to"
+	.string "\psee you again?\n"
+	.string "Not a chance!$"
+
+BlackthornGym1F_Johto_CooltrainermMikeSeenText:
+	.string "My chance of\n"
+	.string "losing? Not even\l"
+	.string "one percent!$"
+
+BlackthornGym1F_Johto_CooltrainermMikeBeatenText:
+	.string "That's odd.$"
+
+BlackthornGym1F_Johto_CooltrainermMikeAfterBattleText:
+	.string "I know my short-\n"
+	.string "comings now."
+	.string "\pThanks for showing\n"
+	.string "me!$"
+
+BlackthornGym1F_Johto_CooltrainerfLolaSeenText:
+	.string "Dragons are sacred\n"
+	.string "POKéMON."
+	.string "\pThey are full of\n"
+	.string "life energy."
+	.string "\pIf you're not\n"
+	.string "serious, you won't"
+	.string "\pbe able to beat\n"
+	.string "them.$"
+
+BlackthornGym1F_Johto_CooltrainerfLolaBeatenText:
+	.string "Way to go!$"
+
+BlackthornGym1F_Johto_CooltrainerfLolaAfterBattleText:
+	.string "Dragons are weak\n"
+	.string "against dragon-\l"
+	.string "type moves.$"
 
 BlackthornGym1F_Johto_BlackthornGymGuideText:
 	.string "Yo! CHAMP in\n"

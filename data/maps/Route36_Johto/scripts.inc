@@ -3,7 +3,7 @@ Route36_Johto_MapScripts::
 	.byte 0
 
 Route36_Johto_OnTransition:
-	call Route36_Johto_Route36ArthurCallback_Sub
+	call Route36_Johto_Route36ArthurCallback_Cb
 	end
 
 Route36_Johto_SudowoodoScript_Entry::
@@ -140,6 +140,32 @@ Route36_Johto_Route36LassScript_ClearedSudowoodo:
 	releaseall
 	end
 
+Route36_Johto_TrainerSchoolboyAlan1::
+	trainerbattle_single TRAINER_JOHTO_SCHOOLBOY_ALAN1, Route36_Johto_SchoolboyAlan1SeenText, Route36_Johto_SchoolboyAlan1BeatenText
+	setflag FLAG_JOHTO_BEAT_SCHOOLBOY_ALAN
+	lock
+	faceplayer
+	goto Route36_Johto_TrainerSchoolboyAlan1_Script
+
+Route36_Johto_TrainerSchoolboyAlan1_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_SCHOOLBOY_ALAN
+	goto Johto_EventScript_Unimplemented
+
+Route36_Johto_TrainerPsychicMark::
+	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_MARK, Route36_Johto_PsychicMarkSeenText, Route36_Johto_PsychicMarkBeatenText
+	setflag FLAG_JOHTO_BEAT_PSYCHIC_MARK
+	lock
+	faceplayer
+	goto Route36_Johto_TrainerPsychicMark_Script
+
+Route36_Johto_TrainerPsychicMark_Script:
+	message Route36_Johto_PsychicMarkAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route36_Johto_ArthurScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_HARD_STONE_FROM_ARTHUR, Route36_Johto_ArthurScript_AlreadyGotStone
@@ -192,7 +218,7 @@ Route36_Johto_Route36FruitTree:
 	@ TODO unsupported: fruittree FRUITTREE_ROUTE_36
 	goto Johto_EventScript_Unimplemented
 
-Route36_Johto_Route36ArthurCallback_Sub:
+Route36_Johto_Route36ArthurCallback_Cb:
 	@ TODO unsupported: readvar VAR_WEEKDAY
 	return
 
@@ -290,6 +316,28 @@ Route36_Johto_Route36LassText_ClearedSudowoodo:
 	.string "trace."
 	.string "\pOh! That tree was\n"
 	.string "really a POKéMON?$"
+
+Route36_Johto_PsychicMarkSeenText:
+	.string "I'm going to read\n"
+	.string "your thoughts!$"
+
+Route36_Johto_PsychicMarkBeatenText:
+	.string "I misread you!$"
+
+Route36_Johto_PsychicMarkAfterBattleText:
+	.string "I'd be strong if\n"
+	.string "only I could tell"
+	.string "\pwhat my opponent\n"
+	.string "was thinking.$"
+
+Route36_Johto_SchoolboyAlan1SeenText:
+	.string "Thanks to my stud-\n"
+	.string "ies, I'm ready for\l"
+	.string "any POKéMON!$"
+
+Route36_Johto_SchoolboyAlan1BeatenText:
+	.string "Oops! Computation\n"
+	.string "error?$"
 
 Route36_Johto_ArthurThursdayText:
 	.string "ARTHUR: I'm ARTHUR\n"

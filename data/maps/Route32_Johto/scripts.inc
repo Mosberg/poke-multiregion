@@ -3,7 +3,7 @@ Route32_Johto_MapScripts::
 	.byte 0
 
 Route32_Johto_OnTransition:
-	call Route32_Johto_Route32FriedaCallback_Sub
+	call Route32_Johto_Route32FriedaCallback_Cb
 	end
 
 Route32_Johto_Route32CooltrainerMScript_Entry::
@@ -147,6 +147,118 @@ Route32_Johto__OfferToSellSlowpokeTail:
 	@ TODO unsupported: iffalse .refused
 	goto Johto_EventScript_Unimplemented
 
+Route32_Johto_TrainerCamperRoland::
+	trainerbattle_single TRAINER_JOHTO_CAMPER_ROLAND, Route32_Johto_CamperRolandSeenText, Route32_Johto_CamperRolandBeatenText
+	setflag FLAG_JOHTO_BEAT_CAMPER_ROLAND
+	lock
+	faceplayer
+	goto Route32_Johto_TrainerCamperRoland_Script
+
+Route32_Johto_TrainerCamperRoland_Script:
+	message Route32_Johto_CamperRolandAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route32_Johto_TrainerFisherJustin::
+	trainerbattle_single TRAINER_JOHTO_FISHER_JUSTIN, Route32_Johto_FisherJustinSeenText, Route32_Johto_FisherJustinBeatenText
+	setflag FLAG_JOHTO_BEAT_FISHER_JUSTIN
+	lock
+	faceplayer
+	goto Route32_Johto_TrainerFisherJustin_Script
+
+Route32_Johto_TrainerFisherJustin_Script:
+	message Route32_Johto_FisherJustinAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route32_Johto_TrainerFisherRalph1::
+	trainerbattle_single TRAINER_JOHTO_FISHER_RALPH1, Route32_Johto_FisherRalph1SeenText, Route32_Johto_FisherRalph1BeatenText
+	setflag FLAG_JOHTO_BEAT_FISHER_RALPH
+	lock
+	faceplayer
+	goto Route32_Johto_TrainerFisherRalph1_Script
+
+Route32_Johto_TrainerFisherRalph1_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_FISHER_RALPH
+	goto Johto_EventScript_Unimplemented
+
+Route32_Johto_TrainerFisherHenry::
+	trainerbattle_single TRAINER_JOHTO_FISHER_HENRY, Route32_Johto_FisherHenrySeenText, Route32_Johto_FisherHenryBeatenText
+	setflag FLAG_JOHTO_BEAT_FISHER_HENRY
+	lock
+	faceplayer
+	goto Route32_Johto_TrainerFisherHenry_Script
+
+Route32_Johto_TrainerFisherHenry_Script:
+	message Route32_Johto_FisherHenryAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route32_Johto_TrainerPicnickerLiz1::
+	trainerbattle_single TRAINER_JOHTO_PICNICKER_LIZ1, Route32_Johto_PicnickerLiz1SeenText, Route32_Johto_PicnickerLiz1BeatenText
+	setflag FLAG_JOHTO_BEAT_PICNICKER_LIZ
+	lock
+	faceplayer
+	goto Route32_Johto_TrainerPicnickerLiz1_Script
+
+Route32_Johto_TrainerPicnickerLiz1_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_PICNICKER_LIZ
+	goto Johto_EventScript_Unimplemented
+
+Route32_Johto_TrainerYoungsterAlbert::
+	trainerbattle_single TRAINER_JOHTO_YOUNGSTER_ALBERT, Route32_Johto_YoungsterAlbertSeenText, Route32_Johto_YoungsterAlbertBeatenText
+	setflag FLAG_JOHTO_BEAT_YOUNGSTER_ALBERT
+	lock
+	faceplayer
+	goto Route32_Johto_TrainerYoungsterAlbert_Script
+
+Route32_Johto_TrainerYoungsterAlbert_Script:
+	message Route32_Johto_YoungsterAlbertAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route32_Johto_TrainerYoungsterGordon::
+	trainerbattle_single TRAINER_JOHTO_YOUNGSTER_GORDON, Route32_Johto_YoungsterGordonSeenText, Route32_Johto_YoungsterGordonBeatenText
+	setflag FLAG_JOHTO_BEAT_YOUNGSTER_GORDON
+	lock
+	faceplayer
+	goto Route32_Johto_TrainerYoungsterGordon_Script
+
+Route32_Johto_TrainerYoungsterGordon_Script:
+	message Route32_Johto_YoungsterGordonAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route32_Johto_TrainerBirdKeeperPeter::
+	trainerbattle_single TRAINER_JOHTO_BIRD_KEEPER_PETER, Route32_Johto_BirdKeeperPeterSeenText, Route32_Johto_BirdKeeperPeterBeatenText
+	setflag FLAG_JOHTO_BEAT_BIRD_KEEPER_PETER
+	lock
+	faceplayer
+	goto Route32_Johto_TrainerBirdKeeperPeter_Script
+
+Route32_Johto_TrainerBirdKeeperPeter_Script:
+	message Route32_Johto_BirdKeeperPeterAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route32_Johto_FriedaScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_POISON_BARB_FROM_FRIEDA, Route32_Johto_FriedaScript_Friday
@@ -190,10 +302,6 @@ Route32_Johto_Route32UnionCaveSign:
 Route32_Johto_Route32PokecenterSign:
 	goto Johto_Std_PokecenterSignScript
 
-Route32_Johto_Route32FriedaCallback_Sub:
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	return
-
 Route32_Johto_Route32CooltrainerMContinueScene_Sub:
 	goto_if_set FLAG_JOHTO_GOT_MIRACLE_SEED_IN_ROUTE_32, Route32_Johto_Route32CooltrainerMContinueScene_GotMiracleSeed_Sub
 	goto_if_unset FLAG_JOHTO_ENGINE_ZEPHYRBADGE, Route32_Johto_Route32CooltrainerMContinueScene_DontHaveZephyrBadge_Sub
@@ -227,6 +335,10 @@ Route32_Johto_Route32CooltrainerMContinueScene_GotMiracleSeed_Sub:
 
 Route32_Johto_Route32CooltrainerMContinueScene_BagFull_Sub:
 	closemessage
+	return
+
+Route32_Johto_Route32FriedaCallback_Cb:
+	@ TODO unsupported: readvar VAR_WEEKDAY
 	return
 
 Route32_Johto_Movement_Route32CooltrainerMPushesYouBackToViolet:
@@ -298,6 +410,115 @@ Route32_Johto_Text_MillionDollarSlowpokeTail:
 	.string "\pFor you right now,\n"
 	.string "just ¥1,000,000!"
 	.string "\pYou'll want this!$"
+
+Route32_Johto_FisherJustinSeenText:
+	.string "Whoa!"
+	.string "\pYou made me lose\n"
+	.string "that fish!$"
+
+Route32_Johto_FisherJustinBeatenText:
+	.string "Sploosh!$"
+
+Route32_Johto_FisherJustinAfterText:
+	.string "Calm, collected…\n"
+	.string "The essence of"
+	.string "\pfishing and POKé-\n"
+	.string "MON is the same.$"
+
+Route32_Johto_FisherRalph1SeenText:
+	.string "I'm really good at\n"
+	.string "both fishing and\l"
+	.string "POKéMON."
+	.string "\pI'm not about to\n"
+	.string "lose to any kid!$"
+
+Route32_Johto_FisherRalph1BeatenText:
+	.string "Tch! I tried to\n"
+	.string "rush things…$"
+
+Route32_Johto_FisherHenrySeenText:
+	.string "My POKéMON?\n"
+	.string "Freshly caught!$"
+
+Route32_Johto_FisherHenryBeatenText:
+	.string "SPLASH?$"
+
+Route32_Johto_FisherHenryAfterText:
+	.string "Freshly caught\n"
+	.string "POKéMON are no"
+	.string "\pmatch for properly\n"
+	.string "raised ones.$"
+
+Route32_Johto_YoungsterAlbertSeenText:
+	.string "I haven't seen you\n"
+	.string "around before."
+	.string "\pSo you think you\n"
+	.string "are pretty tough?$"
+
+Route32_Johto_YoungsterAlbertBeatenText:
+	.string "You're strong!$"
+
+Route32_Johto_YoungsterAlbertAfterText:
+	.string "I'm going to try\n"
+	.string "to be the best\l"
+	.string "with my favorites."
+	.string "\pI'm not using the\n"
+	.string "same tough POKéMON\l"
+	.string "as everyone else.$"
+
+Route32_Johto_YoungsterGordonSeenText:
+	.string "I found some good\n"
+	.string "POKéMON in the\l"
+	.string "grass!"
+	.string "\pI think they'll do\n"
+	.string "it for me!$"
+
+Route32_Johto_YoungsterGordonBeatenText:
+	.string "Darn. I thought I\n"
+	.string "could win.$"
+
+Route32_Johto_YoungsterGordonAfterText:
+	.string "The grass is full\n"
+	.string "of clingy things.$"
+
+Route32_Johto_CamperRolandSeenText:
+	.string "That glance…\n"
+	.string "It's intriguing.$"
+
+Route32_Johto_CamperRolandBeatenText:
+	.string "Hmmm. This is\n"
+	.string "disappointing.$"
+
+Route32_Johto_CamperRolandAfterText:
+	.string "If you don't want\n"
+	.string "to battle, just\l"
+	.string "avoid eye contact.$"
+
+Route32_Johto_PicnickerLiz1SeenText:
+	.string "Uh-huh. Yeah, and\n"
+	.string "you know…"
+	.string "\pPardon? Battle?\n"
+	.string "I'm on the phone."
+	.string "\pOh, all right. But\n"
+	.string "make it fast.$"
+
+Route32_Johto_PicnickerLiz1BeatenText:
+	.string "Oh! I've got to\n"
+	.string "relieve my anger!$"
+
+Route32_Johto_BirdKeeperPeterSeenText:
+	.string "That BADGE! It's\n"
+	.string "from VIOLET CITY!"
+	.string "\pYou beat FALKNER?$"
+
+Route32_Johto_BirdKeeperPeterBeatenText:
+	.string "I know what my\n"
+	.string "weaknesses are.$"
+
+Route32_Johto_BirdKeeperPeterAfterText:
+	.string "I should train\n"
+	.string "again at the GYM\l"
+	.string "in VIOLET CITY.$"
 
 Route32_Johto_Text_RoarIntro:
 	.string "WROOOOAR!\n"

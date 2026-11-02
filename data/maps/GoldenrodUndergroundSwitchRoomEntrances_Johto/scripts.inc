@@ -104,6 +104,96 @@ GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalScene2:
 	releaseall
 	end
 
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM11::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_11, GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM11SeenText, GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM11BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_11
+	lock
+	faceplayer
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM11_Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM11_Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM11AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM25::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_25, GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM25SeenText, GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM25BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_25
+	lock
+	faceplayer
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM25_Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM25_Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM25AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerBurglarDuncan::
+	trainerbattle_single TRAINER_JOHTO_BURGLAR_DUNCAN, GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarDuncanSeenText, GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarDuncanBeatenText
+	setflag FLAG_JOHTO_BEAT_BURGLAR_DUNCAN
+	lock
+	faceplayer
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerBurglarDuncan_Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerBurglarDuncan_Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarDuncanAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerBurglarEddie::
+	trainerbattle_single TRAINER_JOHTO_BURGLAR_EDDIE, GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarEddieSeenText, GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarEddieBeatenText
+	setflag FLAG_JOHTO_BEAT_BURGLAR_EDDIE
+	lock
+	faceplayer
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerBurglarEddie_Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerBurglarEddie_Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarEddieAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM13::
+	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_13, GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM13SeenText, GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM13BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTM_13
+	lock
+	faceplayer
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM13_Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntM13_Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM13AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntF3::
+	trainerbattle_single TRAINER_JOHTO_GRUNTF_GRUNTF_3, GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntF3SeenText, GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntF3BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_GRUNTF_3
+	lock
+	faceplayer
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntF3_Script
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_TrainerGruntF3_Script:
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntF3AfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 GoldenrodUndergroundSwitchRoomEntrances_Johto_Switch1Script:
 	message GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Switch1
 	waitmessage
@@ -205,15 +295,15 @@ GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Conti
 	setflag FLAG_JOHTO_RIVAL_GOLDENROD_UNDERGROUND
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Totodile_Sub
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Chikorita_Sub
-	@ TODO unsupported: winlosstext UndergroundRivalWinText, UndergroundRivalLossText
+	@ TODO unsupported: setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
 	return
 
 GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Totodile_Sub:
-	@ TODO unsupported: winlosstext UndergroundRivalWinText, UndergroundRivalLossText
+	@ TODO unsupported: setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
 	return
 
 GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Chikorita_Sub:
-	@ TODO unsupported: winlosstext UndergroundRivalWinText, UndergroundRivalLossText
+	@ TODO unsupported: setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
 	return
 
 GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalApproachMovement1:
@@ -262,6 +352,15 @@ GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBeforeText:
 	.string "\pBut I repay my\n"
 	.string "debts!$"
 
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalWinText:
+	.string "…Why…\n"
+	.string "Why do I lose?"
+	.string "\pI've assembled the\n"
+	.string "toughest POKéMON."
+	.string "\pI didn't ease up\n"
+	.string "on the gas."
+	.string "\pSo why do I lose?$"
+
 GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText:
 	.string "I was challenged\n"
 	.string "to a battle down-\l"
@@ -278,9 +377,108 @@ GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntr
 	.string "\pI'm scared to go\n"
 	.string "down there.$"
 
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM11SeenText:
+	.string "Open one shutter,\n"
+	.string "another closes."
+	.string "\pBet you can't get\n"
+	.string "where you want!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM11BeatenText:
+	.string "Drat! I was sunk\n"
+	.string "by indecision!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM11AfterBattleText:
+	.string "I'm confused too…\n"
+	.string "The switch on the"
+	.string "\pend is the one to\n"
+	.string "press first, but…$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM25SeenText:
+	.string "Kwahaha!"
+	.string "\pConfounded by the\n"
+	.string "shutters, are we?"
+	.string "\pI'll let you in on\n"
+	.string "a secret if you\l"
+	.string "can beat me!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM25BeatenText:
+	.string "Uwww…\n"
+	.string "I blew it.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM25AfterBattleText:
+	.string "All right. A hint!"
+	.string "\pChange the order\n"
+	.string "of switching."
+	.string "\pThat'll change the\n"
+	.string "ways the shutters\l"
+	.string "open and close.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarDuncanSeenText:
+	.string "Fork over your\n"
+	.string "goodies!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarDuncanBeatenText:
+	.string "Mercy!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarDuncanAfterBattleText:
+	.string "Steal and sell!\n"
+	.string "That's basic in\l"
+	.string "crime, kid!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarEddieSeenText:
+	.string "They ditched this\n"
+	.string "project before\l"
+	.string "they finished."
+	.string "\pI'm searching for\n"
+	.string "leftover loot.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarEddieBeatenText:
+	.string "Over the top!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_BurglarEddieAfterBattleText:
+	.string "UNDERGROUND WARE-\n"
+	.string "HOUSE?"
+	.string "\pWhat do you want\n"
+	.string "to go there for?"
+	.string "\pThere's nothing\n"
+	.string "down there.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM13SeenText:
+	.string "I don't care if\n"
+	.string "you're lost."
+	.string "\pYou show up here,\n"
+	.string "you're nothing but\l"
+	.string "a victim!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM13BeatenText:
+	.string "Urk! Yeah, think\n"
+	.string "you're cool, huh?$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntM13AfterBattleText:
+	.string "You must have ice\n"
+	.string "in your veins to\l"
+	.string "dis TEAM ROCKET.$"
+
 GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_Switch1:
 	.string "It's labeled\n"
 	.string "SWITCH 1.$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntF3SeenText:
+	.string "Are you lost? No,\n"
+	.string "you can't be."
+	.string "\pYou don't have\n"
+	.string "that scared look."
+	.string "\pI'll give you\n"
+	.string "something to be\l"
+	.string "scared about!$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntF3BeatenText:
+	.string "How could you?$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_GruntF3AfterBattleText:
+	.string "Go wherever you'd\n"
+	.string "like! Get lost!\l"
+	.string "See if I care!$"
 
 GoldenrodUndergroundSwitchRoomEntrances_Johto_SwitchRoomText_OffTurnOn:
 	.string "It's OFF.\n"

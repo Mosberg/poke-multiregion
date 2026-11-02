@@ -3,7 +3,7 @@ CeruleanCity_Johto_MapScripts::
 	.byte 0
 
 CeruleanCity_Johto_OnTransition:
-	call CeruleanCity_Johto_CeruleanCityFlypointCallback_Sub
+	call CeruleanCity_Johto_CeruleanCityFlypointCallback_Cb
 	end
 
 CeruleanCity_Johto_CeruleanCityCooltrainerMScript_Entry::
@@ -215,7 +215,7 @@ CeruleanCity_Johto_CeruleanCityPokecenterSign:
 CeruleanCity_Johto_CeruleanCityMartSign:
 	goto Johto_Std_MartSignScript
 
-CeruleanCity_Johto_CeruleanCityFlypointCallback_Sub:
+CeruleanCity_Johto_CeruleanCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_CERULEAN
 	return
 

@@ -17,7 +17,16 @@ SeafoamGym_Johto_SeafoamGymBlaineScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext BlaineWinLossText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_BLAINE_BLAINE1, SeafoamGym_Johto_BlaineWinLossText
+	goto_if_set FLAG_JOHTO_ENGINE_VOLCANOBADGE, SeafoamGym_Johto_SeafoamGymBlaineScript_ReturnAfterBattle
+	clearflag FLAG_JOHTO_SEAFOAM_GYM_GYM_GUIDE
+	addobject 2
+
+SeafoamGym_Johto_SeafoamGymBlaineScript_ReturnAfterBattle:
+	setflag FLAG_JOHTO_BEAT_BLAINE
+	message SeafoamGym_Johto_ReceivedVolcanoBadgeText
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 SeafoamGym_Johto_SeafoamGymBlaineScript_FightDone:
@@ -65,6 +74,16 @@ SeafoamGym_Johto_BlaineIntroText:
 	.string "a BADGE."
 	.string "\pHa! You'd better\n"
 	.string "have BURN HEAL!$"
+
+SeafoamGym_Johto_BlaineWinLossText:
+	.string "BLAINE: Awesome.\n"
+	.string "I've burned out…"
+	.string "\pYou've earned\n"
+	.string "VOLCANOBADGE!$"
+
+SeafoamGym_Johto_ReceivedVolcanoBadgeText:
+	.string "{PLAYER} received\n"
+	.string "VOLCANOBADGE.$"
 
 SeafoamGym_Johto_BlaineFightDoneText:
 	.string "BLAINE: My fire\n"

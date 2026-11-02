@@ -36577,6 +36577,5403 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_JOHTO_SPROUT_TOWER_2F",
+          "base_label": "gSproutTower2FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_SPROUT_TOWER_3F",
+          "base_label": "gSproutTower3FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_TIN_TOWER_2F",
+          "base_label": "gTinTower2FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_TIN_TOWER_3F",
+          "base_label": "gTinTower3FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_TIN_TOWER_4F",
+          "base_label": "gTinTower4FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_TIN_TOWER_5F",
+          "base_label": "gTinTower5FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_TIN_TOWER_6F",
+          "base_label": "gTinTower6FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_TIN_TOWER_7F",
+          "base_label": "gTinTower7FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_TIN_TOWER_8F",
+          "base_label": "gTinTower8FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_TIN_TOWER_9F",
+          "base_label": "gTinTower9FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_BURNED_TOWER_1F",
+          "base_label": "gBurnedTower1FJohto",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_RATICATE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_BURNED_TOWER_B1F",
+          "base_label": "gBurnedTowerB1FJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_WEEZING"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_NATIONAL_PARK",
+          "base_label": "gNationalParkJohto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_NIDORAN_F"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_NIDORAN_M"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_NIDORAN_F"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_NIDORAN_M"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_SUNKERN"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_SUNKERN"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_WEEDLE"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_WEEDLE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_RUINS_OF_ALPH_OUTSIDE",
+          "base_label": "gRuinsOfAlphOutsideJohto",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_NATU"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_NATU"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_NATU"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_NATU"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_NATU"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_NATU"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_NATU"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_NATU"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SMEARGLE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SMEARGLE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SMEARGLE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SMEARGLE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_QUAGSIRE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_RUINS_OF_ALPH_INNER_CHAMBER",
+          "base_label": "gRuinsOfAlphInnerChamberJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_UNOWN"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_UNION_CAVE_1F",
+          "base_label": "gUnionCave1FJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_ONIX"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_QUAGSIRE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_UNION_CAVE_B1F",
+          "base_label": "gUnionCaveB1FJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_QUAGSIRE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_UNION_CAVE_B2F",
+          "base_label": "gUnionCaveB2FJohto",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ONIX"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_SLOWPOKE_WELL_B1F",
+          "base_label": "gSlowpokeWellB1FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_SLOWPOKE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_SLOWPOKE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_SLOWPOKE_WELL_B2F",
+          "base_label": "gSlowpokeWellB2FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SLOWPOKE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SLOWBRO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SLOWBRO"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ILEX_FOREST",
+          "base_label": "gIlexForestJohto",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_WEEDLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_WEEDLE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_METAPOD"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_METAPOD"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_KAKUNA"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_KAKUNA"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_PARAS"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_PARAS"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLDUCK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_MOUNT_MORTAR_1F_OUTSIDE",
+          "base_label": "gMountMortar1FOutsideJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATICATE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MARILL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SEAKING"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_MOUNT_MORTAR_1F_INSIDE",
+          "base_label": "gMountMortar1FInsideJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLBAT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_MOUNT_MORTAR_2F_INSIDE",
+          "base_label": "gMountMortar2FInsideJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 31,
+                "max_level": 31,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 32,
+                "max_level": 32,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 31,
+                "max_level": 31,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 32,
+                "max_level": 32,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 31,
+                "max_level": 31,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 31,
+                "max_level": 31,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_GOLBAT"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_MARILL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SEAKING"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_MOUNT_MORTAR_B1F",
+          "base_label": "gMountMortarB1FJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_MACHOP"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_RATICATE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MARILL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SEAKING"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ICE_PATH_1F",
+          "base_label": "gIcePath1FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_GOLBAT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ICE_PATH_B1F",
+          "base_label": "gIcePathB1FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_JYNX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ICE_PATH_B2F_MAHOGANY_SIDE",
+          "base_label": "gIcePathB2FMahoganySideJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_JYNX"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_JYNX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ICE_PATH_B2F_BLACKTHORN_SIDE",
+          "base_label": "gIcePathB2FBlackthornSideJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_JYNX"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_JYNX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ICE_PATH_B3F",
+          "base_label": "gIcePathB3FJohto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_JYNX"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_JYNX"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_JYNX"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_JYNX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_WHIRL_ISLAND_NW",
+          "base_label": "gWhirlIslandNwJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_WHIRL_ISLAND_NE",
+          "base_label": "gWhirlIslandNeJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_WHIRL_ISLAND_SW",
+          "base_label": "gWhirlIslandSwJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_HORSEA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_WHIRL_ISLAND_CAVE",
+          "base_label": "gWhirlIslandCaveJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_WHIRL_ISLAND_SE",
+          "base_label": "gWhirlIslandSeJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_WHIRL_ISLAND_B1F",
+          "base_label": "gWhirlIslandB1FJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SEEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_WHIRL_ISLAND_B2F",
+          "base_label": "gWhirlIslandB2FJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_SEEL"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_HORSEA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_HORSEA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_HORSEA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_WHIRL_ISLAND_LUGIA_CHAMBER",
+          "base_label": "gWhirlIslandLugiaChamberJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_SEEL"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_HORSEA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_HORSEA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SEADRA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SEADRA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_SILVER_CAVE_ROOM_1",
+          "base_label": "gSilverCaveRoom1Johto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 43,
+                "max_level": 43,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 44,
+                "max_level": 44,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 43,
+                "max_level": 43,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 44,
+                "max_level": 44,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 45,
+                "max_level": 45,
+                "species": "SPECIES_MAGMAR"
+              },
+              {
+                "min_level": 45,
+                "max_level": 45,
+                "species": "SPECIES_MAGMAR"
+              },
+              {
+                "min_level": 45,
+                "max_level": 45,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 45,
+                "max_level": 45,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_LARVITAR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_SILVER_CAVE_ROOM_2",
+          "base_label": "gSilverCaveRoom2Johto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 47,
+                "max_level": 47,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 47,
+                "max_level": 47,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 46,
+                "max_level": 46,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 46,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_LARVITAR"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_GOLDEEN"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_SILVER_CAVE_ROOM_3",
+          "base_label": "gSilverCaveRoom3Johto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 51,
+                "max_level": 51,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 51,
+                "max_level": 51,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_PUPITAR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_SILVER_CAVE_ITEM_ROOMS",
+          "base_label": "gSilverCaveItemRoomsJohto",
+          "land_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 46,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 46,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 46,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 46,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 52,
+                "max_level": 52,
+                "species": "SPECIES_PARASECT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_DARK_CAVE_VIOLET_ENTRANCE",
+          "base_label": "gDarkCaveVioletEntranceJohto",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_DUNSPARCE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_DARK_CAVE_BLACKTHORN_ENTRANCE",
+          "base_label": "gDarkCaveBlackthornEntranceJohto",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GOLBAT"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_29",
+          "base_label": "gRoute29Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_HOPPIP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_30",
+          "base_label": "gRoute30Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_WEEDLE"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_WEEDLE"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_HOPPIP"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWHIRL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_31",
+          "base_label": "gRoute31Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_WEEDLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_WEEDLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_HOPPIP"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWHIRL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_32",
+          "base_label": "gRoute32Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_HOPPIP"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_33",
+          "base_label": "gRoute33Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_HOPPIP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_34",
+          "base_label": "gRoute34Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_SNUBBULL"
+              },
+              {
+                "min_level": 11,
+                "max_level": 11,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_SNUBBULL"
+              },
+              {
+                "min_level": 11,
+                "max_level": 11,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_ABRA"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_ABRA"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_JIGGLYPUFF"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_DITTO"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_JIGGLYPUFF"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_DITTO"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_35",
+          "base_label": "gRoute35Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_SNUBBULL"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_SNUBBULL"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_ABRA"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_ABRA"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_JIGGLYPUFF"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_DITTO"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_JIGGLYPUFF"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_YANMA"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_GOLDUCK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_36",
+          "base_label": "gRoute36Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_PIDGEY"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_37",
+          "base_label": "gRoute37Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_PIDGEY"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_38",
+          "base_label": "gRoute38Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_MAGNEMITE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_MAGNEMITE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_TAUROS"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_MILTANK"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_TAUROS"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_MILTANK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_39",
+          "base_label": "gRoute39Johto",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_MAGNEMITE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_MAGNEMITE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MILTANK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TAUROS"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MILTANK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TAUROS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_42",
+          "base_label": "gRoute42Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_FEAROW"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_FEAROW"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_SEAKING"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_43",
+          "base_label": "gRoute43Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_FARFETCHD"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_FARFETCHD"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_FURRET"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_FURRET"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_FURRET"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_FURRET"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_44",
+          "base_label": "gRoute44Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_TANGELA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_LICKITUNG"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_TANGELA"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_LICKITUNG"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_LICKITUNG"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_LICKITUNG"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_LICKITUNG"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_LICKITUNG"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_POLIWHIRL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_45",
+          "base_label": "gRoute45Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_GLIGAR"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_GLIGAR"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_SKARMORY"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_SKARMORY"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_46",
+          "base_label": "gRoute46Johto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_RATTATA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_SILVER_CAVE_OUTSIDE",
+          "base_label": "gSilverCaveOutsideJohto",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 41,
+                "max_level": 41,
+                "species": "SPECIES_TANGELA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_PONYTA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 41,
+                "species": "SPECIES_TANGELA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_PONYTA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 44,
+                "max_level": 44,
+                "species": "SPECIES_RAPIDASH"
+              },
+              {
+                "min_level": 44,
+                "max_level": 44,
+                "species": "SPECIES_RAPIDASH"
+              },
+              {
+                "min_level": 41,
+                "max_level": 41,
+                "species": "SPECIES_DODUO"
+              },
+              {
+                "min_level": 43,
+                "max_level": 43,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 41,
+                "max_level": 41,
+                "species": "SPECIES_DODUO"
+              },
+              {
+                "min_level": 43,
+                "max_level": 43,
+                "species": "SPECIES_DODRIO"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 40,
+                "max_level": 40,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_POLIWAG"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_DRAGONS_DEN_B1F",
+          "base_label": "gDragonsDenB1FJohto",
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_DRATINI"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_DRATINI"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_OLIVINE_PORT",
+          "base_label": "gOlivinePortJohto",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_40",
+          "base_label": "gRoute40Johto",
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ROUTE_41",
+          "base_label": "gRoute41Johto",
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MANTINE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MANTINE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_NEW_BARK_TOWN",
+          "base_label": "gNewBarkTownJohto",
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_CHERRYGROVE_CITY",
+          "base_label": "gCherrygroveCityJohto",
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_VIOLET_CITY",
+          "base_label": "gVioletCityJohto",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWHIRL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_CIANWOOD_CITY",
+          "base_label": "gCianwoodCityJohto",
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_OLIVINE_CITY",
+          "base_label": "gOlivineCityJohto",
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_ECRUTEAK_CITY",
+          "base_label": "gEcruteakCityJohto",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_POLIWHIRL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_LAKE_OF_RAGE",
+          "base_label": "gLakeOfRageJohto",
+          "water_mons": {
+            "encounter_rate": 11,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GYARADOS"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_JOHTO_BLACKTHORN_CITY",
+          "base_label": "gBlackthornCityJohto",
+          "water_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
         }
       ]
     },

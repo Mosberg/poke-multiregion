@@ -25,11 +25,63 @@ VermilionGym_Johto_VermilionGymSurgeScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext LtSurgeWinLossText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_LT_SURGE_LT_SURGE1, VermilionGym_Johto_LtSurgeWinLossText
+	setflag FLAG_JOHTO_BEAT_LTSURGE
+	setflag FLAG_JOHTO_BEAT_GENTLEMAN_GREGORY
+	setflag FLAG_JOHTO_BEAT_GUITARIST_VINCENT
+	setflag FLAG_JOHTO_BEAT_JUGGLER_HORTON
+	message VermilionGym_Johto_ReceivedThunderBadgeText
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 VermilionGym_Johto_VermilionGymSurgeScript_FightDone:
 	message VermilionGym_Johto_LtSurgeFightDoneText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+VermilionGym_Johto_TrainerGentlemanGregory::
+	trainerbattle_single TRAINER_JOHTO_GENTLEMAN_GREGORY, VermilionGym_Johto_GentlemanGregorySeenText, VermilionGym_Johto_GentlemanGregoryBeatenText
+	setflag FLAG_JOHTO_BEAT_GENTLEMAN_GREGORY
+	lock
+	faceplayer
+	goto VermilionGym_Johto_TrainerGentlemanGregory_Script
+
+VermilionGym_Johto_TrainerGentlemanGregory_Script:
+	message VermilionGym_Johto_GentlemanGregoryAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+VermilionGym_Johto_TrainerGuitaristVincent::
+	trainerbattle_single TRAINER_JOHTO_GUITARIST_VINCENT, VermilionGym_Johto_GuitaristVincentSeenText, VermilionGym_Johto_GuitaristVincentBeatenText
+	setflag FLAG_JOHTO_BEAT_GUITARIST_VINCENT
+	lock
+	faceplayer
+	goto VermilionGym_Johto_TrainerGuitaristVincent_Script
+
+VermilionGym_Johto_TrainerGuitaristVincent_Script:
+	message VermilionGym_Johto_GuitaristVincentAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+VermilionGym_Johto_TrainerJugglerHorton::
+	trainerbattle_single TRAINER_JOHTO_JUGGLER_HORTON, VermilionGym_Johto_JugglerHortonSeenText, VermilionGym_Johto_JugglerHortonBeatenText
+	setflag FLAG_JOHTO_BEAT_JUGGLER_HORTON
+	lock
+	faceplayer
+	goto VermilionGym_Johto_TrainerJugglerHorton_Script
+
+VermilionGym_Johto_TrainerJugglerHorton_Script:
+	message VermilionGym_Johto_JugglerHortonAfterBattleText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -87,12 +139,71 @@ VermilionGym_Johto_LtSurgeIntroText:
 	.string "like I did my\l"
 	.string "enemies in war!$"
 
+VermilionGym_Johto_LtSurgeWinLossText:
+	.string "SURGE: Arrrgh!\n"
+	.string "You are strong!"
+	.string "\pOK, kid. You get\n"
+	.string "THUNDERBADGE!$"
+
+VermilionGym_Johto_ReceivedThunderBadgeText:
+	.string "{PLAYER} received\n"
+	.string "THUNDERBADGE.$"
+
 VermilionGym_Johto_LtSurgeFightDoneText:
 	.string "SURGE: Hey, kid!\n"
 	.string "Still slugging and\l"
 	.string "chugging away?"
 	.string "\pMy POKéMON and I\n"
 	.string "are still at it!$"
+
+VermilionGym_Johto_GentlemanGregorySeenText:
+	.string "You're here to\n"
+	.string "defeat LT.SURGE?"
+	.string "\pNot if I can help\n"
+	.string "it!$"
+
+VermilionGym_Johto_GentlemanGregoryBeatenText:
+	.string "Sorry I failed\n"
+	.string "you, LT.SURGE,\l"
+	.string "sir!$"
+
+VermilionGym_Johto_GentlemanGregoryAfterBattleText:
+	.string "When I was still\n"
+	.string "in the army, LT."
+	.string "\pSURGE saved my\n"
+	.string "life.$"
+
+VermilionGym_Johto_GuitaristVincentSeenText:
+	.string "LT.SURGE recog-\n"
+	.string "nized my potential"
+	.string "\pwith electric\n"
+	.string "POKéMON."
+	.string "\pThink you can beat\n"
+	.string "me?$"
+
+VermilionGym_Johto_GuitaristVincentBeatenText:
+	.string "Ooh, how shocking!$"
+
+VermilionGym_Johto_GuitaristVincentAfterBattleText:
+	.string "If the GYM's traps\n"
+	.string "were working, you"
+	.string "\pwould have been\n"
+	.string "toast…$"
+
+VermilionGym_Johto_JugglerHortonSeenText:
+	.string "I'm going to take\n"
+	.string "you down! Prepare\l"
+	.string "to be shocked!$"
+
+VermilionGym_Johto_JugglerHortonBeatenText:
+	.string "Gwaaah!\n"
+	.string "I was overpowered…$"
+
+VermilionGym_Johto_JugglerHortonAfterBattleText:
+	.string "Don't get too com-\n"
+	.string "fortable about"
+	.string "\pbeating me…\n"
+	.string "LT.SURGE is tough.$"
 
 VermilionGym_Johto_VermilionGymGuideText:
 	.string "Yo! CHAMP in\n"

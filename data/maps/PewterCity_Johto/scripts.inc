@@ -3,7 +3,7 @@ PewterCity_Johto_MapScripts::
 	.byte 0
 
 PewterCity_Johto_OnTransition:
-	call PewterCity_Johto_PewterCityFlypointCallback_Sub
+	call PewterCity_Johto_PewterCityFlypointCallback_Cb
 	end
 
 PewterCity_Johto_PewterCityCooltrainerFScript_Entry::
@@ -144,7 +144,7 @@ PewterCity_Johto_PewterCityFruitTree2:
 	@ TODO unsupported: fruittree FRUITTREE_PEWTER_CITY_2
 	goto Johto_EventScript_Unimplemented
 
-PewterCity_Johto_PewterCityFlypointCallback_Sub:
+PewterCity_Johto_PewterCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_PEWTER
 	return
 

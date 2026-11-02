@@ -25,8 +25,14 @@ GoldenrodGym_Johto_GoldenrodGymWhitneyScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext WhitneyShouldntBeSoSeriousText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_WHITNEY_WHITNEY1, GoldenrodGym_Johto_WhitneyShouldntBeSoSeriousText
+	setflag FLAG_JOHTO_BEAT_WHITNEY
+	setflag FLAG_JOHTO_MADE_WHITNEY_CRY
+	setvar VAR_JOHTO_SCENE_GOLDENROD_GYM, 1
+	setflag FLAG_JOHTO_BEAT_BEAUTY_VICTORIA
+	setflag FLAG_JOHTO_BEAT_BEAUTY_SAMANTHA
+	setflag FLAG_JOHTO_BEAT_LASS_CARRIE
+	setflag FLAG_JOHTO_BEAT_LASS_BRIDGET
 
 GoldenrodGym_Johto_GoldenrodGymWhitneyScript_FightDone:
 	goto_if_unset FLAG_JOHTO_MADE_WHITNEY_CRY, GoldenrodGym_Johto_GoldenrodGymWhitneyScript_StoppedCrying
@@ -66,6 +72,21 @@ GoldenrodGym_Johto_GoldenrodGymWhitneyScript_NoRoomForAttract:
 	releaseall
 	end
 
+GoldenrodGym_Johto_TrainerLassCarrie::
+	trainerbattle_single TRAINER_JOHTO_LASS_CARRIE, GoldenrodGym_Johto_LassCarrieSeenText, GoldenrodGym_Johto_LassCarrieBeatenText
+	setflag FLAG_JOHTO_BEAT_LASS_CARRIE
+	lock
+	faceplayer
+	goto GoldenrodGym_Johto_TrainerLassCarrie_Script
+
+GoldenrodGym_Johto_TrainerLassCarrie_Script:
+	message GoldenrodGym_Johto_LassCarrieAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 GoldenrodGym_Johto_WhitneyCriesScript:
 	applymovement 3, Johto_Movement_Emote_exclamation_mark
 	waitmovement 3
@@ -81,6 +102,51 @@ GoldenrodGym_Johto_WhitneyCriesScript:
 	waitmovement 3
 	setvar VAR_JOHTO_SCENE_GOLDENROD_GYM, 0
 	clearflag FLAG_JOHTO_MADE_WHITNEY_CRY
+	releaseall
+	end
+
+GoldenrodGym_Johto_TrainerLassBridget::
+	trainerbattle_single TRAINER_JOHTO_LASS_BRIDGET, GoldenrodGym_Johto_LassBridgetSeenText, GoldenrodGym_Johto_LassBridgetBeatenText
+	setflag FLAG_JOHTO_BEAT_LASS_BRIDGET
+	lock
+	faceplayer
+	goto GoldenrodGym_Johto_TrainerLassBridget_Script
+
+GoldenrodGym_Johto_TrainerLassBridget_Script:
+	message GoldenrodGym_Johto_LassBridgetAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodGym_Johto_TrainerBeautyVictoria::
+	trainerbattle_single TRAINER_JOHTO_BEAUTY_VICTORIA, GoldenrodGym_Johto_BeautyVictoriaSeenText, GoldenrodGym_Johto_BeautyVictoriaBeatenText
+	setflag FLAG_JOHTO_BEAT_BEAUTY_VICTORIA
+	lock
+	faceplayer
+	goto GoldenrodGym_Johto_TrainerBeautyVictoria_Script
+
+GoldenrodGym_Johto_TrainerBeautyVictoria_Script:
+	message GoldenrodGym_Johto_BeautyVictoriaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+GoldenrodGym_Johto_TrainerBeautySamantha::
+	trainerbattle_single TRAINER_JOHTO_BEAUTY_SAMANTHA, GoldenrodGym_Johto_BeautySamanthaSeenText, GoldenrodGym_Johto_BeautySamanthaBeatenText
+	setflag FLAG_JOHTO_BEAT_BEAUTY_SAMANTHA
+	lock
+	faceplayer
+	goto GoldenrodGym_Johto_TrainerBeautySamantha_Script
+
+GoldenrodGym_Johto_TrainerBeautySamantha_Script:
+	message GoldenrodGym_Johto_BeautySamanthaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
 	releaseall
 	end
 
@@ -131,6 +197,14 @@ GoldenrodGym_Johto_WhitneyBeforeText:
 	.string "tle? I'm warning\l"
 	.string "you--I'm good!$"
 
+GoldenrodGym_Johto_WhitneyShouldntBeSoSeriousText:
+	.string "Sob…"
+	.string "\p…Waaaaaaah!\n"
+	.string "You're mean!"
+	.string "\pYou shouldn't be\n"
+	.string "so serious! You…\l"
+	.string "you child, you!$"
+
 GoldenrodGym_Johto_WhitneyYouMeanieText:
 	.string "Waaaaah!"
 	.string "\pWaaaaah!"
@@ -166,6 +240,39 @@ GoldenrodGym_Johto_WhitneyGoodCryText:
 	.string "\pCome for a visit\n"
 	.string "again! Bye-bye!$"
 
+GoldenrodGym_Johto_LassCarrieSeenText:
+	.string "Don't let my\n"
+	.string "POKéMON's cute"
+	.string "\plooks fool you.\n"
+	.string "They can whip you!$"
+
+GoldenrodGym_Johto_LassCarrieBeatenText:
+	.string "Darn… I thought\n"
+	.string "you were weak…$"
+
+GoldenrodGym_Johto_LassCarrieAfterBattleText:
+	.string "Do my POKéMON\n"
+	.string "think I'm cute?$"
+
+GoldenrodGym_Johto_LassBridgetSeenText:
+	.string "I like cute POKé-\n"
+	.string "MON better than\l"
+	.string "strong POKéMON."
+	.string "\pBut I have strong\n"
+	.string "and cute POKéMON!$"
+
+GoldenrodGym_Johto_LassBridgetBeatenText:
+	.string "Oh, no, no, no!$"
+
+GoldenrodGym_Johto_LassBridgetAfterBattleText:
+	.string "I'm trying to beat\n"
+	.string "WHITNEY, but…\l"
+	.string "It's depressing."
+	.string "\pI'm okay! If I\n"
+	.string "lose, I'll just"
+	.string "\ptry harder next\n"
+	.string "time!$"
+
 GoldenrodGym_Johto_BridgetWhitneyCriesText:
 	.string "Oh, no. You made\n"
 	.string "WHITNEY cry."
@@ -173,6 +280,35 @@ GoldenrodGym_Johto_BridgetWhitneyCriesText:
 	.string "stop soon. She"
 	.string "\palways cries when\n"
 	.string "she loses.$"
+
+GoldenrodGym_Johto_BeautyVictoriaSeenText:
+	.string "Oh, you are a cute\n"
+	.string "little trainer! "
+	.string "\pI like you, but I\n"
+	.string "won't hold back!$"
+
+GoldenrodGym_Johto_BeautyVictoriaBeatenText:
+	.string "Let's see… Oops,\n"
+	.string "it's over?$"
+
+GoldenrodGym_Johto_BeautyVictoriaAfterBattleText:
+	.string "Wow, you must be\n"
+	.string "good to beat me!\l"
+	.string "Keep it up!$"
+
+GoldenrodGym_Johto_BeautySamanthaSeenText:
+	.string "Give it your best\n"
+	.string "shot, or I'll take\l"
+	.string "you down!$"
+
+GoldenrodGym_Johto_BeautySamanthaBeatenText:
+	.string "No! Oh, MEOWTH,\n"
+	.string "I'm so sorry!$"
+
+GoldenrodGym_Johto_BeautySamanthaAfterBattleText:
+	.string "I taught MEOWTH\n"
+	.string "moves for taking\l"
+	.string "on any type…$"
 
 GoldenrodGym_Johto_GoldenrodGymGuideText:
 	.string "Yo! CHAMP in\n"

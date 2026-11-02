@@ -21,7 +21,11 @@ OlivineGym_Johto_OlivineGymJasmineScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext Jasmine_BetterTrainer, 0
+	trainerbattle_no_intro TRAINER_JOHTO_JASMINE_JASMINE1, OlivineGym_Johto_Jasmine_BetterTrainer
+	setflag FLAG_JOHTO_BEAT_JASMINE
+	message OlivineGym_Johto_Text_ReceivedMineralBadge
+	waitmessage
+	@ TODO unsupported: playsound SFX_GET_BADGE
 	goto Johto_EventScript_Unimplemented
 
 OlivineGym_Johto_OlivineGymJasmineScript_FightDone:
@@ -94,6 +98,20 @@ OlivineGym_Johto_Jasmine_SteelTypeIntro:
 	.string "was only recently\l"
 	.string "discovered."
 	.string "\p…Um… May I begin?$"
+
+OlivineGym_Johto_Jasmine_BetterTrainer:
+	.string "…You are a better\n"
+	.string "trainer than me,"
+	.string "\pin both skill and\n"
+	.string "kindness."
+	.string "\pIn accordance with\n"
+	.string "LEAGUE rules, I"
+	.string "\pconfer upon you\n"
+	.string "this BADGE.$"
+
+OlivineGym_Johto_Text_ReceivedMineralBadge:
+	.string "{PLAYER} received\n"
+	.string "MINERALBADGE.$"
 
 OlivineGym_Johto_Jasmine_BadgeSpeech:
 	.string "MINERALBADGE\n"

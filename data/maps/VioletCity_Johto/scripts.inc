@@ -3,7 +3,7 @@ VioletCity_Johto_MapScripts::
 	.byte 0
 
 VioletCity_Johto_OnTransition:
-	call VioletCity_Johto_VioletCityFlypointCallback_Sub
+	call VioletCity_Johto_VioletCityFlypointCallback_Cb
 	end
 
 VioletCity_Johto_VioletCityEarlScript_Entry::
@@ -181,7 +181,7 @@ VioletCity_Johto_VioletCityFruitTree:
 	@ TODO unsupported: fruittree FRUITTREE_VIOLET_CITY
 	goto Johto_EventScript_Unimplemented
 
-VioletCity_Johto_VioletCityFlypointCallback_Sub:
+VioletCity_Johto_VioletCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_VIOLET
 	return
 

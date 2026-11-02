@@ -3,7 +3,7 @@ IndigoPlateauPokecenter1F_Johto_MapScripts::
 	.byte 0
 
 IndigoPlateauPokecenter1F_Johto_OnTransition:
-	call IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FPrepareElite4Callback_Sub
+	call IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FPrepareElite4Callback_Cb
 	end
 
 IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FNurseScript_Entry::
@@ -98,7 +98,7 @@ IndigoPlateauPokecenter1F_Johto_AbraScript:
 	releaseall
 	end
 
-IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FPrepareElite4Callback_Sub:
+IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FPrepareElite4Callback_Cb:
 	setvar VAR_JOHTO_SCENE_WILLS_ROOM, 0
 	setvar VAR_JOHTO_SCENE_KOGAS_ROOM, 0
 	setvar VAR_JOHTO_SCENE_BRUNOS_ROOM, 0

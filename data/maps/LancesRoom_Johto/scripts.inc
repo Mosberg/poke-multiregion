@@ -47,7 +47,7 @@ LancesRoom_Johto_LancesRoomLanceScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext LanceBattleWinText, 0
+	@ TODO unsupported: setlasttalked LANCESROOM_LANCE
 	goto Johto_EventScript_Unimplemented
 
 LancesRoom_Johto_LancesRoom_EnterMovement:
@@ -91,3 +91,15 @@ LancesRoom_Johto_LanceBattleIntroText:
 	.string "\pI, LANCE the drag-\n"
 	.string "on master, accept\l"
 	.string "your challenge!$"
+
+LancesRoom_Johto_LanceBattleWinText:
+	.string "…It's over."
+	.string "\pBut it's an odd\n"
+	.string "feeling."
+	.string "\pI'm not angry that\n"
+	.string "I lost. In fact, I\l"
+	.string "feel happy."
+	.string "\pHappy that I\n"
+	.string "witnessed the rise"
+	.string "\pof a great new\n"
+	.string "CHAMPION!$"

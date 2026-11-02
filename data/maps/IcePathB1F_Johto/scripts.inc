@@ -3,7 +3,7 @@ IcePathB1F_Johto_MapScripts::
 	.byte 0
 
 IcePathB1F_Johto_OnTransition:
-	call IcePathB1F_Johto_IcePathB1FSetUpStoneTableCallback_Sub
+	call IcePathB1F_Johto_IcePathB1FSetUpStoneTableCallback_Cb
 	end
 
 IcePathB1F_Johto_IcePathB1FBoulder_Entry::
@@ -14,6 +14,6 @@ IcePathB1F_Johto_IcePathB1FBoulder_Entry::
 IcePathB1F_Johto_IcePathB1FBoulder:
 	goto Johto_Std_StrengthBoulderScript
 
-IcePathB1F_Johto_IcePathB1FSetUpStoneTableCallback_Sub:
+IcePathB1F_Johto_IcePathB1FSetUpStoneTableCallback_Cb:
 	@ TODO unsupported: writecmdqueue .CommandQueue
 	return

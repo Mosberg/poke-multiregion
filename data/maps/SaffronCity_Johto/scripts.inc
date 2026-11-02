@@ -3,7 +3,7 @@ SaffronCity_Johto_MapScripts::
 	.byte 0
 
 SaffronCity_Johto_OnTransition:
-	call SaffronCity_Johto_SaffronCityFlypointCallback_Sub
+	call SaffronCity_Johto_SaffronCityFlypointCallback_Cb
 	end
 
 SaffronCity_Johto_SaffronCityLass1Script_Entry::
@@ -224,7 +224,7 @@ SaffronCity_Johto_SaffronCityPokecenterSign:
 SaffronCity_Johto_SaffronCityMartSign:
 	goto Johto_Std_MartSignScript
 
-SaffronCity_Johto_SaffronCityFlypointCallback_Sub:
+SaffronCity_Johto_SaffronCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_SAFFRON
 	return
 

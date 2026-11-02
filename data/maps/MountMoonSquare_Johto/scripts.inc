@@ -3,8 +3,8 @@ MountMoonSquare_Johto_MapScripts::
 	.byte 0
 
 MountMoonSquare_Johto_OnTransition:
-	call MountMoonSquare_Johto_MountMoonSquareDisappearMoonStoneCallback_Sub
-	call MountMoonSquare_Johto_MountMoonSquareDisappearRockCallback_Sub
+	call MountMoonSquare_Johto_MountMoonSquareDisappearMoonStoneCallback_Cb
+	call MountMoonSquare_Johto_MountMoonSquareDisappearRockCallback_Cb
 	end
 
 MountMoonSquare_Johto_MtMoonSquareRock_Entry::
@@ -40,12 +40,12 @@ MountMoonSquare_Johto_DontLitterSign:
 MountMoonSquare_Johto_MtMoonSquareRock:
 	goto Johto_Std_SmashRockScript
 
-MountMoonSquare_Johto_MountMoonSquareDisappearMoonStoneCallback_Sub:
+MountMoonSquare_Johto_MountMoonSquareDisappearMoonStoneCallback_Cb:
 	setflag FLAG_JOHTO_MOUNT_MOON_SQUARE_HIDDEN_MOON_STONE
 	return
 
-MountMoonSquare_Johto_MountMoonSquareDisappearRockCallback_Sub:
-	removeobject 3
+MountMoonSquare_Johto_MountMoonSquareDisappearRockCallback_Cb:
+	setflag FLAG_JOHTO_MT_MOON_SQUARE_ROCK
 	return
 
 MountMoonSquare_Johto_DontLitterSignText:

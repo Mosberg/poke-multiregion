@@ -41,6 +41,47 @@ Route42_Johto_Route42SuicuneScript:
 	@ TODO unsupported: playsound SFX_WARP_FROM
 	goto Johto_EventScript_Unimplemented
 
+Route42_Johto_TrainerFisherTully::
+	trainerbattle_single TRAINER_JOHTO_FISHER_TULLY1, Route42_Johto_FisherTullySeenText, Route42_Johto_FisherTullyBeatenText
+	setflag FLAG_JOHTO_BEAT_FISHER_TULLY
+	lock
+	faceplayer
+	goto Route42_Johto_TrainerFisherTully_Script
+
+Route42_Johto_TrainerFisherTully_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_FISHER_TULLY
+	goto Johto_EventScript_Unimplemented
+
+Route42_Johto_TrainerPokemaniacShane::
+	trainerbattle_single TRAINER_JOHTO_POKEMANIAC_SHANE, Route42_Johto_PokemaniacShaneSeenText, Route42_Johto_PokemaniacShaneBeatenText
+	setflag FLAG_JOHTO_BEAT_POKEMANIAC_SHANE
+	lock
+	faceplayer
+	goto Route42_Johto_TrainerPokemaniacShane_Script
+
+Route42_Johto_TrainerPokemaniacShane_Script:
+	message Route42_Johto_PokemaniacShaneAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route42_Johto_TrainerHikerBenjamin::
+	trainerbattle_single TRAINER_JOHTO_HIKER_BENJAMIN, Route42_Johto_HikerBenjaminSeenText, Route42_Johto_HikerBenjaminBeatenText
+	setflag FLAG_JOHTO_BEAT_HIKER_BENJAMIN
+	lock
+	faceplayer
+	goto Route42_Johto_TrainerHikerBenjamin_Script
+
+Route42_Johto_TrainerHikerBenjamin_Script:
+	message Route42_Johto_HikerBenjaminAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route42_Johto_Route42Sign1:
 	message Route42_Johto_Route42Sign1Text
 	waitmessage
@@ -84,6 +125,48 @@ Route42_Johto_Route42FruitTree2:
 Route42_Johto_Route42FruitTree3:
 	@ TODO unsupported: fruittree FRUITTREE_ROUTE_42_3
 	goto Johto_EventScript_Unimplemented
+
+Route42_Johto_FisherTullySeenText:
+	.string "Let me demonstrate\n"
+	.string "the power of the\l"
+	.string "POKéMON I caught!$"
+
+Route42_Johto_FisherTullyBeatenText:
+	.string "What? That's not\n"
+	.string "right.$"
+
+Route42_Johto_HikerBenjaminSeenText:
+	.string "Ah, it's good to\n"
+	.string "be outside!\l"
+	.string "I feel so free!$"
+
+Route42_Johto_HikerBenjaminBeatenText:
+	.string "Gahahah!$"
+
+Route42_Johto_HikerBenjaminAfterBattleText:
+	.string "Losing feels in-\n"
+	.string "significant if you"
+	.string "\plook up at the big\n"
+	.string "sky!$"
+
+Route42_Johto_PokemaniacShaneSeenText:
+	.string "HEY!"
+	.string "\pThis is my secret\n"
+	.string "place! Get lost,\l"
+	.string "you outsider!$"
+
+Route42_Johto_PokemaniacShaneBeatenText:
+	.string "I should have used\n"
+	.string "my MOON STONE…$"
+
+Route42_Johto_PokemaniacShaneAfterBattleText:
+	.string "You're working on\n"
+	.string "a POKéDEX?"
+	.string "\pWow, you must know\n"
+	.string "some pretty rare\l"
+	.string "POKéMON!"
+	.string "\pMay I please see\n"
+	.string "it. Please?$"
 
 Route42_Johto_Route42Sign1Text:
 	.string "ROUTE 42"

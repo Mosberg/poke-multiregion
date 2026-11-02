@@ -92,6 +92,111 @@ Route25_Johto_Route25MistyDate2Script:
 	releaseall
 	end
 
+Route25_Johto_TrainerSchoolboyDudley::
+	trainerbattle_single TRAINER_JOHTO_SCHOOLBOY_DUDLEY, Route25_Johto_SchoolboyDudleySeenText, Route25_Johto_SchoolboyDudleyBeatenText
+	setflag FLAG_JOHTO_BEAT_SCHOOLBOY_DUDLEY
+	lock
+	faceplayer
+	goto Route25_Johto_TrainerSchoolboyDudley_Script
+
+Route25_Johto_TrainerSchoolboyDudley_Script:
+	message Route25_Johto_SchoolboyDudleyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route25_Johto_TrainerLassEllen::
+	trainerbattle_single TRAINER_JOHTO_LASS_ELLEN, Route25_Johto_LassEllenSeenText, Route25_Johto_LassEllenBeatenText
+	setflag FLAG_JOHTO_BEAT_LASS_ELLEN
+	lock
+	faceplayer
+	goto Route25_Johto_TrainerLassEllen_Script
+
+Route25_Johto_TrainerLassEllen_Script:
+	message Route25_Johto_LassEllenAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route25_Johto_TrainerSchoolboyJoe::
+	trainerbattle_single TRAINER_JOHTO_SCHOOLBOY_JOE, Route25_Johto_SchoolboyJoeSeenText, Route25_Johto_SchoolboyJoeBeatenText
+	setflag FLAG_JOHTO_BEAT_SCHOOLBOY_JOE
+	lock
+	faceplayer
+	goto Route25_Johto_TrainerSchoolboyJoe_Script
+
+Route25_Johto_TrainerSchoolboyJoe_Script:
+	message Route25_Johto_SchoolboyJoeAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route25_Johto_TrainerLassLaura::
+	trainerbattle_single TRAINER_JOHTO_LASS_LAURA, Route25_Johto_LassLauraSeenText, Route25_Johto_LassLauraBeatenText
+	setflag FLAG_JOHTO_BEAT_LASS_LAURA
+	lock
+	faceplayer
+	goto Route25_Johto_TrainerLassLaura_Script
+
+Route25_Johto_TrainerLassLaura_Script:
+	message Route25_Johto_LassLauraAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route25_Johto_TrainerCamperLloyd::
+	trainerbattle_single TRAINER_JOHTO_CAMPER_LLOYD, Route25_Johto_CamperLloydSeenText, Route25_Johto_CamperLloydBeatenText
+	setflag FLAG_JOHTO_BEAT_CAMPER_LLOYD
+	lock
+	faceplayer
+	goto Route25_Johto_TrainerCamperLloyd_Script
+
+Route25_Johto_TrainerCamperLloyd_Script:
+	message Route25_Johto_CamperLloydAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route25_Johto_TrainerLassShannon::
+	trainerbattle_single TRAINER_JOHTO_LASS_SHANNON, Route25_Johto_LassShannonSeenText, Route25_Johto_LassShannonBeatenText
+	setflag FLAG_JOHTO_BEAT_LASS_SHANNON
+	lock
+	faceplayer
+	goto Route25_Johto_TrainerLassShannon_Script
+
+Route25_Johto_TrainerLassShannon_Script:
+	message Route25_Johto_LassShannonAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route25_Johto_TrainerSupernerdPat::
+	trainerbattle_single TRAINER_JOHTO_SUPER_NERD_PAT, Route25_Johto_SupernerdPatSeenText, Route25_Johto_SupernerdPatBeatenText
+	setflag FLAG_JOHTO_BEAT_SUPER_NERD_PAT
+	lock
+	faceplayer
+	goto Route25_Johto_TrainerSupernerdPat_Script
+
+Route25_Johto_TrainerSupernerdPat_Script:
+	message Route25_Johto_SupernerdPatAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route25_Johto_TrainerCooltrainermKevin:
 	faceplayer
 	goto_if_set FLAG_JOHTO_BEAT_COOLTRAINERM_KEVIN, Route25_Johto_TrainerCooltrainermKevin_AfterBattle
@@ -108,8 +213,8 @@ Route25_Johto_TrainerCooltrainermKevin_AfterNuggetBridge:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext CooltrainermKevinBeatenText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_COOLTRAINERM_KEVIN, Route25_Johto_CooltrainermKevinBeatenText
+	setflag FLAG_JOHTO_BEAT_COOLTRAINERM_KEVIN
 
 Route25_Johto_TrainerCooltrainermKevin_AfterBattle:
 	message Route25_Johto_CooltrainermKevinAfterBattleText
@@ -197,6 +302,94 @@ Route25_Johto_Route25MistyDateText:
 	.string "GYM LEADER in\l"
 	.string "CERULEAN.$"
 
+Route25_Johto_SchoolboyDudleySeenText:
+	.string "Beat the six of us\n"
+	.string "trainers to win a\l"
+	.string "fabulous prize!"
+	.string "\pThink you've got\n"
+	.string "what it takes?$"
+
+Route25_Johto_SchoolboyDudleyBeatenText:
+	.string "Whoo! Good stuff.$"
+
+Route25_Johto_SchoolboyDudleyAfterBattleText:
+	.string "I did my best.\n"
+	.string "I have no regrets.$"
+
+Route25_Johto_LassEllenSeenText:
+	.string "I'm second.\n"
+	.string "Now it's serious!$"
+
+Route25_Johto_LassEllenBeatenText:
+	.string "How could I lose?$"
+
+Route25_Johto_LassEllenAfterBattleText:
+	.string "I did my best.\n"
+	.string "I have no regrets.$"
+
+Route25_Johto_SchoolboyJoeSeenText:
+	.string "Here's No. 3!\n"
+	.string "I won't be easy.$"
+
+Route25_Johto_SchoolboyJoeBeatenText:
+	.string "Ow! Stomped flat!$"
+
+Route25_Johto_SchoolboyJoeAfterBattleText:
+	.string "I did my best.\n"
+	.string "I have no regrets.$"
+
+Route25_Johto_LassLauraSeenText:
+	.string "I'm No. 4!\n"
+	.string "Getting tired?$"
+
+Route25_Johto_LassLauraBeatenText:
+	.string "I lost too…$"
+
+Route25_Johto_LassLauraAfterBattleText:
+	.string "I did my best.\n"
+	.string "I have no regrets.$"
+
+Route25_Johto_CamperLloydSeenText:
+	.string "OK! I'm No. 5.\n"
+	.string "I'll stomp you!$"
+
+Route25_Johto_CamperLloydBeatenText:
+	.string "Whoa! Too much.$"
+
+Route25_Johto_CamperLloydAfterBattleText:
+	.string "I did my best.\n"
+	.string "I have no regrets.$"
+
+Route25_Johto_LassShannonSeenText:
+	.string "I'm the last in\n"
+	.string "line, but I tell\l"
+	.string "you, I'm tough!$"
+
+Route25_Johto_LassShannonBeatenText:
+	.string "You're kidding.$"
+
+Route25_Johto_LassShannonAfterBattleText:
+	.string "I did my best.\n"
+	.string "I have no regrets.$"
+
+Route25_Johto_SupernerdPatSeenText:
+	.string "Mufufufu…"
+	.string "\pI have nothing to\n"
+	.string "do with the six-\l"
+	.string "pack trainers."
+	.string "\pI waited here to\n"
+	.string "beat you when you"
+	.string "\pwere tired out by\n"
+	.string "all the battles.$"
+
+Route25_Johto_SupernerdPatBeatenText:
+	.string "Aren't you tired\n"
+	.string "at all?$"
+
+Route25_Johto_SupernerdPatAfterBattleText:
+	.string "I'm sorry… I won't\n"
+	.string "cheat anymore…$"
+
 Route25_Johto_CooltrainermKevinNuggetText:
 	.string "You took on one\n"
 	.string "more battle than"
@@ -212,6 +405,10 @@ Route25_Johto_CooltrainermKevinSeenText:
 	.string "I'll fare."
 	.string "\pHow about it? Let\n"
 	.string "me take you on.$"
+
+Route25_Johto_CooltrainermKevinBeatenText:
+	.string "I've never had a\n"
+	.string "battle this good!$"
 
 Route25_Johto_CooltrainermKevinAfterBattleText:
 	.string "That was a great\n"

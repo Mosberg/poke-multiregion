@@ -3,7 +3,7 @@ DayCare_Johto_MapScripts::
 	.byte 0
 
 DayCare_Johto_OnTransition:
-	call DayCare_Johto_DayCareEggCheckCallback_Sub
+	call DayCare_Johto_DayCareEggCheckCallback_Cb
 	end
 
 DayCare_Johto_DayCareManScript_Inside_Entry::
@@ -51,13 +51,13 @@ DayCare_Johto_DayCareLadyScript_HusbandWasLookingForYou:
 DayCare_Johto_DayCareBookshelf:
 	goto Johto_Std_DifficultBookshelfScript
 
-DayCare_Johto_DayCareEggCheckCallback_Sub:
-	goto_if_set FLAG_JOHTO_ENGINE_DAY_CARE_MAN_HAS_EGG, DayCare_Johto_DayCareEggCheckCallback_PutDayCareManOutside_Sub
+DayCare_Johto_DayCareEggCheckCallback_Cb:
+	goto_if_set FLAG_JOHTO_ENGINE_DAY_CARE_MAN_HAS_EGG, DayCare_Johto_DayCareEggCheckCallback_PutDayCareManOutside_Cb
 	clearflag FLAG_JOHTO_DAY_CARE_MAN_IN_DAY_CARE
 	setflag FLAG_JOHTO_DAY_CARE_MAN_ON_ROUTE_34
 	return
 
-DayCare_Johto_DayCareEggCheckCallback_PutDayCareManOutside_Sub:
+DayCare_Johto_DayCareEggCheckCallback_PutDayCareManOutside_Cb:
 	setflag FLAG_JOHTO_DAY_CARE_MAN_IN_DAY_CARE
 	clearflag FLAG_JOHTO_DAY_CARE_MAN_ON_ROUTE_34
 	return

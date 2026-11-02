@@ -18,8 +18,8 @@ MountMortarB1F_Johto_MountMortarB1FKiyoScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext MountMortarB1FKiyoWinText, 0
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_no_intro TRAINER_JOHTO_BLACKBELT_T_KIYO, MountMortarB1F_Johto_MountMortarB1FKiyoWinText
+	setflag FLAG_JOHTO_BEAT_BLACKBELT_KIYO
 
 MountMortarB1F_Johto_MountMortarB1FKiyoScript_BeatKiyo:
 	message MountMortarB1F_Johto_MountMortarB1FTyrogueRewardText
@@ -50,6 +50,10 @@ MountMortarB1F_Johto_MountMortarB1FKiyoIntroText:
 	.string "\pYou!\n"
 	.string "Battle with me!"
 	.string "\pHwaaarggh!$"
+
+MountMortarB1F_Johto_MountMortarB1FKiyoWinText:
+	.string "Waaaarggh!\n"
+	.string "I'm beaten!$"
 
 MountMortarB1F_Johto_MountMortarB1FTyrogueRewardText:
 	.string "I… I'm crushed…"

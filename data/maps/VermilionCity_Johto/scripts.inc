@@ -3,7 +3,7 @@ VermilionCity_Johto_MapScripts::
 	.byte 0
 
 VermilionCity_Johto_OnTransition:
-	call VermilionCity_Johto_VermilionCityFlypointCallback_Sub
+	call VermilionCity_Johto_VermilionCityFlypointCallback_Cb
 	end
 
 VermilionCity_Johto_VermilionCityTeacherScript_Entry::
@@ -162,7 +162,7 @@ VermilionCity_Johto_VermilionCityPokecenterSign:
 VermilionCity_Johto_VermilionCityMartSign:
 	goto Johto_Std_MartSignScript
 
-VermilionCity_Johto_VermilionCityFlypointCallback_Sub:
+VermilionCity_Johto_VermilionCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_VERMILION
 	return
 

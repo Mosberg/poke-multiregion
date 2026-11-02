@@ -27,15 +27,15 @@ MountMoon_Johto_MountMoonRivalBattleScript:
 	closemessage
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, MountMoon_Johto_MountMoonRivalBattleScript_Totodile
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, MountMoon_Johto_MountMoonRivalBattleScript_Chikorita
-	@ TODO unsupported: winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
+	@ TODO unsupported: setlasttalked MOUNTMOON_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 MountMoon_Johto_MountMoonRivalBattleScript_Totodile:
-	@ TODO unsupported: winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
+	@ TODO unsupported: setlasttalked MOUNTMOON_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 MountMoon_Johto_MountMoonRivalBattleScript_Chikorita:
-	@ TODO unsupported: winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
+	@ TODO unsupported: setlasttalked MOUNTMOON_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 MountMoon_Johto_MountMoonRivalMovementBefore:
@@ -57,3 +57,12 @@ MountMoon_Johto_MountMoonRivalTextBefore:
 	.string "with an answer."
 	.string "\p{PLAYER}, now we'll\n"
 	.string "show you!$"
+
+MountMoon_Johto_MountMoonRivalTextWin:
+	.string "<……> <……> <……>"
+	.string "\pI thought I raised\n"
+	.string "my POKéMON to be"
+	.string "\pthe best they\n"
+	.string "could be…"
+	.string "\p…But it still \n"
+	.string "wasn't enough…$"

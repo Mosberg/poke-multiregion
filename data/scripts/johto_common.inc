@@ -47,6 +47,7 @@ Johto_Text_ReceivedItem:
 
 Johto_Std_ReceiveItemScript:
 Johto_Std_ReceiveItemScript_Sub:
+Johto_Std_ReceiveItemScript_Cb:
 	waitse
 	message Johto_Text_ReceivedItem
 	waitmessage
@@ -119,7 +120,7 @@ Johto_Std_HappinessCheckScript:
 	@ TODO unsupported: special GetFirstPokemonHappiness
 	goto Johto_EventScript_Unimplemented
 
-Johto_Std_InitializeEventsScript_Sub:
+Johto_Std_InitializeEventsScript_Cb:
 	setflag FLAG_JOHTO_EARLS_ACADEMY_EARL
 	setflag FLAG_JOHTO_RADIO_TOWER_ROCKET_TAKEOVER
 	setflag FLAG_JOHTO_GOLDENROD_CITY_ROCKET_TAKEOVER

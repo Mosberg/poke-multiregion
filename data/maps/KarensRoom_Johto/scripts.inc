@@ -28,7 +28,14 @@ KarensRoom_Johto_KarenScript_Battle:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext KarenScript_KarenBeatenText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_KAREN_KAREN1, KarensRoom_Johto_KarenScript_KarenBeatenText
+	setflag FLAG_JOHTO_BEAT_ELITE_4_KAREN
+	message KarensRoom_Johto_KarenScript_KarenDefeatText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	playse SE_DOOR
+	@ TODO unsupported: changeblock 4, 2, $16
 	goto Johto_EventScript_Unimplemented
 
 KarensRoom_Johto_KarenScript_AfterBattle:
@@ -61,6 +68,11 @@ KarensRoom_Johto_KarenScript_KarenBeforeText:
 	.string "them? Just try to\l"
 	.string "entertain me."
 	.string "\pLet's go.$"
+
+KarensRoom_Johto_KarenScript_KarenBeatenText:
+	.string "Well, aren't you\n"
+	.string "good. I like that\l"
+	.string "in a trainer.$"
 
 KarensRoom_Johto_KarenScript_KarenDefeatText:
 	.string "Strong POKéMON."

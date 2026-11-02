@@ -28,7 +28,14 @@ BrunosRoom_Johto_BrunoScript_Battle:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: winlosstext BrunoScript_BrunoBeatenText, 0
+	trainerbattle_no_intro TRAINER_JOHTO_BRUNO_BRUNO1, BrunosRoom_Johto_BrunoScript_BrunoBeatenText
+	setflag FLAG_JOHTO_BEAT_ELITE_4_BRUNO
+	message BrunosRoom_Johto_BrunoScript_BrunoDefeatText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	playse SE_DOOR
+	@ TODO unsupported: changeblock 4, 2, $16
 	goto Johto_EventScript_Unimplemented
 
 BrunosRoom_Johto_BrunoScript_AfterBattle:
@@ -66,6 +73,10 @@ BrunosRoom_Johto_BrunoScript_BrunoBeforeText:
 	.string "\pto our overwhelm-\n"
 	.string "ing power!"
 	.string "\pHoo hah!$"
+
+BrunosRoom_Johto_BrunoScript_BrunoBeatenText:
+	.string "Why? How could we\n"
+	.string "lose?$"
 
 BrunosRoom_Johto_BrunoScript_BrunoDefeatText:
 	.string "Having lost, I\n"

@@ -3,7 +3,7 @@ CherrygroveCity_Johto_MapScripts::
 	.byte 0
 
 CherrygroveCity_Johto_OnTransition:
-	call CherrygroveCity_Johto_CherrygroveCityFlypointCallback_Sub
+	call CherrygroveCity_Johto_CherrygroveCityFlypointCallback_Cb
 	end
 
 CherrygroveCity_Johto_CherrygroveCityGuideGent_Entry::
@@ -142,15 +142,15 @@ CherrygroveCity_Johto_CherrygroveRivalSceneNorth:
 	closemessage
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Totodile
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Chikorita
-	@ TODO unsupported: winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
+	@ TODO unsupported: setlasttalked CHERRYGROVECITY_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Totodile:
-	@ TODO unsupported: winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
+	@ TODO unsupported: setlasttalked CHERRYGROVECITY_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Chikorita:
-	@ TODO unsupported: winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
+	@ TODO unsupported: setlasttalked CHERRYGROVECITY_RIVAL
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveTeacherScript:
@@ -231,7 +231,7 @@ CherrygroveCity_Johto_CherrygroveCityPokecenterSign:
 CherrygroveCity_Johto_CherrygroveCityMartSign:
 	goto Johto_Std_MartSignScript
 
-CherrygroveCity_Johto_CherrygroveCityFlypointCallback_Sub:
+CherrygroveCity_Johto_CherrygroveCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_CHERRYGROVE
 	return
 
@@ -382,6 +382,10 @@ CherrygroveCity_Johto_CherrygroveRivalText_Seen:
 	.string "a good POKéMON."
 	.string "\pI'll show you\n"
 	.string "what I mean!$"
+
+CherrygroveCity_Johto_RivalCherrygroveWinText:
+	.string "Humph. Are you\n"
+	.string "happy you won?$"
 
 CherrygroveCity_Johto_CherrygroveTeacherText_NoMapCard:
 	.string "Did you talk to\n"
