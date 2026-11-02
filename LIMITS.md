@@ -1,0 +1,76 @@
+# LIMITS
+
+Hard limits (engine, format, tooling, save space) hit while building the multi-region ROM. Each entry says what the
+limit is, where it came from, and what was done about it. New limits are appended as they are found.
+
+## Engine limits (pokeemerald-expansion)
+
+| Limit | Value | Effect / workaround |
+|---|---|---|
+| Map sections (`MAPSEC_*`) | u8, max 253 (0xFD-0xFF reserved for Pokedex met locations) | Hoenn + Kanto use 209; Johto's 43 new sections bring it to 252 of 253. Crystal landmarks that already exist (Kanto towns/routes) are reused, and 11 minor places are merged into neighbours (`MERGE` in poke-crystal-maps). Only **1 section is left**. |
+| Map number in a group | s8 in `WarpData` (<= 127, group ids < 127) | Johto maps are split into groups of 100 (`gMapGroup_Johto1..4`). A single group with 383 maps overflowed (mapNum 155). |
+| Object events per map | 64 (`OBJECT_EVENT_TEMPLATES_COUNT`) | Crystal maps are clamped to 64; objects outside the converted layout are dropped. |
+| Map header `region_map_section` landmark popup | one per map | Maps that had finer Crystal landmarks share a section. |
+| Metatiles | 512 primary + 512 secondary; secondary palette slots 6-12 | Crystal tilesets are converted to 4x4-tile blocks -> 4 metatiles; tilesets must fit the secondary slot budget. Crystal's 8 palettes per tileset are remapped per tile id. |
+| Tile pixel 0 | transparent on GBA | Crystal pixels are shifted to 1-4 when converting tilesets. |
+| Coord events | need a variable (`var`, `var_value`); `var == 0` runs immediately | Crystal `SCENE_ANY` coord events (no scene) are skipped, scene triggers use per-map `VAR_JOHTO_SCENE_*`. |
+| Trainer sight battles | script must start with the `trainerbattle` command | Trainer entry labels are emitted without the `lockall; goto` wrapper other entries get. |
+| ON_TRANSITION scripts | run during map load before objects exist | `removeobject`/`addobject`/messages/waits there hang the load (black screen). Callback scripts are translated in a separate `cb` mode that only sets/clears hide flags. |
+| Event script macros | space/comma-separated args; cpp expressions split them | Kanto/Johto trainer ids are written as plain numbers, not `BASE + n`. |
+| Script text | `$`-terminated strings, 2-line box, `{...}` placeholders | Crystal `<...>` macros, `{d:CONST}` interpolation, `text_decimal`, `text_asm` are not translated (shown as "(text not converted)"). |
+| `TRAINER_PARTNER(n)` ids | `MAX_TRAINERS_COUNT_EMERALD` (864) + n | Kanto/Johto trainer ids (865+) overlap the partner id range. Harmless today because partner ids are only used for the in-game partner slot; do not use Kanto/Johto trainers as partners. |
+| Game compile mode | built as Emerald (`IS_FRLG` = 0) | Kanto behaviour comes from region-aware `IS_FRLG_CTX` shims, not compile-time gates. |
+| Region ids | only `REGION_HOENN` / `REGION_KANTO` exist | Johto maps are tagged `REGION_HOENN`: Hoenn badge/HM/obedience rules apply in Johto. |
+| Time of day | `RtcCalcLocalTime` | Needs an RTC. Without one, Crystal MORN/DAY/NITE checks follow whatever time the emulator/cart reports. |
+
+## Save-data limits
+
+| Limit | Value | Notes |
+|---|---|---|
+| SaveBlock1 | 15872 bytes (4 sectors) | Currently about 13.8 KB after the six `FREE_*` cleansing options; Johto flags, scene vars and trainer flags used ~494 bytes of the 2288 headroom. |
+| SaveBlock2 | 3968 bytes | 3884 used. |
+| Event flags | Hoenn 300 + Kanto 91 band + 624 Kanto trainer flags + 1344 Johto event flags + 560 Johto trainer flags | `FLAGS_COUNT` is overridden at the end of `flags.h`/`johto_flags.h`. All are saved in the flag array (637+70 bytes). |
+| Johto event flags | 1344 band | Crystal has ~1332 `EVENT_*`; ~750 are allocated so far. Exhaustion aborts the converter. |
+| Johto scene vars | 128 (`0x4140-0x41BF`) | One per map with scenes. |
+| Johto trainer flags | 560 | 541 used. |
+| Offsets | SB1 flags 0x1214, vars 0x14D8 (changes with every band resize) | Recompute with `offsetof` via the compiler and update `mgba-agent/addresses.py` and `pokeemerald-ai-bridge/src/core/layout.ts`. The previously documented 0x123C/0x1412 were stale. |
+| Savestates | tied to one ROM build | Re-record (`new_game_kanto.py`) after each rebuild. |
+| ROM size | 32 MB, ~29.3 MB used (87%) | Room for roughly 2.5 MB more data. |
+| RAM | EWRAM 85.8%, IWRAM 86.7% | |
+
+## Crystal -> GBA conversion limits
+
+| Limit | Detail |
+|---|---|
+| Wild slots | Crystal has 7 land / 3 water slots; the engine has 12 / 5. Probabilities are matched by spreading Crystal slots across engine slots (exact for land, approximate for water). |
+| Time-of-day encounters | Only the *day* table is imported; morning/night tables are dropped. |
+| Encounter rate | Rescaled from x/255 to x*16/2880. |
+| Rods, Headbutt trees, swarms, Bug-Catching Contest, roamers | Not imported (see MISSING.md). |
+| Trainer graphics/classes | Crystal trainer pictures are not ported; each class borrows the closest Hoenn/Kanto class and pic. Falkner = Bird Keeper pic, Janine = Koga pic, etc. |
+| Trainer IVs/DVs | One fixed IV spread (8 each); Crystal per-class DVs are not used. |
+| Time-restricted objects | Crystal objects that only appear at MORN or NITE are dropped (the DAY/any variant is kept). Local ids are renumbered after filtering, so scripts that reference a dropped object fall back to "not converted yet". |
+| `follow`/`stopfollow` | Emulated by moving leader and follower with the same movement list; exact trailing behaviour differs. |
+| Movement commands | Supported: `step`, `slow_step`, `big_step`, `turn_head`, `jump_step`, `fix_facing`, `remove_fixed_facing`, `step_end`. Others (`turn_step`, `step_sleep`, `set_sliding`, ...) are skipped. |
+| Sprites | Crystal overworld sprites are mapped to the nearest existing expansion sprite by name; many NPCs share generic sprites. |
+| Sound | Crystal music/SFX map to a small hand-made table of existing songs and effects; unmapped songs play `MUS_DUMMY`. |
+| Fonts | Crystal's shared font tiles are not converted; the scroll prompt shows as a heart glyph in dialogue. |
+| Rival name | Fixed to `SILVER`; `special NameRival` is a no-op. |
+| Johto badges/HMs | Johto gyms give nothing the engine tracks separately yet (no `REGION_JOHTO`). |
+
+## Tooling and environment limits
+
+| Limit | Detail |
+|---|---|
+| mGBA scripting | Lua scripts cannot be loaded from the CLI in 0.10.5; the bridge is loaded through Tools > Scripting via GUI automation. |
+| Headless mGBA bindings | Python bindings are not available; RL/headless tooling cannot run without the GUI. |
+| ML packages | No local torch/ONNX runtime assumed; export needs `dynamo=False` + `onnxscript`. |
+| Windows shell | Git Bash path mangling (`MSYS_NO_PATHCONV=1`), backslashes in heredoc Python are rewritten (use files/Edit), repo files are CRLF and must be preserved. |
+| Build | Needs WSL Ubuntu with arm-none-eabi-gcc; full build takes several minutes. |
+| Git | `data/**` generated Johto files are large; commits show CRLF warnings (harmless). |
+| Mobile/link features | Mobile adapter, link/trade, card flip, Pokegear radio are Crystal-only systems with no GBA counterpart. |
+| VS Code extension | Panels/dashboard/chat participant are unit-tested only; no live UI test, no real model calls. |
+
+## How this file is maintained
+
+Append a row whenever a new limit is hit (engine cap, size budget, tool restriction, approximation made to fit).
+Include the number, the source, and the workaround. Keep MISSING.md for things that are simply not done yet.

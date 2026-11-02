@@ -1,0 +1,76 @@
+# MISSING
+
+Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
+Hard caps and approximations live in LIMITS.md.
+
+## Johto: scripts (590 commands still become "not converted yet")
+
+Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
+
+- Shops: `pokemart` (30), Pokecenter/Mart std scripts, Goldenrod Dept. Store, vending machines
+- `fruittree` (30), `fruittree`/berry trees, `itemnotify`, `verbosegiveitemvar`, `trade` (7)
+- Time/date: `readvar VAR_WEEKDAY` (35), `.morn/.day/.nite` local branches, phone call timers, daily events, DST prompts (no-ops)
+- Phone/Pokegear: `addcellnum`, phone calls, radio (`special` radio functions), Pokegear menu entry, map card
+- `loadvar`, `readmem`/`writemem`, `random`, `setlasttalked` use, `getcurlandmarkname`, `gettrainername`, `loadwildmon` (static wild battles: Sudowoodo, legendaries, Red, Lugia, Ho-Oh), `catchtutorial` (Route 29 dude)
+- Decorations (`describedecoration`, decoration system, the player's room items)
+- Specials: Bank of Mom, name rival, `FindPartyMonThatSpeciesYourTrainerID` (Togepi/Elm branches), Day-care, name rater, move tutor, Magnet Train, Card Flip, Coin Case, Unown/Ruins puzzles, Bill's PC
+- Movement: `set_sliding`, `remove_sliding`, `turn_step`, `step_sleep`
+- `farsjump`, text macros (`<...>`, `{d:...}`, `text_decimal`, `text_asm`)
+- Script sound effects not in the SFX table (`SFX_READ_TEXT_2`, `SFX_STRENGTH`, `SFX_WARP_FROM/TO`, `SFX_FLY`)
+
+Plus:
+- Hidden items (`bg_event` ITEM / `hiddenitem`) and `BGEVENT_IFSET` events are not converted (85 hidden items)
+- Coord events with `SCENE_ANY` (no scene variable) are skipped
+- Non-script object types (`OBJECTTYPE_COMMAND` other than `jumptext*`, e.g. `pokemart`) are not converted
+- Cross-map script/label references (`farjump`, shared helper scripts) are not resolved
+- Conditional (`conditional_event`) bg events
+
+## Johto: content not imported
+
+- Fishing (Old/Good/Super Rod tables), Headbutt trees, swarms, roaming Pokemon, Bug-Catching Contest table, flee mons, Unown unlocks
+- Time-of-day (morning/night) wild tables
+- Crystal map music assignments (all maps use generic songs), real Crystal songs/SFX
+- Crystal overworld sprites and trainer pics (borrowed Hoenn/Kanto ones are used)
+- Crystal text font / scroll arrow tiles
+- Crystal-only items (Pokegear cards, Mystery Egg, Clear Bell, S.S. Ticket, Basement Key, Card Key, ...) and key-item scripts
+- Crystal-only moves/mechanics differences (Crystal held items, Gen 2 move TMs/HMs mapping, Headbutt/Rock Smash field moves)
+- Johto Pokedex ordering and area map, Johto town map/fly points (only New Bark Town has a heal location)
+- Johto Pokemon Center/Mart/Gym rosters, Goldenrod Radio Tower, Underground, Bug Contest, Lake of Rage events
+- Mobile Stadium, Battle Tower, Link/Trade, Mobile features (not planned)
+- Gym puzzles and scripted rival/legend encounters beyond the New Bark Town opening
+- Per-class trainer DVs, trainer battle music per class, "after-battle" phone rematches
+
+## Johto: engine integration
+
+- `REGION_JOHTO` (badges 17-24, obedience level, HM usage rules)
+- Johto badge flags and Johto Elite Four / Champion progression
+- Pokemon Center healing/respawn points for every Johto town (only New Bark Town)
+- Pokemon Center PC / Pokegear start-menu entry
+- Day/night palettes and Crystal palette time system
+- Johto Pokemon (Gen 2) mon data is the expansion's own; Crystal-specific moves/learnsets are not applied
+
+## Kanto / Yellow
+
+- Yellow Pikachu mood, refusing Poke Balls/evolution stones, Pikachu happiness reactions
+- Yellow gift starters (Bulbasaur/Charmander/Squirtle/Eevee evolutions handing-out events)
+- Route 22 Jolteon upgrade and Jessie & James fights are built but never played in the emulator
+- Play-testing of Viridian Forest, Mt. Moon, Cerulean, and the ferry back to Hoenn with a Kanto badge
+- Plugin migration scripts (`poke-patch` etc.) do not reproduce the trainer-id/flag-band changes
+
+## Verified only partially
+
+- Johto start: Mom scene, New Bark Town, Elm's Lab, starter (Cyndaquil only), Aide's potion, Route 29 load, a wild encounter, Route 30 trainer
+- Not played: Totodile/Chikorita choices, Elm's call-back scenes, rival ambush at Cherrygrove, Mr. Pokemon's house, Violet City gym, any gym fight, Johto save/continue round trip
+- Johto wild encounters: the encounter fired but species/levels were not checked against the table
+
+## Tooling and extension
+
+- VS Code extension UI (views, dashboard, chat participant, real model calls) untested
+- Headless mGBA/Python bindings, RL stack and training are not set up
+- `savespace-budget.md` offsets were corrected in the code but the document needs a full refresh
+- No automated regression test that rebuilds the ROM and replays the Johto opening
+- `poke-crystal-maps`, `-scripts`, `-trainers`, `-wild` are not yet chained into one `poke-crystal-all` command or into the plugin's `/migrate` skill
+
+## How this file is maintained
+
+Add a line whenever something is found missing, unimplemented or untested; delete it when it is done and verified.
