@@ -93,21 +93,69 @@ GoldenrodUnderground_Johto_TrainerPokemaniacDonald_Script:
 	end
 
 GoldenrodUnderground_Johto_BitterMerchantScript:
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 0, GoldenrodUnderground_Johto_BitterMerchantScript_Open
+	goto_if_eq VAR_RESULT, 6, GoldenrodUnderground_Johto_BitterMerchantScript_Open
+	goto GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed
+
+GoldenrodUnderground_Johto_BitterMerchantScript_Open:
+	pokemart Johto_Mart_UNDERGROUND
+	closemessage
+	releaseall
+	end
 
 GoldenrodUnderground_Johto_BargainMerchantScript:
 	goto_if_set FLAG_JOHTO_ENGINE_GOLDENROD_UNDERGROUND_MERCHANT_CLOSED, GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 1, GoldenrodUnderground_Johto_BargainMerchantScript_CheckMorn
+	goto GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed
+
+GoldenrodUnderground_Johto_BargainMerchantScript_CheckMorn:
+	setvar VAR_0x8004, 1
+	special JohtoCheckTime
+	goto_if_eq VAR_RESULT, 0, GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed
+	@ TODO unsupported: pokemart MARTTYPE_BARGAIN, 0
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodUnderground_Johto_OlderHaircutBrotherScript:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 2, GoldenrodUnderground_Johto_OlderHaircutBrotherScript_DoHaircut
+	goto_if_eq VAR_RESULT, 4, GoldenrodUnderground_Johto_OlderHaircutBrotherScript_DoHaircut
+	goto_if_eq VAR_RESULT, 6, GoldenrodUnderground_Johto_OlderHaircutBrotherScript_DoHaircut
+	goto GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed
+
+GoldenrodUnderground_Johto_OlderHaircutBrotherScript_DoHaircut:
+	goto_if_set FLAG_JOHTO_ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT, GoldenrodUnderground_Johto_OlderHaircutBrotherScript_AlreadyGotHaircut
+	@ TODO unsupported: special PlaceMoneyTopRight
 	goto Johto_EventScript_Unimplemented
 
+GoldenrodUnderground_Johto_OlderHaircutBrotherScript_AlreadyGotHaircut:
+	message GoldenrodUnderground_Johto_GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 GoldenrodUnderground_Johto_YoungerHaircutBrotherScript:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 0, GoldenrodUnderground_Johto_YoungerHaircutBrotherScript_DoHaircut
+	goto_if_eq VAR_RESULT, 3, GoldenrodUnderground_Johto_YoungerHaircutBrotherScript_DoHaircut
+	goto_if_eq VAR_RESULT, 5, GoldenrodUnderground_Johto_YoungerHaircutBrotherScript_DoHaircut
+	goto GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed
+
+GoldenrodUnderground_Johto_YoungerHaircutBrotherScript_DoHaircut:
+	goto_if_set FLAG_JOHTO_ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT, GoldenrodUnderground_Johto_YoungerHaircutBrotherScript_AlreadyGotHaircut
+	@ TODO unsupported: special PlaceMoneyTopRight
 	goto Johto_EventScript_Unimplemented
+
+GoldenrodUnderground_Johto_YoungerHaircutBrotherScript_AlreadyGotHaircut:
+	message GoldenrodUnderground_Johto_GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 GoldenrodUnderground_Johto_BasementDoorScript:
 	goto_if_set FLAG_JOHTO_USED_BASEMENT_KEY, GoldenrodUnderground_Johto_BasementDoorScript_Open
@@ -169,7 +217,65 @@ GoldenrodUnderground_Johto_GoldenrodUndergroundResetSwitchesCallback_Cb:
 	return
 
 GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Cb:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 1, GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Monday_Cb
+	goto_if_eq VAR_RESULT, 2, GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Tuesday_Cb
+	goto_if_eq VAR_RESULT, 3, GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Wednesday_Cb
+	goto_if_eq VAR_RESULT, 4, GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Thursday_Cb
+	goto_if_eq VAR_RESULT, 5, GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Friday_Cb
+	goto_if_eq VAR_RESULT, 6, GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Saturday_Cb
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRANNY
+	return
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Monday_Cb:
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS
+	setvar VAR_0x8004, 1
+	special JohtoCheckTime
+	goto_if_eq VAR_RESULT, 0, GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_NotMondayMorning_Cb
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_NotMondayMorning_Cb:
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRANNY
+	return
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Tuesday_Cb:
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRANNY
+	return
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Wednesday_Cb:
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRANNY
+	return
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Thursday_Cb:
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRANNY
+	return
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Friday_Cb:
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRANNY
+	return
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Saturday_Cb:
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRAMPS
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	setflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	clearflag FLAG_JOHTO_GOLDENROD_UNDERGROUND_GRANNY
 	return
 
 GoldenrodUnderground_Johto_SupernerdEricSeenText:
@@ -247,6 +353,17 @@ GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorsLockedText:
 
 GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorIsOpenText:
 	.string "The door is open.$"
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText:
+	.string "I do only one\n"
+	.string "haircut a day. I'm\l"
+	.string "done for today.$"
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText:
+	.string "I can do only one\n"
+	.string "haircut a day."
+	.string "\pSorry, but I'm all\n"
+	.string "done for today.$"
 
 GoldenrodUnderground_Johto_GoldenrodUndergroundWeAreNotOpenTodayText:
 	.string "We're not open\n"

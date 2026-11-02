@@ -114,8 +114,22 @@ TeamRocketBaseB3F_Johto_RocketBaseBoss:
 	closemessage
 	applymovement 2, TeamRocketBaseB3F_Johto_RocketBaseBossApproachesPlayerMovement
 	waitmovement 2
-	@ TODO unsupported: setlasttalked TEAMROCKETBASEB3F_ROCKET1
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_LAST_TALKED, 2
+	trainerbattle_no_intro TRAINER_JOHTO_EXECUTIVEM_EXECUTIVEM_4, TeamRocketBaseB3F_Johto_ExecutiveM4BeatenText
+	setflag FLAG_JOHTO_BEAT_ROCKET_EXECUTIVEM_4
+	message TeamRocketBaseB3F_Johto_ExecutiveM4AfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 2, TeamRocketBaseB3F_Johto_RocketBaseBossHitsTableMovement
+	waitmovement 2
+	playse SE_M_TAIL_WHIP
+	applymovement 2, TeamRocketBaseB3F_Johto_RocketBaseBossLeavesMovement
+	waitmovement 2
+	removeobject 2
+	setvar VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B3F, 3
+	releaseall
+	end
 
 TeamRocketBaseB3F_Johto_RocketBaseMurkrow:
 	message TeamRocketBaseB3F_Johto_RocketBaseMurkrowText
@@ -227,6 +241,39 @@ TeamRocketBaseB3F_Johto_RocketBaseBossApproachesPlayerMovement:
 	walk_down
 	step_end
 
+TeamRocketBaseB3F_Johto_RocketBaseBossHitsTableMovement:
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+TeamRocketBaseB3F_Johto_RocketBaseBossLeavesMovement:
+	lock_facing_direction
+	unlock_facing_direction
+	walk_slow_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	step_end
+
 TeamRocketBaseB3F_Johto_RocketBaseRivalEnterMovement:
 	walk_down
 	walk_down
@@ -326,6 +373,12 @@ TeamRocketBaseB3F_Johto_ExecutiveM4BeatenText:
 	.string "thing…"
 	.string "\pGIOVANNI, please\n"
 	.string "forgive me…$"
+
+TeamRocketBaseB3F_Johto_ExecutiveM4AfterText:
+	.string "No, I can't let\n"
+	.string "this affect me."
+	.string "\pI have to inform\n"
+	.string "the others…$"
 
 TeamRocketBaseB3F_Johto_RocketBaseMurkrowText:
 	.string "MURKROW: The\n"

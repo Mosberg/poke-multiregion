@@ -295,15 +295,26 @@ GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Conti
 	setflag FLAG_JOHTO_RIVAL_GOLDENROD_UNDERGROUND
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Totodile_Sub
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Chikorita_Sub
-	@ TODO unsupported: setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	return
+	setvar VAR_LAST_TALKED, 11
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_4_TOTODILE, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalWinText
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_FinishRivalBattle_Sub
 
 GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Totodile_Sub:
-	@ TODO unsupported: setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	return
+	setvar VAR_LAST_TALKED, 11
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_4_CHIKORITA, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalWinText
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_FinishRivalBattle_Sub
 
 GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_Chikorita_Sub:
-	@ TODO unsupported: setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
+	setvar VAR_LAST_TALKED, 11
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_4_CYNDAQUIL, GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalWinText
+	goto GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_FinishRivalBattle_Sub
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalBattleScript_FinishRivalBattle_Sub:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
 	return
 
 GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalApproachMovement1:
@@ -360,6 +371,30 @@ GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalWinText:
 	.string "\pI didn't ease up\n"
 	.string "on the gas."
 	.string "\pSo why do I lose?$"
+
+GoldenrodUndergroundSwitchRoomEntrances_Johto_UndergroundRivalAfterText:
+	.string "…I don't under-\n"
+	.string "stand…"
+	.string "\pIs what that LANCE\n"
+	.string "guy said true?"
+	.string "\pThat I don't treat\n"
+	.string "POKéMON properly?"
+	.string "\pLove…"
+	.string "\pTrust…"
+	.string "\pAre they really\n"
+	.string "what I lack?"
+	.string "\pAre they keeping\n"
+	.string "me from winning?"
+	.string "\pI… I just don't\n"
+	.string "understand."
+	.string "\pBut it's not going\n"
+	.string "to end here."
+	.string "\pNot now. Not\n"
+	.string "because of this."
+	.string "\pI won't give up my\n"
+	.string "dream of becoming"
+	.string "\pthe world's best\n"
+	.string "POKéMON trainer!$"
 
 GoldenrodUndergroundSwitchRoomEntrances_Johto_GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText:
 	.string "I was challenged\n"

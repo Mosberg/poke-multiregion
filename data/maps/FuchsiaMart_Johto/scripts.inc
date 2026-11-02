@@ -15,8 +15,10 @@ FuchsiaMart_Johto_FuchsiaMartCooltrainerFScript_Entry::
 
 
 FuchsiaMart_Johto_FuchsiaMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_FUCHSIA
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_FUCHSIA
+	closemessage
+	releaseall
+	end
 
 FuchsiaMart_Johto_FuchsiaMartFisherScript:
 	faceplayer

@@ -161,8 +161,27 @@ BlackthornCity_Johto_BlackthornCooltrainerF2Script:
 BlackthornCity_Johto_SantosScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_SPELL_TAG_FROM_SANTOS, BlackthornCity_Johto_SantosScript_Saturday
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_ne VAR_RESULT, 6, BlackthornCity_Johto_SantosScript_NotSaturday
+	goto_if_set FLAG_JOHTO_MET_SANTOS_OF_SATURDAY, BlackthornCity_Johto_SantosScript_MetSantos
+	message BlackthornCity_Johto_MeetSantosText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_MET_SANTOS_OF_SATURDAY
+
+BlackthornCity_Johto_SantosScript_MetSantos:
+	message BlackthornCity_Johto_SantosGivesGiftText
+	waitmessage
+	waitbuttonpress
+	giveitem ITEM_SPELL_TAG
+	goto_if_eq VAR_RESULT, 0, BlackthornCity_Johto_SantosScript_Done
+	setflag FLAG_JOHTO_GOT_SPELL_TAG_FROM_SANTOS
+	message BlackthornCity_Johto_SantosGaveGiftText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 BlackthornCity_Johto_SantosScript_Saturday:
 	message BlackthornCity_Johto_SantosSaturdayText
@@ -170,6 +189,14 @@ BlackthornCity_Johto_SantosScript_Saturday:
 	waitbuttonpress
 
 BlackthornCity_Johto_SantosScript_Done:
+	closemessage
+	releaseall
+	end
+
+BlackthornCity_Johto_SantosScript_NotSaturday:
+	message BlackthornCity_Johto_SantosNotSaturdayText
+	waitmessage
+	waitbuttonpress
 	closemessage
 	releaseall
 	end
@@ -225,7 +252,13 @@ BlackthornCity_Johto_BlackthornCityFlypointCallback_Cb:
 	return
 
 BlackthornCity_Johto_BlackthornCitySantosCallback_Cb:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 6, BlackthornCity_Johto_BlackthornCitySantosCallback_SantosAppears_Cb
+	setflag FLAG_JOHTO_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
+	return
+
+BlackthornCity_Johto_BlackthornCitySantosCallback_SantosAppears_Cb:
+	clearflag FLAG_JOHTO_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
 	return
 
 BlackthornCity_Johto_Text_ClairIsOut:
@@ -290,12 +323,33 @@ BlackthornCity_Johto_BlackthornYoungsterText:
 	.string "come from the city\l"
 	.string "of BLACKTHORN.$"
 
+BlackthornCity_Johto_MeetSantosText:
+	.string "SANTOS: …"
+	.string "\pIt's Saturday…"
+	.string "\pI'm SANTOS of\n"
+	.string "Saturday…$"
+
+BlackthornCity_Johto_SantosGivesGiftText:
+	.string "You can have this…$"
+
+BlackthornCity_Johto_SantosGaveGiftText:
+	.string "SANTOS: …"
+	.string "\pSPELL TAG…"
+	.string "\pGhost-type moves\n"
+	.string "get stronger…"
+	.string "\pIt will frighten\n"
+	.string "you…$"
+
 BlackthornCity_Johto_SantosSaturdayText:
 	.string "SANTOS: …"
 	.string "\pSee you again on\n"
 	.string "another Saturday…"
 	.string "\pI won't have any\n"
 	.string "more gifts…$"
+
+BlackthornCity_Johto_SantosNotSaturdayText:
+	.string "SANTOS: Today's\n"
+	.string "not Saturday…$"
 
 BlackthornCity_Johto_BlackthornCooltrainerF2Text:
 	.string "Wow, you came\n"

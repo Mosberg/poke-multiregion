@@ -45,8 +45,13 @@ FuchsiaGym_Johto_FuchsiaGymJanineScript:
 	setflag FLAG_JOHTO_BEAT_LASS_LINDA
 	setflag FLAG_JOHTO_BEAT_PICNICKER_CINDY
 	setflag FLAG_JOHTO_BEAT_CAMPER_BARRY
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
+	message FuchsiaGym_Johto_Text_ReceivedSoulBadge
+	waitmessage
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_SOULBADGE
+	goto FuchsiaGym_Johto_FuchsiaGymJanineScript_AfterBattle
 
 FuchsiaGym_Johto_FuchsiaGymJanineScript_FightDone:
 	faceplayer
@@ -72,8 +77,6 @@ FuchsiaGym_Johto_LassAliceScript:
 	applymovement 2, FuchsiaGym_Johto_Movement_NinjaSpin
 	waitmovement 2
 	faceplayer
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
 
 FuchsiaGym_Johto_LassAliceScript_AliceUnmasked:
 	faceplayer
@@ -105,8 +108,6 @@ FuchsiaGym_Johto_LassLindaScript:
 	applymovement 3, FuchsiaGym_Johto_Movement_NinjaSpin
 	waitmovement 3
 	faceplayer
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
 
 FuchsiaGym_Johto_LassLindaScript_LindaUnmasked:
 	faceplayer
@@ -138,8 +139,6 @@ FuchsiaGym_Johto_PicnickerCindyScript:
 	applymovement 4, FuchsiaGym_Johto_Movement_NinjaSpin
 	waitmovement 4
 	faceplayer
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
 
 FuchsiaGym_Johto_PicnickerCindyScript_CindyUnmasked:
 	faceplayer
@@ -171,8 +170,6 @@ FuchsiaGym_Johto_CamperBarryScript:
 	applymovement 5, FuchsiaGym_Johto_Movement_NinjaSpin
 	waitmovement 5
 	faceplayer
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
 
 FuchsiaGym_Johto_CamperBarryScript_BarryUnmasked:
 	faceplayer
@@ -256,6 +253,10 @@ FuchsiaGym_Johto_JanineText_ToughOne:
 	.string "definitely won…"
 	.string "\pHere's SOULBADGE.\n"
 	.string "Take it.$"
+
+FuchsiaGym_Johto_Text_ReceivedSoulBadge:
+	.string "{PLAYER} received\n"
+	.string "SOULBADGE.$"
 
 FuchsiaGym_Johto_JanineText_ToxicSpeech:
 	.string "JANINE: You're so\n"

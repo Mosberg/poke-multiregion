@@ -57,10 +57,345 @@ Johto_Std_ReceiveItemScript_Cb:
 	closemessage
 	return
 
+	.align 2
+Johto_Mart_AZALEA:
+	.2byte ITEM_CHARCOAL
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_REPEL
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_BLACKTHORN:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_X_DEFEND
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CELADON_2F_1:
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_REVIVE
+	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CELADON_2F_2:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_ICE_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CELADON_3F:
+
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CELADON_4F:
+	.2byte ITEM_POKE_DOLL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CELADON_5F_1:
+	.2byte ITEM_HP_UP
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_IRON
+	.2byte ITEM_CARBOS
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CELADON_5F_2:
+	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_GUARD_SPEC
+	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFEND
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_SPECIAL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CERULEAN:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_X_DEFEND
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CHERRYGROVE:
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CHERRYGROVE_DEX:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_CIANWOOD:
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_ECRUTEAK:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_ICE_HEAL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_FUCHSIA:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_GOLDENROD_2F_1:
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_ICE_HEAL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_GOLDENROD_2F_2:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_REPEL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_POKE_DOLL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_GOLDENROD_3F:
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_SPECIAL
+	.2byte ITEM_X_DEFEND
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_GUARD_SPEC
+	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_GOLDENROD_4F:
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_IRON
+	.2byte ITEM_CARBOS
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_HP_UP
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_GOLDENROD_5F_1:
+
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_GOLDENROD_5F_2:
+
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_GOLDENROD_5F_3:
+
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_GOLDENROD_5F_4:
+
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_INDIGO_PLATEAU:
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_RESTORE
+	.2byte ITEM_REVIVE
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_LAVENDER:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_MAHOGANY_1:
+	.2byte ITEM_TINYMUSHROOM
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_MAHOGANY_2:
+	.2byte ITEM_RAGECANDYBAR
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_MT_MOON:
+	.2byte ITEM_POKE_DOLL
+	.2byte ITEM_FRESH_WATER
+	.2byte ITEM_SODA_POP
+	.2byte ITEM_LEMONADE
+	.2byte ITEM_REPEL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_OLIVINE:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_ICE_HEAL
+	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_PEWTER:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_SAFFRON:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFEND
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_UNDERGROUND:
+	.2byte ITEM_ENERGYPOWDER
+	.2byte ITEM_ENERGY_ROOT
+	.2byte ITEM_HEAL_POWDER
+	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_VERMILION:
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_REVIVE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_VIOLET:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_X_DEFEND
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_NONE
+
+	.align 2
+Johto_Mart_VIRIDIAN:
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_NONE
+
 Johto_Std_CoinVendor_IntroScript:
 	message Johto_Std_CoinVendor_IntroText
 	waitmessage
-	@ TODO unsupported: .loop 
+
+Johto_Std_CoinVendor_IntroScript_loop:
+	@ TODO unsupported: special DisplayMoneyAndCoinBalance
 	goto Johto_EventScript_Unimplemented
 
 Johto_Std_CoinVendor_IntroText:
@@ -80,6 +415,62 @@ Johto_Std_CoinVendor_NoCoinCaseText:
 Johto_Std_CoinVendor_WelcomeText:
 	.string "Welcome to the\n"
 	.string "GAME CORNER.$"
+
+Johto_Std_DayToTextScript_FridayText:
+	.string "FRIDAY$"
+
+Johto_Std_DayToTextScript_Friday_Sub:
+	bufferstring STR_VAR_1, Johto_Std_DayToTextScript_FridayText
+	return
+
+Johto_Std_DayToTextScript_MondayText:
+	.string "MONDAY$"
+
+Johto_Std_DayToTextScript_Monday_Sub:
+	bufferstring STR_VAR_1, Johto_Std_DayToTextScript_MondayText
+	return
+
+Johto_Std_DayToTextScript_SaturdayText:
+	.string "SATURDAY$"
+
+Johto_Std_DayToTextScript_Saturday_Sub:
+	bufferstring STR_VAR_1, Johto_Std_DayToTextScript_SaturdayText
+	return
+
+Johto_Std_DayToTextScript_Sub:
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 1, Johto_Std_DayToTextScript_Monday_Sub
+	goto_if_eq VAR_RESULT, 2, Johto_Std_DayToTextScript_Tuesday_Sub
+	goto_if_eq VAR_RESULT, 3, Johto_Std_DayToTextScript_Wednesday_Sub
+	goto_if_eq VAR_RESULT, 4, Johto_Std_DayToTextScript_Thursday_Sub
+	goto_if_eq VAR_RESULT, 5, Johto_Std_DayToTextScript_Friday_Sub
+	goto_if_eq VAR_RESULT, 6, Johto_Std_DayToTextScript_Saturday_Sub
+	bufferstring STR_VAR_1, Johto_Std_DayToTextScript_SundayText
+	return
+
+Johto_Std_DayToTextScript_SundayText:
+	.string "SUNDAY$"
+
+Johto_Std_DayToTextScript_ThursdayText:
+	.string "THURSDAY$"
+
+Johto_Std_DayToTextScript_Thursday_Sub:
+	bufferstring STR_VAR_1, Johto_Std_DayToTextScript_ThursdayText
+	return
+
+Johto_Std_DayToTextScript_TuesdayText:
+	.string "TUESDAY$"
+
+Johto_Std_DayToTextScript_Tuesday_Sub:
+	bufferstring STR_VAR_1, Johto_Std_DayToTextScript_TuesdayText
+	return
+
+Johto_Std_DayToTextScript_WednesdayText:
+	.string "WEDNESDAY$"
+
+Johto_Std_DayToTextScript_Wednesday_Sub:
+	bufferstring STR_VAR_1, Johto_Std_DayToTextScript_WednesdayText
+	return
 
 Johto_Std_DifficultBookshelfScript:
 	message Johto_Std_DifficultBookshelfText
@@ -277,6 +668,32 @@ Johto_Std_MartSignText:
 	.string "POKéMON Needs"
 	.string "\pPOKéMON MART$"
 
+Johto_Std_NurseAskHealText:
+	.string "We can heal your\n"
+	.string "POKéMON to perfect\l"
+	.string "health."
+	.string "\pShall we heal your\n"
+	.string "POKéMON?$"
+
+Johto_Std_NurseDayText:
+	.string "Hello!\n"
+	.string "Welcome to our\l"
+	.string "POKéMON CENTER.$"
+
+Johto_Std_NurseGoodbyeText:
+	.string "We hope to see you\n"
+	.string "again.$"
+
+Johto_Std_NurseReturnPokemonText:
+	.string "Thank you for\n"
+	.string "waiting."
+	.string "\pYour POKéMON are\n"
+	.string "fully healed.$"
+
+Johto_Std_NurseTakePokemonText:
+	.string "OK, may I see your\n"
+	.string "POKéMON?$"
+
 Johto_Std_PictureBookshelfScript:
 	message Johto_Std_PictureBookshelfText
 	waitmessage
@@ -291,10 +708,31 @@ Johto_Std_PictureBookshelfText:
 	.string "books!$"
 
 Johto_Std_PokecenterNurseScript:
-	setvar VAR_0x8004, 1
-	special JohtoCheckTime
-	@ TODO unsupported: iftrue .morn
-	goto Johto_EventScript_Unimplemented
+	message Johto_Std_NurseDayText
+	waitmessage
+	waitbuttonpress
+	message Johto_Std_NurseAskHealText
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, Johto_Std_PokecenterNurseScript_done
+	message Johto_Std_NurseTakePokemonText
+	waitmessage
+	delay 20
+	special HealPlayerParty
+	playbgm MUS_HEAL, FALSE
+	delay 60
+	fadedefaultbgm
+	message Johto_Std_NurseReturnPokemonText
+	waitmessage
+	delay 20
+
+Johto_Std_PokecenterNurseScript_done:
+	message Johto_Std_NurseGoodbyeText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Johto_Std_PokecenterSignScript:
 	message Johto_Std_PokecenterSignText

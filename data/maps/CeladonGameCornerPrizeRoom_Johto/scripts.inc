@@ -60,7 +60,11 @@ CeladonGameCornerPrizeRoom_Johto_CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbuttonpress
 	checkitem ITEM_COIN_CASE, 1
 	goto_if_eq VAR_RESULT, 0, CeladonGameCornerPrizeRoom_Johto_CeladonPrizeRoom_NoCoinCase
-	@ TODO unsupported: .loop 
+
+CeladonGameCornerPrizeRoom_Johto_CeladonGameCornerPrizeRoomPokemonVendor_loop:
+	message CeladonGameCornerPrizeRoom_Johto_CeladonPrizeRoom_AskWhichPrizeText
+	waitmessage
+	@ TODO unsupported: special DisplayCoinCaseBalance
 	goto Johto_EventScript_Unimplemented
 
 CeladonGameCornerPrizeRoom_Johto_CeladonGameCornerPrizeRoomGentlemanText:

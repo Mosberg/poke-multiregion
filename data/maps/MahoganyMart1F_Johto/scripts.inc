@@ -26,8 +26,10 @@ MahoganyMart1F_Johto_MahoganyMart1FLanceUncoversStaircaseScript_Entry::
 MahoganyMart1F_Johto_MahoganyMart1FPharmacistScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_DECIDED_TO_HELP_LANCE, MahoganyMart1F_Johto_MahoganyMart1FPharmacistScript_LanceEntered
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_MAHOGANY_1
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_MAHOGANY_1
+	closemessage
+	releaseall
+	end
 
 MahoganyMart1F_Johto_MahoganyMart1FPharmacistScript_LanceEntered:
 	message MahoganyMart1F_Johto_MahoganyMart1FPharmacistText_LanceEntered
@@ -93,8 +95,10 @@ MahoganyMart1F_Johto_MahoganyMart1FLanceUncoversStaircaseScript:
 
 MahoganyMart1F_Johto_MahoganyMart1FGrannyScript:
 	faceplayer
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_MAHOGANY_2
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_MAHOGANY_2
+	closemessage
+	releaseall
+	end
 
 MahoganyMart1F_Johto_MahoganyMart1FDragoniteTackleMovement:
 	lock_facing_direction

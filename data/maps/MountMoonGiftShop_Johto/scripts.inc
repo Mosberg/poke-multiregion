@@ -12,8 +12,10 @@ MountMoonGiftShop_Johto_MountMoonGiftShopLassScript_Entry::
 
 MountMoonGiftShop_Johto_MountMoonGiftShopClerkScript:
 	faceplayer
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_MT_MOON
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_MT_MOON
+	closemessage
+	releaseall
+	end
 
 MountMoonGiftShop_Johto_MountMoonGiftShopLassScript:
 	faceplayer

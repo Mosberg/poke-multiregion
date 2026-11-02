@@ -16,12 +16,16 @@ CherrygroveMart_Johto_CherrygroveMartYoungsterScript_Entry::
 
 CherrygroveMart_Johto_CherrygroveMartClerkScript:
 	goto_if_set FLAG_JOHTO_GAVE_MYSTERY_EGG_TO_ELM, CherrygroveMart_Johto_CherrygroveMartClerkScript_PokeBallsInStock
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_CHERRYGROVE
+	closemessage
+	releaseall
+	end
 
 CherrygroveMart_Johto_CherrygroveMartClerkScript_PokeBallsInStock:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_DEX
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_CHERRYGROVE_DEX
+	closemessage
+	releaseall
+	end
 
 CherrygroveMart_Johto_CherrygroveMartCooltrainerMScript:
 	faceplayer

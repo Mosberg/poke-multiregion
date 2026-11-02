@@ -69,8 +69,12 @@ FastShip1F_Johto_FastShip1FSailor1Script_Arrived:
 	closemessage
 	call FastShip1F_Johto_FastShip1FSailor1Script_LetThePlayerOut_Sub
 	playse SE_EXIT
-	@ TODO unsupported: special FadeOutToWhite
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_WHITE
+	waitse
+	setflag FLAG_JOHTO_VERMILION_PORT_SAILOR_AT_GANGWAY
+	setvar VAR_JOHTO_SCENE_VERMILION_PORT, 1
+	warp MAP_JOHTO_VERMILION_PORT, 7, 17
+	waitstate
 
 FastShip1F_Johto_FastShip1FSailor1Script__Olivine:
 	message FastShip1F_Johto_FastShip1FSailor1Text_InOlivine
@@ -79,8 +83,12 @@ FastShip1F_Johto_FastShip1FSailor1Script__Olivine:
 	closemessage
 	call FastShip1F_Johto_FastShip1FSailor1Script_LetThePlayerOut_Sub
 	playse SE_EXIT
-	@ TODO unsupported: special FadeOutToWhite
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_WHITE
+	waitse
+	setflag FLAG_JOHTO_OLIVINE_PORT_SAILOR_AT_GANGWAY
+	setvar VAR_JOHTO_SCENE_OLIVINE_PORT, 1
+	warp MAP_JOHTO_OLIVINE_PORT, 7, 23
+	waitstate
 
 FastShip1F_Johto_FastShip1FSailor2Script:
 	faceplayer

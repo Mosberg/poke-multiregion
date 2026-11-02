@@ -21,7 +21,7 @@ limit is, where it came from, and what was done about it. New limits are appende
 | `TRAINER_PARTNER(n)` ids | `MAX_TRAINERS_COUNT_EMERALD` (864) + n | Kanto/Johto trainer ids (865+) overlap the partner id range. Harmless today because partner ids are only used for the in-game partner slot; do not use Kanto/Johto trainers as partners. |
 | Game compile mode | built as Emerald (`IS_FRLG` = 0) | Kanto behaviour comes from region-aware `IS_FRLG_CTX` shims, not compile-time gates. |
 | Region ids | only `REGION_HOENN` / `REGION_KANTO` exist | Johto maps are tagged `REGION_HOENN`: Hoenn badge/HM/obedience rules apply in Johto. |
-| Time of day | `RtcCalcLocalTime` | Needs an RTC. Without one, Crystal MORN/DAY/NITE checks follow whatever time the emulator/cart reports. |
+| Time of day / weekday | `RtcCalcLocalTime`, `GetDayOfWeek` | Needs an RTC. Without one, Crystal MORN/DAY/NITE checks follow whatever time the emulator/cart reports. |
 
 ## Save-data limits
 

@@ -32,8 +32,16 @@ VermilionGym_Johto_VermilionGymSurgeScript:
 	setflag FLAG_JOHTO_BEAT_JUGGLER_HORTON
 	message VermilionGym_Johto_ReceivedThunderBadgeText
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_THUNDERBADGE
+	message VermilionGym_Johto_LtSurgeThunderBadgeText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 VermilionGym_Johto_VermilionGymSurgeScript_FightDone:
 	message VermilionGym_Johto_LtSurgeFightDoneText
@@ -148,6 +156,15 @@ VermilionGym_Johto_LtSurgeWinLossText:
 VermilionGym_Johto_ReceivedThunderBadgeText:
 	.string "{PLAYER} received\n"
 	.string "THUNDERBADGE.$"
+
+VermilionGym_Johto_LtSurgeThunderBadgeText:
+	.string "SURGE: THUNDER-\n"
+	.string "BADGE increases\l"
+	.string "POKéMON's speed. "
+	.string "\pConsider it proof\n"
+	.string "that you defeated"
+	.string "\pme. You wear it\n"
+	.string "proudly, hear?$"
 
 VermilionGym_Johto_LtSurgeFightDoneText:
 	.string "SURGE: Hey, kid!\n"

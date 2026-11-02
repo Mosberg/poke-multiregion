@@ -15,8 +15,10 @@ PewterMart_Johto_PewterMartSuperNerdScript_Entry::
 
 
 PewterMart_Johto_PewterMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_PEWTER
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_PEWTER
+	closemessage
+	releaseall
+	end
 
 PewterMart_Johto_PewterMartYoungsterScript:
 	faceplayer

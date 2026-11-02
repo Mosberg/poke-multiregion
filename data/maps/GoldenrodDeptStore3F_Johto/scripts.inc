@@ -24,8 +24,10 @@ GoldenrodDeptStore3F_Johto_GoldenrodDeptStore3FElevatorButton_Entry::
 
 GoldenrodDeptStore3F_Johto_GoldenrodDeptStore3FClerkScript:
 	faceplayer
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_GOLDENROD_3F
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_GOLDENROD_3F
+	closemessage
+	releaseall
+	end
 
 GoldenrodDeptStore3F_Johto_GoldenrodDeptStore3FSuperNerdScript:
 	faceplayer

@@ -15,8 +15,10 @@ LavenderMart_Johto_LavenderMartRockerScript_Entry::
 
 
 LavenderMart_Johto_LavenderMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_LAVENDER
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_LAVENDER
+	closemessage
+	releaseall
+	end
 
 LavenderMart_Johto_LavenderMartPokefanMScript:
 	faceplayer

@@ -85,8 +85,10 @@ CeruleanGym_Johto_CeruleanGymMistyScript:
 	setflag FLAG_JOHTO_BEAT_SWIMMERM_PARKER
 	message CeruleanGym_Johto_ReceivedCascadeBadgeText
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_CASCADEBADGE
 
 CeruleanGym_Johto_CeruleanGymMistyScript_FightDone:
 	message CeruleanGym_Johto_MistyFightDoneText

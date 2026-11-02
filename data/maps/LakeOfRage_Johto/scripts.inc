@@ -207,7 +207,19 @@ LakeOfRage_Johto_TrainerCooltrainerfLois_Script:
 LakeOfRage_Johto_WesleyScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_BLACKBELT_FROM_WESLEY, LakeOfRage_Johto_WesleyWednesdayScript
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_ne VAR_RESULT, 3, LakeOfRage_Johto_WesleyNotWednesdayScript
+	goto_if_set FLAG_JOHTO_MET_WESLEY_OF_WEDNESDAY, LakeOfRage_Johto_WesleyScript_MetWesley
+	message LakeOfRage_Johto_MeetWesleyText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_MET_WESLEY_OF_WEDNESDAY
+
+LakeOfRage_Johto_WesleyScript_MetWesley:
+	message LakeOfRage_Johto_WesleyGivesGiftText
+	waitmessage
+	waitbuttonpress
+	@ TODO unsupported: verbosegiveitem BLACKBELT_I
 	goto Johto_EventScript_Unimplemented
 
 LakeOfRage_Johto_WesleyWednesdayScript:
@@ -220,12 +232,26 @@ LakeOfRage_Johto_WesleyDoneScript:
 	releaseall
 	end
 
+LakeOfRage_Johto_WesleyNotWednesdayScript:
+	message LakeOfRage_Johto_WesleyNotWednesdayText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 LakeOfRage_Johto_LakeOfRageFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_LAKE_OF_RAGE
 	return
 
 LakeOfRage_Johto_LakeOfRageWesleyCallback_Cb:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 3, LakeOfRage_Johto_LakeOfRageWesleyCallback_WesleyAppears_Cb
+	setflag FLAG_JOHTO_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
+	return
+
+LakeOfRage_Johto_LakeOfRageWesleyCallback_WesleyAppears_Cb:
+	clearflag FLAG_JOHTO_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
 	return
 
 LakeOfRage_Johto_LakeOfRageLanceForcedToEvolveText:
@@ -374,6 +400,19 @@ LakeOfRage_Johto_CooltrainerfLoisAfterBattleText:
 	.string "it, I've seen a\l"
 	.string "pink BUTTERFREE.$"
 
+LakeOfRage_Johto_MeetWesleyText:
+	.string "WESLEY: Well, how\n"
+	.string "do you do?"
+	.string "\pSeeing as how it's\n"
+	.string "Wednesday today,"
+	.string "\pI'm WESLEY of\n"
+	.string "Wednesday.$"
+
+LakeOfRage_Johto_WesleyGivesGiftText:
+	.string "Pleased to meet\n"
+	.string "you. Please take a\l"
+	.string "souvenir.$"
+
 LakeOfRage_Johto_WesleyWednesdayText:
 	.string "WESLEY: Since you\n"
 	.string "found me, you must"
@@ -381,6 +420,11 @@ LakeOfRage_Johto_WesleyWednesdayText:
 	.string "ers and sisters."
 	.string "\pOr did you just\n"
 	.string "get lucky?$"
+
+LakeOfRage_Johto_WesleyNotWednesdayText:
+	.string "WESLEY: Today's\n"
+	.string "not Wednesday.\l"
+	.string "That's too bad.$"
 
 LakeOfRage_Johto_LakeOfRageSignText:
 	.string "LAKE OF RAGE,\n"

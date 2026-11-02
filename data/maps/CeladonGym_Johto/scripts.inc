@@ -25,8 +25,10 @@ CeladonGym_Johto_CeladonGymErikaScript:
 	setflag FLAG_JOHTO_BEAT_TWINS_JO_AND_ZOE
 	message CeladonGym_Johto_PlayerReceivedRainbowBadgeText
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_RAINBOWBADGE
 
 CeladonGym_Johto_CeladonGymErikaScript_FightDone:
 	goto_if_set FLAG_JOHTO_GOT_TM19_GIGA_DRAIN, CeladonGym_Johto_CeladonGymErikaScript_GotGigaDrain

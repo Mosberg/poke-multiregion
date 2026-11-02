@@ -26,8 +26,16 @@ PewterGym_Johto_PewterGymBrockScript:
 	setflag FLAG_JOHTO_BEAT_CAMPER_JERRY
 	message PewterGym_Johto_ReceivedBoulderBadgeText
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_BOULDERBADGE
+	message PewterGym_Johto_BrockBoulderBadgeText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 PewterGym_Johto_PewterGymBrockScript_FightDone:
 	message PewterGym_Johto_BrockFightDoneText
@@ -108,6 +116,17 @@ PewterGym_Johto_BrockWinLossText:
 PewterGym_Johto_ReceivedBoulderBadgeText:
 	.string "{PLAYER} received\n"
 	.string "BOULDERBADGE.$"
+
+PewterGym_Johto_BrockBoulderBadgeText:
+	.string "BROCK: {PLAYER},\n"
+	.string "thanks. I enjoyed"
+	.string "\pbattling you, even\n"
+	.string "though I am a bit\l"
+	.string "upset."
+	.string "\pThat BOULDERBADGE\n"
+	.string "will make your"
+	.string "\pPOKéMON even more\n"
+	.string "powerful.$"
 
 PewterGym_Johto_BrockFightDoneText:
 	.string "BROCK: The world\n"

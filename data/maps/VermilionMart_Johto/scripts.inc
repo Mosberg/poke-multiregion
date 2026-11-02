@@ -15,8 +15,10 @@ VermilionMart_Johto_VermilionMartBeautyScript_Entry::
 
 
 VermilionMart_Johto_VermilionMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_VERMILION
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_VERMILION
+	closemessage
+	releaseall
+	end
 
 VermilionMart_Johto_VermilionMartSuperNerdScript:
 	faceplayer

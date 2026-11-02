@@ -29,8 +29,16 @@ SaffronGym_Johto_SaffronGymSabrinaScript:
 	setflag FLAG_JOHTO_BEAT_PSYCHIC_JARED
 	message SaffronGym_Johto_ReceivedMarshBadgeText
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_MARSHBADGE
+	message SaffronGym_Johto_SabrinaMarshBadgeText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 SaffronGym_Johto_SaffronGymSabrinaScript_FightDone:
 	message SaffronGym_Johto_SabrinaFightDoneText
@@ -161,6 +169,20 @@ SaffronGym_Johto_SabrinaWinLossText:
 SaffronGym_Johto_ReceivedMarshBadgeText:
 	.string "{PLAYER} received\n"
 	.string "MARSHBADGE.$"
+
+SaffronGym_Johto_SabrinaMarshBadgeText:
+	.string "SABRINA: MARSH-\n"
+	.string "BADGE draws out"
+	.string "\pyour subliminal\n"
+	.string "powers…"
+	.string "\pAlthough I failed\n"
+	.string "to accurately pre-\l"
+	.string "dict your power,\l"
+	.string "this much I know\l"
+	.string "to be true."
+	.string "\pYou will become a\n"
+	.string "celebrated and\l"
+	.string "beloved CHAMPION!$"
 
 SaffronGym_Johto_SabrinaFightDoneText:
 	.string "SABRINA: Your love\n"

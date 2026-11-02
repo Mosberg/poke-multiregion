@@ -28,13 +28,17 @@ CeladonDeptStore2F_Johto_CeladonDeptStore2FElevatorButton_Entry::
 
 CeladonDeptStore2F_Johto_CeladonDeptStore2FClerk1Script:
 	faceplayer
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_CELADON_2F_1
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_CELADON_2F_1
+	closemessage
+	releaseall
+	end
 
 CeladonDeptStore2F_Johto_CeladonDeptStore2FClerk2Script:
 	faceplayer
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_CELADON_2F_2
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_CELADON_2F_2
+	closemessage
+	releaseall
+	end
 
 CeladonDeptStore2F_Johto_CeladonDeptStore2FPokefanMScript:
 	faceplayer

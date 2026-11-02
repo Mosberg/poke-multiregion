@@ -108,8 +108,27 @@ CherrygroveCity_Johto_CherrygroveCityGuideGent_Yes:
 	message CherrygroveCity_Johto_GuideGentGiftText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: getstring STRING_BUFFER_4, .mapcardname
-	goto Johto_EventScript_Unimplemented
+	bufferstring STR_VAR_2, CherrygroveCity_Johto_CherrygroveCityGuideGent_mapcardname
+	call CherrygroveCity_Johto_CherrygroveCityGuideGent_JumpstdReceiveItem_Sub
+	setflag FLAG_JOHTO_ENGINE_MAP_CARD
+	message CherrygroveCity_Johto_GotMapCardText
+	waitmessage
+	waitbuttonpress
+	message CherrygroveCity_Johto_GuideGentPokegearText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	fadedefaultbgm
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Up
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, CherrygroveCity_Johto_GuideGentMovement6
+	waitmovement 1
+	playse SE_DOOR
+	removeobject 1
+	clearflag FLAG_JOHTO_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
+	waitse
+	releaseall
+	end
 
 CherrygroveCity_Johto_CherrygroveCityGuideGent_No:
 	message CherrygroveCity_Johto_GuideGentNoText
@@ -142,15 +161,18 @@ CherrygroveCity_Johto_CherrygroveRivalSceneNorth:
 	closemessage
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Totodile
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Chikorita
-	@ TODO unsupported: setlasttalked CHERRYGROVECITY_RIVAL
+	setvar VAR_LAST_TALKED, 2
+	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Totodile:
-	@ TODO unsupported: setlasttalked CHERRYGROVECITY_RIVAL
+	setvar VAR_LAST_TALKED, 2
+	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Chikorita:
-	@ TODO unsupported: setlasttalked CHERRYGROVECITY_RIVAL
+	setvar VAR_LAST_TALKED, 2
+	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveTeacherScript:
@@ -231,9 +253,15 @@ CherrygroveCity_Johto_CherrygroveCityPokecenterSign:
 CherrygroveCity_Johto_CherrygroveCityMartSign:
 	goto Johto_Std_MartSignScript
 
+CherrygroveCity_Johto_CherrygroveCityGuideGent_JumpstdReceiveItem_Sub:
+	goto Johto_Std_ReceiveItemScript_Sub
+
 CherrygroveCity_Johto_CherrygroveCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_CHERRYGROVE
 	return
+
+CherrygroveCity_Johto_CherrygroveCityGuideGent_mapcardname:
+	.string "MAP CARD$"
 
 CherrygroveCity_Johto_GuideGentMovement1:
 	walk_left
@@ -299,6 +327,11 @@ CherrygroveCity_Johto_GuideGentMovement5:
 	face_up
 	step_end
 
+CherrygroveCity_Johto_GuideGentMovement6:
+	walk_up
+	walk_up
+	step_end
+
 CherrygroveCity_Johto_CherrygroveCity_RivalWalksToYou:
 	walk_left
 	walk_left
@@ -362,6 +395,17 @@ CherrygroveCity_Johto_GuideGentGiftText:
 	.string "company."
 	.string "\pLet me give you a\n"
 	.string "small gift.$"
+
+CherrygroveCity_Johto_GotMapCardText:
+	.string "{PLAYER}'s POKéGEAR\n"
+	.string "now has a MAP!$"
+
+CherrygroveCity_Johto_GuideGentPokegearText:
+	.string "POKéGEAR becomes\n"
+	.string "more useful as you\l"
+	.string "add CARDS."
+	.string "\pI wish you luck on\n"
+	.string "your journey!$"
 
 CherrygroveCity_Johto_GuideGentNoText:
 	.string "Oh… It's something\n"

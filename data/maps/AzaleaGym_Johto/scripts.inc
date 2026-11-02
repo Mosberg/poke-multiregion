@@ -25,7 +25,11 @@ AzaleaGym_Johto_AzaleaGymBugsyScript:
 	setflag FLAG_JOHTO_BEAT_BUGSY
 	message AzaleaGym_Johto_Text_ReceivedHiveBadge
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_HIVEBADGE
+	@ TODO unsupported: readvar VAR_BADGES
 	goto Johto_EventScript_Unimplemented
 
 AzaleaGym_Johto_AzaleaGymBugsyScript_FightDone:

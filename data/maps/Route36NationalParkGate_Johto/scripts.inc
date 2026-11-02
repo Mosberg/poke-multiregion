@@ -72,8 +72,35 @@ Route36NationalParkGate_Johto_Route36NationalParkGateLeavingContestEarlyScript:
 	goto Johto_EventScript_Unimplemented
 
 Route36NationalParkGate_Johto_Route36OfficerScriptContest:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 0, Route36NationalParkGate_Johto__ContestNotOn
+	goto_if_eq VAR_RESULT, 1, Route36NationalParkGate_Johto__ContestNotOn
+	goto_if_eq VAR_RESULT, 3, Route36NationalParkGate_Johto__ContestNotOn
+	goto_if_eq VAR_RESULT, 5, Route36NationalParkGate_Johto__ContestNotOn
+	faceplayer
+	goto_if_set FLAG_JOHTO_ENGINE_DAILY_BUG_CONTEST, Route36NationalParkGate_Johto_Route36Officer_ContestHasConcluded
+	call Route36NationalParkGate_Johto_Route36ParkGate_DayToText_Sub
+	message Route36NationalParkGate_Johto_Route36NationalParkGateOfficer1AskToParticipateText
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, Route36NationalParkGate_Johto_Route36OfficerScriptContest_DecidedNotToJoinContest
+	getpartysize
+	goto_if_gt VAR_RESULT, 1, Route36NationalParkGate_Johto_Route36OfficerScriptContest_LeaveMonsWithOfficer
+	@ TODO unsupported: special ContestDropOffMons
 	goto Johto_EventScript_Unimplemented
+
+Route36NationalParkGate_Johto_Route36OfficerScriptContest_LeaveMonsWithOfficer:
+	getpartysize
+	@ TODO unsupported: ifless PARTY_LENGTH, .ContinueLeavingMons
+	goto Johto_EventScript_Unimplemented
+
+Route36NationalParkGate_Johto_Route36OfficerScriptContest_DecidedNotToJoinContest:
+	message Route36NationalParkGate_Johto_Route36NationalParkGateOfficer1TakePartInFutureText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route36NationalParkGate_Johto_Route36Officer_ContestHasConcluded:
 	goto_if_set FLAG_JOHTO_CONTEST_OFFICER_HAS_SUN_STONE, Route36NationalParkGate_Johto_Route36Officer_ContestHasConcluded_Sunstone
@@ -133,6 +160,15 @@ Route36NationalParkGate_Johto_Route36Officer_ContestHasConcluded_Berry:
 
 Route36NationalParkGate_Johto_Route36Officer_ContestHasConcluded_BagFull:
 	message Route36NationalParkGate_Johto_Route36NationalParkGateOfficer1WellHoldPrizeText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route36NationalParkGate_Johto__ContestNotOn:
+	faceplayer
+	message Route36NationalParkGate_Johto_Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -329,6 +365,9 @@ Route36NationalParkGate_Johto_BugCatchingContestant10BScript_StillCompeting:
 	releaseall
 	end
 
+Route36NationalParkGate_Johto_Route36ParkGate_DayToText_Sub:
+	goto Johto_Std_DayToTextScript_Sub
+
 Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestRunningCallback_Cb:
 	goto_if_set FLAG_JOHTO_ENGINE_BUG_CONTEST_TIMER, Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestRunningCallback_BugContestIsRunning_Cb
 	setvar VAR_JOHTO_SCENE_ROUTE_36_NATIONAL_PARK_GATE, 0
@@ -340,11 +379,40 @@ Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestRunningCallba
 
 Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestAvailableCallback_Cb:
 	goto_if_set FLAG_JOHTO_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE, Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestAvailableCallback_Return_Cb
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 2, Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestAvailableCallback_SetContestOfficer_Cb
+	goto_if_eq VAR_RESULT, 4, Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestAvailableCallback_SetContestOfficer_Cb
+	goto_if_eq VAR_RESULT, 6, Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestAvailableCallback_SetContestOfficer_Cb
+	goto_if_set FLAG_JOHTO_ENGINE_BUG_CONTEST_TIMER, Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestAvailableCallback_SetContestOfficer_Cb
+	setflag FLAG_JOHTO_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
+	clearflag FLAG_JOHTO_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
 	return
+
+Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestAvailableCallback_SetContestOfficer_Cb:
+	clearflag FLAG_JOHTO_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
+	setflag FLAG_JOHTO_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
 
 Route36NationalParkGate_Johto_Route36NationalParkGateCheckIfContestAvailableCallback_Return_Cb:
 	return
+
+Route36NationalParkGate_Johto_Route36NationalParkGateOfficer1AskToParticipateText:
+	.string "Today's {STR_VAR_1}.\n"
+	.string "That means the"
+	.string "\pBug-Catching Con-\n"
+	.string "test is on today."
+	.string "\pThe rules are sim-\n"
+	.string "ple."
+	.string "\pUsing one of your\n"
+	.string "POKéMON, catch a"
+	.string "\pbug POKéMON to be\n"
+	.string "judged."
+	.string "\pWould you like to\n"
+	.string "give it a try?$"
+
+Route36NationalParkGate_Johto_Route36NationalParkGateOfficer1TakePartInFutureText:
+	.string "OK. We hope you'll\n"
+	.string "take part in the\l"
+	.string "future.$"
 
 Route36NationalParkGate_Johto_Route36NationalParkGateOfficer1ContestIsOverText:
 	.string "Today's Contest is\n"

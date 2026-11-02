@@ -21,8 +21,10 @@ CianwoodPharmacy_Johto_CianwoodPharmacist:
 	goto Johto_EventScript_Unimplemented
 
 CianwoodPharmacy_Johto_CianwoodPharmacist_Mart:
-	@ TODO unsupported: pokemart MARTTYPE_PHARMACY, MART_CIANWOOD
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_CIANWOOD
+	closemessage
+	releaseall
+	end
 
 CianwoodPharmacy_Johto_CianwoodPharmacyBookshelf:
 	goto Johto_Std_DifficultBookshelfScript

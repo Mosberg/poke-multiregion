@@ -122,16 +122,37 @@ AzaleaTown_Johto_AzaleaTownRivalBattleScript:
 	setflag FLAG_JOHTO_RIVAL_AZALEA_TOWN
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, AzaleaTown_Johto_AzaleaTownRivalBattleScript_Totodile
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, AzaleaTown_Johto_AzaleaTownRivalBattleScript_Chikorita
-	@ TODO unsupported: setlasttalked AZALEATOWN_RIVAL
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_LAST_TALKED, 10
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_2_TOTODILE, AzaleaTown_Johto_AzaleaTownRivalWinText
+	goto AzaleaTown_Johto_AzaleaTownRivalBattleScript_AfterBattle
 
 AzaleaTown_Johto_AzaleaTownRivalBattleScript_Totodile:
-	@ TODO unsupported: setlasttalked AZALEATOWN_RIVAL
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_LAST_TALKED, 10
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_2_CHIKORITA, AzaleaTown_Johto_AzaleaTownRivalWinText
+	goto AzaleaTown_Johto_AzaleaTownRivalBattleScript_AfterBattle
 
 AzaleaTown_Johto_AzaleaTownRivalBattleScript_Chikorita:
-	@ TODO unsupported: setlasttalked AZALEATOWN_RIVAL
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_LAST_TALKED, 10
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_2_CYNDAQUIL, AzaleaTown_Johto_AzaleaTownRivalWinText
+	goto AzaleaTown_Johto_AzaleaTownRivalBattleScript_AfterBattle
+
+AzaleaTown_Johto_AzaleaTownRivalBattleScript_AfterBattle:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message AzaleaTown_Johto_AzaleaTownRivalAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 10, AzaleaTown_Johto_AzaleaTownRivalBattleExitMovement
+	waitmovement 10
+	playse SE_EXIT
+	removeobject 10
+	setvar VAR_JOHTO_SCENE_AZALEA_TOWN, 0
+	waitse
+	fadedefaultbgm
+	releaseall
+	end
 
 AzaleaTown_Johto_AzaleaTownRocket1Script:
 	faceplayer
@@ -310,6 +331,12 @@ AzaleaTown_Johto_AzaleaTownRivalBattleApproachMovement2:
 	face_down
 	step_end
 
+AzaleaTown_Johto_AzaleaTownRivalBattleExitMovement:
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 AzaleaTown_Johto_AzaleaTownPlayerLeavesKurtsHouseMovement:
 	walk_left
 	walk_left
@@ -337,6 +364,27 @@ AzaleaTown_Johto_AzaleaTownRivalWinText:
 	.string "only won because"
 	.string "\pmy POKéMON were\n"
 	.string "weak.$"
+
+AzaleaTown_Johto_AzaleaTownRivalAfterText:
+	.string "I hate the weak."
+	.string "\pPOKéMON, trainers.\n"
+	.string "It doesn't matter\l"
+	.string "who or what."
+	.string "\pI'm going to be\n"
+	.string "strong and wipe\l"
+	.string "out the weak."
+	.string "\pThat goes for TEAM\n"
+	.string "ROCKET too."
+	.string "\pThey act big and\n"
+	.string "tough in a group."
+	.string "\pBut get them\n"
+	.string "alone, and they're\l"
+	.string "weak."
+	.string "\pI hate them all."
+	.string "\pYou stay out of my\n"
+	.string "way. A weakling"
+	.string "\plike you is only a\n"
+	.string "distraction.$"
 
 AzaleaTown_Johto_AzaleaTownRocket1Text:
 	.string "It's unsafe to go\n"

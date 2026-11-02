@@ -54,8 +54,41 @@ SlowpokeWellB1F_Johto_TrainerGruntM1_Script:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: special FadeOutToBlack
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_BLACK
+	removeobject 1
+	removeobject 2
+	removeobject 3
+	removeobject 4
+	delay 15
+	fadescreen FADE_FROM_BLACK
+	removeobject 7
+	setobjectxyperm 7, 11, 6
+	clearflag FLAG_JOHTO_SLOWPOKE_WELL_KURT
+	addobject 7
+	applymovement 7, SlowpokeWellB1F_Johto_KurtSlowpokeWellVictoryMovementData
+	waitmovement 7
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	message SlowpokeWellB1F_Johto_KurtLeaveSlowpokeWellText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_CLEARED_SLOWPOKE_WELL
+	setvar VAR_JOHTO_SCENE_AZALEA_TOWN, 1
+	clearflag FLAG_JOHTO_ILEX_FOREST_APPRENTICE
+	clearflag FLAG_JOHTO_ILEX_FOREST_FARFETCHD
+	setflag FLAG_JOHTO_CHARCOAL_KILN_FARFETCH_D
+	setflag FLAG_JOHTO_CHARCOAL_KILN_APPRENTICE
+	setflag FLAG_JOHTO_SLOWPOKE_WELL_SLOWPOKES
+	setflag FLAG_JOHTO_SLOWPOKE_WELL_KURT
+	clearflag FLAG_JOHTO_AZALEA_TOWN_SLOWPOKES
+	clearflag FLAG_JOHTO_KURTS_HOUSE_SLOWPOKE
+	clearflag FLAG_JOHTO_KURTS_HOUSE_KURT_1
+	fadescreen FADE_TO_WHITE
+	special HealPlayerParty
+	delay 15
+	warp MAP_JOHTO_KURTS_HOUSE, 3, 3
+	waitstate
 
 SlowpokeWellB1F_Johto_TrainerGruntM2::
 	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_2, SlowpokeWellB1F_Johto_GruntM2SeenText, SlowpokeWellB1F_Johto_GruntM2BeatenText
@@ -121,6 +154,18 @@ SlowpokeWellB1F_Johto_SlowpokeWellB1FTaillessSlowpokeScript:
 SlowpokeWellB1F_Johto_SlowpokeWellB1FBoulder:
 	goto Johto_Std_StrengthBoulderScript
 
+SlowpokeWellB1F_Johto_KurtSlowpokeWellVictoryMovementData:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_left
+	walk_up
+	walk_up
+	face_left
+	step_end
+
 SlowpokeWellB1F_Johto_SlowpokeWellB1FKurtText:
 	.string "KURT: Hey there,\n"
 	.string "{PLAYER}!"
@@ -142,6 +187,15 @@ SlowpokeWellB1F_Johto_SlowpokeWellB1FKurtText:
 	.string "\p{PLAYER}, show them\n"
 	.string "how gutsy you are\l"
 	.string "in my place!$"
+
+SlowpokeWellB1F_Johto_KurtLeaveSlowpokeWellText:
+	.string "KURT: Way to go,\n"
+	.string "{PLAYER}!"
+	.string "\pTEAM ROCKET has\n"
+	.string "taken off."
+	.string "\pMy back's better\n"
+	.string "too. Let's get out\l"
+	.string "of here.$"
 
 SlowpokeWellB1F_Johto_GruntM29SeenText:
 	.string "Darn! I was stand-\n"

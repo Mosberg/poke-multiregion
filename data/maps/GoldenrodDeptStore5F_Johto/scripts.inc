@@ -41,13 +41,55 @@ GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FElevatorButton_Entry::
 
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript:
 	faceplayer
-	@ TODO unsupported: iftrue .headbutt
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_GOT_TM02_HEADBUTT, GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_headbutt
+	goto_if_set FLAG_JOHTO_GOT_TM08_ROCK_SMASH, GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_onlyrocksmash
+	goto GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_neither
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_headbutt:
+	goto_if_set FLAG_JOHTO_GOT_TM08_ROCK_SMASH, GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_both
+	goto GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_onlyheadbutt
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_neither:
+	pokemart Johto_Mart_GOLDENROD_5F_1
+	closemessage
+	releaseall
+	end
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_onlyheadbutt:
+	pokemart Johto_Mart_GOLDENROD_5F_2
+	closemessage
+	releaseall
+	end
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_onlyrocksmash:
+	pokemart Johto_Mart_GOLDENROD_5F_3
+	closemessage
+	releaseall
+	end
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FClerkScript_both:
+	pokemart Johto_Mart_GOLDENROD_5F_4
+	closemessage
+	releaseall
+	end
 
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript:
 	faceplayer
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_ne VAR_RESULT, 0, GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript_EventIsOver
+	goto_if_set FLAG_JOHTO_ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN, GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript_EventIsOver
+	@ TODO unsupported: special GetFirstPokemonHappiness
 	goto Johto_EventScript_Unimplemented
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript_EventIsOver:
+	message GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistThereAreTMsPerfectForMonText
+	waitmessage
+	waitbuttonpress
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript_Done:
+	closemessage
+	releaseall
+	end
 
 GoldenrodDeptStore5F_Johto_Carrie:
 	faceplayer
@@ -89,8 +131,20 @@ GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FElevatorButton:
 	goto Johto_Std_ElevatorButtonScript
 
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_Cb:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 0, GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_yes_Cb
+	setflag FLAG_JOHTO_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY
 	return
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_yes_Cb:
+	clearflag FLAG_JOHTO_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY
+	return
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistThereAreTMsPerfectForMonText:
+	.string "There are sure to\n"
+	.string "be TMs that are"
+	.string "\pjust perfect for\n"
+	.string "your POKéMON.$"
 
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FLassText:
 	.string "On Sundays, a lady\n"

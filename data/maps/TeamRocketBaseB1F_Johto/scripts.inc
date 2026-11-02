@@ -622,7 +622,9 @@ TeamRocketBaseB1F_Johto_TrainerCameraGrunt1_Sub:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: setlasttalked TEAMROCKETBASEB1F_ROCKET1
+	setvar VAR_LAST_TALKED, 1
+	trainerbattle_no_intro TRAINER_JOHTO_GRUNTM_GRUNTM_20, TeamRocketBaseB1F_Johto_CameraGrunt1BeatenText
+	removeobject 1
 	return
 
 TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub:
@@ -630,7 +632,9 @@ TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: setlasttalked TEAMROCKETBASEB1F_ROCKET1
+	setvar VAR_LAST_TALKED, 1
+	trainerbattle_no_intro TRAINER_JOHTO_GRUNTM_GRUNTM_21, TeamRocketBaseB1F_Johto_CameraGrunt2BeatenText
+	removeobject 1
 	return
 
 TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub:
@@ -638,15 +642,27 @@ TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub:
 	return
 
 TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub:
-	@ TODO unsupported: special FadeOutToWhite
+	fadescreen FADE_TO_WHITE
+	playmoncry SPECIES_VOLTORB, CRY_MODE_NORMAL
+	waitmoncry
+	fadescreen FADE_FROM_WHITE
+	@ TODO unsupported: setlasttalked -1
 	return
 
 TeamRocketBaseB1F_Johto_GeodudeExplodingTrap_Sub:
-	@ TODO unsupported: special FadeOutToWhite
+	fadescreen FADE_TO_WHITE
+	playmoncry SPECIES_GEODUDE, CRY_MODE_NORMAL
+	waitmoncry
+	fadescreen FADE_FROM_WHITE
+	@ TODO unsupported: setlasttalked -1
 	return
 
 TeamRocketBaseB1F_Johto_KoffingExplodingTrap_Sub:
-	@ TODO unsupported: special FadeOutToWhite
+	fadescreen FADE_TO_WHITE
+	playmoncry SPECIES_KOFFING, CRY_MODE_NORMAL
+	waitmoncry
+	fadescreen FADE_FROM_WHITE
+	@ TODO unsupported: setlasttalked -1
 	return
 
 TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHideSecurityGruntCallback_Cb:

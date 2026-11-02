@@ -25,8 +25,16 @@ ViridianGym_Johto_ViridianGymBlueScript:
 	setflag FLAG_JOHTO_BEAT_BLUE
 	message ViridianGym_Johto_Text_ReceivedEarthBadge
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_EARTHBADGE
+	message ViridianGym_Johto_LeaderBlueAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 ViridianGym_Johto_ViridianGymBlueScript_FightDone:
 	message ViridianGym_Johto_LeaderBlueEpilogueText
@@ -97,6 +105,17 @@ ViridianGym_Johto_LeaderBlueWinText:
 ViridianGym_Johto_Text_ReceivedEarthBadge:
 	.string "{PLAYER} received\n"
 	.string "EARTHBADGE.$"
+
+ViridianGym_Johto_LeaderBlueAfterText:
+	.string "BLUE: …"
+	.string "\pAll right, I was\n"
+	.string "wrong. You're the"
+	.string "\preal deal. You are\n"
+	.string "a good trainer."
+	.string "\pBut I'm going to\n"
+	.string "beat you someday."
+	.string "\pDon't you forget\n"
+	.string "it!$"
 
 ViridianGym_Johto_LeaderBlueEpilogueText:
 	.string "BLUE: Listen, you."

@@ -20,3 +20,9 @@ void JohtoCheckTime(void)
         slot = 4;
     gSpecialVar_Result = (mask & slot) != 0;
 }
+
+// Crystal's VAR_WEEKDAY: 0 = Sunday ... 6 = Saturday.
+void JohtoGetWeekday(void)
+{
+    gSpecialVar_Result = GetDayOfWeek();
+}

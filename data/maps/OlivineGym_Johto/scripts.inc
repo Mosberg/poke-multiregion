@@ -25,7 +25,11 @@ OlivineGym_Johto_OlivineGymJasmineScript:
 	setflag FLAG_JOHTO_BEAT_JASMINE
 	message OlivineGym_Johto_Text_ReceivedMineralBadge
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_MINERALBADGE
+	@ TODO unsupported: readvar VAR_BADGES
 	goto Johto_EventScript_Unimplemented
 
 OlivineGym_Johto_OlivineGymJasmineScript_FightDone:

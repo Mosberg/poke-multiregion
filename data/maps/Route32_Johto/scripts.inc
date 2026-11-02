@@ -144,8 +144,21 @@ Route32_Johto__OfferToSellSlowpokeTail:
 	message Route32_Johto_Text_MillionDollarSlowpokeTail
 	waitmessage
 	yesnobox 20, 8
-	@ TODO unsupported: iffalse .refused
-	goto Johto_EventScript_Unimplemented
+	goto_if_eq VAR_RESULT, 0, Route32_Johto__OfferToSellSlowpokeTail_refused
+	message Route32_Johto_Text_ThoughtKidsWereLoaded
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route32_Johto__OfferToSellSlowpokeTail_refused:
+	message Route32_Johto_Text_RefusedToBuySlowpokeTail
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route32_Johto_TrainerCamperRoland::
 	trainerbattle_single TRAINER_JOHTO_CAMPER_ROLAND, Route32_Johto_CamperRolandSeenText, Route32_Johto_CamperRolandBeatenText
@@ -262,8 +275,27 @@ Route32_Johto_TrainerBirdKeeperPeter_Script:
 Route32_Johto_FriedaScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_POISON_BARB_FROM_FRIEDA, Route32_Johto_FriedaScript_Friday
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_ne VAR_RESULT, 5, Route32_Johto_FriedaScript_NotFriday
+	goto_if_set FLAG_JOHTO_MET_FRIEDA_OF_FRIDAY, Route32_Johto_FriedaScript_MetFrieda
+	message Route32_Johto_MeetFriedaText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_MET_FRIEDA_OF_FRIDAY
+
+Route32_Johto_FriedaScript_MetFrieda:
+	message Route32_Johto_FriedaGivesGiftText
+	waitmessage
+	waitbuttonpress
+	giveitem ITEM_POISON_BARB
+	goto_if_eq VAR_RESULT, 0, Route32_Johto_FriedaScript_Done
+	setflag FLAG_JOHTO_GOT_POISON_BARB_FROM_FRIEDA
+	message Route32_Johto_FriedaGaveGiftText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route32_Johto_FriedaScript_Friday:
 	message Route32_Johto_FriedaFridayText
@@ -271,6 +303,14 @@ Route32_Johto_FriedaScript_Friday:
 	waitbuttonpress
 
 Route32_Johto_FriedaScript_Done:
+	closemessage
+	releaseall
+	end
+
+Route32_Johto_FriedaScript_NotFriday:
+	message Route32_Johto_FriedaNotFridayText
+	waitmessage
+	waitbuttonpress
 	closemessage
 	releaseall
 	end
@@ -338,7 +378,13 @@ Route32_Johto_Route32CooltrainerMContinueScene_BagFull_Sub:
 	return
 
 Route32_Johto_Route32FriedaCallback_Cb:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 5, Route32_Johto_Route32FriedaCallback_FriedaAppears_Cb
+	setflag FLAG_JOHTO_ROUTE_32_FRIEDA_OF_FRIDAY
+	return
+
+Route32_Johto_Route32FriedaCallback_FriedaAppears_Cb:
+	clearflag FLAG_JOHTO_ROUTE_32_FRIEDA_OF_FRIDAY
 	return
 
 Route32_Johto_Movement_Route32CooltrainerMPushesYouBackToViolet:
@@ -410,6 +456,15 @@ Route32_Johto_Text_MillionDollarSlowpokeTail:
 	.string "\pFor you right now,\n"
 	.string "just ¥1,000,000!"
 	.string "\pYou'll want this!$"
+
+Route32_Johto_Text_ThoughtKidsWereLoaded:
+	.string "Tch! I thought\n"
+	.string "kids these days\l"
+	.string "were loaded…$"
+
+Route32_Johto_Text_RefusedToBuySlowpokeTail:
+	.string "You don't want it?\n"
+	.string "Then scram. Shoo!$"
 
 Route32_Johto_FisherJustinSeenText:
 	.string "Whoa!"
@@ -534,6 +589,27 @@ Route32_Johto_Text_RoarOutro:
 	.string "\pEVEN POKéMON RUN\n"
 	.string "FROM A GOOD ROAR!$"
 
+Route32_Johto_MeetFriedaText:
+	.string "FRIEDA: Yahoo!\n"
+	.string "It's Friday!"
+	.string "\pI'm FRIEDA of\n"
+	.string "Friday!"
+	.string "\pNice to meet you!$"
+
+Route32_Johto_FriedaGivesGiftText:
+	.string "Here's a POISON\n"
+	.string "BARB for you!$"
+
+Route32_Johto_FriedaGaveGiftText:
+	.string "FRIEDA: Give it to\n"
+	.string "a POKéMON that has\l"
+	.string "poison-type moves."
+	.string "\pOh!"
+	.string "\pIt's wicked!"
+	.string "\pYou'll be shocked\n"
+	.string "how good it makes\l"
+	.string "poison moves!$"
+
 Route32_Johto_FriedaFridayText:
 	.string "FRIEDA: Hiya! What\n"
 	.string "day do you like?"
@@ -541,6 +617,12 @@ Route32_Johto_FriedaFridayText:
 	.string "doubt about it!"
 	.string "\pDon't you think\n"
 	.string "it's great too?$"
+
+Route32_Johto_FriedaNotFridayText:
+	.string "FRIEDA: Isn't it\n"
+	.string "Friday today?"
+	.string "\pIt's so boring\n"
+	.string "when it's not!$"
 
 Route32_Johto_Route32SignText:
 	.string "ROUTE 32"

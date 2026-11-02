@@ -15,8 +15,10 @@ BlackthornMart_Johto_BlackthornMartBlackBeltScript_Entry::
 
 
 BlackthornMart_Johto_BlackthornMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_BLACKTHORN
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_BLACKTHORN
+	closemessage
+	releaseall
+	end
 
 BlackthornMart_Johto_BlackthornMartCooltrainerMScript:
 	faceplayer

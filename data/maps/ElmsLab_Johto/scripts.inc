@@ -444,8 +444,16 @@ ElmsLab_Johto_ElmGiveMasterBallScript:
 	waitmessage
 	waitbuttonpress
 	giveitem ITEM_MASTER_BALL
-	@ TODO unsupported: iffalse .notdone
-	goto Johto_EventScript_Unimplemented
+	goto_if_eq VAR_RESULT, 0, ElmsLab_Johto_ElmGiveMasterBallScript_notdone
+	setflag FLAG_JOHTO_GOT_MASTER_BALL_FROM_ELM
+	message ElmsLab_Johto_ElmGiveMasterBallText2
+	waitmessage
+	waitbuttonpress
+
+ElmsLab_Johto_ElmGiveMasterBallScript_notdone:
+	closemessage
+	releaseall
+	end
 
 ElmsLab_Johto_ElmGiveTicketScript:
 	message ElmsLab_Johto_ElmGiveTicketText1
@@ -1007,6 +1015,21 @@ ElmsLab_Johto_ElmGiveMasterBallText1:
 	.string "\pTake this as a\n"
 	.string "token of my\l"
 	.string "appreciation.$"
+
+ElmsLab_Johto_ElmGiveMasterBallText2:
+	.string "The MASTER BALL is\n"
+	.string "the best!"
+	.string "\pIt's the ultimate\n"
+	.string "BALL! It'll catch"
+	.string "\pany POKéMON with-\n"
+	.string "out fail."
+	.string "\pIt's given only to\n"
+	.string "recognized POKéMON\l"
+	.string "researchers."
+	.string "\pI think you can\n"
+	.string "make much better"
+	.string "\puse of it than I\n"
+	.string "can, {PLAYER}!$"
 
 ElmsLab_Johto_ElmGiveTicketText1:
 	.string "ELM: {PLAYER}!\n"

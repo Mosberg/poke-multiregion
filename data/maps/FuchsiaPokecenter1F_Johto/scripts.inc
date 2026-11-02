@@ -48,8 +48,15 @@ FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FJanineImpersonatorScript:
 	applymovement 4, FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FJanineImpersonatorSpinMovement
 	waitmovement 4
 	faceplayer
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
+	message FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FJanineImpersonatorText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 4, FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FJanineImpersonatorSpinMovement
+	waitmovement 4
+	faceplayer
+	releaseall
+	end
 
 FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FJanineImpersonatorSpinMovement:
 	face_down
@@ -84,3 +91,7 @@ FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FCooltrainerFText:
 FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FJanineImpersonatorText1:
 	.string "I'm JANINE! Hocus-\n"
 	.string "pocus… Poof!$"
+
+FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FJanineImpersonatorText2:
+	.string "See? I look just\n"
+	.string "like her now!$"

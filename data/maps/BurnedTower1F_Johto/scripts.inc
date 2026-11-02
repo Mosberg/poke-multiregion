@@ -60,7 +60,33 @@ BurnedTower1F_Johto_BurnedTowerRivalBattleScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: iftrue .totodile
+	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, BurnedTower1F_Johto_BurnedTowerRivalBattleScript_totodile
+	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, BurnedTower1F_Johto_BurnedTowerRivalBattleScript_chikorita
+	setvar VAR_LAST_TALKED, 3
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_3_TOTODILE, BurnedTower1F_Johto_BurnedTowerRival_WinText
+	goto BurnedTower1F_Johto_BurnedTowerRivalBattleScript_returnfrombattle
+
+BurnedTower1F_Johto_BurnedTowerRivalBattleScript_totodile:
+	setvar VAR_LAST_TALKED, 3
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_3_CHIKORITA, BurnedTower1F_Johto_BurnedTowerRival_WinText
+	goto BurnedTower1F_Johto_BurnedTowerRivalBattleScript_returnfrombattle
+
+BurnedTower1F_Johto_BurnedTowerRivalBattleScript_chikorita:
+	setvar VAR_LAST_TALKED, 3
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_3_CYNDAQUIL, BurnedTower1F_Johto_BurnedTowerRival_WinText
+	goto BurnedTower1F_Johto_BurnedTowerRivalBattleScript_returnfrombattle
+
+BurnedTower1F_Johto_BurnedTowerRivalBattleScript_returnfrombattle:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message BurnedTower1F_Johto_BurnedTowerRival_AfterText1
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setvar VAR_JOHTO_SCENE_BURNED_TOWER_1F, 2
+	setflag FLAG_JOHTO_RIVAL_BURNED_TOWER
+	fadeoutbgm 4
+	delay 15
+	@ TODO unsupported: earthquake 50
 	goto Johto_EventScript_Unimplemented
 
 BurnedTower1F_Johto_BurnedTower1FEusineScript:
@@ -115,6 +141,20 @@ BurnedTower1F_Johto_BurnedTowerRival_BeforeText:
 	.string "dump? No way!"
 	.string "\pIt's all your\n"
 	.string "fault!$"
+
+BurnedTower1F_Johto_BurnedTowerRival_WinText:
+	.string "…Humph!"
+	.string "\pThis is why I hate\n"
+	.string "battling wimps."
+	.string "\pThere's no\n"
+	.string "challenge in it.$"
+
+BurnedTower1F_Johto_BurnedTowerRival_AfterText1:
+	.string "…Aw, whatever."
+	.string "\pYou would never be\n"
+	.string "able to catch a"
+	.string "\plegendary POKéMON\n"
+	.string "anyway.$"
 
 BurnedTower1F_Johto_BurnedTower1FEusineIntroText:
 	.string "EUSINE: My name's\n"

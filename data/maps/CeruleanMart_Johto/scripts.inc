@@ -15,8 +15,10 @@ CeruleanMart_Johto_CeruleanMart_CooltrainerF_Entry::
 
 
 CeruleanMart_Johto_CeruleanMart_Clerk:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_CERULEAN
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_CERULEAN
+	closemessage
+	releaseall
+	end
 
 CeruleanMart_Johto_CeruleanMart_CooltrainerM:
 	faceplayer

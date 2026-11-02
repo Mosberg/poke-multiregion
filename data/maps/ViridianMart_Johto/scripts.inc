@@ -15,8 +15,10 @@ ViridianMart_Johto_ViridianMartCooltrainerMScript_Entry::
 
 
 ViridianMart_Johto_ViridianMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_VIRIDIAN
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_VIRIDIAN
+	closemessage
+	releaseall
+	end
 
 ViridianMart_Johto_ViridianMartLassScript:
 	faceplayer

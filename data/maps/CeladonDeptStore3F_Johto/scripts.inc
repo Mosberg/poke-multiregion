@@ -32,8 +32,10 @@ CeladonDeptStore3F_Johto_CeladonDeptStore3FElevatorButton_Entry::
 
 CeladonDeptStore3F_Johto_CeladonDeptStore3FClerkScript:
 	faceplayer
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_CELADON_3F
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_CELADON_3F
+	closemessage
+	releaseall
+	end
 
 CeladonDeptStore3F_Johto_CeladonDeptStore3FYoungsterScript:
 	faceplayer

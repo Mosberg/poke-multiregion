@@ -82,8 +82,8 @@ OlivineCity_Johto_OlivineCityRivalSceneTop:
 	setvar VAR_JOHTO_SCENE_OLIVINE_CITY, 1
 	removeobject 4
 	fadedefaultbgm
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
+	releaseall
+	end
 
 OlivineCity_Johto_OlivineCityRivalSceneBottom:
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
@@ -112,8 +112,8 @@ OlivineCity_Johto_OlivineCityRivalSceneBottom:
 	removeobject 4
 	setvar VAR_JOHTO_SCENE_OLIVINE_CITY, 1
 	fadedefaultbgm
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
+	releaseall
+	end
 
 OlivineCity_Johto_OlivineCitySailor1Script:
 	faceplayer

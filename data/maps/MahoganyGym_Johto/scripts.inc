@@ -25,7 +25,11 @@ MahoganyGym_Johto_MahoganyGymPryceScript:
 	setflag FLAG_JOHTO_BEAT_PRYCE
 	message MahoganyGym_Johto_Text_ReceivedGlacierBadge
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_GLACIERBADGE
+	@ TODO unsupported: readvar VAR_BADGES
 	goto Johto_EventScript_Unimplemented
 
 MahoganyGym_Johto_MahoganyGymPryceScript_FightDone:

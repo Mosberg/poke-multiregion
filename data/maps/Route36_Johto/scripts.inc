@@ -169,8 +169,27 @@ Route36_Johto_TrainerPsychicMark_Script:
 Route36_Johto_ArthurScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_HARD_STONE_FROM_ARTHUR, Route36_Johto_ArthurScript_AlreadyGotStone
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_ne VAR_RESULT, 4, Route36_Johto_ArthurNotThursdayScript
+	goto_if_set FLAG_JOHTO_MET_ARTHUR_OF_THURSDAY, Route36_Johto_ArthurScript_MetArthur
+	message Route36_Johto_MeetArthurText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_MET_ARTHUR_OF_THURSDAY
+
+Route36_Johto_ArthurScript_MetArthur:
+	message Route36_Johto_ArthurGivesGiftText
+	waitmessage
+	waitbuttonpress
+	giveitem ITEM_HARD_STONE
+	goto_if_eq VAR_RESULT, 0, Route36_Johto_ArthurScript_BagFull
+	setflag FLAG_JOHTO_GOT_HARD_STONE_FROM_ARTHUR
+	message Route36_Johto_ArthurGaveGiftText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route36_Johto_ArthurScript_AlreadyGotStone:
 	message Route36_Johto_ArthurThursdayText
@@ -178,6 +197,14 @@ Route36_Johto_ArthurScript_AlreadyGotStone:
 	waitbuttonpress
 
 Route36_Johto_ArthurScript_BagFull:
+	closemessage
+	releaseall
+	end
+
+Route36_Johto_ArthurNotThursdayScript:
+	message Route36_Johto_ArthurNotThursdayText
+	waitmessage
+	waitbuttonpress
 	closemessage
 	releaseall
 	end
@@ -219,7 +246,13 @@ Route36_Johto_Route36FruitTree:
 	goto Johto_EventScript_Unimplemented
 
 Route36_Johto_Route36ArthurCallback_Cb:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 4, Route36_Johto_Route36ArthurCallback_ArthurAppears_Cb
+	setflag FLAG_JOHTO_ROUTE_36_ARTHUR_OF_THURSDAY
+	return
+
+Route36_Johto_Route36ArthurCallback_ArthurAppears_Cb:
+	clearflag FLAG_JOHTO_ROUTE_36_ARTHUR_OF_THURSDAY
 	return
 
 Route36_Johto_FloriaMovement1:
@@ -339,11 +372,34 @@ Route36_Johto_SchoolboyAlan1BeatenText:
 	.string "Oops! Computation\n"
 	.string "error?$"
 
+Route36_Johto_MeetArthurText:
+	.string "ARTHUR: Who are\n"
+	.string "you?"
+	.string "\pI'm ARTHUR of\n"
+	.string "Thursday.$"
+
+Route36_Johto_ArthurGivesGiftText:
+	.string "Here. You can have\n"
+	.string "this.$"
+
+Route36_Johto_ArthurGaveGiftText:
+	.string "ARTHUR: A POKéMON\n"
+	.string "that uses rock-"
+	.string "\ptype moves should\n"
+	.string "hold on to that."
+	.string "\pIt pumps up rock-\n"
+	.string "type attacks.$"
+
 Route36_Johto_ArthurThursdayText:
 	.string "ARTHUR: I'm ARTHUR\n"
 	.string "of Thursday. I'm"
 	.string "\pthe second son out\n"
 	.string "of seven children.$"
+
+Route36_Johto_ArthurNotThursdayText:
+	.string "ARTHUR: Today's\n"
+	.string "not Thursday. How\l"
+	.string "disappointing.$"
 
 Route36_Johto_Route36SignText:
 	.string "ROUTE 36$"

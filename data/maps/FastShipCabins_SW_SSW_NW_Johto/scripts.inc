@@ -71,8 +71,44 @@ FastShipCabins_SW_SSW_NW_Johto_FastShipBed:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: special FadeOutToBlack
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_BLACK
+	special HealPlayerParty
+	playbgm MUS_HEAL, FALSE
+	delay 60
+	fadedefaultbgm
+	fadescreen FADE_FROM_BLACK
+	message FastShipCabins_SW_SSW_NW_Johto_FastShipBedText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	goto_if_set FLAG_JOHTO_FAST_SHIP_HAS_ARRIVED, FastShipCabins_SW_SSW_NW_Johto_FastShipBed_AlreadyArrived
+	goto_if_set FLAG_JOHTO_FAST_SHIP_FOUND_GIRL, FastShipCabins_SW_SSW_NW_Johto_FastShipBed_CanArrive
+	goto_if_set FLAG_JOHTO_FAST_SHIP_FIRST_TIME, FastShipCabins_SW_SSW_NW_Johto_FastShipBed_CanArrive
+
+FastShipCabins_SW_SSW_NW_Johto_FastShipBed_AlreadyArrived:
+	releaseall
+	end
+
+FastShipCabins_SW_SSW_NW_Johto_FastShipBed_CanArrive:
+	playse SE_PIN
+	delay 30
+	goto_if_set FLAG_JOHTO_FAST_SHIP_DESTINATION_OLIVINE, FastShipCabins_SW_SSW_NW_Johto_FastShipBed_ArrivedOlivine
+	message FastShipCabins_SW_SSW_NW_Johto_FastShipArrivedVermilionText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_FAST_SHIP_HAS_ARRIVED
+	releaseall
+	end
+
+FastShipCabins_SW_SSW_NW_Johto_FastShipBed_ArrivedOlivine:
+	message FastShipCabins_SW_SSW_NW_Johto_FastShipArrivedOlivineText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_FAST_SHIP_HAS_ARRIVED
+	releaseall
+	end
 
 FastShipCabins_SW_SSW_NW_Johto_FastShipCabinsNorthwestCabinTrashcan:
 	goto Johto_Std_TrashCanScript
@@ -135,3 +171,17 @@ FastShipCabins_SW_SSW_NW_Johto_GuitaristClydeBeatenText:
 FastShipCabins_SW_SSW_NW_Johto_FastShipBedText1:
 	.string "A comfy bed!\n"
 	.string "Time to sleep…$"
+
+FastShipCabins_SW_SSW_NW_Johto_FastShipBedText2:
+	.string "Ah, refreshed and\n"
+	.string "restored!$"
+
+FastShipCabins_SW_SSW_NW_Johto_FastShipArrivedOlivineText:
+	.string "FAST SHIP S.S.AQUA\n"
+	.string "has arrived in\l"
+	.string "OLIVINE CITY.$"
+
+FastShipCabins_SW_SSW_NW_Johto_FastShipArrivedVermilionText:
+	.string "FAST SHIP S.S.AQUA\n"
+	.string "has arrived in\l"
+	.string "VERMILION CITY.$"

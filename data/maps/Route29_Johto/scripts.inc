@@ -151,13 +151,43 @@ Route29_Johto_Route29CooltrainerMScript:
 	faceplayer
 	setvar VAR_0x8004, 2
 	special JohtoCheckTime
-	@ TODO unsupported: iftrue .day_morn
-	goto Johto_EventScript_Unimplemented
+	goto_if_ne VAR_RESULT, 0, Route29_Johto_Route29CooltrainerMScript_day_morn
+	setvar VAR_0x8004, 4
+	special JohtoCheckTime
+	goto_if_ne VAR_RESULT, 0, Route29_Johto_Route29CooltrainerMScript_nite
+
+Route29_Johto_Route29CooltrainerMScript_day_morn:
+	message Route29_Johto_Route29CooltrainerMText_WaitingForNight
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route29_Johto_Route29CooltrainerMScript_nite:
+	message Route29_Johto_Route29CooltrainerMText_WaitingForMorning
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route29_Johto_TuscanyScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_PINK_BOW_FROM_TUSCANY, Route29_Johto_TuscanyTuesdayScript
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_ne VAR_RESULT, 2, Route29_Johto_TuscanyNotTuesdayScript
+	goto_if_set FLAG_JOHTO_MET_TUSCANY_OF_TUESDAY, Route29_Johto_TuscanyScript_MetTuscany
+	message Route29_Johto_MeetTuscanyText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_MET_TUSCANY_OF_TUESDAY
+
+Route29_Johto_TuscanyScript_MetTuscany:
+	message Route29_Johto_TuscanyGivesGiftText
+	waitmessage
+	waitbuttonpress
+	@ TODO unsupported: verbosegiveitem PINK_BOW
 	goto Johto_EventScript_Unimplemented
 
 Route29_Johto_TuscanyTuesdayScript:
@@ -166,6 +196,14 @@ Route29_Johto_TuscanyTuesdayScript:
 	waitbuttonpress
 
 Route29_Johto_TuscanyDoneScript:
+	closemessage
+	releaseall
+	end
+
+Route29_Johto_TuscanyNotTuesdayScript:
+	message Route29_Johto_TuscanyNotTuesdayText
+	waitmessage
+	waitbuttonpress
 	closemessage
 	releaseall
 	end
@@ -198,7 +236,9 @@ Route29_Johto_Route29TuscanyCallback_TuscanyDisappears_Cb:
 	return
 
 Route29_Johto_Route29TuscanyCallback_DoesTuscanyAppear_Cb:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_ne VAR_RESULT, 2, Route29_Johto_Route29TuscanyCallback_TuscanyDisappears_Cb
+	clearflag FLAG_JOHTO_ROUTE_29_TUSCANY_OF_TUESDAY
 	return
 
 Route29_Johto_DudeMovementData1a:
@@ -274,6 +314,34 @@ Route29_Johto_Route29FisherText:
 	.string "\pto record my\n"
 	.string "progress.$"
 
+Route29_Johto_Route29CooltrainerMText_WaitingForNight:
+	.string "I'm waiting for\n"
+	.string "POKéMON that"
+	.string "\pappear only at\n"
+	.string "night.$"
+
+Route29_Johto_Route29CooltrainerMText_WaitingForMorning:
+	.string "I'm waiting for\n"
+	.string "POKéMON that"
+	.string "\pappear only in the\n"
+	.string "morning.$"
+
+Route29_Johto_MeetTuscanyText:
+	.string "TUSCANY: I do be-\n"
+	.string "lieve that this is"
+	.string "\pthe first time\n"
+	.string "we've met?"
+	.string "\pPlease allow me to\n"
+	.string "introduce myself."
+	.string "\pI am TUSCANY of\n"
+	.string "Tuesday.$"
+
+Route29_Johto_TuscanyGivesGiftText:
+	.string "By way of intro-\n"
+	.string "duction, please"
+	.string "\paccept this gift,\n"
+	.string "a PINK BOW.$"
+
 Route29_Johto_TuscanyTuesdayText:
 	.string "TUSCANY: Have you\n"
 	.string "met MONICA, my\l"
@@ -282,6 +350,11 @@ Route29_Johto_TuscanyTuesdayText:
 	.string "brother, WESLEY?"
 	.string "\pI am the second of\n"
 	.string "seven children.$"
+
+Route29_Johto_TuscanyNotTuesdayText:
+	.string "TUSCANY: Today is\n"
+	.string "not Tuesday. That\l"
+	.string "is unfortunate…$"
 
 Route29_Johto_Route29Sign1Text:
 	.string "ROUTE 29"

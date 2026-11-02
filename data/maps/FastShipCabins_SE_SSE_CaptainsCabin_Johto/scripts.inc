@@ -52,8 +52,50 @@ FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterBefore:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: special FadeOutToBlack
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_BLACK
+	removeobject 4
+	applymovement OBJ_EVENT_ID_PLAYER, FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaCaptainsCabinWarpsToGrandpasCabinMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm 3, 3, 19
+	clearflag FLAG_JOHTO_FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN_TWIN_1
+	addobject 3
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Up
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 3, Johto_Movement_Face_Up
+	waitmovement 3
+	fadescreen FADE_FROM_BLACK
+	applymovement 2, Johto_Movement_Face_Down
+	waitmovement 2
+	applymovement 2, Johto_Movement_Emote_exclamation_mark
+	waitmovement 2
+	applymovement 3, FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterEntersCabinMovement
+	waitmovement 3
+	applymovement 2, Johto_Movement_Face_Right
+	waitmovement 2
+	goto_if_set FLAG_JOHTO_ENGINE_PLAYER_IS_FEMALE, FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterBefore_PlayerIsFemale
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterWasPlayingMText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterBefore_cont
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterBefore_PlayerIsFemale:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterWasPlayingFText
+	waitmessage
+	waitbuttonpress
+	closemessage
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterBefore_cont:
+	applymovement 4, Johto_Movement_Face_Down
+	waitmovement 4
+	applymovement 2, FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGrandpaApproachesPlayerMovement
+	waitmovement 2
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaEntertainedGranddaughterText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_VERMILION_PORT_SAILOR_AT_GANGWAY
+	setvar VAR_JOHTO_SCENE_FAST_SHIP_1F, 0
+	goto FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaMetalCoatAndDocking
 
 FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGrandpa:
 	faceplayer
@@ -64,6 +106,28 @@ FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGrandpa:
 	waitbuttonpress
 	closemessage
 	setvar VAR_JOHTO_SCENE_FAST_SHIP_1F, 0
+	releaseall
+	end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaMetalCoatAndDocking:
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGrandpaHaveThisText
+	waitmessage
+	waitbuttonpress
+	giveitem ITEM_METAL_COAT
+	goto_if_eq VAR_RESULT, 0, FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaMetalCoatAndDocking_NoRoom
+	setflag FLAG_JOHTO_GOT_METAL_COAT_FROM_GRANDPA_ON_SS_AQUA
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaMetalCoatAndDocking_NoRoom:
+	closemessage
+	waitse
+	playse SE_PIN
+	delay 30
+	message FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaHasArrivedVermilionText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_FAST_SHIP_HAS_ARRIVED
+	setflag FLAG_JOHTO_FAST_SHIP_FOUND_GIRL
+	closemessage
 	releaseall
 	end
 
@@ -205,6 +269,26 @@ FastShipCabins_SE_SSE_CaptainsCabin_Johto_TrainerSupernerdShawn_Script:
 FastShipCabins_SE_SSE_CaptainsCabin_Johto_FastShipCaptainsCabinTrashcan:
 	goto Johto_Std_TrashCanScript
 
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaCaptainsCabinWarpsToGrandpasCabinMovement:
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterEntersCabinMovement:
+	walk_up
+	walk_up
+	face_left
+	step_end
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGrandpaApproachesPlayerMovement:
+	walk_down
+	step_end
+
 FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaCaptainExhaustingText:
 	.string "Whew! Thanks for\n"
 	.string "coming along."
@@ -230,6 +314,14 @@ FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaCantFindGranddaughterText:
 	.string "\pbe bugging some-\n"
 	.string "one. I'm worried…$"
 
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaEntertainedGranddaughterText:
+	.string "{PLAYER}, was it?\n"
+	.string "I heard you enter-\l"
+	.string "tained my grand-\l"
+	.string "daughter."
+	.string "\pI want to thank\n"
+	.string "you for that.$"
+
 FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGrandpaHaveThisText:
 	.string "I know! I'd like\n"
 	.string "you to have this!$"
@@ -253,6 +345,18 @@ FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterHasToFindGrandpaTex
 	.string "\pI have to go!"
 	.string "\pI have to go find\n"
 	.string "Grandpa!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterWasPlayingMText:
+	.string "Grandpa, here I\n"
+	.string "am! I was playing"
+	.string "\pwith the CAPTAIN\n"
+	.string "and this guy!$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterWasPlayingFText:
+	.string "Grandpa, here I\n"
+	.string "am! I was playing"
+	.string "\pwith the CAPTAIN\n"
+	.string "and this big girl!$"
 
 FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaGranddaughterHadFunText:
 	.string "I had lots of fun\n"
@@ -352,3 +456,8 @@ FastShipCabins_SE_SSE_CaptainsCabin_Johto_SupernerdShawnAfterBattleText:
 	.string "You should use the\n"
 	.string "right BALLS to fit\l"
 	.string "the situation.$"
+
+FastShipCabins_SE_SSE_CaptainsCabin_Johto_SSAquaHasArrivedVermilionText:
+	.string "FAST SHIP S.S.AQUA\n"
+	.string "has arrived in\l"
+	.string "VERMILION CITY.$"

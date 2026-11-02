@@ -52,8 +52,37 @@ CopycatsHouse2F_Johto_Copycat_GotPass_Female_1:
 	faceplayer
 
 CopycatsHouse2F_Johto_Copycat_GotPass_Merge_1:
-	@ TODO unsupported: special LoadUsedSpritesGFX
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_ENGINE_PLAYER_IS_FEMALE, CopycatsHouse2F_Johto_Copycat_GotPass_Female_2
+	message CopycatsHouse2F_Johto_CopycatText_Male_3
+	waitmessage
+	goto CopycatsHouse2F_Johto_Copycat_GotPass_Merge_2
+
+CopycatsHouse2F_Johto_Copycat_GotPass_Female_2:
+	message CopycatsHouse2F_Johto_CopycatText_Female_3
+	waitmessage
+
+CopycatsHouse2F_Johto_Copycat_GotPass_Merge_2:
+	waitbuttonpress
+	closemessage
+	goto_if_set FLAG_JOHTO_ENGINE_PLAYER_IS_FEMALE, CopycatsHouse2F_Johto_Copycat_GotPass_Female_3
+	applymovement 1, CopycatsHouse2F_Johto_CopycatSpinAroundMovementData
+	waitmovement 1
+	goto CopycatsHouse2F_Johto_Copycat_GotPass_Merge_3
+
+CopycatsHouse2F_Johto_Copycat_GotPass_Female_3:
+	applymovement 6, CopycatsHouse2F_Johto_CopycatSpinAroundMovementData
+	waitmovement 6
+
+CopycatsHouse2F_Johto_Copycat_GotPass_Merge_3:
+	faceplayer
+	message CopycatsHouse2F_Johto_CopycatText_ItsAScream
+	waitmessage
+	waitbuttonpress
+
+CopycatsHouse2F_Johto_Copycat_Cancel:
+	closemessage
+	releaseall
+	end
 
 CopycatsHouse2F_Johto_CopycatsDodrio:
 	message CopycatsHouse2F_Johto_CopycatsDodrioText1
@@ -108,6 +137,28 @@ CopycatsHouse2F_Johto_CopycatText_GivePass:
 	.string "OK. Here's the\n"
 	.string "MAGNET TRAIN PASS\l"
 	.string "like I promised!$"
+
+CopycatsHouse2F_Johto_CopycatText_Male_3:
+	.string "{PLAYER}: Hi!\n"
+	.string "Thanks a lot for\l"
+	.string "the rail PASS!"
+	.string "\p{PLAYER}: Pardon?"
+	.string "\p{PLAYER}: Is it\n"
+	.string "that fun to mimic\l"
+	.string "my every move?$"
+
+CopycatsHouse2F_Johto_CopycatText_ItsAScream:
+	.string "COPYCAT: You bet!\n"
+	.string "It's a scream!$"
+
+CopycatsHouse2F_Johto_CopycatText_Female_3:
+	.string "{PLAYER}: Thank you\n"
+	.string "for the rail PASS!"
+	.string "\p{PLAYER}: …Pardon?"
+	.string "\p{PLAYER}: Is it\n"
+	.string "really that fun to"
+	.string "\pcopy what I say\n"
+	.string "and do?$"
 
 CopycatsHouse2F_Johto_CopycatsDodrioText1:
 	.string "DODRIO: Gii giii!$"

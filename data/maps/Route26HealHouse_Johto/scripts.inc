@@ -16,8 +16,18 @@ Route26HealHouse_Johto_Route26HealHouseTeacherScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: special FadeOutToBlack
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_BLACK
+	playbgm MUS_HEAL, FALSE
+	special HealPlayerParty
+	delay 60
+	fadescreen FADE_FROM_BLACK
+	fadedefaultbgm
+	message Route26HealHouse_Johto_Route26HealHouseKeepAtItText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route26HealHouse_Johto_Route26HealHouseBookshelf:
 	goto Johto_Std_PictureBookshelfScript
@@ -27,3 +37,9 @@ Route26HealHouse_Johto_Route26HealHouseRestAWhileText:
 	.string "a little tired."
 	.string "\pYou should rest\n"
 	.string "them a while.$"
+
+Route26HealHouse_Johto_Route26HealHouseKeepAtItText:
+	.string "There!"
+	.string "\pYour POKéMON are\n"
+	.string "looking good!"
+	.string "\pKeep at it!$"

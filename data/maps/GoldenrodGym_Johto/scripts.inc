@@ -52,7 +52,11 @@ GoldenrodGym_Johto_GoldenrodGymWhitneyScript_StoppedCrying:
 	waitse
 	message GoldenrodGym_Johto_PlayerReceivedPlainBadgeText
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_PLAINBADGE
+	@ TODO unsupported: readvar VAR_BADGES
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodGym_Johto_GoldenrodGymWhitneyScript_GotPlainBadge:

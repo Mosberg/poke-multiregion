@@ -163,7 +163,14 @@ DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_Cb:
 	return
 
 DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_CheckDay_Cb:
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 2, DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_AppearRival_Cb
+	goto_if_eq VAR_RESULT, 4, DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_AppearRival_Cb
+	setflag FLAG_JOHTO_RIVAL_DRAGONS_DEN
+	return
+
+DragonsDenB1F_Johto_DragonsDenB1FCheckRivalCallback_AppearRival_Cb:
+	clearflag FLAG_JOHTO_RIVAL_DRAGONS_DEN
 	return
 
 DragonsDenB1F_Johto_MovementDragonsDen_ClairWalksToYou:

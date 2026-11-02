@@ -15,28 +15,86 @@ Route38_Johto_Route38TrainerTips_Entry::
 
 
 Route38_Johto_TrainerBirdKeeperToby::
-	@ TODO unsupported: trainer BIRD_KEEPER, TOBY, EVENT_BEAT_BIRD_KEEPER_TOBY, BirdKeeperTobySeenText, BirdKeeperTobyBeatenText, 0, .Script
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_single TRAINER_JOHTO_BIRD_KEEPER_TOBY, Route38_Johto_BirdKeeperTobySeenText, Route38_Johto_BirdKeeperTobyBeatenText
+	setflag FLAG_JOHTO_BEAT_BIRD_KEEPER_TOBY
+	lock
+	faceplayer
+	goto Route38_Johto_TrainerBirdKeeperToby_Script
+
+Route38_Johto_TrainerBirdKeeperToby_Script:
+	message Route38_Johto_BirdKeeperTobyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route38_Johto_TrainerSailorHarry::
-	@ TODO unsupported: trainer SAILOR, HARRY, EVENT_BEAT_SAILOR_HARRY, SailorHarrySeenText, SailorHarryBeatenText, 0, .Script
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_single TRAINER_JOHTO_SAILOR_HARRY, Route38_Johto_SailorHarrySeenText, Route38_Johto_SailorHarryBeatenText
+	setflag FLAG_JOHTO_BEAT_SAILOR_HARRY
+	lock
+	faceplayer
+	goto Route38_Johto_TrainerSailorHarry_Script
+
+Route38_Johto_TrainerSailorHarry_Script:
+	message Route38_Johto_SailorHarryAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route38_Johto_TrainerLassDana1::
-	@ TODO unsupported: trainer LASS, DANA1, EVENT_BEAT_LASS_DANA, LassDana1SeenText, LassDana1BeatenText, 0, .Script
+	trainerbattle_single TRAINER_JOHTO_LASS_DANA1, Route38_Johto_LassDana1SeenText, Route38_Johto_LassDana1BeatenText
+	setflag FLAG_JOHTO_BEAT_LASS_DANA
+	lock
+	faceplayer
+	goto Route38_Johto_TrainerLassDana1_Script
+
+Route38_Johto_TrainerLassDana1_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_LASS_DANA
 	goto Johto_EventScript_Unimplemented
 
 Route38_Johto_TrainerSchoolboyChad1::
-	@ TODO unsupported: trainer SCHOOLBOY, CHAD1, EVENT_BEAT_SCHOOLBOY_CHAD, SchoolboyChad1SeenText, SchoolboyChad1BeatenText, 0, .Script
+	trainerbattle_single TRAINER_JOHTO_SCHOOLBOY_CHAD1, Route38_Johto_SchoolboyChad1SeenText, Route38_Johto_SchoolboyChad1BeatenText
+	setflag FLAG_JOHTO_BEAT_SCHOOLBOY_CHAD
+	lock
+	faceplayer
+	goto Route38_Johto_TrainerSchoolboyChad1_Script
+
+Route38_Johto_TrainerSchoolboyChad1_Script:
+	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_SCHOOLBOY_CHAD
 	goto Johto_EventScript_Unimplemented
 
 Route38_Johto_TrainerBeautyValerie::
-	@ TODO unsupported: trainer BEAUTY, VALERIE, EVENT_BEAT_BEAUTY_VALERIE, BeautyValerieSeenText, BeautyValerieBeatenText, 0, .Script
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_single TRAINER_JOHTO_BEAUTY_VALERIE, Route38_Johto_BeautyValerieSeenText, Route38_Johto_BeautyValerieBeatenText
+	setflag FLAG_JOHTO_BEAT_BEAUTY_VALERIE
+	lock
+	faceplayer
+	goto Route38_Johto_TrainerBeautyValerie_Script
+
+Route38_Johto_TrainerBeautyValerie_Script:
+	message Route38_Johto_BeautyValerieAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route38_Johto_TrainerBeautyOlivia::
-	@ TODO unsupported: trainer BEAUTY, OLIVIA, EVENT_BEAT_BEAUTY_OLIVIA, BeautyOliviaSeenText, BeautyOliviaBeatenText, 0, .Script
-	goto Johto_EventScript_Unimplemented
+	trainerbattle_single TRAINER_JOHTO_BEAUTY_OLIVIA, Route38_Johto_BeautyOliviaSeenText, Route38_Johto_BeautyOliviaBeatenText
+	setflag FLAG_JOHTO_BEAT_BEAUTY_OLIVIA
+	lock
+	faceplayer
+	goto Route38_Johto_TrainerBeautyOlivia_Script
+
+Route38_Johto_TrainerBeautyOlivia_Script:
+	message Route38_Johto_BeautyOliviaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route38_Johto_Route38Sign:
 	message Route38_Johto_Route38SignText
@@ -66,6 +124,12 @@ Route38_Johto_BirdKeeperTobySeenText:
 Route38_Johto_BirdKeeperTobyBeatenText:
 	.string "I feel like just\n"
 	.string "flying away now.$"
+
+Route38_Johto_BirdKeeperTobyAfterBattleText:
+	.string "I plan to train in\n"
+	.string "CIANWOOD CITY to"
+	.string "\pteach my POKéMON\n"
+	.string "how to FLY.$"
 
 Route38_Johto_SchoolboyChad1SeenText:
 	.string "Let me try some-\n"
@@ -97,6 +161,11 @@ Route38_Johto_BeautyValerieBeatenText:
 	.string "I'm glad I got to\n"
 	.string "see your POKéMON!$"
 
+Route38_Johto_BeautyValerieAfterBattleText:
+	.string "When I see POKé-\n"
+	.string "MON, it seems to\l"
+	.string "soothe my nerves.$"
+
 Route38_Johto_SailorHarrySeenText:
 	.string "I've been over-\n"
 	.string "seas, so I know"
@@ -107,6 +176,12 @@ Route38_Johto_SailorHarryBeatenText:
 	.string "Your skill is\n"
 	.string "world class!$"
 
+Route38_Johto_SailorHarryAfterBattleText:
+	.string "All kinds of peo-\n"
+	.string "ple around the"
+	.string "\pworld live happily\n"
+	.string "with POKéMON.$"
+
 Route38_Johto_BeautyOliviaSeenText:
 	.string "Don't you think my\n"
 	.string "POKéMON and I are\l"
@@ -115,6 +190,14 @@ Route38_Johto_BeautyOliviaSeenText:
 Route38_Johto_BeautyOliviaBeatenText:
 	.string "We drink MOOMOO\n"
 	.string "MILK every day.$"
+
+Route38_Johto_BeautyOliviaAfterBattleText:
+	.string "MOOMOO MILK is\n"
+	.string "good for beauty"
+	.string "\pand health, but\n"
+	.string "inconveniently,"
+	.string "\pthey only sell a\n"
+	.string "bottle at a time.$"
 
 Route38_Johto_Route38SignText:
 	.string "ROUTE 38"

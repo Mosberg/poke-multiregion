@@ -38,14 +38,87 @@ IndigoPlateauPokecenter1F_Johto_PlateauRivalBattle2_Entry::
 IndigoPlateauPokecenter1F_Johto_PlateauRivalBattle1:
 	goto_if_unset FLAG_JOHTO_BEAT_RIVAL_IN_MT_MOON, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
 	goto_if_set FLAG_JOHTO_ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 0, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	goto_if_eq VAR_RESULT, 2, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	goto_if_eq VAR_RESULT, 4, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	goto_if_eq VAR_RESULT, 5, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	goto_if_eq VAR_RESULT, 6, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	setobjectxyperm 4, 17, 9
+	clearflag FLAG_JOHTO_INDIGO_PLATEAU_POKECENTER_RIVAL
+	addobject 4
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	fadeoutbgm 4
+	delay 15
+	applymovement 4, IndigoPlateauPokecenter1F_Johto_PlateauRivalMovement1
+	waitmovement 4
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto IndigoPlateauPokecenter1F_Johto_PlateauRivalBattleCommon
 
 IndigoPlateauPokecenter1F_Johto_PlateauRivalBattle2:
 	goto_if_unset FLAG_JOHTO_BEAT_RIVAL_IN_MT_MOON, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
 	goto_if_set FLAG_JOHTO_ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 0, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	goto_if_eq VAR_RESULT, 2, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	goto_if_eq VAR_RESULT, 4, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	goto_if_eq VAR_RESULT, 5, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	goto_if_eq VAR_RESULT, 6, IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone
+	clearflag FLAG_JOHTO_INDIGO_PLATEAU_POKECENTER_RIVAL
+	addobject 4
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	fadeoutbgm 4
+	delay 15
+	applymovement 4, IndigoPlateauPokecenter1F_Johto_PlateauRivalMovement2
+	waitmovement 4
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalBattleCommon:
+	message IndigoPlateauPokecenter1F_Johto_PlateauRivalText1
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_INDIGO_PLATEAU_POKECENTER_RIVAL
+	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, IndigoPlateauPokecenter1F_Johto_PlateauRivalBattleCommon_Totodile
+	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, IndigoPlateauPokecenter1F_Johto_PlateauRivalBattleCommon_Chikorita
+	setvar VAR_LAST_TALKED, 4
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL2_RIVAL2_2_TOTODILE, IndigoPlateauPokecenter1F_Johto_PlateauRivalWinText
+	goto IndigoPlateauPokecenter1F_Johto_PlateauRivalPostBattle
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalBattleCommon_Totodile:
+	setvar VAR_LAST_TALKED, 4
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL2_RIVAL2_2_CHIKORITA, IndigoPlateauPokecenter1F_Johto_PlateauRivalWinText
+	goto IndigoPlateauPokecenter1F_Johto_PlateauRivalPostBattle
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalBattleCommon_Chikorita:
+	setvar VAR_LAST_TALKED, 4
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL2_RIVAL2_2_CYNDAQUIL, IndigoPlateauPokecenter1F_Johto_PlateauRivalWinText
+	goto IndigoPlateauPokecenter1F_Johto_PlateauRivalPostBattle
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalPostBattle:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message IndigoPlateauPokecenter1F_Johto_PlateauRivalText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 4, IndigoPlateauPokecenter1F_Johto_PlateauRivalLeavesMovement
+	waitmovement 4
+	removeobject 4
+	setvar VAR_JOHTO_SCENE_INDIGO_PLATEAU_POKECENTER_1F, 0
+	fadedefaultbgm
+	setflag FLAG_JOHTO_ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT
 
 IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone:
 	releaseall
@@ -55,8 +128,10 @@ IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FNurseScript:
 	goto Johto_Std_PokecenterNurseScript
 
 IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_INDIGO_PLATEAU
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_INDIGO_PLATEAU
+	closemessage
+	releaseall
+	end
 
 IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FCooltrainerMScript:
 	faceplayer
@@ -123,6 +198,32 @@ IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FPrepareElite4Callback_C
 	setflag FLAG_JOHTO_LANCES_ROOM_OAK_AND_MARY
 	return
 
+IndigoPlateauPokecenter1F_Johto_PlateauRivalMovement1:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	face_left
+	step_end
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalMovement2:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	face_right
+	step_end
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalLeavesMovement:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FCooltrainerMText:
 	.string "At the POKéMON\n"
 	.string "LEAGUE, you'll get"
@@ -132,6 +233,34 @@ IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FCooltrainerMText:
 	.string "them all. If you"
 	.string "\plose, you have to\n"
 	.string "start all over!$"
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalText1:
+	.string "Hold it."
+	.string "\pYou're going to\n"
+	.string "take the POKéMON"
+	.string "\pLEAGUE challenge\n"
+	.string "now?"
+	.string "\pThat's not going\n"
+	.string "to happen."
+	.string "\pMy super-well-\n"
+	.string "trained POKéMON"
+	.string "\pare going to pound\n"
+	.string "you."
+	.string "\p{PLAYER}!\n"
+	.string "I challenge you!$"
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalWinText:
+	.string "…"
+	.string "\pOK--I lost…$"
+
+IndigoPlateauPokecenter1F_Johto_PlateauRivalText2:
+	.string "…Darn… I still\n"
+	.string "can't win…"
+	.string "\pI… I have to think\n"
+	.string "more about my\l"
+	.string "POKéMON…"
+	.string "\pHumph! Try not to\n"
+	.string "lose!$"
 
 IndigoPlateauPokecenter1F_Johto_TeleportGuyText1:
 	.string "Ah! You're chal-\n"

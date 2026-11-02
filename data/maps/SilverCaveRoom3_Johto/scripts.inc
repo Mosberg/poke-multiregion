@@ -19,7 +19,13 @@ SilverCaveRoom3_Johto_Red:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: special FadeOutToBlack
+	fadescreen FADE_TO_BLACK
+	removeobject 1
+	delay 15
+	fadescreen FADE_FROM_BLACK
+	delay 30
+	special HealPlayerParty
+	@ TODO unsupported: credits 
 	goto Johto_EventScript_Unimplemented
 
 SilverCaveRoom3_Johto_RedSeenText:

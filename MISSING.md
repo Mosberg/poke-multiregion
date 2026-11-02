@@ -3,13 +3,14 @@
 Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
 Hard caps and approximations live in LIMITS.md.
 
-## Johto: scripts (590 commands still become "not converted yet")
+## Johto: scripts (514 commands still become "not converted yet")
 
 Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
 
-- Shops: `pokemart` (30), Pokecenter/Mart std scripts, Goldenrod Dept. Store, vending machines
+- Shops: Goldenrod Dept. Store floor logic, vending machines, Mart types BITTER/BARGAIN/PHARMACY/ROOFTOP (all open as a standard shop), Crystal item prices (Emerald prices are used)
+- Pokecenter nurse: time-of-day greetings, Pokecom/phone and Pokerus handling (replaced by a plain heal), heal-machine animation
 - `fruittree` (30), `fruittree`/berry trees, `itemnotify`, `verbosegiveitemvar`, `trade` (7)
-- Time/date: `readvar VAR_WEEKDAY` (35), `.morn/.day/.nite` local branches, phone call timers, daily events, DST prompts (no-ops)
+- Time/date: phone call timers, daily events, DST prompts (no-ops); weekday checks now use the RTC (`JohtoGetWeekday`)
 - Phone/Pokegear: `addcellnum`, phone calls, radio (`special` radio functions), Pokegear menu entry, map card
 - `loadvar`, `readmem`/`writemem`, `random`, `setlasttalked` use, `getcurlandmarkname`, `gettrainername`, `loadwildmon` (static wild battles: Sudowoodo, legendaries, Red, Lugia, Ho-Oh), `catchtutorial` (Route 29 dude)
 - Decorations (`describedecoration`, decoration system, the player's room items)

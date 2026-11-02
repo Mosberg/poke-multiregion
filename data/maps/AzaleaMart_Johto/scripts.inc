@@ -15,8 +15,10 @@ AzaleaMart_Johto_AzaleaMartBugCatcherScript_Entry::
 
 
 AzaleaMart_Johto_AzaleaMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_AZALEA
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_AZALEA
+	closemessage
+	releaseall
+	end
 
 AzaleaMart_Johto_AzaleaMartCooltrainerMScript:
 	faceplayer

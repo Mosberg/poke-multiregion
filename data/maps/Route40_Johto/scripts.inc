@@ -129,8 +129,27 @@ Route40_Johto_Route40StandingYoungsterScript:
 Route40_Johto_MonicaScript:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_SHARP_BEAK_FROM_MONICA, Route40_Johto_MonicaScript_Monday
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_ne VAR_RESULT, 1, Route40_Johto_MonicaScript_NotMonday
+	goto_if_set FLAG_JOHTO_MET_MONICA_OF_MONDAY, Route40_Johto_MonicaScript_MetMonica
+	message Route40_Johto_MeetMonicaText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_MET_MONICA_OF_MONDAY
+
+Route40_Johto_MonicaScript_MetMonica:
+	message Route40_Johto_MonicaGivesGiftText
+	waitmessage
+	waitbuttonpress
+	giveitem ITEM_SHARP_BEAK
+	goto_if_eq VAR_RESULT, 0, Route40_Johto_MonicaScript_done
+	setflag FLAG_JOHTO_GOT_SHARP_BEAK_FROM_MONICA
+	message Route40_Johto_MonicaGaveGiftText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route40_Johto_MonicaScript_Monday:
 	message Route40_Johto_MonicaMondayText
@@ -138,6 +157,14 @@ Route40_Johto_MonicaScript_Monday:
 	waitbuttonpress
 
 Route40_Johto_MonicaScript_done:
+	closemessage
+	releaseall
+	end
+
+Route40_Johto_MonicaScript_NotMonday:
+	message Route40_Johto_MonicaNotMondayText
+	waitmessage
+	waitbuttonpress
 	closemessage
 	releaseall
 	end
@@ -155,7 +182,13 @@ Route40_Johto_Route40Rock:
 
 Route40_Johto_Route40MonicaCallback_Cb:
 	clearflag FLAG_JOHTO_BATTLE_TOWER_OPEN_CIVILIANS
-	@ TODO unsupported: readvar VAR_WEEKDAY
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 1, Route40_Johto_Route40MonicaCallback_MonicaAppears_Cb
+	setflag FLAG_JOHTO_ROUTE_40_MONICA_OF_MONDAY
+	return
+
+Route40_Johto_Route40MonicaCallback_MonicaAppears_Cb:
+	clearflag FLAG_JOHTO_ROUTE_40_MONICA_OF_MONDAY
 	return
 
 Route40_Johto_SwimmermSimonSeenText:
@@ -242,6 +275,25 @@ Route40_Johto_Route40StandingYoungsterText:
 	.string "\pyou shouldn't do\n"
 	.string "badly at all.$"
 
+Route40_Johto_MeetMonicaText:
+	.string "MONICA: Glad to\n"
+	.string "meet you. I'm"
+	.string "\pMONICA of Monday.$"
+
+Route40_Johto_MonicaGivesGiftText:
+	.string "As a token of our\n"
+	.string "friendship, I have\l"
+	.string "a gift for you!$"
+
+Route40_Johto_MonicaGaveGiftText:
+	.string "MONICA: It's an\n"
+	.string "item that raises"
+	.string "\pthe power of fly-\n"
+	.string "ing-type moves."
+	.string "\pYou should equip a\n"
+	.string "bird POKéMON with\l"
+	.string "that item.$"
+
 Route40_Johto_MonicaMondayText:
 	.string "MONICA: My broth-\n"
 	.string "ers and sisters"
@@ -249,6 +301,11 @@ Route40_Johto_MonicaMondayText:
 	.string "place."
 	.string "\pSee if you could\n"
 	.string "find them all!$"
+
+Route40_Johto_MonicaNotMondayText:
+	.string "MONICA: I don't\n"
+	.string "think today is\l"
+	.string "Monday. How sad…$"
 
 Route40_Johto_Route40SignText:
 	.string "ROUTE 40"

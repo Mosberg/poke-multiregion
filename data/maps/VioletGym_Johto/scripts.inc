@@ -25,7 +25,11 @@ VioletGym_Johto_VioletGymFalknerScript:
 	setflag FLAG_JOHTO_BEAT_FALKNER
 	message VioletGym_Johto_ReceivedZephyrBadgeText
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_ZEPHYRBADGE
+	@ TODO unsupported: readvar VAR_BADGES
 	goto Johto_EventScript_Unimplemented
 
 VioletGym_Johto_VioletGymFalknerScript_FightDone:

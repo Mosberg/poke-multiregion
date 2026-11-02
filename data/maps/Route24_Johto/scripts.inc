@@ -23,8 +23,13 @@ Route24_Johto_Route24RocketScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: special FadeOutToBlack
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_BLACK
+	removeobject 1
+	delay 25
+	fadescreen FADE_FROM_BLACK
+	fadedefaultbgm
+	releaseall
+	end
 
 Route24_Johto_Route24RocketSeenText:
 	.string "Hey, kid! Me am a\n"

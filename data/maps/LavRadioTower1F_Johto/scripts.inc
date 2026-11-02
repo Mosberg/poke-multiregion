@@ -72,8 +72,9 @@ LavRadioTower1F_Johto_LavRadioTower1FGentlemanScript_ReturnedMachinePart:
 	message LavRadioTower1F_Johto_LavRadioTower1FGentlemanText_ReturnedMachinePart
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: getstring STRING_BUFFER_4, .expncardname
-	goto Johto_EventScript_Unimplemented
+	bufferstring STR_VAR_2, LavRadioTower1F_Johto_LavRadioTower1FGentlemanScript_expncardname
+	call LavRadioTower1F_Johto_LavRadioTower1FGentlemanScript_receiveitem_Sub
+	setflag FLAG_JOHTO_ENGINE_EXPN_CARD
 
 LavRadioTower1F_Johto_LavRadioTower1FGentlemanScript_GotExpnCard:
 	message LavRadioTower1F_Johto_LavRadioTower1FGentlemanText_GotExpnCard
@@ -116,6 +117,12 @@ LavRadioTower1F_Johto_LavRadioTower1FPokeFluteSign:
 	closemessage
 	releaseall
 	end
+
+LavRadioTower1F_Johto_LavRadioTower1FGentlemanScript_receiveitem_Sub:
+	goto Johto_Std_ReceiveItemScript_Sub
+
+LavRadioTower1F_Johto_LavRadioTower1FGentlemanScript_expncardname:
+	.string "EXPN CARD$"
 
 LavRadioTower1F_Johto_LavRadioTower1FReceptionistText:
 	.string "Welcome!\n"

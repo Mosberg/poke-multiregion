@@ -34,7 +34,11 @@ EcruteakGym_Johto_EcruteakGymMortyScript:
 	setflag FLAG_JOHTO_BEAT_MORTY
 	message EcruteakGym_Johto_Text_ReceivedFogBadge
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_FOGBADGE
+	@ TODO unsupported: readvar VAR_BADGES
 	goto Johto_EventScript_Unimplemented
 
 EcruteakGym_Johto_EcruteakGymMortyScript_FightDone:
@@ -71,8 +75,11 @@ EcruteakGym_Johto_EcruteakGymClosed:
 	applymovement 7, EcruteakGym_Johto_EcruteakGymPlayerSlowStepDownMovement
 	applymovement OBJ_EVENT_ID_PLAYER, EcruteakGym_Johto_EcruteakGymPlayerSlowStepDownMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
-	@ TODO unsupported: special FadeOutToWhite
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_WHITE
+	playse SE_DOOR
+	waitse
+	warp MAP_JOHTO_ECRUTEAK_CITY, 6, 27
+	waitstate
 
 EcruteakGym_Johto_TrainerSageJeffrey::
 	trainerbattle_single TRAINER_JOHTO_SAGE_JEFFREY, EcruteakGym_Johto_SageJeffreySeenText, EcruteakGym_Johto_SageJeffreyBeatenText

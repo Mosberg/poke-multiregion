@@ -112,8 +112,53 @@ TeamRocketBaseB2F_Johto_RocketBaseBossFScript:
 	waitmovement 1
 	applymovement 2, TeamRocketBaseB2F_Johto_RocketBaseBossFBattlesPlayerMovement
 	waitmovement 2
-	@ TODO unsupported: setlasttalked TEAMROCKETBASEB2F_ROCKET_GIRL
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_LAST_TALKED, 2
+	trainerbattle_no_intro TRAINER_JOHTO_EXECUTIVEF_EXECUTIVEF_2, TeamRocketBaseB2F_Johto_RocketBaseBossWinText
+	removeobject 4
+	setflag FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_EXECUTIVE
+	setflag FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_EXECUTIVE
+	setflag FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_LANCE
+	setflag FLAG_JOHTO_BEAT_ROCKET_EXECUTIVEF_2
+	message TeamRocketBaseB2F_Johto_RocketBaseBossRetreatText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject 1
+	removeobject 2
+	removeobject 11
+	removeobject 12
+	removeobject 13
+	delay 15
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F, 2
+	clearflag FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_LANCE
+	applymovement 3, Johto_Movement_Face_Down
+	waitmovement 3
+	message TeamRocketBaseB2F_Johto_RocketBaseLancePostBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 3, TeamRocketBaseB2F_Johto_RocketBaseLanceChecksPlayerMovement
+	waitmovement 3
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Up
+	waitmovement OBJ_EVENT_ID_PLAYER
+	message TeamRocketBaseB2F_Johto_RocketBaseLancePowerOffText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, TeamRocketBaseB2F_Johto_RocketBaseLanceApproachesMachineMovement
+	applymovement 3, TeamRocketBaseB2F_Johto_RocketBaseLanceApproachesMachineMovement
+	waitmovement 3
+	applymovement 3, TeamRocketBaseB2F_Johto_RocketBaseLancePacesMovement
+	waitmovement 3
+	message TeamRocketBaseB2F_Johto_RockerBaseLanceElectrodeFaintText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 3, TeamRocketBaseB2F_Johto_RocketBaseLanceApproachesElectrodesMovement
+	waitmovement 3
+	removeobject 3
 
 TeamRocketBaseB2F_Johto_RocketBaseCantLeaveScript:
 	applymovement OBJ_EVENT_ID_PLAYER, TeamRocketBaseB2F_Johto_RocketBasePlayerCantLeaveElectrodesMovement
@@ -147,7 +192,8 @@ TeamRocketBaseB2F_Johto_LanceHealsCommon:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: special FadeOutToWhite
+	fadescreen FADE_TO_WHITE
+	@ TODO unsupported: playsound SFX_FULL_HEAL
 	goto Johto_EventScript_Unimplemented
 
 TeamRocketBaseB2F_Johto_TrainerGruntM17::
@@ -297,6 +343,44 @@ TeamRocketBaseB2F_Johto_RocketBaseGruntProtectsBossFMovement:
 	face_left
 	step_end
 
+TeamRocketBaseB2F_Johto_RocketBaseLanceChecksPlayerMovement:
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseLanceApproachesMachineMovement:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseLancePacesMovement:
+	walk_left
+	walk_left
+	face_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseLanceApproachesElectrodesMovement:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 TeamRocketBaseB2F_Johto_RocketBasePlayerCantLeaveElectrodesMovement:
 	walk_up
 	walk_left
@@ -354,6 +438,67 @@ TeamRocketBaseB2F_Johto_RocketBaseBossWinText:
 	.string "join TEAM ROCKET,"
 	.string "\pyou could become\n"
 	.string "an EXECUTIVE.$"
+
+TeamRocketBaseB2F_Johto_RocketBaseBossRetreatText:
+	.string "…This hideout is\n"
+	.string "done for…"
+	.string "\pBut that's fine.\n"
+	.string "The broadcast ex-\l"
+	.string "periment was a\l"
+	.string "total success."
+	.string "\pIt doesn't matter\n"
+	.string "what happens to\l"
+	.string "this hideout now."
+	.string "\pWe have much big-\n"
+	.string "ger plans."
+	.string "\pYou'll come to\n"
+	.string "appreciate TEAM"
+	.string "\pROCKET's true\n"
+	.string "power soon enough."
+	.string "\pEnjoy yourself\n"
+	.string "while you can…"
+	.string "\pFufufufu…$"
+
+TeamRocketBaseB2F_Johto_RocketBaseLancePostBattleText:
+	.string "LANCE: That did\n"
+	.string "it. We defeated"
+	.string "\pall the ROCKETS\n"
+	.string "here."
+	.string "\pBut I'm concerned\n"
+	.string "about the young"
+	.string "\pguy I battled in\n"
+	.string "the process…$"
+
+TeamRocketBaseB2F_Johto_RocketBaseLancePowerOffText:
+	.string "Sorry, {PLAYER}.\n"
+	.string "I saw how well you"
+	.string "\pwere doing, so I\n"
+	.string "just hung back."
+	.string "\pNow all there is\n"
+	.string "left to do is to"
+	.string "\pturn off that odd\n"
+	.string "radio signal.$"
+
+TeamRocketBaseB2F_Johto_RockerBaseLanceElectrodeFaintText:
+	.string "It's this machine\n"
+	.string "that's causing all\l"
+	.string "the problems."
+	.string "\pI don't see a\n"
+	.string "switch on it…"
+	.string "\pWe have no choice.\n"
+	.string "We have to make"
+	.string "\pall the ELECTRODE\n"
+	.string "faint."
+	.string "\pThat should stop\n"
+	.string "this machine from"
+	.string "\ptransmitting that\n"
+	.string "strange signal."
+	.string "\pIt's no fault of\n"
+	.string "the POKéMON, so it"
+	.string "\pmakes me feel\n"
+	.string "guilty."
+	.string "\p{PLAYER}, let's\n"
+	.string "split the job.$"
 
 TeamRocketBaseB2F_Johto_RocketBaseLancesSideText:
 	.string "LANCE: Leave this\n"

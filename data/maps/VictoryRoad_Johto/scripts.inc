@@ -62,15 +62,26 @@ VictoryRoad_Johto_VictoryRoadRivalNext_Sub:
 	setflag FLAG_JOHTO_RIVAL_VICTORY_ROAD
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, VictoryRoad_Johto_VictoryRoadRivalNext_GotTotodile_Sub
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, VictoryRoad_Johto_VictoryRoadRivalNext_GotChikorita_Sub
-	@ TODO unsupported: setlasttalked VICTORYROAD_RIVAL
-	return
+	setvar VAR_LAST_TALKED, 1
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_5_TOTODILE, VictoryRoad_Johto_VictoryRoadRivalDefeatText
+	goto VictoryRoad_Johto_VictoryRoadRivalNext_AfterBattle_Sub
 
 VictoryRoad_Johto_VictoryRoadRivalNext_GotTotodile_Sub:
-	@ TODO unsupported: setlasttalked VICTORYROAD_RIVAL
-	return
+	setvar VAR_LAST_TALKED, 1
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_5_CHIKORITA, VictoryRoad_Johto_VictoryRoadRivalDefeatText
+	goto VictoryRoad_Johto_VictoryRoadRivalNext_AfterBattle_Sub
 
 VictoryRoad_Johto_VictoryRoadRivalNext_GotChikorita_Sub:
-	@ TODO unsupported: setlasttalked VICTORYROAD_RIVAL
+	setvar VAR_LAST_TALKED, 1
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_5_CYNDAQUIL, VictoryRoad_Johto_VictoryRoadRivalDefeatText
+	goto VictoryRoad_Johto_VictoryRoadRivalNext_AfterBattle_Sub
+
+VictoryRoad_Johto_VictoryRoadRivalNext_AfterBattle_Sub:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message VictoryRoad_Johto_VictoryRoadRivalAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
 	return
 
 VictoryRoad_Johto_VictoryRoadRivalBattleApproachMovement1:
@@ -147,3 +158,19 @@ VictoryRoad_Johto_VictoryRoadRivalDefeatText:
 	.string "understand what"
 	.string "\pthat dragon master\n"
 	.string "said to me…$"
+
+VictoryRoad_Johto_VictoryRoadRivalAfterText:
+	.string "…I haven't given up\n"
+	.string "on becoming the\l"
+	.string "greatest trainer…"
+	.string "\pI'm going to find\n"
+	.string "out why I can't"
+	.string "\pwin and become\n"
+	.string "stronger…"
+	.string "\pWhen I do, I will\n"
+	.string "challenge you."
+	.string "\pAnd I'll beat you\n"
+	.string "down with all my\l"
+	.string "power."
+	.string "\p…Humph! You keep\n"
+	.string "at it until then.$"

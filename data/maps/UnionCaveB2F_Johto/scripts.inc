@@ -65,11 +65,15 @@ UnionCaveB2F_Johto_TrainerCooltrainerfEmma_Script:
 
 UnionCaveB2F_Johto_UnionCaveB2FLaprasCallback_Cb:
 	goto_if_set FLAG_JOHTO_ENGINE_UNION_CAVE_LAPRAS, UnionCaveB2F_Johto_UnionCaveB2FLaprasCallback_NoAppear_Cb
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	return
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 5, UnionCaveB2F_Johto_UnionCaveB2FLaprasCallback_Appear_Cb
 
 UnionCaveB2F_Johto_UnionCaveB2FLaprasCallback_NoAppear_Cb:
 	setflag FLAG_JOHTO_UNION_CAVE_B2F_LAPRAS
+	return
+
+UnionCaveB2F_Johto_UnionCaveB2FLaprasCallback_Appear_Cb:
+	clearflag FLAG_JOHTO_UNION_CAVE_B2F_LAPRAS
 	return
 
 UnionCaveB2F_Johto_CooltrainermNickSeenText:

@@ -15,8 +15,10 @@ VioletMart_Johto_VioletMartCooltrainerMScript_Entry::
 
 
 VioletMart_Johto_VioletMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_VIOLET
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_VIOLET
+	closemessage
+	releaseall
+	end
 
 VioletMart_Johto_VioletMartGrannyScript:
 	faceplayer

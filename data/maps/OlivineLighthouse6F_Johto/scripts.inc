@@ -30,8 +30,12 @@ OlivineLighthouse6F_Johto_OlivineLighthouseAmphy_HealthyNow:
 	waitmoncry
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: special FadeOutToWhite
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_WHITE
+	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_WHITE
+	releaseall
+	end
 
 OlivineLighthouse6F_Johto_AmphyPalPalooText:
 	.string "AMPHY: …\n"

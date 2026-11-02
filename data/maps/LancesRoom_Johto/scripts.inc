@@ -47,7 +47,15 @@ LancesRoom_Johto_LancesRoomLanceScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: setlasttalked LANCESROOM_LANCE
+	setvar VAR_LAST_TALKED, 1
+	trainerbattle_no_intro TRAINER_JOHTO_CHAMPION_LANCE, LancesRoom_Johto_LanceBattleWinText
+	setflag FLAG_JOHTO_BEAT_CHAMPION_LANCE
+	message LancesRoom_Johto_LanceBattleAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	playse SE_DOOR
+	@ TODO unsupported: changeblock 4, 0, $0b
 	goto Johto_EventScript_Unimplemented
 
 LancesRoom_Johto_LancesRoom_EnterMovement:
@@ -103,3 +111,17 @@ LancesRoom_Johto_LanceBattleWinText:
 	.string "witnessed the rise"
 	.string "\pof a great new\n"
 	.string "CHAMPION!$"
+
+LancesRoom_Johto_LanceBattleAfterText:
+	.string "…Whew."
+	.string "\pYou have become\n"
+	.string "truly powerful,\l"
+	.string "{PLAYER}."
+	.string "\pYour POKéMON have\n"
+	.string "responded to your"
+	.string "\pstrong and up-\n"
+	.string "standing nature."
+	.string "\pAs a trainer, you\n"
+	.string "will continue to"
+	.string "\pgrow strong with\n"
+	.string "your POKéMON.$"

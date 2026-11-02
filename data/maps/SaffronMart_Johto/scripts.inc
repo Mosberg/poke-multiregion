@@ -15,8 +15,10 @@ SaffronMart_Johto_SaffronMartCooltrainerFScript_Entry::
 
 
 SaffronMart_Johto_SaffronMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_SAFFRON
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_SAFFRON
+	closemessage
+	releaseall
+	end
 
 SaffronMart_Johto_SaffronMartCooltrainerMScript:
 	faceplayer

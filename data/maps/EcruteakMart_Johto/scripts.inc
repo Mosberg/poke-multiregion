@@ -15,8 +15,10 @@ EcruteakMart_Johto_EcruteakMartGrannyScript_Entry::
 
 
 EcruteakMart_Johto_EcruteakMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_ECRUTEAK
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_ECRUTEAK
+	closemessage
+	releaseall
+	end
 
 EcruteakMart_Johto_EcruteakMartSuperNerdScript:
 	faceplayer

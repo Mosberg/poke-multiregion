@@ -26,8 +26,16 @@ SeafoamGym_Johto_SeafoamGymBlaineScript_ReturnAfterBattle:
 	setflag FLAG_JOHTO_BEAT_BLAINE
 	message SeafoamGym_Johto_ReceivedVolcanoBadgeText
 	waitmessage
-	@ TODO unsupported: playsound SFX_GET_BADGE
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_VOLCANOBADGE
+	message SeafoamGym_Johto_BlaineAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 SeafoamGym_Johto_SeafoamGymBlaineScript_FightDone:
 	message SeafoamGym_Johto_BlaineFightDoneText
@@ -84,6 +92,16 @@ SeafoamGym_Johto_BlaineWinLossText:
 SeafoamGym_Johto_ReceivedVolcanoBadgeText:
 	.string "{PLAYER} received\n"
 	.string "VOLCANOBADGE.$"
+
+SeafoamGym_Johto_BlaineAfterBattleText:
+	.string "BLAINE: I did lose\n"
+	.string "this time, but I'm"
+	.string "\pgoing to win the\n"
+	.string "next time."
+	.string "\pWhen I rebuild my\n"
+	.string "CINNABAR GYM,"
+	.string "\pwe'll have to have\n"
+	.string "a rematch.$"
 
 SeafoamGym_Johto_BlaineFightDoneText:
 	.string "BLAINE: My fire\n"

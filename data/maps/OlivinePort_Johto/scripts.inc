@@ -69,8 +69,28 @@ OlivinePort_Johto_OlivinePortSailorAtGangwayScript:
 	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Johto_OlivinePortEnterFastShipMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playse SE_EXIT
-	@ TODO unsupported: special FadeOutToWhite
-	goto Johto_EventScript_Unimplemented
+	fadescreen FADE_TO_WHITE
+	waitse
+	goto_if_unset FLAG_JOHTO_FAST_SHIP_FIRST_TIME, OlivinePort_Johto_OlivinePortSailorAtGangwayScript_FirstTime
+	clearflag FLAG_JOHTO_FAST_SHIP_PASSENGERS_EASTBOUND
+	setflag FLAG_JOHTO_FAST_SHIP_PASSENGERS_WESTBOUND
+	clearflag FLAG_JOHTO_BEAT_COOLTRAINERM_SEAN
+	clearflag FLAG_JOHTO_BEAT_COOLTRAINERF_CAROL
+	clearflag FLAG_JOHTO_BEAT_GENTLEMAN_EDWARD
+	clearflag FLAG_JOHTO_BEAT_BEAUTY_CASSIE
+	clearflag FLAG_JOHTO_BEAT_PSYCHIC_RODNEY
+	clearflag FLAG_JOHTO_BEAT_SUPER_NERD_SHAWN
+	clearflag FLAG_JOHTO_BEAT_SAILOR_GARRETT
+	clearflag FLAG_JOHTO_BEAT_FISHER_JONAH
+	clearflag FLAG_JOHTO_BEAT_BLACKBELT_WAI
+
+OlivinePort_Johto_OlivinePortSailorAtGangwayScript_FirstTime:
+	clearflag FLAG_JOHTO_FAST_SHIP_DESTINATION_OLIVINE
+	clearflag FLAG_JOHTO_OLIVINE_PORT_SAILOR_AT_GANGWAY
+	addobject 1
+	setvar VAR_JOHTO_SCENE_FAST_SHIP_1F, 1
+	warp MAP_JOHTO_FAST_SHIP_1F, 25, 1
+	waitstate
 
 OlivinePort_Johto_OlivinePortAlreadyRodeScript:
 	message OlivinePort_Johto_OlivinePortCantBoardText
@@ -88,8 +108,12 @@ OlivinePort_Johto_OlivinePortWalkUpToShipScript:
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
 	waitmovement OBJ_EVENT_ID_PLAYER
 	goto_if_unset FLAG_JOHTO_FAST_SHIP_FIRST_TIME, OlivinePort_Johto_OlivinePortWalkUpToShipScript_FirstTime
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 0, OlivinePort_Johto_OlivinePortWalkUpToShipScript_NextShipMonday
+	goto_if_eq VAR_RESULT, 6, OlivinePort_Johto_OlivinePortWalkUpToShipScript_NextShipMonday
+	goto_if_eq VAR_RESULT, 2, OlivinePort_Johto_OlivinePortWalkUpToShipScript_NextShipFriday
+	goto_if_eq VAR_RESULT, 3, OlivinePort_Johto_OlivinePortWalkUpToShipScript_NextShipFriday
+	goto_if_eq VAR_RESULT, 4, OlivinePort_Johto_OlivinePortWalkUpToShipScript_NextShipFriday
 
 OlivinePort_Johto_OlivinePortWalkUpToShipScript_FirstTime:
 	message OlivinePort_Johto_OlivinePortAskBoardText
@@ -101,6 +125,26 @@ OlivinePort_Johto_OlivinePortWalkUpToShipScript_FirstTime:
 	waitbuttonpress
 	@ TODO unsupported: checkitem S_S_TICKET
 	goto Johto_EventScript_Unimplemented
+
+OlivinePort_Johto_OlivinePortWalkUpToShipScript_NextShipMonday:
+	message OlivinePort_Johto_OlivinePortMondayShipText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Johto_OlivinePortCannotEnterFastShipMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	releaseall
+	end
+
+OlivinePort_Johto_OlivinePortWalkUpToShipScript_NextShipFriday:
+	message OlivinePort_Johto_OlivinePortFridayShipText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Johto_OlivinePortCannotEnterFastShipMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	releaseall
+	end
 
 OlivinePort_Johto_OlivinePortWalkUpToShipScript_skip:
 	releaseall
@@ -128,8 +172,12 @@ OlivinePort_Johto_OlivinePortSailorAfterHOFScript:
 	faceplayer
 	goto_if_set FLAG_TEMP_11, OlivinePort_Johto_OlivinePortAlreadyRodeScript
 	goto_if_unset FLAG_JOHTO_FAST_SHIP_FIRST_TIME, OlivinePort_Johto_OlivinePortSailorAfterHOFScript_FirstTime
-	@ TODO unsupported: readvar VAR_WEEKDAY
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetWeekday
+	goto_if_eq VAR_RESULT, 0, OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NextShipMonday
+	goto_if_eq VAR_RESULT, 6, OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NextShipMonday
+	goto_if_eq VAR_RESULT, 2, OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NextShipFriday
+	goto_if_eq VAR_RESULT, 3, OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NextShipFriday
+	goto_if_eq VAR_RESULT, 4, OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NextShipFriday
 
 OlivinePort_Johto_OlivinePortSailorAfterHOFScript_FirstTime:
 	message OlivinePort_Johto_OlivinePortAskBoardText
@@ -141,6 +189,22 @@ OlivinePort_Johto_OlivinePortSailorAfterHOFScript_FirstTime:
 	waitbuttonpress
 	@ TODO unsupported: checkitem S_S_TICKET
 	goto Johto_EventScript_Unimplemented
+
+OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NextShipMonday:
+	message OlivinePort_Johto_OlivinePortMondayShipText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+OlivinePort_Johto_OlivinePortSailorAfterHOFScript_NextShipFriday:
+	message OlivinePort_Johto_OlivinePortFridayShipText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 OlivinePort_Johto_OlivinePortSailorBeforeHOFScript:
 	faceplayer
@@ -230,6 +294,14 @@ OlivinePort_Johto_OlivinePortAskTicketText:
 OlivinePort_Johto_OlivinePortComeAgainText:
 	.string "We hope to see you\n"
 	.string "again!$"
+
+OlivinePort_Johto_OlivinePortMondayShipText:
+	.string "The FAST SHIP will\n"
+	.string "sail next Monday.$"
+
+OlivinePort_Johto_OlivinePortFridayShipText:
+	.string "The FAST SHIP will\n"
+	.string "sail next Friday.$"
 
 OlivinePort_Johto_OlivinePortFishingGuru1Text:
 	.string "SHELLDER are easy\n"

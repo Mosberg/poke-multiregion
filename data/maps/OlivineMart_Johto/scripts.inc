@@ -15,8 +15,10 @@ OlivineMart_Johto_OlivineMartLassScript_Entry::
 
 
 OlivineMart_Johto_OlivineMartClerkScript:
-	@ TODO unsupported: pokemart MARTTYPE_STANDARD, MART_OLIVINE
-	goto Johto_EventScript_Unimplemented
+	pokemart Johto_Mart_OLIVINE
+	closemessage
+	releaseall
+	end
 
 OlivineMart_Johto_OlivineMartCooltrainerFScript:
 	faceplayer
