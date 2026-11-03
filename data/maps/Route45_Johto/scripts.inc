@@ -22,7 +22,7 @@ Route45_Johto_TrainerBlackbeltKenji::
 	goto Route45_Johto_TrainerBlackbeltKenji_Script
 
 Route45_Johto_TrainerBlackbeltKenji_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_BLACKBELT_KENJI
+	@ TODO unsupported: checkcellnum PHONE_BLACKBELT_KENJI
 	goto Johto_EventScript_Unimplemented
 
 Route45_Johto_TrainerHikerErik::
@@ -63,7 +63,13 @@ Route45_Johto_TrainerHikerParry::
 	goto Route45_Johto_TrainerHikerParry_Script
 
 Route45_Johto_TrainerHikerParry_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_HIKER_PARRY
+	goto_if_set FLAG_JOHTO_ENGINE_PARRY_READY_FOR_REMATCH, Route45_Johto_TrainerHikerParry_WantsBattle
+	@ TODO unsupported: checkcellnum PHONE_HIKER_PARRY
+	goto Johto_EventScript_Unimplemented
+
+Route45_Johto_TrainerHikerParry_WantsBattle:
+	call Route45_Johto_Route45RematchM_Sub
+	@ TODO unsupported: readmem wParryFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route45_Johto_TrainerHikerTimothy::
@@ -141,8 +147,14 @@ Route45_Johto_Route45Sign:
 	end
 
 Route45_Johto_Route45FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_45
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_45, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_LEPPA_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_45
+	releaseall
+	end
+
+Route45_Johto_Route45RematchM_Sub:
+	goto Johto_Std_RematchMScript_Sub
 
 Route45_Johto_HikerErikSeenText:
 	.string "Be prepared for\n"

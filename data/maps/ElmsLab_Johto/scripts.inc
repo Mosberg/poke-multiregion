@@ -385,11 +385,45 @@ ElmsLab_Johto_ElmsLabHealingMachine_HealParty:
 	@ TODO unsupported: setval HEALMACHINE_ELMS_LAB
 	goto Johto_EventScript_Unimplemented
 
+ElmsLab_Johto_ElmAfterTheftDoneScript:
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 ElmsLab_Johto_ElmAfterTheftScript:
 	message ElmsLab_Johto_ElmAfterTheftText1
 	waitmessage
-	@ TODO unsupported: checkitem MYSTERY_EGG
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_MYSTERY_EGG, 1
+	goto_if_eq VAR_RESULT, 0, ElmsLab_Johto_ElmAfterTheftDoneScript
+	waitbuttonpress
+	message ElmsLab_Johto_ElmAfterTheftText2
+	waitmessage
+	waitbuttonpress
+	removeitem ITEM_MYSTERY_EGG
+	call ElmsLab_Johto_ElmJumpBackScript1_Sub
+	message ElmsLab_Johto_ElmAfterTheftText3
+	waitmessage
+	waitbuttonpress
+	call ElmsLab_Johto_ElmJumpBackScript2_Sub
+	message ElmsLab_Johto_ElmAfterTheftText4
+	waitmessage
+	waitbuttonpress
+	message ElmsLab_Johto_ElmAfterTheftText5
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_GAVE_MYSTERY_EGG_TO_ELM
+	setflag FLAG_JOHTO_ENGINE_MOBILE_SYSTEM
+	setvar VAR_JOHTO_SCENE_ROUTE_29, 1
+	clearflag FLAG_JOHTO_ROUTE_30_YOUNGSTER_JOEY
+	setflag FLAG_JOHTO_ROUTE_30_BATTLE
+	message ElmsLab_Johto_ElmAfterTheftText6
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setvar VAR_JOHTO_SCENE_ELMS_LAB, 6
+	releaseall
+	end
 
 ElmsLab_Johto_ElmStudyingEggScript:
 	message ElmsLab_Johto_ElmStudyingEggText
@@ -645,6 +679,44 @@ ElmsLab_Johto_ElmsLabPC:
 ElmsLab_Johto_ElmsLabBookshelf:
 	goto Johto_Std_DifficultBookshelfScript
 
+ElmsLab_Johto_ElmJumpBackScript1_Sub:
+	closemessage
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_eq VAR_RESULT, DIR_SOUTH, ElmsLab_Johto_ElmJumpDownScript_Sub
+	goto_if_eq VAR_RESULT, DIR_NORTH, ElmsLab_Johto_ElmJumpUpScript_Sub
+	goto_if_eq VAR_RESULT, DIR_WEST, ElmsLab_Johto_ElmJumpLeftScript_Sub
+	goto_if_eq VAR_RESULT, DIR_EAST, ElmsLab_Johto_ElmJumpRightScript_Sub
+	return
+
+ElmsLab_Johto_ElmJumpBackScript2_Sub:
+	closemessage
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_eq VAR_RESULT, DIR_SOUTH, ElmsLab_Johto_ElmJumpUpScript_Sub
+	goto_if_eq VAR_RESULT, DIR_NORTH, ElmsLab_Johto_ElmJumpDownScript_Sub
+	goto_if_eq VAR_RESULT, DIR_WEST, ElmsLab_Johto_ElmJumpRightScript_Sub
+	goto_if_eq VAR_RESULT, DIR_EAST, ElmsLab_Johto_ElmJumpLeftScript_Sub
+	return
+
+ElmsLab_Johto_ElmJumpUpScript_Sub:
+	applymovement 1, ElmsLab_Johto_ElmJumpUpMovement
+	waitmovement 1
+	return
+
+ElmsLab_Johto_ElmJumpDownScript_Sub:
+	applymovement 1, ElmsLab_Johto_ElmJumpDownMovement
+	waitmovement 1
+	return
+
+ElmsLab_Johto_ElmJumpLeftScript_Sub:
+	applymovement 1, ElmsLab_Johto_ElmJumpLeftMovement
+	waitmovement 1
+	return
+
+ElmsLab_Johto_ElmJumpRightScript_Sub:
+	applymovement 1, ElmsLab_Johto_ElmJumpRightMovement
+	waitmovement 1
+	return
+
 ElmsLab_Johto_AideScript_GivePotion_Sub:
 	message ElmsLab_Johto_AideText_GiveYouPotion
 	waitmessage
@@ -738,6 +810,30 @@ ElmsLab_Johto_AideWalksLeft2:
 	walk_left
 	walk_left
 	face_down
+	step_end
+
+ElmsLab_Johto_ElmJumpUpMovement:
+	lock_facing_direction
+	walk_fast_up
+	unlock_facing_direction
+	step_end
+
+ElmsLab_Johto_ElmJumpDownMovement:
+	lock_facing_direction
+	walk_fast_down
+	unlock_facing_direction
+	step_end
+
+ElmsLab_Johto_ElmJumpLeftMovement:
+	lock_facing_direction
+	walk_fast_left
+	unlock_facing_direction
+	step_end
+
+ElmsLab_Johto_ElmJumpRightMovement:
+	lock_facing_direction
+	walk_fast_right
+	unlock_facing_direction
 	step_end
 
 ElmsLab_Johto_ElmsLab_ElmToDefaultPositionMovement1:
@@ -952,6 +1048,54 @@ ElmsLab_Johto_ElmAfterTheftText1:
 	.string "\pOh, yes, what was\n"
 	.string "MR.POKéMON's big\l"
 	.string "discovery?$"
+
+ElmsLab_Johto_ElmAfterTheftText2:
+	.string "{PLAYER} handed\n"
+	.string "the MYSTERY EGG to\l"
+	.string "PROF.ELM.$"
+
+ElmsLab_Johto_ElmAfterTheftText3:
+	.string "ELM: This?$"
+
+ElmsLab_Johto_ElmAfterTheftText4:
+	.string "But… Is it a\n"
+	.string "POKéMON EGG?"
+	.string "\pIf it is, it is a\n"
+	.string "great discovery!$"
+
+ElmsLab_Johto_ElmAfterTheftText5:
+	.string "ELM: What?!?"
+	.string "\pPROF.OAK gave you\n"
+	.string "a POKéDEX?"
+	.string "\p{PLAYER}, is that\n"
+	.string "true? Th-that's\l"
+	.string "incredible!"
+	.string "\pHe is superb at\n"
+	.string "seeing the poten-\l"
+	.string "tial of people as\l"
+	.string "trainers."
+	.string "\pWow, {PLAYER}. You\n"
+	.string "may have what it"
+	.string "\ptakes to become\n"
+	.string "the CHAMPION."
+	.string "\pYou seem to be\n"
+	.string "getting on great\l"
+	.string "with POKéMON too."
+	.string "\pYou should take\n"
+	.string "the POKéMON GYM\l"
+	.string "challenge."
+	.string "\pThe closest GYM\n"
+	.string "would be the one\l"
+	.string "in VIOLET CITY.$"
+
+ElmsLab_Johto_ElmAfterTheftText6:
+	.string "…{PLAYER}. The\n"
+	.string "road to the"
+	.string "\pchampionship will\n"
+	.string "be a long one."
+	.string "\pBefore you leave,\n"
+	.string "make sure that you\l"
+	.string "talk to your mom.$"
 
 ElmsLab_Johto_ElmStudyingEggText:
 	.string "ELM: Don't give\n"

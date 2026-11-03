@@ -16099,6 +16099,366 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+    // POKE-CRYSTAL-BEGIN
+    [ITEM_MYSTERY_EGG] =
+    {
+        .name = ITEM_NAME("Mystery Egg"),
+        .description = COMPOUND_STRING(
+            "An egg Mr. Pokemon\n"
+            "asked you to bring\n"
+            "to Prof. Elm."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_RED_SCALE] =
+    {
+        .name = ITEM_NAME("Red Scale"),
+        .description = COMPOUND_STRING(
+            "A scale from a\n"
+            "red GYARADOS."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SECRETPOTION] =
+    {
+        .name = ITEM_NAME("SecretPotion"),
+        .description = COMPOUND_STRING(
+            "A potion that cures\n"
+            "a sick Pokemon\n"
+            "completely."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_CLEAR_BELL] =
+    {
+        .name = ITEM_NAME("Clear Bell"),
+        .description = COMPOUND_STRING(
+            "A bell that rings\n"
+            "clearly. It calls\n"
+            "a rainbow Pokemon."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SILVER_WING] =
+    {
+        .name = ITEM_NAME("Silver Wing"),
+        .description = COMPOUND_STRING(
+            "A strange, shiny\n"
+            "silver feather."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_RAINBOW_WING] =
+    {
+        .name = ITEM_NAME("Rainbow Wing"),
+        .description = COMPOUND_STRING(
+            "A rainbow-colored\n"
+            "feather of a\n"
+            "legendary bird."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_GS_BALL] =
+    {
+        .name = ITEM_NAME("GS Ball"),
+        .description = COMPOUND_STRING(
+            "A mysterious BALL\n"
+            "that shines with a\n"
+            "golden light."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_BLUE_CARD] =
+    {
+        .name = ITEM_NAME("Blue Card"),
+        .description = COMPOUND_STRING(
+            "A card that records\n"
+            "Battle Tower\n"
+            "points."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_EGG_TICKET] =
+    {
+        .name = ITEM_NAME("Egg Ticket"),
+        .description = COMPOUND_STRING(
+            "A ticket to trade\n"
+            "for a Pokemon egg."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_LOST_ITEM] =
+    {
+        .name = ITEM_NAME("Lost Item"),
+        .description = COMPOUND_STRING(
+            "Something lost by\n"
+            "a person who is\n"
+            "looking for it."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_PASS] =
+    {
+        .name = ITEM_NAME("Pass"),
+        .description = COMPOUND_STRING(
+            "A ticket for the\n"
+            "Magnet Train."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SQUIRTBOTTLE] =
+    {
+        .name = ITEM_NAME("SquirtBottle"),
+        .description = COMPOUND_STRING(
+            "A bottle that\n"
+            "sprays water. It\n"
+            "wakes sleeping trees."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SILVER_LEAF] =
+    {
+        .name = ITEM_NAME("Silver Leaf"),
+        .description = COMPOUND_STRING(
+            "A shiny leaf.\n"
+            "It can be sold."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_GOLD_LEAF] =
+    {
+        .name = ITEM_NAME("Gold Leaf"),
+        .description = COMPOUND_STRING(
+            "A shiny golden leaf.\n"
+            "It can be sold."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SLOWPOKETAIL] =
+    {
+        .name = ITEM_NAME("SlowpokeTail"),
+        .description = COMPOUND_STRING(
+            "A very tasty tail.\n"
+            "It can be sold."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_PINK_BOW] =
+    {
+        .name = ITEM_NAME("Pink Bow"),
+        .description = COMPOUND_STRING(
+            "A pink bow that\n"
+            "boosts Normal-type\n"
+            "moves when held."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_POLKADOT_BOW] =
+    {
+        .name = ITEM_NAME("Polkadot Bow"),
+        .description = COMPOUND_STRING(
+            "A polka-dotted bow\n"
+            "that boosts Normal-\n"
+            "type moves when held."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_BRICK_PIECE] =
+    {
+        .name = ITEM_NAME("Brick Piece"),
+        .description = COMPOUND_STRING(
+            "A piece of brick\n"
+            "that can be sold."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_BLACKBELT_I] =
+    {
+        .name = ITEM_NAME("BlackBelt"),
+        .description = COMPOUND_STRING(
+            "A belt that boosts\n"
+            "Fighting-type moves\n"
+            "when held."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_NORMAL_BOX] =
+    {
+        .name = ITEM_NAME("Normal Box"),
+        .description = COMPOUND_STRING(
+            "A box that holds a\n"
+            "little something."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_GORGEOUS_BOX] =
+    {
+        .name = ITEM_NAME("Gorgeous Box"),
+        .description = COMPOUND_STRING(
+            "A box that holds a\n"
+            "lovely something."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_MIRACLEBERRY] =
+    {
+        .name = ITEM_NAME("MiracleBerry"),
+        .description = COMPOUND_STRING(
+            "A berry that cures\n"
+            "any status problem."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_FLOWER_MAIL] =
+    {
+        .name = ITEM_NAME("Flower Mail"),
+        .description = COMPOUND_STRING(
+            "Mail with a\n"
+            "flower print."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SURF_MAIL] =
+    {
+        .name = ITEM_NAME("Surf Mail"),
+        .description = COMPOUND_STRING(
+            "Mail with a\n"
+            "surfing print."),
+        .price = 100,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+    // POKE-CRYSTAL-END
 };
 
 #undef ITEM_NAME

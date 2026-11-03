@@ -143,8 +143,8 @@ IlexForest_Johto_IlexForestShrineScript:
 	goto IlexForest_Johto_IlexForestShrineScript_DontDoCelebiEvent
 
 IlexForest_Johto_IlexForestShrineScript_ForestIsRestless:
-	@ TODO unsupported: checkitem GS_BALL
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_GS_BALL, 1
+	goto_if_ne VAR_RESULT, 0, IlexForest_Johto_IlexForestShrineScript_AskCelebiEvent
 
 IlexForest_Johto_IlexForestShrineScript_DontDoCelebiEvent:
 	message IlexForest_Johto_Text_IlexForestShrine
@@ -154,6 +154,39 @@ IlexForest_Johto_IlexForestShrineScript_DontDoCelebiEvent:
 	releaseall
 	end
 
+IlexForest_Johto_IlexForestShrineScript_AskCelebiEvent:
+	message IlexForest_Johto_Text_ShrineCelebiEvent
+	waitmessage
+	yesnobox 20, 8
+	goto_if_ne VAR_RESULT, 0, IlexForest_Johto_IlexForestShrineScript_CelebiEvent
+	closemessage
+	releaseall
+	end
+
+IlexForest_Johto_IlexForestShrineScript_CelebiEvent:
+	removeitem ITEM_GS_BALL
+	clearflag FLAG_JOHTO_FOREST_IS_RESTLESS
+	setflag FLAG_JOHTO_AZALEA_TOWN_KURT
+	removeobject 7
+	clearflag FLAG_JOHTO_ROUTE_34_ILEX_FOREST_GATE_LASS
+	message IlexForest_Johto_Text_InsertGSBall
+	waitmessage
+	waitbuttonpress
+	closemessage
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	fadeoutbgm 4
+	applymovement OBJ_EVENT_ID_PLAYER, IlexForest_Johto_IlexForestPlayerStepsDownMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 20
+	clearflag FLAG_JOHTO_ENGINE_FOREST_IS_RESTLESS
+	@ TODO unsupported: special CelebiShrineEvent
+	goto Johto_EventScript_Unimplemented
+
 IlexForest_Johto_IlexForestFarfetchdCallback_Cb:
 	goto_if_set FLAG_JOHTO_GOT_HM01_CUT, IlexForest_Johto_IlexForestFarfetchdCallback_Static_Cb
 	@ TODO unsupported: readmem wFarfetchdPosition
@@ -161,6 +194,12 @@ IlexForest_Johto_IlexForestFarfetchdCallback_Cb:
 
 IlexForest_Johto_IlexForestFarfetchdCallback_Static_Cb:
 	return
+
+IlexForest_Johto_IlexForestPlayerStepsDownMovement:
+	lock_facing_direction
+	walk_slow_down
+	unlock_facing_direction
+	step_end
 
 IlexForest_Johto_IlexForestApprenticeIntroText:
 	.string "Oh, man… My boss\n"
@@ -249,6 +288,24 @@ IlexForest_Johto_Text_IlexForestShrine:
 	.string "\pIt's in honor of\n"
 	.string "the forest's\l"
 	.string "protector…$"
+
+IlexForest_Johto_Text_ShrineCelebiEvent:
+	.string "ILEX FOREST\n"
+	.string "SHRINE…"
+	.string "\pIt's in honor of\n"
+	.string "the forest's\l"
+	.string "protector…"
+	.string "\pOh? What is this?"
+	.string "\pIt's a hole.\n"
+	.string "It looks like the"
+	.string "\pGS BALL would fit\n"
+	.string "inside it."
+	.string "\pWant to put the GS\n"
+	.string "BALL here?$"
+
+IlexForest_Johto_Text_InsertGSBall:
+	.string "{PLAYER} put in the\n"
+	.string "GS BALL.$"
 
 IlexForest_Johto_BugCatcherWayneSeenText:
 	.string "Don't sneak up on\n"

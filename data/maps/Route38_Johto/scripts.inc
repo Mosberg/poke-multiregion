@@ -52,8 +52,32 @@ Route38_Johto_TrainerLassDana1::
 	goto Route38_Johto_TrainerLassDana1_Script
 
 Route38_Johto_TrainerLassDana1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_LASS_DANA
+	goto_if_set FLAG_JOHTO_ENGINE_DANA_READY_FOR_REMATCH, Route38_Johto_TrainerLassDana1_DanaRematch
+	goto_if_set FLAG_JOHTO_ENGINE_DANA_HAS_THUNDERSTONE, Route38_Johto_TrainerLassDana1_TryGiveThunderstone
+	@ TODO unsupported: checkcellnum PHONE_LASS_DANA
 	goto Johto_EventScript_Unimplemented
+
+Route38_Johto_TrainerLassDana1_DanaRematch:
+	call Route38_Johto_TrainerLassDana1_Rematch_Sub
+	@ TODO unsupported: readmem wDanaFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route38_Johto_TrainerLassDana1_TryGiveThunderstone:
+	call Route38_Johto_TrainerLassDana1_Gift_Sub
+	giveitem ITEM_THUNDERSTONE
+	goto_if_eq VAR_RESULT, 0, Route38_Johto_TrainerLassDana1_NoRoomForThunderstone
+	clearflag FLAG_JOHTO_ENGINE_DANA_HAS_THUNDERSTONE
+	setflag FLAG_JOHTO_DANA_GAVE_THUNDERSTONE
+	goto Route38_Johto_TrainerLassDana1_NumberAccepted
+
+Route38_Johto_TrainerLassDana1_NoRoomForThunderstone:
+	goto Route38_Johto_TrainerLassDana1_PackFull
+
+Route38_Johto_TrainerLassDana1_NumberAccepted:
+	goto Johto_Std_NumberAcceptedFScript
+
+Route38_Johto_TrainerLassDana1_PackFull:
+	goto Johto_Std_PackFullFScript
 
 Route38_Johto_TrainerSchoolboyChad1::
 	trainerbattle_single TRAINER_JOHTO_SCHOOLBOY_CHAD1, Route38_Johto_SchoolboyChad1SeenText, Route38_Johto_SchoolboyChad1BeatenText
@@ -63,7 +87,13 @@ Route38_Johto_TrainerSchoolboyChad1::
 	goto Route38_Johto_TrainerSchoolboyChad1_Script
 
 Route38_Johto_TrainerSchoolboyChad1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_SCHOOLBOY_CHAD
+	goto_if_set FLAG_JOHTO_ENGINE_CHAD_READY_FOR_REMATCH, Route38_Johto_TrainerSchoolboyChad1_ChadRematch
+	@ TODO unsupported: checkcellnum PHONE_SCHOOLBOY_CHAD
+	goto Johto_EventScript_Unimplemented
+
+Route38_Johto_TrainerSchoolboyChad1_ChadRematch:
+	call Route38_Johto_TrainerSchoolboyChad1_Rematch_Sub
+	@ TODO unsupported: readmem wChadFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route38_Johto_TrainerBeautyValerie::
@@ -113,8 +143,20 @@ Route38_Johto_Route38TrainerTips:
 	end
 
 Route38_Johto_Route38FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_38
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_38, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_ORAN_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_38
+	releaseall
+	end
+
+Route38_Johto_TrainerLassDana1_Rematch_Sub:
+	goto Johto_Std_RematchFScript_Sub
+
+Route38_Johto_TrainerLassDana1_Gift_Sub:
+	goto Johto_Std_GiftFScript_Sub
+
+Route38_Johto_TrainerSchoolboyChad1_Rematch_Sub:
+	goto Johto_Std_RematchMScript_Sub
 
 Route38_Johto_BirdKeeperTobySeenText:
 	.string "Fly high into the\n"

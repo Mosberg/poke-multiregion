@@ -20,8 +20,13 @@ GoldenrodFlowerShop_Johto_FlowerShopTeacherScript:
 	message GoldenrodFlowerShop_Johto_GoldenrodFlowerShopTeacherHeresTheSquirtbottleText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem SQUIRTBOTTLE
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_SQUIRTBOTTLE
+	setflag FLAG_JOHTO_GOT_SQUIRTBOTTLE
+	closemessage
+	setflag FLAG_JOHTO_FLORIA_AT_SUDOWOODO
+	clearflag FLAG_JOHTO_FLORIA_AT_FLOWER_SHOP
+	releaseall
+	end
 
 GoldenrodFlowerShop_Johto_FlowerShopTeacherScript_Lalala:
 	applymovement 1, Johto_Movement_Face_Left

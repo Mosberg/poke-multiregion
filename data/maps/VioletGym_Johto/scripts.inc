@@ -29,7 +29,7 @@ VioletGym_Johto_VioletGymFalknerScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_ZEPHYRBADGE
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	call VioletGym_Johto_VioletGymActivateRockets_Sub
 
 VioletGym_Johto_VioletGymFalknerScript_FightDone:

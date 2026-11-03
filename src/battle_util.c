@@ -5639,14 +5639,14 @@ enum Obedience GetAttackerObedienceForAction(void)
     if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
         return OBEYS;
     // POKE-MIGRATOR: REGIONAL OBEDIENCE: Hoenn uses badges 1-8, Kanto uses badges 9-16 (FLAG_BADGE09_GET..FLAG_BADGE16_GET)
-    u32 firstBadge = GetCurrentRegion() == REGION_KANTO ? FLAG_BADGE09_GET : FLAG_BADGE01_GET;
-    if (FlagGet(firstBadge + 7)) // Eighth badge, ignore obedience altogether
+    enum Region region = GetCurrentRegion();
+    if (FlagGet(GetBadgeFlagForRegion(region, 7))) // Eighth badge, ignore obedience altogether
         return OBEYS;
 
     obedienceLevel = 10;
     for (u32 badge = 0; badge < 7; badge++)
     {
-        if (FlagGet(firstBadge + badge))
+        if (FlagGet(GetBadgeFlagForRegion(region, badge)))
             obedienceLevel = 20 + 10 * badge;
     }
 

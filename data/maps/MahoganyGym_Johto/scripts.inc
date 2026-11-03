@@ -29,7 +29,7 @@ MahoganyGym_Johto_MahoganyGymPryceScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_GLACIERBADGE
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	call MahoganyGym_Johto_MahoganyGymActivateRockets_Sub
 
 MahoganyGym_Johto_MahoganyGymPryceScript_FightDone:

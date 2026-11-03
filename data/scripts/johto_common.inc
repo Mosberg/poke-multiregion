@@ -42,6 +42,15 @@ Johto_EventScript_Unimplemented::
 	releaseall
 	end
 
+Johto_Text_FruitTreeEmpty:
+	.string "There are no BERRIES left\non this tree.$"
+
+Johto_Std_FruitTreeEmpty::
+	lockall
+	msgbox Johto_Text_FruitTreeEmpty, MSGBOX_DEFAULT
+	releaseall
+	end
+
 Johto_Text_ReceivedItem:
 	.string "{PLAYER} received\n{STR_VAR_2}!$"
 
@@ -67,6 +76,7 @@ Johto_Mart_AZALEA:
 	.2byte ITEM_REPEL
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARLYZ_HEAL
+	.2byte ITEM_FLOWER_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -119,6 +129,7 @@ Johto_Mart_CELADON_3F:
 	.align 2
 Johto_Mart_CELADON_4F:
 	.2byte ITEM_POKE_DOLL
+	.2byte ITEM_SURF_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -151,6 +162,7 @@ Johto_Mart_CERULEAN:
 	.2byte ITEM_X_DEFEND
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_SURF_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -201,6 +213,7 @@ Johto_Mart_FUCHSIA:
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_FLOWER_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -223,6 +236,7 @@ Johto_Mart_GOLDENROD_2F_2:
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_POKE_DOLL
+	.2byte ITEM_FLOWER_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -291,6 +305,7 @@ Johto_Mart_LAVENDER:
 	.align 2
 Johto_Mart_MAHOGANY_1:
 	.2byte ITEM_TINYMUSHROOM
+	.2byte ITEM_SLOWPOKETAIL
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_NONE
@@ -305,6 +320,7 @@ Johto_Mart_MAHOGANY_2:
 	.2byte ITEM_PARLYZ_HEAL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_REVIVE
+	.2byte ITEM_FLOWER_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -326,6 +342,7 @@ Johto_Mart_OLIVINE:
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_SURF_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -348,6 +365,7 @@ Johto_Mart_SAFFRON:
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFEND
+	.2byte ITEM_FLOWER_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -380,6 +398,7 @@ Johto_Mart_VIOLET:
 	.2byte ITEM_X_DEFEND
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_SPEED
+	.2byte ITEM_FLOWER_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
@@ -392,6 +411,7 @@ Johto_Mart_VIRIDIAN:
 	.2byte ITEM_PARLYZ_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_FLOWER_MAIL
 	.2byte ITEM_NONE
 
 Johto_Std_CoinVendor_IntroScript:
@@ -505,6 +525,14 @@ Johto_Std_GameCornerCoinVendorScript:
 	closemessage
 	releaseall
 	end
+
+Johto_Std_GiftFScript_Sub:
+	@ TODO unsupported: readvar VAR_CALLERID
+	return
+
+Johto_Std_GiftMScript_Sub:
+	@ TODO unsupported: readvar VAR_CALLERID
+	return
 
 Johto_Std_GoldenrodRocketsScript_Sub:
 	clearflag FLAG_JOHTO_GOLDENROD_CITY_ROCKET_TAKEOVER
@@ -700,6 +728,14 @@ Johto_Std_MartSignText:
 	.string "POKéMON Needs"
 	.string "\pPOKéMON MART$"
 
+Johto_Std_NumberAcceptedFScript:
+	@ TODO unsupported: readvar VAR_CALLERID
+	goto Johto_EventScript_Unimplemented
+
+Johto_Std_NumberAcceptedMScript:
+	@ TODO unsupported: readvar VAR_CALLERID
+	goto Johto_EventScript_Unimplemented
+
 Johto_Std_NurseAskHealText:
 	.string "We can heal your\n"
 	.string "POKéMON to perfect\l"
@@ -725,6 +761,14 @@ Johto_Std_NurseReturnPokemonText:
 Johto_Std_NurseTakePokemonText:
 	.string "OK, may I see your\n"
 	.string "POKéMON?$"
+
+Johto_Std_PackFullFScript:
+	@ TODO unsupported: readvar VAR_CALLERID
+	goto Johto_EventScript_Unimplemented
+
+Johto_Std_PackFullMScript:
+	@ TODO unsupported: readvar VAR_CALLERID
+	goto Johto_EventScript_Unimplemented
 
 Johto_Std_PictureBookshelfScript:
 	message Johto_Std_PictureBookshelfText
@@ -799,6 +843,14 @@ Johto_Std_RadioTowerRocketsScript_Sub:
 Johto_Std_ReceivedItemText:
 	.string "{PLAYER} received\n"
 	.string "{STR_VAR_2}.$"
+
+Johto_Std_RematchFScript_Sub:
+	@ TODO unsupported: readvar VAR_CALLERID
+	return
+
+Johto_Std_RematchMScript_Sub:
+	@ TODO unsupported: readvar VAR_CALLERID
+	return
 
 Johto_Std_SmashRockScript:
 	@ TODO unsupported: farsjump AskRockSmashScript

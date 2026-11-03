@@ -133,16 +133,25 @@ Route37_Johto_Route37Sign:
 	end
 
 Route37_Johto_Route37FruitTree1:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_37_1
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_37_1, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_RED_APRICORN
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_37_1
+	releaseall
+	end
 
 Route37_Johto_Route37FruitTree2:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_37_2
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_37_2, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_BLU_APRICORN
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_37_2
+	releaseall
+	end
 
 Route37_Johto_Route37FruitTree3:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_37_3
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_37_3, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_BLK_APRICORN
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_37_3
+	releaseall
+	end
 
 Route37_Johto_Route37SunnyCallback_Cb:
 	special JohtoGetWeekday

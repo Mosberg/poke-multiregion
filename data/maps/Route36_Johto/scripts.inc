@@ -59,8 +59,32 @@ Route36_Johto_Route36SuicuneScript:
 	goto Johto_EventScript_Unimplemented
 
 Route36_Johto_SudowoodoScript:
-	@ TODO unsupported: checkitem SQUIRTBOTTLE
+	checkitem ITEM_SQUIRTBOTTLE, 1
+	goto_if_ne VAR_RESULT, 0, Route36_Johto_SudowoodoScript_Fight
+	waitse
+	@ TODO unsupported: playsound SFX_SANDSTORM
 	goto Johto_EventScript_Unimplemented
+
+Route36_Johto_SudowoodoScript_Fight:
+	message Route36_Johto_UseSquirtbottleText
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, Route36_Johto_DidntUseSquirtbottleScript
+	closemessage
+
+Route36_Johto_WateredWeirdTreeScript:
+	message Route36_Johto_UsedSquirtbottleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	waitse
+	@ TODO unsupported: playsound SFX_SANDSTORM
+	goto Johto_EventScript_Unimplemented
+
+Route36_Johto_DidntUseSquirtbottleScript:
+	closemessage
+	releaseall
+	end
 
 Route36_Johto_Route36FloriaScript:
 	faceplayer
@@ -149,8 +173,32 @@ Route36_Johto_TrainerSchoolboyAlan1::
 	goto Route36_Johto_TrainerSchoolboyAlan1_Script
 
 Route36_Johto_TrainerSchoolboyAlan1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_SCHOOLBOY_ALAN
+	goto_if_set FLAG_JOHTO_ENGINE_ALAN_READY_FOR_REMATCH, Route36_Johto_TrainerSchoolboyAlan1_ChooseRematch
+	goto_if_set FLAG_JOHTO_ENGINE_ALAN_HAS_FIRE_STONE, Route36_Johto_TrainerSchoolboyAlan1_GiveFireStone
+	@ TODO unsupported: checkcellnum PHONE_SCHOOLBOY_ALAN
 	goto Johto_EventScript_Unimplemented
+
+Route36_Johto_TrainerSchoolboyAlan1_ChooseRematch:
+	call Route36_Johto_TrainerSchoolboyAlan1_Rematch_Sub
+	@ TODO unsupported: readmem wAlanFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route36_Johto_TrainerSchoolboyAlan1_GiveFireStone:
+	call Route36_Johto_TrainerSchoolboyAlan1_Gift_Sub
+	giveitem ITEM_FIRE_STONE
+	goto_if_eq VAR_RESULT, 0, Route36_Johto_TrainerSchoolboyAlan1_BagFull
+	clearflag FLAG_JOHTO_ENGINE_ALAN_HAS_FIRE_STONE
+	setflag FLAG_JOHTO_ALAN_GAVE_FIRE_STONE
+	goto Route36_Johto_TrainerSchoolboyAlan1_NumberAccepted
+
+Route36_Johto_TrainerSchoolboyAlan1_BagFull:
+	goto Route36_Johto_TrainerSchoolboyAlan1_PackFull
+
+Route36_Johto_TrainerSchoolboyAlan1_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route36_Johto_TrainerSchoolboyAlan1_PackFull:
+	goto Johto_Std_PackFullMScript
 
 Route36_Johto_TrainerPsychicMark::
 	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_MARK, Route36_Johto_PsychicMarkSeenText, Route36_Johto_PsychicMarkBeatenText
@@ -243,8 +291,17 @@ Route36_Johto_Route36TrainerTips2:
 	end
 
 Route36_Johto_Route36FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_36
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_36, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_ASPEAR_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_36
+	releaseall
+	end
+
+Route36_Johto_TrainerSchoolboyAlan1_Rematch_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route36_Johto_TrainerSchoolboyAlan1_Gift_Sub:
+	goto Johto_Std_GiftMScript_Sub
 
 Route36_Johto_Route36ArthurCallback_Cb:
 	special JohtoGetWeekday
@@ -279,6 +336,14 @@ Route36_Johto_FloriaMovement2:
 	walk_left
 	walk_left
 	step_end
+
+Route36_Johto_UseSquirtbottleText:
+	.string "It's a weird tree.\n"
+	.string "Use SQUIRTBOTTLE?$"
+
+Route36_Johto_UsedSquirtbottleText:
+	.string "{PLAYER} used the\n"
+	.string "SQUIRTBOTTLE.$"
 
 Route36_Johto_FloriaText1:
 	.string "I'm the FLOWER\n"

@@ -30,7 +30,7 @@ VictoryRoadGate_Johto__VictoryRoadGateBadgeCheckScript:
 	message VictoryRoadGate_Johto_VictoryRoadGateOfficerText
 	waitmessage
 	waitbuttonpress
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	@ TODO unsupported: ifgreater NUM_JOHTO_BADGES - 1, .AllEightBadges
 	goto Johto_EventScript_Unimplemented
 

@@ -61,7 +61,13 @@ Route43_Johto_TrainerPokemaniacBrent::
 	goto Route43_Johto_TrainerPokemaniacBrent_Script
 
 Route43_Johto_TrainerPokemaniacBrent_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_POKEMANIAC_BRENT
+	goto_if_set FLAG_JOHTO_ENGINE_BRENT_READY_FOR_REMATCH, Route43_Johto_TrainerPokemaniacBrent_WantsBattle
+	@ TODO unsupported: checkcellnum PHONE_POKEMANIAC_BRENT
+	goto Johto_EventScript_Unimplemented
+
+Route43_Johto_TrainerPokemaniacBrent_WantsBattle:
+	call Route43_Johto_TrainerPokemaniacBrent_Rematch_Sub
+	@ TODO unsupported: readmem wBrentFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route43_Johto_TrainerPokemaniacRon::
@@ -102,8 +108,32 @@ Route43_Johto_TrainerPicnickerTiffany::
 	goto Route43_Johto_TrainerPicnickerTiffany_Script
 
 Route43_Johto_TrainerPicnickerTiffany_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_PICNICKER_TIFFANY
+	goto_if_set FLAG_JOHTO_ENGINE_TIFFANY_READY_FOR_REMATCH, Route43_Johto_TrainerPicnickerTiffany_WantsBattle
+	goto_if_set FLAG_JOHTO_ENGINE_TIFFANY_HAS_PINK_BOW, Route43_Johto_TrainerPicnickerTiffany_HasPinkBow
+	@ TODO unsupported: checkcellnum PHONE_PICNICKER_TIFFANY
 	goto Johto_EventScript_Unimplemented
+
+Route43_Johto_TrainerPicnickerTiffany_WantsBattle:
+	call Route43_Johto_TrainerPicnickerTiffany_Rematch_Sub
+	@ TODO unsupported: readmem wTiffanyFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route43_Johto_TrainerPicnickerTiffany_HasPinkBow:
+	call Route43_Johto_TrainerPicnickerTiffany_Gift_Sub
+	giveitem ITEM_PINK_BOW
+	goto_if_eq VAR_RESULT, 0, Route43_Johto_TrainerPicnickerTiffany_NoRoom
+	clearflag FLAG_JOHTO_ENGINE_TIFFANY_HAS_PINK_BOW
+	setflag FLAG_JOHTO_TIFFANY_GAVE_PINK_BOW
+	goto Route43_Johto_TrainerPicnickerTiffany_NumberAccepted
+
+Route43_Johto_TrainerPicnickerTiffany_NoRoom:
+	goto Route43_Johto_TrainerPicnickerTiffany_PackFull
+
+Route43_Johto_TrainerPicnickerTiffany_NumberAccepted:
+	goto Johto_Std_NumberAcceptedFScript
+
+Route43_Johto_TrainerPicnickerTiffany_PackFull:
+	goto Johto_Std_PackFullFScript
 
 Route43_Johto_Route43Sign1:
 	message Route43_Johto_Route43Sign1Text
@@ -130,8 +160,20 @@ Route43_Johto_Route43TrainerTips:
 	end
 
 Route43_Johto_Route43FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_43
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_43, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_PERSIM_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_43
+	releaseall
+	end
+
+Route43_Johto_TrainerPokemaniacBrent_Rematch_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route43_Johto_TrainerPicnickerTiffany_Rematch_Sub:
+	goto Johto_Std_RematchFScript_Sub
+
+Route43_Johto_TrainerPicnickerTiffany_Gift_Sub:
+	goto Johto_Std_GiftFScript_Sub
 
 Route43_Johto_Route43CheckIfRocketsScene_Cb:
 	goto_if_set FLAG_JOHTO_CLEARED_ROCKET_HIDEOUT, Route43_Johto_Route43CheckIfRocketsScene_NoRockets_Cb

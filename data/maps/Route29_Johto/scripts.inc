@@ -187,8 +187,15 @@ Route29_Johto_TuscanyScript_MetTuscany:
 	message Route29_Johto_TuscanyGivesGiftText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem PINK_BOW
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_PINK_BOW
+	goto_if_eq VAR_RESULT, 0, Route29_Johto_TuscanyDoneScript
+	setflag FLAG_JOHTO_GOT_PINK_BOW_FROM_TUSCANY
+	message Route29_Johto_TuscanyGaveGiftText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route29_Johto_TuscanyTuesdayScript:
 	message Route29_Johto_TuscanyTuesdayText
@@ -225,8 +232,11 @@ Route29_Johto_Route29Sign2:
 	end
 
 Route29_Johto_Route29FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_29
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_29, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_ORAN_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_29
+	releaseall
+	end
 
 Route29_Johto_Route29TuscanyCallback_Cb:
 	goto_if_set FLAG_JOHTO_ENGINE_ZEPHYRBADGE, Route29_Johto_Route29TuscanyCallback_DoesTuscanyAppear_Cb
@@ -341,6 +351,15 @@ Route29_Johto_TuscanyGivesGiftText:
 	.string "duction, please"
 	.string "\paccept this gift,\n"
 	.string "a PINK BOW.$"
+
+Route29_Johto_TuscanyGaveGiftText:
+	.string "TUSCANY: Wouldn't\n"
+	.string "you agree that it\l"
+	.string "is most adorable?"
+	.string "\pIt strengthens\n"
+	.string "normal-type moves."
+	.string "\pI am certain it\n"
+	.string "will be of use.$"
 
 Route29_Johto_TuscanyTuesdayText:
 	.string "TUSCANY: Have you\n"

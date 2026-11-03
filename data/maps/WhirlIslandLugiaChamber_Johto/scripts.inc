@@ -20,12 +20,17 @@ WhirlIslandLugiaChamber_Johto_Lugia:
 	delay 15
 	closemessage
 	setflag FLAG_JOHTO_FOUGHT_LUGIA
-	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	@ TODO unsupported: loadwildmon LUGIA, 60
 	goto Johto_EventScript_Unimplemented
 
 WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Cb:
 	goto_if_set FLAG_JOHTO_FOUGHT_LUGIA, WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Cb
-	@ TODO unsupported: checkitem SILVER_WING
+	checkitem ITEM_SILVER_WING, 1
+	goto_if_ne VAR_RESULT, 0, WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Appear_Cb
+	goto WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Cb
+
+WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Appear_Cb:
+	clearflag FLAG_JOHTO_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
 	return
 
 WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Cb:

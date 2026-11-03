@@ -29,8 +29,27 @@ GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerScript_Magne
 	waitmessage
 	yesnobox 20, 8
 	goto_if_eq VAR_RESULT, 0, GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerScript_DecidedNotToRide
-	@ TODO unsupported: checkitem PASS
+	checkitem ITEM_PASS, 1
+	goto_if_eq VAR_RESULT, 0, GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerScript_PassNotInBag
+	message GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerRightThisWayText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 1, GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement
+	waitmovement 1
+	applymovement OBJ_EVENT_ID_PLAYER, GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setvar VAR_RESULT, FALSE
+	@ TODO unsupported: special MagnetTrain
 	goto Johto_EventScript_Unimplemented
+
+GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerScript_PassNotInBag:
+	message GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerScript_DecidedNotToRide:
 	message GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText
@@ -76,6 +95,17 @@ GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerReturnToBoar
 	walk_down
 	step_end
 
+GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement:
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
 GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement:
 	walk_left
 	walk_left
@@ -99,6 +129,16 @@ GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerAreYouComing
 	.string "for SAFFRON."
 	.string "\pAre you coming\n"
 	.string "aboard?$"
+
+GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerRightThisWayText:
+	.string "May I see your\n"
+	.string "rail PASS, please?"
+	.string "\pOK. Right this\n"
+	.string "way, please.$"
+
+GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText:
+	.string "Sorry. You don't\n"
+	.string "have a rail PASS.$"
 
 GoldenrodMagnetTrainStation_Johto_GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText:
 	.string "We hope to see you\n"

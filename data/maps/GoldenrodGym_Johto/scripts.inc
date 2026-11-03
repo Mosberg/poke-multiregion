@@ -56,7 +56,7 @@ GoldenrodGym_Johto_GoldenrodGymWhitneyScript_StoppedCrying:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_PLAINBADGE
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	call GoldenrodGym_Johto_GoldenrodGymActivateRockets_Sub
 
 GoldenrodGym_Johto_GoldenrodGymWhitneyScript_GotPlainBadge:

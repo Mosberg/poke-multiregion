@@ -42,13 +42,51 @@ MrPokemonsHouse_Johto_MrPokemonsHouseMrPokemonEventScript:
 	waitmessage
 	waitbuttonpress
 	waitse
-	@ TODO unsupported: giveitem MYSTERY_EGG
+	additem ITEM_MYSTERY_EGG
+	message MrPokemonsHouse_Johto_MrPokemonsHouse_GotEggText
+	waitmessage
+	@ TODO unsupported: playsound SFX_KEY_ITEM
 	goto Johto_EventScript_Unimplemented
 
 MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript:
 	faceplayer
-	@ TODO unsupported: checkitem RED_SCALE
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_RED_SCALE, 1
+	goto_if_ne VAR_RESULT, 0, MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_RedScale
+	goto_if_set FLAG_JOHTO_GAVE_MYSTERY_EGG_TO_ELM, MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_AlwaysNewDiscoveries
+	message MrPokemonsHouse_Johto_MrPokemonText_ImDependingOnYou
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_AlwaysNewDiscoveries:
+	message MrPokemonsHouse_Johto_MrPokemonText_AlwaysNewDiscoveries
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_RedScale:
+	message MrPokemonsHouse_Johto_MrPokemonText_GimmeTheScale
+	waitmessage
+	yesnobox 20, 8
+	goto_if_eq VAR_RESULT, 0, MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_refused
+	giveitem ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, 0, MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_full
+	removeitem ITEM_RED_SCALE
+	goto MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_AlwaysNewDiscoveries
+
+MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_refused:
+	message MrPokemonsHouse_Johto_MrPokemonText_Disappointed
+	waitmessage
+	waitbuttonpress
+
+MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript_full:
+	closemessage
+	releaseall
+	end
 
 MrPokemonsHouse_Johto_MrPokemonsHouse_ForeignMagazines:
 	message MrPokemonsHouse_Johto_MrPokemonsHouse_ForeignMagazinesText
@@ -89,6 +127,37 @@ MrPokemonsHouse_Johto_MrPokemonIntroText2:
 	.string "This is what I\n"
 	.string "want PROF.ELM to\l"
 	.string "examine.$"
+
+MrPokemonsHouse_Johto_MrPokemonsHouse_GotEggText:
+	.string "{PLAYER} received\n"
+	.string "MYSTERY EGG.$"
+
+MrPokemonsHouse_Johto_MrPokemonText_ImDependingOnYou:
+	.string "I'm depending on\n"
+	.string "you!$"
+
+MrPokemonsHouse_Johto_MrPokemonText_AlwaysNewDiscoveries:
+	.string "Life is delight-\n"
+	.string "ful! Always, new"
+	.string "\pdiscoveries to be\n"
+	.string "made!$"
+
+MrPokemonsHouse_Johto_MrPokemonText_GimmeTheScale:
+	.string "Hm? That SCALE!\n"
+	.string "What's that?\l"
+	.string "A red GYARADOS?"
+	.string "\pThat's rare! \n"
+	.string "I, I want it…"
+	.string "\p{PLAYER}, would you\n"
+	.string "care to trade it?"
+	.string "\pI can offer this\n"
+	.string "EXP.SHARE I got\l"
+	.string "from PROF.OAK.$"
+
+MrPokemonsHouse_Johto_MrPokemonText_Disappointed:
+	.string "That's disappoint-\n"
+	.string "ing. That happens\l"
+	.string "to be very rare.$"
 
 MrPokemonsHouse_Johto_MrPokemonsHouse_ForeignMagazinesText:
 	.string "It's packed with\n"

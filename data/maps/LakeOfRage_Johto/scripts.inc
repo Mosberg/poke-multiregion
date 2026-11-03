@@ -219,8 +219,15 @@ LakeOfRage_Johto_WesleyScript_MetWesley:
 	message LakeOfRage_Johto_WesleyGivesGiftText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem BLACKBELT_I
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_BLACKBELT_I
+	goto_if_eq VAR_RESULT, 0, LakeOfRage_Johto_WesleyDoneScript
+	setflag FLAG_JOHTO_GOT_BLACKBELT_FROM_WESLEY
+	message LakeOfRage_Johto_WesleyGaveGiftText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 LakeOfRage_Johto_WesleyWednesdayScript:
 	message LakeOfRage_Johto_WesleyWednesdayText
@@ -412,6 +419,11 @@ LakeOfRage_Johto_WesleyGivesGiftText:
 	.string "Pleased to meet\n"
 	.string "you. Please take a\l"
 	.string "souvenir.$"
+
+LakeOfRage_Johto_WesleyGaveGiftText:
+	.string "WESLEY: BLACKBELT\n"
+	.string "beefs up the power\l"
+	.string "of fighting moves.$"
 
 LakeOfRage_Johto_WesleyWednesdayText:
 	.string "WESLEY: Since you\n"

@@ -37,8 +37,27 @@ SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerScript_MagnetTra
 	waitmessage
 	yesnobox 20, 8
 	goto_if_eq VAR_RESULT, 0, SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerScript_DecidedNotToRide
-	@ TODO unsupported: checkitem PASS
+	checkitem ITEM_PASS, 1
+	goto_if_eq VAR_RESULT, 0, SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerScript_PassNotInBag
+	message SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerRightThisWayText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 1, SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerApproachTrainDoorMovement
+	waitmovement 1
+	applymovement OBJ_EVENT_ID_PLAYER, SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationPlayerApproachAndEnterTrainMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setvar VAR_RESULT, TRUE
+	@ TODO unsupported: special MagnetTrain
 	goto Johto_EventScript_Unimplemented
+
+SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerScript_PassNotInBag:
+	message SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerYouDontHaveAPassText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerScript_DecidedNotToRide:
 	message SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText
@@ -111,6 +130,17 @@ SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerReturnToBoarding
 	walk_down
 	step_end
 
+SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationPlayerApproachAndEnterTrainMovement:
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
 SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement:
 	walk_left
 	walk_left
@@ -131,6 +161,16 @@ SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerAreYouComingOnBo
 	.string "for GOLDENROD."
 	.string "\pAre you coming on\n"
 	.string "board?$"
+
+SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerRightThisWayText:
+	.string "May I see your\n"
+	.string "rail PASS, please?"
+	.string "\pOK. Right this\n"
+	.string "way, please.$"
+
+SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerYouDontHaveAPassText:
+	.string "Sorry, but you\n"
+	.string "don't have a PASS.$"
 
 SaffronMagnetTrainStation_Johto_SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText:
 	.string "We hope to see you\n"

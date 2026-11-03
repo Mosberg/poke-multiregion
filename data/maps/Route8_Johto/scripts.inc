@@ -106,8 +106,11 @@ Route8_Johto_Route8UndergroundPathSign:
 	end
 
 Route8_Johto_Route8FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_8
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_8, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_CHERI_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_8
+	releaseall
+	end
 
 Route8_Johto_BikerDwayneSeenText:
 	.string "We're the KANTO\n"

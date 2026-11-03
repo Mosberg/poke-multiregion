@@ -29,7 +29,7 @@ OlivineGym_Johto_OlivineGymJasmineScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_MINERALBADGE
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	call OlivineGym_Johto_OlivineGymActivateRockets_Sub
 
 OlivineGym_Johto_OlivineGymJasmineScript_FightDone:

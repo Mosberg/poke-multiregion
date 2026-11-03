@@ -33,7 +33,13 @@ Route26_Johto_TrainerCooltrainermGaven3::
 	goto Route26_Johto_TrainerCooltrainermGaven3_Script
 
 Route26_Johto_TrainerCooltrainermGaven3_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_COOLTRAINERM_GAVEN
+	goto_if_set FLAG_JOHTO_ENGINE_GAVEN_READY_FOR_REMATCH, Route26_Johto_TrainerCooltrainermGaven3_WantsBattle
+	@ TODO unsupported: checkcellnum PHONE_COOLTRAINERM_GAVEN
+	goto Johto_EventScript_Unimplemented
+
+Route26_Johto_TrainerCooltrainermGaven3_WantsBattle:
+	call Route26_Johto_TrainerCooltrainermGaven3_Rematch_Sub
+	@ TODO unsupported: readmem wGavenFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route26_Johto_TrainerCooltrainerfJoyce::
@@ -59,7 +65,13 @@ Route26_Johto_TrainerCooltrainerfBeth1::
 	goto Route26_Johto_TrainerCooltrainerfBeth1_Script
 
 Route26_Johto_TrainerCooltrainerfBeth1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_COOLTRAINERF_BETH
+	goto_if_set FLAG_JOHTO_ENGINE_BETH_READY_FOR_REMATCH, Route26_Johto_TrainerCooltrainerfBeth1_WantsBattle
+	@ TODO unsupported: checkcellnum PHONE_COOLTRAINERF_BETH
+	goto Johto_EventScript_Unimplemented
+
+Route26_Johto_TrainerCooltrainerfBeth1_WantsBattle:
+	call Route26_Johto_TrainerCooltrainerfBeth1_Rematch_Sub
+	@ TODO unsupported: readmem wBethFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route26_Johto_TrainerPsychicRichard::
@@ -101,8 +113,17 @@ Route26_Johto_Route26Sign:
 	end
 
 Route26_Johto_Route26FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_26
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_26, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_ASPEAR_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_26
+	releaseall
+	end
+
+Route26_Johto_TrainerCooltrainermGaven3_Rematch_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route26_Johto_TrainerCooltrainerfBeth1_Rematch_Sub:
+	goto Johto_Std_RematchFScript_Sub
 
 Route26_Johto_CooltrainermJakeSeenText:
 	.string "I'm making my\n"

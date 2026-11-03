@@ -79,8 +79,11 @@ PewterCity_Johto_PewterCityGrampsScript:
 	message PewterCity_Johto_PewterCityGrampsText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem SILVER_WING
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_SILVER_WING
+	setflag FLAG_JOHTO_GOT_SILVER_WING
+	closemessage
+	releaseall
+	end
 
 PewterCity_Johto_PewterCityGrampsScript_GotSilverWing:
 	message PewterCity_Johto_PewterCityGrampsText_GotSilverWing
@@ -137,12 +140,18 @@ PewterCity_Johto_PewterCityMartSign:
 	goto Johto_Std_MartSignScript
 
 PewterCity_Johto_PewterCityFruitTree1:
-	@ TODO unsupported: fruittree FRUITTREE_PEWTER_CITY_1
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_PEWTER_CITY_1, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_ASPEAR_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_PEWTER_CITY_1
+	releaseall
+	end
 
 PewterCity_Johto_PewterCityFruitTree2:
-	@ TODO unsupported: fruittree FRUITTREE_PEWTER_CITY_2
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_PEWTER_CITY_2, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_LUM_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_PEWTER_CITY_2
+	releaseall
+	end
 
 PewterCity_Johto_PewterCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_PEWTER

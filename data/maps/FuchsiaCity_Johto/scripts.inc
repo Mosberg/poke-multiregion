@@ -137,8 +137,11 @@ FuchsiaCity_Johto_FuchsiaCityMartSign:
 	goto Johto_Std_MartSignScript
 
 FuchsiaCity_Johto_FuchsiaCityFruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_FUCHSIA_CITY
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_FUCHSIA_CITY, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_RAWST_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_FUCHSIA_CITY
+	releaseall
+	end
 
 FuchsiaCity_Johto_FuchsiaCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_FUCHSIA

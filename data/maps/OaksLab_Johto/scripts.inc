@@ -48,7 +48,7 @@ OaksLab_Johto_Oak:
 	setflag FLAG_JOHTO_TALKED_TO_OAK_IN_KANTO
 
 OaksLab_Johto_Oak_CheckBadges:
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	@ TODO unsupported: ifequal NUM_BADGES, .OpenMtSilver
 	goto Johto_EventScript_Unimplemented
 

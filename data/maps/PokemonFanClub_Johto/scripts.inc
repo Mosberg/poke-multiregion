@@ -113,11 +113,24 @@ PokemonFanClub_Johto_PokemonFanClubClefairyGuyScript_MetCopycat:
 	waitmessage
 	waitbuttonpress
 	waitse
-	@ TODO unsupported: giveitem LOST_ITEM
+	additem ITEM_LOST_ITEM
+	goto_if_eq VAR_RESULT, 0, PokemonFanClub_Johto_PokemonFanClubClefairyGuyScript_NoRoom
+	removeobject 5
+	message PokemonFanClub_Johto_PokemonFanClubPlayerReceivedDollText
+	waitmessage
+	@ TODO unsupported: playsound SFX_KEY_ITEM
 	goto Johto_EventScript_Unimplemented
 
 PokemonFanClub_Johto_PokemonFanClubClefairyGuyScript_GotLostItem:
 	message PokemonFanClub_Johto_PokemonFanClubClefairyGuyGoingToGetARealClefairyText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+PokemonFanClub_Johto_PokemonFanClubClefairyGuyScript_NoRoom:
+	message PokemonFanClub_Johto_PokemonFanClubClefairyGuyPackIsJammedFullText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -263,11 +276,19 @@ PokemonFanClub_Johto_PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
 	.string "\pmy own one day.\n"
 	.string "No worries!$"
 
+PokemonFanClub_Johto_PokemonFanClubPlayerReceivedDollText:
+	.string "{PLAYER} received\n"
+	.string "POKé DOLL.$"
+
 PokemonFanClub_Johto_PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
 	.string "You watch. I'm\n"
 	.string "going to get a"
 	.string "\preal CLEFAIRY as\n"
 	.string "my friend.$"
+
+PokemonFanClub_Johto_PokemonFanClubClefairyGuyPackIsJammedFullText:
+	.string "Your PACK is\n"
+	.string "jammed full.$"
 
 PokemonFanClub_Johto_PokemonFanClubTeacherText:
 	.string "Look at my darling\n"

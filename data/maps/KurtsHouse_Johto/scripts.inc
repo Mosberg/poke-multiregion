@@ -205,8 +205,17 @@ KurtsHouse_Johto_Kurt1_GiveLoveBall:
 
 KurtsHouse_Johto_Kurt1_CanGiveGSBallToKurt:
 	goto_if_set FLAG_JOHTO_GAVE_GS_BALL_TO_KURT, KurtsHouse_Johto_Kurt1_GaveGSBallToKurt
-	@ TODO unsupported: checkitem GS_BALL
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_GS_BALL, 1
+	goto_if_eq VAR_RESULT, 0, KurtsHouse_Johto_Kurt1_NoGSBall
+	message KurtsHouse_Johto_KurtsHouseKurtWhatIsThatText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_GAVE_GS_BALL_TO_KURT
+	removeitem ITEM_GS_BALL
+	setflag FLAG_JOHTO_ENGINE_KURT_MAKING_BALLS
+	releaseall
+	end
 
 KurtsHouse_Johto_Kurt1_GaveGSBallToKurt:
 	goto_if_unset FLAG_JOHTO_ENGINE_KURT_MAKING_BALLS, KurtsHouse_Johto_Kurt1_NotMakingBalls
@@ -490,6 +499,17 @@ KurtsHouse_Johto_KurtsHouseKurtGranddaughterHelpingWorkFasterText:
 	.string "granddaughter is"
 	.string "\phelping me, I can\n"
 	.string "work much faster.$"
+
+KurtsHouse_Johto_KurtsHouseKurtWhatIsThatText:
+	.string "Wh-what is that?"
+	.string "\pI've never seen\n"
+	.string "one before."
+	.string "\pIt looks a lot\n"
+	.string "like a POKé BALL,"
+	.string "\pbut it appears to\n"
+	.string "be something else."
+	.string "\pLet me check it\n"
+	.string "for you.$"
 
 KurtsHouse_Johto_KurtsHouseKurtImCheckingItNowText:
 	.string "I'm checking it\n"

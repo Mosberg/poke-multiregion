@@ -70,7 +70,13 @@ Route30_Johto_TrainerYoungsterJoey::
 	goto Route30_Johto_TrainerYoungsterJoey_Script
 
 Route30_Johto_TrainerYoungsterJoey_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_YOUNGSTER_JOEY
+	goto_if_set FLAG_JOHTO_ENGINE_JOEY_READY_FOR_REMATCH, Route30_Johto_TrainerYoungsterJoey_Rematch
+	@ TODO unsupported: checkcellnum PHONE_YOUNGSTER_JOEY
+	goto Johto_EventScript_Unimplemented
+
+Route30_Johto_TrainerYoungsterJoey_Rematch:
+	call Route30_Johto_TrainerYoungsterJoey_RematchStd_Sub
+	@ TODO unsupported: readmem wJoeyFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route30_Johto_TrainerYoungsterMikey::
@@ -163,12 +169,21 @@ Route30_Johto_Route30TrainerTips:
 	end
 
 Route30_Johto_Route30FruitTree1:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_30_1
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_30_1, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_ORAN_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_30_1
+	releaseall
+	end
 
 Route30_Johto_Route30FruitTree2:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_30_2
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_30_2, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_PECHA_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_30_2
+	releaseall
+	end
+
+Route30_Johto_TrainerYoungsterJoey_RematchStd_Sub:
+	goto Johto_Std_RematchMScript_Sub
 
 Route30_Johto_Route30_JoeysRattataAttacksMovement:
 	lock_facing_direction

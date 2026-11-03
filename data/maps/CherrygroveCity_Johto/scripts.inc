@@ -162,17 +162,20 @@ CherrygroveCity_Johto_CherrygroveRivalSceneNorth:
 	goto_if_set FLAG_JOHTO_GOT_TOTODILE_FROM_ELM, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Totodile
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Chikorita
 	setvar VAR_LAST_TALKED, 2
-	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_1_TOTODILE, CherrygroveCity_Johto_RivalCherrygroveWinText
+	@ TODO unsupported: reloadmap 
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Totodile:
 	setvar VAR_LAST_TALKED, 2
-	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_1_CHIKORITA, CherrygroveCity_Johto_RivalCherrygroveWinText
+	@ TODO unsupported: reloadmap 
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Chikorita:
 	setvar VAR_LAST_TALKED, 2
-	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_1_CYNDAQUIL, CherrygroveCity_Johto_RivalCherrygroveWinText
+	@ TODO unsupported: reloadmap 
 	goto Johto_EventScript_Unimplemented
 
 CherrygroveCity_Johto_CherrygroveTeacherScript:

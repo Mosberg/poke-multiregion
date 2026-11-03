@@ -17,7 +17,10 @@ CianwoodPharmacy_Johto_CianwoodPharmacist:
 	message CianwoodPharmacy_Johto_PharmacistGiveSecretpotionText
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: giveitem SECRETPOTION
+	additem ITEM_SECRETPOTION
+	message CianwoodPharmacy_Johto_ReceivedSecretpotionText
+	waitmessage
+	@ TODO unsupported: playsound SFX_KEY_ITEM
 	goto Johto_EventScript_Unimplemented
 
 CianwoodPharmacy_Johto_CianwoodPharmacist_Mart:
@@ -41,3 +44,7 @@ CianwoodPharmacy_Johto_PharmacistGiveSecretpotionText:
 	.string "\pI got it!"
 	.string "\pThis ought to do\n"
 	.string "the trick.$"
+
+CianwoodPharmacy_Johto_ReceivedSecretpotionText:
+	.string "{PLAYER} received\n"
+	.string "SECRETPOTION.$"

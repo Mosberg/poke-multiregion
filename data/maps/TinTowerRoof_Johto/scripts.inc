@@ -20,12 +20,17 @@ TinTowerRoof_Johto_TinTowerHoOh:
 	delay 15
 	closemessage
 	setflag FLAG_JOHTO_FOUGHT_HO_OH
-	@ TODO unsupported: loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	@ TODO unsupported: loadwildmon HO_OH, 60
 	goto Johto_EventScript_Unimplemented
 
 TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Cb:
 	goto_if_set FLAG_JOHTO_FOUGHT_HO_OH, TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Cb
-	@ TODO unsupported: checkitem RAINBOW_WING
+	checkitem ITEM_RAINBOW_WING, 1
+	goto_if_ne VAR_RESULT, 0, TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Appear_Cb
+	goto TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Cb
+
+TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Appear_Cb:
+	clearflag FLAG_JOHTO_TIN_TOWER_ROOF_HO_OH
 	return
 
 TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Cb:

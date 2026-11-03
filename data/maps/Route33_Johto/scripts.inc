@@ -31,8 +31,23 @@ Route33_Johto_TrainerHikerAnthony::
 	goto Route33_Johto_TrainerHikerAnthony_Script
 
 Route33_Johto_TrainerHikerAnthony_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_HIKER_ANTHONY
+	goto_if_set FLAG_JOHTO_ENGINE_ANTHONY_READY_FOR_REMATCH, Route33_Johto_TrainerHikerAnthony_Rematch
+	goto_if_set FLAG_JOHTO_ENGINE_DUNSPARCE_SWARM, Route33_Johto_TrainerHikerAnthony_Swarm
+	@ TODO unsupported: checkcellnum PHONE_HIKER_ANTHONY
 	goto Johto_EventScript_Unimplemented
+
+Route33_Johto_TrainerHikerAnthony_Rematch:
+	call Route33_Johto_TrainerHikerAnthony_RematchStd_Sub
+	@ TODO unsupported: readmem wAnthonyFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route33_Johto_TrainerHikerAnthony_Swarm:
+	message Route33_Johto_HikerAnthonyDunsparceText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route33_Johto_Route33Sign:
 	message Route33_Johto_Route33SignText
@@ -43,8 +58,14 @@ Route33_Johto_Route33Sign:
 	end
 
 Route33_Johto_Route33FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_33
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_33, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_PECHA_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_33
+	releaseall
+	end
+
+Route33_Johto_TrainerHikerAnthony_RematchStd_Sub:
+	goto Johto_Std_RematchMScript_Sub
 
 Route33_Johto_HikerAnthony2SeenText:
 	.string "I came through the\n"
@@ -55,6 +76,14 @@ Route33_Johto_HikerAnthony2SeenText:
 Route33_Johto_HikerAnthony2BeatenText:
 	.string "Whoa! You've got\n"
 	.string "more zip than me!$"
+
+Route33_Johto_HikerAnthonyDunsparceText:
+	.string "Hey, did you get a\n"
+	.string "DUNSPARCE?"
+	.string "\pI caught one too."
+	.string "\pTake a look at it\n"
+	.string "in the light. It's\l"
+	.string "got a funny face!$"
 
 Route33_Johto_Route33LassText:
 	.string "Pant, pant…"

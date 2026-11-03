@@ -39,8 +39,54 @@ Route31_Johto_TrainerBugCatcherWade1::
 	goto Route31_Johto_TrainerBugCatcherWade1_Script
 
 Route31_Johto_TrainerBugCatcherWade1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_BUG_CATCHER_WADE
+	goto_if_set FLAG_JOHTO_ENGINE_WADE_READY_FOR_REMATCH, Route31_Johto_TrainerBugCatcherWade1_WadeRematch
+	goto_if_set FLAG_JOHTO_ENGINE_WADE_HAS_ITEM, Route31_Johto_TrainerBugCatcherWade1_WadeItem
+	@ TODO unsupported: checkcellnum PHONE_BUG_CATCHER_WADE
 	goto Johto_EventScript_Unimplemented
+
+Route31_Johto_TrainerBugCatcherWade1_WadeRematch:
+	call Route31_Johto_TrainerBugCatcherWade1_RematchSTD_Sub
+	@ TODO unsupported: readmem wWadeFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route31_Johto_TrainerBugCatcherWade1_WadeItem:
+	call Route31_Johto_TrainerBugCatcherWade1_ItemSTD_Sub
+	goto_if_set FLAG_JOHTO_WADE_HAS_BERRY, Route31_Johto_TrainerBugCatcherWade1_Berry
+	goto_if_set FLAG_JOHTO_WADE_HAS_PSNCUREBERRY, Route31_Johto_TrainerBugCatcherWade1_Psncureberry
+	goto_if_set FLAG_JOHTO_WADE_HAS_PRZCUREBERRY, Route31_Johto_TrainerBugCatcherWade1_Przcureberry
+	goto_if_set FLAG_JOHTO_WADE_HAS_BITTER_BERRY, Route31_Johto_TrainerBugCatcherWade1_BitterBerry
+
+Route31_Johto_TrainerBugCatcherWade1_Berry:
+	giveitem ITEM_ORAN_BERRY
+	goto_if_eq VAR_RESULT, 0, Route31_Johto_TrainerBugCatcherWade1_PackFull
+	goto Route31_Johto_TrainerBugCatcherWade1_Done
+
+Route31_Johto_TrainerBugCatcherWade1_Psncureberry:
+	giveitem ITEM_PECHA_BERRY
+	goto_if_eq VAR_RESULT, 0, Route31_Johto_TrainerBugCatcherWade1_PackFull
+	goto Route31_Johto_TrainerBugCatcherWade1_Done
+
+Route31_Johto_TrainerBugCatcherWade1_Przcureberry:
+	giveitem ITEM_CHERI_BERRY
+	goto_if_eq VAR_RESULT, 0, Route31_Johto_TrainerBugCatcherWade1_PackFull
+	goto Route31_Johto_TrainerBugCatcherWade1_Done
+
+Route31_Johto_TrainerBugCatcherWade1_BitterBerry:
+	giveitem ITEM_PERSIM_BERRY
+	goto_if_eq VAR_RESULT, 0, Route31_Johto_TrainerBugCatcherWade1_PackFull
+
+Route31_Johto_TrainerBugCatcherWade1_Done:
+	clearflag FLAG_JOHTO_ENGINE_WADE_HAS_ITEM
+	goto Route31_Johto_TrainerBugCatcherWade1_AcceptedNumberSTD
+
+Route31_Johto_TrainerBugCatcherWade1_PackFull:
+	goto Route31_Johto_TrainerBugCatcherWade1_PackFullSTD
+
+Route31_Johto_TrainerBugCatcherWade1_AcceptedNumberSTD:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route31_Johto_TrainerBugCatcherWade1_PackFullSTD:
+	goto Johto_Std_PackFullMScript
 
 Route31_Johto_Route31MailRecipientScript:
 	faceplayer
@@ -105,8 +151,17 @@ Route31_Johto_Route31CooltrainerMScript:
 	end
 
 Route31_Johto_Route31FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_31
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_31, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_PERSIM_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_31
+	releaseall
+	end
+
+Route31_Johto_TrainerBugCatcherWade1_RematchSTD_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route31_Johto_TrainerBugCatcherWade1_ItemSTD_Sub:
+	goto Johto_Std_GiftMScript_Sub
 
 Route31_Johto_Route31CheckMomCallCallback_Cb:
 	goto_if_unset FLAG_JOHTO_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST, Route31_Johto_Route31CheckMomCallCallback_DoMomCall_Cb

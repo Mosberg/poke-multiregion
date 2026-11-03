@@ -26,8 +26,17 @@ OlivineLighthouse2F_Johto_TrainerSailorHuey::
 	goto OlivineLighthouse2F_Johto_TrainerSailorHuey_Script
 
 OlivineLighthouse2F_Johto_TrainerSailorHuey_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_SAILOR_HUEY
+	goto_if_set FLAG_JOHTO_ENGINE_HUEY_READY_FOR_REMATCH, OlivineLighthouse2F_Johto_TrainerSailorHuey_WantsBattle
+	@ TODO unsupported: checkcellnum PHONE_SAILOR_HUEY
 	goto Johto_EventScript_Unimplemented
+
+OlivineLighthouse2F_Johto_TrainerSailorHuey_WantsBattle:
+	call OlivineLighthouse2F_Johto_TrainerSailorHuey_Rematch_Sub
+	@ TODO unsupported: readmem wHueyFightCount
+	goto Johto_EventScript_Unimplemented
+
+OlivineLighthouse2F_Johto_TrainerSailorHuey_Rematch_Sub:
+	goto Johto_Std_RematchMScript_Sub
 
 OlivineLighthouse2F_Johto_SailorHueySeenText:
 	.string "Men of the sea are\n"

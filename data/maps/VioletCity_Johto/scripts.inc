@@ -178,8 +178,11 @@ VioletCity_Johto_VioletCityMartSign:
 	goto Johto_Std_MartSignScript
 
 VioletCity_Johto_VioletCityFruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_VIOLET_CITY
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_VIOLET_CITY, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_CHERI_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_VIOLET_CITY
+	releaseall
+	end
 
 VioletCity_Johto_VioletCityFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_VIOLET

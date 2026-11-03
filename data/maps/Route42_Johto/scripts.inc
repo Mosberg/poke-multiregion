@@ -49,8 +49,32 @@ Route42_Johto_TrainerFisherTully::
 	goto Route42_Johto_TrainerFisherTully_Script
 
 Route42_Johto_TrainerFisherTully_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_FISHER_TULLY
+	goto_if_set FLAG_JOHTO_ENGINE_TULLY_READY_FOR_REMATCH, Route42_Johto_TrainerFisherTully_WantsBattle
+	goto_if_set FLAG_JOHTO_ENGINE_TULLY_HAS_WATER_STONE, Route42_Johto_TrainerFisherTully_HasWaterStone
+	@ TODO unsupported: checkcellnum PHONE_FISHER_TULLY
 	goto Johto_EventScript_Unimplemented
+
+Route42_Johto_TrainerFisherTully_WantsBattle:
+	call Route42_Johto_TrainerFisherTully_Rematch_Sub
+	@ TODO unsupported: readmem wTullyFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route42_Johto_TrainerFisherTully_HasWaterStone:
+	call Route42_Johto_TrainerFisherTully_Gift_Sub
+	giveitem ITEM_WATER_STONE
+	goto_if_eq VAR_RESULT, 0, Route42_Johto_TrainerFisherTully_NoRoom
+	clearflag FLAG_JOHTO_ENGINE_TULLY_HAS_WATER_STONE
+	setflag FLAG_JOHTO_TULLY_GAVE_WATER_STONE
+	goto Route42_Johto_TrainerFisherTully_NumberAccepted
+
+Route42_Johto_TrainerFisherTully_NoRoom:
+	goto Route42_Johto_TrainerFisherTully_PackFull
+
+Route42_Johto_TrainerFisherTully_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route42_Johto_TrainerFisherTully_PackFull:
+	goto Johto_Std_PackFullMScript
 
 Route42_Johto_TrainerPokemaniacShane::
 	trainerbattle_single TRAINER_JOHTO_POKEMANIAC_SHANE, Route42_Johto_PokemaniacShaneSeenText, Route42_Johto_PokemaniacShaneBeatenText
@@ -115,16 +139,31 @@ Route42_Johto_Route42Sign2:
 	end
 
 Route42_Johto_Route42FruitTree1:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_42_1
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_42_1, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_PNK_APRICORN
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_42_1
+	releaseall
+	end
 
 Route42_Johto_Route42FruitTree2:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_42_2
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_42_2, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_GRN_APRICORN
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_42_2
+	releaseall
+	end
 
 Route42_Johto_Route42FruitTree3:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_42_3
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_42_3, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_YLW_APRICORN
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_42_3
+	releaseall
+	end
+
+Route42_Johto_TrainerFisherTully_Rematch_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route42_Johto_TrainerFisherTully_Gift_Sub:
+	goto Johto_Std_GiftMScript_Sub
 
 Route42_Johto_FisherTullySeenText:
 	.string "Let me demonstrate\n"

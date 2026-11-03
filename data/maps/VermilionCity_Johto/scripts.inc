@@ -103,7 +103,7 @@ VermilionCity_Johto_VermilionSnorlax:
 VermilionCity_Johto_VermilionGymBadgeGuy:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_HP_UP_FROM_VERMILION_GUY, VermilionCity_Johto_VermilionGymBadgeGuy_AlreadyGotItem
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	@ TODO unsupported: ifequal NUM_BADGES, .AllBadges
 	goto Johto_EventScript_Unimplemented
 

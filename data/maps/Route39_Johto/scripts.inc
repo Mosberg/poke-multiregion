@@ -44,8 +44,25 @@ Route39_Johto_TrainerPokefanmDerek::
 	goto Route39_Johto_TrainerPokefanmDerek_Script
 
 Route39_Johto_TrainerPokefanmDerek_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_POKEFANM_DEREK
+	goto_if_set FLAG_JOHTO_ENGINE_DEREK_HAS_NUGGET, Route39_Johto_TrainerPokefanmDerek_HasNugget
+	@ TODO unsupported: checkcellnum PHONE_POKEFANM_DEREK
 	goto Johto_EventScript_Unimplemented
+
+Route39_Johto_TrainerPokefanmDerek_HasNugget:
+	call Route39_Johto_TrainerPokefanmDerek_Gift_Sub
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, Route39_Johto_TrainerPokefanmDerek_NoRoom
+	clearflag FLAG_JOHTO_ENGINE_DEREK_HAS_NUGGET
+	goto Route39_Johto_TrainerPokefanmDerek_NumberAccepted
+
+Route39_Johto_TrainerPokefanmDerek_NoRoom:
+	goto Route39_Johto_TrainerPokefanmDerek_PackFull
+
+Route39_Johto_TrainerPokefanmDerek_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route39_Johto_TrainerPokefanmDerek_PackFull:
+	goto Johto_Std_PackFullMScript
 
 Route39_Johto_TrainerPokefanfRuth::
 	trainerbattle_single TRAINER_JOHTO_POKEFANF_RUTH, Route39_Johto_PokefanfRuthSeenText, Route39_Johto_PokefanfRuthBeatenText
@@ -149,8 +166,14 @@ Route39_Johto_Route39TrainerTips:
 	end
 
 Route39_Johto_Route39FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_39
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_39, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_LUM_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_39
+	releaseall
+	end
+
+Route39_Johto_TrainerPokefanmDerek_Gift_Sub:
+	goto Johto_Std_GiftMScript_Sub
 
 Route39_Johto_Route39MiltankText:
 	.string "MILTANK: Mooo!$"

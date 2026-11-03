@@ -76,8 +76,11 @@ Route2_Johto_Route2DiglettsCaveSign:
 	end
 
 Route2_Johto_Route2FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_2
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_2, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_PECHA_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_2
+	releaseall
+	end
 
 Route2_Johto_BugCatcherRobSeenText:
 	.string "My bug POKéMON are\n"

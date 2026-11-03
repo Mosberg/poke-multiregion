@@ -56,8 +56,23 @@ Route34_Johto_TrainerCamperTodd1::
 	goto Route34_Johto_TrainerCamperTodd1_Script
 
 Route34_Johto_TrainerCamperTodd1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_CAMPER_TODD
+	goto_if_set FLAG_JOHTO_ENGINE_TODD_READY_FOR_REMATCH, Route34_Johto_TrainerCamperTodd1_Rematch
+	goto_if_set FLAG_JOHTO_ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON, Route34_Johto_TrainerCamperTodd1_SaleIsOn
+	@ TODO unsupported: checkcellnum PHONE_CAMPER_TODD
 	goto Johto_EventScript_Unimplemented
+
+Route34_Johto_TrainerCamperTodd1_Rematch:
+	call Route34_Johto_TrainerCamperTodd1_RematchStd_Sub
+	@ TODO unsupported: readmem wToddFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route34_Johto_TrainerCamperTodd1_SaleIsOn:
+	message Route34_Johto_CamperToddSaleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route34_Johto_TrainerPicnickerGina1::
 	trainerbattle_single TRAINER_JOHTO_PICNICKER_GINA1, Route34_Johto_PicnickerGina1SeenText, Route34_Johto_PicnickerGina1BeatenText
@@ -67,8 +82,32 @@ Route34_Johto_TrainerPicnickerGina1::
 	goto Route34_Johto_TrainerPicnickerGina1_Script
 
 Route34_Johto_TrainerPicnickerGina1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_PICNICKER_GINA
+	goto_if_set FLAG_JOHTO_ENGINE_GINA_READY_FOR_REMATCH, Route34_Johto_TrainerPicnickerGina1_Rematch
+	goto_if_set FLAG_JOHTO_ENGINE_GINA_HAS_LEAF_STONE, Route34_Johto_TrainerPicnickerGina1_LeafStone
+	@ TODO unsupported: checkcellnum PHONE_PICNICKER_GINA
 	goto Johto_EventScript_Unimplemented
+
+Route34_Johto_TrainerPicnickerGina1_Rematch:
+	call Route34_Johto_TrainerPicnickerGina1_RematchStd_Sub
+	@ TODO unsupported: readmem wGinaFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route34_Johto_TrainerPicnickerGina1_LeafStone:
+	call Route34_Johto_TrainerPicnickerGina1_Gift_Sub
+	giveitem ITEM_LEAF_STONE
+	goto_if_eq VAR_RESULT, 0, Route34_Johto_TrainerPicnickerGina1_BagFull
+	clearflag FLAG_JOHTO_ENGINE_GINA_HAS_LEAF_STONE
+	setflag FLAG_JOHTO_GINA_GAVE_LEAF_STONE
+	goto Route34_Johto_TrainerPicnickerGina1_NumberAccepted
+
+Route34_Johto_TrainerPicnickerGina1_BagFull:
+	goto Route34_Johto_TrainerPicnickerGina1_PackFull
+
+Route34_Johto_TrainerPicnickerGina1_NumberAccepted:
+	goto Johto_Std_NumberAcceptedFScript
+
+Route34_Johto_TrainerPicnickerGina1_PackFull:
+	goto Johto_Std_PackFullFScript
 
 Route34_Johto_OfficerKeithScript:
 	faceplayer
@@ -246,6 +285,15 @@ Route34_Johto_DayCareSign:
 	releaseall
 	end
 
+Route34_Johto_TrainerCamperTodd1_RematchStd_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route34_Johto_TrainerPicnickerGina1_RematchStd_Sub:
+	goto Johto_Std_RematchFScript_Sub
+
+Route34_Johto_TrainerPicnickerGina1_Gift_Sub:
+	goto Johto_Std_GiftFScript_Sub
+
 Route34_Johto_Route34EggCheckCallback_Cb:
 	goto_if_set FLAG_JOHTO_ENGINE_DAY_CARE_MAN_HAS_EGG, Route34_Johto_Route34EggCheckCallback_PutDayCareManOutside_Cb
 	clearflag FLAG_JOHTO_DAY_CARE_MAN_IN_DAY_CARE
@@ -312,6 +360,12 @@ Route34_Johto_CamperTodd1SeenText:
 Route34_Johto_CamperTodd1BeatenText:
 	.string "Did I screw up my\n"
 	.string "training?$"
+
+Route34_Johto_CamperToddSaleText:
+	.string "Shopping under the\n"
+	.string "sky!"
+	.string "\pIt feels so nice\n"
+	.string "up on a rooftop.$"
 
 Route34_Johto_PicnickerGina1SeenText:
 	.string "Are you a trainer?"

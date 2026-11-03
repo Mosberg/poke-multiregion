@@ -38,7 +38,7 @@ EcruteakGym_Johto_EcruteakGymMortyScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_FOGBADGE
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	call EcruteakGym_Johto_EcruteakGymActivateRockets_Sub
 	setvar VAR_JOHTO_SCENE_ECRUTEAK_TIN_TOWER_ENTRANCE, 1
 	setflag FLAG_JOHTO_RANG_CLEAR_BELL_1

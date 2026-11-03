@@ -81,8 +81,31 @@ Route27_Johto_TrainerBirdKeeperJose2::
 	goto Route27_Johto_TrainerBirdKeeperJose2_Script
 
 Route27_Johto_TrainerBirdKeeperJose2_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
+	goto_if_set FLAG_JOHTO_ENGINE_JOSE_READY_FOR_REMATCH, Route27_Johto_TrainerBirdKeeperJose2_WantsBattle
+	goto_if_set FLAG_JOHTO_ENGINE_JOSE_HAS_STAR_PIECE, Route27_Johto_TrainerBirdKeeperJose2_HasStarPiece
+	@ TODO unsupported: checkcellnum PHONE_BIRDKEEPER_JOSE
 	goto Johto_EventScript_Unimplemented
+
+Route27_Johto_TrainerBirdKeeperJose2_WantsBattle:
+	call Route27_Johto_TrainerBirdKeeperJose2_Rematch_Sub
+	@ TODO unsupported: readmem wJoseFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route27_Johto_TrainerBirdKeeperJose2_HasStarPiece:
+	call Route27_Johto_TrainerBirdKeeperJose2_Gift_Sub
+	giveitem ITEM_STAR_PIECE
+	goto_if_eq VAR_RESULT, 0, Route27_Johto_TrainerBirdKeeperJose2_NoRoom
+	clearflag FLAG_JOHTO_ENGINE_JOSE_HAS_STAR_PIECE
+	goto Route27_Johto_TrainerBirdKeeperJose2_NumberAccepted
+
+Route27_Johto_TrainerBirdKeeperJose2_NoRoom:
+	goto Route27_Johto_TrainerBirdKeeperJose2_PackFull
+
+Route27_Johto_TrainerBirdKeeperJose2_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route27_Johto_TrainerBirdKeeperJose2_PackFull:
+	goto Johto_Std_PackFullMScript
 
 Route27_Johto_TrainerCooltrainermBlake::
 	trainerbattle_single TRAINER_JOHTO_COOLTRAINERM_BLAKE, Route27_Johto_CooltrainermBlakeSeenText, Route27_Johto_CooltrainermBlakeBeatenText
@@ -122,7 +145,13 @@ Route27_Johto_TrainerCooltrainerfReena::
 	goto Route27_Johto_TrainerCooltrainerfReena_Script
 
 Route27_Johto_TrainerCooltrainerfReena_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA
+	goto_if_set FLAG_JOHTO_ENGINE_REENA_READY_FOR_REMATCH, Route27_Johto_TrainerCooltrainerfReena_WantsBattle
+	@ TODO unsupported: checkcellnum PHONE_COOLTRAINERF_REENA
+	goto Johto_EventScript_Unimplemented
+
+Route27_Johto_TrainerCooltrainerfReena_WantsBattle:
+	call Route27_Johto_TrainerCooltrainerfReena_Rematch_Sub
+	@ TODO unsupported: readmem wReenaFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route27_Johto_TrainerCooltrainerfMegan::
@@ -147,6 +176,15 @@ Route27_Johto_TohjoFallsSign:
 	closemessage
 	releaseall
 	end
+
+Route27_Johto_TrainerBirdKeeperJose2_Rematch_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route27_Johto_TrainerBirdKeeperJose2_Gift_Sub:
+	goto Johto_Std_GiftMScript_Sub
+
+Route27_Johto_TrainerCooltrainerfReena_Rematch_Sub:
+	goto Johto_Std_RematchFScript_Sub
 
 Route27_Johto_Route27FisherStepLeftTwiceMovement:
 	walk_left

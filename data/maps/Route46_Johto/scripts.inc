@@ -37,7 +37,13 @@ Route46_Johto_TrainerPicnickerErin1::
 	goto Route46_Johto_TrainerPicnickerErin1_Script
 
 Route46_Johto_TrainerPicnickerErin1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN
+	goto_if_set FLAG_JOHTO_ENGINE_ERIN_READY_FOR_REMATCH, Route46_Johto_TrainerPicnickerErin1_WantsBattle
+	@ TODO unsupported: checkcellnum PHONE_PICNICKER_ERIN
+	goto Johto_EventScript_Unimplemented
+
+Route46_Johto_TrainerPicnickerErin1_WantsBattle:
+	call Route46_Johto_Route46RematchF_Sub
+	@ TODO unsupported: readmem wErinFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route46_Johto_TrainerHikerBailey::
@@ -64,12 +70,21 @@ Route46_Johto_Route46Sign:
 	end
 
 Route46_Johto_Route46FruitTree1:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_46_1
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_46_1, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_ORAN_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_46_1
+	releaseall
+	end
 
 Route46_Johto_Route46FruitTree2:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_46_2
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_46_2, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_CHERI_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_46_2
+	releaseall
+	end
+
+Route46_Johto_Route46RematchF_Sub:
+	goto Johto_Std_RematchFScript_Sub
 
 Route46_Johto_HikerBaileySeenText:
 	.string "Awright! I'll show\n"

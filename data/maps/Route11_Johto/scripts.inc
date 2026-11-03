@@ -79,8 +79,11 @@ Route11_Johto_Route11Sign:
 	end
 
 Route11_Johto_Route11FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_11
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_11, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_ORAN_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_11
+	releaseall
+	end
 
 Route11_Johto_YoungsterOwenSeenText:
 	.string "There's no cheat-\n"

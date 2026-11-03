@@ -1,10 +1,11 @@
 """Tiny client for lua/mgba_agent_bridge.lua. Shared by the MCP server, the agents and the tools."""
+import os
 import socket
 import threading
 
 from addresses import MAIN_IN_BATTLE_BIT, MAIN_IN_BATTLE_BYTE, SB1, SYMBOLS
 
-HOST, PORT = "127.0.0.1", 8888
+HOST, PORT = "127.0.0.1", int(os.environ.get("MGBA_BRIDGE_PORT", "8888"))
 
 
 class Bridge:

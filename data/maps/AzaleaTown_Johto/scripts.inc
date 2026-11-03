@@ -235,8 +235,16 @@ AzaleaTown_Johto_AzaleaTownCelebiScene:
 	message AzaleaTown_Johto_AzaleaTownKurtText3
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem GS_BALL
-	goto Johto_EventScript_Unimplemented
+	giveitem ITEM_GS_BALL
+	applymovement 12, Johto_Movement_Face_Left
+	waitmovement 12
+	setflag FLAG_JOHTO_ENGINE_FOREST_IS_RESTLESS
+	clearflag FLAG_JOHTO_ILEX_FOREST_LASS
+	setflag FLAG_JOHTO_ROUTE_34_ILEX_FOREST_GATE_LASS
+	setvar VAR_JOHTO_SCENE_AZALEA_TOWN, 0
+	closemessage
+	releaseall
+	end
 
 AzaleaTown_Johto_AzaleaTownKurtScript:
 	faceplayer
@@ -304,8 +312,11 @@ AzaleaTown_Johto_AzaleaTownMartSign:
 	goto Johto_Std_MartSignScript
 
 AzaleaTown_Johto_WhiteApricornTree:
-	@ TODO unsupported: fruittree FRUITTREE_AZALEA_TOWN
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_AZALEA_TOWN, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_WHT_APRICORN
+	setflag FLAG_JOHTO_FRUITTREE_AZALEA_TOWN
+	releaseall
+	end
 
 AzaleaTown_Johto_AzaleaTownFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_AZALEA

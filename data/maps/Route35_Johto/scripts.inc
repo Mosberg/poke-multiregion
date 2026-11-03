@@ -37,7 +37,7 @@ Route35_Johto_TrainerJugglerIrwin::
 	goto Route35_Johto_TrainerJugglerIrwin_Script
 
 Route35_Johto_TrainerJugglerIrwin_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
+	@ TODO unsupported: checkcellnum PHONE_JUGGLER_IRWIN
 	goto Johto_EventScript_Unimplemented
 
 Route35_Johto_TrainerCamperIvan::
@@ -108,8 +108,23 @@ Route35_Johto_TrainerBugCatcherArnie::
 	goto Route35_Johto_TrainerBugCatcherArnie_Script
 
 Route35_Johto_TrainerBugCatcherArnie_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_BUG_CATCHER_ARNIE
+	goto_if_set FLAG_JOHTO_ENGINE_ARNIE_READY_FOR_REMATCH, Route35_Johto_TrainerBugCatcherArnie_WantsBattle
+	goto_if_set FLAG_JOHTO_ENGINE_YANMA_SWARM, Route35_Johto_TrainerBugCatcherArnie_YanmaSwarming
+	@ TODO unsupported: checkcellnum PHONE_BUG_CATCHER_ARNIE
 	goto Johto_EventScript_Unimplemented
+
+Route35_Johto_TrainerBugCatcherArnie_WantsBattle:
+	call Route35_Johto_Route35RematchM_Sub
+	@ TODO unsupported: readmem wArnieFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route35_Johto_TrainerBugCatcherArnie_YanmaSwarming:
+	message Route35_Johto_BugCatcherArnieYanmaText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route35_Johto_TrainerFirebreatherWalt::
 	trainerbattle_single TRAINER_JOHTO_FIREBREATHER_WALT, Route35_Johto_FirebreatherWaltSeenText, Route35_Johto_FirebreatherWaltBeatenText
@@ -168,8 +183,14 @@ Route35_Johto_Route35Sign:
 	end
 
 Route35_Johto_Route35FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_35
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_35, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_LEPPA_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_35
+	releaseall
+	end
+
+Route35_Johto_Route35RematchM_Sub:
+	goto Johto_Std_RematchMScript_Sub
 
 Route35_Johto_CamperIvanSeenText:
 	.string "I've been getting\n"
@@ -262,6 +283,12 @@ Route35_Johto_BugCatcherArnieSeenText:
 Route35_Johto_BugCatcherArnieBeatenText:
 	.string "Huh? I shouldn't\n"
 	.string "have lost that…$"
+
+Route35_Johto_BugCatcherArnieYanmaText:
+	.string "Wow… Look at all\n"
+	.string "those YANMA!"
+	.string "\pI'm so blown away,\n"
+	.string "I can't move.$"
 
 Route35_Johto_FirebreatherWaltSeenText:
 	.string "I'm practicing my\n"

@@ -3,7 +3,7 @@
 Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
 Hard caps and approximations live in LIMITS.md.
 
-## Johto: scripts (456 commands still become "not converted yet")
+## Johto: scripts (480 commands still become "not converted yet"; the phone `VAR_CALLERID` family is now the largest group)
 
 Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
 
@@ -43,14 +43,17 @@ Plus:
 
 ## Johto: engine integration
 
-- `REGION_JOHTO` (badges 17-24, obedience level, HM usage rules)
-- Johto badge flags and Johto Elite Four / Champion progression
+- Johto Elite Four / Champion progression; Johto badge case/trainer card display (badges exist as flags, obedience, HM rules and `VAR_BADGES` use them)
+- Johto town map, music sets, Pokedex area pages and trainer card (still Hoenn's)
 - Pokemon Center healing/respawn points for every Johto town (only New Bark Town)
 - Pokemon Center PC / Pokegear start-menu entry
 - Day/night palettes and Crystal palette time system
 - Johto Pokemon (Gen 2) mon data is the expansion's own; Crystal-specific moves/learnsets are not applied
 
 ## Johto: gyms and progression
+
+- Johto badges drive obedience and HM/field-move checks (`GetBadgeFlagForRegion`, `sJohtoFieldMoveBadge`) and `VAR_BADGES`, but this is **untested in play** (an attempted automated check measured nothing); the extension reports the Johto region and badges
+- Fruit trees give their berry once per tree (no daily regrowth); Crystal-only items now exist (Mystery Egg, wings, tickets, scales...) with a question-mark icon and short descriptions
 
 - Violet Gym plays (Falkner, badge text, after-talk); the badge is only a `FLAG_JOHTO_ENGINE_ZEPHYRBADGE` flag with no gameplay effect, `VAR_BADGES` is always 0 so the Rocket-activation branch never runs
 - Mud-Slap TM replaced by a Nugget; Mystery Egg, Clear Bell, S.S. Ticket, Red Scale, Pink Bow, mail items do not exist as items

@@ -199,8 +199,23 @@ Route32_Johto_TrainerFisherRalph1::
 	goto Route32_Johto_TrainerFisherRalph1_Script
 
 Route32_Johto_TrainerFisherRalph1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_FISHER_RALPH
+	goto_if_set FLAG_JOHTO_ENGINE_RALPH_READY_FOR_REMATCH, Route32_Johto_TrainerFisherRalph1_Rematch
+	goto_if_set FLAG_JOHTO_ENGINE_QWILFISH_SWARM, Route32_Johto_TrainerFisherRalph1_Swarm
+	@ TODO unsupported: checkcellnum PHONE_FISHER_RALPH
 	goto Johto_EventScript_Unimplemented
+
+Route32_Johto_TrainerFisherRalph1_Rematch:
+	call Route32_Johto_TrainerFisherRalph1_RematchStd_Sub
+	@ TODO unsupported: readmem wRalphFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route32_Johto_TrainerFisherRalph1_Swarm:
+	message Route32_Johto_FisherRalphSwarmText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 Route32_Johto_TrainerFisherHenry::
 	trainerbattle_single TRAINER_JOHTO_FISHER_HENRY, Route32_Johto_FisherHenrySeenText, Route32_Johto_FisherHenryBeatenText
@@ -225,7 +240,13 @@ Route32_Johto_TrainerPicnickerLiz1::
 	goto Route32_Johto_TrainerPicnickerLiz1_Script
 
 Route32_Johto_TrainerPicnickerLiz1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_PICNICKER_LIZ
+	goto_if_set FLAG_JOHTO_ENGINE_LIZ_READY_FOR_REMATCH, Route32_Johto_TrainerPicnickerLiz1_Rematch
+	@ TODO unsupported: checkcellnum PHONE_PICNICKER_LIZ
+	goto Johto_EventScript_Unimplemented
+
+Route32_Johto_TrainerPicnickerLiz1_Rematch:
+	call Route32_Johto_TrainerPicnickerLiz1_RematchStd_Sub
+	@ TODO unsupported: readmem wLizFightCount
 	goto Johto_EventScript_Unimplemented
 
 Route32_Johto_TrainerYoungsterAlbert::
@@ -378,6 +399,12 @@ Route32_Johto_Route32CooltrainerMContinueScene_BagFull_Sub:
 	closemessage
 	return
 
+Route32_Johto_TrainerFisherRalph1_RematchStd_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route32_Johto_TrainerPicnickerLiz1_RematchStd_Sub:
+	goto Johto_Std_RematchFScript_Sub
+
 Route32_Johto_Route32FriedaCallback_Cb:
 	special JohtoGetWeekday
 	goto_if_eq VAR_RESULT, 5, Route32_Johto_Route32FriedaCallback_FriedaAppears_Cb
@@ -491,6 +518,14 @@ Route32_Johto_FisherRalph1SeenText:
 Route32_Johto_FisherRalph1BeatenText:
 	.string "Tch! I tried to\n"
 	.string "rush things…$"
+
+Route32_Johto_FisherRalphSwarmText:
+	.string "One, two, three…\n"
+	.string "Muahahaha, what a"
+	.string "\pgreat haul!\n"
+	.string "I'm done! Go ahead"
+	.string "\pand catch as many\n"
+	.string "as you can, kid!$"
 
 Route32_Johto_FisherHenrySeenText:
 	.string "My POKéMON?\n"

@@ -22,8 +22,20 @@ Route44_Johto_TrainerBirdKeeperVance1::
 	goto Route44_Johto_TrainerBirdKeeperVance1_Script
 
 Route44_Johto_TrainerBirdKeeperVance1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
+	goto_if_set FLAG_JOHTO_ENGINE_VANCE_READY_FOR_REMATCH, Route44_Johto_TrainerBirdKeeperVance1_WantsBattle
+	@ TODO unsupported: checkcellnum PHONE_BIRDKEEPER_VANCE
 	goto Johto_EventScript_Unimplemented
+
+Route44_Johto_TrainerBirdKeeperVance1_WantsBattle:
+	call Route44_Johto_Route44RematchM_Sub
+	@ TODO unsupported: readmem wVanceFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route44_Johto_Route44NumberAcceptedM:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route44_Johto_Route44PackFullM:
+	goto Johto_Std_PackFullMScript
 
 Route44_Johto_TrainerPsychicPhil::
 	trainerbattle_single TRAINER_JOHTO_PSYCHIC_T_PHIL, Route44_Johto_PsychicPhilSeenText, Route44_Johto_PsychicPhilBeatenText
@@ -48,8 +60,42 @@ Route44_Johto_TrainerFisherWilton1::
 	goto Route44_Johto_TrainerFisherWilton1_Script
 
 Route44_Johto_TrainerFisherWilton1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_FISHER_WILTON
+	goto_if_set FLAG_JOHTO_ENGINE_WILTON_READY_FOR_REMATCH, Route44_Johto_TrainerFisherWilton1_WantsBattle
+	goto_if_set FLAG_JOHTO_ENGINE_WILTON_HAS_ITEM, Route44_Johto_TrainerFisherWilton1_HasItem
+	@ TODO unsupported: checkcellnum PHONE_FISHER_WILTON
 	goto Johto_EventScript_Unimplemented
+
+Route44_Johto_TrainerFisherWilton1_WantsBattle:
+	call Route44_Johto_Route44RematchM_Sub
+	@ TODO unsupported: readmem wWiltonFightCount
+	goto Johto_EventScript_Unimplemented
+
+Route44_Johto_TrainerFisherWilton1_HasItem:
+	call Route44_Johto_Route44GiftM_Sub
+	goto_if_set FLAG_JOHTO_WILTON_HAS_ULTRA_BALL, Route44_Johto_TrainerFisherWilton1_UltraBall
+	goto_if_set FLAG_JOHTO_WILTON_HAS_GREAT_BALL, Route44_Johto_TrainerFisherWilton1_GreatBall
+	goto_if_set FLAG_JOHTO_WILTON_HAS_POKE_BALL, Route44_Johto_TrainerFisherWilton1_PokeBall
+
+Route44_Johto_TrainerFisherWilton1_UltraBall:
+	giveitem ITEM_ULTRA_BALL
+	goto_if_eq VAR_RESULT, 0, Route44_Johto_TrainerFisherWilton1_Route44PackFullM
+	goto Route44_Johto_TrainerFisherWilton1_ItemReceived
+
+Route44_Johto_TrainerFisherWilton1_GreatBall:
+	giveitem ITEM_GREAT_BALL
+	goto_if_eq VAR_RESULT, 0, Route44_Johto_TrainerFisherWilton1_Route44PackFullM
+	goto Route44_Johto_TrainerFisherWilton1_ItemReceived
+
+Route44_Johto_TrainerFisherWilton1_PokeBall:
+	giveitem ITEM_POKE_BALL
+	goto_if_eq VAR_RESULT, 0, Route44_Johto_TrainerFisherWilton1_Route44PackFullM
+
+Route44_Johto_TrainerFisherWilton1_ItemReceived:
+	clearflag FLAG_JOHTO_ENGINE_WILTON_HAS_ITEM
+	goto Route44_Johto_Route44NumberAcceptedM
+
+Route44_Johto_TrainerFisherWilton1_Route44PackFullM:
+	goto Route44_Johto_Route44PackFullM
 
 Route44_Johto_TrainerFisherEdgar::
 	trainerbattle_single TRAINER_JOHTO_FISHER_EDGAR, Route44_Johto_FisherEdgarSeenText, Route44_Johto_FisherEdgarBeatenText
@@ -128,8 +174,17 @@ Route44_Johto_Route44Sign2:
 	end
 
 Route44_Johto_Route44FruitTree:
-	@ TODO unsupported: fruittree FRUITTREE_ROUTE_44
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_44, Johto_Std_FruitTreeEmpty
+	giveitem ITEM_RAWST_BERRY
+	setflag FLAG_JOHTO_FRUITTREE_ROUTE_44
+	releaseall
+	end
+
+Route44_Johto_Route44RematchM_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+Route44_Johto_Route44GiftM_Sub:
+	goto Johto_Std_GiftMScript_Sub
 
 Route44_Johto_FisherWilton1SeenText:
 	.string "Aack! You made me\n"

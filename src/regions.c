@@ -70,6 +70,31 @@ static const u16 sKantoSubregionMapsecs[KANTO_SUBREGION_COUNT][30] = {
     }
 };
 
+static const u16 sJohtoBadgeFlags[8] =
+{
+    FLAG_JOHTO_ENGINE_ZEPHYRBADGE,
+    FLAG_JOHTO_ENGINE_HIVEBADGE,
+    FLAG_JOHTO_ENGINE_PLAINBADGE,
+    FLAG_JOHTO_ENGINE_FOGBADGE,
+    FLAG_JOHTO_ENGINE_STORMBADGE,
+    FLAG_JOHTO_ENGINE_MINERALBADGE,
+    FLAG_JOHTO_ENGINE_GLACIERBADGE,
+    FLAG_JOHTO_ENGINE_RISINGBADGE,
+};
+
+u16 GetBadgeFlagForRegion(enum Region region, u32 index)
+{
+    switch (region)
+    {
+    case REGION_JOHTO:
+        return sJohtoBadgeFlags[index];
+    case REGION_KANTO:
+        return FLAG_BADGE09_GET + index;
+    default:
+        return FLAG_BADGE01_GET + index;
+    }
+}
+
 enum KantoSubRegion GetKantoSubregion(u32 mapSecId)
 {
     for (u32 i = KANTO_SUBREGION_KANTO; i <= KANTO_SUBREGION_SEVII67; i++)

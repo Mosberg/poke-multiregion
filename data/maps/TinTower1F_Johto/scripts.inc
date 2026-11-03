@@ -104,7 +104,9 @@ TinTower1F_Johto_TinTower1FSage5Script:
 	message TinTower1F_Johto_TinTower1FSage5Text1
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: verbosegiveitem RAINBOW_WING
+	giveitem ITEM_RAINBOW_WING
+	closemessage
+	@ TODO unsupported: earthquake 72
 	goto Johto_EventScript_Unimplemented
 
 TinTower1F_Johto_TinTower1FSage5Script_GotRainbowWing:

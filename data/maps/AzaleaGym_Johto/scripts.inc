@@ -29,7 +29,7 @@ AzaleaGym_Johto_AzaleaGymBugsyScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_ENGINE_HIVEBADGE
-	setvar VAR_RESULT, 0
+	special JohtoCountBadges
 	call AzaleaGym_Johto_AzaleaGymActivateRockets_Sub
 
 AzaleaGym_Johto_AzaleaGymBugsyScript_FightDone:

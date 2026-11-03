@@ -77,8 +77,26 @@ EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageScript_BlockPassage_G
 EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageScript_CheckForClearBell:
 	goto_if_set FLAG_JOHTO_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER, EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageScript_AllowedThrough
 	goto_if_set FLAG_TEMP_11, EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageScript_RangClearBell
-	@ TODO unsupported: checkitem CLEAR_BELL
-	goto Johto_EventScript_Unimplemented
+	checkitem ITEM_CLEAR_BELL, 1
+	goto_if_ne VAR_RESULT, 0, EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageScript_GotClearBell
+	message EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageText_NoClearBell
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageScript_GotClearBell:
+	message EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageText_HearsClearBell
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setvar VAR_JOHTO_SCENE_ECRUTEAK_TIN_TOWER_ENTRANCE, 1
+	setflag FLAG_JOHTO_RANG_CLEAR_BELL_2
+	clearflag FLAG_JOHTO_RANG_CLEAR_BELL_1
+	setflag FLAG_TEMP_11
+	releaseall
+	end
 
 EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageScript_AllowedThrough:
 	message EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageText_PleaseDoGoOn
@@ -133,7 +151,11 @@ EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceInitializeSagesCallback_B
 	clearflag FLAG_JOHTO_RANG_CLEAR_BELL_1
 	setflag FLAG_JOHTO_RANG_CLEAR_BELL_2
 	setflag FLAG_JOHTO_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE
-	@ TODO unsupported: checkitem CLEAR_BELL
+	checkitem ITEM_CLEAR_BELL, 1
+	goto_if_ne VAR_RESULT, 0, EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceInitializeSagesCallback_NoClearBell_Cb
+	setvar VAR_JOHTO_SCENE_ECRUTEAK_TIN_TOWER_ENTRANCE, 0
+
+EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceInitializeSagesCallback_NoClearBell_Cb:
 	return
 
 EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceInitializeSagesCallback_DontBlockTower_Cb:
@@ -171,6 +193,42 @@ EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageText_GotFogBadge:
 	.string "\pECRUTEAK's GYM\n"
 	.string "BADGE! Please, go\l"
 	.string "right through.$"
+
+EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageText_NoClearBell:
+	.string "A momentous event\n"
+	.string "has occurred."
+	.string "\pI beg your pardon,\n"
+	.string "but I must ask you\l"
+	.string "to leave."
+	.string "\p…What soothes the\n"
+	.string "soul…"
+	.string "\pThe WISE TRIO say\n"
+	.string "things that are so"
+	.string "\pvery difficult to\n"
+	.string "understand…$"
+
+EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageText_HearsClearBell:
+	.string "A momentous event\n"
+	.string "has occurred."
+	.string "\pI beg your pardon,\n"
+	.string "but I must ask you\l"
+	.string "to leave."
+	.string "\p<……><……><……>"
+	.string "\pAh!"
+	.string "\pThe sound of that\n"
+	.string "CLEAR BELL!"
+	.string "\pIt… It's sublime!"
+	.string "\pI've never heard\n"
+	.string "so beautiful a\l"
+	.string "sound before!"
+	.string "\pThat bell's chime\n"
+	.string "is indicative of\l"
+	.string "the bearer's soul."
+	.string "\pYou…"
+	.string "\pYou may be able to\n"
+	.string "make it through\l"
+	.string "TIN TOWER."
+	.string "\pPlease, do go on.$"
 
 EcruteakTinTowerEntrance_Johto_EcruteakTinTowerEntranceSageText_PleaseDoGoOn:
 	.string "Please, do go on.$"

@@ -34,9 +34,24 @@ static const u8 sKantoFieldMoveBadge[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_WATERFALL] = 6,
 };
 
+// Johto: Flash needs Zephyr, Cut Hive, Strength Plain, Surf Fog, Fly Storm, Dive (Whirlpool) Glacier, Waterfall Rising; Rock Smash needs none.
+static const u8 sJohtoFieldMoveBadge[FIELD_MOVES_COUNT] =
+{
+    [FIELD_MOVE_CUT] = 1,
+    [FIELD_MOVE_FLASH] = 0,
+    [FIELD_MOVE_ROCK_SMASH] = 0xFF,
+    [FIELD_MOVE_STRENGTH] = 2,
+    [FIELD_MOVE_SURF] = 3,
+    [FIELD_MOVE_FLY] = 4,
+    [FIELD_MOVE_DIVE] = 6,
+    [FIELD_MOVE_WATERFALL] = 7,
+};
+
 static bool32 HasBadgeForFieldMove(enum FieldMove fieldMove)
 {
-    // Kanto gym badges are FLAG_BADGE09_GET..FLAG_BADGE16_GET
+    // Kanto gym badges are FLAG_BADGE09_GET..FLAG_BADGE16_GET, Johto's live in the Johto flag band
+    if (GetCurrentRegion() == REGION_JOHTO)
+        return sJohtoFieldMoveBadge[fieldMove] == 0xFF || FlagGet(GetBadgeFlagForRegion(REGION_JOHTO, sJohtoFieldMoveBadge[fieldMove]));
     if (GetCurrentRegion() == REGION_KANTO)
         return FlagGet(FLAG_BADGE09_GET + sKantoFieldMoveBadge[fieldMove]);
     return FlagGet(gFieldMoveInfo[fieldMove].arg + FLAG_BADGE01_GET);

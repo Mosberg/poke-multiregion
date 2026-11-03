@@ -141,7 +141,13 @@ NationalPark_Johto_TrainerSchoolboyJack1::
 	goto NationalPark_Johto_TrainerSchoolboyJack1_Script
 
 NationalPark_Johto_TrainerSchoolboyJack1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
+	goto_if_set FLAG_JOHTO_ENGINE_JACK_READY_FOR_REMATCH, NationalPark_Johto_TrainerSchoolboyJack1_Rematch
+	@ TODO unsupported: checkcellnum PHONE_SCHOOLBOY_JACK
+	goto Johto_EventScript_Unimplemented
+
+NationalPark_Johto_TrainerSchoolboyJack1_Rematch:
+	call NationalPark_Johto_TrainerSchoolboyJack1_RematchStd_Sub
+	@ TODO unsupported: readmem wJackFightCount
 	goto Johto_EventScript_Unimplemented
 
 NationalPark_Johto_TrainerPokefanmWilliam::
@@ -167,8 +173,25 @@ NationalPark_Johto_TrainerPokefanfBeverly1::
 	goto NationalPark_Johto_TrainerPokefanfBeverly1_Script
 
 NationalPark_Johto_TrainerPokefanfBeverly1_Script:
-	@ TODO unsupported: loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
+	goto_if_set FLAG_JOHTO_ENGINE_BEVERLY_HAS_NUGGET, NationalPark_Johto_TrainerPokefanfBeverly1_GiveNugget
+	@ TODO unsupported: checkcellnum PHONE_POKEFAN_BEVERLY
 	goto Johto_EventScript_Unimplemented
+
+NationalPark_Johto_TrainerPokefanfBeverly1_GiveNugget:
+	call NationalPark_Johto_TrainerPokefanfBeverly1_Gift_Sub
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, 0, NationalPark_Johto_TrainerPokefanfBeverly1_NoRoom
+	clearflag FLAG_JOHTO_ENGINE_BEVERLY_HAS_NUGGET
+	goto NationalPark_Johto_TrainerPokefanfBeverly1_NumberAccepted
+
+NationalPark_Johto_TrainerPokefanfBeverly1_NoRoom:
+	goto NationalPark_Johto_TrainerPokefanfBeverly1_PackFull
+
+NationalPark_Johto_TrainerPokefanfBeverly1_NumberAccepted:
+	goto Johto_Std_NumberAcceptedFScript
+
+NationalPark_Johto_TrainerPokefanfBeverly1_PackFull:
+	goto Johto_Std_PackFullFScript
 
 NationalPark_Johto_TrainerLassKrise::
 	trainerbattle_single TRAINER_JOHTO_LASS_KRISE, NationalPark_Johto_LassKriseSeenText, NationalPark_Johto_LassKriseBeatenText
@@ -208,6 +231,12 @@ NationalPark_Johto_NationalParkTrainerTipsSign:
 	closemessage
 	releaseall
 	end
+
+NationalPark_Johto_TrainerSchoolboyJack1_RematchStd_Sub:
+	goto Johto_Std_RematchMScript_Sub
+
+NationalPark_Johto_TrainerPokefanfBeverly1_Gift_Sub:
+	goto Johto_Std_GiftFScript_Sub
 
 NationalPark_Johto_NationalParkLassText:
 	.string "Look! Check out my\n"
