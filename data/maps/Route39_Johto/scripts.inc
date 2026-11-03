@@ -47,8 +47,25 @@ Route39_Johto_TrainerPokefanmDerek_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_DEREK_HAS_NUGGET, Route39_Johto_TrainerPokefanmDerek_HasNugget
 	setvar VAR_RESULT, 0
 	goto_if_ne VAR_RESULT, 0, Route39_Johto_TrainerPokefanmDerek_NumberAccepted
-	@ TODO unsupported: checkpoke PIKACHU
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_eq VAR_RESULT, 0, Route39_Johto_TrainerPokefanmDerek_WantsPikachu
+	goto_if_set FLAG_JOHTO_DEREK_ASKED_FOR_PHONE_NUMBER, Route39_Johto_TrainerPokefanmDerek_AskedAlready
+	message Route39_Johto_PokefanMDerekText_NotBragging
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_DEREK_ASKED_FOR_PHONE_NUMBER
+	call Route39_Johto_TrainerPokefanmDerek_AskNumber1_Sub
+	goto Route39_Johto_TrainerPokefanmDerek_AskForNumber
+
+Route39_Johto_TrainerPokefanmDerek_AskedAlready:
+	call Route39_Johto_TrainerPokefanmDerek_AskNumber2_Sub
+
+Route39_Johto_TrainerPokefanmDerek_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route39_Johto_TrainerPokefanmDerek_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route39_Johto_TrainerPokefanmDerek_NumberDeclined
+	call Route39_Johto_TrainerPokefanmDerek_RegisteredNumber_Sub
+	goto Route39_Johto_TrainerPokefanmDerek_NumberAccepted
 
 Route39_Johto_TrainerPokefanmDerek_HasNugget:
 	call Route39_Johto_TrainerPokefanmDerek_Gift_Sub
@@ -60,8 +77,22 @@ Route39_Johto_TrainerPokefanmDerek_HasNugget:
 Route39_Johto_TrainerPokefanmDerek_NoRoom:
 	goto Route39_Johto_TrainerPokefanmDerek_PackFull
 
+Route39_Johto_TrainerPokefanmDerek_WantsPikachu:
+	message Route39_Johto_PokefanMDerekPikachuIsItText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route39_Johto_TrainerPokefanmDerek_NumberAccepted:
 	goto Johto_Std_NumberAcceptedMScript
+
+Route39_Johto_TrainerPokefanmDerek_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route39_Johto_TrainerPokefanmDerek_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route39_Johto_TrainerPokefanmDerek_PackFull:
 	goto Johto_Std_PackFullMScript
@@ -174,6 +205,15 @@ Route39_Johto_Route39FruitTree:
 	releaseall
 	end
 
+Route39_Johto_TrainerPokefanmDerek_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route39_Johto_TrainerPokefanmDerek_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route39_Johto_TrainerPokefanmDerek_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route39_Johto_TrainerPokefanmDerek_Gift_Sub:
 	goto Johto_Std_GiftMScript_Sub
 
@@ -206,6 +246,14 @@ Route39_Johto_PokefanmDerekBeatenText:
 	.string "I had no time to\n"
 	.string "show off PIKACHU…$"
 
+Route39_Johto_PokefanMDerekText_NotBragging:
+	.string "I'm not listening\n"
+	.string "to your bragging!"
+	.string "\pWe POKé FANS have\n"
+	.string "a policy of not"
+	.string "\plistening to other\n"
+	.string "people brag!$"
+
 Route39_Johto_PokefanfRuthSeenText:
 	.string "Such darling\n"
 	.string "POKéMON."
@@ -222,6 +270,10 @@ Route39_Johto_PokefanfRuthAfterBattleText:
 	.string "baby POKéMON?"
 	.string "\pI bet they're just\n"
 	.string "adorable!$"
+
+Route39_Johto_PokefanMDerekPikachuIsItText:
+	.string "PIKACHU is it!\n"
+	.string "Don't you agree?$"
 
 Route39_Johto_PsychicNormanSeenText:
 	.string "Let me see what\n"

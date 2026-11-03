@@ -13,7 +13,11 @@ Route27SandstormHouse_Johto_SandstormHouseBookshelf_Entry::
 Route27SandstormHouse_Johto_SandstormHouseWoman:
 	faceplayer
 	goto_if_set FLAG_JOHTO_GOT_TM37_SANDSTORM, Route27SandstormHouse_Johto_SandstormHouseWoman_AlreadyGotItem
-	@ TODO unsupported: special GetFirstPokemonHappiness
+	special JohtoGetFirstMonHappiness
+	message Route27SandstormHouse_Johto_SandstormHouseWomanText1
+	waitmessage
+	waitbuttonpress
+	@ TODO unsupported: ifgreater 150 - 1, .Loyal
 	goto Johto_EventScript_Unimplemented
 
 Route27SandstormHouse_Johto_SandstormHouseWoman_AlreadyGotItem:
@@ -28,6 +32,15 @@ Route27SandstormHouse_Johto_SandstormHouseWoman_Done:
 
 Route27SandstormHouse_Johto_SandstormHouseBookshelf:
 	goto Johto_Std_MagazineBookshelfScript
+
+Route27SandstormHouse_Johto_SandstormHouseWomanText1:
+	.string "Where are you off\n"
+	.string "to with POKéMON?"
+	.string "\pPOKéMON LEAGUE?"
+	.string "\pAre your POKéMON\n"
+	.string "loyal enough for\l"
+	.string "you to win?"
+	.string "\pLet me see…$"
 
 Route27SandstormHouse_Johto_SandstormHouseSandstormDescription:
 	.string "TM37 happens to be\n"

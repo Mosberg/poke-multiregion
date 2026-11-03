@@ -143,8 +143,25 @@ Route43_Johto_TrainerPicnickerTiffany_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_TIFFANY_HAS_PINK_BOW, Route43_Johto_TrainerPicnickerTiffany_HasPinkBow
 	setvar VAR_RESULT, 0
 	goto_if_ne VAR_RESULT, 0, Route43_Johto_TrainerPicnickerTiffany_NumberAccepted
-	@ TODO unsupported: checkpoke CLEFAIRY
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_eq VAR_RESULT, 0, Route43_Johto_TrainerPicnickerTiffany_NoClefairy
+	goto_if_set FLAG_JOHTO_TIFFANY_ASKED_FOR_PHONE_NUMBER, Route43_Johto_TrainerPicnickerTiffany_AskedAlready
+	message Route43_Johto_PicnickerTiffanyWantsPicnicText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_TIFFANY_ASKED_FOR_PHONE_NUMBER
+	call Route43_Johto_TrainerPicnickerTiffany_AskNumber1_Sub
+	goto Route43_Johto_TrainerPicnickerTiffany_AskForNumber
+
+Route43_Johto_TrainerPicnickerTiffany_AskedAlready:
+	call Route43_Johto_TrainerPicnickerTiffany_AskNumber2_Sub
+
+Route43_Johto_TrainerPicnickerTiffany_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route43_Johto_TrainerPicnickerTiffany_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route43_Johto_TrainerPicnickerTiffany_NumberDeclined
+	call Route43_Johto_TrainerPicnickerTiffany_RegisteredNumber_Sub
+	goto Route43_Johto_TrainerPicnickerTiffany_NumberAccepted
 
 Route43_Johto_TrainerPicnickerTiffany_WantsBattle:
 	call Route43_Johto_TrainerPicnickerTiffany_Rematch_Sub
@@ -162,8 +179,22 @@ Route43_Johto_TrainerPicnickerTiffany_HasPinkBow:
 Route43_Johto_TrainerPicnickerTiffany_NoRoom:
 	goto Route43_Johto_TrainerPicnickerTiffany_PackFull
 
+Route43_Johto_TrainerPicnickerTiffany_NoClefairy:
+	message Route43_Johto_PicnickerTiffanyClefairyText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 Route43_Johto_TrainerPicnickerTiffany_NumberAccepted:
 	goto Johto_Std_NumberAcceptedFScript
+
+Route43_Johto_TrainerPicnickerTiffany_NumberDeclined:
+	goto Johto_Std_NumberDeclinedFScript
+
+Route43_Johto_TrainerPicnickerTiffany_PhoneFull:
+	goto Johto_Std_PhoneFullFScript
 
 Route43_Johto_TrainerPicnickerTiffany_PackFull:
 	goto Johto_Std_PackFullFScript
@@ -215,6 +246,15 @@ Route43_Johto_TrainerPokemaniacBrent_RegisteredNumber_Sub:
 
 Route43_Johto_TrainerPokemaniacBrent_Rematch_Sub:
 	goto Johto_Std_RematchMScript_Sub
+
+Route43_Johto_TrainerPicnickerTiffany_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1FScript_Sub
+
+Route43_Johto_TrainerPicnickerTiffany_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2FScript_Sub
+
+Route43_Johto_TrainerPicnickerTiffany_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberFScript_Sub
 
 Route43_Johto_TrainerPicnickerTiffany_Rematch_Sub:
 	goto Johto_Std_RematchFScript_Sub
@@ -327,6 +367,16 @@ Route43_Johto_PicnickerTiffanySeenText:
 
 Route43_Johto_PicnickerTiffanyBeatenText:
 	.string "I played too much!$"
+
+Route43_Johto_PicnickerTiffanyWantsPicnicText:
+	.string "I'm having a pic-\n"
+	.string "nic with POKéMON."
+	.string "\pWon't you join us?$"
+
+Route43_Johto_PicnickerTiffanyClefairyText:
+	.string "Isn't my CLEFAIRY\n"
+	.string "just the most\l"
+	.string "adorable thing?$"
 
 Route43_Johto_Route43Sign1Text:
 	.string "ROUTE 43"

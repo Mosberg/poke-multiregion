@@ -126,8 +126,22 @@ OlivineCity_Johto_OlivineCitySailor1Script:
 
 OlivineCity_Johto_OlivineCityStandingYoungsterScript:
 	faceplayer
-	@ TODO unsupported: random 2
-	goto Johto_EventScript_Unimplemented
+	random 2
+	goto_if_eq VAR_RESULT, 0, OlivineCity_Johto_OlivineCityStandingYoungsterScript_FiftyFifty
+	message OlivineCity_Johto_OlivineCityStandingYoungsterPokegearText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+OlivineCity_Johto_OlivineCityStandingYoungsterScript_FiftyFifty:
+	message OlivineCity_Johto_OlivineCityStandingYoungsterPokedexText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 OlivineCity_Johto_OlivineCitySailor2Script:
 	faceplayer
@@ -280,6 +294,18 @@ OlivineCity_Johto_OlivineCitySailor1Text:
 	.string "of the LIGHTHOUSE"
 	.string "\pto guide it, no\n"
 	.string "ship can sail.$"
+
+OlivineCity_Johto_OlivineCityStandingYoungsterPokegearText:
+	.string "That thing you\n"
+	.string "have--it's a POKé-\l"
+	.string "GEAR, right? Wow,\l"
+	.string "that's cool.$"
+
+OlivineCity_Johto_OlivineCityStandingYoungsterPokedexText:
+	.string "Wow, you have a\n"
+	.string "POKéDEX!"
+	.string "\pThat is just so\n"
+	.string "awesome.$"
 
 OlivineCity_Johto_OlivineCitySailor2Text:
 	.string "The sea is sweet!"

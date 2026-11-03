@@ -176,7 +176,10 @@ GoldenrodGameCorner_Johto_GoldenrodGameCornerLeftTheirDrinkScript:
 	end
 
 GoldenrodGameCorner_Johto_GoldenrodGameCornerSlotsMachineScript:
-	@ TODO unsupported: random 6
+	random 6
+	goto_if_eq VAR_RESULT, 0, GoldenrodGameCorner_Johto_GoldenrodGameCornerLuckySlotsMachineScript
+	setvar VAR_RESULT, FALSE
+	@ TODO unsupported: special SlotMachine
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodGameCorner_Johto_GoldenrodGameCornerLuckySlotsMachineScript:

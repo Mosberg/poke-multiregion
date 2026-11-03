@@ -1567,8 +1567,48 @@ Johto_Std_GymStatue_WinningTrainersText:
 
 Johto_Std_HappinessCheckScript:
 	faceplayer
-	@ TODO unsupported: special GetFirstPokemonHappiness
-	goto Johto_EventScript_Unimplemented
+	special JohtoGetFirstMonHappiness
+	goto_if_lt VAR_RESULT, 50, Johto_Std_HappinessCheckScript_Unhappy
+	goto_if_lt VAR_RESULT, 150, Johto_Std_HappinessCheckScript_KindaHappy
+	message Johto_Std_HappinessText3
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Johto_Std_HappinessCheckScript_KindaHappy:
+	message Johto_Std_HappinessText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Johto_Std_HappinessCheckScript_Unhappy:
+	message Johto_Std_HappinessText1
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Johto_Std_HappinessText1:
+	.string "You haven't tamed\n"
+	.string "your POKéMON."
+	.string "\pIf you aren't\n"
+	.string "nice, it'll pout.$"
+
+Johto_Std_HappinessText2:
+	.string "POKéMON get more\n"
+	.string "friendly if you"
+	.string "\pspend time with\n"
+	.string "them.$"
+
+Johto_Std_HappinessText3:
+	.string "Wow! You and your\n"
+	.string "POKéMON are really\l"
+	.string "close!$"
 
 Johto_Std_HueyAskNumber1Text:
 	.string "Cool! That's the\n"

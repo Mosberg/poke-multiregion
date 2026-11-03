@@ -142,7 +142,10 @@ CeladonGameCorner_Johto_CeladonGameCornerPoster2Script:
 	end
 
 CeladonGameCorner_Johto_CeladonGameCornerLuckySlotMachineScript:
-	@ TODO unsupported: random 6
+	random 6
+	goto_if_eq VAR_RESULT, 0, CeladonGameCorner_Johto_CeladonGameCornerSlotMachineScript
+	setvar VAR_RESULT, FALSE
+	@ TODO unsupported: special SlotMachine
 	goto Johto_EventScript_Unimplemented
 
 CeladonGameCorner_Johto_CeladonGameCornerSlotMachineScript:

@@ -24,7 +24,11 @@ GoldenrodHappinessRater_Johto_HappinessRatersHouseRadio_Entry::
 
 GoldenrodHappinessRater_Johto_GoldenrodHappinessRaterTeacherScript:
 	faceplayer
-	@ TODO unsupported: special GetFirstPokemonHappiness
+	special JohtoGetFirstMonHappiness
+	message GoldenrodHappinessRater_Johto_GoldenrodHappinessRaterTeacherText
+	waitmessage
+	waitbuttonpress
+	@ TODO unsupported: ifgreater 250 - 1, .LovesYouALot
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodHappinessRater_Johto_GoldenrodHappinessRaterPokefanMScript:
@@ -50,6 +54,14 @@ GoldenrodHappinessRater_Johto_HappinessRatersHouseBookshelf:
 
 GoldenrodHappinessRater_Johto_HappinessRatersHouseRadio:
 	goto Johto_Std_Radio2Script
+
+GoldenrodHappinessRater_Johto_GoldenrodHappinessRaterTeacherText:
+	.string "If you treat your\n"
+	.string "POKéMON nicely,"
+	.string "\pthey will love you\n"
+	.string "in return."
+	.string "\pOh? Let me see\n"
+	.string "your {STR_VAR_1}…$"
 
 GoldenrodHappinessRater_Johto_GoldenrodHappinessRaterPokefanMText:
 	.string "I keep losing in\n"

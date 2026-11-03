@@ -210,8 +210,25 @@ NationalPark_Johto_TrainerPokefanfBeverly1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_BEVERLY_HAS_NUGGET, NationalPark_Johto_TrainerPokefanfBeverly1_GiveNugget
 	setvar VAR_RESULT, 0
 	goto_if_ne VAR_RESULT, 0, NationalPark_Johto_TrainerPokefanfBeverly1_NumberAccepted
-	@ TODO unsupported: checkpoke MARILL
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_eq VAR_RESULT, 0, NationalPark_Johto_TrainerPokefanfBeverly1_NoMarill
+	goto_if_set FLAG_JOHTO_BEVERLY_ASKED_FOR_PHONE_NUMBER, NationalPark_Johto_TrainerPokefanfBeverly1_AskAgain
+	message NationalPark_Johto_PokefanBeverlyCuteMonText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_BEVERLY_ASKED_FOR_PHONE_NUMBER
+	call NationalPark_Johto_TrainerPokefanfBeverly1_AskNumber1_Sub
+	goto NationalPark_Johto_TrainerPokefanfBeverly1_RequestNumber
+
+NationalPark_Johto_TrainerPokefanfBeverly1_AskAgain:
+	call NationalPark_Johto_TrainerPokefanfBeverly1_AskNumber2_Sub
+
+NationalPark_Johto_TrainerPokefanfBeverly1_RequestNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, NationalPark_Johto_TrainerPokefanfBeverly1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, NationalPark_Johto_TrainerPokefanfBeverly1_NumberDeclined
+	call NationalPark_Johto_TrainerPokefanfBeverly1_RegisteredNumber_Sub
+	goto NationalPark_Johto_TrainerPokefanfBeverly1_NumberAccepted
 
 NationalPark_Johto_TrainerPokefanfBeverly1_GiveNugget:
 	call NationalPark_Johto_TrainerPokefanfBeverly1_Gift_Sub
@@ -223,8 +240,22 @@ NationalPark_Johto_TrainerPokefanfBeverly1_GiveNugget:
 NationalPark_Johto_TrainerPokefanfBeverly1_NoRoom:
 	goto NationalPark_Johto_TrainerPokefanfBeverly1_PackFull
 
+NationalPark_Johto_TrainerPokefanfBeverly1_NoMarill:
+	message NationalPark_Johto_PokefanFBeverlyMarillFriendText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
 NationalPark_Johto_TrainerPokefanfBeverly1_NumberAccepted:
 	goto Johto_Std_NumberAcceptedFScript
+
+NationalPark_Johto_TrainerPokefanfBeverly1_NumberDeclined:
+	goto Johto_Std_NumberDeclinedFScript
+
+NationalPark_Johto_TrainerPokefanfBeverly1_PhoneFull:
+	goto Johto_Std_PhoneFullFScript
 
 NationalPark_Johto_TrainerPokefanfBeverly1_PackFull:
 	goto Johto_Std_PackFullFScript
@@ -289,6 +320,15 @@ NationalPark_Johto_TrainerSchoolboyJack1_RegisteredNumber_Sub:
 
 NationalPark_Johto_TrainerSchoolboyJack1_RematchStd_Sub:
 	goto Johto_Std_RematchMScript_Sub
+
+NationalPark_Johto_TrainerPokefanfBeverly1_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1FScript_Sub
+
+NationalPark_Johto_TrainerPokefanfBeverly1_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2FScript_Sub
+
+NationalPark_Johto_TrainerPokefanfBeverly1_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberFScript_Sub
 
 NationalPark_Johto_TrainerPokefanfBeverly1_Gift_Sub:
 	goto Johto_Std_GiftFScript_Sub
@@ -382,6 +422,11 @@ NationalPark_Johto_PokefanfBeverly1BeatenText:
 	.string "I can beat you in\n"
 	.string "pride, but…$"
 
+NationalPark_Johto_PokefanBeverlyCuteMonText:
+	.string "I must say, your\n"
+	.string "POKéMON are quite\l"
+	.string "cute, too.$"
+
 NationalPark_Johto_PokefanmWilliamSeenText:
 	.string "We adore our POKé-\n"
 	.string "MON, even if they\l"
@@ -397,6 +442,14 @@ NationalPark_Johto_PokefanmWilliamAfterBattleText:
 	.string "but my POKéMON win"
 	.string "\pthe prize for\n"
 	.string "being most lovely.$"
+
+NationalPark_Johto_PokefanFBeverlyMarillFriendText:
+	.string "My friend keeps a\n"
+	.string "MARILL!"
+	.string "\pI find them very\n"
+	.string "endearing."
+	.string "\pOh, I wish for a\n"
+	.string "MARILL of my own…$"
 
 NationalPark_Johto_LassKriseSeenText:
 	.string "Hello? Why are you\n"

@@ -31,6 +31,13 @@ void JohtoGetWeekday(void)
     gSpecialVar_Result = GetDayOfWeek();
 }
 
+// Crystal's GetFirstPokemonHappiness: VAR_RESULT = friendship of the first party Pokemon (VAR_0x8004 = its species).
+void JohtoGetFirstMonHappiness(void)
+{
+    gSpecialVar_0x8004 = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES);
+    gSpecialVar_Result = GetMonData(&gPlayerParty[0], MON_DATA_FRIENDSHIP);
+}
+
 // Crystal's VAR_BADGES: number of Johto gym badges.
 void JohtoCountBadges(void)
 {

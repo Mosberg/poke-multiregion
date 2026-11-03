@@ -78,7 +78,11 @@ GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript:
 	special JohtoGetWeekday
 	goto_if_ne VAR_RESULT, 0, GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript_EventIsOver
 	goto_if_set FLAG_JOHTO_ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN, GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript_EventIsOver
-	@ TODO unsupported: special GetFirstPokemonHappiness
+	special JohtoGetFirstMonHappiness
+	message GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistOhYourMonDotDotDotText
+	waitmessage
+	waitbuttonpress
+	@ TODO unsupported: ifgreater 150 - 1, .VeryHappy
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistScript_EventIsOver:
@@ -139,6 +143,10 @@ GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_Cb:
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FCheckIfSundayCallback_yes_Cb:
 	clearflag FLAG_JOHTO_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY
 	return
+
+GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistOhYourMonDotDotDotText:
+	.string "Hello. Oh, your\n"
+	.string "POKéMON…$"
 
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FReceptionistThereAreTMsPerfectForMonText:
 	.string "There are sure to\n"
