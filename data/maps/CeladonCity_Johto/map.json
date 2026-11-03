@@ -275,6 +275,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Johto_EventScript_StubSign"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 35,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CeladonCity_Johto_CutTree0"
     }
   ]
 }

@@ -1,5 +1,6 @@
 IlexForest_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, IlexForest_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, IlexForest_Johto_OnLoad
 	.byte 0
 
 IlexForest_Johto_OnTransition:
@@ -326,3 +327,26 @@ IlexForest_Johto_BugCatcherWayneAfterBattleText:
 	.string "\pI ought to use\n"
 	.string "HEADBUTT in other\l"
 	.string "places too.$"
+
+IlexForest_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ILEX_FOREST_0, IlexForest_Johto_CutTree0_Keep
+	setmetatile 8, 24, 516, 0
+	setmetatile 9, 24, 516, 0
+	setmetatile 8, 25, 516, 0
+	setmetatile 9, 25, 524, 0
+IlexForest_Johto_CutTree0_Keep:
+	end
+
+IlexForest_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, IlexForest_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ILEX_FOREST_0
+	setmetatile 8, 24, 516, 0
+	setmetatile 9, 24, 516, 0
+	setmetatile 8, 25, 516, 0
+	setmetatile 9, 25, 524, 0
+	special DrawWholeMapView
+IlexForest_Johto_CutTree0_Done:
+	releaseall
+	end

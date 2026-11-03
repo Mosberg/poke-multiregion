@@ -1,5 +1,6 @@
 CeladonCity_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CeladonCity_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, CeladonCity_Johto_OnLoad
 	.byte 0
 
 CeladonCity_Johto_OnTransition:
@@ -289,3 +290,26 @@ CeladonCity_Johto_CeladonCityTrainerTipsText:
 	.string "\pGet your items at\n"
 	.string "CELADON DEPT.\l"
 	.string "STORE!$"
+
+CeladonCity_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_CELADON_CITY_0, CeladonCity_Johto_CutTree0_Keep
+	setmetatile 28, 34, 533, 0
+	setmetatile 29, 34, 541, 1
+	setmetatile 28, 35, 533, 0
+	setmetatile 29, 35, 541, 1
+CeladonCity_Johto_CutTree0_Keep:
+	end
+
+CeladonCity_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_CELADON_CITY_0
+	setmetatile 28, 34, 533, 0
+	setmetatile 29, 34, 541, 1
+	setmetatile 28, 35, 533, 0
+	setmetatile 29, 35, 541, 1
+	special DrawWholeMapView
+CeladonCity_Johto_CutTree0_Done:
+	releaseall
+	end

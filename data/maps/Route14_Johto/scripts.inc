@@ -1,4 +1,5 @@
 Route14_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route14_Johto_OnLoad
 	.byte 0
 
 Route14_Johto_Kim_Entry::
@@ -103,3 +104,66 @@ Route14_Johto_PokefanmTrevorAfterBattleText:
 	.string "an easy way to"
 	.string "\pidentify where I\n"
 	.string "got my POKéMON…$"
+
+Route14_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_14_0, Route14_Johto_CutTree0_Keep
+	setmetatile 4, 8, 533, 0
+	setmetatile 5, 8, 533, 0
+	setmetatile 4, 9, 541, 1
+	setmetatile 5, 9, 533, 0
+Route14_Johto_CutTree0_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_14_1, Route14_Johto_CutTree1_Keep
+	setmetatile 10, 14, 533, 0
+	setmetatile 11, 14, 533, 0
+	setmetatile 10, 15, 541, 1
+	setmetatile 11, 15, 533, 0
+Route14_Johto_CutTree1_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_14_2, Route14_Johto_CutTree2_Keep
+	setmetatile 2, 24, 533, 0
+	setmetatile 3, 24, 533, 0
+	setmetatile 2, 25, 541, 1
+	setmetatile 3, 25, 533, 0
+Route14_Johto_CutTree2_Keep:
+	end
+
+Route14_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route14_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_14_0
+	setmetatile 4, 8, 533, 0
+	setmetatile 5, 8, 533, 0
+	setmetatile 4, 9, 541, 1
+	setmetatile 5, 9, 533, 0
+	special DrawWholeMapView
+Route14_Johto_CutTree0_Done:
+	releaseall
+	end
+
+Route14_Johto_CutTree1::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route14_Johto_CutTree1_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_14_1
+	setmetatile 10, 14, 533, 0
+	setmetatile 11, 14, 533, 0
+	setmetatile 10, 15, 541, 1
+	setmetatile 11, 15, 533, 0
+	special DrawWholeMapView
+Route14_Johto_CutTree1_Done:
+	releaseall
+	end
+
+Route14_Johto_CutTree2::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route14_Johto_CutTree2_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_14_2
+	setmetatile 2, 24, 533, 0
+	setmetatile 3, 24, 533, 0
+	setmetatile 2, 25, 541, 1
+	setmetatile 3, 25, 533, 0
+	special DrawWholeMapView
+Route14_Johto_CutTree2_Done:
+	releaseall
+	end

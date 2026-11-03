@@ -1,4 +1,5 @@
 Route8_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route8_Johto_OnLoad
 	.byte 0
 
 Route8_Johto_Route8FruitTree_Entry::
@@ -186,3 +187,46 @@ Route8_Johto_Route8UndergroundPathSignText:
 	.string "The flyer's torn."
 	.string "\pIt's impossible to\n"
 	.string "read…$"
+
+Route8_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_8_0, Route8_Johto_CutTree0_Keep
+	setmetatile 26, 10, 533, 0
+	setmetatile 27, 10, 533, 0
+	setmetatile 26, 11, 541, 1
+	setmetatile 27, 11, 533, 0
+Route8_Johto_CutTree0_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_8_1, Route8_Johto_CutTree1_Keep
+	setmetatile 20, 12, 533, 0
+	setmetatile 21, 12, 533, 0
+	setmetatile 20, 13, 541, 1
+	setmetatile 21, 13, 533, 0
+Route8_Johto_CutTree1_Keep:
+	end
+
+Route8_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route8_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_8_0
+	setmetatile 26, 10, 533, 0
+	setmetatile 27, 10, 533, 0
+	setmetatile 26, 11, 541, 1
+	setmetatile 27, 11, 533, 0
+	special DrawWholeMapView
+Route8_Johto_CutTree0_Done:
+	releaseall
+	end
+
+Route8_Johto_CutTree1::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route8_Johto_CutTree1_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_8_1
+	setmetatile 20, 12, 533, 0
+	setmetatile 21, 12, 533, 0
+	setmetatile 20, 13, 541, 1
+	setmetatile 21, 13, 533, 0
+	special DrawWholeMapView
+Route8_Johto_CutTree1_Done:
+	releaseall
+	end

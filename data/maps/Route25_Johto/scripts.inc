@@ -1,4 +1,5 @@
 Route25_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route25_Johto_OnLoad
 	.byte 0
 
 Route25_Johto_TrainerCooltrainermKevin_Entry::
@@ -420,3 +421,26 @@ Route25_Johto_CooltrainermKevinAfterBattleText:
 Route25_Johto_BillsHouseSignText:
 	.string "SEA COTTAGE\n"
 	.string "BILL'S HOUSE$"
+
+Route25_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_25_0, Route25_Johto_CutTree0_Keep
+	setmetatile 34, 6, 533, 0
+	setmetatile 35, 6, 533, 0
+	setmetatile 34, 7, 541, 1
+	setmetatile 35, 7, 541, 1
+Route25_Johto_CutTree0_Keep:
+	end
+
+Route25_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route25_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_25_0
+	setmetatile 34, 6, 533, 0
+	setmetatile 35, 6, 533, 0
+	setmetatile 34, 7, 541, 1
+	setmetatile 35, 7, 541, 1
+	special DrawWholeMapView
+Route25_Johto_CutTree0_Done:
+	releaseall
+	end

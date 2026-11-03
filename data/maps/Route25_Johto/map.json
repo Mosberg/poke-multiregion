@@ -211,6 +211,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Johto_EventScript_StubSign"
+    },
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route25_Johto_CutTree0"
     }
   ]
 }

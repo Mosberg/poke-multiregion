@@ -1,4 +1,5 @@
 Route9_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route9_Johto_OnLoad
 	.byte 0
 
 Route9_Johto_Route9Sign_Entry::
@@ -196,3 +197,26 @@ Route9_Johto_Route9SignText:
 	.string "ROUTE 9"
 	.string "\pCERULEAN CITY -\n"
 	.string "ROCK TUNNEL$"
+
+Route9_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_9_0, Route9_Johto_CutTree0_Keep
+	setmetatile 4, 8, 533, 0
+	setmetatile 5, 8, 533, 0
+	setmetatile 4, 9, 541, 1
+	setmetatile 5, 9, 533, 0
+Route9_Johto_CutTree0_Keep:
+	end
+
+Route9_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route9_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_9_0
+	setmetatile 4, 8, 533, 0
+	setmetatile 5, 8, 533, 0
+	setmetatile 4, 9, 541, 1
+	setmetatile 5, 9, 533, 0
+	special DrawWholeMapView
+Route9_Johto_CutTree0_Done:
+	releaseall
+	end

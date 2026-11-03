@@ -51,6 +51,29 @@ Johto_Std_FruitTreeEmpty::
 	releaseall
 	end
 
+Johto_Text_CantCut:
+	.string "This tree looks like it\ncan be cut down!$"
+
+Johto_Std_TryCutTree::
+	checkfieldmove FIELD_MOVE_CUT, TRUE
+	goto_if_eq VAR_RESULT, PARTY_SIZE, Johto_Std_CantCutTree
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	buffermovename STR_VAR_2, MOVE_CUT
+	msgbox Text_WantToCut, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Johto_Std_CutDeclined
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_CUT
+	waitse
+	setvar VAR_RESULT, TRUE
+	return
+
+Johto_Std_CantCutTree:
+	msgbox Johto_Text_CantCut, MSGBOX_DEFAULT
+Johto_Std_CutDeclined:
+	setvar VAR_RESULT, FALSE
+	return
+
 Johto_Text_ReceivedItem:
 	.string "{PLAYER} received\n{STR_VAR_2}!$"
 

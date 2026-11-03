@@ -1,5 +1,6 @@
 ViridianCity_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ViridianCity_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, ViridianCity_Johto_OnLoad
 	.byte 0
 
 ViridianCity_Johto_OnTransition:
@@ -249,3 +250,46 @@ ViridianCity_Johto_TrainerHouseSignText:
 	.string "TRAINER HOUSE"
 	.string "\pThe Club for Top\n"
 	.string "Trainer Battles$"
+
+ViridianCity_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_VIRIDIAN_CITY_0, ViridianCity_Johto_CutTree0_Keep
+	setmetatile 14, 4, 533, 0
+	setmetatile 15, 4, 533, 0
+	setmetatile 14, 5, 541, 1
+	setmetatile 15, 5, 541, 1
+ViridianCity_Johto_CutTree0_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_VIRIDIAN_CITY_1, ViridianCity_Johto_CutTree1_Keep
+	setmetatile 8, 22, 533, 0
+	setmetatile 9, 22, 533, 0
+	setmetatile 8, 23, 541, 1
+	setmetatile 9, 23, 541, 1
+ViridianCity_Johto_CutTree1_Keep:
+	end
+
+ViridianCity_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, ViridianCity_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_VIRIDIAN_CITY_0
+	setmetatile 14, 4, 533, 0
+	setmetatile 15, 4, 533, 0
+	setmetatile 14, 5, 541, 1
+	setmetatile 15, 5, 541, 1
+	special DrawWholeMapView
+ViridianCity_Johto_CutTree0_Done:
+	releaseall
+	end
+
+ViridianCity_Johto_CutTree1::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, ViridianCity_Johto_CutTree1_Done
+	setflag FLAG_JOHTO_CUTTREE_VIRIDIAN_CITY_1
+	setmetatile 8, 22, 533, 0
+	setmetatile 9, 22, 533, 0
+	setmetatile 8, 23, 541, 1
+	setmetatile 9, 23, 541, 1
+	special DrawWholeMapView
+ViridianCity_Johto_CutTree1_Done:
+	releaseall
+	end

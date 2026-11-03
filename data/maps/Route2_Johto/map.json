@@ -218,6 +218,46 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Johto_EventScript_StubSign"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route2_Johto_CutTree0"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route2_Johto_CutTree1"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 40,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route2_Johto_CutTree2"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 46,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route2_Johto_CutTree3"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 50,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route2_Johto_CutTree4"
     }
   ]
 }

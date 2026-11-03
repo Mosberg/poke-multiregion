@@ -1,4 +1,5 @@
 Route2_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route2_Johto_OnLoad
 	.byte 0
 
 Route2_Johto_Route2FruitTree_Entry::
@@ -131,3 +132,106 @@ Route2_Johto_Route2SignText:
 
 Route2_Johto_Route2DiglettsCaveSignText:
 	.string "DIGLETT'S CAVE$"
+
+Route2_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_2_0, Route2_Johto_CutTree0_Keep
+	setmetatile 4, 8, 541, 1
+	setmetatile 5, 8, 533, 0
+	setmetatile 4, 9, 541, 1
+	setmetatile 5, 9, 533, 0
+Route2_Johto_CutTree0_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_2_1, Route2_Johto_CutTree1_Keep
+	setmetatile 14, 18, 541, 1
+	setmetatile 15, 18, 533, 0
+	setmetatile 14, 19, 541, 1
+	setmetatile 15, 19, 533, 0
+Route2_Johto_CutTree1_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_2_2, Route2_Johto_CutTree2_Keep
+	setmetatile 10, 40, 533, 0
+	setmetatile 11, 40, 533, 0
+	setmetatile 10, 41, 541, 1
+	setmetatile 11, 41, 541, 1
+Route2_Johto_CutTree2_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_2_3, Route2_Johto_CutTree3_Keep
+	setmetatile 12, 46, 533, 0
+	setmetatile 13, 46, 533, 0
+	setmetatile 12, 47, 541, 1
+	setmetatile 13, 47, 541, 1
+Route2_Johto_CutTree3_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_2_4, Route2_Johto_CutTree4_Keep
+	setmetatile 12, 50, 533, 0
+	setmetatile 13, 50, 533, 0
+	setmetatile 12, 51, 541, 1
+	setmetatile 13, 51, 541, 1
+Route2_Johto_CutTree4_Keep:
+	end
+
+Route2_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route2_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_2_0
+	setmetatile 4, 8, 541, 1
+	setmetatile 5, 8, 533, 0
+	setmetatile 4, 9, 541, 1
+	setmetatile 5, 9, 533, 0
+	special DrawWholeMapView
+Route2_Johto_CutTree0_Done:
+	releaseall
+	end
+
+Route2_Johto_CutTree1::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route2_Johto_CutTree1_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_2_1
+	setmetatile 14, 18, 541, 1
+	setmetatile 15, 18, 533, 0
+	setmetatile 14, 19, 541, 1
+	setmetatile 15, 19, 533, 0
+	special DrawWholeMapView
+Route2_Johto_CutTree1_Done:
+	releaseall
+	end
+
+Route2_Johto_CutTree2::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route2_Johto_CutTree2_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_2_2
+	setmetatile 10, 40, 533, 0
+	setmetatile 11, 40, 533, 0
+	setmetatile 10, 41, 541, 1
+	setmetatile 11, 41, 541, 1
+	special DrawWholeMapView
+Route2_Johto_CutTree2_Done:
+	releaseall
+	end
+
+Route2_Johto_CutTree3::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route2_Johto_CutTree3_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_2_3
+	setmetatile 12, 46, 533, 0
+	setmetatile 13, 46, 533, 0
+	setmetatile 12, 47, 541, 1
+	setmetatile 13, 47, 541, 1
+	special DrawWholeMapView
+Route2_Johto_CutTree3_Done:
+	releaseall
+	end
+
+Route2_Johto_CutTree4::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route2_Johto_CutTree4_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_2_4
+	setmetatile 12, 50, 533, 0
+	setmetatile 13, 50, 533, 0
+	setmetatile 12, 51, 541, 1
+	setmetatile 13, 51, 541, 1
+	special DrawWholeMapView
+Route2_Johto_CutTree4_Done:
+	releaseall
+	end

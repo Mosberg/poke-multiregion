@@ -171,6 +171,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ViridianCity_Johto_ViridianCityMartSign_Entry"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ViridianCity_Johto_CutTree0"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ViridianCity_Johto_CutTree1"
     }
   ]
 }

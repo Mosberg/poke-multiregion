@@ -1,4 +1,5 @@
 Route12_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route12_Johto_OnLoad
 	.byte 0
 
 Route12_Johto_Route12Sign_Entry::
@@ -157,3 +158,46 @@ Route12_Johto_Route12SignText:
 
 Route12_Johto_FishingSpotSignText:
 	.string "FISHING SPOT$"
+
+Route12_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_12_0, Route12_Johto_CutTree0_Keep
+	setmetatile 6, 44, 533, 0
+	setmetatile 7, 44, 533, 0
+	setmetatile 6, 45, 541, 1
+	setmetatile 7, 45, 533, 0
+Route12_Johto_CutTree0_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_12_1, Route12_Johto_CutTree1_Keep
+	setmetatile 6, 48, 541, 1
+	setmetatile 7, 48, 541, 1
+	setmetatile 6, 49, 533, 0
+	setmetatile 7, 49, 533, 0
+Route12_Johto_CutTree1_Keep:
+	end
+
+Route12_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route12_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_12_0
+	setmetatile 6, 44, 533, 0
+	setmetatile 7, 44, 533, 0
+	setmetatile 6, 45, 541, 1
+	setmetatile 7, 45, 533, 0
+	special DrawWholeMapView
+Route12_Johto_CutTree0_Done:
+	releaseall
+	end
+
+Route12_Johto_CutTree1::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route12_Johto_CutTree1_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_12_1
+	setmetatile 6, 48, 541, 1
+	setmetatile 7, 48, 541, 1
+	setmetatile 6, 49, 533, 0
+	setmetatile 7, 49, 533, 0
+	special DrawWholeMapView
+Route12_Johto_CutTree1_Done:
+	releaseall
+	end

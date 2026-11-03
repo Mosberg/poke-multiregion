@@ -1,5 +1,6 @@
 FuchsiaCity_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FuchsiaCity_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, FuchsiaCity_Johto_OnLoad
 	.byte 0
 
 FuchsiaCity_Johto_OnTransition:
@@ -201,3 +202,46 @@ FuchsiaCity_Johto_NoLitteringSignText:
 	.string "No littering."
 	.string "\pPlease take your\n"
 	.string "waste with you.$"
+
+FuchsiaCity_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_FUCHSIA_CITY_0, FuchsiaCity_Johto_CutTree0_Keep
+	setmetatile 16, 10, 533, 0
+	setmetatile 17, 10, 541, 1
+	setmetatile 16, 11, 533, 0
+	setmetatile 17, 11, 541, 1
+FuchsiaCity_Johto_CutTree0_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_FUCHSIA_CITY_1, FuchsiaCity_Johto_CutTree1_Keep
+	setmetatile 18, 18, 533, 0
+	setmetatile 19, 18, 541, 1
+	setmetatile 18, 19, 533, 0
+	setmetatile 19, 19, 541, 1
+FuchsiaCity_Johto_CutTree1_Keep:
+	end
+
+FuchsiaCity_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, FuchsiaCity_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_FUCHSIA_CITY_0
+	setmetatile 16, 10, 533, 0
+	setmetatile 17, 10, 541, 1
+	setmetatile 16, 11, 533, 0
+	setmetatile 17, 11, 541, 1
+	special DrawWholeMapView
+FuchsiaCity_Johto_CutTree0_Done:
+	releaseall
+	end
+
+FuchsiaCity_Johto_CutTree1::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, FuchsiaCity_Johto_CutTree1_Done
+	setflag FLAG_JOHTO_CUTTREE_FUCHSIA_CITY_1
+	setmetatile 18, 18, 533, 0
+	setmetatile 19, 18, 541, 1
+	setmetatile 18, 19, 533, 0
+	setmetatile 19, 19, 541, 1
+	special DrawWholeMapView
+FuchsiaCity_Johto_CutTree1_Done:
+	releaseall
+	end

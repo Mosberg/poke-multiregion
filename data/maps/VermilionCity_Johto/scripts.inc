@@ -1,5 +1,6 @@
 VermilionCity_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VermilionCity_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, VermilionCity_Johto_OnLoad
 	.byte 0
 
 VermilionCity_Johto_OnTransition:
@@ -235,3 +236,26 @@ VermilionCity_Johto_VermilionCityDiglettsCaveSignText:
 VermilionCity_Johto_VermilionCityPortSignText:
 	.string "VERMILION PORT\n"
 	.string "ENTRANCE$"
+
+VermilionCity_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_VERMILION_CITY_0, VermilionCity_Johto_CutTree0_Keep
+	setmetatile 12, 18, 533, 0
+	setmetatile 13, 18, 533, 0
+	setmetatile 12, 19, 541, 1
+	setmetatile 13, 19, 533, 0
+VermilionCity_Johto_CutTree0_Keep:
+	end
+
+VermilionCity_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, VermilionCity_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_VERMILION_CITY_0
+	setmetatile 12, 18, 533, 0
+	setmetatile 13, 18, 533, 0
+	setmetatile 12, 19, 541, 1
+	setmetatile 13, 19, 533, 0
+	special DrawWholeMapView
+VermilionCity_Johto_CutTree0_Done:
+	releaseall
+	end

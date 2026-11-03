@@ -1,4 +1,5 @@
 Route13_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route13_Johto_OnLoad
 	.byte 0
 
 Route13_Johto_Route13TrainerTips_Entry::
@@ -200,3 +201,26 @@ Route13_Johto_Route13DirectionsSignText:
 	.string "TOWN"
 	.string "\pWEST TO FUCHSIA\n"
 	.string "CITY$"
+
+Route13_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_13_0, Route13_Johto_CutTree0_Keep
+	setmetatile 44, 4, 533, 0
+	setmetatile 45, 4, 533, 0
+	setmetatile 44, 5, 541, 1
+	setmetatile 45, 5, 541, 1
+Route13_Johto_CutTree0_Keep:
+	end
+
+Route13_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route13_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_13_0
+	setmetatile 44, 4, 533, 0
+	setmetatile 45, 4, 533, 0
+	setmetatile 44, 5, 541, 1
+	setmetatile 45, 5, 541, 1
+	special DrawWholeMapView
+Route13_Johto_CutTree0_Done:
+	releaseall
+	end
