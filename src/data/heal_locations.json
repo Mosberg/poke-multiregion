@@ -366,7 +366,7 @@
       "x": 23,
       "y": 26,
       "respawn_map": "MAP_JOHTO_VIRIDIAN_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -376,7 +376,7 @@
       "x": 13,
       "y": 26,
       "respawn_map": "MAP_JOHTO_PEWTER_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -386,7 +386,7 @@
       "x": 19,
       "y": 22,
       "respawn_map": "MAP_JOHTO_CERULEAN_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -396,7 +396,7 @@
       "x": 11,
       "y": 2,
       "respawn_map": "MAP_JOHTO_ROUTE_10_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -406,7 +406,7 @@
       "x": 9,
       "y": 6,
       "respawn_map": "MAP_JOHTO_VERMILION_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -416,7 +416,7 @@
       "x": 5,
       "y": 6,
       "respawn_map": "MAP_JOHTO_LAVENDER_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -426,7 +426,7 @@
       "x": 9,
       "y": 30,
       "respawn_map": "MAP_JOHTO_SAFFRON_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -436,7 +436,7 @@
       "x": 29,
       "y": 10,
       "respawn_map": "MAP_JOHTO_CELADON_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -446,7 +446,7 @@
       "x": 19,
       "y": 28,
       "respawn_map": "MAP_JOHTO_FUCHSIA_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -456,7 +456,7 @@
       "x": 11,
       "y": 12,
       "respawn_map": "MAP_JOHTO_CINNABAR_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -466,7 +466,7 @@
       "x": 9,
       "y": 6,
       "respawn_map": "MAP_JOHTO_INDIGO_PLATEAU_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 5,
       "respawn_y": 12
     },
@@ -476,7 +476,7 @@
       "x": 29,
       "y": 4,
       "respawn_map": "MAP_JOHTO_CHERRYGROVE_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -486,7 +486,7 @@
       "x": 31,
       "y": 26,
       "respawn_map": "MAP_JOHTO_VIOLET_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -496,7 +496,7 @@
       "x": 11,
       "y": 74,
       "respawn_map": "MAP_JOHTO_ROUTE_32_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -506,7 +506,7 @@
       "x": 15,
       "y": 10,
       "respawn_map": "MAP_JOHTO_AZALEA_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -516,7 +516,7 @@
       "x": 23,
       "y": 44,
       "respawn_map": "MAP_JOHTO_CIANWOOD_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -526,7 +526,7 @@
       "x": 15,
       "y": 28,
       "respawn_map": "MAP_JOHTO_GOLDENROD_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -536,7 +536,7 @@
       "x": 13,
       "y": 22,
       "respawn_map": "MAP_JOHTO_OLIVINE_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -546,7 +546,7 @@
       "x": 23,
       "y": 28,
       "respawn_map": "MAP_JOHTO_ECRUTEAK_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -556,7 +556,7 @@
       "x": 15,
       "y": 14,
       "respawn_map": "MAP_JOHTO_MAHOGANY_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -566,7 +566,7 @@
       "x": 21,
       "y": 30,
       "respawn_map": "MAP_JOHTO_BLACKTHORN_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     },
@@ -576,7 +576,7 @@
       "x": 23,
       "y": 20,
       "respawn_map": "MAP_JOHTO_SILVER_CAVE_POKECENTER_1F",
-      "respawn_npc": "LOCALID_NONE",
+      "respawn_npc": "1",
       "respawn_x": 3,
       "respawn_y": 6
     }

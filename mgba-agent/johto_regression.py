@@ -1,12 +1,12 @@
 """Replays the Johto flows that were verified by hand and asserts their outcomes. Needs only Node (the embedded emulator), no mGBA window.
 
-    python johto_regression.py <project> [--port 8911] [--only elm,mrpokemon,cherrygrove,itemball,cut,egg,smoke]
+    python johto_regression.py <project> [--port 8911] [--only elm,mrpokemon,cherrygrove,itemball,cut,egg,blackout,smoke]
 
 It starts `bin/poke-emulator` itself on <port>, creates a new Johto game, then for each check warps to the place, plays it with button presses and
 reads flags / vars / party from RAM. Exit code 1 if a check fails. Takes about ten minutes. Johto flag numbers come from <project>/.poke-migrator-johto-flags.json.
 
 Checks: elm (Elm's scene, Totodile), mrpokemon (Mystery Egg), cherrygrove (rival ambush resolves for the three starters), itemball (Sprout Tower Potion),
-cut (Route 29 tree is cut and stays cut after a reload), egg (Violet Aide gives the Togepi egg), smoke (every Johto map loads).
+cut (Route 29 tree is cut and stays cut after a reload), egg (Violet Aide gives the Togepi egg), blackout (heal at Violet's nurse, lose a battle, wake up in Violet's Pokemon Center), smoke (every Johto map loads).
 """
 import argparse
 import json
@@ -26,7 +26,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("project")
     ap.add_argument("--port", type=int, default=8911)
-    ap.add_argument("--only", default="elm,mrpokemon,cherrygrove,itemball,cut,egg")
+    ap.add_argument("--only", default="elm,mrpokemon,cherrygrove,itemball,cut,egg,blackout")
     a = ap.parse_args()
     project = Path(a.project).resolve()
     os.environ["MGBA_BRIDGE_PORT"] = str(a.port)
@@ -217,6 +217,26 @@ def main() -> None:
                 mash(1, 60)
             mons = party()
             check("Violet Aide gives the Togepi egg", len(mons) == 2 and mons[1]["species_id"] == 175, str([m["species_id"] for m in mons]))
+
+        if "blackout" in only:
+            fresh()
+            give_mon(b, 25, 2, [150, 0, 0, 0], hp=12)          # a level-2 Pikachu that only knows Splash
+            warp_player(b, 76, 73, 3, 4)                        # Violet Pokemon Center, in front of the nurse
+            b.step(300)
+            b.press("UP", 17)
+            b.step(20)
+            for _ in range(14):
+                mash(1, 60)
+            warp_player(b, 78, 72, 5, 20)                       # Route 30, Mikey's sight line
+            b.step(300)
+            b.press("DOWN", 17)
+            b.step(40)
+            for i in range(250):
+                mash(1, 50)
+                if overworld() and pos()[2:] != (78, 72) and i > 20:
+                    break
+            b.step(200)
+            check("whiteout wakes the player in Violet's Pokemon Center", pos()[2:] == (76, 73), str(pos()))
 
         if "smoke" in only:
             r = subprocess.run([sys.executable, str(HERE / "map_smoke_test.py"), str(project), "--filter", "_Johto", "--out", str(HERE / "states" / "smoke_johto.json")],

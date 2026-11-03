@@ -39,10 +39,10 @@ Hard caps and approximations live in LIMITS.md. Status of the Johto conversion: 
 
 Verified in the embedded emulator: Mom's Pokegear scene, New Bark Town, Elm's scene, all three starters (Totodile and Cyndaquil picked, Chikorita's rival variant run), Aide scene, Route 29 wild encounter,
 Route 30 trainer, Cherrygrove Pokemon Center / Mart / Guide Gent / rival scene (all three starter variants), Mr. Pokemon (Mystery Egg flag), Violet Gym (Falkner), Togepi egg from the Aide,
-cut trees (Ilex Forest, Route 29), item balls (Sprout Tower 3F Potion), all 383 maps loading.
+cut trees (Ilex Forest, Route 29), item balls (Sprout Tower 3F Potion), the Violet nurse setting the respawn point and a whiteout waking the player in Violet's Pokemon Center (nurse cutscene), all 383 maps loading. `make test-johto` replays these.
 
 Converted but **not played**: static wild battles (`loadwildmon`), `changeblock`, hidden items (60 maps), boulders and rocks, Johto badges driving obedience/HM, Elder Li's Flash gift (needs the rival scene first),
-Sprout Tower / Route 32 Slowpoketail scene / Union Cave / Azalea / Kurt / Ilex Forest, Togepi hatching and Elm's follow-up, per-town respawn after a whiteout and the nurse setting it,
+Sprout Tower / Route 32 Slowpoketail scene / Union Cave / Azalea / Kurt / Ilex Forest, Togepi hatching and Elm's follow-up, per-town respawn in towns other than Violet,
 fishing tables (Old/Good/Super Rod for 149 maps), Johto save/continue round trip, wild encounter species/levels against the table, what the rival says/uses per starter.
 
 ## Kanto / Yellow
