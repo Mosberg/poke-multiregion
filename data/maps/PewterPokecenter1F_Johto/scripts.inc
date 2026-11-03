@@ -56,8 +56,7 @@ PewterPokecenter1F_Johto_PewterPokecenter1FBugCatcherScript:
 
 PewterPokecenter1F_Johto_Chris:
 	faceplayer
-	@ TODO unsupported: trade NPC_TRADE_CHRIS
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_Trade_CHRIS
 
 PewterPokecenter1F_Johto_PewterPokecenter1FTeacherText:
 	.string "…Yeah, and the\n"

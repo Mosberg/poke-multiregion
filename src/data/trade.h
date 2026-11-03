@@ -1211,7 +1211,121 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_PONYTA
-    }
+    },
+    // POKE-CRYSTAL-BEGIN
+    [INGAME_TRADE_JOHTO_MIKE] =
+    {
+        .nickname = _("MUSCLE"),
+        .species = SPECIES_MACHOP,
+        .ivs = {25, 7, 15, 13, 13, 13},
+        .abilityNum = 0,
+        .otId = 37460,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x00001000,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = MAIL_NONE,
+        .otName = _("MIKE"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_ABRA
+    },
+    [INGAME_TRADE_JOHTO_KYLE] =
+    {
+        .nickname = _("ROCKY"),
+        .species = SPECIES_ONIX,
+        .ivs = {17, 19, 13, 13, 13, 13},
+        .abilityNum = 0,
+        .otId = 48926,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x00001001,
+        .heldItem = ITEM_PERSIM_BERRY,
+        .mailNum = MAIL_NONE,
+        .otName = _("KYLE"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_BELLSPROUT
+    },
+    [INGAME_TRADE_JOHTO_TIM] =
+    {
+        .nickname = _("VOLTY"),
+        .species = SPECIES_VOLTORB,
+        .ivs = {17, 19, 17, 17, 17, 17},
+        .abilityNum = 0,
+        .otId = 29189,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x00001002,
+        .heldItem = ITEM_CHERI_BERRY,
+        .mailNum = MAIL_NONE,
+        .otName = _("TIM"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_KRABBY
+    },
+    [INGAME_TRADE_JOHTO_EMY] =
+    {
+        .nickname = _("DORIS"),
+        .species = SPECIES_DODRIO,
+        .ivs = {25, 15, 15, 13, 13, 13},
+        .abilityNum = 0,
+        .otId = 283,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x00001003,
+        .heldItem = ITEM_SMOKE_BALL,
+        .mailNum = MAIL_NONE,
+        .otName = _("EMY"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_DRAGONAIR
+    },
+    [INGAME_TRADE_JOHTO_CHRIS] =
+    {
+        .nickname = _("PAUL"),
+        .species = SPECIES_XATU,
+        .ivs = {17, 19, 13, 17, 13, 13},
+        .abilityNum = 0,
+        .otId = 15616,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x00001004,
+        .heldItem = ITEM_LEPPA_BERRY,
+        .mailNum = MAIL_NONE,
+        .otName = _("CHRIS"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_HAUNTER
+    },
+    [INGAME_TRADE_JOHTO_KIM] =
+    {
+        .nickname = _("AEROY"),
+        .species = SPECIES_AERODACTYL,
+        .ivs = {17, 19, 13, 13, 13, 13},
+        .abilityNum = 0,
+        .otId = 26491,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x00001005,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = MAIL_NONE,
+        .otName = _("KIM"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_CHANSEY
+    },
+    [INGAME_TRADE_JOHTO_FOREST] =
+    {
+        .nickname = _("MAGGIE"),
+        .species = SPECIES_MAGNETON,
+        .ivs = {17, 19, 13, 13, 13, 13},
+        .abilityNum = 0,
+        .otId = 50082,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x00001006,
+        .heldItem = ITEM_METAL_COAT,
+        .mailNum = MAIL_NONE,
+        .otName = _("FOREST"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_DUGTRIO
+    },
+    // POKE-CRYSTAL-END
 };
 
 static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =

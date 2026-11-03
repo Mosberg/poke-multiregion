@@ -111,8 +111,7 @@ GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FLassScript:
 
 GoldenrodDeptStore5F_Johto_Mike:
 	faceplayer
-	@ TODO unsupported: trade NPC_TRADE_MIKE
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_Trade_MIKE
 
 GoldenrodDeptStore5F_Johto_GoldenrodDeptStore5FPokefanMScript:
 	faceplayer

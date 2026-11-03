@@ -74,6 +74,230 @@ Johto_Std_CutDeclined:
 	setvar VAR_RESULT, FALSE
 	return
 
+Johto_Std_Trade_MIKE::
+	setvar VAR_0x8008, INGAME_TRADE_JOHTO_MIKE
+	call EventScript_GetInGameTradeSpeciesInfo
+	goto_if_set FLAG_JOHTO_NPC_TRADE_MIKE, Johto_Std_Trade_MIKE_Done
+	msgbox Trade_Text_DoYouHaveMonWouldYouTradeForMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Johto_Std_Trade_MIKE_No
+	call EventScript_ChooseMonForInGameTrade
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Johto_Std_Trade_MIKE_No
+	call EventScript_GetInGameTradeSpecies
+	goto_if_ne VAR_RESULT, VAR_0x8009, Johto_Std_Trade_MIKE_Wrong
+	call EventScript_DoInGameTrade
+	msgbox Trade_Text_Thanks
+	setflag FLAG_JOHTO_NPC_TRADE_MIKE
+	releaseall
+	end
+
+Johto_Std_Trade_MIKE_No:
+	msgbox Trade_Text_WellIfYouDontWantTo
+	releaseall
+	end
+
+Johto_Std_Trade_MIKE_Wrong:
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	releaseall
+	end
+
+Johto_Std_Trade_MIKE_Done:
+	msgbox Trade_Text_HasTradedMonGrownStronger
+	releaseall
+	end
+
+Johto_Std_Trade_KYLE::
+	setvar VAR_0x8008, INGAME_TRADE_JOHTO_KYLE
+	call EventScript_GetInGameTradeSpeciesInfo
+	goto_if_set FLAG_JOHTO_NPC_TRADE_KYLE, Johto_Std_Trade_KYLE_Done
+	msgbox Trade_Text_DoYouHaveMonWouldYouTradeForMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Johto_Std_Trade_KYLE_No
+	call EventScript_ChooseMonForInGameTrade
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Johto_Std_Trade_KYLE_No
+	call EventScript_GetInGameTradeSpecies
+	goto_if_ne VAR_RESULT, VAR_0x8009, Johto_Std_Trade_KYLE_Wrong
+	call EventScript_DoInGameTrade
+	msgbox Trade_Text_Thanks
+	setflag FLAG_JOHTO_NPC_TRADE_KYLE
+	releaseall
+	end
+
+Johto_Std_Trade_KYLE_No:
+	msgbox Trade_Text_WellIfYouDontWantTo
+	releaseall
+	end
+
+Johto_Std_Trade_KYLE_Wrong:
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	releaseall
+	end
+
+Johto_Std_Trade_KYLE_Done:
+	msgbox Trade_Text_HasTradedMonGrownStronger
+	releaseall
+	end
+
+Johto_Std_Trade_TIM::
+	setvar VAR_0x8008, INGAME_TRADE_JOHTO_TIM
+	call EventScript_GetInGameTradeSpeciesInfo
+	goto_if_set FLAG_JOHTO_NPC_TRADE_TIM, Johto_Std_Trade_TIM_Done
+	msgbox Trade_Text_DoYouHaveMonWouldYouTradeForMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Johto_Std_Trade_TIM_No
+	call EventScript_ChooseMonForInGameTrade
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Johto_Std_Trade_TIM_No
+	call EventScript_GetInGameTradeSpecies
+	goto_if_ne VAR_RESULT, VAR_0x8009, Johto_Std_Trade_TIM_Wrong
+	call EventScript_DoInGameTrade
+	msgbox Trade_Text_Thanks
+	setflag FLAG_JOHTO_NPC_TRADE_TIM
+	releaseall
+	end
+
+Johto_Std_Trade_TIM_No:
+	msgbox Trade_Text_WellIfYouDontWantTo
+	releaseall
+	end
+
+Johto_Std_Trade_TIM_Wrong:
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	releaseall
+	end
+
+Johto_Std_Trade_TIM_Done:
+	msgbox Trade_Text_HasTradedMonGrownStronger
+	releaseall
+	end
+
+Johto_Std_Trade_EMY::
+	setvar VAR_0x8008, INGAME_TRADE_JOHTO_EMY
+	call EventScript_GetInGameTradeSpeciesInfo
+	goto_if_set FLAG_JOHTO_NPC_TRADE_EMY, Johto_Std_Trade_EMY_Done
+	msgbox Trade_Text_DoYouHaveMonWouldYouTradeForMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Johto_Std_Trade_EMY_No
+	call EventScript_ChooseMonForInGameTrade
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Johto_Std_Trade_EMY_No
+	call EventScript_GetInGameTradeSpecies
+	goto_if_ne VAR_RESULT, VAR_0x8009, Johto_Std_Trade_EMY_Wrong
+	call EventScript_DoInGameTrade
+	msgbox Trade_Text_Thanks
+	setflag FLAG_JOHTO_NPC_TRADE_EMY
+	releaseall
+	end
+
+Johto_Std_Trade_EMY_No:
+	msgbox Trade_Text_WellIfYouDontWantTo
+	releaseall
+	end
+
+Johto_Std_Trade_EMY_Wrong:
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	releaseall
+	end
+
+Johto_Std_Trade_EMY_Done:
+	msgbox Trade_Text_HasTradedMonGrownStronger
+	releaseall
+	end
+
+Johto_Std_Trade_CHRIS::
+	setvar VAR_0x8008, INGAME_TRADE_JOHTO_CHRIS
+	call EventScript_GetInGameTradeSpeciesInfo
+	goto_if_set FLAG_JOHTO_NPC_TRADE_CHRIS, Johto_Std_Trade_CHRIS_Done
+	msgbox Trade_Text_DoYouHaveMonWouldYouTradeForMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Johto_Std_Trade_CHRIS_No
+	call EventScript_ChooseMonForInGameTrade
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Johto_Std_Trade_CHRIS_No
+	call EventScript_GetInGameTradeSpecies
+	goto_if_ne VAR_RESULT, VAR_0x8009, Johto_Std_Trade_CHRIS_Wrong
+	call EventScript_DoInGameTrade
+	msgbox Trade_Text_Thanks
+	setflag FLAG_JOHTO_NPC_TRADE_CHRIS
+	releaseall
+	end
+
+Johto_Std_Trade_CHRIS_No:
+	msgbox Trade_Text_WellIfYouDontWantTo
+	releaseall
+	end
+
+Johto_Std_Trade_CHRIS_Wrong:
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	releaseall
+	end
+
+Johto_Std_Trade_CHRIS_Done:
+	msgbox Trade_Text_HasTradedMonGrownStronger
+	releaseall
+	end
+
+Johto_Std_Trade_KIM::
+	setvar VAR_0x8008, INGAME_TRADE_JOHTO_KIM
+	call EventScript_GetInGameTradeSpeciesInfo
+	goto_if_set FLAG_JOHTO_NPC_TRADE_KIM, Johto_Std_Trade_KIM_Done
+	msgbox Trade_Text_DoYouHaveMonWouldYouTradeForMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Johto_Std_Trade_KIM_No
+	call EventScript_ChooseMonForInGameTrade
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Johto_Std_Trade_KIM_No
+	call EventScript_GetInGameTradeSpecies
+	goto_if_ne VAR_RESULT, VAR_0x8009, Johto_Std_Trade_KIM_Wrong
+	call EventScript_DoInGameTrade
+	msgbox Trade_Text_Thanks
+	setflag FLAG_JOHTO_NPC_TRADE_KIM
+	releaseall
+	end
+
+Johto_Std_Trade_KIM_No:
+	msgbox Trade_Text_WellIfYouDontWantTo
+	releaseall
+	end
+
+Johto_Std_Trade_KIM_Wrong:
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	releaseall
+	end
+
+Johto_Std_Trade_KIM_Done:
+	msgbox Trade_Text_HasTradedMonGrownStronger
+	releaseall
+	end
+
+Johto_Std_Trade_FOREST::
+	setvar VAR_0x8008, INGAME_TRADE_JOHTO_FOREST
+	call EventScript_GetInGameTradeSpeciesInfo
+	goto_if_set FLAG_JOHTO_NPC_TRADE_FOREST, Johto_Std_Trade_FOREST_Done
+	msgbox Trade_Text_DoYouHaveMonWouldYouTradeForMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Johto_Std_Trade_FOREST_No
+	call EventScript_ChooseMonForInGameTrade
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Johto_Std_Trade_FOREST_No
+	call EventScript_GetInGameTradeSpecies
+	goto_if_ne VAR_RESULT, VAR_0x8009, Johto_Std_Trade_FOREST_Wrong
+	call EventScript_DoInGameTrade
+	msgbox Trade_Text_Thanks
+	setflag FLAG_JOHTO_NPC_TRADE_FOREST
+	releaseall
+	end
+
+Johto_Std_Trade_FOREST_No:
+	msgbox Trade_Text_WellIfYouDontWantTo
+	releaseall
+	end
+
+Johto_Std_Trade_FOREST_Wrong:
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	releaseall
+	end
+
+Johto_Std_Trade_FOREST_Done:
+	msgbox Trade_Text_HasTradedMonGrownStronger
+	releaseall
+	end
+
 Johto_Text_ReceivedItem:
 	.string "{PLAYER} received\n{STR_VAR_2}!$"
 

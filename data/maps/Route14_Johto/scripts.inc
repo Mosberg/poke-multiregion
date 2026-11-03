@@ -9,8 +9,7 @@ Route14_Johto_Kim_Entry::
 
 Route14_Johto_Kim:
 	faceplayer
-	@ TODO unsupported: trade NPC_TRADE_KIM
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_Trade_KIM
 
 Route14_Johto_TrainerPokefanmCarter::
 	trainerbattle_single TRAINER_JOHTO_POKEFANM_CARTER, Route14_Johto_PokefanmCarterSeenText, Route14_Johto_PokefanmCarterBeatenText

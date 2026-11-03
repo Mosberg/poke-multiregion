@@ -202,8 +202,7 @@ PowerPlant_Johto_PowerPlantManager_GotZapCannon:
 
 PowerPlant_Johto_Forest:
 	faceplayer
-	@ TODO unsupported: trade NPC_TRADE_FOREST
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_Trade_FOREST
 
 PowerPlant_Johto_PowerPlantBookshelf:
 	goto Johto_Std_DifficultBookshelfScript

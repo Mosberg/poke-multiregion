@@ -12,8 +12,7 @@ OlivineTimsHouse_Johto_TimsHouseBookshelf_Entry::
 
 OlivineTimsHouse_Johto_Tim:
 	faceplayer
-	@ TODO unsupported: trade NPC_TRADE_TIM
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_Trade_TIM
 
 OlivineTimsHouse_Johto_TimsHouseBookshelf:
 	goto Johto_Std_MagazineBookshelfScript

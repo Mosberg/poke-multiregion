@@ -12,8 +12,7 @@ BlackthornEmysHouse_Johto_EmysHouseBookshelf_Entry::
 
 BlackthornEmysHouse_Johto_Emy:
 	faceplayer
-	@ TODO unsupported: trade NPC_TRADE_EMY
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_Trade_EMY
 
 BlackthornEmysHouse_Johto_EmysHouseBookshelf:
 	goto Johto_Std_MagazineBookshelfScript

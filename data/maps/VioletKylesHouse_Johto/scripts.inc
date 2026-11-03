@@ -21,8 +21,7 @@ VioletKylesHouse_Johto_VioletKylesHousePokefanMScript:
 
 VioletKylesHouse_Johto_Kyle:
 	faceplayer
-	@ TODO unsupported: trade NPC_TRADE_KYLE
-	goto Johto_EventScript_Unimplemented
+	goto Johto_Std_Trade_KYLE
 
 VioletKylesHouse_Johto_VioletKylesHousePokefanMText:
 	.string "A POKéMON you get\n"
