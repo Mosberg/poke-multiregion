@@ -119,7 +119,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_PRYCE_PRYCE1 ===
 Name: PRYCE
 Class: Leader
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9999,7 +9999,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_CHOW ===
 Name: CHOW
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10020,7 +10020,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_NICO ===
 Name: NICO
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10041,7 +10041,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_JIN ===
 Name: JIN
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10054,7 +10054,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_TROY ===
 Name: TROY
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10071,7 +10071,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_JEFFREY ===
 Name: JEFFREY
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10084,7 +10084,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_PING ===
 Name: PING
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10113,7 +10113,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_EDMOND ===
 Name: EDMOND
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10134,7 +10134,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_NEAL ===
 Name: NEAL
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10147,7 +10147,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_LI ===
 Name: LI
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10168,7 +10168,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_GAKU ===
 Name: GAKU
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10185,7 +10185,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_MASA ===
 Name: MASA
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10202,7 +10202,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_SAGE_KOJI ===
 Name: KOJI
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -11238,7 +11238,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 === TRAINER_JOHTO_MYSTICALMAN_EUSINE ===
 Name: EUSINE
 Class: Gentleman
-Pic: Old Man
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No

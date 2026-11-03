@@ -125,10 +125,13 @@ static const u8* const *GetTrainerSlideArray(enum DifficultyLevel difficulty, u3
 #if TESTING
     return (FlagGet(TESTING_FLAG_TRAINER_SLIDES) ? sTestTrainerSlides[difficulty][trainerId] : NULL);
 #else
+    // Kanto / Johto trainer ids lie beyond the Emerald-sized tables (they have no slide messages): do not index out of bounds
+    static const u8* const sNoSlides[TRAINER_SLIDE_COUNT] = {0};
+
     if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-        return sFrontierTrainerSlides[difficulty][trainerId];
+        return trainerId < FRONTIER_TRAINERS_COUNT ? sFrontierTrainerSlides[difficulty][trainerId] : sNoSlides;
     else
-        return sTrainerSlides[difficulty][trainerId];
+        return trainerId < TRAINER_PARTNER(PARTNER_COUNT) ? sTrainerSlides[difficulty][trainerId] : sNoSlides;
 #endif // TESTING
 }
 
