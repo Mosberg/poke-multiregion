@@ -91,7 +91,12 @@ MahoganyMart1F_Johto_MahoganyMart1FLanceUncoversStaircaseScript:
 	applymovement 1, Johto_Movement_Emote_exclamation_mark
 	waitmovement 1
 	playse SE_PIN
-	@ TODO unsupported: changeblock 6, 2, $1e
+	setmetatile 6, 2, 548, 0
+	setmetatile 7, 2, 521, 0
+	setmetatile 6, 3, 521, 0
+	setmetatile 7, 3, 549, 0
+	special DrawWholeMapView
+	@ TODO unsupported: refreshmap 
 	goto Johto_EventScript_Unimplemented
 
 MahoganyMart1F_Johto_MahoganyMart1FGrannyScript:

@@ -91,7 +91,9 @@ LakeOfRage_Johto_RedGyarados:
 	playmoncry SPECIES_GYARADOS, CRY_MODE_NORMAL
 	waitmoncry
 	closemessage
-	@ TODO unsupported: loadwildmon GYARADOS, 30
+	setwildbattle SPECIES_GYARADOS, 30
+	dowildbattle
+	@ TODO unsupported: ifequal LOSE, .NotBeaten
 	goto Johto_EventScript_Unimplemented
 
 LakeOfRage_Johto_LakeOfRageGrampsScript:

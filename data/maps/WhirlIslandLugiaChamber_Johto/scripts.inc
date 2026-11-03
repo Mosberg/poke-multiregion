@@ -20,8 +20,11 @@ WhirlIslandLugiaChamber_Johto_Lugia:
 	delay 15
 	closemessage
 	setflag FLAG_JOHTO_FOUGHT_LUGIA
-	@ TODO unsupported: loadwildmon LUGIA, 60
-	goto Johto_EventScript_Unimplemented
+	setwildbattle SPECIES_LUGIA, 60
+	dowildbattle
+	removeobject 1
+	releaseall
+	end
 
 WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_Cb:
 	goto_if_set FLAG_JOHTO_FOUGHT_LUGIA, WhirlIslandLugiaChamber_Johto_WhirlIslandLugiaChamberLugiaCallback_NoAppear_Cb

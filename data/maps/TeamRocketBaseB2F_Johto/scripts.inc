@@ -265,20 +265,48 @@ TeamRocketBaseB2F_Johto_TrainerGruntM19_Script:
 TeamRocketBaseB2F_Johto_RocketElectrode1:
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
 	waitmoncry
-	@ TODO unsupported: loadwildmon ELECTRODE, 23
+	setwildbattle SPECIES_ELECTRODE, 23
+	dowildbattle
+	goto_if_ne VAR_RESULT, 0, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	removeobject 5
+	removeobject 8
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_1, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_2, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_3, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	@ TODO unsupported: special PlayMapMusic
 	goto Johto_EventScript_Unimplemented
 
 TeamRocketBaseB2F_Johto_RocketElectrode2:
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
 	waitmoncry
-	@ TODO unsupported: loadwildmon ELECTRODE, 23
+	setwildbattle SPECIES_ELECTRODE, 23
+	dowildbattle
+	goto_if_ne VAR_RESULT, 0, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	removeobject 6
+	removeobject 9
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_1, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_2, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_3, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	@ TODO unsupported: special PlayMapMusic
 	goto Johto_EventScript_Unimplemented
 
 TeamRocketBaseB2F_Johto_RocketElectrode3:
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
 	waitmoncry
-	@ TODO unsupported: loadwildmon ELECTRODE, 23
+	setwildbattle SPECIES_ELECTRODE, 23
+	dowildbattle
+	goto_if_ne VAR_RESULT, 0, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	removeobject 7
+	removeobject 10
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_1, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_2, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	goto_if_unset FLAG_JOHTO_TEAM_ROCKET_BASE_B2F_ELECTRODE_3, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap
+	@ TODO unsupported: special PlayMapMusic
 	goto Johto_EventScript_Unimplemented
+
+TeamRocketBaseB2F_Johto_TeamRocketBaseB2FReloadMap:
+	releaseall
+	end
 
 TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript:
 	goto_if_set FLAG_JOHTO_CLEARED_ROCKET_HIDEOUT, TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Deactivated

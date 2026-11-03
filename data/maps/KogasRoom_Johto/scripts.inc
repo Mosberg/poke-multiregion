@@ -19,7 +19,12 @@ KogasRoom_Johto_KogasRoomDoorLocksBehindYouScript:
 	applymovement OBJ_EVENT_ID_PLAYER, KogasRoom_Johto_KogasRoom_EnterMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playse SE_M_STRENGTH
-	@ TODO unsupported: changeblock 4, 14, $2a
+	setmetatile 4, 14, 527, 1
+	setmetatile 5, 14, 526, 1
+	setmetatile 4, 15, 528, 1
+	setmetatile 5, 15, 528, 1
+	special DrawWholeMapView
+	@ TODO unsupported: refreshmap 
 	goto Johto_EventScript_Unimplemented
 
 KogasRoom_Johto_KogaScript_Battle:
@@ -36,7 +41,12 @@ KogasRoom_Johto_KogaScript_Battle:
 	waitbuttonpress
 	closemessage
 	playse SE_DOOR
-	@ TODO unsupported: changeblock 4, 2, $16
+	setmetatile 4, 2, 530, 0
+	setmetatile 5, 2, 530, 0
+	setmetatile 4, 3, 519, 0
+	setmetatile 5, 3, 519, 0
+	special DrawWholeMapView
+	@ TODO unsupported: refreshmap 
 	goto Johto_EventScript_Unimplemented
 
 KogasRoom_Johto_KogaScript_AfterBattle:

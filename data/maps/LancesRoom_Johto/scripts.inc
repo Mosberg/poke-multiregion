@@ -27,7 +27,12 @@ LancesRoom_Johto_LancesRoomDoorLocksBehindYouScript:
 	applymovement OBJ_EVENT_ID_PLAYER, LancesRoom_Johto_LancesRoom_EnterMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playse SE_M_STRENGTH
-	@ TODO unsupported: changeblock 4, 22, $34
+	setmetatile 4, 22, 582, 0
+	setmetatile 5, 22, 583, 0
+	setmetatile 4, 23, 543, 1
+	setmetatile 5, 23, 544, 1
+	special DrawWholeMapView
+	@ TODO unsupported: refreshmap 
 	goto Johto_EventScript_Unimplemented
 
 LancesRoom_Johto_Script_ApproachLanceFromLeft:
@@ -56,7 +61,12 @@ LancesRoom_Johto_LancesRoomLanceScript:
 	waitbuttonpress
 	closemessage
 	playse SE_DOOR
-	@ TODO unsupported: changeblock 4, 0, $0b
+	setmetatile 4, 0, 535, 1
+	setmetatile 5, 0, 536, 1
+	setmetatile 4, 1, 537, 0
+	setmetatile 5, 1, 537, 0
+	special DrawWholeMapView
+	@ TODO unsupported: refreshmap 
 	goto Johto_EventScript_Unimplemented
 
 LancesRoom_Johto_LancesRoom_EnterMovement:

@@ -3079,13 +3079,15 @@ Johto_Std_PokecenterSignText:
 
 Johto_Std_Radio1Script:
 	setvar VAR_RESULT, 0
-	@ TODO unsupported: special MapRadio
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	releaseall
+	end
 
 Johto_Std_Radio2Script:
 	setvar VAR_RESULT, 0
-	@ TODO unsupported: special MapRadio
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	releaseall
+	end
 
 Johto_Std_RadioTowerRocketsScript_Sub:
 	setflag FLAG_JOHTO_ENGINE_ROCKETS_IN_RADIO_TOWER

@@ -100,7 +100,10 @@ Route36_Johto_WateredWeirdTreeScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: loadwildmon SUDOWOODO, 20
+	setwildbattle SPECIES_SUDOWOODO, 20
+	dowildbattle
+	setflag FLAG_JOHTO_FOUGHT_SUDOWOODO
+	@ TODO unsupported: ifequal DRAW, DidntCatchSudowoodo
 	goto Johto_EventScript_Unimplemented
 
 Route36_Johto_DidntUseSquirtbottleScript:

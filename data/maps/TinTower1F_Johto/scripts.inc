@@ -109,7 +109,12 @@ TinTower1F_Johto_TinTower1FSage5Script:
 	closemessage
 	waitse
 	playse SE_M_STRENGTH
-	@ TODO unsupported: changeblock 10, 2, $20
+	setmetatile 10, 2, 515, 0
+	setmetatile 11, 2, 513, 0
+	setmetatile 10, 3, 513, 0
+	setmetatile 11, 3, 513, 0
+	special DrawWholeMapView
+	@ TODO unsupported: refreshmap 
 	goto Johto_EventScript_Unimplemented
 
 TinTower1F_Johto_TinTower1FSage5Script_GotRainbowWing:

@@ -70,7 +70,8 @@ Route29_Johto_Route29Tutorial1:
 	applymovement OBJ_EVENT_ID_PLAYER, Route29_Johto_DudeMovementData1b
 	applymovement 1, Route29_Johto_DudeMovementData1b
 	waitmovement 1
-	@ TODO unsupported: loadwildmon RATTATA, 5
+	setwildbattle SPECIES_RATTATA, 5
+	@ TODO unsupported: catchtutorial BATTLETYPE_TUTORIAL
 	goto Johto_EventScript_Unimplemented
 
 Route29_Johto_Route29Tutorial2:
@@ -91,7 +92,8 @@ Route29_Johto_Route29Tutorial2:
 	applymovement OBJ_EVENT_ID_PLAYER, Route29_Johto_DudeMovementData2b
 	applymovement 1, Route29_Johto_DudeMovementData2b
 	waitmovement 1
-	@ TODO unsupported: loadwildmon RATTATA, 5
+	setwildbattle SPECIES_RATTATA, 5
+	@ TODO unsupported: catchtutorial BATTLETYPE_TUTORIAL
 	goto Johto_EventScript_Unimplemented
 
 Route29_Johto_Script_RefusedTutorial1:

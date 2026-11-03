@@ -20,8 +20,12 @@ TinTowerRoof_Johto_TinTowerHoOh:
 	delay 15
 	closemessage
 	setflag FLAG_JOHTO_FOUGHT_HO_OH
-	@ TODO unsupported: loadwildmon HO_OH, 60
-	goto Johto_EventScript_Unimplemented
+	setwildbattle SPECIES_HO_OH, 60
+	dowildbattle
+	removeobject 1
+	setflag FLAG_JOHTO_SET_WHEN_FOUGHT_HO_OH
+	releaseall
+	end
 
 TinTowerRoof_Johto_TinTowerRoofHoOhCallback_Cb:
 	goto_if_set FLAG_JOHTO_FOUGHT_HO_OH, TinTowerRoof_Johto_TinTowerRoofHoOhCallback_NoAppear_Cb

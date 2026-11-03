@@ -90,7 +90,12 @@ BurnedTower1F_Johto_BurnedTowerRivalBattleScript_returnfrombattle:
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playse SE_DOOR
 	waitse
-	@ TODO unsupported: changeblock 10, 8, $25
+	setmetatile 10, 8, 543, 1
+	setmetatile 11, 8, 543, 1
+	setmetatile 10, 9, 544, 1
+	setmetatile 11, 9, 513, 0
+	special DrawWholeMapView
+	@ TODO unsupported: refreshmap 
 	goto Johto_EventScript_Unimplemented
 
 BurnedTower1F_Johto_BurnedTower1FEusineScript:

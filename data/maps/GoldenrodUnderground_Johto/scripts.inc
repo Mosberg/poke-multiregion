@@ -174,7 +174,12 @@ GoldenrodUnderground_Johto_BasementDoorScript_Unlock:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: changeblock 18, 6, $2e
+	setmetatile 18, 6, 517, 0
+	setmetatile 19, 6, 562, 1
+	setmetatile 18, 7, 515, 0
+	setmetatile 19, 7, 515, 0
+	special DrawWholeMapView
+	@ TODO unsupported: refreshmap 
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodUnderground_Johto_BasementDoorScript_Open:

@@ -3,7 +3,7 @@
 Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
 Hard caps and approximations live in LIMITS.md.
 
-## Johto: scripts (331 commands still become "not converted yet"; all 383 Johto maps load in the emulator smoke test, 0 failures)
+## Johto: scripts (318 commands still become "not converted yet"; all 383 Johto maps load in the emulator smoke test, 0 failures)
 
 Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
 

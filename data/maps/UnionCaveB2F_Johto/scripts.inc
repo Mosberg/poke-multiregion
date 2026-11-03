@@ -15,8 +15,12 @@ UnionCaveB2F_Johto_UnionCaveLapras:
 	faceplayer
 	playmoncry SPECIES_LAPRAS, CRY_MODE_NORMAL
 	waitmoncry
-	@ TODO unsupported: loadwildmon LAPRAS, 20
-	goto Johto_EventScript_Unimplemented
+	setwildbattle SPECIES_LAPRAS, 20
+	dowildbattle
+	removeobject 6
+	setflag FLAG_JOHTO_ENGINE_UNION_CAVE_LAPRAS
+	releaseall
+	end
 
 UnionCaveB2F_Johto_TrainerCooltrainermNick::
 	trainerbattle_single TRAINER_JOHTO_COOLTRAINERM_NICK, UnionCaveB2F_Johto_CooltrainermNickSeenText, UnionCaveB2F_Johto_CooltrainermNickBeatenText
