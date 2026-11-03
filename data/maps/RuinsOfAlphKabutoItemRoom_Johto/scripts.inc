@@ -1,10 +1,46 @@
 RuinsOfAlphKabutoItemRoom_Johto_MapScripts::
 	.byte 0
 
+RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomBerry_Entry::
+	lockall
+	goto RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomBerry
+
+RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomPsncureberry_Entry::
+	lockall
+	goto RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomPsncureberry
+
+RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomHealPowder_Entry::
+	lockall
+	goto RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomHealPowder
+
+RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomEnergypowder_Entry::
+	lockall
+	goto RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomEnergypowder
+
 RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomAncientReplica_Entry::
 	lockall
 	goto RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomAncientReplica
 
+
+RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomBerry:
+	finditem ITEM_ORAN_BERRY
+	releaseall
+	end
+
+RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomPsncureberry:
+	finditem ITEM_PECHA_BERRY
+	releaseall
+	end
+
+RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomHealPowder:
+	finditem ITEM_HEAL_POWDER
+	releaseall
+	end
+
+RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomEnergypowder:
+	finditem ITEM_ENERGYPOWDER
+	releaseall
+	end
 
 RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomAncientReplica:
 	message RuinsOfAlphKabutoItemRoom_Johto_RuinsOfAlphKabutoItemRoomAncientReplicaText

@@ -17,6 +17,10 @@ SproutTower1F_Johto_SproutTower1FTeacherScript_Entry::
 	lockall
 	goto SproutTower1F_Johto_SproutTower1FTeacherScript
 
+SproutTower1F_Johto_SproutTower1FParlyzHeal_Entry::
+	lockall
+	goto SproutTower1F_Johto_SproutTower1FParlyzHeal
+
 SproutTower1F_Johto_SproutTower1FStatue_Entry::
 	lockall
 	goto SproutTower1F_Johto_SproutTower1FStatue
@@ -70,6 +74,11 @@ SproutTower1F_Johto_TrainerSageChow_Script:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+SproutTower1F_Johto_SproutTower1FParlyzHeal:
+	finditem ITEM_PARLYZ_HEAL
 	releaseall
 	end
 

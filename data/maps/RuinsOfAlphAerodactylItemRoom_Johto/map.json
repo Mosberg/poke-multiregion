@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RuinsOfAlphAerodactylItemRoom_Johto_RuinsOfAlphAerodactylItemRoomGoldBerry_Entry",
       "flag": "FLAG_JOHTO_PICKED_UP_GOLD_BERRY_FROM_AERODACTYL_ITEM_ROOM"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RuinsOfAlphAerodactylItemRoom_Johto_RuinsOfAlphAerodactylItemRoomMoonStone_Entry",
       "flag": "FLAG_JOHTO_PICKED_UP_MOON_STONE_FROM_AERODACTYL_ITEM_ROOM"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RuinsOfAlphAerodactylItemRoom_Johto_RuinsOfAlphAerodactylItemRoomHealPowder_Entry",
       "flag": "FLAG_JOHTO_PICKED_UP_HEAL_POWDER_FROM_AERODACTYL_ITEM_ROOM"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RuinsOfAlphAerodactylItemRoom_Johto_RuinsOfAlphAerodactylItemRoomEnergyRoot_Entry",
       "flag": "FLAG_JOHTO_PICKED_UP_ENERGY_ROOT_FROM_AERODACTYL_ITEM_ROOM"
     }
   ],

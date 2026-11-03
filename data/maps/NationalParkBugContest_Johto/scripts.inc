@@ -41,6 +41,14 @@ NationalParkBugContest_Johto_BugCatchingContestant10AScript_Entry::
 	lockall
 	goto NationalParkBugContest_Johto_BugCatchingContestant10AScript
 
+NationalParkBugContest_Johto_NationalParkBugContestParlyzHeal_Entry::
+	lockall
+	goto NationalParkBugContest_Johto_NationalParkBugContestParlyzHeal
+
+NationalParkBugContest_Johto_NationalParkBugContestTMDig_Entry::
+	lockall
+	goto NationalParkBugContest_Johto_NationalParkBugContestTMDig
+
 NationalParkBugContest_Johto_NationalParkBugContestRelaxationSquareSign_Entry::
 	lockall
 	goto NationalParkBugContest_Johto_NationalParkBugContestRelaxationSquareSign
@@ -165,6 +173,16 @@ NationalParkBugContest_Johto_NationalParkBugContestTrainerTipsSign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+NationalParkBugContest_Johto_NationalParkBugContestParlyzHeal:
+	finditem ITEM_PARLYZ_HEAL
+	releaseall
+	end
+
+NationalParkBugContest_Johto_NationalParkBugContestTMDig:
+	finditem ITEM_TM_DIG
 	releaseall
 	end
 

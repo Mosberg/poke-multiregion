@@ -7,6 +7,10 @@ GoldenrodUnderground_Johto_OnTransition:
 	call GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Cb
 	end
 
+GoldenrodUnderground_Johto_GoldenrodUndergroundCoinCase_Entry::
+	lockall
+	goto GoldenrodUnderground_Johto_GoldenrodUndergroundCoinCase
+
 GoldenrodUnderground_Johto_BargainMerchantScript_Entry::
 	lockall
 	goto GoldenrodUnderground_Johto_BargainMerchantScript
@@ -179,8 +183,10 @@ GoldenrodUnderground_Johto_BasementDoorScript_Unlock:
 	setmetatile 18, 7, 515, 0
 	setmetatile 19, 7, 515, 0
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setflag FLAG_JOHTO_USED_BASEMENT_KEY
+	releaseall
+	end
 
 GoldenrodUnderground_Johto_BasementDoorScript_Open:
 	message GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorIsOpenText
@@ -195,6 +201,11 @@ GoldenrodUnderground_Johto_GoldenrodUndergroundScript_ShopClosed:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundCoinCase:
+	finditem ITEM_COIN_CASE
 	releaseall
 	end
 

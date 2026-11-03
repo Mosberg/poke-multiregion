@@ -5,6 +5,10 @@ SlowpokeWellB2F_Johto_SlowpokeWellB2FGymGuideScript_Entry::
 	lockall
 	goto SlowpokeWellB2F_Johto_SlowpokeWellB2FGymGuideScript
 
+SlowpokeWellB2F_Johto_SlowpokeWellB2FTMRainDance_Entry::
+	lockall
+	goto SlowpokeWellB2F_Johto_SlowpokeWellB2FTMRainDance
+
 
 SlowpokeWellB2F_Johto_SlowpokeWellB2FGymGuideScript:
 	faceplayer
@@ -26,6 +30,11 @@ SlowpokeWellB2F_Johto_SlowpokeWellB2FGymGuideScript_GotKingsRock:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+SlowpokeWellB2F_Johto_SlowpokeWellB2FTMRainDance:
+	finditem ITEM_TM_RAIN_DANCE
 	releaseall
 	end
 

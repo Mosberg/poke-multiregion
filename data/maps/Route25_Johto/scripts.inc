@@ -6,6 +6,10 @@ Route25_Johto_TrainerCooltrainermKevin_Entry::
 	lockall
 	goto Route25_Johto_TrainerCooltrainermKevin
 
+Route25_Johto_Route25Protein_Entry::
+	lockall
+	goto Route25_Johto_Route25Protein
+
 Route25_Johto_BillsHouseSign_Entry::
 	lockall
 	goto Route25_Johto_BillsHouseSign
@@ -232,6 +236,11 @@ Route25_Johto_BillsHouseSign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route25_Johto_Route25Protein:
+	finditem ITEM_PROTEIN
 	releaseall
 	end
 

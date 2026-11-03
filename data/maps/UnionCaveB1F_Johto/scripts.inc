@@ -1,9 +1,17 @@
 UnionCaveB1F_Johto_MapScripts::
 	.byte 0
 
+UnionCaveB1F_Johto_UnionCaveB1FTMSwift_Entry::
+	lockall
+	goto UnionCaveB1F_Johto_UnionCaveB1FTMSwift
+
 UnionCaveB1F_Johto_UnionCaveB1FBoulder_Entry::
 	lockall
 	goto UnionCaveB1F_Johto_UnionCaveB1FBoulder
+
+UnionCaveB1F_Johto_UnionCaveB1FXDefend_Entry::
+	lockall
+	goto UnionCaveB1F_Johto_UnionCaveB1FXDefend
 
 
 UnionCaveB1F_Johto_TrainerPokemaniacAndrew::
@@ -63,6 +71,16 @@ UnionCaveB1F_Johto_TrainerHikerLeonard_Script:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+UnionCaveB1F_Johto_UnionCaveB1FTMSwift:
+	finditem ITEM_NUGGET
+	releaseall
+	end
+
+UnionCaveB1F_Johto_UnionCaveB1FXDefend:
+	finditem ITEM_X_DEFEND
 	releaseall
 	end
 

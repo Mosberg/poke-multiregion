@@ -5,12 +5,30 @@ IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideBoulder_Entry::
 	lockall
 	goto IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideBoulder
 
+IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideFullHeal_Entry::
+	lockall
+	goto IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideFullHeal
+
+IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideMaxPotion_Entry::
+	lockall
+	goto IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideMaxPotion
+
 
 IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideBoulder:
 	message IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideBoulderText
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideFullHeal:
+	finditem ITEM_FULL_HEAL
+	releaseall
+	end
+
+IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideMaxPotion:
+	finditem ITEM_MAX_POTION
 	releaseall
 	end
 

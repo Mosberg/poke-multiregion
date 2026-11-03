@@ -77,12 +77,14 @@
       "script": "CinnabarIsland_Johto_CinnabarIslandSign_Entry"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 9,
       "y": 1,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_JOHTO_CINNABAR_ISLAND_HIDDEN_RARE_CANDY",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

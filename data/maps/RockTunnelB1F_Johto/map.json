@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RockTunnelB1F_Johto_RockTunnelB1FIron_Entry",
       "flag": "FLAG_JOHTO_ROCK_TUNNEL_B1F_IRON"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RockTunnelB1F_Johto_RockTunnelB1FPPUp_Entry",
       "flag": "FLAG_JOHTO_ROCK_TUNNEL_B1F_PP_UP"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RockTunnelB1F_Johto_RockTunnelB1FRevive_Entry",
       "flag": "FLAG_JOHTO_ROCK_TUNNEL_B1F_REVIVE"
     }
   ],
@@ -89,12 +89,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 4,
       "y": 14,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_MAX_POTION",
+      "flag": "FLAG_JOHTO_ROCK_TUNNEL_B1F_HIDDEN_MAX_POTION",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

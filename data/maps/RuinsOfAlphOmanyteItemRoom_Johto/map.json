@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RuinsOfAlphOmanyteItemRoom_Johto_RuinsOfAlphOmanyteItemRoomMysteryberry_Entry",
       "flag": "FLAG_JOHTO_PICKED_UP_MYSTERYBERRY_FROM_OMANYTE_ITEM_ROOM"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RuinsOfAlphOmanyteItemRoom_Johto_RuinsOfAlphOmanyteItemRoomMysticWater_Entry",
       "flag": "FLAG_JOHTO_PICKED_UP_MYSTIC_WATER_FROM_OMANYTE_ITEM_ROOM"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RuinsOfAlphOmanyteItemRoom_Johto_RuinsOfAlphOmanyteItemRoomStardust_Entry",
       "flag": "FLAG_JOHTO_PICKED_UP_STARDUST_FROM_OMANYTE_ITEM_ROOM"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "RuinsOfAlphOmanyteItemRoom_Johto_RuinsOfAlphOmanyteItemRoomStarPiece_Entry",
       "flag": "FLAG_JOHTO_PICKED_UP_STAR_PIECE_FROM_OMANYTE_ITEM_ROOM"
     }
   ],

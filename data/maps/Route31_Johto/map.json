@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route31_Johto_Route31Potion_Entry",
       "flag": "FLAG_JOHTO_ROUTE_31_POTION"
     },
     {
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route31_Johto_Route31PokeBall_Entry",
       "flag": "FLAG_JOHTO_ROUTE_31_POKE_BALL"
     }
   ],

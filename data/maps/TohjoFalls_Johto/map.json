@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "TohjoFalls_Johto_TohjoFallsMoonStone_Entry",
       "flag": "FLAG_JOHTO_TOHJO_FALLS_MOON_STONE"
     }
   ],

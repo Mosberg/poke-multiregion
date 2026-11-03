@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route27_Johto_Route27TMSolarbeam_Entry",
       "flag": "FLAG_JOHTO_ROUTE_27_TM_SOLARBEAM"
     },
     {
@@ -128,7 +128,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route27_Johto_Route27RareCandy_Entry",
       "flag": "FLAG_JOHTO_ROUTE_27_RARE_CANDY"
     },
     {

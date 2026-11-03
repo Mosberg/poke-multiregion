@@ -9,6 +9,10 @@ OlivineLighthouse6F_Johto_OlivineLighthouseAmphy_Entry::
 	lockall
 	goto OlivineLighthouse6F_Johto_OlivineLighthouseAmphy
 
+OlivineLighthouse6F_Johto_OlivineLighthouse6FSuperPotion_Entry::
+	lockall
+	goto OlivineLighthouse6F_Johto_OlivineLighthouse6FSuperPotion
+
 
 OlivineLighthouse6F_Johto_OlivineLighthouseJasmine:
 	faceplayer
@@ -141,6 +145,11 @@ OlivineLighthouse6F_Johto_OlivineLighthouseAmphy_HealthyNow:
 	fadescreen FADE_FROM_WHITE
 	fadescreen FADE_TO_WHITE
 	fadescreen FADE_FROM_WHITE
+	releaseall
+	end
+
+OlivineLighthouse6F_Johto_OlivineLighthouse6FSuperPotion:
+	finditem ITEM_SUPER_POTION
 	releaseall
 	end
 

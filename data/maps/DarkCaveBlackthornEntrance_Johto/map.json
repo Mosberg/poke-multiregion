@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntranceRevive_Entry",
       "flag": "FLAG_JOHTO_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntranceTMSnore_Entry",
       "flag": "FLAG_JOHTO_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE"
     }
   ],

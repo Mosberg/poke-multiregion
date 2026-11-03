@@ -141,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route44_Johto_Route44MaxRevive_Entry",
       "flag": "FLAG_JOHTO_ROUTE_44_MAX_REVIVE"
     },
     {
@@ -154,7 +154,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route44_Johto_Route44UltraBall_Entry",
       "flag": "FLAG_JOHTO_ROUTE_44_ULTRA_BALL"
     },
     {
@@ -167,7 +167,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route44_Johto_Route44MaxRepel_Entry",
       "flag": "FLAG_JOHTO_ROUTE_44_MAX_REPEL"
     }
   ],
@@ -199,12 +199,14 @@
       "script": "Route44_Johto_Route44Sign2_Entry"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 32,
       "y": 9,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_ELIXER",
+      "flag": "FLAG_JOHTO_ROUTE_44_HIDDEN_ELIXER",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

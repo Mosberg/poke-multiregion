@@ -24,8 +24,12 @@ WillsRoom_Johto_WillsRoomDoorLocksBehindYouScript:
 	setmetatile 4, 15, 528, 1
 	setmetatile 5, 15, 528, 1
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setvar VAR_JOHTO_SCENE_WILLS_ROOM, 1
+	setflag FLAG_JOHTO_WILLS_ROOM_ENTRANCE_CLOSED
+	waitse
+	releaseall
+	end
 
 WillsRoom_Johto_WillScript_Battle:
 	faceplayer
@@ -46,8 +50,11 @@ WillsRoom_Johto_WillScript_Battle:
 	setmetatile 4, 3, 519, 0
 	setmetatile 5, 3, 519, 0
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setflag FLAG_JOHTO_WILLS_ROOM_EXIT_OPEN
+	waitse
+	releaseall
+	end
 
 WillsRoom_Johto_WillScript_AfterBattle:
 	message WillsRoom_Johto_WillScript_WillDefeatText

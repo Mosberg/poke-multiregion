@@ -29,9 +29,17 @@ NationalPark_Johto_NationalParkPersian_Entry::
 	lockall
 	goto NationalPark_Johto_NationalParkPersian
 
+NationalPark_Johto_NationalParkParlyzHeal_Entry::
+	lockall
+	goto NationalPark_Johto_NationalParkParlyzHeal
+
 NationalPark_Johto_NationalParkGameboyKidScript_Entry::
 	lockall
 	goto NationalPark_Johto_NationalParkGameboyKidScript
+
+NationalPark_Johto_NationalParkTMDig_Entry::
+	lockall
+	goto NationalPark_Johto_NationalParkTMDig
 
 NationalPark_Johto_NationalParkRelaxationSquareSign_Entry::
 	lockall
@@ -257,6 +265,16 @@ NationalPark_Johto_NationalParkTrainerTipsSign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+NationalPark_Johto_NationalParkParlyzHeal:
+	finditem ITEM_PARLYZ_HEAL
+	releaseall
+	end
+
+NationalPark_Johto_NationalParkTMDig:
+	finditem ITEM_TM_DIG
 	releaseall
 	end
 

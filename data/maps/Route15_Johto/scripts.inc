@@ -1,6 +1,10 @@
 Route15_Johto_MapScripts::
 	.byte 0
 
+Route15_Johto_Route15PPUp_Entry::
+	lockall
+	goto Route15_Johto_Route15PPUp
+
 Route15_Johto_Route15Sign_Entry::
 	lockall
 	goto Route15_Johto_Route15Sign
@@ -101,6 +105,11 @@ Route15_Johto_Route15Sign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route15_Johto_Route15PPUp:
+	finditem ITEM_PP_UP
 	releaseall
 	end
 

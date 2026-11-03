@@ -35,6 +35,10 @@ Route29_Johto_TuscanyScript_Entry::
 	lockall
 	goto Route29_Johto_TuscanyScript
 
+Route29_Johto_Route29Potion_Entry::
+	lockall
+	goto Route29_Johto_Route29Potion
+
 Route29_Johto_Route29Sign1_Entry::
 	lockall
 	goto Route29_Johto_Route29Sign1
@@ -238,6 +242,11 @@ Route29_Johto_Route29FruitTree:
 	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_29, Johto_Std_FruitTreeEmpty
 	giveitem ITEM_ORAN_BERRY
 	setflag FLAG_JOHTO_FRUITTREE_ROUTE_29
+	releaseall
+	end
+
+Route29_Johto_Route29Potion:
+	finditem ITEM_POTION
 	releaseall
 	end
 

@@ -5,6 +5,14 @@ SproutTower3F_Johto_SageLiScript_Entry::
 	lockall
 	goto SproutTower3F_Johto_SageLiScript
 
+SproutTower3F_Johto_SproutTower3FPotion_Entry::
+	lockall
+	goto SproutTower3F_Johto_SproutTower3FPotion
+
+SproutTower3F_Johto_SproutTower3FEscapeRope_Entry::
+	lockall
+	goto SproutTower3F_Johto_SproutTower3FEscapeRope
+
 SproutTower3F_Johto_SproutTower3FStatue_Entry::
 	lockall
 	goto SproutTower3F_Johto_SproutTower3FStatue
@@ -152,6 +160,16 @@ SproutTower3F_Johto_SproutTower3FStatue:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+SproutTower3F_Johto_SproutTower3FPotion:
+	finditem ITEM_POTION
+	releaseall
+	end
+
+SproutTower3F_Johto_SproutTower3FEscapeRope:
+	finditem ITEM_ESCAPE_ROPE
 	releaseall
 	end
 

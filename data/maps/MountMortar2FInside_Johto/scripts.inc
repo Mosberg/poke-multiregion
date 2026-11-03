@@ -1,6 +1,29 @@
 MountMortar2FInside_Johto_MapScripts::
 	.byte 0
 
+MountMortar2FInside_Johto_MountMortar2FInsideMaxPotion_Entry::
+	lockall
+	goto MountMortar2FInside_Johto_MountMortar2FInsideMaxPotion
+
+MountMortar2FInside_Johto_MountMortar2FInsideRareCandy_Entry::
+	lockall
+	goto MountMortar2FInside_Johto_MountMortar2FInsideRareCandy
+
+MountMortar2FInside_Johto_MountMortar2FInsideTMDefenseCurl_Entry::
+	lockall
+	goto MountMortar2FInside_Johto_MountMortar2FInsideTMDefenseCurl
+
+MountMortar2FInside_Johto_MountMortar2FInsideDragonScale_Entry::
+	lockall
+	goto MountMortar2FInside_Johto_MountMortar2FInsideDragonScale
+
+MountMortar2FInside_Johto_MountMortar2FInsideElixer_Entry::
+	lockall
+	goto MountMortar2FInside_Johto_MountMortar2FInsideElixer
+
+MountMortar2FInside_Johto_MountMortar2FInsideEscapeRope_Entry::
+	lockall
+	goto MountMortar2FInside_Johto_MountMortar2FInsideEscapeRope
 
 
 MountMortar2FInside_Johto_TrainerSupernerdHugh::
@@ -15,6 +38,36 @@ MountMortar2FInside_Johto_TrainerSupernerdHugh_Script:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+MountMortar2FInside_Johto_MountMortar2FInsideMaxPotion:
+	finditem ITEM_MAX_POTION
+	releaseall
+	end
+
+MountMortar2FInside_Johto_MountMortar2FInsideRareCandy:
+	finditem ITEM_RARE_CANDY
+	releaseall
+	end
+
+MountMortar2FInside_Johto_MountMortar2FInsideTMDefenseCurl:
+	finditem ITEM_NUGGET
+	releaseall
+	end
+
+MountMortar2FInside_Johto_MountMortar2FInsideDragonScale:
+	finditem ITEM_DRAGON_SCALE
+	releaseall
+	end
+
+MountMortar2FInside_Johto_MountMortar2FInsideElixer:
+	finditem ITEM_ELIXER
+	releaseall
+	end
+
+MountMortar2FInside_Johto_MountMortar2FInsideEscapeRope:
+	finditem ITEM_ESCAPE_ROPE
 	releaseall
 	end
 

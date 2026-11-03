@@ -117,7 +117,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "BurnedTowerB1F_Johto_BurnedTowerB1FTMEndure_Entry",
       "flag": "FLAG_JOHTO_BURNED_TOWER_B1F_TM_ENDURE"
     },
     {

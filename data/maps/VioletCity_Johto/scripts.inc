@@ -31,6 +31,14 @@ VioletCity_Johto_VioletCityFruitTree_Entry::
 	lockall
 	goto VioletCity_Johto_VioletCityFruitTree
 
+VioletCity_Johto_VioletCityPPUp_Entry::
+	lockall
+	goto VioletCity_Johto_VioletCityPPUp
+
+VioletCity_Johto_VioletCityRareCandy_Entry::
+	lockall
+	goto VioletCity_Johto_VioletCityRareCandy
+
 VioletCity_Johto_VioletCitySign_Entry::
 	lockall
 	goto VioletCity_Johto_VioletCitySign
@@ -177,6 +185,16 @@ VioletCity_Johto_VioletCityPokecenterSign:
 
 VioletCity_Johto_VioletCityMartSign:
 	goto Johto_Std_MartSignScript
+
+VioletCity_Johto_VioletCityPPUp:
+	finditem ITEM_PP_UP
+	releaseall
+	end
+
+VioletCity_Johto_VioletCityRareCandy:
+	finditem ITEM_RARE_CANDY
+	releaseall
+	end
 
 VioletCity_Johto_VioletCityFruitTree:
 	goto_if_set FLAG_JOHTO_FRUITTREE_VIOLET_CITY, Johto_Std_FruitTreeEmpty

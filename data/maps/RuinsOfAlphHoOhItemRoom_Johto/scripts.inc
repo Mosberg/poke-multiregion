@@ -1,10 +1,46 @@
 RuinsOfAlphHoOhItemRoom_Johto_MapScripts::
 	.byte 0
 
+RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomGoldBerry_Entry::
+	lockall
+	goto RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomGoldBerry
+
+RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomMysteryberry_Entry::
+	lockall
+	goto RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomMysteryberry
+
+RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomRevivalHerb_Entry::
+	lockall
+	goto RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomRevivalHerb
+
+RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomCharcoal_Entry::
+	lockall
+	goto RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomCharcoal
+
 RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomAncientReplica_Entry::
 	lockall
 	goto RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomAncientReplica
 
+
+RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomGoldBerry:
+	finditem ITEM_SITRUS_BERRY
+	releaseall
+	end
+
+RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomMysteryberry:
+	finditem ITEM_LEPPA_BERRY
+	releaseall
+	end
+
+RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomRevivalHerb:
+	finditem ITEM_REVIVAL_HERB
+	releaseall
+	end
+
+RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomCharcoal:
+	finditem ITEM_CHARCOAL
+	releaseall
+	end
 
 RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomAncientReplica:
 	message RuinsOfAlphHoOhItemRoom_Johto_RuinsOfAlphHoOhItemRoomAncientReplicaText

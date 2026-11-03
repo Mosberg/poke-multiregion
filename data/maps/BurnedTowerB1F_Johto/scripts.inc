@@ -5,6 +5,10 @@ BurnedTowerB1F_Johto_BurnedTowerB1FBoulder_Entry::
 	lockall
 	goto BurnedTowerB1F_Johto_BurnedTowerB1FBoulder
 
+BurnedTowerB1F_Johto_BurnedTowerB1FTMEndure_Entry::
+	lockall
+	goto BurnedTowerB1F_Johto_BurnedTowerB1FTMEndure
+
 BurnedTowerB1F_Johto_BurnedTowerB1FEusine_Entry::
 	lockall
 	goto BurnedTowerB1F_Johto_BurnedTowerB1FEusine
@@ -109,6 +113,11 @@ BurnedTowerB1F_Johto_BurnedTowerB1FEusine_Finish:
 	removeobject 9
 	playse SE_EXIT
 	waitse
+	releaseall
+	end
+
+BurnedTowerB1F_Johto_BurnedTowerB1FTMEndure:
+	finditem ITEM_NUGGET
 	releaseall
 	end
 

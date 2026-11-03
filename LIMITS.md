@@ -30,7 +30,7 @@ limit is, where it came from, and what was done about it. New limits are appende
 | SaveBlock1 | 15872 bytes (4 sectors) | Currently about 13.8 KB after the six `FREE_*` cleansing options; Johto flags, scene vars and trainer flags used ~494 bytes of the 2288 headroom. |
 | SaveBlock2 | 3968 bytes | 3884 used. |
 | Event flags | Hoenn 300 + Kanto 91 band + 624 Kanto trainer flags + 1344 Johto event flags + 560 Johto trainer flags | `FLAGS_COUNT` is overridden at the end of `flags.h`/`johto_flags.h`. All are saved in the flag array (637+70 bytes). |
-| Johto event flags | 1344 band | Crystal has ~1332 `EVENT_*`; ~750 are allocated so far. Exhaustion aborts the converter. |
+| Johto event flags | 1344 band | **1294 allocated** (item balls, hidden items, cut trees and events). Exhaustion aborts the converter; the next band increase moves SB1 vars (+8 bytes per 64 flags). |
 | Johto scene vars | 128 (`0x4140-0x41BF`) | One per map with scenes. |
 | Johto trainer flags | 560 | 541 used. |
 | Offsets | SB1 flags 0x123C, vars 0x1500 (change with every band resize) | Recompute with `offsetof` via the compiler **using the build's ABI flags (`-mthumb -mabi=apcs-gnu`, short enums); without them the numbers come out 0x28 too low** (`poke-crystal-all --build` prints them), then update `mgba-agent/addresses.py` and `pokeemerald-ai-bridge/src/core/layout.ts`. The previously documented 0x123C/0x1412 were stale. |

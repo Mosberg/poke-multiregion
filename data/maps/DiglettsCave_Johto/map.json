@@ -77,12 +77,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 6,
       "y": 11,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_JOHTO_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortar2FInside_Johto_MountMortar2FInsideMaxPotion_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_2F_INSIDE_MAX_POTION"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortar2FInside_Johto_MountMortar2FInsideRareCandy_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortar2FInside_Johto_MountMortar2FInsideTMDefenseCurl_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_2F_INSIDE_TM_DEFENSE_CURL"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortar2FInside_Johto_MountMortar2FInsideDragonScale_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_2F_INSIDE_DRAGON_SCALE"
     },
     {
@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortar2FInside_Johto_MountMortar2FInsideElixer_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_2F_INSIDE_ELIXER"
     },
     {
@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortar2FInside_Johto_MountMortar2FInsideEscapeRope_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_2F_INSIDE_ESCAPE_ROPE"
     },
     {
@@ -127,12 +127,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 24,
       "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_FULL_RESTORE",
+      "flag": "FLAG_JOHTO_MOUNT_MORTAR_2F_INSIDE_HIDDEN_FULL_RESTORE",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

@@ -18,6 +18,26 @@ TeamRocketBaseB3F_Johto_TeamRocketBaseB3FRocketScript_Entry::
 	lockall
 	goto TeamRocketBaseB3F_Johto_TeamRocketBaseB3FRocketScript
 
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FProtein_Entry::
+	lockall
+	goto TeamRocketBaseB3F_Johto_TeamRocketBaseB3FProtein
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FXSpecial_Entry::
+	lockall
+	goto TeamRocketBaseB3F_Johto_TeamRocketBaseB3FXSpecial
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FFullHeal_Entry::
+	lockall
+	goto TeamRocketBaseB3F_Johto_TeamRocketBaseB3FFullHeal
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FIceHeal_Entry::
+	lockall
+	goto TeamRocketBaseB3F_Johto_TeamRocketBaseB3FIceHeal
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FUltraBall_Entry::
+	lockall
+	goto TeamRocketBaseB3F_Johto_TeamRocketBaseB3FUltraBall
+
 TeamRocketBaseB3F_Johto_TeamRocketBaseB3FOathScript_Entry::
 	lockall
 	goto TeamRocketBaseB3F_Johto_TeamRocketBaseB3FOathScript
@@ -204,6 +224,31 @@ TeamRocketBaseB3F_Johto_TrainerScientistMitch_Script:
 
 TeamRocketBaseB3F_Johto_TeamRocketBaseB3FOathScript:
 	goto Johto_Std_TeamRocketOathScript
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FProtein:
+	finditem ITEM_PROTEIN
+	releaseall
+	end
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FXSpecial:
+	finditem ITEM_X_SPECIAL
+	releaseall
+	end
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FFullHeal:
+	finditem ITEM_FULL_HEAL
+	releaseall
+	end
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FIceHeal:
+	finditem ITEM_ICE_HEAL
+	releaseall
+	end
+
+TeamRocketBaseB3F_Johto_TeamRocketBaseB3FUltraBall:
+	finditem ITEM_ULTRA_BALL
+	releaseall
+	end
 
 TeamRocketBaseB3F_Johto_RocketBaseLanceApproachesPlayerMovement:
 	walk_right

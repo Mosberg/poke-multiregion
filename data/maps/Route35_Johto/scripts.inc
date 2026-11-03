@@ -10,6 +10,10 @@ Route35_Johto_Route35FruitTree_Entry::
 	lockall
 	goto Route35_Johto_Route35FruitTree
 
+Route35_Johto_Route35TMRollout_Entry::
+	lockall
+	goto Route35_Johto_Route35TMRollout
+
 Route35_Johto_Route35Sign_Entry::
 	lockall
 	goto Route35_Johto_Route35Sign
@@ -223,6 +227,11 @@ Route35_Johto_Route35Sign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route35_Johto_Route35TMRollout:
+	finditem ITEM_NUGGET
 	releaseall
 	end
 

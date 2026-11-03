@@ -23,9 +23,25 @@ IlexForest_Johto_IlexForestHeadbuttGuyScript_Entry::
 	lockall
 	goto IlexForest_Johto_IlexForestHeadbuttGuyScript
 
+IlexForest_Johto_IlexForestRevive_Entry::
+	lockall
+	goto IlexForest_Johto_IlexForestRevive
+
 IlexForest_Johto_IlexForestLassScript_Entry::
 	lockall
 	goto IlexForest_Johto_IlexForestLassScript
+
+IlexForest_Johto_IlexForestXAttack_Entry::
+	lockall
+	goto IlexForest_Johto_IlexForestXAttack
+
+IlexForest_Johto_IlexForestAntidote_Entry::
+	lockall
+	goto IlexForest_Johto_IlexForestAntidote
+
+IlexForest_Johto_IlexForestEther_Entry::
+	lockall
+	goto IlexForest_Johto_IlexForestEther
 
 IlexForest_Johto_IlexForestSignpost_Entry::
 	lockall
@@ -128,6 +144,26 @@ IlexForest_Johto_IlexForestLassScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+IlexForest_Johto_IlexForestRevive:
+	finditem ITEM_REVIVE
+	releaseall
+	end
+
+IlexForest_Johto_IlexForestXAttack:
+	finditem ITEM_X_ATTACK
+	releaseall
+	end
+
+IlexForest_Johto_IlexForestAntidote:
+	finditem ITEM_ANTIDOTE
+	releaseall
+	end
+
+IlexForest_Johto_IlexForestEther:
+	finditem ITEM_ETHER
 	releaseall
 	end
 

@@ -11,6 +11,10 @@ Route43_Johto_Route43FruitTree_Entry::
 	lockall
 	goto Route43_Johto_Route43FruitTree
 
+Route43_Johto_Route43MaxEther_Entry::
+	lockall
+	goto Route43_Johto_Route43MaxEther
+
 Route43_Johto_Route43Sign1_Entry::
 	lockall
 	goto Route43_Johto_Route43Sign1
@@ -192,6 +196,11 @@ Route43_Johto_Route43FruitTree:
 	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_43, Johto_Std_FruitTreeEmpty
 	giveitem ITEM_PERSIM_BERRY
 	setflag FLAG_JOHTO_FRUITTREE_ROUTE_43
+	releaseall
+	end
+
+Route43_Johto_Route43MaxEther:
+	finditem ITEM_MAX_ETHER
 	releaseall
 	end
 

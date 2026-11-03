@@ -10,6 +10,18 @@ GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseDirectorScript_
 	lockall
 	goto GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseDirectorScript
 
+GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseMaxEther_Entry::
+	lockall
+	goto GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseMaxEther
+
+GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseTMSleepTalk_Entry::
+	lockall
+	goto GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseTMSleepTalk
+
+GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseUltraBall_Entry::
+	lockall
+	goto GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseUltraBall
+
 
 GoldenrodUndergroundWarehouse_Johto_TrainerGruntM24::
 	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_24, GoldenrodUndergroundWarehouse_Johto_GruntM24SeenText, GoldenrodUndergroundWarehouse_Johto_GruntM24BeatenText
@@ -76,6 +88,21 @@ GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseDirectorScript_
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseMaxEther:
+	finditem ITEM_MAX_ETHER
+	releaseall
+	end
+
+GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseTMSleepTalk:
+	finditem ITEM_NUGGET
+	releaseall
+	end
+
+GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseUltraBall:
+	finditem ITEM_ULTRA_BALL
 	releaseall
 	end
 

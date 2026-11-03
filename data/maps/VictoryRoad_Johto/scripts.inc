@@ -1,6 +1,26 @@
 VictoryRoad_Johto_MapScripts::
 	.byte 0
 
+VictoryRoad_Johto_VictoryRoadTMEarthquake_Entry::
+	lockall
+	goto VictoryRoad_Johto_VictoryRoadTMEarthquake
+
+VictoryRoad_Johto_VictoryRoadMaxRevive_Entry::
+	lockall
+	goto VictoryRoad_Johto_VictoryRoadMaxRevive
+
+VictoryRoad_Johto_VictoryRoadFullRestore_Entry::
+	lockall
+	goto VictoryRoad_Johto_VictoryRoadFullRestore
+
+VictoryRoad_Johto_VictoryRoadFullHeal_Entry::
+	lockall
+	goto VictoryRoad_Johto_VictoryRoadFullHeal
+
+VictoryRoad_Johto_VictoryRoadHPUp_Entry::
+	lockall
+	goto VictoryRoad_Johto_VictoryRoadHPUp
+
 VictoryRoad_Johto_VictoryRoadRivalLeft_Entry::
 	lockall
 	goto VictoryRoad_Johto_VictoryRoadRivalLeft
@@ -48,6 +68,31 @@ VictoryRoad_Johto_VictoryRoadRivalRight:
 	removeobject 1
 	setvar VAR_JOHTO_SCENE_VICTORY_ROAD, 1
 	fadedefaultbgm
+	releaseall
+	end
+
+VictoryRoad_Johto_VictoryRoadTMEarthquake:
+	finditem ITEM_TM_EARTHQUAKE
+	releaseall
+	end
+
+VictoryRoad_Johto_VictoryRoadMaxRevive:
+	finditem ITEM_MAX_REVIVE
+	releaseall
+	end
+
+VictoryRoad_Johto_VictoryRoadFullRestore:
+	finditem ITEM_FULL_RESTORE
+	releaseall
+	end
+
+VictoryRoad_Johto_VictoryRoadFullHeal:
+	finditem ITEM_FULL_HEAL
+	releaseall
+	end
+
+VictoryRoad_Johto_VictoryRoadHPUp:
+	finditem ITEM_HP_UP
 	releaseall
 	end
 

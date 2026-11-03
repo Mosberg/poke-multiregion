@@ -22,6 +22,10 @@ Route34_Johto_DayCareMon2Script_Entry::
 	lockall
 	goto Route34_Johto_DayCareMon2Script
 
+Route34_Johto_Route34Nugget_Entry::
+	lockall
+	goto Route34_Johto_Route34Nugget
+
 Route34_Johto_Route34Sign_Entry::
 	lockall
 	goto Route34_Johto_Route34Sign
@@ -331,6 +335,11 @@ Route34_Johto_DayCareSign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route34_Johto_Route34Nugget:
+	finditem ITEM_NUGGET
 	releaseall
 	end
 

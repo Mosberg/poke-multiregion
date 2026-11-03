@@ -24,8 +24,12 @@ BrunosRoom_Johto_BrunosRoomDoorLocksBehindYouScript:
 	setmetatile 4, 15, 528, 1
 	setmetatile 5, 15, 528, 1
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setvar VAR_JOHTO_SCENE_BRUNOS_ROOM, 1
+	setflag FLAG_JOHTO_BRUNOS_ROOM_ENTRANCE_CLOSED
+	waitse
+	releaseall
+	end
 
 BrunosRoom_Johto_BrunoScript_Battle:
 	faceplayer
@@ -46,8 +50,11 @@ BrunosRoom_Johto_BrunoScript_Battle:
 	setmetatile 4, 3, 519, 0
 	setmetatile 5, 3, 519, 0
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setflag FLAG_JOHTO_BRUNOS_ROOM_EXIT_OPEN
+	waitse
+	releaseall
+	end
 
 BrunosRoom_Johto_BrunoScript_AfterBattle:
 	message BrunosRoom_Johto_BrunoScript_BrunoDefeatText

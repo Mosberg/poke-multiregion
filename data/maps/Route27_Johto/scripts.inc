@@ -1,6 +1,14 @@
 Route27_Johto_MapScripts::
 	.byte 0
 
+Route27_Johto_Route27TMSolarbeam_Entry::
+	lockall
+	goto Route27_Johto_Route27TMSolarbeam
+
+Route27_Johto_Route27RareCandy_Entry::
+	lockall
+	goto Route27_Johto_Route27RareCandy
+
 Route27_Johto_Route27FisherScript_Entry::
 	lockall
 	goto Route27_Johto_Route27FisherScript
@@ -223,6 +231,16 @@ Route27_Johto_TohjoFallsSign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route27_Johto_Route27TMSolarbeam:
+	finditem ITEM_TM_SOLAR_BEAM
+	releaseall
+	end
+
+Route27_Johto_Route27RareCandy:
+	finditem ITEM_RARE_CANDY
 	releaseall
 	end
 

@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "OlivineLighthouse5F_Johto_OlivineLighthouse5FRareCandy_Entry",
       "flag": "FLAG_JOHTO_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "OlivineLighthouse5F_Johto_OlivineLighthouse5FSuperRepel_Entry",
       "flag": "FLAG_JOHTO_OLIVINE_LIGHTHOUSE_5F_SUPER_REPEL"
     },
     {
@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "OlivineLighthouse5F_Johto_OlivineLighthouse5FTMSwagger_Entry",
       "flag": "FLAG_JOHTO_OLIVINE_LIGHTHOUSE_5F_TM_SWAGGER"
     }
   ],
@@ -136,12 +136,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 3,
       "y": 13,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_HYPER_POTION",
+      "flag": "FLAG_JOHTO_OLIVINE_LIGHTHOUSE_5F_HIDDEN_HYPER_POTION",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

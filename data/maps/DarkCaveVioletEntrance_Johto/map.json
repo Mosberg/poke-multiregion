@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "DarkCaveVioletEntrance_Johto_DarkCaveVioletEntrancePotion_Entry",
       "flag": "FLAG_JOHTO_DARK_CAVE_VIOLET_ENTRANCE_POTION"
     },
     {
@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceFullHeal_Entry",
       "flag": "FLAG_JOHTO_DARK_CAVE_VIOLET_ENTRANCE_FULL_HEAL"
     },
     {
@@ -104,7 +104,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceHyperPotion_Entry",
       "flag": "FLAG_JOHTO_DARK_CAVE_VIOLET_ENTRANCE_HYPER_POTION"
     },
     {
@@ -117,7 +117,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceDireHit_Entry",
       "flag": "FLAG_JOHTO_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT"
     }
   ],
@@ -147,12 +147,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 26,
       "y": 3,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_ELIXER",
+      "flag": "FLAG_JOHTO_DARK_CAVE_VIOLET_ENTRANCE_HIDDEN_ELIXER",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

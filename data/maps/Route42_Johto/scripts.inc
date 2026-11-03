@@ -14,6 +14,14 @@ Route42_Johto_Route42FruitTree3_Entry::
 	lockall
 	goto Route42_Johto_Route42FruitTree3
 
+Route42_Johto_Route42UltraBall_Entry::
+	lockall
+	goto Route42_Johto_Route42UltraBall
+
+Route42_Johto_Route42SuperPotion_Entry::
+	lockall
+	goto Route42_Johto_Route42SuperPotion
+
 Route42_Johto_Route42Sign1_Entry::
 	lockall
 	goto Route42_Johto_Route42Sign1
@@ -167,6 +175,16 @@ Route42_Johto_Route42Sign2:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route42_Johto_Route42UltraBall:
+	finditem ITEM_ULTRA_BALL
+	releaseall
+	end
+
+Route42_Johto_Route42SuperPotion:
+	finditem ITEM_SUPER_POTION
 	releaseall
 	end
 

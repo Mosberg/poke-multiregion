@@ -204,12 +204,14 @@
       "script": "Route40_Johto_Route40Sign_Entry"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 7,
       "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_HYPER_POTION",
+      "flag": "FLAG_JOHTO_ROUTE_40_HIDDEN_HYPER_POTION",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

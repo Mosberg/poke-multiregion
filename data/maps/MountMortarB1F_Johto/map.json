@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortarB1F_Johto_MountMortarB1FHyperPotion_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_B1F_HYPER_POTION"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortarB1F_Johto_MountMortarB1FCarbos_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_B1F_CARBOS"
     },
     {
@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortarB1F_Johto_MountMortarB1FFullRestore_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_B1F_FULL_RESTORE"
     },
     {
@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortarB1F_Johto_MountMortarB1FMaxEther_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_B1F_MAX_ETHER"
     },
     {
@@ -104,7 +104,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "MountMortarB1F_Johto_MountMortarB1FPPUp_Entry",
       "flag": "FLAG_JOHTO_MOUNT_MORTAR_B1F_PP_UP"
     }
   ],
@@ -127,12 +127,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 4,
       "y": 6,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_JOHTO_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "UnionCave1F_Johto_UnionCave1FGreatBall_Entry",
       "flag": "FLAG_JOHTO_UNION_CAVE_1F_GREAT_BALL"
     },
     {
@@ -104,7 +104,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "UnionCave1F_Johto_UnionCave1FXAttack_Entry",
       "flag": "FLAG_JOHTO_UNION_CAVE_1F_X_ATTACK"
     },
     {
@@ -117,7 +117,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "UnionCave1F_Johto_UnionCave1FPotion_Entry",
       "flag": "FLAG_JOHTO_UNION_CAVE_1F_POTION"
     },
     {
@@ -130,7 +130,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "UnionCave1F_Johto_UnionCave1FAwakening_Entry",
       "flag": "FLAG_JOHTO_UNION_CAVE_1F_AWAKENING"
     }
   ],

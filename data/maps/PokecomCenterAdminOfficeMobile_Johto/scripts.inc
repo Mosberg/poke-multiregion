@@ -59,7 +59,7 @@ PokecomCenterAdminOfficeMobile_Johto_PokecomCenterAdminOfficeMobileComputer1:
 	waitbuttonpress
 
 PokecomCenterAdminOfficeMobile_Johto_PokecomCenterAdminOfficeMobileComputer1_loop:
-	@ TODO unsupported: refreshmap 
+	@ TODO unsupported: loadmenu .Computer1MenuHeader
 	goto Johto_EventScript_Unimplemented
 
 PokecomCenterAdminOfficeMobile_Johto_PokecomCenterAdminOfficeMobileComputer2:
@@ -68,7 +68,7 @@ PokecomCenterAdminOfficeMobile_Johto_PokecomCenterAdminOfficeMobileComputer2:
 	waitbuttonpress
 
 PokecomCenterAdminOfficeMobile_Johto_PokecomCenterAdminOfficeMobileComputer2_loop:
-	@ TODO unsupported: refreshmap 
+	@ TODO unsupported: loadmenu .Computer2MenuHeader
 	goto Johto_EventScript_Unimplemented
 
 PokecomCenterAdminOfficeMobile_Johto_PokecomCenterAdminOfficeMobileComputer3:

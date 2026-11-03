@@ -6,6 +6,18 @@ TeamRocketBaseB1F_Johto_OnTransition:
 	call TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHideSecurityGruntCallback_Cb
 	end
 
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHyperPotion_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHyperPotion
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FNugget_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_TeamRocketBaseB1FNugget
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FGuardSpec_Entry::
+	lockall
+	goto TeamRocketBaseB1F_Johto_TeamRocketBaseB1FGuardSpec
+
 TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_Entry::
 	lockall
 	goto TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch
@@ -623,6 +635,21 @@ TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_SecretSwitchOff:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHyperPotion:
+	finditem ITEM_HYPER_POTION
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FNugget:
+	finditem ITEM_NUGGET
+	releaseall
+	end
+
+TeamRocketBaseB1F_Johto_TeamRocketBaseB1FGuardSpec:
+	finditem ITEM_GUARD_SPEC
 	releaseall
 	end
 

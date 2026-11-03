@@ -6,6 +6,22 @@ GoldenrodDeptStoreB1F_Johto_OnTransition:
 	call GoldenrodDeptStoreB1F_Johto_GoldenRodDeptStoreUnblockCallback_Cb
 	end
 
+GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FEther_Entry::
+	lockall
+	goto GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FEther
+
+GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FAmuletCoin_Entry::
+	lockall
+	goto GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FAmuletCoin
+
+GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FBurnHeal_Entry::
+	lockall
+	goto GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FBurnHeal
+
+GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FUltraBall_Entry::
+	lockall
+	goto GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FUltraBall
+
 GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FBlackBelt1Script_Entry::
 	lockall
 	goto GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FBlackBelt1Script
@@ -57,6 +73,26 @@ GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FMachopScript:
 	waitmoncry
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FEther:
+	finditem ITEM_ETHER
+	releaseall
+	end
+
+GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FAmuletCoin:
+	finditem ITEM_AMULET_COIN
+	releaseall
+	end
+
+GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FBurnHeal:
+	finditem ITEM_BURN_HEAL
+	releaseall
+	end
+
+GoldenrodDeptStoreB1F_Johto_GoldenrodDeptStoreB1FUltraBall:
+	finditem ITEM_ULTRA_BALL
 	releaseall
 	end
 

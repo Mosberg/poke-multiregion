@@ -1,6 +1,21 @@
 UnionCave1F_Johto_MapScripts::
 	.byte 0
 
+UnionCave1F_Johto_UnionCave1FGreatBall_Entry::
+	lockall
+	goto UnionCave1F_Johto_UnionCave1FGreatBall
+
+UnionCave1F_Johto_UnionCave1FXAttack_Entry::
+	lockall
+	goto UnionCave1F_Johto_UnionCave1FXAttack
+
+UnionCave1F_Johto_UnionCave1FPotion_Entry::
+	lockall
+	goto UnionCave1F_Johto_UnionCave1FPotion
+
+UnionCave1F_Johto_UnionCave1FAwakening_Entry::
+	lockall
+	goto UnionCave1F_Johto_UnionCave1FAwakening
 
 
 UnionCave1F_Johto_TrainerPokemaniacLarry::
@@ -75,6 +90,26 @@ UnionCave1F_Johto_TrainerFirebreatherRay_Script:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+UnionCave1F_Johto_UnionCave1FGreatBall:
+	finditem ITEM_GREAT_BALL
+	releaseall
+	end
+
+UnionCave1F_Johto_UnionCave1FXAttack:
+	finditem ITEM_X_ATTACK
+	releaseall
+	end
+
+UnionCave1F_Johto_UnionCave1FPotion:
+	finditem ITEM_POTION
+	releaseall
+	end
+
+UnionCave1F_Johto_UnionCave1FAwakening:
+	finditem ITEM_AWAKENING
 	releaseall
 	end
 

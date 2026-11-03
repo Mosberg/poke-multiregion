@@ -5,6 +5,10 @@ Route26_Johto_Route26FruitTree_Entry::
 	lockall
 	goto Route26_Johto_Route26FruitTree
 
+Route26_Johto_Route26MaxElixer_Entry::
+	lockall
+	goto Route26_Johto_Route26MaxElixer
+
 Route26_Johto_Route26Sign_Entry::
 	lockall
 	goto Route26_Johto_Route26Sign
@@ -168,6 +172,11 @@ Route26_Johto_Route26FruitTree:
 	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_26, Johto_Std_FruitTreeEmpty
 	giveitem ITEM_ASPEAR_BERRY
 	setflag FLAG_JOHTO_FRUITTREE_ROUTE_26
+	releaseall
+	end
+
+Route26_Johto_Route26MaxElixer:
+	finditem ITEM_MAX_ELIXER
 	releaseall
 	end
 

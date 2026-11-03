@@ -1,6 +1,17 @@
 OlivineLighthouse5F_Johto_MapScripts::
 	.byte 0
 
+OlivineLighthouse5F_Johto_OlivineLighthouse5FRareCandy_Entry::
+	lockall
+	goto OlivineLighthouse5F_Johto_OlivineLighthouse5FRareCandy
+
+OlivineLighthouse5F_Johto_OlivineLighthouse5FSuperRepel_Entry::
+	lockall
+	goto OlivineLighthouse5F_Johto_OlivineLighthouse5FSuperRepel
+
+OlivineLighthouse5F_Johto_OlivineLighthouse5FTMSwagger_Entry::
+	lockall
+	goto OlivineLighthouse5F_Johto_OlivineLighthouse5FTMSwagger
 
 
 OlivineLighthouse5F_Johto_TrainerBirdKeeperDenis::
@@ -30,6 +41,21 @@ OlivineLighthouse5F_Johto_TrainerSailorErnest_Script:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+OlivineLighthouse5F_Johto_OlivineLighthouse5FRareCandy:
+	finditem ITEM_RARE_CANDY
+	releaseall
+	end
+
+OlivineLighthouse5F_Johto_OlivineLighthouse5FSuperRepel:
+	finditem ITEM_SUPER_REPEL
+	releaseall
+	end
+
+OlivineLighthouse5F_Johto_OlivineLighthouse5FTMSwagger:
+	finditem ITEM_NUGGET
 	releaseall
 	end
 

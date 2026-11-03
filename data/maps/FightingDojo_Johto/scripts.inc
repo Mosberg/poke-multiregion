@@ -5,6 +5,10 @@ FightingDojo_Johto_FightingDojoBlackBelt_Entry::
 	lockall
 	goto FightingDojo_Johto_FightingDojoBlackBelt
 
+FightingDojo_Johto_FightingDojoFocusBand_Entry::
+	lockall
+	goto FightingDojo_Johto_FightingDojoFocusBand
+
 FightingDojo_Johto_FightingDojoSign1_Entry::
 	lockall
 	goto FightingDojo_Johto_FightingDojoSign1
@@ -36,6 +40,11 @@ FightingDojo_Johto_FightingDojoSign2:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+FightingDojo_Johto_FightingDojoFocusBand:
+	finditem ITEM_FOCUS_BAND
 	releaseall
 	end
 

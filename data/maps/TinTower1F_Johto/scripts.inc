@@ -114,8 +114,8 @@ TinTower1F_Johto_TinTower1FSage5Script:
 	setmetatile 10, 3, 513, 0
 	setmetatile 11, 3, 513, 0
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	setflag FLAG_JOHTO_GOT_RAINBOW_WING
+	closemessage
 
 TinTower1F_Johto_TinTower1FSage5Script_GotRainbowWing:
 	message TinTower1F_Johto_TinTower1FSage5Text2

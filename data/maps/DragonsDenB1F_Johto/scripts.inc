@@ -14,6 +14,14 @@ DragonsDenB1F_Johto_DragonsDenB1FRivalScript_Entry::
 	lockall
 	goto DragonsDenB1F_Johto_DragonsDenB1FRivalScript
 
+DragonsDenB1F_Johto_DragonsDenB1FCalcium_Entry::
+	lockall
+	goto DragonsDenB1F_Johto_DragonsDenB1FCalcium
+
+DragonsDenB1F_Johto_DragonsDenB1FMaxElixer_Entry::
+	lockall
+	goto DragonsDenB1F_Johto_DragonsDenB1FMaxElixer
+
 DragonsDenB1F_Johto_DragonShrineSignpost_Entry::
 	lockall
 	goto DragonsDenB1F_Johto_DragonShrineSignpost
@@ -174,6 +182,16 @@ DragonsDenB1F_Johto_DragonShrineSignpost:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+DragonsDenB1F_Johto_DragonsDenB1FCalcium:
+	finditem ITEM_CALCIUM
+	releaseall
+	end
+
+DragonsDenB1F_Johto_DragonsDenB1FMaxElixer:
+	finditem ITEM_MAX_ELIXER
 	releaseall
 	end
 

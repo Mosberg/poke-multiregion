@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "UnionCaveB2F_Johto_UnionCaveB2FElixer_Entry",
       "flag": "FLAG_JOHTO_UNION_CAVE_B2F_ELIXER"
     },
     {
@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "UnionCaveB2F_Johto_UnionCaveB2FHyperPotion_Entry",
       "flag": "FLAG_JOHTO_UNION_CAVE_B2F_HYPER_POTION"
     },
     {

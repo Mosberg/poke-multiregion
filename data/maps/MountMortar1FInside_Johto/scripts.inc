@@ -5,6 +5,34 @@ MountMortar1FInside_Johto_MountMortar1FBoulder_Entry::
 	lockall
 	goto MountMortar1FInside_Johto_MountMortar1FBoulder
 
+MountMortar1FInside_Johto_MountMortar1FInsideEscapeRope_Entry::
+	lockall
+	goto MountMortar1FInside_Johto_MountMortar1FInsideEscapeRope
+
+MountMortar1FInside_Johto_MountMortar1FInsideMaxRevive_Entry::
+	lockall
+	goto MountMortar1FInside_Johto_MountMortar1FInsideMaxRevive
+
+MountMortar1FInside_Johto_MountMortar1FInsideHyperPotion_Entry::
+	lockall
+	goto MountMortar1FInside_Johto_MountMortar1FInsideHyperPotion
+
+MountMortar1FInside_Johto_MountMortar1FInsideMaxPotion_Entry::
+	lockall
+	goto MountMortar1FInside_Johto_MountMortar1FInsideMaxPotion
+
+MountMortar1FInside_Johto_MountMortar1FInsideNugget_Entry::
+	lockall
+	goto MountMortar1FInside_Johto_MountMortar1FInsideNugget
+
+MountMortar1FInside_Johto_MountMortar1FInsideIron_Entry::
+	lockall
+	goto MountMortar1FInside_Johto_MountMortar1FInsideIron
+
+MountMortar1FInside_Johto_MountMortar1FInsideUltraBall_Entry::
+	lockall
+	goto MountMortar1FInside_Johto_MountMortar1FInsideUltraBall
+
 
 MountMortar1FInside_Johto_TrainerPokemaniacMiller::
 	trainerbattle_single TRAINER_JOHTO_POKEMANIAC_MILLER, MountMortar1FInside_Johto_PokemaniacMillerSeenText, MountMortar1FInside_Johto_PokemaniacMillerBeatenText
@@ -38,6 +66,41 @@ MountMortar1FInside_Johto_TrainerSupernerdMarkus_Script:
 
 MountMortar1FInside_Johto_MountMortar1FBoulder:
 	goto Johto_Std_StrengthBoulderScript
+
+MountMortar1FInside_Johto_MountMortar1FInsideEscapeRope:
+	finditem ITEM_ESCAPE_ROPE
+	releaseall
+	end
+
+MountMortar1FInside_Johto_MountMortar1FInsideMaxRevive:
+	finditem ITEM_MAX_REVIVE
+	releaseall
+	end
+
+MountMortar1FInside_Johto_MountMortar1FInsideHyperPotion:
+	finditem ITEM_HYPER_POTION
+	releaseall
+	end
+
+MountMortar1FInside_Johto_MountMortar1FInsideMaxPotion:
+	finditem ITEM_MAX_POTION
+	releaseall
+	end
+
+MountMortar1FInside_Johto_MountMortar1FInsideNugget:
+	finditem ITEM_NUGGET
+	releaseall
+	end
+
+MountMortar1FInside_Johto_MountMortar1FInsideIron:
+	finditem ITEM_IRON
+	releaseall
+	end
+
+MountMortar1FInside_Johto_MountMortar1FInsideUltraBall:
+	finditem ITEM_ULTRA_BALL
+	releaseall
+	end
 
 MountMortar1FInside_Johto_PokemaniacMillerSeenText:
 	.string "I'm not losing\n"

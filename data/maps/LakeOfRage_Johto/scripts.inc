@@ -32,6 +32,14 @@ LakeOfRage_Johto_WesleyScript_Entry::
 	lockall
 	goto LakeOfRage_Johto_WesleyScript
 
+LakeOfRage_Johto_LakeOfRageElixer_Entry::
+	lockall
+	goto LakeOfRage_Johto_LakeOfRageElixer
+
+LakeOfRage_Johto_LakeOfRageTMDetect_Entry::
+	lockall
+	goto LakeOfRage_Johto_LakeOfRageTMDetect
+
 LakeOfRage_Johto_LakeOfRageSign_Entry::
 	lockall
 	goto LakeOfRage_Johto_LakeOfRageSign
@@ -254,6 +262,16 @@ LakeOfRage_Johto_WesleyNotWednesdayScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+LakeOfRage_Johto_LakeOfRageElixer:
+	finditem ITEM_ELIXER
+	releaseall
+	end
+
+LakeOfRage_Johto_LakeOfRageTMDetect:
+	finditem ITEM_NUGGET
 	releaseall
 	end
 

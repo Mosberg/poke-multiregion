@@ -2,6 +2,14 @@ Route12_Johto_MapScripts::
 		map_script MAP_SCRIPT_ON_LOAD, Route12_Johto_OnLoad
 	.byte 0
 
+Route12_Johto_Route12Calcium_Entry::
+	lockall
+	goto Route12_Johto_Route12Calcium
+
+Route12_Johto_Route12Nugget_Entry::
+	lockall
+	goto Route12_Johto_Route12Nugget
+
 Route12_Johto_Route12Sign_Entry::
 	lockall
 	goto Route12_Johto_Route12Sign
@@ -84,6 +92,16 @@ Route12_Johto_FishingSpotSign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route12_Johto_Route12Calcium:
+	finditem ITEM_CALCIUM
+	releaseall
+	end
+
+Route12_Johto_Route12Nugget:
+	finditem ITEM_NUGGET
 	releaseall
 	end
 

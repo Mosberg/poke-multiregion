@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "WhirlIslandB1F_Johto_WhirlIslandB1FFullRestore_Entry",
       "flag": "FLAG_JOHTO_WHIRL_ISLAND_B1F_FULL_RESTORE"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "WhirlIslandB1F_Johto_WhirlIslandB1FCarbos_Entry",
       "flag": "FLAG_JOHTO_WHIRL_ISLAND_B1F_CARBOS"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "WhirlIslandB1F_Johto_WhirlIslandB1FCalcium_Entry",
       "flag": "FLAG_JOHTO_WHIRL_ISLAND_B1F_CALCIUM"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "WhirlIslandB1F_Johto_WhirlIslandB1FNugget_Entry",
       "flag": "FLAG_JOHTO_WHIRL_ISLAND_B1F_NUGGET"
     },
     {
@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "WhirlIslandB1F_Johto_WhirlIslandB1FEscapeRope_Entry",
       "flag": "FLAG_JOHTO_WHIRL_ISLAND_B1F_ESCAPE_ROPE"
     },
     {
@@ -163,28 +163,34 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 30,
       "y": 4,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_JOHTO_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 36,
       "y": 18,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_ULTRA_BALL",
+      "flag": "FLAG_JOHTO_WHIRL_ISLAND_B1F_HIDDEN_ULTRA_BALL",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 2,
       "y": 23,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_FULL_RESTORE",
+      "flag": "FLAG_JOHTO_WHIRL_ISLAND_B1F_HIDDEN_FULL_RESTORE",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

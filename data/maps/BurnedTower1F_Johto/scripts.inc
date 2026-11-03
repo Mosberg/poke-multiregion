@@ -18,6 +18,10 @@ BurnedTower1F_Johto_BurnedTower1FMortyScript_Entry::
 	lockall
 	goto BurnedTower1F_Johto_BurnedTower1FMortyScript
 
+BurnedTower1F_Johto_BurnedTower1FHPUp_Entry::
+	lockall
+	goto BurnedTower1F_Johto_BurnedTower1FHPUp
+
 BurnedTower1F_Johto_BurnedTowerRivalBattleScript_Entry::
 	lockall
 	goto BurnedTower1F_Johto_BurnedTowerRivalBattleScript
@@ -95,7 +99,19 @@ BurnedTower1F_Johto_BurnedTowerRivalBattleScript_returnfrombattle:
 	setmetatile 10, 9, 544, 1
 	setmetatile 11, 9, 513, 0
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
+	delay 15
+	applymovement OBJ_EVENT_ID_PLAYER, BurnedTower1F_Johto_BurnedTower1FMovement_PlayerStartsToFall
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playse SE_PIN
+	applymovement 3, Johto_Movement_Emote_exclamation_mark
+	waitmovement 3
+	message BurnedTower1F_Johto_BurnedTowerRival_AfterText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_HOLE_IN_BURNED_TOWER
+	delay 15
+	@ TODO unsupported: warpcheck 
 	goto Johto_EventScript_Unimplemented
 
 BurnedTower1F_Johto_BurnedTower1FEusineScript:
@@ -119,12 +135,20 @@ BurnedTower1F_Johto_BurnedTower1FMortyScript:
 BurnedTower1F_Johto_BurnedTower1FRock:
 	goto Johto_Std_SmashRockScript
 
+BurnedTower1F_Johto_BurnedTower1FHPUp:
+	finditem ITEM_HP_UP
+	releaseall
+	end
+
 BurnedTower1F_Johto_BurnedTowerMovement_PlayerWalksToRival:
 	walk_left
 	step_end
 
 BurnedTower1F_Johto_BurnedTowerMovement_RivalWalksToPlayer:
 	walk_right
+	step_end
+
+BurnedTower1F_Johto_BurnedTower1FMovement_PlayerStartsToFall:
 	step_end
 
 BurnedTower1F_Johto_BurnedTower1FEusineMovement:
@@ -164,6 +188,14 @@ BurnedTower1F_Johto_BurnedTowerRival_AfterText1:
 	.string "able to catch a"
 	.string "\plegendary POKéMON\n"
 	.string "anyway.$"
+
+BurnedTower1F_Johto_BurnedTowerRival_AfterText2:
+	.string "Humph!"
+	.string "\pWhat are you doing\n"
+	.string "falling into a"
+	.string "\phole? Some genius\n"
+	.string "you are!"
+	.string "\pServes you right!$"
 
 BurnedTower1F_Johto_BurnedTower1FEusineIntroText:
 	.string "EUSINE: My name's\n"

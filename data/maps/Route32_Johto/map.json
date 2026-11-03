@@ -167,7 +167,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route32_Johto_Route32GreatBall_Entry",
       "flag": "FLAG_JOHTO_ROUTE_32_GREAT_BALL"
     },
     {
@@ -206,7 +206,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "Route32_Johto_Route32Repel_Entry",
       "flag": "FLAG_JOHTO_ROUTE_32_REPEL"
     }
   ],
@@ -294,20 +294,24 @@
       "script": "Route32_Johto_Route32PokecenterSign_Entry"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 12,
       "y": 67,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_GREAT_BALL",
+      "flag": "FLAG_JOHTO_ROUTE_32_HIDDEN_GREAT_BALL",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 11,
       "y": 40,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_SUPER_POTION",
+      "flag": "FLAG_JOHTO_ROUTE_32_HIDDEN_SUPER_POTION",
+      "quantity": 1,
+      "underfoot": false
     },
     {
       "type": "sign",

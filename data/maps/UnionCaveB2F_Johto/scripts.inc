@@ -6,6 +6,14 @@ UnionCaveB2F_Johto_OnTransition:
 	call UnionCaveB2F_Johto_UnionCaveB2FLaprasCallback_Cb
 	end
 
+UnionCaveB2F_Johto_UnionCaveB2FElixer_Entry::
+	lockall
+	goto UnionCaveB2F_Johto_UnionCaveB2FElixer
+
+UnionCaveB2F_Johto_UnionCaveB2FHyperPotion_Entry::
+	lockall
+	goto UnionCaveB2F_Johto_UnionCaveB2FHyperPotion
+
 UnionCaveB2F_Johto_UnionCaveLapras_Entry::
 	lockall
 	goto UnionCaveB2F_Johto_UnionCaveLapras
@@ -64,6 +72,16 @@ UnionCaveB2F_Johto_TrainerCooltrainerfEmma_Script:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+UnionCaveB2F_Johto_UnionCaveB2FElixer:
+	finditem ITEM_ELIXER
+	releaseall
+	end
+
+UnionCaveB2F_Johto_UnionCaveB2FHyperPotion:
+	finditem ITEM_HYPER_POTION
 	releaseall
 	end
 

@@ -5,6 +5,18 @@ Route44_Johto_Route44FruitTree_Entry::
 	lockall
 	goto Route44_Johto_Route44FruitTree
 
+Route44_Johto_Route44MaxRevive_Entry::
+	lockall
+	goto Route44_Johto_Route44MaxRevive
+
+Route44_Johto_Route44UltraBall_Entry::
+	lockall
+	goto Route44_Johto_Route44UltraBall
+
+Route44_Johto_Route44MaxRepel_Entry::
+	lockall
+	goto Route44_Johto_Route44MaxRepel
+
 Route44_Johto_Route44Sign1_Entry::
 	lockall
 	goto Route44_Johto_Route44Sign1
@@ -217,6 +229,21 @@ Route44_Johto_Route44FruitTree:
 	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_44, Johto_Std_FruitTreeEmpty
 	giveitem ITEM_RAWST_BERRY
 	setflag FLAG_JOHTO_FRUITTREE_ROUTE_44
+	releaseall
+	end
+
+Route44_Johto_Route44MaxRevive:
+	finditem ITEM_MAX_REVIVE
+	releaseall
+	end
+
+Route44_Johto_Route44UltraBall:
+	finditem ITEM_ULTRA_BALL
+	releaseall
+	end
+
+Route44_Johto_Route44MaxRepel:
+	finditem ITEM_MAX_REPEL
 	releaseall
 	end
 

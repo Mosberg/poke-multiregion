@@ -3,7 +3,7 @@
 Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
 Hard caps and approximations live in LIMITS.md.
 
-## Johto: scripts (318 commands still become "not converted yet"; all 383 Johto maps load in the emulator smoke test, 0 failures)
+## Johto: scripts (316 commands still become "not converted yet"; all 383 Johto maps load in the emulator smoke test, 0 failures)
 
 Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
 
@@ -20,7 +20,7 @@ Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project
 - Script sound effects not in the SFX table (`SFX_READ_TEXT_2`, `SFX_STRENGTH`, `SFX_WARP_FROM/TO`, `SFX_FLY`)
 
 Plus:
-- Hidden items (`bg_event` ITEM / `hiddenitem`) and `BGEVENT_IFSET` events are not converted (85 hidden items)
+- `BGEVENT_IFSET` bg events are not converted (hidden items now are: 60 maps; item balls work - before this fix every Johto item ball was a stub; tested: Sprout Tower 3F Potion)
 - Coord events with `SCENE_ANY` (no scene variable) are skipped
 - Non-script object types (`OBJECTTYPE_COMMAND` other than `jumptext*`, e.g. `pokemart`) are not converted
 - Cross-map script/label references (`farjump`, shared helper scripts) are not resolved

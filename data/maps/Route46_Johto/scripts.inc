@@ -9,6 +9,10 @@ Route46_Johto_Route46FruitTree2_Entry::
 	lockall
 	goto Route46_Johto_Route46FruitTree2
 
+Route46_Johto_Route46XSpeed_Entry::
+	lockall
+	goto Route46_Johto_Route46XSpeed
+
 Route46_Johto_Route46Sign_Entry::
 	lockall
 	goto Route46_Johto_Route46Sign
@@ -92,6 +96,11 @@ Route46_Johto_Route46Sign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route46_Johto_Route46XSpeed:
+	finditem ITEM_X_SPEED
 	releaseall
 	end
 

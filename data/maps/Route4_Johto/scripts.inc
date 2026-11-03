@@ -1,6 +1,10 @@
 Route4_Johto_MapScripts::
 	.byte 0
 
+Route4_Johto_Route4HPUp_Entry::
+	lockall
+	goto Route4_Johto_Route4HPUp
+
 Route4_Johto_MtMoonSquareSign_Entry::
 	lockall
 	goto Route4_Johto_MtMoonSquareSign
@@ -56,6 +60,11 @@ Route4_Johto_MtMoonSquareSign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route4_Johto_Route4HPUp:
+	finditem ITEM_HP_UP
 	releaseall
 	end
 

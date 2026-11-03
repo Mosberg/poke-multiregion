@@ -23,6 +23,14 @@ Route31_Johto_Route31FruitTree_Entry::
 	lockall
 	goto Route31_Johto_Route31FruitTree
 
+Route31_Johto_Route31Potion_Entry::
+	lockall
+	goto Route31_Johto_Route31Potion
+
+Route31_Johto_Route31PokeBall_Entry::
+	lockall
+	goto Route31_Johto_Route31PokeBall
+
 Route31_Johto_Route31Sign_Entry::
 	lockall
 	goto Route31_Johto_Route31Sign
@@ -179,6 +187,16 @@ Route31_Johto_Route31FruitTree:
 	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_31, Johto_Std_FruitTreeEmpty
 	giveitem ITEM_PERSIM_BERRY
 	setflag FLAG_JOHTO_FRUITTREE_ROUTE_31
+	releaseall
+	end
+
+Route31_Johto_Route31Potion:
+	finditem ITEM_POTION
+	releaseall
+	end
+
+Route31_Johto_Route31PokeBall:
+	finditem ITEM_POKE_BALL
 	releaseall
 	end
 

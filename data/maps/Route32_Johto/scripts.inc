@@ -15,6 +15,10 @@ Route32_Johto_SlowpokeTailSalesmanScript_Entry::
 	lockall
 	goto Route32_Johto_SlowpokeTailSalesmanScript
 
+Route32_Johto_Route32GreatBall_Entry::
+	lockall
+	goto Route32_Johto_Route32GreatBall
+
 Route32_Johto_Route32RoarTMGuyScript_Entry::
 	lockall
 	goto Route32_Johto_Route32RoarTMGuyScript
@@ -22,6 +26,10 @@ Route32_Johto_Route32RoarTMGuyScript_Entry::
 Route32_Johto_FriedaScript_Entry::
 	lockall
 	goto Route32_Johto_FriedaScript
+
+Route32_Johto_Route32Repel_Entry::
+	lockall
+	goto Route32_Johto_Route32Repel
 
 Route32_Johto_Route32Sign_Entry::
 	lockall
@@ -387,6 +395,16 @@ Route32_Johto_FriedaScript_NotFriday:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route32_Johto_Route32GreatBall:
+	finditem ITEM_GREAT_BALL
+	releaseall
+	end
+
+Route32_Johto_Route32Repel:
+	finditem ITEM_REPEL
 	releaseall
 	end
 

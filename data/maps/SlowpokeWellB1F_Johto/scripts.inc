@@ -17,6 +17,10 @@ SlowpokeWellB1F_Johto_SlowpokeWellB1FBoulder_Entry::
 	lockall
 	goto SlowpokeWellB1F_Johto_SlowpokeWellB1FBoulder
 
+SlowpokeWellB1F_Johto_SlowpokeWellB1FSuperPotion_Entry::
+	lockall
+	goto SlowpokeWellB1F_Johto_SlowpokeWellB1FSuperPotion
+
 
 SlowpokeWellB1F_Johto_SlowpokeWellB1FKurtScript:
 	faceplayer
@@ -153,6 +157,11 @@ SlowpokeWellB1F_Johto_SlowpokeWellB1FTaillessSlowpokeScript:
 
 SlowpokeWellB1F_Johto_SlowpokeWellB1FBoulder:
 	goto Johto_Std_StrengthBoulderScript
+
+SlowpokeWellB1F_Johto_SlowpokeWellB1FSuperPotion:
+	finditem ITEM_SUPER_POTION
+	releaseall
+	end
 
 SlowpokeWellB1F_Johto_KurtSlowpokeWellVictoryMovementData:
 	walk_left

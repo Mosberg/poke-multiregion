@@ -13,6 +13,10 @@ TeamRocketBaseB2F_Johto_RocketElectrode3_Entry::
 	lockall
 	goto TeamRocketBaseB2F_Johto_RocketElectrode3
 
+TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTMThief_Entry::
+	lockall
+	goto TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTMThief
+
 TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Entry::
 	lockall
 	goto TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript
@@ -322,6 +326,11 @@ TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Deactivated:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTMThief:
+	finditem ITEM_TM_THIEF
 	releaseall
 	end
 

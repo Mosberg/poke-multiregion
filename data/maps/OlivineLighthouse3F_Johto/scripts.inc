@@ -1,6 +1,9 @@
 OlivineLighthouse3F_Johto_MapScripts::
 	.byte 0
 
+OlivineLighthouse3F_Johto_OlivineLighthouse3FEther_Entry::
+	lockall
+	goto OlivineLighthouse3F_Johto_OlivineLighthouse3FEther
 
 
 OlivineLighthouse3F_Johto_TrainerBirdKeeperTheo::
@@ -45,6 +48,11 @@ OlivineLighthouse3F_Johto_TrainerSailorTerrell_Script:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+OlivineLighthouse3F_Johto_OlivineLighthouse3FEther:
+	finditem ITEM_ETHER
 	releaseall
 	end
 

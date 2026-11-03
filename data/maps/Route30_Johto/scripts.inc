@@ -22,6 +22,10 @@ Route30_Johto_Route30CooltrainerFScript_Entry::
 	lockall
 	goto Route30_Johto_Route30CooltrainerFScript
 
+Route30_Johto_Route30Antidote_Entry::
+	lockall
+	goto Route30_Johto_Route30Antidote
+
 Route30_Johto_Route30Sign_Entry::
 	lockall
 	goto Route30_Johto_Route30Sign
@@ -192,6 +196,11 @@ Route30_Johto_Route30TrainerTips:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route30_Johto_Route30Antidote:
+	finditem ITEM_ANTIDOTE
 	releaseall
 	end
 

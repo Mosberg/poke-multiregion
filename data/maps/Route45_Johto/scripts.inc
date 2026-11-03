@@ -5,6 +5,22 @@ Route45_Johto_Route45FruitTree_Entry::
 	lockall
 	goto Route45_Johto_Route45FruitTree
 
+Route45_Johto_Route45Nugget_Entry::
+	lockall
+	goto Route45_Johto_Route45Nugget
+
+Route45_Johto_Route45Revive_Entry::
+	lockall
+	goto Route45_Johto_Route45Revive
+
+Route45_Johto_Route45Elixer_Entry::
+	lockall
+	goto Route45_Johto_Route45Elixer
+
+Route45_Johto_Route45MaxPotion_Entry::
+	lockall
+	goto Route45_Johto_Route45MaxPotion
+
 Route45_Johto_TrainerCamperQuentin_Entry::
 	lockall
 	goto Route45_Johto_TrainerCamperQuentin
@@ -193,6 +209,26 @@ Route45_Johto_Route45FruitTree:
 	goto_if_set FLAG_JOHTO_FRUITTREE_ROUTE_45, Johto_Std_FruitTreeEmpty
 	giveitem ITEM_LEPPA_BERRY
 	setflag FLAG_JOHTO_FRUITTREE_ROUTE_45
+	releaseall
+	end
+
+Route45_Johto_Route45Nugget:
+	finditem ITEM_NUGGET
+	releaseall
+	end
+
+Route45_Johto_Route45Revive:
+	finditem ITEM_REVIVE
+	releaseall
+	end
+
+Route45_Johto_Route45Elixer:
+	finditem ITEM_ELIXER
+	releaseall
+	end
+
+Route45_Johto_Route45MaxPotion:
+	finditem ITEM_MAX_POTION
 	releaseall
 	end
 

@@ -49,12 +49,14 @@
       "script": "Route28_Johto_Route28Sign_Entry"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 25,
       "y": 2,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_JOHTO_ROUTE_28_HIDDEN_RARE_CANDY",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

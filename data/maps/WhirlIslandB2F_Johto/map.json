@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "WhirlIslandB2F_Johto_WhirlIslandB2FFullRestore_Entry",
       "flag": "FLAG_JOHTO_WHIRL_ISLAND_B2F_FULL_RESTORE"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "WhirlIslandB2F_Johto_WhirlIslandB2FMaxRevive_Entry",
       "flag": "FLAG_JOHTO_WHIRL_ISLAND_B2F_MAX_REVIVE"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "WhirlIslandB2F_Johto_WhirlIslandB2FMaxElixer_Entry",
       "flag": "FLAG_JOHTO_WHIRL_ISLAND_B2F_MAX_ELIXER"
     }
   ],

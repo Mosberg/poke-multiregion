@@ -65,7 +65,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "TeamRocketBaseB1F_Johto_TeamRocketBaseB1FHyperPotion_Entry",
       "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B1F_HYPER_POTION"
     },
     {
@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "TeamRocketBaseB1F_Johto_TeamRocketBaseB1FNugget_Entry",
       "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B1F_NUGGET"
     },
     {
@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "TeamRocketBaseB1F_Johto_TeamRocketBaseB1FGuardSpec_Entry",
       "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B1F_GUARD_SPEC"
     }
   ],
@@ -463,12 +463,14 @@
       "script": "TeamRocketBaseB1F_Johto_TeamRocketBaseB1FBookshelf_Entry"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 3,
       "y": 11,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_REVIVE",
+      "flag": "FLAG_JOHTO_TEAM_ROCKET_BASE_B1F_HIDDEN_REVIVE",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

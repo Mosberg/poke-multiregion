@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideFullHeal_Entry",
       "flag": "FLAG_JOHTO_ICE_PATH_B2F_MAHOGANY_SIDE_FULL_HEAL"
     },
     {
@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "IcePathB2FMahoganySide_Johto_IcePathB2FMahoganySideMaxPotion_Entry",
       "flag": "FLAG_JOHTO_ICE_PATH_B2F_MAHOGANY_SIDE_MAX_POTION"
     }
   ],
@@ -142,12 +142,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 0,
       "y": 17,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_CARBOS",
+      "flag": "FLAG_JOHTO_ICE_PATH_B2F_MAHOGANY_SIDE_HIDDEN_CARBOS",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

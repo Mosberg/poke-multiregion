@@ -24,8 +24,12 @@ KarensRoom_Johto_KarensRoomDoorLocksBehindYouScript:
 	setmetatile 4, 15, 528, 1
 	setmetatile 5, 15, 528, 1
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setvar VAR_JOHTO_SCENE_KARENS_ROOM, 1
+	setflag FLAG_JOHTO_KARENS_ROOM_ENTRANCE_CLOSED
+	waitse
+	releaseall
+	end
 
 KarensRoom_Johto_KarenScript_Battle:
 	faceplayer
@@ -46,8 +50,11 @@ KarensRoom_Johto_KarenScript_Battle:
 	setmetatile 4, 3, 519, 0
 	setmetatile 5, 3, 519, 0
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setflag FLAG_JOHTO_KARENS_ROOM_EXIT_OPEN
+	waitse
+	releaseall
+	end
 
 KarensRoom_Johto_KarenScript_AfterBattle:
 	message KarensRoom_Johto_KarenScript_KarenDefeatText

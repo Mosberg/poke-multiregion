@@ -1,6 +1,10 @@
 SproutTower2F_Johto_MapScripts::
 	.byte 0
 
+SproutTower2F_Johto_SproutTower2FXAccuracy_Entry::
+	lockall
+	goto SproutTower2F_Johto_SproutTower2FXAccuracy
+
 SproutTower2F_Johto_SproutTower2FStatue_Entry::
 	lockall
 	goto SproutTower2F_Johto_SproutTower2FStatue
@@ -41,6 +45,11 @@ SproutTower2F_Johto_SproutTower2FStatue:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+SproutTower2F_Johto_SproutTower2FXAccuracy:
+	finditem ITEM_X_ACCURACY
 	releaseall
 	end
 

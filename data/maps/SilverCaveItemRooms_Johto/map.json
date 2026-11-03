@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SilverCaveItemRooms_Johto_SilverCaveItemRoomsMaxRevive_Entry",
       "flag": "FLAG_JOHTO_SILVER_CAVE_ITEM_ROOMS_MAX_REVIVE"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "SilverCaveItemRooms_Johto_SilverCaveItemRoomsFullRestore_Entry",
       "flag": "FLAG_JOHTO_SILVER_CAVE_ITEM_ROOMS_FULL_RESTORE"
     }
   ],

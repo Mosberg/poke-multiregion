@@ -96,8 +96,22 @@ MahoganyMart1F_Johto_MahoganyMart1FLanceUncoversStaircaseScript:
 	setmetatile 6, 3, 521, 0
 	setmetatile 7, 3, 549, 0
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setflag FLAG_JOHTO_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART
+	applymovement 3, Johto_Movement_Face_Left
+	waitmovement 3
+	message MahoganyMart1F_Johto_MahoganyMart1FLanceSplitUpText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 3, MahoganyMart1F_Johto_MahoganyMart1FLanceGoDownStairsMovement
+	waitmovement 3
+	playse SE_EXIT
+	removeobject 3
+	setvar VAR_JOHTO_SCENE_MAHOGANY_MART_1F, 0
+	waitse
+	releaseall
+	end
 
 MahoganyMart1F_Johto_MahoganyMart1FGrannyScript:
 	faceplayer
@@ -146,6 +160,10 @@ MahoganyMart1F_Johto_MahoganyMart1FLanceApproachHiddenStairsMovement:
 	walk_slow_right
 	step_end
 
+MahoganyMart1F_Johto_MahoganyMart1FLanceGoDownStairsMovement:
+	walk_slow_right
+	step_end
+
 MahoganyMart1F_Johto_MahoganyMart1FPharmacistText_LanceEntered:
 	.string "Arrgh… You found\n"
 	.string "the secret stair-\l"
@@ -180,3 +198,9 @@ MahoganyMart1F_Johto_MahoganyMart1FLanceRadioText:
 MahoganyMart1F_Johto_MahoganyMart1FLanceStairsText:
 	.string "The stairs are\n"
 	.string "right here.$"
+
+MahoganyMart1F_Johto_MahoganyMart1FLanceSplitUpText:
+	.string "LANCE: {PLAYER}, we\n"
+	.string "should split up to"
+	.string "\pcheck this place.\n"
+	.string "I'll go first.$"

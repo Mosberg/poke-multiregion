@@ -24,8 +24,12 @@ KogasRoom_Johto_KogasRoomDoorLocksBehindYouScript:
 	setmetatile 4, 15, 528, 1
 	setmetatile 5, 15, 528, 1
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setvar VAR_JOHTO_SCENE_KOGAS_ROOM, 1
+	setflag FLAG_JOHTO_KOGAS_ROOM_ENTRANCE_CLOSED
+	waitse
+	releaseall
+	end
 
 KogasRoom_Johto_KogaScript_Battle:
 	faceplayer
@@ -46,8 +50,11 @@ KogasRoom_Johto_KogaScript_Battle:
 	setmetatile 4, 3, 519, 0
 	setmetatile 5, 3, 519, 0
 	special DrawWholeMapView
-	@ TODO unsupported: refreshmap 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setflag FLAG_JOHTO_KOGAS_ROOM_EXIT_OPEN
+	waitse
+	releaseall
+	end
 
 KogasRoom_Johto_KogaScript_AfterBattle:
 	message KogasRoom_Johto_KogaScript_KogaDefeatText

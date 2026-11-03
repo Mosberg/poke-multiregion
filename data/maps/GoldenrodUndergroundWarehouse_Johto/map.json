@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseMaxEther_Entry",
       "flag": "FLAG_JOHTO_GOLDENROD_UNDERGROUND_WAREHOUSE_MAX_ETHER"
     },
     {
@@ -91,7 +91,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseTMSleepTalk_Entry",
       "flag": "FLAG_JOHTO_GOLDENROD_UNDERGROUND_WAREHOUSE_TM_SLEEP_TALK"
     },
     {
@@ -104,7 +104,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Johto_EventScript_Stub",
+      "script": "GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseUltraBall_Entry",
       "flag": "FLAG_JOHTO_GOLDENROD_UNDERGROUND_WAREHOUSE_ULTRA_BALL"
     }
   ],

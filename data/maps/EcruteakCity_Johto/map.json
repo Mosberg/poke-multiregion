@@ -290,12 +290,14 @@
       "script": "EcruteakCity_Johto_EcruteakCityMartSign_Entry"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 23,
       "y": 14,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Johto_EventScript_StubSign"
+      "elevation": 3,
+      "item": "ITEM_HYPER_POTION",
+      "flag": "FLAG_JOHTO_ECRUTEAK_CITY_HIDDEN_HYPER_POTION",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

@@ -5,6 +5,14 @@ DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntrancePharmacistScript_Entr
 	lockall
 	goto DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntrancePharmacistScript
 
+DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntranceRevive_Entry::
+	lockall
+	goto DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntranceRevive
+
+DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntranceTMSnore_Entry::
+	lockall
+	goto DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntranceTMSnore
+
 
 DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntrancePharmacistScript:
 	faceplayer
@@ -23,6 +31,16 @@ DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntrancePharmacistScript_GotB
 
 DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntrancePharmacistScript_PackFull:
 	closemessage
+	releaseall
+	end
+
+DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntranceRevive:
+	finditem ITEM_REVIVE
+	releaseall
+	end
+
+DarkCaveBlackthornEntrance_Johto_DarkCaveBlackthornEntranceTMSnore:
+	finditem ITEM_NUGGET
 	releaseall
 	end
 

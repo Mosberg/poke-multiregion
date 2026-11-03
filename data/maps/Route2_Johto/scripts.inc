@@ -2,6 +2,22 @@ Route2_Johto_MapScripts::
 		map_script MAP_SCRIPT_ON_LOAD, Route2_Johto_OnLoad
 	.byte 0
 
+Route2_Johto_Route2DireHit_Entry::
+	lockall
+	goto Route2_Johto_Route2DireHit
+
+Route2_Johto_Route2MaxPotion_Entry::
+	lockall
+	goto Route2_Johto_Route2MaxPotion
+
+Route2_Johto_Route2Carbos_Entry::
+	lockall
+	goto Route2_Johto_Route2Carbos
+
+Route2_Johto_Route2Elixer_Entry::
+	lockall
+	goto Route2_Johto_Route2Elixer
+
 Route2_Johto_Route2FruitTree_Entry::
 	lockall
 	goto Route2_Johto_Route2FruitTree
@@ -73,6 +89,26 @@ Route2_Johto_Route2DiglettsCaveSign:
 	waitmessage
 	waitbuttonpress
 	closemessage
+	releaseall
+	end
+
+Route2_Johto_Route2DireHit:
+	finditem ITEM_DIRE_HIT
+	releaseall
+	end
+
+Route2_Johto_Route2MaxPotion:
+	finditem ITEM_MAX_POTION
+	releaseall
+	end
+
+Route2_Johto_Route2Carbos:
+	finditem ITEM_CARBOS
+	releaseall
+	end
+
+Route2_Johto_Route2Elixer:
+	finditem ITEM_ELIXER
 	releaseall
 	end
 

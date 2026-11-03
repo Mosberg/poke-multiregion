@@ -1,6 +1,14 @@
 MountMortarB1F_Johto_MapScripts::
 	.byte 0
 
+MountMortarB1F_Johto_MountMortarB1FHyperPotion_Entry::
+	lockall
+	goto MountMortarB1F_Johto_MountMortarB1FHyperPotion
+
+MountMortarB1F_Johto_MountMortarB1FCarbos_Entry::
+	lockall
+	goto MountMortarB1F_Johto_MountMortarB1FCarbos
+
 MountMortarB1F_Johto_MountMortarB1FBoulder_Entry::
 	lockall
 	goto MountMortarB1F_Johto_MountMortarB1FBoulder
@@ -8,6 +16,18 @@ MountMortarB1F_Johto_MountMortarB1FBoulder_Entry::
 MountMortarB1F_Johto_MountMortarB1FKiyoScript_Entry::
 	lockall
 	goto MountMortarB1F_Johto_MountMortarB1FKiyoScript
+
+MountMortarB1F_Johto_MountMortarB1FFullRestore_Entry::
+	lockall
+	goto MountMortarB1F_Johto_MountMortarB1FFullRestore
+
+MountMortarB1F_Johto_MountMortarB1FMaxEther_Entry::
+	lockall
+	goto MountMortarB1F_Johto_MountMortarB1FMaxEther
+
+MountMortarB1F_Johto_MountMortarB1FPPUp_Entry::
+	lockall
+	goto MountMortarB1F_Johto_MountMortarB1FPPUp
 
 
 MountMortarB1F_Johto_MountMortarB1FKiyoScript:
@@ -53,6 +73,31 @@ MountMortarB1F_Johto_MountMortarB1FKiyoScript_NoRoom:
 
 MountMortarB1F_Johto_MountMortarB1FBoulder:
 	goto Johto_Std_StrengthBoulderScript
+
+MountMortarB1F_Johto_MountMortarB1FHyperPotion:
+	finditem ITEM_HYPER_POTION
+	releaseall
+	end
+
+MountMortarB1F_Johto_MountMortarB1FCarbos:
+	finditem ITEM_CARBOS
+	releaseall
+	end
+
+MountMortarB1F_Johto_MountMortarB1FFullRestore:
+	finditem ITEM_FULL_RESTORE
+	releaseall
+	end
+
+MountMortarB1F_Johto_MountMortarB1FMaxEther:
+	finditem ITEM_MAX_ETHER
+	releaseall
+	end
+
+MountMortarB1F_Johto_MountMortarB1FPPUp:
+	finditem ITEM_PP_UP
+	releaseall
+	end
 
 MountMortarB1F_Johto_MountMortarB1FKiyoIntroText:
 	.string "Hey!"
