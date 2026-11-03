@@ -30,7 +30,7 @@ symbol addresses after a rebuild). Other corrections to the document are listed 
 The bridge protocol is served by **either** native mGBA (Lua script) **or** the embedded emulator of the VS Code extension
 (`bin/poke-emulator --rom <game.gba> --port 8899`, see `knowledge/embedded-emulator.md`). Python tools use port 8888 by default;
 set `MGBA_BRIDGE_PORT=<port>` to attach to another one. Save-state files are emulator-specific.
-Struct offsets in `addresses.py` (SB1 flags 0x123C, vars 0x1500) must be re-measured with the build's ABI flags whenever a flag/var band changes (`knowledge/gotchas.md`).
+Struct offsets in `addresses.py` (SB1 flags 0x123C, vars 0x1510) must be re-measured with the build's ABI flags whenever a flag/var band changes (`knowledge/gotchas.md`).
 
 ## Quick start
 
