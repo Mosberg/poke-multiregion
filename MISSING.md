@@ -8,7 +8,7 @@ Hard caps and approximations live in LIMITS.md. Status of the Johto conversion: 
 
 - **Rematch counters** (`readmem`, ~33): scripted trainer rematches that read a fight counter; part of the phone system
 - **Cross-label field-move prompts** (`farsjump AskStrengthScript`, `AskRockSmashScript`, ~14): the Crystal boulder/rock objects were replaced by the engine's own scripts, but a few labels still reference the old prompts
-- **Day care** (`DayCareMan`, `DayCareLady`, `DayCareMon1/2`, `GiveOddEgg`): Crystal's day care specials have no counterpart; the expansion's own daycare is not wired to the Johto day care maps
+- **Day care**: the Johto day care man/lady now run the engine's own day care (Route 117 scripts; the woman's offer dialogue verified in play). Not verified: handing over Pokemon, egg generation/hatching, the Crystal Odd Egg gift (`GiveOddEgg`), the wandering day care mon objects
 - **Unown / Ruins of Alph** (`DisplayUnownWords`, `VAR_UNOWNCOUNT`, puzzle specials), **Pokegear radio/Mobile** (`MapRadio` is skipped, `CheckMobileAdapterStatusSpecial`), **Battle Tower** (`BattleTowerAction`), **Coin Case / Game Corner** (`PlaceMoneyTopRight`, `DisplayCoinCaseBalance`, Card Flip), **trade** (7), **Bill's PC**, **move tutor**, **name rater**, **Magnet Train**
 - `verbosegiveitemvar` (7), `GetFirstPokemonHappiness` (6), `random`, `catchtutorial` (Route 29 dude), `describedecoration` and the decoration system, `warpcheck`, `SelectApricornForKurt`, `CelebiShrineEvent`
 - Text macros that do not translate (`<...>`, `{d:...}`, `text_decimal`, `text_asm`) become "(text not converted)"

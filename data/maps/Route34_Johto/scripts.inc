@@ -10,10 +10,6 @@ Route34_Johto_OfficerKeithScript_Entry::
 	lockall
 	goto Route34_Johto_OfficerKeithScript
 
-Route34_Johto_DayCareManScript_Outside_Entry::
-	lockall
-	goto Route34_Johto_DayCareManScript_Outside
-
 Route34_Johto_DayCareMon1Script_Entry::
 	lockall
 	goto Route34_Johto_DayCareMon1Script
@@ -38,11 +34,6 @@ Route34_Johto_DayCareSign_Entry::
 	lockall
 	goto Route34_Johto_DayCareSign
 
-
-Route34_Johto_DayCareManScript_Outside:
-	faceplayer
-	@ TODO unsupported: special DayCareManOutside
-	goto Johto_EventScript_Unimplemented
 
 Route34_Johto_DayCareMon1Script:
 	@ TODO unsupported: special DayCareMon1
