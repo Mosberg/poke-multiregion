@@ -96,7 +96,6 @@ GoldenrodUndergroundWarehouse_Johto_GoldenrodUndergroundWarehouseResetSwitchesCa
 	clearflag FLAG_JOHTO_DOOR_10_OPEN
 	clearflag FLAG_JOHTO_DOOR_11_OPEN
 	setvar VAR_RESULT, 0
-	@ TODO unsupported: writemem wUndergroundSwitchPositions
 	return
 
 GoldenrodUndergroundWarehouse_Johto_GruntM24SeenText:

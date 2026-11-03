@@ -32,7 +32,7 @@ AI: Check Bad Move
 Clefairy
 Level: 18
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Doubleslap
+- Double Slap
 - Mimic
 - Encore
 - Metronome
@@ -205,7 +205,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Hypnosis
 - Mind Reader
 - Surf
-- Dynamic Punch
+- Dynamicpunch
 
 === TRAINER_JOHTO_CLAIR_CLAIR1 ===
 Name: CLAIR
@@ -389,7 +389,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Growl
 - Reflect
 - Razor Leaf
-- Poisonpowder
+- Poison Powder
 
 === TRAINER_JOHTO_RIVAL1_RIVAL1_3_CYNDAQUIL ===
 Name: SILVER
@@ -519,7 +519,7 @@ Level: 32
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Reflect
 - Razor Leaf
-- Poisonpowder
+- Poison Powder
 - Body Slam
 
 === TRAINER_JOHTO_RIVAL1_RIVAL1_4_CYNDAQUIL ===
@@ -674,7 +674,7 @@ Level: 38
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Reflect
 - Razor Leaf
-- Poisonpowder
+- Poison Powder
 - Body Slam
 
 === TRAINER_JOHTO_RIVAL1_RIVAL1_5_CYNDAQUIL ===
@@ -811,7 +811,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Jynx
 Level: 41
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Doubleslap
+- Double Slap
 - Lovely Kiss
 - Ice Punch
 - Psychic
@@ -1374,7 +1374,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Sunny Day
 - Synthesis
 - Petal Dance
-- Solar Beam
+- Solarbeam
 
 === TRAINER_JOHTO_YOUNGSTER_JOEY1 ===
 Name: JOEY
@@ -1977,7 +1977,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Vileplume
 Level: 37
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Solar Beam
+- Solarbeam
 - Sleep Powder
 - Acid
 - Moonlight
@@ -2027,7 +2027,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Tangela
 Level: 32
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Poisonpowder
+- Poison Powder
 - Vine Whip
 - Bind
 - Mega Drain
@@ -2848,7 +2848,7 @@ Bulbasaur
 Level: 26
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Leech Seed
-- Poisonpowder
+- Poison Powder
 - Sleep Powder
 - Razor Leaf
 
@@ -3104,7 +3104,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Leech Seed
 - Confusion
 - Sleep Powder
-- Solar Beam
+- Solarbeam
 
 === TRAINER_JOHTO_COOLTRAINERM_BRIAN ===
 Name: BRIAN
@@ -3321,7 +3321,7 @@ Skiploom
 Level: 25
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Synthesis
-- Poisonpowder
+- Poison Powder
 - Mega Drain
 - Leech Seed
 
@@ -3495,7 +3495,7 @@ Level: 32
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Growl
 - Leech Seed
-- Poisonpowder
+- Poison Powder
 - Razor Leaf
 
 Ivysaur
@@ -3503,7 +3503,7 @@ Level: 32
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Growl
 - Leech Seed
-- Poisonpowder
+- Poison Powder
 - Razor Leaf
 
 Venusaur
@@ -3605,7 +3605,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Absorb
 - Stun Spore
 - Acid
-- Solar Beam
+- Solarbeam
 
 === TRAINER_JOHTO_COOLTRAINERF_JENN ===
 Name: JENN
@@ -3679,7 +3679,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Waterfall
 - Confuse Ray
 
-Nidoqueen
+Nidoqueen @ Pink Bow
 Level: 40
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Earthquake
@@ -3978,7 +3978,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Synthesis
 - Tail Whip
 - Tackle
-- Poisonpowder
+- Poison Powder
 
 Skiploom
 Level: 17
@@ -4208,7 +4208,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Rollout
 - Attract
 - Egg Bomb
-- Soft Boiled
+- Softboiled
 
 === TRAINER_JOHTO_POKEMANIAC_MILLER ===
 Name: MILLER
@@ -5212,7 +5212,7 @@ Butterfree
 Level: 24
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Confusion
-- Poisonpowder
+- Poison Powder
 - Supersonic
 - Whirlwind
 
@@ -5253,7 +5253,7 @@ Butterfree
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Confusion
-- Poisonpowder
+- Poison Powder
 - Supersonic
 - Gust
 
@@ -6638,7 +6638,7 @@ Level: 18
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Bubble
 - Leer
-- Vicegrip
+- Vice Grip
 - Harden
 
 Krabby
@@ -6646,7 +6646,7 @@ Level: 20
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Bubblebeam
 - Leer
-- Vicegrip
+- Vice Grip
 - Harden
 
 === TRAINER_JOHTO_SAILOR_ERNEST ===
@@ -7121,7 +7121,7 @@ Meganium
 Level: 45
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Razor Leaf
-- Poisonpowder
+- Poison Powder
 - Body Slam
 - Light Screen
 
@@ -7882,7 +7882,7 @@ Graveler
 Level: 34
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Magnitude
-- Self Destruct
+- Selfdestruct
 - Defense Curl
 - Rollout
 
@@ -7890,7 +7890,7 @@ Golem
 Level: 36
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Magnitude
-- Self Destruct
+- Selfdestruct
 - Defense Curl
 - Rollout
 
@@ -8721,7 +8721,7 @@ Koffing
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Self Destruct
+- Selfdestruct
 - Sludge
 - Smokescreen
 
@@ -8729,7 +8729,7 @@ Koffing
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Self Destruct
+- Selfdestruct
 - Sludge
 - Smokescreen
 
@@ -8737,7 +8737,7 @@ Koffing
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Self Destruct
+- Selfdestruct
 - Sludge
 - Smokescreen
 
@@ -8753,7 +8753,7 @@ Koffing
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Self Destruct
+- Selfdestruct
 - Sludge
 - Smokescreen
 
@@ -9276,7 +9276,7 @@ Level: 31
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Encore
 - Sing
-- Doubleslap
+- Double Slap
 - Minimize
 
 === TRAINER_JOHTO_PICNICKER_TIFFANY2 ===
@@ -9292,7 +9292,7 @@ Clefairy
 Level: 37
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Encore
-- Doubleslap
+- Double Slap
 - Minimize
 - Metronome
 
@@ -9340,7 +9340,7 @@ Level: 20
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Encore
 - Sing
-- Doubleslap
+- Double Slap
 - Minimize
 
 === TRAINER_JOHTO_PICNICKER_ERIN3 ===
@@ -9410,7 +9410,7 @@ Weepinbell
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Sleep Powder
-- Poisonpowder
+- Poison Powder
 - Stun Spore
 - Sludge Bomb
 
@@ -9479,7 +9479,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Venusaur
 Level: 38
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Solar Beam
+- Solarbeam
 - Razor Leaf
 - Headbutt
 - Mud Slap
@@ -9881,7 +9881,7 @@ AI: Basic Trainer
 Graveler
 Level: 33
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Self Destruct
+- Selfdestruct
 - Rock Throw
 - Harden
 - Magnitude
@@ -9889,7 +9889,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Graveler
 Level: 33
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Self Destruct
+- Selfdestruct
 - Rock Throw
 - Harden
 - Magnitude
@@ -10729,7 +10729,7 @@ Level: 16
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Growl
 - Encore
-- Doubleslap
+- Double Slap
 - Metronome
 
 Jigglypuff
@@ -10762,7 +10762,7 @@ Level: 16
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Growl
 - Encore
-- Doubleslap
+- Double Slap
 - Metronome
 
 === TRAINER_JOHTO_TWINS_AMYANDMAY2 ===
@@ -11033,7 +11033,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Sunny Day
 - Giga Drain
 - Synthesis
-- Solar Beam
+- Solarbeam
 
 Charizard
 Level: 77
@@ -11098,7 +11098,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Sunny Day
 - Leech Seed
 - Egg Bomb
-- Solar Beam
+- Solarbeam
 
 Arcanine
 Level: 58
@@ -11106,7 +11106,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Roar
 - Swift
 - Flamethrower
-- Extremespeed
+- Extreme Speed
 
 === TRAINER_JOHTO_OFFICER_KEITH ===
 Name: KEITH

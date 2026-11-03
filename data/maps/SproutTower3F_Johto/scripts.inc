@@ -25,7 +25,8 @@ SproutTower3F_Johto_SproutTower3FRivalScene:
 	waitmovement OBJ_EVENT_ID_PLAYER
 	fadeoutbgm 4
 	playse SE_M_TAIL_WHIP
-	@ TODO unsupported: playsound SFX_ELEVATOR
+	playse SE_PIN
+	@ TODO unsupported: earthquake 79
 	goto Johto_EventScript_Unimplemented
 
 SproutTower3F_Johto_SageLiScript:

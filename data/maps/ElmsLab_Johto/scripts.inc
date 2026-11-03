@@ -739,7 +739,8 @@ ElmsLab_Johto_AideScript_GiveYouBalls_Sub:
 	message ElmsLab_Johto_AideText_ExplainBalls
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: itemnotify 
+	closemessage
+	setvar VAR_JOHTO_SCENE_ELMS_LAB, 2
 	return
 
 ElmsLab_Johto_AideScript_ReceiveTheBalls_Sub:

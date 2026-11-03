@@ -356,14 +356,17 @@ TeamRocketBaseB2F_Johto_RocketBaseLanceApproachesMachineMovement:
 	step_end
 
 TeamRocketBaseB2F_Johto_RocketBaseLancePacesMovement:
+	delay_8
 	walk_left
 	walk_left
 	face_up
+	delay_8
 	walk_right
 	walk_right
 	walk_right
 	walk_right
 	face_up
+	delay_8
 	walk_left
 	walk_left
 	face_down

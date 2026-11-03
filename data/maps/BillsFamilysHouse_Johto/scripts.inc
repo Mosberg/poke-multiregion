@@ -77,8 +77,41 @@ BillsFamilysHouse_Johto_BillsMomScript_HaventMetBill:
 
 BillsFamilysHouse_Johto_BillsYoungerSisterScript:
 	faceplayer
-	@ TODO unsupported: checkcellnum PHONE_BILL
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, BillsFamilysHouse_Johto_BillsYoungerSisterScript_GotBillsNumber
+	message BillsFamilysHouse_Johto_BillsYoungerSisterUsefulNumberText
+	waitmessage
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, BillsFamilysHouse_Johto_BillsYoungerSisterScript_NoRoom
+	goto_if_eq VAR_RESULT, 2, BillsFamilysHouse_Johto_BillsYoungerSisterScript_Refused
+	waitse
+	message BillsFamilysHouse_Johto_RecordedBillsNumberText
+	waitmessage
+	playse SE_PIN
+	waitse
+	waitbuttonpress
+
+BillsFamilysHouse_Johto_BillsYoungerSisterScript_GotBillsNumber:
+	message BillsFamilysHouse_Johto_BillsYoungerSisterStorageSystemText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+BillsFamilysHouse_Johto_BillsYoungerSisterScript_Refused:
+	message BillsFamilysHouse_Johto_BillsYoungerSisterRefusedNumberText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+BillsFamilysHouse_Johto_BillsYoungerSisterScript_NoRoom:
+	message BillsFamilysHouse_Johto_BillsYoungerSisterPhoneFullText
+	waitmessage
+	waitbuttonpress
+	goto BillsFamilysHouse_Johto_BillsYoungerSisterScript_Refused
 
 BillsFamilysHouse_Johto_BillsHouseBookshelf1:
 	goto Johto_Std_PictureBookshelfScript
@@ -146,3 +179,31 @@ BillsFamilysHouse_Johto_BillsMomText_AfterEcruteak:
 	.string "BILL must have"
 	.string "\ptaken after his\n"
 	.string "father.$"
+
+BillsFamilysHouse_Johto_BillsYoungerSisterUsefulNumberText:
+	.string "Are you a trainer?"
+	.string "\pI've got a useful\n"
+	.string "phone number for\l"
+	.string "you.$"
+
+BillsFamilysHouse_Johto_RecordedBillsNumberText:
+	.string "{PLAYER} recorded\n"
+	.string "BILL's number.$"
+
+BillsFamilysHouse_Johto_BillsYoungerSisterRefusedNumberText:
+	.string "My brother made\n"
+	.string "the PC POKéMON\l"
+	.string "storage system."
+	.string "\pI was going to\n"
+	.string "give you BILL's\l"
+	.string "number…$"
+
+BillsFamilysHouse_Johto_BillsYoungerSisterPhoneFullText:
+	.string "You can't record\n"
+	.string "any more numbers.$"
+
+BillsFamilysHouse_Johto_BillsYoungerSisterStorageSystemText:
+	.string "My big brother\n"
+	.string "BILL made the PC"
+	.string "\pPOKéMON storage\n"
+	.string "system.$"

@@ -29,7 +29,8 @@ CianwoodGym_Johto_CianwoodGymChuckScript:
 	closemessage
 	applymovement 6, CianwoodGym_Johto_CianwoodGymMovement_ChuckChucksBoulder
 	waitmovement 6
-	@ TODO unsupported: playsound SFX_STRENGTH
+	playse SE_M_STRENGTH
+	@ TODO unsupported: earthquake 80
 	goto Johto_EventScript_Unimplemented
 
 CianwoodGym_Johto_CianwoodGymChuckScript_FightDone:

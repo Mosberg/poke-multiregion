@@ -62,13 +62,39 @@ Route43_Johto_TrainerPokemaniacBrent::
 
 Route43_Johto_TrainerPokemaniacBrent_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_BRENT_READY_FOR_REMATCH, Route43_Johto_TrainerPokemaniacBrent_WantsBattle
-	@ TODO unsupported: checkcellnum PHONE_POKEMANIAC_BRENT
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route43_Johto_TrainerPokemaniacBrent_NumberAccepted
+	goto_if_set FLAG_JOHTO_BRENT_ASKED_FOR_PHONE_NUMBER, Route43_Johto_TrainerPokemaniacBrent_AskedAlready
+	message Route43_Johto_PokemaniacBrentAfterBattleText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_BRENT_ASKED_FOR_PHONE_NUMBER
+	call Route43_Johto_TrainerPokemaniacBrent_AskNumber1_Sub
+	goto Route43_Johto_TrainerPokemaniacBrent_AskForNumber
+
+Route43_Johto_TrainerPokemaniacBrent_AskedAlready:
+	call Route43_Johto_TrainerPokemaniacBrent_AskNumber2_Sub
+
+Route43_Johto_TrainerPokemaniacBrent_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route43_Johto_TrainerPokemaniacBrent_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route43_Johto_TrainerPokemaniacBrent_NumberDeclined
+	call Route43_Johto_TrainerPokemaniacBrent_RegisteredNumber_Sub
+	goto Route43_Johto_TrainerPokemaniacBrent_NumberAccepted
 
 Route43_Johto_TrainerPokemaniacBrent_WantsBattle:
 	call Route43_Johto_TrainerPokemaniacBrent_Rematch_Sub
 	@ TODO unsupported: readmem wBrentFightCount
 	goto Johto_EventScript_Unimplemented
+
+Route43_Johto_TrainerPokemaniacBrent_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route43_Johto_TrainerPokemaniacBrent_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route43_Johto_TrainerPokemaniacBrent_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route43_Johto_TrainerPokemaniacRon::
 	trainerbattle_single TRAINER_JOHTO_POKEMANIAC_RON, Route43_Johto_PokemaniacRonSeenText, Route43_Johto_PokemaniacRonBeatenText
@@ -110,7 +136,9 @@ Route43_Johto_TrainerPicnickerTiffany::
 Route43_Johto_TrainerPicnickerTiffany_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_TIFFANY_READY_FOR_REMATCH, Route43_Johto_TrainerPicnickerTiffany_WantsBattle
 	goto_if_set FLAG_JOHTO_ENGINE_TIFFANY_HAS_PINK_BOW, Route43_Johto_TrainerPicnickerTiffany_HasPinkBow
-	@ TODO unsupported: checkcellnum PHONE_PICNICKER_TIFFANY
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route43_Johto_TrainerPicnickerTiffany_NumberAccepted
+	@ TODO unsupported: checkpoke CLEFAIRY
 	goto Johto_EventScript_Unimplemented
 
 Route43_Johto_TrainerPicnickerTiffany_WantsBattle:
@@ -166,6 +194,15 @@ Route43_Johto_Route43FruitTree:
 	releaseall
 	end
 
+Route43_Johto_TrainerPokemaniacBrent_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route43_Johto_TrainerPokemaniacBrent_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route43_Johto_TrainerPokemaniacBrent_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route43_Johto_TrainerPokemaniacBrent_Rematch_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
@@ -209,6 +246,11 @@ Route43_Johto_PokemaniacBrentSeenText:
 Route43_Johto_PokemaniacBrentBeatenText:
 	.string "Oh, my poor POKé-\n"
 	.string "MON! Darlings!$"
+
+Route43_Johto_PokemaniacBrentAfterBattleText:
+	.string "I'd be happy just\n"
+	.string "to own a single\l"
+	.string "rare POKéMON.$"
 
 Route43_Johto_PokemaniacRonSeenText:
 	.string "Would you get\n"

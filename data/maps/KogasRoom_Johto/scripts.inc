@@ -18,7 +18,8 @@ KogasRoom_Johto_KogasRoomDoorLocksBehindYouScript_Entry::
 KogasRoom_Johto_KogasRoomDoorLocksBehindYouScript:
 	applymovement OBJ_EVENT_ID_PLAYER, KogasRoom_Johto_KogasRoom_EnterMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
-	@ TODO unsupported: playsound SFX_STRENGTH
+	playse SE_M_STRENGTH
+	@ TODO unsupported: earthquake 80
 	goto Johto_EventScript_Unimplemented
 
 KogasRoom_Johto_KogaScript_Battle:

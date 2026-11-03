@@ -18,7 +18,8 @@ KarensRoom_Johto_KarensRoomDoorLocksBehindYouScript_Entry::
 KarensRoom_Johto_KarensRoomDoorLocksBehindYouScript:
 	applymovement OBJ_EVENT_ID_PLAYER, KarensRoom_Johto_KarensRoom_EnterMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
-	@ TODO unsupported: playsound SFX_STRENGTH
+	playse SE_M_STRENGTH
+	@ TODO unsupported: earthquake 80
 	goto Johto_EventScript_Unimplemented
 
 KarensRoom_Johto_KarenScript_Battle:

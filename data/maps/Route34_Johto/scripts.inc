@@ -58,8 +58,25 @@ Route34_Johto_TrainerCamperTodd1::
 Route34_Johto_TrainerCamperTodd1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_TODD_READY_FOR_REMATCH, Route34_Johto_TrainerCamperTodd1_Rematch
 	goto_if_set FLAG_JOHTO_ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON, Route34_Johto_TrainerCamperTodd1_SaleIsOn
-	@ TODO unsupported: checkcellnum PHONE_CAMPER_TODD
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route34_Johto_TrainerCamperTodd1_NumberAccepted
+	goto_if_set FLAG_JOHTO_TODD_ASKED_FOR_PHONE_NUMBER, Route34_Johto_TrainerCamperTodd1_AskAgain
+	message Route34_Johto_CamperTodd1AfterText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_TODD_ASKED_FOR_PHONE_NUMBER
+	call Route34_Johto_TrainerCamperTodd1_AskNumber_Sub
+	goto Route34_Johto_TrainerCamperTodd1_FinishAsk
+
+Route34_Johto_TrainerCamperTodd1_AskAgain:
+	call Route34_Johto_TrainerCamperTodd1_AskNumber2_Sub
+
+Route34_Johto_TrainerCamperTodd1_FinishAsk:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route34_Johto_TrainerCamperTodd1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route34_Johto_TrainerCamperTodd1_NumberDeclined
+	call Route34_Johto_TrainerCamperTodd1_RegisteredNumber_Sub
+	goto Route34_Johto_TrainerCamperTodd1_NumberAccepted
 
 Route34_Johto_TrainerCamperTodd1_Rematch:
 	call Route34_Johto_TrainerCamperTodd1_RematchStd_Sub
@@ -74,6 +91,15 @@ Route34_Johto_TrainerCamperTodd1_SaleIsOn:
 	releaseall
 	end
 
+Route34_Johto_TrainerCamperTodd1_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route34_Johto_TrainerCamperTodd1_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route34_Johto_TrainerCamperTodd1_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
+
 Route34_Johto_TrainerPicnickerGina1::
 	trainerbattle_single TRAINER_JOHTO_PICNICKER_GINA1, Route34_Johto_PicnickerGina1SeenText, Route34_Johto_PicnickerGina1BeatenText
 	setflag FLAG_JOHTO_BEAT_PICNICKER_GINA
@@ -84,8 +110,25 @@ Route34_Johto_TrainerPicnickerGina1::
 Route34_Johto_TrainerPicnickerGina1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_GINA_READY_FOR_REMATCH, Route34_Johto_TrainerPicnickerGina1_Rematch
 	goto_if_set FLAG_JOHTO_ENGINE_GINA_HAS_LEAF_STONE, Route34_Johto_TrainerPicnickerGina1_LeafStone
-	@ TODO unsupported: checkcellnum PHONE_PICNICKER_GINA
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route34_Johto_TrainerPicnickerGina1_NumberAccepted
+	goto_if_set FLAG_JOHTO_GINA_ASKED_FOR_PHONE_NUMBER, Route34_Johto_TrainerPicnickerGina1_AskAgain
+	message Route34_Johto_PicnickerGina1AfterText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_GINA_ASKED_FOR_PHONE_NUMBER
+	call Route34_Johto_TrainerPicnickerGina1_AskNumber1_Sub
+	goto Route34_Johto_TrainerPicnickerGina1_FinishAsk
+
+Route34_Johto_TrainerPicnickerGina1_AskAgain:
+	call Route34_Johto_TrainerPicnickerGina1_AskNumber2_Sub
+
+Route34_Johto_TrainerPicnickerGina1_FinishAsk:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route34_Johto_TrainerPicnickerGina1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route34_Johto_TrainerPicnickerGina1_NumberDeclined
+	call Route34_Johto_TrainerPicnickerGina1_RegisteredNumber_Sub
+	goto Route34_Johto_TrainerPicnickerGina1_NumberAccepted
 
 Route34_Johto_TrainerPicnickerGina1_Rematch:
 	call Route34_Johto_TrainerPicnickerGina1_RematchStd_Sub
@@ -105,6 +148,12 @@ Route34_Johto_TrainerPicnickerGina1_BagFull:
 
 Route34_Johto_TrainerPicnickerGina1_NumberAccepted:
 	goto Johto_Std_NumberAcceptedFScript
+
+Route34_Johto_TrainerPicnickerGina1_NumberDeclined:
+	goto Johto_Std_NumberDeclinedFScript
+
+Route34_Johto_TrainerPicnickerGina1_PhoneFull:
+	goto Johto_Std_PhoneFullFScript
 
 Route34_Johto_TrainerPicnickerGina1_PackFull:
 	goto Johto_Std_PackFullFScript
@@ -285,8 +334,26 @@ Route34_Johto_DayCareSign:
 	releaseall
 	end
 
+Route34_Johto_TrainerCamperTodd1_AskNumber_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route34_Johto_TrainerCamperTodd1_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route34_Johto_TrainerCamperTodd1_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route34_Johto_TrainerCamperTodd1_RematchStd_Sub:
 	goto Johto_Std_RematchMScript_Sub
+
+Route34_Johto_TrainerPicnickerGina1_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1FScript_Sub
+
+Route34_Johto_TrainerPicnickerGina1_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2FScript_Sub
+
+Route34_Johto_TrainerPicnickerGina1_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberFScript_Sub
 
 Route34_Johto_TrainerPicnickerGina1_RematchStd_Sub:
 	goto Johto_Std_RematchFScript_Sub
@@ -361,6 +428,12 @@ Route34_Johto_CamperTodd1BeatenText:
 	.string "Did I screw up my\n"
 	.string "training?$"
 
+Route34_Johto_CamperTodd1AfterText:
+	.string "Maybe I should\n"
+	.string "take one to a DAY-"
+	.string "\pCARE. Or maybe use\n"
+	.string "some items…$"
+
 Route34_Johto_CamperToddSaleText:
 	.string "Shopping under the\n"
 	.string "sky!"
@@ -375,6 +448,11 @@ Route34_Johto_PicnickerGina1SeenText:
 Route34_Johto_PicnickerGina1BeatenText:
 	.string "Oh, no! I just\n"
 	.string "can't win…$"
+
+Route34_Johto_PicnickerGina1AfterText:
+	.string "You're too strong\n"
+	.string "to be a practice\l"
+	.string "partner.$"
 
 Route34_Johto_OfficerKeithSeenText:
 	.string "Who goes there?\n"

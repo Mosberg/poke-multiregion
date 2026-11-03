@@ -108,11 +108,51 @@ FastShipCabins_NNW_NNE_NE_Johto_FastShipLazySailorScript:
 	waitbuttonpress
 	closemessage
 	trainerbattle_no_intro TRAINER_JOHTO_SAILOR_STANLY, FastShipCabins_NNW_NNE_NE_Johto_SailorStanlyBeatenText
-	@ TODO unsupported: reloadmap 
-	goto Johto_EventScript_Unimplemented
+	special HealPlayerParty
+	setflag FLAG_JOHTO_BEAT_SAILOR_STANLY
+	message FastShipCabins_NNW_NNE_NE_Johto_SailorStanlyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_FAST_SHIP_LAZY_SAILOR
+	setvar VAR_JOHTO_SCENE_FAST_SHIP_B1F, 1
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_eq VAR_RESULT, DIR_EAST, FastShipCabins_NNW_NNE_NE_Johto_FastShipLazySailorScript_Movement2
+	applymovement 5, FastShipCabins_NNW_NNE_NE_Johto_FastShipLazySailorLeavesMovement1
+	waitmovement 5
+	playse SE_EXIT
+	removeobject 5
+	waitse
+	releaseall
+	end
+
+FastShipCabins_NNW_NNE_NE_Johto_FastShipLazySailorScript_Movement2:
+	applymovement 5, FastShipCabins_NNW_NNE_NE_Johto_FastShipLazySailorLeavesMovement2
+	waitmovement 5
+	playse SE_EXIT
+	removeobject 5
+	waitse
+	releaseall
+	end
 
 FastShipCabins_NNW_NNE_NE_Johto_FastShipCabins_NNW_NNE_NETrashcan:
 	goto Johto_Std_TrashCanScript
+
+FastShipCabins_NNW_NNE_NE_Johto_FastShipLazySailorLeavesMovement1:
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+FastShipCabins_NNW_NNE_NE_Johto_FastShipLazySailorLeavesMovement2:
+	walk_down
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	step_end
 
 FastShipCabins_NNW_NNE_NE_Johto_CooltrainermSeanSeenText:
 	.string "I'm going to KANTO\n"
@@ -182,6 +222,12 @@ FastShipCabins_NNW_NNE_NE_Johto_SailorStanlySeenText:
 FastShipCabins_NNW_NNE_NE_Johto_SailorStanlyBeatenText:
 	.string "Sorry! It's all my\n"
 	.string "fault!$"
+
+FastShipCabins_NNW_NNE_NE_Johto_SailorStanlyAfterBattleText:
+	.string "Being a sailor, I\n"
+	.string "have to do phys-\l"
+	.string "ical labor. It's\l"
+	.string "exhausting!$"
 
 FastShipCabins_NNW_NNE_NE_Johto_GentlemanEdwardSeenText:
 	.string "Oh, no. I've lost\n"

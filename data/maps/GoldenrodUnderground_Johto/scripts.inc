@@ -213,7 +213,6 @@ GoldenrodUnderground_Johto_GoldenrodUndergroundResetSwitchesCallback_Cb:
 	clearflag FLAG_JOHTO_DOOR_10_OPEN
 	clearflag FLAG_JOHTO_DOOR_11_OPEN
 	setvar VAR_RESULT, 0
-	@ TODO unsupported: writemem wUndergroundSwitchPositions
 	return
 
 GoldenrodUnderground_Johto_GoldenrodUndergroundCheckDayOfWeekCallback_Cb:

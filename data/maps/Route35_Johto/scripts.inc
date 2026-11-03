@@ -37,8 +37,34 @@ Route35_Johto_TrainerJugglerIrwin::
 	goto Route35_Johto_TrainerJugglerIrwin_Script
 
 Route35_Johto_TrainerJugglerIrwin_Script:
-	@ TODO unsupported: checkcellnum PHONE_JUGGLER_IRWIN
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route35_Johto_Route35NumberAcceptedM
+	goto_if_set FLAG_JOHTO_IRWIN_ASKED_FOR_PHONE_NUMBER, Route35_Johto_TrainerJugglerIrwin_AskedAlready
+	message Route35_Johto_JugglerIrwinAfterBattleText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_IRWIN_ASKED_FOR_PHONE_NUMBER
+	call Route35_Johto_Route35AskNumber1M_Sub
+	goto Route35_Johto_TrainerJugglerIrwin_AskForNumber
+
+Route35_Johto_TrainerJugglerIrwin_AskedAlready:
+	call Route35_Johto_Route35AskNumber2M_Sub
+
+Route35_Johto_TrainerJugglerIrwin_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route35_Johto_Route35PhoneFullM
+	goto_if_eq VAR_RESULT, 2, Route35_Johto_Route35NumberDeclinedM
+	call Route35_Johto_Route35RegisteredNumberM_Sub
+	goto Route35_Johto_Route35NumberAcceptedM
+
+Route35_Johto_Route35NumberAcceptedM:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route35_Johto_Route35NumberDeclinedM:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route35_Johto_Route35PhoneFullM:
+	goto Johto_Std_PhoneFullMScript
 
 Route35_Johto_TrainerCamperIvan::
 	trainerbattle_single TRAINER_JOHTO_CAMPER_IVAN, Route35_Johto_CamperIvanSeenText, Route35_Johto_CamperIvanBeatenText
@@ -110,8 +136,25 @@ Route35_Johto_TrainerBugCatcherArnie::
 Route35_Johto_TrainerBugCatcherArnie_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_ARNIE_READY_FOR_REMATCH, Route35_Johto_TrainerBugCatcherArnie_WantsBattle
 	goto_if_set FLAG_JOHTO_ENGINE_YANMA_SWARM, Route35_Johto_TrainerBugCatcherArnie_YanmaSwarming
-	@ TODO unsupported: checkcellnum PHONE_BUG_CATCHER_ARNIE
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route35_Johto_Route35NumberAcceptedM
+	goto_if_set FLAG_JOHTO_ARNIE_ASKED_FOR_PHONE_NUMBER, Route35_Johto_TrainerBugCatcherArnie_AskedAlready
+	message Route35_Johto_BugCatcherArnieAfterBattleText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_ARNIE_ASKED_FOR_PHONE_NUMBER
+	call Route35_Johto_Route35AskNumber1M_Sub
+	goto Route35_Johto_TrainerBugCatcherArnie_AskForNumber
+
+Route35_Johto_TrainerBugCatcherArnie_AskedAlready:
+	call Route35_Johto_Route35AskNumber2M_Sub
+
+Route35_Johto_TrainerBugCatcherArnie_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route35_Johto_Route35PhoneFullM
+	goto_if_eq VAR_RESULT, 2, Route35_Johto_Route35NumberDeclinedM
+	call Route35_Johto_Route35RegisteredNumberM_Sub
+	goto Route35_Johto_Route35NumberAcceptedM
 
 Route35_Johto_TrainerBugCatcherArnie_WantsBattle:
 	call Route35_Johto_Route35RematchM_Sub
@@ -188,6 +231,15 @@ Route35_Johto_Route35FruitTree:
 	setflag FLAG_JOHTO_FRUITTREE_ROUTE_35
 	releaseall
 	end
+
+Route35_Johto_Route35AskNumber1M_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route35_Johto_Route35AskNumber2M_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route35_Johto_Route35RegisteredNumberM_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
 
 Route35_Johto_Route35RematchM_Sub:
 	goto Johto_Std_RematchMScript_Sub
@@ -275,6 +327,13 @@ Route35_Johto_JugglerIrwin1BeatenText:
 	.string "Whew! That was a\n"
 	.string "jolt!$"
 
+Route35_Johto_JugglerIrwinAfterBattleText:
+	.string "I was going to\n"
+	.string "dazzle you with my\l"
+	.string "prize POKéMON."
+	.string "\pBut your prowess\n"
+	.string "electrified me!$"
+
 Route35_Johto_BugCatcherArnieSeenText:
 	.string "I'll go anywhere\n"
 	.string "if bug POKéMON\l"
@@ -283,6 +342,12 @@ Route35_Johto_BugCatcherArnieSeenText:
 Route35_Johto_BugCatcherArnieBeatenText:
 	.string "Huh? I shouldn't\n"
 	.string "have lost that…$"
+
+Route35_Johto_BugCatcherArnieAfterBattleText:
+	.string "My VENONAT won me\n"
+	.string "the Bug-Catching"
+	.string "\pContest at the\n"
+	.string "NATIONAL PARK.$"
 
 Route35_Johto_BugCatcherArnieYanmaText:
 	.string "Wow… Look at all\n"

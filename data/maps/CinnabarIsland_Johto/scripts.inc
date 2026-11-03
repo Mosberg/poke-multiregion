@@ -29,8 +29,13 @@ CinnabarIsland_Johto_CinnabarIslandBlue:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: playsound SFX_WARP_TO
-	goto Johto_EventScript_Unimplemented
+	playse SE_WARP_IN
+	applymovement 1, CinnabarIsland_Johto_CinnabarIslandBlueTeleport
+	waitmovement 1
+	removeobject 1
+	clearflag FLAG_JOHTO_VIRIDIAN_GYM_BLUE
+	releaseall
+	end
 
 CinnabarIsland_Johto_CinnabarIslandGymSign:
 	message CinnabarIsland_Johto_CinnabarIslandGymSignText
@@ -54,6 +59,9 @@ CinnabarIsland_Johto_CinnabarIslandPokecenterSign:
 CinnabarIsland_Johto_CinnabarIslandFlypointCallback_Cb:
 	setflag FLAG_JOHTO_ENGINE_FLYPOINT_CINNABAR
 	return
+
+CinnabarIsland_Johto_CinnabarIslandBlueTeleport:
+	step_end
 
 CinnabarIsland_Johto_CinnabarIslandBlueText:
 	.string "Who are you?"

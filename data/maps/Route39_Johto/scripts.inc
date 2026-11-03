@@ -45,7 +45,9 @@ Route39_Johto_TrainerPokefanmDerek::
 
 Route39_Johto_TrainerPokefanmDerek_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_DEREK_HAS_NUGGET, Route39_Johto_TrainerPokefanmDerek_HasNugget
-	@ TODO unsupported: checkcellnum PHONE_POKEFANM_DEREK
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route39_Johto_TrainerPokefanmDerek_NumberAccepted
+	@ TODO unsupported: checkpoke PIKACHU
 	goto Johto_EventScript_Unimplemented
 
 Route39_Johto_TrainerPokefanmDerek_HasNugget:

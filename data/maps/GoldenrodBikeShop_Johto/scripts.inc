@@ -24,8 +24,11 @@ GoldenrodBikeShop_Johto_GoldenrodBikeShopClerkScript:
 	additem ITEM_BICYCLE
 	message GoldenrodBikeShop_Johto_BorrowedABicycleText
 	waitmessage
-	@ TODO unsupported: playsound SFX_KEY_ITEM
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_BIKE_SHOP_CALL_ENABLED
+	setflag FLAG_JOHTO_GOT_BICYCLE
 
 GoldenrodBikeShop_Johto_GoldenrodBikeShopClerkScript_GotBicycle:
 	message GoldenrodBikeShop_Johto_GoldenrodBikeShopClerkFirstRateBikesText

@@ -45,7 +45,48 @@ BurnedTowerB1F_Johto_ReleaseTheBeasts:
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	waitmoncry
 	delay 15
-	@ TODO unsupported: playsound SFX_WARP_FROM
+	playse SE_WARP_OUT
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 2, BurnedTowerB1F_Johto_BurnedTowerRaikouMovement
+	waitmovement 2
+	removeobject 2
+	waitse
+	playse SE_WARP_OUT
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 3, BurnedTowerB1F_Johto_BurnedTowerEnteiMovement
+	waitmovement 3
+	removeobject 3
+	waitse
+	delay 15
+	playse SE_WARP_OUT
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Up
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 4, BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement1
+	waitmovement 4
+	playse SE_WARP_OUT
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 4, BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement2
+	waitmovement 4
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Up
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 20
+	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
+	waitmoncry
+	delay 30
+	playse SE_WARP_OUT
+	applymovement 4, BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement3
+	waitmovement 4
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	removeobject 4
+	waitse
+	fadedefaultbgm
+	setvar VAR_JOHTO_SCENE_BURNED_TOWER_B1F, 1
+	setflag FLAG_JOHTO_RELEASED_THE_BEASTS
+	@ TODO unsupported: special InitRoamMons
 	goto Johto_EventScript_Unimplemented
 
 BurnedTowerB1F_Johto_BurnedTowerB1FEusine:
@@ -73,6 +114,23 @@ BurnedTowerB1F_Johto_BurnedTowerB1FEusine_Finish:
 
 BurnedTowerB1F_Johto_BurnedTowerB1FBoulder:
 	goto Johto_Std_StrengthBoulderScript
+
+BurnedTowerB1F_Johto_BurnedTowerRaikouMovement:
+	step_end
+
+BurnedTowerB1F_Johto_BurnedTowerEnteiMovement:
+	step_end
+
+BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement1:
+	step_end
+
+BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement2:
+	walk_fast_up
+	step_end
+
+BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement3:
+	walk_fast_up
+	step_end
 
 BurnedTowerB1F_Johto_BurnedTowerB1FEusineMovement2:
 	walk_left

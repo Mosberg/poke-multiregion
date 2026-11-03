@@ -71,13 +71,39 @@ Route30_Johto_TrainerYoungsterJoey::
 
 Route30_Johto_TrainerYoungsterJoey_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_JOEY_READY_FOR_REMATCH, Route30_Johto_TrainerYoungsterJoey_Rematch
-	@ TODO unsupported: checkcellnum PHONE_YOUNGSTER_JOEY
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route30_Johto_TrainerYoungsterJoey_NumberAccepted
+	goto_if_set FLAG_JOHTO_JOEY_ASKED_FOR_PHONE_NUMBER, Route30_Johto_TrainerYoungsterJoey_AskAgain
+	message Route30_Johto_YoungsterJoey1AfterText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_JOEY_ASKED_FOR_PHONE_NUMBER
+	call Route30_Johto_TrainerYoungsterJoey_AskNumber1_Sub
+	goto Route30_Johto_TrainerYoungsterJoey_RequestNumber
+
+Route30_Johto_TrainerYoungsterJoey_AskAgain:
+	call Route30_Johto_TrainerYoungsterJoey_AskNumber2_Sub
+
+Route30_Johto_TrainerYoungsterJoey_RequestNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route30_Johto_TrainerYoungsterJoey_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route30_Johto_TrainerYoungsterJoey_NumberDeclined
+	call Route30_Johto_TrainerYoungsterJoey_RegisteredNumber_Sub
+	goto Route30_Johto_TrainerYoungsterJoey_NumberAccepted
 
 Route30_Johto_TrainerYoungsterJoey_Rematch:
 	call Route30_Johto_TrainerYoungsterJoey_RematchStd_Sub
 	@ TODO unsupported: readmem wJoeyFightCount
 	goto Johto_EventScript_Unimplemented
+
+Route30_Johto_TrainerYoungsterJoey_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route30_Johto_TrainerYoungsterJoey_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route30_Johto_TrainerYoungsterJoey_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route30_Johto_TrainerYoungsterMikey::
 	trainerbattle_single TRAINER_JOHTO_YOUNGSTER_MIKEY, Route30_Johto_YoungsterMikeySeenText, Route30_Johto_YoungsterMikeyBeatenText
@@ -182,6 +208,15 @@ Route30_Johto_Route30FruitTree2:
 	releaseall
 	end
 
+Route30_Johto_TrainerYoungsterJoey_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route30_Johto_TrainerYoungsterJoey_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route30_Johto_TrainerYoungsterJoey_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route30_Johto_TrainerYoungsterJoey_RematchStd_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
@@ -217,6 +252,15 @@ Route30_Johto_YoungsterJoey1SeenText:
 Route30_Johto_YoungsterJoey1BeatenText:
 	.string "Ack! I lost again!\n"
 	.string "Doggone it!$"
+
+Route30_Johto_YoungsterJoey1AfterText:
+	.string "Do I have to have\n"
+	.string "more POKéMON in"
+	.string "\porder to battle\n"
+	.string "better?"
+	.string "\pNo! I'm sticking\n"
+	.string "with this one no\l"
+	.string "matter what!$"
 
 Route30_Johto_YoungsterMikeySeenText:
 	.string "You're a POKéMON\n"

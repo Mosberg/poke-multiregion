@@ -160,9 +160,15 @@ SlowpokeWellB1F_Johto_KurtSlowpokeWellVictoryMovementData:
 	walk_left
 	walk_left
 	walk_up
+	delay_8
+	delay_8
+	delay_8
 	walk_left
 	walk_up
 	walk_up
+	delay_8
+	delay_8
+	delay_8
 	face_left
 	step_end
 

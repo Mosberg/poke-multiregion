@@ -118,8 +118,13 @@ PokemonFanClub_Johto_PokemonFanClubClefairyGuyScript_MetCopycat:
 	removeobject 5
 	message PokemonFanClub_Johto_PokemonFanClubPlayerReceivedDollText
 	waitmessage
-	@ TODO unsupported: playsound SFX_KEY_ITEM
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_GOT_LOST_ITEM_FROM_FAN_CLUB
+	closemessage
+	releaseall
+	end
 
 PokemonFanClub_Johto_PokemonFanClubClefairyGuyScript_GotLostItem:
 	message PokemonFanClub_Johto_PokemonFanClubClefairyGuyGoingToGetARealClefairyText

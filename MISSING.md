@@ -3,7 +3,7 @@
 Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
 Hard caps and approximations live in LIMITS.md.
 
-## Johto: scripts (480 commands still become "not converted yet"; the phone `VAR_CALLERID` family is now the largest group)
+## Johto: scripts (410 commands still become "not converted yet")
 
 Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
 
@@ -11,7 +11,7 @@ Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project
 - Pokecenter nurse: time-of-day greetings, Pokecom/phone and Pokerus handling (replaced by a plain heal), heal-machine animation
 - `fruittree` (30), `fruittree`/berry trees, `itemnotify`, `verbosegiveitemvar`, `trade` (7)
 - Time/date: phone call timers, daily events, DST prompts (no-ops); weekday checks now use the RTC (`JohtoGetWeekday`)
-- Phone/Pokegear: `addcellnum`, phone calls, radio (`special` radio functions), Pokegear menu entry, map card
+- Phone/Pokegear: the phone book does not exist (trainers always get refused when asking for a number, caller id reads 0, no calls, no rematches), radio (`special` radio functions), Pokegear menu entry, map card; scripted rematches that `readmem` a fight counter stay unconverted
 - `loadvar`, `readmem`/`writemem`, `random`, `setlasttalked` use, `getcurlandmarkname`, `gettrainername`, `loadwildmon` (static wild battles: Sudowoodo, legendaries, Red, Lugia, Ho-Oh), `catchtutorial` (Route 29 dude)
 - Decorations (`describedecoration`, decoration system, the player's room items)
 - Specials: Bank of Mom, name rival, `FindPartyMonThatSpeciesYourTrainerID` (Togepi/Elm branches), Day-care, name rater, move tutor, Magnet Train, Card Flip, Coin Case, Unown/Ruins puzzles, Bill's PC

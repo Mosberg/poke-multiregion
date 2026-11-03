@@ -23,8 +23,25 @@ Route44_Johto_TrainerBirdKeeperVance1::
 
 Route44_Johto_TrainerBirdKeeperVance1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_VANCE_READY_FOR_REMATCH, Route44_Johto_TrainerBirdKeeperVance1_WantsBattle
-	@ TODO unsupported: checkcellnum PHONE_BIRDKEEPER_VANCE
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route44_Johto_Route44NumberAcceptedM
+	goto_if_set FLAG_JOHTO_VANCE_ASKED_FOR_PHONE_NUMBER, Route44_Johto_TrainerBirdKeeperVance1_AskedAlready
+	message Route44_Johto_BirdKeeperVanceLegendaryBirdsText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_VANCE_ASKED_FOR_PHONE_NUMBER
+	call Route44_Johto_Route44AskNumber1M_Sub
+	goto Route44_Johto_TrainerBirdKeeperVance1_AskForNumber
+
+Route44_Johto_TrainerBirdKeeperVance1_AskedAlready:
+	call Route44_Johto_Route44AskNumber2M_Sub
+
+Route44_Johto_TrainerBirdKeeperVance1_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route44_Johto_Route44PhoneFullM
+	goto_if_eq VAR_RESULT, 2, Route44_Johto_Route44NumberDeclinedM
+	call Route44_Johto_Route44RegisteredNumberM_Sub
+	goto Route44_Johto_Route44NumberAcceptedM
 
 Route44_Johto_TrainerBirdKeeperVance1_WantsBattle:
 	call Route44_Johto_Route44RematchM_Sub
@@ -33,6 +50,12 @@ Route44_Johto_TrainerBirdKeeperVance1_WantsBattle:
 
 Route44_Johto_Route44NumberAcceptedM:
 	goto Johto_Std_NumberAcceptedMScript
+
+Route44_Johto_Route44NumberDeclinedM:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route44_Johto_Route44PhoneFullM:
+	goto Johto_Std_PhoneFullMScript
 
 Route44_Johto_Route44PackFullM:
 	goto Johto_Std_PackFullMScript
@@ -62,8 +85,25 @@ Route44_Johto_TrainerFisherWilton1::
 Route44_Johto_TrainerFisherWilton1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_WILTON_READY_FOR_REMATCH, Route44_Johto_TrainerFisherWilton1_WantsBattle
 	goto_if_set FLAG_JOHTO_ENGINE_WILTON_HAS_ITEM, Route44_Johto_TrainerFisherWilton1_HasItem
-	@ TODO unsupported: checkcellnum PHONE_FISHER_WILTON
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route44_Johto_Route44NumberAcceptedM
+	goto_if_set FLAG_JOHTO_WILTON_ASKED_FOR_PHONE_NUMBER, Route44_Johto_TrainerFisherWilton1_AskedAlready
+	message Route44_Johto_FisherWiltonHugePoliwagText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_WILTON_ASKED_FOR_PHONE_NUMBER
+	call Route44_Johto_Route44AskNumber1M_Sub
+	goto Route44_Johto_TrainerFisherWilton1_AskForNumber
+
+Route44_Johto_TrainerFisherWilton1_AskedAlready:
+	call Route44_Johto_Route44AskNumber2M_Sub
+
+Route44_Johto_TrainerFisherWilton1_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route44_Johto_Route44PhoneFullM
+	goto_if_eq VAR_RESULT, 2, Route44_Johto_Route44NumberDeclinedM
+	call Route44_Johto_Route44RegisteredNumberM_Sub
+	goto Route44_Johto_Route44NumberAcceptedM
 
 Route44_Johto_TrainerFisherWilton1_WantsBattle:
 	call Route44_Johto_Route44RematchM_Sub
@@ -180,6 +220,15 @@ Route44_Johto_Route44FruitTree:
 	releaseall
 	end
 
+Route44_Johto_Route44AskNumber1M_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route44_Johto_Route44AskNumber2M_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route44_Johto_Route44RegisteredNumberM_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route44_Johto_Route44RematchM_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
@@ -195,6 +244,13 @@ Route44_Johto_FisherWilton1SeenText:
 Route44_Johto_FisherWilton1BeatenText:
 	.string "Just forget about\n"
 	.string "it.$"
+
+Route44_Johto_FisherWiltonHugePoliwagText:
+	.string "That POLIWAG that\n"
+	.string "got away…\l"
+	.string "It was huge."
+	.string "\pI swear it must've\n"
+	.string "been 16 feet long!$"
 
 Route44_Johto_FisherEdgarSeenText:
 	.string "I fish until I\n"
@@ -223,6 +279,15 @@ Route44_Johto_BirdKeeperVance1SeenText:
 Route44_Johto_BirdKeeperVance1BeatenText:
 	.string "Whew! You're hot\n"
 	.string "stuff.$"
+
+Route44_Johto_BirdKeeperVanceLegendaryBirdsText:
+	.string "ARTICUNO, ZAPDOS\n"
+	.string "and MOLTRES are"
+	.string "\pthe three legend-\n"
+	.string "ary bird POKéMON."
+	.string "\pI heard there are\n"
+	.string "other legendary\l"
+	.string "birds, though.$"
 
 Route44_Johto_PsychicPhilSeenText:
 	.string "I'm gonna win,\n"

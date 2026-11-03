@@ -26,7 +26,8 @@ LancesRoom_Johto_LancesRoomDoorLocksBehindYouScript_Entry::
 LancesRoom_Johto_LancesRoomDoorLocksBehindYouScript:
 	applymovement OBJ_EVENT_ID_PLAYER, LancesRoom_Johto_LancesRoom_EnterMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
-	@ TODO unsupported: playsound SFX_STRENGTH
+	playse SE_M_STRENGTH
+	@ TODO unsupported: earthquake 80
 	goto Johto_EventScript_Unimplemented
 
 LancesRoom_Johto_Script_ApproachLanceFromLeft:

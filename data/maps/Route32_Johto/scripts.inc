@@ -201,8 +201,25 @@ Route32_Johto_TrainerFisherRalph1::
 Route32_Johto_TrainerFisherRalph1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_RALPH_READY_FOR_REMATCH, Route32_Johto_TrainerFisherRalph1_Rematch
 	goto_if_set FLAG_JOHTO_ENGINE_QWILFISH_SWARM, Route32_Johto_TrainerFisherRalph1_Swarm
-	@ TODO unsupported: checkcellnum PHONE_FISHER_RALPH
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route32_Johto_TrainerFisherRalph1_NumberAccepted
+	goto_if_set FLAG_JOHTO_RALPH_ASKED_FOR_PHONE_NUMBER, Route32_Johto_TrainerFisherRalph1_AskAgain
+	message Route32_Johto_FisherRalphAfterText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_RALPH_ASKED_FOR_PHONE_NUMBER
+	call Route32_Johto_TrainerFisherRalph1_AskNumber1_Sub
+	goto Route32_Johto_TrainerFisherRalph1_AskForNumber
+
+Route32_Johto_TrainerFisherRalph1_AskAgain:
+	call Route32_Johto_TrainerFisherRalph1_AskNumber2_Sub
+
+Route32_Johto_TrainerFisherRalph1_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route32_Johto_TrainerFisherRalph1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route32_Johto_TrainerFisherRalph1_NumberDeclined
+	call Route32_Johto_TrainerFisherRalph1_RegisteredNumber_Sub
+	goto Route32_Johto_TrainerFisherRalph1_NumberAccepted
 
 Route32_Johto_TrainerFisherRalph1_Rematch:
 	call Route32_Johto_TrainerFisherRalph1_RematchStd_Sub
@@ -216,6 +233,15 @@ Route32_Johto_TrainerFisherRalph1_Swarm:
 	closemessage
 	releaseall
 	end
+
+Route32_Johto_TrainerFisherRalph1_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route32_Johto_TrainerFisherRalph1_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route32_Johto_TrainerFisherRalph1_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route32_Johto_TrainerFisherHenry::
 	trainerbattle_single TRAINER_JOHTO_FISHER_HENRY, Route32_Johto_FisherHenrySeenText, Route32_Johto_FisherHenryBeatenText
@@ -241,13 +267,39 @@ Route32_Johto_TrainerPicnickerLiz1::
 
 Route32_Johto_TrainerPicnickerLiz1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_LIZ_READY_FOR_REMATCH, Route32_Johto_TrainerPicnickerLiz1_Rematch
-	@ TODO unsupported: checkcellnum PHONE_PICNICKER_LIZ
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route32_Johto_TrainerPicnickerLiz1_NumberAccepted
+	goto_if_set FLAG_JOHTO_LIZ_ASKED_FOR_PHONE_NUMBER, Route32_Johto_TrainerPicnickerLiz1_AskAgain
+	message Route32_Johto_PicnickerLiz1AfterText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_LIZ_ASKED_FOR_PHONE_NUMBER
+	call Route32_Johto_TrainerPicnickerLiz1_AskNumber1_Sub
+	goto Route32_Johto_TrainerPicnickerLiz1_AskForNumber
+
+Route32_Johto_TrainerPicnickerLiz1_AskAgain:
+	call Route32_Johto_TrainerPicnickerLiz1_AskNumber2_Sub
+
+Route32_Johto_TrainerPicnickerLiz1_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route32_Johto_TrainerPicnickerLiz1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route32_Johto_TrainerPicnickerLiz1_NumberDeclined
+	call Route32_Johto_TrainerPicnickerLiz1_RegisteredNumber_Sub
+	goto Route32_Johto_TrainerPicnickerLiz1_NumberAccepted
 
 Route32_Johto_TrainerPicnickerLiz1_Rematch:
 	call Route32_Johto_TrainerPicnickerLiz1_RematchStd_Sub
 	@ TODO unsupported: readmem wLizFightCount
 	goto Johto_EventScript_Unimplemented
+
+Route32_Johto_TrainerPicnickerLiz1_NumberAccepted:
+	goto Johto_Std_NumberAcceptedFScript
+
+Route32_Johto_TrainerPicnickerLiz1_NumberDeclined:
+	goto Johto_Std_NumberDeclinedFScript
+
+Route32_Johto_TrainerPicnickerLiz1_PhoneFull:
+	goto Johto_Std_PhoneFullFScript
 
 Route32_Johto_TrainerYoungsterAlbert::
 	trainerbattle_single TRAINER_JOHTO_YOUNGSTER_ALBERT, Route32_Johto_YoungsterAlbertSeenText, Route32_Johto_YoungsterAlbertBeatenText
@@ -399,8 +451,26 @@ Route32_Johto_Route32CooltrainerMContinueScene_BagFull_Sub:
 	closemessage
 	return
 
+Route32_Johto_TrainerFisherRalph1_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route32_Johto_TrainerFisherRalph1_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route32_Johto_TrainerFisherRalph1_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route32_Johto_TrainerFisherRalph1_RematchStd_Sub:
 	goto Johto_Std_RematchMScript_Sub
+
+Route32_Johto_TrainerPicnickerLiz1_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1FScript_Sub
+
+Route32_Johto_TrainerPicnickerLiz1_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2FScript_Sub
+
+Route32_Johto_TrainerPicnickerLiz1_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberFScript_Sub
 
 Route32_Johto_TrainerPicnickerLiz1_RematchStd_Sub:
 	goto Johto_Std_RematchFScript_Sub
@@ -519,6 +589,12 @@ Route32_Johto_FisherRalph1BeatenText:
 	.string "Tch! I tried to\n"
 	.string "rush things…$"
 
+Route32_Johto_FisherRalphAfterText:
+	.string "Fishing is a life-\n"
+	.string "long passion."
+	.string "\pPOKéMON are life-\n"
+	.string "long friends!$"
+
 Route32_Johto_FisherRalphSwarmText:
 	.string "One, two, three…\n"
 	.string "Muahahaha, what a"
@@ -596,6 +672,10 @@ Route32_Johto_PicnickerLiz1SeenText:
 Route32_Johto_PicnickerLiz1BeatenText:
 	.string "Oh! I've got to\n"
 	.string "relieve my anger!$"
+
+Route32_Johto_PicnickerLiz1AfterText:
+	.string "I was having a\n"
+	.string "nice chat too.$"
 
 Route32_Johto_BirdKeeperPeterSeenText:
 	.string "That BADGE! It's\n"

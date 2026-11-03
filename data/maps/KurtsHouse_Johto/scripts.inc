@@ -57,14 +57,28 @@ KurtsHouse_Johto_Kurt1:
 	goto_if_eq VAR_RESULT, DIR_NORTH, KurtsHouse_Johto_Kurt1_RunAround
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
 	waitmovement OBJ_EVENT_ID_PLAYER
-	@ TODO unsupported: playsound SFX_FLY
-	goto Johto_EventScript_Unimplemented
+	playse SE_M_FLY
+	applymovement 1, KurtsHouse_Johto_KurtsHouseKurtExitHouseMovement
+	waitmovement 1
+	playse SE_EXIT
+	removeobject 1
+	waitse
+	fadedefaultbgm
+	releaseall
+	end
 
 KurtsHouse_Johto_Kurt1_RunAround:
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
 	waitmovement OBJ_EVENT_ID_PLAYER
-	@ TODO unsupported: playsound SFX_FLY
-	goto Johto_EventScript_Unimplemented
+	playse SE_M_FLY
+	applymovement 1, KurtsHouse_Johto_KurtsHouseKurtGoAroundPlayerThenExitHouseMovement
+	waitmovement 1
+	playse SE_EXIT
+	removeobject 1
+	waitse
+	fadedefaultbgm
+	releaseall
+	end
 
 KurtsHouse_Johto_Kurt1_ClearedSlowpokeWell:
 	message KurtsHouse_Johto_KurtsHouseKurtHonoredToMakeBallsText
@@ -245,14 +259,27 @@ KurtsHouse_Johto_Kurt1_NotMakingBalls:
 	goto_if_eq VAR_RESULT, DIR_NORTH, KurtsHouse_Johto_Kurt1_GSBallRunAround
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
 	waitmovement OBJ_EVENT_ID_PLAYER
-	@ TODO unsupported: playsound SFX_FLY
-	goto Johto_EventScript_Unimplemented
+	playse SE_M_FLY
+	applymovement 1, KurtsHouse_Johto_KurtsHouseKurtExitHouseMovement
+	waitmovement 1
+	goto KurtsHouse_Johto_Kurt1_KurtHasLeftTheBuilding
 
 KurtsHouse_Johto_Kurt1_GSBallRunAround:
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
 	waitmovement OBJ_EVENT_ID_PLAYER
-	@ TODO unsupported: playsound SFX_FLY
-	goto Johto_EventScript_Unimplemented
+	playse SE_M_FLY
+	applymovement 1, KurtsHouse_Johto_KurtsHouseKurtGoAroundPlayerThenExitHouseMovement
+	waitmovement 1
+
+KurtsHouse_Johto_Kurt1_KurtHasLeftTheBuilding:
+	playse SE_EXIT
+	removeobject 1
+	clearflag FLAG_JOHTO_AZALEA_TOWN_KURT
+	waitse
+	fadedefaultbgm
+	setvar VAR_JOHTO_SCENE_AZALEA_TOWN, 2
+	releaseall
+	end
 
 KurtsHouse_Johto_Kurt2:
 	faceplayer
@@ -415,6 +442,23 @@ KurtsHouse_Johto_KurtsHouseKurtCallback_MakingBalls_Cb:
 
 KurtsHouse_Johto_KurtsHouseKurtCallback_Done_Cb:
 	return
+
+KurtsHouse_Johto_KurtsHouseKurtExitHouseMovement:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+KurtsHouse_Johto_KurtsHouseKurtGoAroundPlayerThenExitHouseMovement:
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
 
 KurtsHouse_Johto_KurtsHouseKurtMakingBallsMustWaitText:
 	.string "Hm? Who are you?"

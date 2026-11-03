@@ -55,8 +55,20 @@ Route36_Johto_Route36SuicuneScript:
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
 	waitmovement OBJ_EVENT_ID_PLAYER
 	delay 15
-	@ TODO unsupported: playsound SFX_WARP_FROM
-	goto Johto_EventScript_Unimplemented
+	playse SE_WARP_OUT
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Up
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 9, Route36_Johto_Route36SuicuneMovement
+	waitmovement 9
+	removeobject 9
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 10
+	setvar VAR_JOHTO_SCENE_ROUTE_36, 0
+	clearflag FLAG_JOHTO_SAW_SUICUNE_AT_CIANWOOD_CITY
+	setvar VAR_JOHTO_SCENE_CIANWOOD_CITY, 1
+	releaseall
+	end
 
 Route36_Johto_SudowoodoScript:
 	checkitem ITEM_SQUIRTBOTTLE, 1
@@ -175,8 +187,25 @@ Route36_Johto_TrainerSchoolboyAlan1::
 Route36_Johto_TrainerSchoolboyAlan1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_ALAN_READY_FOR_REMATCH, Route36_Johto_TrainerSchoolboyAlan1_ChooseRematch
 	goto_if_set FLAG_JOHTO_ENGINE_ALAN_HAS_FIRE_STONE, Route36_Johto_TrainerSchoolboyAlan1_GiveFireStone
-	@ TODO unsupported: checkcellnum PHONE_SCHOOLBOY_ALAN
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route36_Johto_TrainerSchoolboyAlan1_NumberAccepted
+	goto_if_set FLAG_JOHTO_ALAN_ASKED_FOR_PHONE_NUMBER, Route36_Johto_TrainerSchoolboyAlan1_AskAgainForPhoneNumber
+	message Route36_Johto_SchoolboyAlanBooksText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_ALAN_ASKED_FOR_PHONE_NUMBER
+	call Route36_Johto_TrainerSchoolboyAlan1_AskNumber1_Sub
+	goto Route36_Johto_TrainerSchoolboyAlan1_ContinueAskForPhoneNumber
+
+Route36_Johto_TrainerSchoolboyAlan1_AskAgainForPhoneNumber:
+	call Route36_Johto_TrainerSchoolboyAlan1_AskNumber2_Sub
+
+Route36_Johto_TrainerSchoolboyAlan1_ContinueAskForPhoneNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route36_Johto_TrainerSchoolboyAlan1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route36_Johto_TrainerSchoolboyAlan1_NumberDeclined
+	call Route36_Johto_TrainerSchoolboyAlan1_RegisteredNumber_Sub
+	goto Route36_Johto_TrainerSchoolboyAlan1_NumberAccepted
 
 Route36_Johto_TrainerSchoolboyAlan1_ChooseRematch:
 	call Route36_Johto_TrainerSchoolboyAlan1_Rematch_Sub
@@ -196,6 +225,12 @@ Route36_Johto_TrainerSchoolboyAlan1_BagFull:
 
 Route36_Johto_TrainerSchoolboyAlan1_NumberAccepted:
 	goto Johto_Std_NumberAcceptedMScript
+
+Route36_Johto_TrainerSchoolboyAlan1_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route36_Johto_TrainerSchoolboyAlan1_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route36_Johto_TrainerSchoolboyAlan1_PackFull:
 	goto Johto_Std_PackFullMScript
@@ -297,6 +332,15 @@ Route36_Johto_Route36FruitTree:
 	releaseall
 	end
 
+Route36_Johto_TrainerSchoolboyAlan1_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route36_Johto_TrainerSchoolboyAlan1_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route36_Johto_TrainerSchoolboyAlan1_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route36_Johto_TrainerSchoolboyAlan1_Rematch_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
@@ -335,6 +379,9 @@ Route36_Johto_FloriaMovement2:
 	walk_left
 	walk_left
 	walk_left
+	step_end
+
+Route36_Johto_Route36SuicuneMovement:
 	step_end
 
 Route36_Johto_UseSquirtbottleText:
@@ -437,6 +484,13 @@ Route36_Johto_SchoolboyAlan1SeenText:
 Route36_Johto_SchoolboyAlan1BeatenText:
 	.string "Oops! Computation\n"
 	.string "error?$"
+
+Route36_Johto_SchoolboyAlanBooksText:
+	.string "Darn. I study five\n"
+	.string "hours a day too."
+	.string "\pThere's more to\n"
+	.string "learning than just\l"
+	.string "reading books.$"
 
 Route36_Johto_MeetArthurText:
 	.string "ARTHUR: Who are\n"

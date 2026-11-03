@@ -1052,6 +1052,7 @@ enum __attribute__((packed)) Item
     ITEM_TATSUGIRINITE = 872,
     ITEM_GLIMMORANITE = 873,
 
+
     // POKE-CRYSTAL-BEGIN
     ITEM_MYSTERY_EGG,
     ITEM_RED_SCALE,

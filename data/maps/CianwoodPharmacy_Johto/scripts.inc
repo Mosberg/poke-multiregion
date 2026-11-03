@@ -20,8 +20,16 @@ CianwoodPharmacy_Johto_CianwoodPharmacist:
 	additem ITEM_SECRETPOTION
 	message CianwoodPharmacy_Johto_ReceivedSecretpotionText
 	waitmessage
-	@ TODO unsupported: playsound SFX_KEY_ITEM
-	goto Johto_EventScript_Unimplemented
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_GOT_SECRETPOTION_FROM_PHARMACY
+	message CianwoodPharmacy_Johto_PharmacistDescribeSecretpotionText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 CianwoodPharmacy_Johto_CianwoodPharmacist_Mart:
 	pokemart Johto_Mart_CIANWOOD
@@ -48,3 +56,9 @@ CianwoodPharmacy_Johto_PharmacistGiveSecretpotionText:
 CianwoodPharmacy_Johto_ReceivedSecretpotionText:
 	.string "{PLAYER} received\n"
 	.string "SECRETPOTION.$"
+
+CianwoodPharmacy_Johto_PharmacistDescribeSecretpotionText:
+	.string "My SECRETPOTION is\n"
+	.string "a tad too strong."
+	.string "\pI only offer it in\n"
+	.string "an emergency.$"

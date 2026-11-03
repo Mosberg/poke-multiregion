@@ -202,6 +202,8 @@ CeruleanGym_Johto_CeruleanGymGruntRunsIntoYouMovement:
 	lock_facing_direction
 	jump_up
 	unlock_facing_direction
+	delay_8
+	delay_8
 	walk_down
 	walk_down
 	step_end

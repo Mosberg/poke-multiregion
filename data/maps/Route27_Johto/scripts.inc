@@ -83,8 +83,25 @@ Route27_Johto_TrainerBirdKeeperJose2::
 Route27_Johto_TrainerBirdKeeperJose2_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_JOSE_READY_FOR_REMATCH, Route27_Johto_TrainerBirdKeeperJose2_WantsBattle
 	goto_if_set FLAG_JOHTO_ENGINE_JOSE_HAS_STAR_PIECE, Route27_Johto_TrainerBirdKeeperJose2_HasStarPiece
-	@ TODO unsupported: checkcellnum PHONE_BIRDKEEPER_JOSE
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route27_Johto_TrainerBirdKeeperJose2_NumberAccepted
+	goto_if_set FLAG_JOHTO_JOSE_ASKED_FOR_PHONE_NUMBER, Route27_Johto_TrainerBirdKeeperJose2_AskedAlready
+	message Route27_Johto_BirdKeeperJose2AfterBattleText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_JOSE_ASKED_FOR_PHONE_NUMBER
+	call Route27_Johto_TrainerBirdKeeperJose2_AskNumber1_Sub
+	goto Route27_Johto_TrainerBirdKeeperJose2_AskForNumber
+
+Route27_Johto_TrainerBirdKeeperJose2_AskedAlready:
+	call Route27_Johto_TrainerBirdKeeperJose2_AskNumber2_Sub
+
+Route27_Johto_TrainerBirdKeeperJose2_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route27_Johto_TrainerBirdKeeperJose2_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route27_Johto_TrainerBirdKeeperJose2_NumberDeclined
+	call Route27_Johto_TrainerBirdKeeperJose2_RegisteredNumber_Sub
+	goto Route27_Johto_TrainerBirdKeeperJose2_NumberAccepted
 
 Route27_Johto_TrainerBirdKeeperJose2_WantsBattle:
 	call Route27_Johto_TrainerBirdKeeperJose2_Rematch_Sub
@@ -103,6 +120,12 @@ Route27_Johto_TrainerBirdKeeperJose2_NoRoom:
 
 Route27_Johto_TrainerBirdKeeperJose2_NumberAccepted:
 	goto Johto_Std_NumberAcceptedMScript
+
+Route27_Johto_TrainerBirdKeeperJose2_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route27_Johto_TrainerBirdKeeperJose2_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route27_Johto_TrainerBirdKeeperJose2_PackFull:
 	goto Johto_Std_PackFullMScript
@@ -146,13 +169,39 @@ Route27_Johto_TrainerCooltrainerfReena::
 
 Route27_Johto_TrainerCooltrainerfReena_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_REENA_READY_FOR_REMATCH, Route27_Johto_TrainerCooltrainerfReena_WantsBattle
-	@ TODO unsupported: checkcellnum PHONE_COOLTRAINERF_REENA
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route27_Johto_TrainerCooltrainerfReena_NumberAccepted
+	goto_if_set FLAG_JOHTO_REENA_ASKED_FOR_PHONE_NUMBER, Route27_Johto_TrainerCooltrainerfReena_AskedAlready
+	message Route27_Johto_CooltrainerfReenaAfterBattleText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_REENA_ASKED_FOR_PHONE_NUMBER
+	call Route27_Johto_TrainerCooltrainerfReena_AskNumber1_Sub
+	goto Route27_Johto_TrainerCooltrainerfReena_AskForNumber
+
+Route27_Johto_TrainerCooltrainerfReena_AskedAlready:
+	call Route27_Johto_TrainerCooltrainerfReena_AskNumber2_Sub
+
+Route27_Johto_TrainerCooltrainerfReena_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route27_Johto_TrainerCooltrainerfReena_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route27_Johto_TrainerCooltrainerfReena_NumberDeclined
+	call Route27_Johto_TrainerCooltrainerfReena_RegisteredNumber_Sub
+	goto Route27_Johto_TrainerCooltrainerfReena_NumberAccepted
 
 Route27_Johto_TrainerCooltrainerfReena_WantsBattle:
 	call Route27_Johto_TrainerCooltrainerfReena_Rematch_Sub
 	@ TODO unsupported: readmem wReenaFightCount
 	goto Johto_EventScript_Unimplemented
+
+Route27_Johto_TrainerCooltrainerfReena_NumberAccepted:
+	goto Johto_Std_NumberAcceptedFScript
+
+Route27_Johto_TrainerCooltrainerfReena_NumberDeclined:
+	goto Johto_Std_NumberDeclinedFScript
+
+Route27_Johto_TrainerCooltrainerfReena_PhoneFull:
+	goto Johto_Std_PhoneFullFScript
 
 Route27_Johto_TrainerCooltrainerfMegan::
 	trainerbattle_single TRAINER_JOHTO_COOLTRAINERF_MEGAN, Route27_Johto_CooltrainerfMeganSeenText, Route27_Johto_CooltrainerfMeganBeatenText
@@ -177,11 +226,29 @@ Route27_Johto_TohjoFallsSign:
 	releaseall
 	end
 
+Route27_Johto_TrainerBirdKeeperJose2_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route27_Johto_TrainerBirdKeeperJose2_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route27_Johto_TrainerBirdKeeperJose2_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route27_Johto_TrainerBirdKeeperJose2_Rematch_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
 Route27_Johto_TrainerBirdKeeperJose2_Gift_Sub:
 	goto Johto_Std_GiftMScript_Sub
+
+Route27_Johto_TrainerCooltrainerfReena_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1FScript_Sub
+
+Route27_Johto_TrainerCooltrainerfReena_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2FScript_Sub
+
+Route27_Johto_TrainerCooltrainerfReena_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberFScript_Sub
 
 Route27_Johto_TrainerCooltrainerfReena_Rematch_Sub:
 	goto Johto_Std_RematchFScript_Sub
@@ -246,6 +313,12 @@ Route27_Johto_CooltrainerfReenaBeatenText:
 	.string "Oh! You're much\n"
 	.string "too strong!$"
 
+Route27_Johto_CooltrainerfReenaAfterBattleText:
+	.string "You're just a kid,\n"
+	.string "but you're not to"
+	.string "\pbe underestimated\n"
+	.string "either.$"
+
 Route27_Johto_CooltrainerfMeganSeenText:
 	.string "It's rare to see\n"
 	.string "anyone come here."
@@ -292,6 +365,12 @@ Route27_Johto_BirdKeeperJose2SeenText:
 
 Route27_Johto_BirdKeeperJose2BeatenText:
 	.string "Tweet!$"
+
+Route27_Johto_BirdKeeperJose2AfterBattleText:
+	.string "BIRD KEEPERS like\n"
+	.string "me mimic bird"
+	.string "\pwhistles to com-\n"
+	.string "mand POKéMON.$"
 
 Route27_Johto_TohjoFallsSignText:
 	.string "TOHJO FALLS"

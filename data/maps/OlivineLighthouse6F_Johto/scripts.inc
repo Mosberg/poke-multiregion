@@ -149,6 +149,8 @@ OlivineLighthouse6F_Johto_OlivineLighthouseJasmineLeavesUpMovement:
 	walk_slow_right
 	walk_slow_up
 	walk_slow_up
+	delay_8
+	delay_8
 	step_end
 
 OlivineLighthouse6F_Johto_OlivineLighthouseJasmineLeavesDownMovement:
@@ -169,6 +171,7 @@ OlivineLighthouse6F_Johto_OlivineLighthouseJasmineLeavesRightMovement:
 	walk_slow_up
 	walk_slow_up
 	walk_slow_up
+	delay_8
 	step_end
 
 OlivineLighthouse6F_Johto_JasmineCianwoodPharmacyText:

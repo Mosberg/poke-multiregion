@@ -131,8 +131,9 @@ DragonsDenB1F_Johto_DragonsDenB1FDragonFangScript:
 	waitmessage
 	playse SE_PIN
 	waitse
-	@ TODO unsupported: itemnotify 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	releaseall
+	end
 
 DragonsDenB1F_Johto_DragonsDenB1FDragonFangScript_BagFull:
 	bufferitemname STR_VAR_1, ITEM_DRAGON_FANG

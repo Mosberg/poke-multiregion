@@ -163,20 +163,50 @@ CherrygroveCity_Johto_CherrygroveRivalSceneNorth:
 	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Chikorita
 	setvar VAR_LAST_TALKED, 2
 	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_1_TOTODILE, CherrygroveCity_Johto_RivalCherrygroveWinText
-	@ TODO unsupported: reloadmap 
-	goto Johto_EventScript_Unimplemented
+	goto_if_set FLAG_JOHTO_GOT_CHIKORITA_FROM_ELM, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_AfterVictorious
+	goto CherrygroveCity_Johto_CherrygroveRivalSceneNorth_AfterYourDefeat
 
 CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Totodile:
 	setvar VAR_LAST_TALKED, 2
 	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_1_CHIKORITA, CherrygroveCity_Johto_RivalCherrygroveWinText
-	@ TODO unsupported: reloadmap 
-	goto Johto_EventScript_Unimplemented
+	goto_if_ne VAR_RESULT, 0, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_AfterVictorious
+	goto CherrygroveCity_Johto_CherrygroveRivalSceneNorth_AfterYourDefeat
 
 CherrygroveCity_Johto_CherrygroveRivalSceneNorth_Chikorita:
 	setvar VAR_LAST_TALKED, 2
 	trainerbattle_no_intro TRAINER_JOHTO_RIVAL1_RIVAL1_1_CYNDAQUIL, CherrygroveCity_Johto_RivalCherrygroveWinText
-	@ TODO unsupported: reloadmap 
-	goto Johto_EventScript_Unimplemented
+	goto_if_ne VAR_RESULT, 0, CherrygroveCity_Johto_CherrygroveRivalSceneNorth_AfterVictorious
+	goto CherrygroveCity_Johto_CherrygroveRivalSceneNorth_AfterYourDefeat
+
+CherrygroveCity_Johto_CherrygroveRivalSceneNorth_AfterVictorious:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message CherrygroveCity_Johto_CherrygroveRivalText_YouWon
+	waitmessage
+	waitbuttonpress
+	closemessage
+	goto CherrygroveCity_Johto_CherrygroveRivalSceneNorth_FinishRival
+
+CherrygroveCity_Johto_CherrygroveRivalSceneNorth_AfterYourDefeat:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message CherrygroveCity_Johto_CherrygroveRivalText_YouLost
+	waitmessage
+	waitbuttonpress
+	closemessage
+
+CherrygroveCity_Johto_CherrygroveRivalSceneNorth_FinishRival:
+	playse SE_M_TAIL_WHIP
+	applymovement OBJ_EVENT_ID_PLAYER, CherrygroveCity_Johto_CherrygroveCity_RivalPushesYouOutOfTheWay
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Left
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 2, CherrygroveCity_Johto_CherrygroveCity_RivalExitsStageLeft
+	waitmovement 2
+	removeobject 2
+	setvar VAR_JOHTO_SCENE_CHERRYGROVE_CITY, 0
+	special HealPlayerParty
+	fadedefaultbgm
+	releaseall
+	end
 
 CherrygroveCity_Johto_CherrygroveTeacherScript:
 	faceplayer
@@ -343,6 +373,22 @@ CherrygroveCity_Johto_CherrygroveCity_RivalWalksToYou:
 	walk_left
 	step_end
 
+CherrygroveCity_Johto_CherrygroveCity_RivalPushesYouOutOfTheWay:
+	walk_fast_down
+	face_up
+	step_end
+
+CherrygroveCity_Johto_CherrygroveCity_RivalExitsStageLeft:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	step_end
+
 CherrygroveCity_Johto_GuideGentIntroText:
 	.string "You're a rookie\n"
 	.string "trainer, aren't\l"
@@ -433,6 +479,22 @@ CherrygroveCity_Johto_CherrygroveRivalText_Seen:
 CherrygroveCity_Johto_RivalCherrygroveWinText:
 	.string "Humph. Are you\n"
 	.string "happy you won?$"
+
+CherrygroveCity_Johto_CherrygroveRivalText_YouLost:
+	.string "<……> <……> <……>"
+	.string "\pMy name's ???."
+	.string "\pI'm going to be\n"
+	.string "the world's great-\l"
+	.string "est POKéMON\l"
+	.string "trainer.$"
+
+CherrygroveCity_Johto_CherrygroveRivalText_YouWon:
+	.string "<……> <……> <……>"
+	.string "\pMy name's ???."
+	.string "\pI'm going to be\n"
+	.string "the world's great-\l"
+	.string "est POKéMON\l"
+	.string "trainer.$"
 
 CherrygroveCity_Johto_CherrygroveTeacherText_NoMapCard:
 	.string "Did you talk to\n"

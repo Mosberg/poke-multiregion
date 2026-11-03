@@ -45,7 +45,11 @@ MrPokemonsHouse_Johto_MrPokemonsHouseMrPokemonEventScript:
 	additem ITEM_MYSTERY_EGG
 	message MrPokemonsHouse_Johto_MrPokemonsHouse_GotEggText
 	waitmessage
-	@ TODO unsupported: playsound SFX_KEY_ITEM
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_GOT_MYSTERY_EGG_FROM_MR_POKEMON
+	@ TODO unsupported: blackoutmod CHERRYGROVE_CITY
 	goto Johto_EventScript_Unimplemented
 
 MrPokemonsHouse_Johto_MrPokemonsHouse_MrPokemonScript:

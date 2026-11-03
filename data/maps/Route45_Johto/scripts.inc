@@ -22,8 +22,34 @@ Route45_Johto_TrainerBlackbeltKenji::
 	goto Route45_Johto_TrainerBlackbeltKenji_Script
 
 Route45_Johto_TrainerBlackbeltKenji_Script:
-	@ TODO unsupported: checkcellnum PHONE_BLACKBELT_KENJI
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route45_Johto_TrainerBlackbeltKenji_Registered
+	goto_if_set FLAG_JOHTO_KENJI_ASKED_FOR_PHONE_NUMBER, Route45_Johto_TrainerBlackbeltKenji_AskedAlready
+	@ TODO unsupported: special SampleKenjiBreakCountdown
 	goto Johto_EventScript_Unimplemented
+
+Route45_Johto_TrainerBlackbeltKenji_AskedAlready:
+	call Route45_Johto_Route45AskNumber2M_Sub
+
+Route45_Johto_TrainerBlackbeltKenji_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route45_Johto_Route45PhoneFullM
+	goto_if_eq VAR_RESULT, 2, Route45_Johto_Route45NumberDeclinedM
+	call Route45_Johto_Route45RegisteredNumberM_Sub
+	goto Route45_Johto_Route45NumberAcceptedM
+
+Route45_Johto_TrainerBlackbeltKenji_Registered:
+	@ TODO unsupported: readvar VAR_KENJI_BREAK
+	goto Johto_EventScript_Unimplemented
+
+Route45_Johto_Route45NumberAcceptedM:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route45_Johto_Route45NumberDeclinedM:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route45_Johto_Route45PhoneFullM:
+	goto Johto_Std_PhoneFullMScript
 
 Route45_Johto_TrainerHikerErik::
 	trainerbattle_single TRAINER_JOHTO_HIKER_ERIK, Route45_Johto_HikerErikSeenText, Route45_Johto_HikerErikBeatenText
@@ -64,8 +90,25 @@ Route45_Johto_TrainerHikerParry::
 
 Route45_Johto_TrainerHikerParry_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_PARRY_READY_FOR_REMATCH, Route45_Johto_TrainerHikerParry_WantsBattle
-	@ TODO unsupported: checkcellnum PHONE_HIKER_PARRY
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route45_Johto_Route45NumberAcceptedM
+	goto_if_set FLAG_JOHTO_PARRY_ASKED_FOR_PHONE_NUMBER, Route45_Johto_TrainerHikerParry_AskedAlready
+	message Route45_Johto_HikerParryAfterBattleText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_PARRY_ASKED_FOR_PHONE_NUMBER
+	call Route45_Johto_Route45AskNumber1M_Sub
+	goto Route45_Johto_TrainerHikerParry_AskForNumber
+
+Route45_Johto_TrainerHikerParry_AskedAlready:
+	call Route45_Johto_Route45AskNumber2M_Sub
+
+Route45_Johto_TrainerHikerParry_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route45_Johto_Route45PhoneFullM
+	goto_if_eq VAR_RESULT, 2, Route45_Johto_Route45NumberDeclinedM
+	call Route45_Johto_Route45RegisteredNumberM_Sub
+	goto Route45_Johto_Route45NumberAcceptedM
 
 Route45_Johto_TrainerHikerParry_WantsBattle:
 	call Route45_Johto_Route45RematchM_Sub
@@ -153,6 +196,15 @@ Route45_Johto_Route45FruitTree:
 	releaseall
 	end
 
+Route45_Johto_Route45AskNumber1M_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route45_Johto_Route45AskNumber2M_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route45_Johto_Route45RegisteredNumberM_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route45_Johto_Route45RematchM_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
@@ -197,6 +249,12 @@ Route45_Johto_HikerParry3SeenText:
 Route45_Johto_HikerParry3BeatenText:
 	.string "Wahahah! I'm the\n"
 	.string "big loser!$"
+
+Route45_Johto_HikerParryAfterBattleText:
+	.string "I'm not much good\n"
+	.string "at thinking, see?"
+	.string "\pSo, I just plow\n"
+	.string "ahead with power!$"
 
 Route45_Johto_HikerTimothySeenText:
 	.string "Why do I climb\n"

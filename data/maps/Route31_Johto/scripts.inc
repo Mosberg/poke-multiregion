@@ -41,8 +41,25 @@ Route31_Johto_TrainerBugCatcherWade1::
 Route31_Johto_TrainerBugCatcherWade1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_WADE_READY_FOR_REMATCH, Route31_Johto_TrainerBugCatcherWade1_WadeRematch
 	goto_if_set FLAG_JOHTO_ENGINE_WADE_HAS_ITEM, Route31_Johto_TrainerBugCatcherWade1_WadeItem
-	@ TODO unsupported: checkcellnum PHONE_BUG_CATCHER_WADE
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route31_Johto_TrainerBugCatcherWade1_AcceptedNumberSTD
+	goto_if_set FLAG_JOHTO_WADE_ASKED_FOR_PHONE_NUMBER, Route31_Johto_TrainerBugCatcherWade1_AskAgain
+	message Route31_Johto_BugCatcherWade1AfterText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_WADE_ASKED_FOR_PHONE_NUMBER
+	call Route31_Johto_TrainerBugCatcherWade1_AskPhoneNumberSTD_Sub
+	goto Route31_Johto_TrainerBugCatcherWade1_Continue
+
+Route31_Johto_TrainerBugCatcherWade1_AskAgain:
+	call Route31_Johto_TrainerBugCatcherWade1_AskAgainSTD_Sub
+
+Route31_Johto_TrainerBugCatcherWade1_Continue:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route31_Johto_TrainerBugCatcherWade1_PhoneFullSTD
+	goto_if_eq VAR_RESULT, 2, Route31_Johto_TrainerBugCatcherWade1_DeclinedNumberSTD
+	call Route31_Johto_TrainerBugCatcherWade1_RegisterNumberSTD_Sub
+	goto Route31_Johto_TrainerBugCatcherWade1_AcceptedNumberSTD
 
 Route31_Johto_TrainerBugCatcherWade1_WadeRematch:
 	call Route31_Johto_TrainerBugCatcherWade1_RematchSTD_Sub
@@ -85,6 +102,12 @@ Route31_Johto_TrainerBugCatcherWade1_PackFull:
 Route31_Johto_TrainerBugCatcherWade1_AcceptedNumberSTD:
 	goto Johto_Std_NumberAcceptedMScript
 
+Route31_Johto_TrainerBugCatcherWade1_DeclinedNumberSTD:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route31_Johto_TrainerBugCatcherWade1_PhoneFullSTD:
+	goto Johto_Std_PhoneFullMScript
+
 Route31_Johto_TrainerBugCatcherWade1_PackFullSTD:
 	goto Johto_Std_PackFullMScript
 
@@ -103,7 +126,8 @@ Route31_Johto_Route31MailRecipientScript_TryGiveKenya:
 	message Route31_Johto_Text_Route31SleepyManGotMail
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: checkpokemail ReceivedSpearowMailText
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: ifequal POKEMAIL_WRONG_MAIL, .WrongMail
 	goto Johto_EventScript_Unimplemented
 
 Route31_Johto_Route31MailRecipientScript_DescribeNightmare:
@@ -157,6 +181,15 @@ Route31_Johto_Route31FruitTree:
 	releaseall
 	end
 
+Route31_Johto_TrainerBugCatcherWade1_AskPhoneNumberSTD_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route31_Johto_TrainerBugCatcherWade1_AskAgainSTD_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route31_Johto_TrainerBugCatcherWade1_RegisterNumberSTD_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route31_Johto_TrainerBugCatcherWade1_RematchSTD_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
@@ -183,6 +216,15 @@ Route31_Johto_BugCatcherWade1SeenText:
 
 Route31_Johto_BugCatcherWade1BeatenText:
 	.string "Awwwww…$"
+
+Route31_Johto_BugCatcherWade1AfterText:
+	.string "You can catch\n"
+	.string "POKéMON even if"
+	.string "\pyou have six with\n"
+	.string "you."
+	.string "\pIf you catch one,\n"
+	.string "it'll go to your\l"
+	.string "BOX automatically.$"
 
 Route31_Johto_Text_Route31SleepyMan:
 	.string "… Hnuurg… Huh?"

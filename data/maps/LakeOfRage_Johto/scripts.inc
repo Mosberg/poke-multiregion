@@ -56,8 +56,15 @@ LakeOfRage_Johto_LakeOfRageLanceScript_AgreedToHelp:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: playsound SFX_WARP_TO
-	goto Johto_EventScript_Unimplemented
+	playse SE_WARP_IN
+	applymovement 1, LakeOfRage_Johto_LakeOfRageLanceTeleportIntoSkyMovement
+	waitmovement 1
+	removeobject 1
+	clearflag FLAG_JOHTO_MAHOGANY_MART_LANCE_AND_DRAGONITE
+	setflag FLAG_JOHTO_DECIDED_TO_HELP_LANCE
+	setvar VAR_JOHTO_SCENE_MAHOGANY_MART_1F, 1
+	releaseall
+	end
 
 LakeOfRage_Johto_LakeOfRageLanceScript_RefusedToHelp:
 	message LakeOfRage_Johto_LakeOfRageLanceRefusedText
@@ -260,6 +267,9 @@ LakeOfRage_Johto_LakeOfRageWesleyCallback_Cb:
 LakeOfRage_Johto_LakeOfRageWesleyCallback_WesleyAppears_Cb:
 	clearflag FLAG_JOHTO_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
 	return
+
+LakeOfRage_Johto_LakeOfRageLanceTeleportIntoSkyMovement:
+	step_end
 
 LakeOfRage_Johto_LakeOfRageLanceForcedToEvolveText:
 	.string "This lake is full\n"

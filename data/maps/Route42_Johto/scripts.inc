@@ -38,8 +38,16 @@ Route42_Johto_Route42SuicuneScript:
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
 	waitmovement OBJ_EVENT_ID_PLAYER
 	delay 15
-	@ TODO unsupported: playsound SFX_WARP_FROM
-	goto Johto_EventScript_Unimplemented
+	playse SE_WARP_OUT
+	applymovement 9, Route42_Johto_Route42SuicuneMovement
+	waitmovement 9
+	removeobject 9
+	delay 10
+	setvar VAR_JOHTO_SCENE_ROUTE_42, 0
+	clearflag FLAG_JOHTO_SAW_SUICUNE_ON_ROUTE_36
+	setvar VAR_JOHTO_SCENE_ROUTE_36, 1
+	releaseall
+	end
 
 Route42_Johto_TrainerFisherTully::
 	trainerbattle_single TRAINER_JOHTO_FISHER_TULLY1, Route42_Johto_FisherTullySeenText, Route42_Johto_FisherTullyBeatenText
@@ -51,8 +59,25 @@ Route42_Johto_TrainerFisherTully::
 Route42_Johto_TrainerFisherTully_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_TULLY_READY_FOR_REMATCH, Route42_Johto_TrainerFisherTully_WantsBattle
 	goto_if_set FLAG_JOHTO_ENGINE_TULLY_HAS_WATER_STONE, Route42_Johto_TrainerFisherTully_HasWaterStone
-	@ TODO unsupported: checkcellnum PHONE_FISHER_TULLY
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route42_Johto_TrainerFisherTully_NumberAccepted
+	goto_if_set FLAG_JOHTO_TULLY_ASKED_FOR_PHONE_NUMBER, Route42_Johto_TrainerFisherTully_AskedAlready
+	message Route42_Johto_FisherTullyAfterBattleText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_TULLY_ASKED_FOR_PHONE_NUMBER
+	call Route42_Johto_TrainerFisherTully_AskNumber1_Sub
+	goto Route42_Johto_TrainerFisherTully_AskForNumber
+
+Route42_Johto_TrainerFisherTully_AskedAlready:
+	call Route42_Johto_TrainerFisherTully_AskNumber2_Sub
+
+Route42_Johto_TrainerFisherTully_AskForNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route42_Johto_TrainerFisherTully_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route42_Johto_TrainerFisherTully_NumberDeclined
+	call Route42_Johto_TrainerFisherTully_RegisteredNumber_Sub
+	goto Route42_Johto_TrainerFisherTully_NumberAccepted
 
 Route42_Johto_TrainerFisherTully_WantsBattle:
 	call Route42_Johto_TrainerFisherTully_Rematch_Sub
@@ -72,6 +97,12 @@ Route42_Johto_TrainerFisherTully_NoRoom:
 
 Route42_Johto_TrainerFisherTully_NumberAccepted:
 	goto Johto_Std_NumberAcceptedMScript
+
+Route42_Johto_TrainerFisherTully_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route42_Johto_TrainerFisherTully_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route42_Johto_TrainerFisherTully_PackFull:
 	goto Johto_Std_PackFullMScript
@@ -159,11 +190,23 @@ Route42_Johto_Route42FruitTree3:
 	releaseall
 	end
 
+Route42_Johto_TrainerFisherTully_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route42_Johto_TrainerFisherTully_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route42_Johto_TrainerFisherTully_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route42_Johto_TrainerFisherTully_Rematch_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
 Route42_Johto_TrainerFisherTully_Gift_Sub:
 	goto Johto_Std_GiftMScript_Sub
+
+Route42_Johto_Route42SuicuneMovement:
+	step_end
 
 Route42_Johto_FisherTullySeenText:
 	.string "Let me demonstrate\n"
@@ -173,6 +216,14 @@ Route42_Johto_FisherTullySeenText:
 Route42_Johto_FisherTullyBeatenText:
 	.string "What? That's not\n"
 	.string "right.$"
+
+Route42_Johto_FisherTullyAfterBattleText:
+	.string "I want to become\n"
+	.string "the trainer CHAMP"
+	.string "\pusing the POKéMON\n"
+	.string "I caught."
+	.string "\pThat's the best\n"
+	.string "part of fishing!$"
 
 Route42_Johto_HikerBenjaminSeenText:
 	.string "Ah, it's good to\n"

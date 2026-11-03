@@ -54,8 +54,25 @@ Route38_Johto_TrainerLassDana1::
 Route38_Johto_TrainerLassDana1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_DANA_READY_FOR_REMATCH, Route38_Johto_TrainerLassDana1_DanaRematch
 	goto_if_set FLAG_JOHTO_ENGINE_DANA_HAS_THUNDERSTONE, Route38_Johto_TrainerLassDana1_TryGiveThunderstone
-	@ TODO unsupported: checkcellnum PHONE_LASS_DANA
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route38_Johto_TrainerLassDana1_NumberAccepted
+	goto_if_set FLAG_JOHTO_DANA_ASKED_FOR_PHONE_NUMBER, Route38_Johto_TrainerLassDana1_SecondTimeAsking
+	message Route38_Johto_LassDanaMoomooMilkText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_DANA_ASKED_FOR_PHONE_NUMBER
+	call Route38_Johto_TrainerLassDana1_AskNumber1F_Sub
+	goto Route38_Johto_TrainerLassDana1_AskForPhoneNumber
+
+Route38_Johto_TrainerLassDana1_SecondTimeAsking:
+	call Route38_Johto_TrainerLassDana1_AskNumber2F_Sub
+
+Route38_Johto_TrainerLassDana1_AskForPhoneNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route38_Johto_TrainerLassDana1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route38_Johto_TrainerLassDana1_DeclinedPhoneNumber
+	call Route38_Johto_TrainerLassDana1_RegisteredPhoneNumber_Sub
+	goto Route38_Johto_TrainerLassDana1_NumberAccepted
 
 Route38_Johto_TrainerLassDana1_DanaRematch:
 	call Route38_Johto_TrainerLassDana1_Rematch_Sub
@@ -76,6 +93,12 @@ Route38_Johto_TrainerLassDana1_NoRoomForThunderstone:
 Route38_Johto_TrainerLassDana1_NumberAccepted:
 	goto Johto_Std_NumberAcceptedFScript
 
+Route38_Johto_TrainerLassDana1_DeclinedPhoneNumber:
+	goto Johto_Std_NumberDeclinedFScript
+
+Route38_Johto_TrainerLassDana1_PhoneFull:
+	goto Johto_Std_PhoneFullFScript
+
 Route38_Johto_TrainerLassDana1_PackFull:
 	goto Johto_Std_PackFullFScript
 
@@ -88,13 +111,39 @@ Route38_Johto_TrainerSchoolboyChad1::
 
 Route38_Johto_TrainerSchoolboyChad1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_CHAD_READY_FOR_REMATCH, Route38_Johto_TrainerSchoolboyChad1_ChadRematch
-	@ TODO unsupported: checkcellnum PHONE_SCHOOLBOY_CHAD
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route38_Johto_TrainerSchoolboyChad1_HaveChadsNumber
+	goto_if_set FLAG_JOHTO_CHAD_ASKED_FOR_PHONE_NUMBER, Route38_Johto_TrainerSchoolboyChad1_SecondTimeAsking
+	message Route38_Johto_SchoolboyChadSoManyTestsText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_CHAD_ASKED_FOR_PHONE_NUMBER
+	call Route38_Johto_TrainerSchoolboyChad1_AskPhoneNumber1_Sub
+	goto Route38_Johto_TrainerSchoolboyChad1_AskToRegisterNumber
+
+Route38_Johto_TrainerSchoolboyChad1_SecondTimeAsking:
+	call Route38_Johto_TrainerSchoolboyChad1_AskPhoneNumber2_Sub
+
+Route38_Johto_TrainerSchoolboyChad1_AskToRegisterNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route38_Johto_TrainerSchoolboyChad1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route38_Johto_TrainerSchoolboyChad1_SaidNo
+	call Route38_Johto_TrainerSchoolboyChad1_RegisteredChad_Sub
+	goto Route38_Johto_TrainerSchoolboyChad1_HaveChadsNumber
 
 Route38_Johto_TrainerSchoolboyChad1_ChadRematch:
 	call Route38_Johto_TrainerSchoolboyChad1_Rematch_Sub
 	@ TODO unsupported: readmem wChadFightCount
 	goto Johto_EventScript_Unimplemented
+
+Route38_Johto_TrainerSchoolboyChad1_HaveChadsNumber:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route38_Johto_TrainerSchoolboyChad1_SaidNo:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route38_Johto_TrainerSchoolboyChad1_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route38_Johto_TrainerBeautyValerie::
 	trainerbattle_single TRAINER_JOHTO_BEAUTY_VALERIE, Route38_Johto_BeautyValerieSeenText, Route38_Johto_BeautyValerieBeatenText
@@ -149,11 +198,29 @@ Route38_Johto_Route38FruitTree:
 	releaseall
 	end
 
+Route38_Johto_TrainerLassDana1_AskNumber1F_Sub:
+	goto Johto_Std_AskNumber1FScript_Sub
+
+Route38_Johto_TrainerLassDana1_AskNumber2F_Sub:
+	goto Johto_Std_AskNumber2FScript_Sub
+
+Route38_Johto_TrainerLassDana1_RegisteredPhoneNumber_Sub:
+	goto Johto_Std_RegisteredNumberFScript_Sub
+
 Route38_Johto_TrainerLassDana1_Rematch_Sub:
 	goto Johto_Std_RematchFScript_Sub
 
 Route38_Johto_TrainerLassDana1_Gift_Sub:
 	goto Johto_Std_GiftFScript_Sub
+
+Route38_Johto_TrainerSchoolboyChad1_AskPhoneNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route38_Johto_TrainerSchoolboyChad1_AskPhoneNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route38_Johto_TrainerSchoolboyChad1_RegisteredChad_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
 
 Route38_Johto_TrainerSchoolboyChad1_Rematch_Sub:
 	goto Johto_Std_RematchMScript_Sub
@@ -182,6 +249,15 @@ Route38_Johto_SchoolboyChad1BeatenText:
 	.string "I didn't study\n"
 	.string "enough, I guess.$"
 
+Route38_Johto_SchoolboyChadSoManyTestsText:
+	.string "I have to take so\n"
+	.string "many tests, I"
+	.string "\pdon't have much\n"
+	.string "time for POKéMON."
+	.string "\pSo when I do get\n"
+	.string "to play, I really\l"
+	.string "concentrate.$"
+
 Route38_Johto_LassDana1SeenText:
 	.string "You seem to be\n"
 	.string "good at POKéMON."
@@ -192,6 +268,13 @@ Route38_Johto_LassDana1SeenText:
 Route38_Johto_LassDana1BeatenText:
 	.string "I see. So you can\n"
 	.string "battle that way.$"
+
+Route38_Johto_LassDanaMoomooMilkText:
+	.string "I know something\n"
+	.string "good!"
+	.string "\pMOOMOO FARM's milk\n"
+	.string "is famous for its\l"
+	.string "flavor.$"
 
 Route38_Johto_BeautyValerieSeenText:
 	.string "Hi! Aren't you a\n"

@@ -134,8 +134,10 @@ CeladonCafe_Johto_CeladonCafeTrashcan:
 	waitmessage
 	playse SE_PIN
 	waitse
-	@ TODO unsupported: itemnotify 
-	goto Johto_EventScript_Unimplemented
+	closemessage
+	setflag FLAG_JOHTO_FOUND_LEFTOVERS_IN_CELADON_CAFE
+	releaseall
+	end
 
 CeladonCafe_Johto_CeladonCafeTrashcan_PackFull:
 	bufferitemname STR_VAR_1, ITEM_LEFTOVERS

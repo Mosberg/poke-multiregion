@@ -152,8 +152,11 @@ IndigoPlateauPokecenter1F_Johto_TeleportGuyScript:
 	waitmessage
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: playsound SFX_WARP_TO
-	goto Johto_EventScript_Unimplemented
+	playse SE_WARP_IN
+	fadescreen FADE_TO_WHITE
+	waitse
+	warp MAP_JOHTO_NEW_BARK_TOWN, 13, 6
+	waitstate
 
 IndigoPlateauPokecenter1F_Johto_TeleportGuyScript_No:
 	message IndigoPlateauPokecenter1F_Johto_TeleportGuyNoText

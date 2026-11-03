@@ -142,13 +142,39 @@ NationalPark_Johto_TrainerSchoolboyJack1::
 
 NationalPark_Johto_TrainerSchoolboyJack1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_JACK_READY_FOR_REMATCH, NationalPark_Johto_TrainerSchoolboyJack1_Rematch
-	@ TODO unsupported: checkcellnum PHONE_SCHOOLBOY_JACK
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, NationalPark_Johto_TrainerSchoolboyJack1_NumberAccepted
+	goto_if_set FLAG_JOHTO_JACK_ASKED_FOR_PHONE_NUMBER, NationalPark_Johto_TrainerSchoolboyJack1_AskAgain
+	message NationalPark_Johto_SchoolboyJackTradeMonText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_JACK_ASKED_FOR_PHONE_NUMBER
+	call NationalPark_Johto_TrainerSchoolboyJack1_AskNumber1_Sub
+	goto NationalPark_Johto_TrainerSchoolboyJack1_RequestNumber
+
+NationalPark_Johto_TrainerSchoolboyJack1_AskAgain:
+	call NationalPark_Johto_TrainerSchoolboyJack1_AskNumber2_Sub
+
+NationalPark_Johto_TrainerSchoolboyJack1_RequestNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, NationalPark_Johto_TrainerSchoolboyJack1_PhoneFull
+	goto_if_eq VAR_RESULT, 2, NationalPark_Johto_TrainerSchoolboyJack1_NumberDeclined
+	call NationalPark_Johto_TrainerSchoolboyJack1_RegisteredNumber_Sub
+	goto NationalPark_Johto_TrainerSchoolboyJack1_NumberAccepted
 
 NationalPark_Johto_TrainerSchoolboyJack1_Rematch:
 	call NationalPark_Johto_TrainerSchoolboyJack1_RematchStd_Sub
 	@ TODO unsupported: readmem wJackFightCount
 	goto Johto_EventScript_Unimplemented
+
+NationalPark_Johto_TrainerSchoolboyJack1_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+NationalPark_Johto_TrainerSchoolboyJack1_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+NationalPark_Johto_TrainerSchoolboyJack1_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 NationalPark_Johto_TrainerPokefanmWilliam::
 	trainerbattle_single TRAINER_JOHTO_POKEFANM_WILLIAM, NationalPark_Johto_PokefanmWilliamSeenText, NationalPark_Johto_PokefanmWilliamBeatenText
@@ -174,7 +200,9 @@ NationalPark_Johto_TrainerPokefanfBeverly1::
 
 NationalPark_Johto_TrainerPokefanfBeverly1_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_BEVERLY_HAS_NUGGET, NationalPark_Johto_TrainerPokefanfBeverly1_GiveNugget
-	@ TODO unsupported: checkcellnum PHONE_POKEFAN_BEVERLY
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, NationalPark_Johto_TrainerPokefanfBeverly1_NumberAccepted
+	@ TODO unsupported: checkpoke MARILL
 	goto Johto_EventScript_Unimplemented
 
 NationalPark_Johto_TrainerPokefanfBeverly1_GiveNugget:
@@ -231,6 +259,15 @@ NationalPark_Johto_NationalParkTrainerTipsSign:
 	closemessage
 	releaseall
 	end
+
+NationalPark_Johto_TrainerSchoolboyJack1_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+NationalPark_Johto_TrainerSchoolboyJack1_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+NationalPark_Johto_TrainerSchoolboyJack1_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
 
 NationalPark_Johto_TrainerSchoolboyJack1_RematchStd_Sub:
 	goto Johto_Std_RematchMScript_Sub
@@ -312,6 +349,9 @@ NationalPark_Johto_SchoolboyJack1SeenText:
 
 NationalPark_Johto_SchoolboyJack1BeatenText:
 	.string "Wha-wha-what?$"
+
+NationalPark_Johto_SchoolboyJackTradeMonText:
+	.string "(text not converted)$"
 
 NationalPark_Johto_PokefanfBeverly1SeenText:
 	.string "My POKéMON are\n"

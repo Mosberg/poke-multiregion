@@ -33,8 +33,25 @@ Route33_Johto_TrainerHikerAnthony::
 Route33_Johto_TrainerHikerAnthony_Script:
 	goto_if_set FLAG_JOHTO_ENGINE_ANTHONY_READY_FOR_REMATCH, Route33_Johto_TrainerHikerAnthony_Rematch
 	goto_if_set FLAG_JOHTO_ENGINE_DUNSPARCE_SWARM, Route33_Johto_TrainerHikerAnthony_Swarm
-	@ TODO unsupported: checkcellnum PHONE_HIKER_ANTHONY
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	goto_if_ne VAR_RESULT, 0, Route33_Johto_TrainerHikerAnthony_NumberAccepted
+	goto_if_set FLAG_JOHTO_ANTHONY_ASKED_FOR_PHONE_NUMBER, Route33_Johto_TrainerHikerAnthony_AskAgain
+	message Route33_Johto_HikerAnthony2AfterText
+	waitmessage
+	waitbuttonpress
+	setflag FLAG_JOHTO_ANTHONY_ASKED_FOR_PHONE_NUMBER
+	call Route33_Johto_TrainerHikerAnthony_AskNumber1_Sub
+	goto Route33_Johto_TrainerHikerAnthony_AskForPhoneNumber
+
+Route33_Johto_TrainerHikerAnthony_AskAgain:
+	call Route33_Johto_TrainerHikerAnthony_AskNumber2_Sub
+
+Route33_Johto_TrainerHikerAnthony_AskForPhoneNumber:
+	setvar VAR_RESULT, 2
+	goto_if_eq VAR_RESULT, 1, Route33_Johto_TrainerHikerAnthony_PhoneFull
+	goto_if_eq VAR_RESULT, 2, Route33_Johto_TrainerHikerAnthony_NumberDeclined
+	call Route33_Johto_TrainerHikerAnthony_RegisteredNumber_Sub
+	goto Route33_Johto_TrainerHikerAnthony_NumberAccepted
 
 Route33_Johto_TrainerHikerAnthony_Rematch:
 	call Route33_Johto_TrainerHikerAnthony_RematchStd_Sub
@@ -48,6 +65,15 @@ Route33_Johto_TrainerHikerAnthony_Swarm:
 	closemessage
 	releaseall
 	end
+
+Route33_Johto_TrainerHikerAnthony_NumberAccepted:
+	goto Johto_Std_NumberAcceptedMScript
+
+Route33_Johto_TrainerHikerAnthony_NumberDeclined:
+	goto Johto_Std_NumberDeclinedMScript
+
+Route33_Johto_TrainerHikerAnthony_PhoneFull:
+	goto Johto_Std_PhoneFullMScript
 
 Route33_Johto_Route33Sign:
 	message Route33_Johto_Route33SignText
@@ -64,6 +90,15 @@ Route33_Johto_Route33FruitTree:
 	releaseall
 	end
 
+Route33_Johto_TrainerHikerAnthony_AskNumber1_Sub:
+	goto Johto_Std_AskNumber1MScript_Sub
+
+Route33_Johto_TrainerHikerAnthony_AskNumber2_Sub:
+	goto Johto_Std_AskNumber2MScript_Sub
+
+Route33_Johto_TrainerHikerAnthony_RegisteredNumber_Sub:
+	goto Johto_Std_RegisteredNumberMScript_Sub
+
 Route33_Johto_TrainerHikerAnthony_RematchStd_Sub:
 	goto Johto_Std_RematchMScript_Sub
 
@@ -76,6 +111,11 @@ Route33_Johto_HikerAnthony2SeenText:
 Route33_Johto_HikerAnthony2BeatenText:
 	.string "Whoa! You've got\n"
 	.string "more zip than me!$"
+
+Route33_Johto_HikerAnthony2AfterText:
+	.string "We HIKERS are at\n"
+	.string "our best in the\l"
+	.string "mountains.$"
 
 Route33_Johto_HikerAnthonyDunsparceText:
 	.string "Hey, did you get a\n"

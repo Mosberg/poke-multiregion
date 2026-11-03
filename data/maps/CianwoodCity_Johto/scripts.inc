@@ -61,8 +61,49 @@ CianwoodCity_Johto_CianwoodCitySuicuneAndEusine:
 	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
 	waitmovement OBJ_EVENT_ID_PLAYER
 	delay 15
-	@ TODO unsupported: playsound SFX_WARP_FROM
-	goto Johto_EventScript_Unimplemented
+	playse SE_WARP_OUT
+	applymovement 12, CianwoodCity_Johto_CianwoodCitySuicuneApproachMovement
+	waitmovement 12
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 15
+	playse SE_WARP_OUT
+	applymovement 12, CianwoodCity_Johto_CianwoodCitySuicuneDepartMovement
+	waitmovement 12
+	removeobject 12
+	delay 10
+	setvar VAR_JOHTO_SCENE_CIANWOOD_CITY, 0
+	clearflag FLAG_JOHTO_SAW_SUICUNE_ON_ROUTE_42
+	setvar VAR_JOHTO_SCENE_ROUTE_42, 1
+	goto_if_set FLAG_JOHTO_FOUGHT_EUSINE, CianwoodCity_Johto_CianwoodCitySuicuneAndEusine_Done
+	setflag FLAG_JOHTO_FOUGHT_EUSINE
+	playbgm MUS_DUMMY, FALSE
+	clearflag FLAG_JOHTO_CIANWOOD_CITY_EUSINE
+	addobject 11
+	applymovement 11, CianwoodCity_Johto_CianwoodCityEusineApproachMovement
+	waitmovement 11
+	message CianwoodCity_Johto_EusineSuicuneText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setvar VAR_LAST_TALKED, 11
+	trainerbattle_no_intro TRAINER_JOHTO_MYSTICALMAN_EUSINE, CianwoodCity_Johto_EusineBeatenText
+	playbgm MUS_DUMMY, FALSE
+	message CianwoodCity_Johto_EusineAfterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 11, CianwoodCity_Johto_CianwoodCityEusineDepartMovement
+	waitmovement 11
+	removeobject 11
+	delay 20
+	fadeoutbgm 4
+	fadedefaultbgm
+	delay 10
+
+CianwoodCity_Johto_CianwoodCitySuicuneAndEusine_Done:
+	releaseall
+	end
 
 CianwoodCity_Johto_CianwoodCityChucksWife:
 	faceplayer
@@ -181,6 +222,26 @@ CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Cb:
 CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Done_Cb:
 	return
 
+CianwoodCity_Johto_CianwoodCitySuicuneApproachMovement:
+	step_end
+
+CianwoodCity_Johto_CianwoodCitySuicuneDepartMovement:
+	step_end
+
+CianwoodCity_Johto_CianwoodCityEusineApproachMovement:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+CianwoodCity_Johto_CianwoodCityEusineDepartMovement:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 CianwoodCity_Johto_ChucksWifeEasierToFlyText:
 	.string "You crossed the\n"
 	.string "sea to get here?"
@@ -244,6 +305,49 @@ CianwoodCity_Johto_CianwoodCityLassText:
 	.string "LEADER, spars with"
 	.string "\phis fighting POKé-\n"
 	.string "MON.$"
+
+CianwoodCity_Johto_EusineSuicuneText:
+	.string "EUSINE: Yo,\n"
+	.string "{PLAYER}."
+	.string "\pWasn't that\n"
+	.string "SUICUNE just now?"
+	.string "\pI only caught a\n"
+	.string "quick glimpse, but"
+	.string "\pI thought I saw\n"
+	.string "SUICUNE running on\l"
+	.string "the waves."
+	.string "\pSUICUNE is beau-\n"
+	.string "tiful and grand."
+	.string "\pAnd it races\n"
+	.string "through towns and"
+	.string "\proads at simply\n"
+	.string "awesome speeds."
+	.string "\pIt's wonderful…"
+	.string "\pI want to see\n"
+	.string "SUICUNE up close…"
+	.string "\pI've decided."
+	.string "\pI'll battle you as\n"
+	.string "a trainer to earn\l"
+	.string "SUICUNE's respect!"
+	.string "\pCome on, {PLAYER}.\n"
+	.string "Let's battle now!$"
+
+CianwoodCity_Johto_EusineBeatenText:
+	.string "I hate to admit\n"
+	.string "it, but you win.$"
+
+CianwoodCity_Johto_EusineAfterText:
+	.string "You're amazing,\n"
+	.string "{PLAYER}!"
+	.string "\pNo wonder POKéMON\n"
+	.string "gravitate to you."
+	.string "\pI get it now."
+	.string "\pI'm going to keep\n"
+	.string "searching for\l"
+	.string "SUICUNE."
+	.string "\pI'm sure we'll see\n"
+	.string "each other again."
+	.string "\pSee you around!$"
 
 CianwoodCity_Johto_CianwoodCitySignText:
 	.string "CIANWOOD CITY"
