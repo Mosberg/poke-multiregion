@@ -1,4 +1,5 @@
 Route42_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route42_Johto_OnLoad
 	.byte 0
 
 Route42_Johto_Route42FruitTree1_Entry::
@@ -283,3 +284,26 @@ Route42_Johto_Route42Sign2Text:
 	.string "ROUTE 42"
 	.string "\pECRUTEAK CITY -\n"
 	.string "MAHOGANY TOWN$"
+
+Route42_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_42_0, Route42_Johto_CutTree0_Keep
+	setmetatile 24, 12, 514, 0
+	setmetatile 25, 12, 514, 0
+	setmetatile 24, 13, 514, 0
+	setmetatile 25, 13, 591, 0
+Route42_Johto_CutTree0_Keep:
+	end
+
+Route42_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route42_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_42_0
+	setmetatile 24, 12, 514, 0
+	setmetatile 25, 12, 514, 0
+	setmetatile 24, 13, 514, 0
+	setmetatile 25, 13, 591, 0
+	special DrawWholeMapView
+Route42_Johto_CutTree0_Done:
+	releaseall
+	end

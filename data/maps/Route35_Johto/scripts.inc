@@ -1,4 +1,5 @@
 Route35_Johto_MapScripts::
+		map_script MAP_SCRIPT_ON_LOAD, Route35_Johto_OnLoad
 	.byte 0
 
 Route35_Johto_TrainerOfficerDirk_Entry::
@@ -390,3 +391,26 @@ Route35_Johto_OfficerDirkPrettyToughText:
 
 Route35_Johto_Route35SignText:
 	.string "ROUTE 35$"
+
+Route35_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_35_0, Route35_Johto_CutTree0_Keep
+	setmetatile 16, 6, 591, 0
+	setmetatile 17, 6, 514, 0
+	setmetatile 16, 7, 514, 0
+	setmetatile 17, 7, 514, 0
+Route35_Johto_CutTree0_Keep:
+	end
+
+Route35_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route35_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_35_0
+	setmetatile 16, 6, 591, 0
+	setmetatile 17, 6, 514, 0
+	setmetatile 16, 7, 514, 0
+	setmetatile 17, 7, 514, 0
+	special DrawWholeMapView
+Route35_Johto_CutTree0_Done:
+	releaseall
+	end

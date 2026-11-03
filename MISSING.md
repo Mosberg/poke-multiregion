@@ -52,7 +52,7 @@ Plus:
 
 ## Johto: gyms and progression
 
-- Cut trees work (25 trees, 14 maps; tested in Ilex Forest: prompt, walk-through, persists after reload). Cut *grass* blocks and the "use Cut from the party menu" shortcut are not converted (only facing the tree and pressing A)
+- Cut trees work (40 trees, 23 maps; tested in Ilex Forest and on Route 29: prompt, flag, tile swap, persists after reload). Cut *grass* blocks and the "use Cut from the party menu" shortcut are not converted (only facing the tree and pressing A)
 - Strength boulders and breakable rocks use the engine's native objects/scripts (untested in play); Crystal Whirlpool, Waterfall, Surf and Flash use tile behaviours
 
 - Verified in play on the embedded emulator: Elm's scene, the Totodile starter (species 158; flags `GOT_TOTODILE_FROM_ELM`, `GOT_A_POKEMON_FROM_ELM` set, ball hidden, Aide scene reached), Mr. Pokemon's scene (Mystery Egg flag set). the Cherrygrove rival ambush runs to the end for all three starters (dialogue, battle, scene var advances, rival hides; tested with a flag-set level-9 starter, not the full playthrough). Not yet checked: what the rival says/uses per starter, and the scenes after Violet City

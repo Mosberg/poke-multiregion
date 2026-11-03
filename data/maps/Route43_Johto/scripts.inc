@@ -1,5 +1,6 @@
 Route43_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route43_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, Route43_Johto_OnLoad
 	.byte 0
 
 Route43_Johto_OnTransition:
@@ -342,3 +343,26 @@ Route43_Johto_Route43TrainerTipsText:
 	.string "are strong and"
 	.string "\pweak against your\n"
 	.string "POKéMON's type.$"
+
+Route43_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_43_0, Route43_Johto_CutTree0_Keep
+	setmetatile 2, 28, 514, 0
+	setmetatile 3, 28, 514, 0
+	setmetatile 2, 29, 591, 0
+	setmetatile 3, 29, 514, 0
+Route43_Johto_CutTree0_Keep:
+	end
+
+Route43_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route43_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_43_0
+	setmetatile 2, 28, 514, 0
+	setmetatile 3, 28, 514, 0
+	setmetatile 2, 29, 591, 0
+	setmetatile 3, 29, 514, 0
+	special DrawWholeMapView
+Route43_Johto_CutTree0_Done:
+	releaseall
+	end

@@ -194,6 +194,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route43_Johto_Route43TrainerTips_Entry"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route43_Johto_CutTree0"
     }
   ]
 }

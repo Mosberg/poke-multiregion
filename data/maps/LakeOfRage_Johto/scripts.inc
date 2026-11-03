@@ -1,5 +1,6 @@
 LakeOfRage_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LakeOfRage_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, LakeOfRage_Johto_OnLoad
 	.byte 0
 
 LakeOfRage_Johto_OnTransition:
@@ -456,3 +457,106 @@ LakeOfRage_Johto_LakeOfRageSignText:
 LakeOfRage_Johto_FishingGurusHouseSignText:
 	.string "FISHING GURU'S\n"
 	.string "HOUSE$"
+
+LakeOfRage_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_0, LakeOfRage_Johto_CutTree0_Keep
+	setmetatile 22, 4, 591, 0
+	setmetatile 23, 4, 514, 0
+	setmetatile 22, 5, 514, 0
+	setmetatile 23, 5, 514, 0
+LakeOfRage_Johto_CutTree0_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_1, LakeOfRage_Johto_CutTree1_Keep
+	setmetatile 18, 8, 514, 0
+	setmetatile 19, 8, 514, 0
+	setmetatile 18, 9, 514, 0
+	setmetatile 19, 9, 591, 0
+LakeOfRage_Johto_CutTree1_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_2, LakeOfRage_Johto_CutTree2_Keep
+	setmetatile 10, 12, 591, 0
+	setmetatile 11, 12, 514, 0
+	setmetatile 10, 13, 514, 0
+	setmetatile 11, 13, 514, 0
+LakeOfRage_Johto_CutTree2_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_3, LakeOfRage_Johto_CutTree3_Keep
+	setmetatile 4, 14, 591, 0
+	setmetatile 5, 14, 514, 0
+	setmetatile 4, 15, 514, 0
+	setmetatile 5, 15, 514, 0
+LakeOfRage_Johto_CutTree3_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_4, LakeOfRage_Johto_CutTree4_Keep
+	setmetatile 6, 20, 514, 0
+	setmetatile 7, 20, 514, 0
+	setmetatile 6, 21, 514, 0
+	setmetatile 7, 21, 591, 0
+LakeOfRage_Johto_CutTree4_Keep:
+	end
+
+LakeOfRage_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, LakeOfRage_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_0
+	setmetatile 22, 4, 591, 0
+	setmetatile 23, 4, 514, 0
+	setmetatile 22, 5, 514, 0
+	setmetatile 23, 5, 514, 0
+	special DrawWholeMapView
+LakeOfRage_Johto_CutTree0_Done:
+	releaseall
+	end
+
+LakeOfRage_Johto_CutTree1::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, LakeOfRage_Johto_CutTree1_Done
+	setflag FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_1
+	setmetatile 18, 8, 514, 0
+	setmetatile 19, 8, 514, 0
+	setmetatile 18, 9, 514, 0
+	setmetatile 19, 9, 591, 0
+	special DrawWholeMapView
+LakeOfRage_Johto_CutTree1_Done:
+	releaseall
+	end
+
+LakeOfRage_Johto_CutTree2::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, LakeOfRage_Johto_CutTree2_Done
+	setflag FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_2
+	setmetatile 10, 12, 591, 0
+	setmetatile 11, 12, 514, 0
+	setmetatile 10, 13, 514, 0
+	setmetatile 11, 13, 514, 0
+	special DrawWholeMapView
+LakeOfRage_Johto_CutTree2_Done:
+	releaseall
+	end
+
+LakeOfRage_Johto_CutTree3::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, LakeOfRage_Johto_CutTree3_Done
+	setflag FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_3
+	setmetatile 4, 14, 591, 0
+	setmetatile 5, 14, 514, 0
+	setmetatile 4, 15, 514, 0
+	setmetatile 5, 15, 514, 0
+	special DrawWholeMapView
+LakeOfRage_Johto_CutTree3_Done:
+	releaseall
+	end
+
+LakeOfRage_Johto_CutTree4::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, LakeOfRage_Johto_CutTree4_Done
+	setflag FLAG_JOHTO_CUTTREE_LAKE_OF_RAGE_4
+	setmetatile 6, 20, 514, 0
+	setmetatile 7, 20, 514, 0
+	setmetatile 6, 21, 514, 0
+	setmetatile 7, 21, 591, 0
+	special DrawWholeMapView
+LakeOfRage_Johto_CutTree4_Done:
+	releaseall
+	end

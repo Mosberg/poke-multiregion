@@ -1,5 +1,6 @@
 Route32_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route32_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, Route32_Johto_OnLoad
 	.byte 0
 
 Route32_Johto_OnTransition:
@@ -752,3 +753,26 @@ Route32_Johto_Route32RuinsSignText:
 Route32_Johto_Route32UnionCaveSignText:
 	.string "UNION CAVE\n"
 	.string "AHEAD$"
+
+Route32_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_32_0, Route32_Johto_CutTree0_Keep
+	setmetatile 10, 18, 514, 0
+	setmetatile 11, 18, 514, 0
+	setmetatile 10, 19, 514, 0
+	setmetatile 11, 19, 591, 0
+Route32_Johto_CutTree0_Keep:
+	end
+
+Route32_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route32_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_32_0
+	setmetatile 10, 18, 514, 0
+	setmetatile 11, 18, 514, 0
+	setmetatile 10, 19, 514, 0
+	setmetatile 11, 19, 591, 0
+	special DrawWholeMapView
+Route32_Johto_CutTree0_Done:
+	releaseall
+	end

@@ -1,5 +1,6 @@
 VioletCity_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VioletCity_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, VioletCity_Johto_OnLoad
 	.byte 0
 
 VioletCity_Johto_OnTransition:
@@ -341,3 +342,26 @@ VioletCity_Johto_SproutTowerSignText:
 VioletCity_Johto_EarlsPokemonAcademySignText:
 	.string "EARL'S POKéMON\n"
 	.string "ACADEMY$"
+
+VioletCity_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_VIOLET_CITY_0, VioletCity_Johto_CutTree0_Keep
+	setmetatile 36, 18, 514, 0
+	setmetatile 37, 18, 514, 0
+	setmetatile 36, 19, 514, 0
+	setmetatile 37, 19, 591, 0
+VioletCity_Johto_CutTree0_Keep:
+	end
+
+VioletCity_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, VioletCity_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_VIOLET_CITY_0
+	setmetatile 36, 18, 514, 0
+	setmetatile 37, 18, 514, 0
+	setmetatile 36, 19, 514, 0
+	setmetatile 37, 19, 591, 0
+	special DrawWholeMapView
+VioletCity_Johto_CutTree0_Done:
+	releaseall
+	end

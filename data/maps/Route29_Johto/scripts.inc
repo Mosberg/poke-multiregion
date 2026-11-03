@@ -1,5 +1,6 @@
 Route29_Johto_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route29_Johto_OnTransition
+		map_script MAP_SCRIPT_ON_LOAD, Route29_Johto_OnLoad
 	.byte 0
 
 Route29_Johto_OnTransition:
@@ -384,3 +385,46 @@ Route29_Johto_Route29Sign2Text:
 	.string "ROUTE 29"
 	.string "\pCHERRYGROVE CITY -\n"
 	.string "NEW BARK TOWN$"
+
+Route29_Johto_OnLoad:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_29_0, Route29_Johto_CutTree0_Keep
+	setmetatile 30, 8, 514, 0
+	setmetatile 31, 8, 514, 0
+	setmetatile 30, 9, 514, 0
+	setmetatile 31, 9, 591, 0
+Route29_Johto_CutTree0_Keep:
+	goto_if_unset FLAG_JOHTO_CUTTREE_ROUTE_29_1, Route29_Johto_CutTree1_Keep
+	setmetatile 20, 10, 514, 0
+	setmetatile 21, 10, 591, 0
+	setmetatile 20, 11, 514, 0
+	setmetatile 21, 11, 514, 0
+Route29_Johto_CutTree1_Keep:
+	end
+
+Route29_Johto_CutTree0::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route29_Johto_CutTree0_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_29_0
+	setmetatile 30, 8, 514, 0
+	setmetatile 31, 8, 514, 0
+	setmetatile 30, 9, 514, 0
+	setmetatile 31, 9, 591, 0
+	special DrawWholeMapView
+Route29_Johto_CutTree0_Done:
+	releaseall
+	end
+
+Route29_Johto_CutTree1::
+	lockall
+	call Johto_Std_TryCutTree
+	goto_if_eq VAR_RESULT, FALSE, Route29_Johto_CutTree1_Done
+	setflag FLAG_JOHTO_CUTTREE_ROUTE_29_1
+	setmetatile 20, 10, 514, 0
+	setmetatile 21, 10, 591, 0
+	setmetatile 20, 11, 514, 0
+	setmetatile 21, 11, 514, 0
+	special DrawWholeMapView
+Route29_Johto_CutTree1_Done:
+	releaseall
+	end
