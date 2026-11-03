@@ -15,6 +15,7 @@ CinnabarPokecenter1F_Johto_CinnabarPokecenter1FFisherScript_Entry::
 
 
 CinnabarPokecenter1F_Johto_CinnabarPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_CINNABAR_ISLAND
 	goto Johto_Std_PokecenterNurseScript
 
 CinnabarPokecenter1F_Johto_CinnabarPokecenter1FCooltrainerFScript:

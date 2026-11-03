@@ -23,6 +23,7 @@ CeladonPokecenter1F_Johto_CeladonEusine_Entry::
 
 
 CeladonPokecenter1F_Johto_CeladonPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_CELADON_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 CeladonPokecenter1F_Johto_CeladonPokecenter1FGentlemanScript:

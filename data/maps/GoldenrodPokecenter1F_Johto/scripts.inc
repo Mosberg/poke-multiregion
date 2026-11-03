@@ -27,6 +27,7 @@ GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1F_GSBallSceneRight_Entry::
 
 
 GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_GOLDENROD_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1F_GSBallSceneLeft:

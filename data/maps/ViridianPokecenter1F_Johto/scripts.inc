@@ -19,6 +19,7 @@ ViridianPokecenter1F_Johto_ViridianPokecenter1FBugCatcherScript_Entry::
 
 
 ViridianPokecenter1F_Johto_ViridianPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_VIRIDIAN_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 ViridianPokecenter1F_Johto_ViridianPokecenter1FCooltrainerMScript:

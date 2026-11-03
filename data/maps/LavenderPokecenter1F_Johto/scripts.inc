@@ -19,6 +19,7 @@ LavenderPokecenter1F_Johto_LavenderPokecenter1FYoungsterScript_Entry::
 
 
 LavenderPokecenter1F_Johto_LavenderPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_LAVENDER_TOWN
 	goto Johto_Std_PokecenterNurseScript
 
 LavenderPokecenter1F_Johto_LavenderPokecenter1FGentlemanScript:

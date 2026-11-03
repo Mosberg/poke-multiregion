@@ -19,6 +19,7 @@ SaffronPokecenter1F_Johto_SaffronPokecenter1FYoungsterScript_Entry::
 
 
 SaffronPokecenter1F_Johto_SaffronPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_SAFFRON_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 SaffronPokecenter1F_Johto_SaffronPokecenter1FTeacherScript:

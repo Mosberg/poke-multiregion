@@ -50,6 +50,7 @@ OlivinePort_Johto_OlivinePortLeaveShipScript:
 	addobject 1
 	setvar VAR_JOHTO_SCENE_OLIVINE_PORT, 0
 	setflag FLAG_TEMP_11
+	setrespawn HEAL_LOCATION_JOHTO_OLIVINE_CITY
 	releaseall
 	end
 

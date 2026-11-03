@@ -19,6 +19,7 @@ CherrygrovePokecenter1F_Johto_CherrygrovePokecenter1FTeacherScript_Entry::
 
 
 CherrygrovePokecenter1F_Johto_CherrygrovePokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_CHERRYGROVE_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 CherrygrovePokecenter1F_Johto_CherrygrovePokecenter1FFisherScript:

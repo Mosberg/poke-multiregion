@@ -19,6 +19,7 @@ BlackthornPokecenter1F_Johto_BlackthornPokecenter1FCooltrainerMScript_Entry::
 
 
 BlackthornPokecenter1F_Johto_BlackthornPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_BLACKTHORN_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 BlackthornPokecenter1F_Johto_BlackthornPokecenter1FGentlemanScript:

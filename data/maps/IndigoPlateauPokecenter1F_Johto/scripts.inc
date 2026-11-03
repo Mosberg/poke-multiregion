@@ -125,6 +125,7 @@ IndigoPlateauPokecenter1F_Johto_PlateauRivalScriptDone:
 	end
 
 IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_ROUTE_23
 	goto Johto_Std_PokecenterNurseScript
 
 IndigoPlateauPokecenter1F_Johto_IndigoPlateauPokecenter1FClerkScript:

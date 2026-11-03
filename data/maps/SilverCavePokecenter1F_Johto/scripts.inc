@@ -11,6 +11,7 @@ SilverCavePokecenter1F_Johto_SilverCavePokecenter1FGrannyScript_Entry::
 
 
 SilverCavePokecenter1F_Johto_SilverCavePokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_SILVER_CAVE_OUTSIDE
 	goto Johto_Std_PokecenterNurseScript
 
 SilverCavePokecenter1F_Johto_SilverCavePokecenter1FGrannyScript:

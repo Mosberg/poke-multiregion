@@ -76,6 +76,7 @@ EcruteakPokecenter1F_Johto_EcruteakPokcenter1FBillActivatesTimeCapsuleScript_Poi
 	end
 
 EcruteakPokecenter1F_Johto_EcruteakPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_ECRUTEAK_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 EcruteakPokecenter1F_Johto_EcruteakPokecenter1FPokefanMScript:

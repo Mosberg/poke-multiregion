@@ -19,6 +19,7 @@ VermilionPokecenter1F_Johto_VermilionPokecenter1FBugCatcherScript_Entry::
 
 
 VermilionPokecenter1F_Johto_VermilionPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_VERMILION_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 VermilionPokecenter1F_Johto_VermilionPokecenter1FFishingGuruScript:

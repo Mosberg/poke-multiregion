@@ -1,100 +1,68 @@
 # MISSING
 
-Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
-Hard caps and approximations live in LIMITS.md.
+Everything known to be unfinished, unconverted or untested. Items are removed when done and verified, and appended when found.
+Hard caps and approximations live in LIMITS.md. Status of the Johto conversion: all 383 maps load in the emulator smoke test (0 failures),
+316 script commands still end in "This JOHTO event has not been converted yet" (`poke-crystal-scripts <crystal> <project>` prints the live list).
 
-## Johto: scripts (316 commands still become "not converted yet"; all 383 Johto maps load in the emulator smoke test, 0 failures)
+## Johto: scripts still not converted (largest groups first)
 
-Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
-
-- Shops: Goldenrod Dept. Store floor logic, vending machines, Mart types BITTER/BARGAIN/PHARMACY/ROOFTOP (all open as a standard shop), Crystal item prices (Emerald prices are used)
-- Pokecenter nurse: time-of-day greetings, Pokecom/phone and Pokerus handling (replaced by a plain heal), heal-machine animation
-- `fruittree` (30), `fruittree`/berry trees, `itemnotify`, `verbosegiveitemvar`, `trade` (7)
-- Time/date: phone call timers, daily events, DST prompts (no-ops); weekday checks now use the RTC (`JohtoGetWeekday`)
-- Phone/Pokegear: the phone book does not exist (trainers always get refused when asking for a number, caller id reads 0, no calls, no rematches), radio (`special` radio functions), Pokegear menu entry, map card; scripted rematches that `readmem` a fight counter stay unconverted
-- `loadvar`, `readmem`/`writemem`, `random`, `setlasttalked` use, `getcurlandmarkname`, `gettrainername`, `loadwildmon` (static wild battles: Sudowoodo, legendaries, Red, Lugia, Ho-Oh), `catchtutorial` (Route 29 dude)
-- Decorations (`describedecoration`, decoration system, the player's room items)
-- Specials: Bank of Mom, name rival, `FindPartyMonThatSpeciesYourTrainerID` (Togepi/Elm branches), Day-care, name rater, move tutor, Magnet Train, Card Flip, Coin Case, Unown/Ruins puzzles, Bill's PC
-- Movement: `set_sliding`, `remove_sliding`, `turn_step`, `step_sleep`
-- `farsjump`, text macros (`<...>`, `{d:...}`, `text_decimal`, `text_asm`)
-- Script sound effects not in the SFX table (`SFX_READ_TEXT_2`, `SFX_STRENGTH`, `SFX_WARP_FROM/TO`, `SFX_FLY`)
-
-Plus:
-- `BGEVENT_IFSET` bg events are not converted (hidden items now are: 60 maps; item balls work - before this fix every Johto item ball was a stub; tested: Sprout Tower 3F Potion)
-- Coord events with `SCENE_ANY` (no scene variable) are skipped
-- Non-script object types (`OBJECTTYPE_COMMAND` other than `jumptext*`, e.g. `pokemart`) are not converted
-- Cross-map script/label references (`farjump`, shared helper scripts) are not resolved
-- Conditional (`conditional_event`) bg events
+- **Rematch counters** (`readmem`, ~33): scripted trainer rematches that read a fight counter; part of the phone system
+- **Cross-label field-move prompts** (`farsjump AskStrengthScript`, `AskRockSmashScript`, ~14): the Crystal boulder/rock objects were replaced by the engine's own scripts, but a few labels still reference the old prompts
+- **Day care** (`DayCareMan`, `DayCareLady`, `DayCareMon1/2`, `GiveOddEgg`): Crystal's day care specials have no counterpart; the expansion's own daycare is not wired to the Johto day care maps
+- **Unown / Ruins of Alph** (`DisplayUnownWords`, `VAR_UNOWNCOUNT`, puzzle specials), **Pokegear radio/Mobile** (`MapRadio` is skipped, `CheckMobileAdapterStatusSpecial`), **Battle Tower** (`BattleTowerAction`), **Coin Case / Game Corner** (`PlaceMoneyTopRight`, `DisplayCoinCaseBalance`, Card Flip), **trade** (7), **Bill's PC**, **move tutor**, **name rater**, **Magnet Train**
+- `verbosegiveitemvar` (7), `GetFirstPokemonHappiness` (6), `random`, `catchtutorial` (Route 29 dude), `describedecoration` and the decoration system, `warpcheck`, `SelectApricornForKurt`, `CelebiShrineEvent`
+- Text macros that do not translate (`<...>`, `{d:...}`, `text_decimal`, `text_asm`) become "(text not converted)"
+- Object/bg kinds: `BGEVENT_IFSET`, `conditional_event`, `SCENE_ANY` coord events, `OBJECTTYPE_COMMAND` other than `jumptext*`
+- Goldenrod Dept. Store floor logic and vending machines; Mart types BITTER/BARGAIN/PHARMACY/ROOFTOP open as a standard shop with Emerald prices
+- Nurse: time-of-day greetings, Pokecom/phone and Pokerus handling (plain heal), heal-machine animation
+- Phone / Pokegear: no phone book (trainers always get refused, caller id reads 0, no calls, no rematches), Pokegear menu entry, map card
+- Fruit trees give their berry once (no daily regrowth); TMs whose move is not a TM in the expansion (Mud-Slap, Headbutt, Fury Cutter, Sweet Scent, the punch TMs) give a Nugget / are skipped in marts
 
 ## Johto: content not imported
 
-- Fishing (Old/Good/Super Rod tables), Headbutt trees, swarms, roaming Pokemon, Bug-Catching Contest table, flee mons, Unown unlocks
-- Time-of-day (morning/night) wild tables
-- Crystal map music assignments (all maps use generic songs), real Crystal songs/SFX
-- Crystal overworld sprites and trainer pics (borrowed Hoenn/Kanto ones are used)
-- Crystal text font / scroll arrow tiles
-- Crystal-only items (Pokegear cards, Mystery Egg, Clear Bell, S.S. Ticket, Basement Key, Card Key, ...) and key-item scripts
-- Crystal-only moves/mechanics differences (Crystal held items, Gen 2 move TMs/HMs mapping, Headbutt/Rock Smash field moves)
-- Johto Pokedex ordering and area map, Johto town map/fly points (only New Bark Town has a heal location)
-- Johto Pokemon Center/Mart/Gym rosters, Goldenrod Radio Tower, Underground, Bug Contest, Lake of Rage events
-- Mobile Stadium, Battle Tower, Link/Trade, Mobile features (not planned)
-- Gym puzzles and scripted rival/legend encounters beyond the New Bark Town opening
-- Per-class trainer DVs, trainer battle music per class, "after-battle" phone rematches
+- Time-of-day (morning/night) wild tables; Headbutt trees, swarms, roaming Pokemon, Bug-Catching Contest table, flee mons, Unown unlocks
+- Crystal map music assignments (generic songs), real Crystal songs/SFX
+- Crystal overworld sprites and trainer pictures (borrowed Hoenn/Kanto ones), Crystal text font and scroll-arrow tiles (the arrow shows as a heart)
+- Johto Pokedex ordering and area map; Johto town map and Fly points (heal locations / respawn points exist for 22 towns)
+- Per-class trainer DVs, per-class battle music, Crystal move/learnset differences, Crystal held-item effects
+- Goldenrod Radio Tower, Underground, Bug Contest, Lake of Rage events (their scripts convert as far as the unsupported commands above allow, untested)
+- Mobile Stadium, Link/Trade, Mobile features (not planned)
 
 ## Johto: engine integration
 
-- Johto Elite Four / Champion progression; Johto badge case/trainer card display (badges exist as flags, obedience, HM rules and `VAR_BADGES` use them)
-- Johto town map, music sets, Pokedex area pages and trainer card (still Hoenn's)
-- Pokemon Center healing/respawn points for every Johto town (only New Bark Town)
-- Pokemon Center PC / Pokegear start-menu entry
-- Day/night palettes and Crystal palette time system
-- Johto Pokemon (Gen 2) mon data is the expansion's own; Crystal-specific moves/learnsets are not applied
+- Johto Elite Four / Champion progression and Hall of Fame; Johto badge case / trainer card display (badges are flags that drive obedience, field-move badges and `VAR_BADGES`)
+- Johto town map, music sets, Pokedex area pages and trainer card still use Hoenn's
+- Pokemon Center PC / Pokegear start-menu entry; day/night palettes
+- Cut *grass* blocks and "use Cut from the party menu" (cutting works by facing the tree and pressing A)
 
-## Johto: gyms and progression
+## Verified in play / still untested
 
-- Togepi egg chain: the Aide in Violet's Pokemon Center hands out the egg (party gets an egg of species 175, flag set; tested). Hatching, `JohtoFindPartyMonSpecies` (Elm checking for the hatched Togepi) and Elm's follow-up scenes are converted but untested
+Verified in the embedded emulator: Mom's Pokegear scene, New Bark Town, Elm's scene, all three starters (Totodile and Cyndaquil picked, Chikorita's rival variant run), Aide scene, Route 29 wild encounter,
+Route 30 trainer, Cherrygrove Pokemon Center / Mart / Guide Gent / rival scene (all three starter variants), Mr. Pokemon (Mystery Egg flag), Violet Gym (Falkner), Togepi egg from the Aide,
+cut trees (Ilex Forest, Route 29), item balls (Sprout Tower 3F Potion), all 383 maps loading.
 
-- Cut trees work (40 trees, 23 maps; tested in Ilex Forest and on Route 29: prompt, flag, tile swap, persists after reload). Cut *grass* blocks and the "use Cut from the party menu" shortcut are not converted (only facing the tree and pressing A)
-- Strength boulders and breakable rocks use the engine's native objects/scripts (untested in play); Crystal Whirlpool, Waterfall, Surf and Flash use tile behaviours
-
-- Verified in play on the embedded emulator: Elm's scene, the Totodile starter (species 158; flags `GOT_TOTODILE_FROM_ELM`, `GOT_A_POKEMON_FROM_ELM` set, ball hidden, Aide scene reached), Mr. Pokemon's scene (Mystery Egg flag set). the Cherrygrove rival ambush runs to the end for all three starters (dialogue, battle, scene var advances, rival hides; tested with a flag-set level-9 starter, not the full playthrough). Not yet checked: what the rival says/uses per starter, and the scenes after Violet City
-- `blackoutmod` is ignored: whiting out always returns to New Bark Town (only that heal location exists)
-
-- Johto badges drive obedience and HM/field-move checks (`GetBadgeFlagForRegion`, `sJohtoFieldMoveBadge`) and `VAR_BADGES`, but this is **untested in play** (an attempted automated check measured nothing); the extension reports the Johto region and badges
-- Fruit trees give their berry once per tree (no daily regrowth); Crystal-only items now exist (Mystery Egg, wings, tickets, scales...) with a question-mark icon and short descriptions
-
-- Violet Gym plays (Falkner, badge text, after-talk); the badge is only a `FLAG_JOHTO_ENGINE_ZEPHYRBADGE` flag with no gameplay effect, `VAR_BADGES` is always 0 so the Rocket-activation branch never runs
-- Mud-Slap TM replaced by a Nugget; Mystery Egg, Clear Bell, S.S. Ticket, Red Scale, Pink Bow, mail items do not exist as items
-- Gym puzzle/guide scripts, Sprout Tower, Mr. Pokemon quest, Cherrygrove rival ambush untested
+Converted but **not played**: static wild battles (`loadwildmon`), `changeblock`, hidden items (60 maps), boulders and rocks, Johto badges driving obedience/HM, Elder Li's Flash gift (needs the rival scene first),
+Sprout Tower / Route 32 Slowpoketail scene / Union Cave / Azalea / Kurt / Ilex Forest, Togepi hatching and Elm's follow-up, per-town respawn after a whiteout and the nurse setting it,
+fishing tables (Old/Good/Super Rod for 149 maps), Johto save/continue round trip, wild encounter species/levels against the table, what the rival says/uses per starter.
 
 ## Kanto / Yellow
 
-- Yellow Pikachu mood, refusing Poke Balls/evolution stones, Pikachu happiness reactions
-- Yellow gift starters (Bulbasaur/Charmander/Squirtle/Eevee evolutions handing-out events)
-- Route 22 Jolteon upgrade and Jessie & James fights are built but never played in the emulator
-- Play-testing of Viridian Forest, Mt. Moon, Cerulean, and the ferry back to Hoenn with a Kanto badge
-- Plugin migration scripts (`poke-patch` etc.) do not reproduce the trainer-id/flag-band changes
-
-## Verified only partially
-
-- Johto start: Mom scene, New Bark Town, Elm's Lab, starter (Cyndaquil only), Aide's potion, Route 29 load, a wild encounter, Route 30 trainer
-- Not played: Totodile/Chikorita choices, Elm's call-back scenes, rival ambush at Cherrygrove, Mr. Pokemon's house, Violet City gym, any gym fight, Johto save/continue round trip
-- Johto wild encounters: the encounter fired but species/levels were not checked against the table
+- Yellow Pikachu mood, refusing Poke Balls/evolution stones, Pikachu happiness reactions; Yellow gift starters
+- Route 22 Jolteon upgrade and Jessie & James fights are built but never played
+- Play-testing Viridian Forest, Mt. Moon, Cerulean and the ferry back to Hoenn with a Kanto badge
+- The older plugin scripts (`poke-patch*`, `poke-migrate-*`) do not reproduce the trainer-id / flag-band changes
 
 ## Embedded emulator
 
-- Cartridge RTC (needed for real time-of-day/weekday behaviour in Johto scripts), link cable, rewind, cheats, breakpoints/memory viewer panels (gba-kit has the debug adapter and debug UI packages; not wired in), a Debug Adapter (DAP) integration for the decomp's `.elf`
+- Cartridge RTC (real time-of-day / weekday behaviour in Johto scripts), link cable, rewind, cheats, breakpoint / memory-viewer panels and a Debug Adapter (gba-kit has the packages, not wired in)
 - Native-mGBA savestate import
-- Live testing of keyboard/gamepad and audio in the webview beyond the screen (verified: screen, toolbar, bridge protocol, Python tools)
-- Worker crash recovery and a visible error banner in the screen
+- Live test of keyboard / gamepad and audio in the webview beyond the screen (verified: screen, toolbar, bridge protocol, Python tools, crash banner logic)
 
 ## Tooling and extension
 
-- VS Code extension UI (views, dashboard, chat participant, real model calls) untested
-- Headless mGBA/Python bindings, RL stack and training are not set up
-- `savespace-budget.md` offsets were corrected in the code but the document needs a full refresh
-- No automated regression test that rebuilds the ROM and replays the Johto opening
-- `poke-crystal-maps`, `-scripts`, `-trainers`, `-wild` are not yet chained into one `poke-crystal-all` command or into the plugin's `/migrate` skill
+- VS Code extension views, dashboard, chat participant and real model calls are untested (only the emulator screen and MCP server were run)
+- Headless mGBA Python bindings and the RL stack are not set up
+- No automated test that rebuilds the ROM and replays the Johto opening (the manual replay scripts live in the session scratchpad, not in the repo)
 
 ## How this file is maintained
 

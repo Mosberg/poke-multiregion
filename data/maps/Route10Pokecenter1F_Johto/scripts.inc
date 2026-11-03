@@ -19,6 +19,7 @@ Route10Pokecenter1F_Johto_Route10Pokecenter1FCooltrainerFScript_Entry::
 
 
 Route10Pokecenter1F_Johto_Route10Pokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_ROUTE_10_NORTH
 	goto Johto_Std_PokecenterNurseScript
 
 Route10Pokecenter1F_Johto_Route10Pokecenter1FGentlemanScript:

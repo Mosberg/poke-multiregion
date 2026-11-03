@@ -19,6 +19,7 @@ MahoganyPokecenter1F_Johto_MahoganyPokecenter1FCooltrainerFScript_Entry::
 
 
 MahoganyPokecenter1F_Johto_MahoganyPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_MAHOGANY_TOWN
 	goto Johto_Std_PokecenterNurseScript
 
 MahoganyPokecenter1F_Johto_MahoganyPokecenter1FPokefanMScript:

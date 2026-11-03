@@ -23,6 +23,7 @@ VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_Entry::
 
 
 VioletPokecenter1F_Johto_VioletPokecenterNurse:
+	setrespawn HEAL_LOCATION_JOHTO_VIOLET_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript:

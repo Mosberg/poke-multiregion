@@ -15,6 +15,7 @@ CeruleanPokecenter1F_Johto_CeruleanPokecenter1FGymGuideScript_Entry::
 
 
 CeruleanPokecenter1F_Johto_CeruleanPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_CERULEAN_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 CeruleanPokecenter1F_Johto_CeruleanPokecenter1FSuperNerdScript:

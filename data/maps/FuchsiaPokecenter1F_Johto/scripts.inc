@@ -19,6 +19,7 @@ FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FJanineImpersonatorScript_Entry::
 
 
 FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_FUCHSIA_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 FuchsiaPokecenter1F_Johto_FuchsiaPokecenter1FCooltrainerMScript:

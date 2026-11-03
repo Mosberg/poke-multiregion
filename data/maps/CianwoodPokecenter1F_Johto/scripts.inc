@@ -19,6 +19,7 @@ CianwoodPokecenter1F_Johto_CianwoodPokecenter1FSuperNerdScript_Entry::
 
 
 CianwoodPokecenter1F_Johto_CianwoodPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_CIANWOOD_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 CianwoodPokecenter1F_Johto_CianwoodPokecenter1FLassScript:

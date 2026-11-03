@@ -49,6 +49,7 @@ MrPokemonsHouse_Johto_MrPokemonsHouseMrPokemonEventScript:
 	waitfanfare
 	waitse
 	setflag FLAG_JOHTO_GOT_MYSTERY_EGG_FROM_MR_POKEMON
+	setrespawn HEAL_LOCATION_JOHTO_CHERRYGROVE_CITY
 	message MrPokemonsHouse_Johto_MrPokemonIntroText3
 	waitmessage
 	waitbuttonpress

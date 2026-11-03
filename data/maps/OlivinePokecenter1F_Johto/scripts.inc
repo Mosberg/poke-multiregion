@@ -19,6 +19,7 @@ OlivinePokecenter1F_Johto_OlivinePokecenter1FTeacherScript_Entry::
 
 
 OlivinePokecenter1F_Johto_OlivinePokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_OLIVINE_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 OlivinePokecenter1F_Johto_OlivinePokecenter1FFishingGuruScript:

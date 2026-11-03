@@ -19,6 +19,7 @@ AzaleaPokecenter1F_Johto_AzaleaPokecenter1FPokefanFScript_Entry::
 
 
 AzaleaPokecenter1F_Johto_AzaleaPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_AZALEA_TOWN
 	goto Johto_Std_PokecenterNurseScript
 
 AzaleaPokecenter1F_Johto_AzaleaPokecenter1FGentlemanScript:

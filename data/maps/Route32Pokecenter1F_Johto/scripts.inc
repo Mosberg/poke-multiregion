@@ -15,6 +15,7 @@ Route32Pokecenter1F_Johto_Route32Pokecenter1FCooltrainerFScript_Entry::
 
 
 Route32Pokecenter1F_Johto_Route32Pokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_ROUTE_32
 	goto Johto_Std_PokecenterNurseScript
 
 Route32Pokecenter1F_Johto_Route32Pokecenter1FFishingGuruScript:

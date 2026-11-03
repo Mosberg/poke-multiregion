@@ -23,6 +23,7 @@ PewterPokecenter1F_Johto_Chris_Entry::
 
 
 PewterPokecenter1F_Johto_PewterPokecenter1FNurseScript:
+	setrespawn HEAL_LOCATION_JOHTO_PEWTER_CITY
 	goto Johto_Std_PokecenterNurseScript
 
 PewterPokecenter1F_Johto_PewterPokecenter1FTeacherScript:
