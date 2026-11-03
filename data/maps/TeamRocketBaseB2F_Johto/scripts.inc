@@ -193,8 +193,29 @@ TeamRocketBaseB2F_Johto_LanceHealsCommon:
 	waitbuttonpress
 	closemessage
 	fadescreen FADE_TO_WHITE
-	@ TODO unsupported: playsound SFX_FULL_HEAL
-	goto Johto_EventScript_Unimplemented
+	playse SE_PIN
+	special HealPlayerParty
+	fadescreen FADE_FROM_WHITE
+	message TeamRocketBaseB2F_Johto_LanceHealsText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	setvar VAR_JOHTO_SCENE_TEAM_ROCKET_BASE_B2F, 1
+	setflag FLAG_JOHTO_LANCE_HEALED_YOU_IN_TEAM_ROCKET_BASE
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_eq VAR_RESULT, DIR_EAST, TeamRocketBaseB2F_Johto_LanceHealsCommon_FacingRight
+	applymovement 3, TeamRocketBaseB2F_Johto_RocketBaseLanceLeavesAfterHealMovement
+	waitmovement 3
+	removeobject 3
+	releaseall
+	end
+
+TeamRocketBaseB2F_Johto_LanceHealsCommon_FacingRight:
+	applymovement 3, TeamRocketBaseB2F_Johto_RocketBaseLanceLeavesAfterHealRightMovement
+	waitmovement 3
+	removeobject 3
+	releaseall
+	end
 
 TeamRocketBaseB2F_Johto_TrainerGruntM17::
 	trainerbattle_single TRAINER_JOHTO_GRUNTM_GRUNTM_17, TeamRocketBaseB2F_Johto_GruntM17SeenText, TeamRocketBaseB2F_Johto_GruntM17BeatenText
@@ -275,6 +296,23 @@ TeamRocketBaseB2F_Johto_TeamRocketBaseB2FTransmitterScript_Deactivated:
 	closemessage
 	releaseall
 	end
+
+TeamRocketBaseB2F_Johto_RocketBaseLanceLeavesAfterHealMovement:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+TeamRocketBaseB2F_Johto_RocketBaseLanceLeavesAfterHealRightMovement:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
 
 TeamRocketBaseB2F_Johto_RocketBasePlayerApproachesBossFMovement:
 	walk_down
@@ -515,6 +553,11 @@ TeamRocketBaseB2F_Johto_LanceHealsText1:
 	.string "\pHere, give them\n"
 	.string "some of my medi-\l"
 	.string "cine.$"
+
+TeamRocketBaseB2F_Johto_LanceHealsText2:
+	.string "LANCE: {PLAYER},\n"
+	.string "let's give it our\l"
+	.string "best for POKéMON.$"
 
 TeamRocketBaseB2F_Johto_GruntM17SeenText:
 	.string "The door won't\n"

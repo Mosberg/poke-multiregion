@@ -26,8 +26,44 @@ SproutTower3F_Johto_SproutTower3FRivalScene:
 	fadeoutbgm 4
 	playse SE_M_TAIL_WHIP
 	playse SE_PIN
-	@ TODO unsupported: earthquake 79
-	goto Johto_EventScript_Unimplemented
+	delay 15
+	playse SE_M_TAIL_WHIP
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, SproutTower3F_Johto_SproutTower3FPlayerApproachesRivalMovement
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 7, SproutTower3F_Johto_SproutTower3FRivalApproachesElderMovement
+	waitmovement 7
+	message SproutTower3F_Johto_SproutTowerElderLecturesRivalText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 7, Johto_Movement_Emote_exclamation_mark
+	waitmovement 7
+	applymovement 7, Johto_Movement_Face_Down
+	waitmovement 7
+	delay 15
+	applymovement 7, SproutTower3F_Johto_SproutTower3FRivalLeavesElderMovement
+	waitmovement 7
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	message SproutTower3F_Johto_SproutTowerRivalOnlyCareAboutStrongText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 7, Johto_Movement_Face_Up
+	waitmovement 7
+	message SproutTower3F_Johto_SproutTowerRivalUsedEscapeRopeText
+	waitmessage
+	delay 15
+	closemessage
+	playse SE_WARP_IN
+	fadescreen FADE_TO_BLACK
+	removeobject 7
+	waitse
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_JOHTO_SCENE_SPROUT_TOWER_3F, 1
+	fadedefaultbgm
+	releaseall
+	end
 
 SproutTower3F_Johto_SageLiScript:
 	faceplayer
@@ -118,6 +154,60 @@ SproutTower3F_Johto_SproutTower3FStatue:
 	closemessage
 	releaseall
 	end
+
+SproutTower3F_Johto_SproutTower3FPlayerApproachesRivalMovement:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+SproutTower3F_Johto_SproutTower3FRivalApproachesElderMovement:
+	walk_up
+	step_end
+
+SproutTower3F_Johto_SproutTower3FRivalLeavesElderMovement:
+	walk_right
+	walk_down
+	step_end
+
+SproutTower3F_Johto_SproutTowerElderLecturesRivalText:
+	.string "ELDER: You are in-\n"
+	.string "deed skilled as a\l"
+	.string "trainer."
+	.string "\pAs promised, here\n"
+	.string "is your HM."
+	.string "\pBut let me say\n"
+	.string "this: You should"
+	.string "\ptreat your\n"
+	.string "POKéMON better."
+	.string "\pThe way you battle\n"
+	.string "is far too harsh."
+	.string "\pPOKéMON are not\n"
+	.string "tools of war…$"
+
+SproutTower3F_Johto_SproutTowerRivalOnlyCareAboutStrongText:
+	.string "…\n"
+	.string "…Humph!"
+	.string "\pHe claims to be\n"
+	.string "the ELDER but\l"
+	.string "he's weak."
+	.string "\pIt stands to\n"
+	.string "reason."
+	.string "\pI'd never lose to\n"
+	.string "fools who babble"
+	.string "\pabout being nice\n"
+	.string "to POKéMON."
+	.string "\pI only care about\n"
+	.string "strong POKéMON\l"
+	.string "that can win."
+	.string "\pI really couldn't\n"
+	.string "care less about\l"
+	.string "weak POKéMON.$"
+
+SproutTower3F_Johto_SproutTowerRivalUsedEscapeRopeText:
+	.string "SILVER used an\n"
+	.string "ESCAPE ROPE!$"
 
 SproutTower3F_Johto_SageLiSeenText:
 	.string "So good of you to\n"

@@ -30,7 +30,7 @@
       "flag": "FLAG_JOHTO_DARK_CAVE_VIOLET_ENTRANCE_POTION"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 16,
       "y": 14,
       "elevation": 3,
@@ -39,11 +39,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceRock_Entry",
+      "script": "EventScript_RockSmash",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 27,
       "y": 6,
       "elevation": 3,
@@ -52,11 +52,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceRock_Entry",
+      "script": "EventScript_RockSmash",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 7,
       "y": 14,
       "elevation": 3,
@@ -65,11 +65,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceRock_Entry",
+      "script": "EventScript_RockSmash",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 36,
       "y": 31,
       "elevation": 3,
@@ -78,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DarkCaveVioletEntrance_Johto_DarkCaveVioletEntranceRock_Entry",
+      "script": "EventScript_RockSmash",
       "flag": "0"
     },
     {

@@ -206,6 +206,12 @@ Route42_Johto_TrainerFisherTully_Gift_Sub:
 	goto Johto_Std_GiftMScript_Sub
 
 Route42_Johto_Route42SuicuneMovement:
+	jump_up
+	jump_up
+	jump_up
+	jump_right
+	jump_right
+	jump_right
 	step_end
 
 Route42_Johto_FisherTullySeenText:

@@ -3,7 +3,7 @@
 Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
 Hard caps and approximations live in LIMITS.md.
 
-## Johto: scripts (410 commands still become "not converted yet")
+## Johto: scripts (335 commands still become "not converted yet")
 
 Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
 
@@ -51,6 +51,9 @@ Plus:
 - Johto Pokemon (Gen 2) mon data is the expansion's own; Crystal-specific moves/learnsets are not applied
 
 ## Johto: gyms and progression
+
+- **Cut trees** (Crystal tile collision `0x12`/`0x1A`) are impassable walls: HM Cut cannot open them (Ilex Forest, Route 31/35 and others). Needs a custom cut script that swaps the metatile (`setmetatile`) or per-tree objects
+- Strength boulders and breakable rocks use the engine's native objects/scripts (untested in play); Crystal Whirlpool, Waterfall, Surf and Flash use tile behaviours
 
 - Verified in play on the embedded emulator: Elm's scene, the Totodile starter (species 158; flags `GOT_TOTODILE_FROM_ELM`, `GOT_A_POKEMON_FROM_ELM` set, ball hidden, Aide scene reached), Mr. Pokemon's scene (Mystery Egg flag set). the Cherrygrove rival ambush runs to the end for all three starters (dialogue, battle, scene var advances, rival hides; tested with a flag-set level-9 starter, not the full playthrough). Not yet checked: what the rival says/uses per starter, and the scenes after Violet City
 - `blackoutmod` is ignored: whiting out always returns to New Bark Town (only that heal location exists)

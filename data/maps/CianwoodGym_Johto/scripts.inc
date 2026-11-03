@@ -30,8 +30,23 @@ CianwoodGym_Johto_CianwoodGymChuckScript:
 	applymovement 6, CianwoodGym_Johto_CianwoodGymMovement_ChuckChucksBoulder
 	waitmovement 6
 	playse SE_M_STRENGTH
-	@ TODO unsupported: earthquake 80
-	goto Johto_EventScript_Unimplemented
+	removeobject 6
+	delay 30
+	faceplayer
+	message CianwoodGym_Johto_ChuckIntroText3
+	waitmessage
+	waitbuttonpress
+	closemessage
+	trainerbattle_no_intro TRAINER_JOHTO_CHUCK_CHUCK1, CianwoodGym_Johto_ChuckLossText
+	setflag FLAG_JOHTO_BEAT_CHUCK
+	message CianwoodGym_Johto_GetStormBadgeText
+	waitmessage
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+	waitse
+	setflag FLAG_JOHTO_ENGINE_STORMBADGE
+	special JohtoCountBadges
+	call CianwoodGym_Johto_CianwoodGymActivateRockets_Sub
 
 CianwoodGym_Johto_CianwoodGymChuckScript_FightDone:
 	goto_if_set FLAG_JOHTO_GOT_TM01_DYNAMICPUNCH, CianwoodGym_Johto_CianwoodGymChuckScript_AlreadyGotTM
@@ -132,9 +147,21 @@ CianwoodGym_Johto_CianwoodGymStatue:
 CianwoodGym_Johto_CianwoodGymStatue_Beaten:
 	goto Johto_Std_GymStatue2Script
 
+CianwoodGym_Johto_CianwoodGymActivateRockets_Sub:
+	goto_if_eq VAR_RESULT, 7, CianwoodGym_Johto_CianwoodGymActivateRockets_RadioTowerRockets_Sub
+	goto_if_eq VAR_RESULT, 6, CianwoodGym_Johto_CianwoodGymActivateRockets_GoldenrodRockets_Sub
+	return
+
+CianwoodGym_Johto_CianwoodGymActivateRockets_GoldenrodRockets_Sub:
+	goto Johto_Std_GoldenrodRocketsScript_Sub
+
+CianwoodGym_Johto_CianwoodGymActivateRockets_RadioTowerRockets_Sub:
+	goto Johto_Std_RadioTowerRocketsScript_Sub
+
 CianwoodGym_Johto_CianwoodGymMovement_ChuckChucksBoulder:
 	walk_fast_left
 	walk_fast_up
+	jump_right
 	step_end
 
 CianwoodGym_Johto_ChuckIntroText1:
@@ -152,6 +179,27 @@ CianwoodGym_Johto_ChuckIntroText2:
 	.string "CHUCK: Urggh!\n"
 	.string "…"
 	.string "\pOooarrgh!$"
+
+CianwoodGym_Johto_ChuckIntroText3:
+	.string "There! Scared now,\n"
+	.string "are you?"
+	.string "\pWhat?\n"
+	.string "It has nothing to"
+	.string "\pdo with POKéMON?\n"
+	.string "That's true!"
+	.string "\pCome on. We shall\n"
+	.string "do battle!$"
+
+CianwoodGym_Johto_ChuckLossText:
+	.string "Wha? Huh?\n"
+	.string "I lost?"
+	.string "\pHow about that!\n"
+	.string "You're worthy of\l"
+	.string "STORMBADGE!$"
+
+CianwoodGym_Johto_GetStormBadgeText:
+	.string "{PLAYER} received\n"
+	.string "STORMBADGE.$"
 
 CianwoodGym_Johto_ChuckExplainBadgeText:
 	.string "STORMBADGE makes\n"

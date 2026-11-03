@@ -158,8 +158,32 @@ CeruleanCity_Johto_CeruleanCityYoungsterScript:
 
 CeruleanCity_Johto_CeruleanCityYoungsterScript_BerserkGenePingsItemfinder:
 	waitse
-	@ TODO unsupported: playsound SFX_SECOND_PART_OF_ITEMFINDER
-	goto Johto_EventScript_Unimplemented
+	playse SE_PIN
+	waitse
+	playse SE_PIN
+	waitse
+	playse SE_PIN
+	waitse
+	playse SE_PIN
+	waitse
+	playse SE_PIN
+	waitse
+	playse SE_PIN
+	waitse
+	playse SE_PIN
+	waitse
+	playse SE_PIN
+	waitse
+	applymovement 6, Johto_Movement_Emote_exclamation_mark
+	waitmovement 6
+	applymovement 6, Johto_Movement_Face_Left
+	waitmovement 6
+	message CeruleanCity_Johto_CeruleanCityYoungsterText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 CeruleanCity_Johto_CeruleanCitySign:
 	message CeruleanCity_Johto_CeruleanCitySignText
@@ -274,6 +298,11 @@ CeruleanCity_Johto_CeruleanCityYoungsterText1:
 	.string "cave here that had"
 	.string "\phorribly powerful\n"
 	.string "POKéMON in it.$"
+
+CeruleanCity_Johto_CeruleanCityYoungsterText2:
+	.string "Ayuh?"
+	.string "\pMy ITEMFINDER is\n"
+	.string "responding…$"
 
 CeruleanCity_Johto_CeruleanCitySignText:
 	.string "CERULEAN CITY"

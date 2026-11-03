@@ -43,7 +43,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 8,
       "y": 2,
       "elevation": 3,
@@ -52,11 +52,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "script": "EventScript_StrengthBoulder",
       "flag": "FLAG_JOHTO_BOULDER_IN_BLACKTHORN_GYM_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 2,
       "y": 3,
       "elevation": 3,
@@ -65,11 +65,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "script": "EventScript_StrengthBoulder",
       "flag": "FLAG_JOHTO_BOULDER_IN_BLACKTHORN_GYM_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 6,
       "y": 16,
       "elevation": 3,
@@ -78,11 +78,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "script": "EventScript_StrengthBoulder",
       "flag": "FLAG_JOHTO_BOULDER_IN_BLACKTHORN_GYM_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 3,
       "y": 3,
       "elevation": 3,
@@ -91,11 +91,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "script": "EventScript_StrengthBoulder",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 6,
       "y": 1,
       "elevation": 3,
@@ -104,11 +104,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "script": "EventScript_StrengthBoulder",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 8,
       "y": 14,
       "elevation": 3,
@@ -117,7 +117,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BlackthornGym2F_Johto_BlackthornGymBoulder_Entry",
+      "script": "EventScript_StrengthBoulder",
       "flag": "0"
     }
   ],

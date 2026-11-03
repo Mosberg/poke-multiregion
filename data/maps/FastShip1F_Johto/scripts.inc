@@ -39,8 +39,17 @@ FastShip1F_Johto_FastShip1FEnterShipScript:
 	applymovement 1, FastShip1F_Johto_FastShip1F_SailorBlocksDoorMovement
 	waitmovement 1
 	delay 30
-	@ TODO unsupported: playsound SFX_BOAT
-	goto Johto_EventScript_Unimplemented
+	playse SE_PIN
+	clearflag FLAG_JOHTO_FAST_SHIP_HAS_ARRIVED
+	goto_if_set FLAG_JOHTO_FAST_SHIP_FIRST_TIME, FastShip1F_Johto_FastShip1FEnterShipScript_SkipGrandpa
+	setvar VAR_JOHTO_SCENE_FAST_SHIP_1F, 2
+	releaseall
+	end
+
+FastShip1F_Johto_FastShip1FEnterShipScript_SkipGrandpa:
+	setvar VAR_JOHTO_SCENE_FAST_SHIP_1F, 0
+	releaseall
+	end
 
 FastShip1F_Johto_FastShip1FSailor1Script:
 	faceplayer

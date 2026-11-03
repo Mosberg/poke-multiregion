@@ -223,9 +223,16 @@ CianwoodCity_Johto_CianwoodCityFlypointAndSuicuneCallback_Done_Cb:
 	return
 
 CianwoodCity_Johto_CianwoodCitySuicuneApproachMovement:
+	jump_down
+	jump_down
+	jump_right
 	step_end
 
 CianwoodCity_Johto_CianwoodCitySuicuneDepartMovement:
+	jump_right
+	jump_up
+	jump_right
+	jump_right
 	step_end
 
 CianwoodCity_Johto_CianwoodCityEusineApproachMovement:

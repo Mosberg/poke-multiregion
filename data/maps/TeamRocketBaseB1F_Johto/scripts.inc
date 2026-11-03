@@ -606,8 +606,17 @@ TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch:
 	goto_if_set FLAG_JOHTO_TURNED_OFF_SECURITY_CAMERAS, TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_SecretSwitchOff
 	message TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitchText
 	waitmessage
-	@ TODO unsupported: playsound SFX_TALLY
-	goto Johto_EventScript_Unimplemented
+	playse SE_PIN
+	waitbuttonpress
+	closemessage
+	setflag FLAG_JOHTO_TURNED_OFF_SECURITY_CAMERAS
+	setflag FLAG_JOHTO_SECURITY_CAMERA_1
+	setflag FLAG_JOHTO_SECURITY_CAMERA_2
+	setflag FLAG_JOHTO_SECURITY_CAMERA_3
+	setflag FLAG_JOHTO_SECURITY_CAMERA_4
+	setflag FLAG_JOHTO_SECURITY_CAMERA_5
+	releaseall
+	end
 
 TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSecretSwitch_SecretSwitchOff:
 	message TeamRocketBaseB1F_Johto_TeamRocketBaseB1FSwitchOffText
@@ -638,7 +647,17 @@ TeamRocketBaseB1F_Johto_TrainerCameraGrunt2_Sub:
 	return
 
 TeamRocketBaseB1F_Johto_PlaySecurityCameraSounds_Sub:
-	@ TODO unsupported: playsound SFX_LICK
+	playse SE_PIN
+	delay 10
+	playse SE_PIN
+	delay 10
+	playse SE_PIN
+	delay 10
+	playse SE_PIN
+	delay 10
+	playse SE_PIN
+	delay 10
+	playse SE_PIN
 	return
 
 TeamRocketBaseB1F_Johto_VoltorbExplodingTrap_Sub:

@@ -248,6 +248,7 @@ TeamRocketBaseB3F_Johto_RocketBaseBossHitsTableMovement:
 
 TeamRocketBaseB3F_Johto_RocketBaseBossLeavesMovement:
 	lock_facing_direction
+	jump_left
 	unlock_facing_direction
 	delay_8
 	delay_8

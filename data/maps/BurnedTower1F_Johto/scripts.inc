@@ -86,7 +86,11 @@ BurnedTower1F_Johto_BurnedTowerRivalBattleScript_returnfrombattle:
 	setflag FLAG_JOHTO_RIVAL_BURNED_TOWER
 	fadeoutbgm 4
 	delay 15
-	@ TODO unsupported: earthquake 50
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Emote_exclamation_mark
+	waitmovement OBJ_EVENT_ID_PLAYER
+	playse SE_DOOR
+	waitse
+	@ TODO unsupported: changeblock 10, 8, $25
 	goto Johto_EventScript_Unimplemented
 
 BurnedTower1F_Johto_BurnedTower1FEusineScript:

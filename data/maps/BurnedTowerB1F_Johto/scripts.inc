@@ -116,20 +116,37 @@ BurnedTowerB1F_Johto_BurnedTowerB1FBoulder:
 	goto Johto_Std_StrengthBoulderScript
 
 BurnedTowerB1F_Johto_BurnedTowerRaikouMovement:
+	jump_down
+	jump_left
 	step_end
 
 BurnedTowerB1F_Johto_BurnedTowerEnteiMovement:
+	jump_right
+	jump_down
+	jump_right
 	step_end
 
 BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement1:
+	jump_right
+	jump_down
+	jump_down
+	jump_left
 	step_end
 
 BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement2:
+	jump_left
+	jump_up
 	walk_fast_up
+	jump_right
 	step_end
 
 BurnedTowerB1F_Johto_BurnedTowerSuicuneMovement3:
 	walk_fast_up
+	jump_right
+	jump_down
+	jump_down
+	jump_down
+	jump_down
 	step_end
 
 BurnedTowerB1F_Johto_BurnedTowerB1FEusineMovement2:

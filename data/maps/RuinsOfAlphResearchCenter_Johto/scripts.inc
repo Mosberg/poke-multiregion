@@ -47,8 +47,33 @@ RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterGetUnownDexScript:
 	delay 60
 	playse SE_PIN
 	delay 30
-	@ TODO unsupported: playsound SFX_TALLY
-	goto Johto_EventScript_Unimplemented
+	playse SE_PIN
+	delay 30
+	playse SE_PIN
+	delay 30
+	applymovement 3, Johto_Movement_Face_Down
+	waitmovement 3
+	message RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterModifiedDexText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 3, RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterApproachesPlayerMovement
+	waitmovement 3
+	message RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterDexUpgradedText
+	waitmessage
+	playse SE_PIN
+	waitse
+	setflag FLAG_JOHTO_ENGINE_UNOWN_DEX
+	message RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterScientist3Text
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 3, RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterLeavesPlayerMovement
+	waitmovement 3
+	setvar VAR_JOHTO_SCENE_RUINS_OF_ALPH_RESEARCH_CENTER, 0
+	fadedefaultbgm
+	releaseall
+	end
 
 RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterScientist3Script:
 	faceplayer
@@ -110,6 +135,37 @@ RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterApproachesComputerMovem
 	walk_left
 	face_up
 	step_end
+
+RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterApproachesPlayerMovement:
+	walk_down
+	step_end
+
+RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterLeavesPlayerMovement:
+	walk_up
+	step_end
+
+RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterModifiedDexText:
+	.string "Done!"
+	.string "\pI modified your\n"
+	.string "POKéDEX."
+	.string "\pI added an\n"
+	.string "optional POKéDEX"
+	.string "\pto store UNOWN\n"
+	.string "data."
+	.string "\pIt records them in\n"
+	.string "the sequence that\l"
+	.string "they were caught.$"
+
+RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterDexUpgradedText:
+	.string "{PLAYER}'s POKéDEX\n"
+	.string "was upgraded.$"
+
+RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterScientist3Text:
+	.string "The UNOWN you\n"
+	.string "catch will all be\l"
+	.string "recorded."
+	.string "\pCheck to see how\n"
+	.string "many kinds exist.$"
 
 RuinsOfAlphResearchCenter_Johto_RuinsOfAlphResearchCenterComputerText:
 	.string "RUINS OF ALPH"

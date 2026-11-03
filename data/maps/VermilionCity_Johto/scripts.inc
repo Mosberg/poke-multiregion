@@ -84,8 +84,12 @@ VermilionCity_Johto_VermilionMachop:
 	waitmoncry
 	waitbuttonpress
 	closemessage
-	@ TODO unsupported: earthquake 30
-	goto Johto_EventScript_Unimplemented
+	message VermilionCity_Johto_VermilionMachopText2
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 VermilionCity_Johto_VermilionCitySuperNerdScript:
 	faceplayer
@@ -186,6 +190,11 @@ VermilionCity_Johto_VermilionMachopOwnerText:
 VermilionCity_Johto_VermilionMachopText1:
 	.string "MACHOP: Guooh\n"
 	.string "gogogoh!$"
+
+VermilionCity_Johto_VermilionMachopText2:
+	.string "A MACHOP is growl-\n"
+	.string "ing while stomping\l"
+	.string "the ground flat.$"
 
 VermilionCity_Johto_VermilionCitySuperNerdText:
 	.string "There are eight\n"

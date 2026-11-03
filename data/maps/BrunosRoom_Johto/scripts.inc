@@ -19,7 +19,7 @@ BrunosRoom_Johto_BrunosRoomDoorLocksBehindYouScript:
 	applymovement OBJ_EVENT_ID_PLAYER, BrunosRoom_Johto_BrunosRoom_EnterMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playse SE_M_STRENGTH
-	@ TODO unsupported: earthquake 80
+	@ TODO unsupported: changeblock 4, 14, $2a
 	goto Johto_EventScript_Unimplemented
 
 BrunosRoom_Johto_BrunoScript_Battle:

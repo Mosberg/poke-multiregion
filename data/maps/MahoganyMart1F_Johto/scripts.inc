@@ -90,7 +90,8 @@ MahoganyMart1F_Johto_MahoganyMart1FLanceUncoversStaircaseScript:
 	waitbuttonpress
 	applymovement 1, Johto_Movement_Emote_exclamation_mark
 	waitmovement 1
-	@ TODO unsupported: playsound SFX_FAINT
+	playse SE_PIN
+	@ TODO unsupported: changeblock 6, 2, $1e
 	goto Johto_EventScript_Unimplemented
 
 MahoganyMart1F_Johto_MahoganyMart1FGrannyScript:

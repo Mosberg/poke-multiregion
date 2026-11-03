@@ -74,8 +74,11 @@ Route36_Johto_SudowoodoScript:
 	checkitem ITEM_SQUIRTBOTTLE, 1
 	goto_if_ne VAR_RESULT, 0, Route36_Johto_SudowoodoScript_Fight
 	waitse
-	@ TODO unsupported: playsound SFX_SANDSTORM
-	goto Johto_EventScript_Unimplemented
+	playse SE_PIN
+	applymovement 3, Route36_Johto_SudowoodoShakeMovement
+	waitmovement 3
+	releaseall
+	end
 
 Route36_Johto_SudowoodoScript_Fight:
 	message Route36_Johto_UseSquirtbottleText
@@ -90,7 +93,14 @@ Route36_Johto_WateredWeirdTreeScript:
 	waitbuttonpress
 	closemessage
 	waitse
-	@ TODO unsupported: playsound SFX_SANDSTORM
+	playse SE_PIN
+	applymovement 3, Route36_Johto_SudowoodoShakeMovement
+	waitmovement 3
+	message Route36_Johto_SudowoodoAttackedText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	@ TODO unsupported: loadwildmon SUDOWOODO, 20
 	goto Johto_EventScript_Unimplemented
 
 Route36_Johto_DidntUseSquirtbottleScript:
@@ -357,6 +367,9 @@ Route36_Johto_Route36ArthurCallback_ArthurAppears_Cb:
 	clearflag FLAG_JOHTO_ROUTE_36_ARTHUR_OF_THURSDAY
 	return
 
+Route36_Johto_SudowoodoShakeMovement:
+	step_end
+
 Route36_Johto_FloriaMovement1:
 	walk_down
 	walk_down
@@ -382,6 +395,12 @@ Route36_Johto_FloriaMovement2:
 	step_end
 
 Route36_Johto_Route36SuicuneMovement:
+	jump_down
+	jump_down
+	jump_down
+	jump_right
+	jump_right
+	jump_right
 	step_end
 
 Route36_Johto_UseSquirtbottleText:
@@ -391,6 +410,13 @@ Route36_Johto_UseSquirtbottleText:
 Route36_Johto_UsedSquirtbottleText:
 	.string "{PLAYER} used the\n"
 	.string "SQUIRTBOTTLE.$"
+
+Route36_Johto_SudowoodoAttackedText:
+	.string "The weird tree\n"
+	.string "doesn't like the\l"
+	.string "SQUIRTBOTTLE!"
+	.string "\pThe weird tree\n"
+	.string "attacked!$"
 
 Route36_Johto_FloriaText1:
 	.string "I'm the FLOWER\n"

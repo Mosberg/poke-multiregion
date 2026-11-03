@@ -39,8 +39,36 @@ PowerPlant_Johto_PowerPlantGuardPhoneScript_Entry::
 
 
 PowerPlant_Johto_PowerPlantGuardPhoneScript:
-	@ TODO unsupported: playsound SFX_CALL
-	goto Johto_EventScript_Unimplemented
+	playse SE_PIN
+	applymovement 1, Johto_Movement_Emote_exclamation_mark
+	waitmovement 1
+	waitse
+	delay 30
+	applymovement 1, PowerPlant_Johto_PowerPlantOfficer1ApproachGymGuide2Movement
+	waitmovement 1
+	applymovement 2, Johto_Movement_Face_Down
+	waitmovement 2
+	applymovement 3, Johto_Movement_Face_Down
+	waitmovement 3
+	message PowerPlant_Johto_PowerPlantOfficer1CeruleanShadyCharacterText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 1, Johto_Movement_Face_Left
+	waitmovement 1
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Right
+	waitmovement OBJ_EVENT_ID_PLAYER
+	message PowerPlant_Johto_PowerPlantOfficer1CouldIAskForYourCooperationText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 1, PowerPlant_Johto_PowerPlantOfficer1ReturnToPostMovement
+	waitmovement 1
+	setvar VAR_JOHTO_SCENE_POWER_PLANT, 0
+	releaseall
+	end
 
 PowerPlant_Johto_PowerPlantOfficerScript:
 	faceplayer
@@ -180,11 +208,34 @@ PowerPlant_Johto_Forest:
 PowerPlant_Johto_PowerPlantBookshelf:
 	goto Johto_Std_DifficultBookshelfScript
 
+PowerPlant_Johto_PowerPlantOfficer1ApproachGymGuide2Movement:
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+PowerPlant_Johto_PowerPlantOfficer1ReturnToPostMovement:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	face_down
+	step_end
+
 PowerPlant_Johto_PowerPlantOfficer1AThiefBrokeInText:
 	.string "A thief broke into\n"
 	.string "the POWER PLANT…"
 	.string "\pWhat is the world\n"
 	.string "coming to?$"
+
+PowerPlant_Johto_PowerPlantOfficer1CeruleanShadyCharacterText:
+	.string "I just got word\n"
+	.string "from CERULEAN."
+	.string "\pIt appears that a\n"
+	.string "shady character"
+	.string "\phas been loitering\n"
+	.string "around.$"
 
 PowerPlant_Johto_PowerPlantOfficer1CouldIAskForYourCooperationText:
 	.string "Could I ask for\n"

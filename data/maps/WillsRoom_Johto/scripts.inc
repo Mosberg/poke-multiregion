@@ -19,7 +19,7 @@ WillsRoom_Johto_WillsRoomDoorLocksBehindYouScript:
 	applymovement OBJ_EVENT_ID_PLAYER, WillsRoom_Johto_WillsRoom_EnterMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playse SE_M_STRENGTH
-	@ TODO unsupported: earthquake 80
+	@ TODO unsupported: changeblock 4, 14, $2a
 	goto Johto_EventScript_Unimplemented
 
 WillsRoom_Johto_WillScript_Battle:

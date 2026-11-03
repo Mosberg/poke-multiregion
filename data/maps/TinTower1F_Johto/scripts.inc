@@ -106,7 +106,9 @@ TinTower1F_Johto_TinTower1FSage5Script:
 	waitbuttonpress
 	giveitem ITEM_RAINBOW_WING
 	closemessage
-	@ TODO unsupported: earthquake 72
+	waitse
+	playse SE_M_STRENGTH
+	@ TODO unsupported: changeblock 10, 2, $20
 	goto Johto_EventScript_Unimplemented
 
 TinTower1F_Johto_TinTower1FSage5Script_GotRainbowWing:

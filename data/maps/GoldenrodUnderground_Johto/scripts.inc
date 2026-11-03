@@ -169,7 +169,12 @@ GoldenrodUnderground_Johto_BasementDoorScript:
 	end
 
 GoldenrodUnderground_Johto_BasementDoorScript_Unlock:
-	@ TODO unsupported: playsound SFX_TRANSACTION
+	playse SE_PIN
+	message GoldenrodUnderground_Johto_GoldenrodUndergroundBasementKeyOpenedDoorText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	@ TODO unsupported: changeblock 18, 6, $2e
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodUnderground_Johto_BasementDoorScript_Open:
@@ -352,6 +357,10 @@ GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorsLockedText:
 
 GoldenrodUnderground_Johto_GoldenrodUndergroundTheDoorIsOpenText:
 	.string "The door is open.$"
+
+GoldenrodUnderground_Johto_GoldenrodUndergroundBasementKeyOpenedDoorText:
+	.string "The BASEMENT KEY\n"
+	.string "opened the door.$"
 
 GoldenrodUnderground_Johto_GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText:
 	.string "I do only one\n"
