@@ -3413,12 +3413,10 @@ Johto_Std_RematchMScript_Wilton_Sub:
 	return
 
 Johto_Std_SmashRockScript:
-	@ TODO unsupported: farsjump AskRockSmashScript
-	goto Johto_EventScript_Unimplemented
+	goto EventScript_RockSmash
 
 Johto_Std_StrengthBoulderScript:
-	@ TODO unsupported: farsjump AskStrengthScript
-	goto Johto_EventScript_Unimplemented
+	goto EventScript_StrengthBoulder
 
 Johto_Std_TeamRocketOathScript:
 	message Johto_Std_TeamRocketOathText
