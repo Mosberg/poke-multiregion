@@ -52,6 +52,9 @@ Plus:
 
 ## Johto: gyms and progression
 
+- Verified in play on the embedded emulator: Elm's scene, the Totodile starter (species 158; flags `GOT_TOTODILE_FROM_ELM`, `GOT_A_POKEMON_FROM_ELM` set, ball hidden, Aide scene reached), Mr. Pokemon's scene (Mystery Egg flag set). the Cherrygrove rival ambush starts (dialogue, then the Totodile battle; a Pokemon-less test player whited out) but a won rival battle and its aftermath are untested; Chikorita and Cyndaquil-rival variants are untested
+- `blackoutmod` is ignored: whiting out always returns to New Bark Town (only that heal location exists)
+
 - Johto badges drive obedience and HM/field-move checks (`GetBadgeFlagForRegion`, `sJohtoFieldMoveBadge`) and `VAR_BADGES`, but this is **untested in play** (an attempted automated check measured nothing); the extension reports the Johto region and badges
 - Fruit trees give their berry once per tree (no daily regrowth); Crystal-only items now exist (Mystery Egg, wings, tickets, scales...) with a question-mark icon and short descriptions
 

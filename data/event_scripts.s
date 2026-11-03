@@ -1015,6 +1015,7 @@ gStdScripts_End::
 
 
 
+
 	.include "data/maps/TradeCenter_Frlg/scripts.inc"
 	.include "data/maps/RecordCorner_Frlg/scripts.inc"
 	.include "data/maps/BattleColosseum_4P_Frlg/scripts.inc"

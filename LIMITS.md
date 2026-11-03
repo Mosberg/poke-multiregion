@@ -33,7 +33,7 @@ limit is, where it came from, and what was done about it. New limits are appende
 | Johto event flags | 1344 band | Crystal has ~1332 `EVENT_*`; ~750 are allocated so far. Exhaustion aborts the converter. |
 | Johto scene vars | 128 (`0x4140-0x41BF`) | One per map with scenes. |
 | Johto trainer flags | 560 | 541 used. |
-| Offsets | SB1 flags 0x1214, vars 0x14D8 (changes with every band resize) | Recompute with `offsetof` via the compiler and update `mgba-agent/addresses.py` and `pokeemerald-ai-bridge/src/core/layout.ts`. The previously documented 0x123C/0x1412 were stale. |
+| Offsets | SB1 flags 0x123C, vars 0x1500 (change with every band resize) | Recompute with `offsetof` via the compiler **using the build's ABI flags (`-mthumb -mabi=apcs-gnu`, short enums); without them the numbers come out 0x28 too low** (`poke-crystal-all --build` prints them), then update `mgba-agent/addresses.py` and `pokeemerald-ai-bridge/src/core/layout.ts`. The previously documented 0x123C/0x1412 were stale. |
 | Savestates | tied to one ROM build | Re-record (`new_game_kanto.py`) after each rebuild. |
 | ROM size | 32 MB, ~29.3 MB used (87%) | Room for roughly 2.5 MB more data. |
 | RAM | EWRAM 85.8%, IWRAM 86.7% | |

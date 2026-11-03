@@ -44,8 +44,8 @@ VermilionPort_Johto_VermilionPortLeaveShipScript:
 	clearflag FLAG_JOHTO_OLIVINE_PORT_PASSAGE_POKEFAN_M
 	setflag FLAG_JOHTO_FAST_SHIP_FIRST_TIME
 	setflag FLAG_TEMP_11
-	@ TODO unsupported: blackoutmod VERMILION_CITY
-	goto Johto_EventScript_Unimplemented
+	releaseall
+	end
 
 VermilionPort_Johto_VermilionPortSailorAtGangwayScript:
 	faceplayer

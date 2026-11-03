@@ -50,8 +50,8 @@ OlivinePort_Johto_OlivinePortLeaveShipScript:
 	addobject 1
 	setvar VAR_JOHTO_SCENE_OLIVINE_PORT, 0
 	setflag FLAG_TEMP_11
-	@ TODO unsupported: blackoutmod OLIVINE_CITY
-	goto Johto_EventScript_Unimplemented
+	releaseall
+	end
 
 OlivinePort_Johto_OlivinePortSailorAtGangwayScript:
 	faceplayer
