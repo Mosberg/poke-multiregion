@@ -33,7 +33,7 @@ Hard caps and approximations live in LIMITS.md. Status of the Johto conversion: 
 - Johto Elite Four / Champion progression and Hall of Fame; Johto badge case / trainer card display (badges are flags that drive obedience, field-move badges and `VAR_BADGES`)
 - Johto town map, music sets, Pokedex area pages and trainer card still use Hoenn's
 - Pokemon Center PC / Pokegear start-menu entry; day/night palettes
-- Cut *grass* blocks and "use Cut from the party menu" (cutting works by facing the tree and pressing A)
+- Cut _grass_ blocks and "use Cut from the party menu" (cutting works by facing the tree and pressing A)
 
 ## Verified in play / still untested
 
@@ -43,7 +43,7 @@ cut trees (Ilex Forest, Route 29), item balls (Sprout Tower 3F Potion), the Viol
 
 Converted but **not played**: static wild battles (`loadwildmon`), `changeblock`, hidden items (60 maps), boulders and rocks, Johto badges driving obedience/HM, Elder Li's Flash gift (needs the rival scene first),
 Sprout Tower / Route 32 Slowpoketail scene / Union Cave / Azalea / Kurt / Ilex Forest, Togepi hatching and Elm's follow-up, per-town respawn in towns other than Violet,
-fishing tables (Old/Good/Super Rod for 149 maps), Johto save/continue round trip, wild encounter species/levels against the table, what the rival says/uses per starter.
+fishing encounter tables (Old/Good/Super Rod for 149 maps; the Old Rod is accepted on corrected water, species/levels unchecked), Surf, Johto save/continue round trip, wild encounter species/levels against the table, what the rival says/uses per starter.
 
 ## Kanto / Yellow
 

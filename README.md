@@ -12,7 +12,7 @@
 
 # [Credits](CREDITS.md)
 
- [![](https://img.shields.io/github/all-contributors/rh-hideout/pokeemerald-expansion/upcoming)](CREDITS.md)
+[![](https://img.shields.io/github/all-contributors/rh-hideout/pokeemerald-expansion/upcoming)](CREDITS.md)
 
 If you use **`pokeemerald-expansion`**, please credit **RHH (Rom Hacking Hideout)**. Optionally, include the version number for clarity.
 
@@ -35,8 +35,11 @@ Please consider [crediting all contributors](CREDITS.md) involved in the project
 If you're new to git and GitHub, [Team Aqua's Asset Repo](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/) has a [guide to forking and cloning the repository](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/The-Basics-of-GitHub). Then you can follow one of the following guides:
 
 ## 📥 [Installing **`pokeemerald-expansion`**](INSTALL.md)
+
 ## 🏗️ [Building **`pokeemerald-expansion`**](INSTALL.md#Building-pokeemerald-expansion)
+
 ## 🚚 [Migrating from **`pokeemerald`**](INSTALL.md#Migrating-from-pokeemerald)
+
 ## 🚀 [Updating **`pokeemerald-expansion`**](INSTALL.md#Updating-pokeemerald-expansion)
 
 # [Documentation](https://rh-hideout.github.io/pokeemerald-expansion/)
@@ -44,6 +47,7 @@ If you're new to git and GitHub, [Team Aqua's Asset Repo](https://github.com/Paw
 For detailed documentation, visit the [pokeemerald-expansion documentation page](https://rh-hideout.github.io/pokeemerald-expansion/).
 
 # [Contributions](CONTRIBUTING.md)
+
 If you are looking to [report a bug](CONTRIBUTING.md#Bug-Report), [open a pull request](CONTRIBUTING.md#Pull-Requests), or [request a feature](CONTRIBUTING.md#Feature-Request), our [`CONTRIBUTING.md`](CONTRIBUTING.md) has guides for each.
 
 # [Community](https://discord.gg/6CzjAG6GZk)
