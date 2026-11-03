@@ -27,8 +27,17 @@ DayCare_Johto_DayCareManScript_Inside:
 	waitbuttonpress
 	closemessage
 	getpartysize
-	@ TODO unsupported: ifequal PARTY_LENGTH, .PartyFull
+	goto_if_eq VAR_RESULT, 6, DayCare_Johto_DayCareManScript_Inside_PartyFull
+	@ TODO unsupported: special GiveOddEgg
 	goto Johto_EventScript_Unimplemented
+
+DayCare_Johto_DayCareManScript_Inside_PartyFull:
+	message DayCare_Johto_DayCareText_PartyFull
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 DayCare_Johto_DayCareManScript_Inside_AlreadyHaveOddEgg:
 	@ TODO unsupported: special DayCareMan
@@ -82,3 +91,7 @@ DayCare_Johto_DayCareManText_GiveOddEgg:
 	.string "like this EGG?"
 	.string "\pThen fine, this is\n"
 	.string "yours to keep!$"
+
+DayCare_Johto_DayCareText_PartyFull:
+	.string "You've no room for\n"
+	.string "this.$"

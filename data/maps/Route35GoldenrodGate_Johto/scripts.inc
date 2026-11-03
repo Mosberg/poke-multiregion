@@ -28,11 +28,25 @@ Route35GoldenrodGate_Johto_RandyScript:
 	waitbuttonpress
 	waitse
 	getpartysize
-	@ TODO unsupported: ifequal PARTY_LENGTH, .partyfull
+	goto_if_eq VAR_RESULT, 6, Route35GoldenrodGate_Johto_RandyScript_partyfull
+	message Route35GoldenrodGate_Johto_Route35GoldenrodGatePlayerReceivedAMonWithMailText
+	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	waitse
+	@ TODO unsupported: givepoke SPEAROW, 10, NO_ITEM, GiftSpearowName, GiftSpearowOTName
 	goto Johto_EventScript_Unimplemented
 
 Route35GoldenrodGate_Johto_RandyScript_alreadyhavekenya:
 	message Route35GoldenrodGate_Johto_Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+Route35GoldenrodGate_Johto_RandyScript_partyfull:
+	message Route35GoldenrodGate_Johto_Route35GoldenrodGateRandyCantCarryAnotherMonText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -110,6 +124,10 @@ Route35GoldenrodGate_Johto_Route35GoldenrodGateRandyThanksText:
 	.string "\pYou'll recognize\n"
 	.string "him right away!$"
 
+Route35GoldenrodGate_Johto_Route35GoldenrodGatePlayerReceivedAMonWithMailText:
+	.string "{PLAYER} received a\n"
+	.string "POKéMON with MAIL.$"
+
 Route35GoldenrodGate_Johto_Route35GoldenrodGateRandyWeirdTreeBlockingRoadText:
 	.string "You can read it,\n"
 	.string "but don't lose it!\l"
@@ -119,6 +137,10 @@ Route35GoldenrodGate_Johto_Route35GoldenrodGateRandyWeirdTreeBlockingRoadText:
 	.string "blocking the road."
 	.string "\pI wonder if it's\n"
 	.string "been cleared?$"
+
+Route35GoldenrodGate_Johto_Route35GoldenrodGateRandyCantCarryAnotherMonText:
+	.string "You can't carry\n"
+	.string "another POKéMON…$"
 
 Route35GoldenrodGate_Johto_Route35GoldenrodGateRandyOhNeverMindThenText:
 	.string "Oh… Never mind,\n"

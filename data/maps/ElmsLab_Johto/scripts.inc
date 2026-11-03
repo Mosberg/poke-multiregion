@@ -174,12 +174,27 @@ ElmsLab_Johto_ElmCheckEverstone:
 	goto_if_set FLAG_JOHTO_GOT_EVERSTONE_FROM_ELM, ElmsLab_Johto_ElmScript_CallYou
 	goto_if_set FLAG_JOHTO_SHOWED_TOGEPI_TO_ELM, ElmsLab_Johto_ElmGiveEverstoneScript
 	goto_if_unset FLAG_JOHTO_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE, ElmsLab_Johto_ElmCheckTogepiEgg
-	@ TODO unsupported: setval TOGEPI
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_0x8004, SPECIES_TOGEPI
+	special JohtoFindPartyMonSpecies
+	goto_if_ne VAR_RESULT, 0, ElmsLab_Johto_ShowElmTogepiScript
+	setvar VAR_0x8004, SPECIES_TOGETIC
+	special JohtoFindPartyMonSpecies
+	goto_if_ne VAR_RESULT, 0, ElmsLab_Johto_ShowElmTogepiScript
+	message ElmsLab_Johto_ElmThoughtEggHatchedText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 ElmsLab_Johto_ElmEggHatchedScript:
-	@ TODO unsupported: setval TOGEPI
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_0x8004, SPECIES_TOGEPI
+	special JohtoFindPartyMonSpecies
+	goto_if_ne VAR_RESULT, 0, ElmsLab_Johto_ShowElmTogepiScript
+	setvar VAR_0x8004, SPECIES_TOGETIC
+	special JohtoFindPartyMonSpecies
+	goto_if_ne VAR_RESULT, 0, ElmsLab_Johto_ShowElmTogepiScript
+	goto ElmsLab_Johto_ElmCheckGotEggAgain
 
 ElmsLab_Johto_ElmCheckTogepiEgg:
 	goto_if_unset FLAG_JOHTO_GOT_TOGEPI_EGG_FROM_ELMS_AIDE, ElmsLab_Johto_ElmCheckGotEggAgain
@@ -382,8 +397,12 @@ ElmsLab_Johto_ElmsLabHealingMachine_CanHeal:
 ElmsLab_Johto_ElmsLabHealingMachine_HealParty:
 	special HealPlayerParty
 	playbgm MUS_DUMMY, FALSE
-	@ TODO unsupported: setval HEALMACHINE_ELMS_LAB
-	goto Johto_EventScript_Unimplemented
+	setvar VAR_RESULT, 0
+	delay 30
+	fadedefaultbgm
+	closemessage
+	releaseall
+	end
 
 ElmsLab_Johto_ElmAfterTheftDoneScript:
 	waitbuttonpress
@@ -448,6 +467,21 @@ ElmsLab_Johto_ElmWaitingEggHatchScript:
 	closemessage
 	releaseall
 	end
+
+ElmsLab_Johto_ShowElmTogepiScript:
+	message ElmsLab_Johto_ShowElmTogepiText1
+	waitmessage
+	waitbuttonpress
+	closemessage
+	applymovement 1, Johto_Movement_Emote_exclamation_mark
+	waitmovement 1
+	setflag FLAG_JOHTO_SHOWED_TOGEPI_TO_ELM
+	message ElmsLab_Johto_ShowElmTogepiText2
+	waitmessage
+	waitbuttonpress
+	message ElmsLab_Johto_ShowElmTogepiText3
+	waitmessage
+	waitbuttonpress
 
 ElmsLab_Johto_ElmGiveEverstoneScript:
 	message ElmsLab_Johto_ElmGiveEverstoneText1
@@ -1119,6 +1153,30 @@ ElmsLab_Johto_ElmAideHasEggText:
 ElmsLab_Johto_ElmWaitingEggHatchText:
 	.string "ELM: Hey, has that\n"
 	.string "EGG changed any?$"
+
+ElmsLab_Johto_ElmThoughtEggHatchedText:
+	.string "{PLAYER}? I thought\n"
+	.string "the EGG hatched."
+	.string "\pWhere is the\n"
+	.string "POKéMON?$"
+
+ElmsLab_Johto_ShowElmTogepiText1:
+	.string "ELM: {PLAYER}, you\n"
+	.string "look great!$"
+
+ElmsLab_Johto_ShowElmTogepiText2:
+	.string "What?\n"
+	.string "That POKéMON!?!$"
+
+ElmsLab_Johto_ShowElmTogepiText3:
+	.string "The EGG hatched!\n"
+	.string "So, POKéMON are\l"
+	.string "born from EGGS…"
+	.string "\pNo, perhaps not\n"
+	.string "all POKéMON are."
+	.string "\pWow, there's still\n"
+	.string "a lot of research\l"
+	.string "to be done.$"
 
 ElmsLab_Johto_ElmGiveEverstoneText1:
 	.string "Thanks, {PLAYER}!\n"

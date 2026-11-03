@@ -61,7 +61,12 @@ Route35NationalParkGate_Johto_Route35OfficerScriptContest:
 
 Route35NationalParkGate_Johto_Route35NationalParkGate_LeaveTheRestBehind:
 	getpartysize
-	@ TODO unsupported: ifless PARTY_LENGTH, Route35NationalParkGate_LessThanFullParty
+	goto_if_lt VAR_RESULT, 6, Route35NationalParkGate_Johto_Route35NationalParkGate_LessThanFullParty
+	@ TODO unsupported: readvar VAR_BOXSPACE
+	goto Johto_EventScript_Unimplemented
+
+Route35NationalParkGate_Johto_Route35NationalParkGate_LessThanFullParty:
+	@ TODO unsupported: special CheckFirstMonIsEgg
 	goto Johto_EventScript_Unimplemented
 
 Route35NationalParkGate_Johto_Route35NationalParkGate_DeclinedToParticipate:

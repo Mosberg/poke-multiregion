@@ -91,7 +91,12 @@ Route36NationalParkGate_Johto_Route36OfficerScriptContest:
 
 Route36NationalParkGate_Johto_Route36OfficerScriptContest_LeaveMonsWithOfficer:
 	getpartysize
-	@ TODO unsupported: ifless PARTY_LENGTH, .ContinueLeavingMons
+	goto_if_lt VAR_RESULT, 6, Route36NationalParkGate_Johto_Route36OfficerScriptContest_ContinueLeavingMons
+	@ TODO unsupported: readvar VAR_BOXSPACE
+	goto Johto_EventScript_Unimplemented
+
+Route36NationalParkGate_Johto_Route36OfficerScriptContest_ContinueLeavingMons:
+	@ TODO unsupported: special CheckFirstMonIsEgg
 	goto Johto_EventScript_Unimplemented
 
 Route36NationalParkGate_Johto_Route36OfficerScriptContest_DecidedNotToJoinContest:

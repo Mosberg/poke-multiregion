@@ -36,7 +36,8 @@ RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberCheckWallScene:
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberPuzzle:
-	@ TODO unsupported: setval UNOWNPUZZLE_HO_OH
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special UnownPuzzle
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberAncientReplica:
@@ -58,14 +59,16 @@ RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberDescriptionSign:
 RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberWallPatternLeft:
 	message RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberWallPatternLeftText
 	waitmessage
-	@ TODO unsupported: setval UNOWNWORDS_HO_OH
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special DisplayUnownWords
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberWallPatternRight:
 	goto_if_set FLAG_JOHTO_WALL_OPENED_IN_HO_OH_CHAMBER, RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberWallPatternRight_WallOpen
 	message RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberWallPatternRightText
 	waitmessage
-	@ TODO unsupported: setval UNOWNWORDS_HO_OH
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special DisplayUnownWords
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphHoOhChamber_Johto_RuinsOfAlphHoOhChamberWallPatternRight_WallOpen:

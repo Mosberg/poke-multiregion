@@ -30,11 +30,13 @@ GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1FNurseScript:
 	goto Johto_Std_PokecenterNurseScript
 
 GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1F_GSBallSceneLeft:
-	@ TODO unsupported: setval BATTLETOWERACTION_GSBALL
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special BattleTowerAction
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1F_GSBallSceneRight:
-	@ TODO unsupported: setval BATTLETOWERACTION_GSBALL
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special BattleTowerAction
 	goto Johto_EventScript_Unimplemented
 
 GoldenrodPokecenter1F_Johto_GoldenrodPokecenter1FGameboyKidScript:

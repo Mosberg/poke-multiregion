@@ -27,7 +27,19 @@ HallOfFame_Johto_HallOfFameEnterScript:
 	waitmovement OBJ_EVENT_ID_PLAYER
 	setvar VAR_JOHTO_SCENE_HALL_OF_FAME, 1
 	delay 15
-	@ TODO unsupported: setval HEALMACHINE_HALL_OF_FAME
+	setvar VAR_RESULT, 0
+	setflag FLAG_JOHTO_BEAT_ELITE_FOUR
+	setflag FLAG_JOHTO_TELEPORT_GUY
+	setflag FLAG_JOHTO_RIVAL_SPROUT_TOWER
+	clearflag FLAG_JOHTO_RED_IN_MT_SILVER
+	setflag FLAG_JOHTO_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
+	clearflag FLAG_JOHTO_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
+	setvar VAR_JOHTO_SCENE_SPROUT_TOWER_3F, 1
+	special HealPlayerParty
+	goto_if_set FLAG_JOHTO_GOT_SS_TICKET_FROM_ELM, HallOfFame_Johto_HallOfFameEnterScript_SkipPhoneCall
+
+HallOfFame_Johto_HallOfFameEnterScript_SkipPhoneCall:
+	@ TODO unsupported: halloffame 
 	goto Johto_EventScript_Unimplemented
 
 HallOfFame_Johto_HallOfFame_WalkUpWithLance:

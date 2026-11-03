@@ -58,7 +58,8 @@ RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberReceptionistScript:
 	end
 
 RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberPuzzle:
-	@ TODO unsupported: setval UNOWNPUZZLE_KABUTO
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special UnownPuzzle
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberScientistScript:
@@ -85,14 +86,16 @@ RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberDescriptionSign:
 RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberWallPatternLeft:
 	message RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberWallPatternLeftText
 	waitmessage
-	@ TODO unsupported: setval UNOWNWORDS_ESCAPE
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special DisplayUnownWords
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberWallPatternRight:
 	goto_if_set FLAG_JOHTO_WALL_OPENED_IN_KABUTO_CHAMBER, RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberWallPatternRight_WallOpen
 	message RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberWallPatternRightText
 	waitmessage
-	@ TODO unsupported: setval UNOWNWORDS_ESCAPE
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special DisplayUnownWords
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphKabutoChamber_Johto_RuinsOfAlphKabutoChamberWallPatternRight_WallOpen:

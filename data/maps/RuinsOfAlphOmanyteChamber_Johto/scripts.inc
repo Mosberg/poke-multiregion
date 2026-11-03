@@ -36,7 +36,8 @@ RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberCheckWallScene:
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberPuzzle:
-	@ TODO unsupported: setval UNOWNPUZZLE_OMANYTE
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special UnownPuzzle
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberAncientReplica:
@@ -58,14 +59,16 @@ RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberDescriptionSign:
 RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberWallPatternLeft:
 	message RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberWallPatternLeftText
 	waitmessage
-	@ TODO unsupported: setval UNOWNWORDS_WATER
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special DisplayUnownWords
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberWallPatternRight:
 	goto_if_set FLAG_JOHTO_WALL_OPENED_IN_OMANYTE_CHAMBER, RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberWallPatternRight_WallOpen
 	message RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberWallPatternRightText
 	waitmessage
-	@ TODO unsupported: setval UNOWNWORDS_WATER
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special DisplayUnownWords
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphOmanyteChamber_Johto_RuinsOfAlphOmanyteChamberWallPatternRight_WallOpen:

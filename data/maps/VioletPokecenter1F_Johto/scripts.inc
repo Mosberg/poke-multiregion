@@ -35,8 +35,50 @@ VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_AskTakeEgg:
 	yesnobox 20, 8
 	goto_if_eq VAR_RESULT, 0, VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_RefusedEgg
 	getpartysize
-	@ TODO unsupported: ifequal PARTY_LENGTH, .PartyFull
-	goto Johto_EventScript_Unimplemented
+	goto_if_eq VAR_RESULT, 6, VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_PartyFull
+	givemon SPECIES_TOGEPI, 5, isEgg=TRUE
+	bufferstring STR_VAR_2, VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_eggname
+	call VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_AideGivesEgg_Sub
+	setflag FLAG_JOHTO_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+	clearflag FLAG_JOHTO_ELMS_AIDE_IN_LAB
+	clearflag FLAG_JOHTO_TOGEPI_HATCHED
+	setvar VAR_JOHTO_SCENE_ROUTE_32, 1
+	message VioletPokecenter1F_Johto_VioletPokecenterElmsAideGiveEggText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_eq VAR_RESULT, DIR_NORTH, VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_AideWalksAroundPlayer
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 5, VioletPokecenter1F_Johto_MovementData_AideWalksStraightOutOfPokecenter
+	waitmovement 5
+	playse SE_EXIT
+	removeobject 5
+	waitse
+	releaseall
+	end
+
+VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_AideWalksAroundPlayer:
+	applymovement 5, VioletPokecenter1F_Johto_MovementData_AideWalksLeftToExitPokecenter
+	waitmovement 5
+	applymovement OBJ_EVENT_ID_PLAYER, Johto_Movement_Face_Down
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 5, VioletPokecenter1F_Johto_MovementData_AideFinishesLeavingPokecenter
+	waitmovement 5
+	playse SE_EXIT
+	removeobject 5
+	waitse
+	releaseall
+	end
+
+VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_PartyFull:
+	message VioletPokecenter1F_Johto_VioletCityElmsAideFullPartyText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_RefusedEgg:
 	message VioletPokecenter1F_Johto_VioletPokecenterElmsAideRefuseText
@@ -79,6 +121,30 @@ VioletPokecenter1F_Johto_VioletPokecenter1FYoungsterScript:
 	releaseall
 	end
 
+VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_AideGivesEgg_Sub:
+	goto Johto_Std_ReceiveTogepiEggScript_Sub
+
+VioletPokecenter1F_Johto_VioletPokecenter1F_ElmsAideScript_eggname:
+	.string "EGG$"
+
+VioletPokecenter1F_Johto_MovementData_AideWalksStraightOutOfPokecenter:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+VioletPokecenter1F_Johto_MovementData_AideWalksLeftToExitPokecenter:
+	walk_left
+	walk_down
+	step_end
+
+VioletPokecenter1F_Johto_MovementData_AideFinishesLeavingPokecenter:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 VioletPokecenter1F_Johto_VioletPokecenterElmsAideFavorText:
 	.string "{PLAYER}, long\n"
 	.string "time, no see."
@@ -88,6 +154,29 @@ VioletPokecenter1F_Johto_VioletPokecenterElmsAideFavorText:
 	.string "favor to ask."
 	.string "\pWould you take the\n"
 	.string "POKéMON EGG?$"
+
+VioletPokecenter1F_Johto_VioletPokecenterElmsAideGiveEggText:
+	.string "We discovered that\n"
+	.string "a POKéMON will not"
+	.string "\phatch until it\n"
+	.string "grows in the EGG."
+	.string "\pIt also has to be\n"
+	.string "with other active\l"
+	.string "POKéMON to hatch."
+	.string "\p{PLAYER}, you're\n"
+	.string "the only person\l"
+	.string "we can rely on."
+	.string "\pPlease call PROF.\n"
+	.string "ELM when that EGG\l"
+	.string "hatches!$"
+
+VioletPokecenter1F_Johto_VioletCityElmsAideFullPartyText:
+	.string "Oh, no. You can't\n"
+	.string "carry any more\l"
+	.string "POKéMON with you."
+	.string "\pI'll wait here\n"
+	.string "while you make\l"
+	.string "room for the EGG.$"
 
 VioletPokecenter1F_Johto_VioletPokecenterElmsAideRefuseText:
 	.string "B-but… PROF.ELM\n"

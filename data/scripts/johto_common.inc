@@ -3078,11 +3078,13 @@ Johto_Std_PokecenterSignText:
 	.string "POKéMON CENTER$"
 
 Johto_Std_Radio1Script:
-	@ TODO unsupported: setval MAPRADIO_POKEMON_CHANNEL
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special MapRadio
 	goto Johto_EventScript_Unimplemented
 
 Johto_Std_Radio2Script:
-	@ TODO unsupported: setval MAPRADIO_LUCKY_CHANNEL
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special MapRadio
 	goto Johto_EventScript_Unimplemented
 
 Johto_Std_RadioTowerRocketsScript_Sub:
@@ -3138,6 +3140,14 @@ Johto_Std_RalphRematchText:
 	.string "Hey, kid!"
 	.string "\pNo losing for me\n"
 	.string "this day!$"
+
+Johto_Std_ReceiveTogepiEggScript_Sub:
+	waitse
+	message Johto_Std_ReceivedItemText
+	waitmessage
+	playse SE_PIN
+	waitse
+	return
 
 Johto_Std_ReceivedItemText:
 	.string "{PLAYER} received\n"

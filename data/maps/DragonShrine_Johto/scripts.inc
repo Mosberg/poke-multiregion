@@ -58,8 +58,22 @@ DragonShrine_Johto_DragonShrineElder1Script_GiveDratini:
 	waitmessage
 	waitbuttonpress
 	getpartysize
-	@ TODO unsupported: ifequal PARTY_LENGTH, .PartyFull
+	goto_if_eq VAR_RESULT, 6, DragonShrine_Johto_DragonShrineElder1Script_PartyFull
+	message DragonShrine_Johto_DragonShrinePlayerReceivedDratiniText
+	waitmessage
+	playse SE_PIN
+	waitse
+	givemon SPECIES_DRATINI, 15
+	@ TODO unsupported: special GiveDratini
 	goto Johto_EventScript_Unimplemented
+
+DragonShrine_Johto_DragonShrineElder1Script_PartyFull:
+	message DragonShrine_Johto_DragonShrinePartyFullText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 DragonShrine_Johto_DragonShrineElder1Script_BeatRivalInMtMoon:
 	message DragonShrine_Johto_DragonShrineRivalIsInTrainingText
@@ -152,6 +166,14 @@ DragonShrine_Johto_DragonShrineTakeThisDratiniText:
 	.string "as proof that I"
 	.string "\phave recognized\n"
 	.string "your worth.$"
+
+DragonShrine_Johto_DragonShrinePlayerReceivedDratiniText:
+	.string "{PLAYER} received\n"
+	.string "DRATINI!$"
+
+DragonShrine_Johto_DragonShrinePartyFullText:
+	.string "Hm? Your POKéMON\n"
+	.string "party is full.$"
 
 DragonShrine_Johto_DragonShrineSymbolicDragonText:
 	.string "Dragon POKéMON are\n"

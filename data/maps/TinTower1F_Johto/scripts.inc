@@ -48,7 +48,8 @@ TinTower1F_Johto_TinTower1FSuicuneBattleScript:
 	applymovement OBJ_EVENT_ID_PLAYER, TinTower1F_Johto_TinTower1FPlayerEntersMovement
 	waitmovement OBJ_EVENT_ID_PLAYER
 	delay 15
-	@ TODO unsupported: setval RAIKOU
+	setvar VAR_0x8004, SPECIES_RAIKOU
+	@ TODO unsupported: special MonCheck
 	goto Johto_EventScript_Unimplemented
 
 TinTower1F_Johto_TinTower1FSage1Script:
@@ -171,7 +172,8 @@ TinTower1F_Johto_TinTower1FNPCsCallback_Done_Cb:
 TinTower1F_Johto_TinTower1FNPCsCallback_FaceBeasts_Cb:
 	goto_if_set FLAG_JOHTO_FOUGHT_SUICUNE, TinTower1F_Johto_TinTower1FNPCsCallback_FoughtSuicune_Cb
 	clearflag FLAG_JOHTO_TIN_TOWER_1F_SUICUNE
-	@ TODO unsupported: setval RAIKOU
+	setvar VAR_0x8004, SPECIES_RAIKOU
+	@ TODO unsupported: special MonCheck
 	return
 
 TinTower1F_Johto_TinTower1FNPCsCallback_FoughtSuicune_Cb:

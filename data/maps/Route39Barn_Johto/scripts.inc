@@ -62,7 +62,8 @@ Route39Barn_Johto_MoomooScript:
 	goto_if_set FLAG_JOHTO_HEALED_MOOMOO, Route39Barn_Johto_MoomooScript_HappyCow
 	message Route39Barn_Johto_MoomooWeakMooText
 	waitmessage
-	@ TODO unsupported: setval MILTANK
+	setvar VAR_0x8004, SPECIES_MILTANK
+	@ TODO unsupported: special PlaySlowCry
 	goto Johto_EventScript_Unimplemented
 
 Route39Barn_Johto_MoomooScript_HappyCow:

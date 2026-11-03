@@ -126,7 +126,8 @@ OlivineLighthouse6F_Johto_OlivineLighthouseAmphy:
 	goto_if_set FLAG_JOHTO_JASMINE_RETURNED_TO_GYM, OlivineLighthouse6F_Johto_OlivineLighthouseAmphy_HealthyNow
 	message OlivineLighthouse6F_Johto_AmphyPalPalooText
 	waitmessage
-	@ TODO unsupported: setval AMPHAROS
+	setvar VAR_0x8004, SPECIES_AMPHAROS
+	@ TODO unsupported: special PlaySlowCry
 	goto Johto_EventScript_Unimplemented
 
 OlivineLighthouse6F_Johto_OlivineLighthouseAmphy_HealthyNow:

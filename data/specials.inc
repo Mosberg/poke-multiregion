@@ -641,3 +641,4 @@ gSpecials::
 	def_special JohtoCheckTime
 	def_special JohtoGetWeekday
 	def_special JohtoCountBadges
+	def_special JohtoFindPartyMonSpecies

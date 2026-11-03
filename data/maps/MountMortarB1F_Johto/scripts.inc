@@ -27,11 +27,24 @@ MountMortarB1F_Johto_MountMortarB1FKiyoScript_BeatKiyo:
 	waitbuttonpress
 	waitse
 	getpartysize
-	@ TODO unsupported: ifequal PARTY_LENGTH, .NoRoom
-	goto Johto_EventScript_Unimplemented
+	goto_if_eq VAR_RESULT, 6, MountMortarB1F_Johto_MountMortarB1FKiyoScript_NoRoom
+	message MountMortarB1F_Johto_MountMortarB1FReceiveMonText
+	waitmessage
+	playse SE_PIN
+	waitse
+	givemon SPECIES_TYROGUE, 10
+	setflag FLAG_JOHTO_GOT_TYROGUE_FROM_KIYO
 
 MountMortarB1F_Johto_MountMortarB1FKiyoScript_GotTyrogue:
 	message MountMortarB1F_Johto_MountMortarB1FKiyoGotTyrogueText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+MountMortarB1F_Johto_MountMortarB1FKiyoScript_NoRoom:
+	message MountMortarB1F_Johto_MountMortarB1FKiyoFullPartyText
 	waitmessage
 	waitbuttonpress
 	closemessage
@@ -66,6 +79,10 @@ MountMortarB1F_Johto_MountMortarB1FTyrogueRewardText:
 	.string "\pgive you a rare\n"
 	.string "fighting POKéMON.$"
 
+MountMortarB1F_Johto_MountMortarB1FReceiveMonText:
+	.string "{PLAYER} received\n"
+	.string "TYROGUE.$"
+
 MountMortarB1F_Johto_MountMortarB1FKiyoGotTyrogueText:
 	.string "TYROGUE is a\n"
 	.string "fighting-type."
@@ -75,3 +92,7 @@ MountMortarB1F_Johto_MountMortarB1FKiyoGotTyrogueText:
 	.string "work. I'll keep\l"
 	.string "training too."
 	.string "\pFarewell!$"
+
+MountMortarB1F_Johto_MountMortarB1FKiyoFullPartyText:
+	.string "You have no room\n"
+	.string "in your party!$"

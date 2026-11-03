@@ -36,7 +36,8 @@ BattleTower1F_Johto_BattleTower1FCheckStateScene_Entry::
 
 
 BattleTower1F_Johto_BattleTower1FCheckStateScene:
-	@ TODO unsupported: setval BATTLETOWERACTION_CHECKSAVEFILEISYOURS
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special BattleTowerAction
 	goto Johto_EventScript_Unimplemented
 
 BattleTower1F_Johto_BattleTower1FRulesSign:
@@ -54,7 +55,8 @@ BattleTower1F_Johto_BattleTower1FRulesSign_skip:
 	end
 
 BattleTower1F_Johto_BattleTower1FReceptionistScript:
-	@ TODO unsupported: setval BATTLETOWERACTION_GET_CHALLENGE_STATE
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special BattleTowerAction
 	goto Johto_EventScript_Unimplemented
 
 BattleTower1F_Johto_BattleTower1FYoungsterScript:

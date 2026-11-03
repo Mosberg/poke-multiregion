@@ -51,7 +51,8 @@ CeladonPokecenter1F_Johto_CeladonEusine:
 	message CeladonPokecenter1F_Johto_CeladonEusineText1
 	waitmessage
 	waitbuttonpress
-	@ TODO unsupported: setval SUICUNE
+	setvar VAR_0x8004, SPECIES_SUICUNE
+	@ TODO unsupported: special MonCheck
 	goto Johto_EventScript_Unimplemented
 
 CeladonPokecenter1F_Johto_CeladonPokecenter1FCooltrainerFText:

@@ -41,7 +41,8 @@ RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberCheckWallScene_Op
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberPuzzle:
-	@ TODO unsupported: setval UNOWNPUZZLE_AERODACTYL
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special UnownPuzzle
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberAncientReplica:
@@ -63,14 +64,16 @@ RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberDescriptionSign:
 RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberWallPatternLeft:
 	message RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberWallPatternLeftText
 	waitmessage
-	@ TODO unsupported: setval UNOWNWORDS_LIGHT
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special DisplayUnownWords
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberWallPatternRight:
 	goto_if_set FLAG_JOHTO_WALL_OPENED_IN_AERODACTYL_CHAMBER, RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberWallPatternRight_WallOpen
 	message RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberWallPatternRightText
 	waitmessage
-	@ TODO unsupported: setval UNOWNWORDS_LIGHT
+	setvar VAR_RESULT, 0
+	@ TODO unsupported: special DisplayUnownWords
 	goto Johto_EventScript_Unimplemented
 
 RuinsOfAlphAerodactylChamber_Johto_RuinsOfAlphAerodactylChamberWallPatternRight_WallOpen:

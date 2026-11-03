@@ -38,8 +38,27 @@ BillsFamilysHouse_Johto_BillScript:
 	waitbuttonpress
 	waitse
 	getpartysize
-	@ TODO unsupported: ifequal PARTY_LENGTH, .NoRoom
-	goto Johto_EventScript_Unimplemented
+	goto_if_eq VAR_RESULT, 6, BillsFamilysHouse_Johto_BillScript_NoRoom
+	message BillsFamilysHouse_Johto_ReceivedEeveeText
+	waitmessage
+	playse SE_PIN
+	waitse
+	givemon SPECIES_EEVEE, 20
+	setflag FLAG_JOHTO_GOT_EEVEE
+	message BillsFamilysHouse_Johto_BillEeveeMayEvolveText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
+
+BillsFamilysHouse_Johto_BillScript_NoRoom:
+	message BillsFamilysHouse_Johto_BillPartyFullText
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	end
 
 BillsFamilysHouse_Johto_BillScript_Refused:
 	message BillsFamilysHouse_Johto_BillNoEeveeText
@@ -146,6 +165,21 @@ BillsFamilysHouse_Johto_BillImCountingOnYouText:
 	.string "on you."
 	.string "\pTake good care of\n"
 	.string "it!$"
+
+BillsFamilysHouse_Johto_ReceivedEeveeText:
+	.string "{PLAYER} received\n"
+	.string "EEVEE!$"
+
+BillsFamilysHouse_Johto_BillEeveeMayEvolveText:
+	.string "BILL: PROF.ELM\n"
+	.string "claims EEVEE may"
+	.string "\pevolve in new and\n"
+	.string "unknown ways.$"
+
+BillsFamilysHouse_Johto_BillPartyFullText:
+	.string "Whoa, wait. You\n"
+	.string "can't carry any\l"
+	.string "more POKéMON.$"
 
 BillsFamilysHouse_Johto_BillNoEeveeText:
 	.string "Oh… Now what to\n"

@@ -42,7 +42,8 @@ LakeOfRageMagikarpHouse_Johto_MagikarpLengthRaterScript_ClearedRocketHideout:
 	end
 
 LakeOfRageMagikarpHouse_Johto_MagikarpLengthRaterScript_AskedForMagikarp:
-	@ TODO unsupported: setval MAGIKARP
+	setvar VAR_0x8004, SPECIES_MAGIKARP
+	@ TODO unsupported: special FindPartyMonThatSpecies
 	goto Johto_EventScript_Unimplemented
 
 LakeOfRageMagikarpHouse_Johto_MagikarpLengthRaterScript_GetReward:

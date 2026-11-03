@@ -3,7 +3,7 @@
 Everything known to be unfinished, unconverted or untested. Items are removed when done and appended when found.
 Hard caps and approximations live in LIMITS.md.
 
-## Johto: scripts (335 commands still become "not converted yet")
+## Johto: scripts (331 commands still become "not converted yet"; all 383 Johto maps load in the emulator smoke test, 0 failures)
 
 Most frequent unsupported commands (run `poke-crystal-scripts <crystal> <project>` for the live list):
 
@@ -51,6 +51,8 @@ Plus:
 - Johto Pokemon (Gen 2) mon data is the expansion's own; Crystal-specific moves/learnsets are not applied
 
 ## Johto: gyms and progression
+
+- Togepi egg chain: the Aide in Violet's Pokemon Center hands out the egg (party gets an egg of species 175, flag set; tested). Hatching, `JohtoFindPartyMonSpecies` (Elm checking for the hatched Togepi) and Elm's follow-up scenes are converted but untested
 
 - Cut trees work (40 trees, 23 maps; tested in Ilex Forest and on Route 29: prompt, flag, tile swap, persists after reload). Cut *grass* blocks and the "use Cut from the party menu" shortcut are not converted (only facing the tree and pressing A)
 - Strength boulders and breakable rocks use the engine's native objects/scripts (untested in play); Crystal Whirlpool, Waterfall, Surf and Flash use tile behaviours
