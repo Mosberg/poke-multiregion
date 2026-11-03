@@ -1053,6 +1053,8 @@ enum __attribute__((packed)) Item
     ITEM_GLIMMORANITE = 873,
 
 
+
+
     // POKE-CRYSTAL-BEGIN
     ITEM_MYSTERY_EGG,
     ITEM_RED_SCALE,
@@ -1079,7 +1081,6 @@ enum __attribute__((packed)) Item
     ITEM_FLOWER_MAIL,
     ITEM_SURF_MAIL,
     // POKE-CRYSTAL-END
-
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
 };

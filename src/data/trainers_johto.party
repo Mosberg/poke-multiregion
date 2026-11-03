@@ -205,7 +205,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Hypnosis
 - Mind Reader
 - Surf
-- Dynamicpunch
+- Dynamic Punch
 
 === TRAINER_JOHTO_CLAIR_CLAIR1 ===
 Name: CLAIR
@@ -371,7 +371,7 @@ Magnemite
 Level: 18
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Thundershock
+- Thunder Shock
 - Supersonic
 - Sonic Boom
 
@@ -412,7 +412,7 @@ Magnemite
 Level: 18
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Thundershock
+- Thunder Shock
 - Supersonic
 - Sonic Boom
 
@@ -453,7 +453,7 @@ Magnemite
 Level: 18
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Thundershock
+- Thunder Shock
 - Supersonic
 - Sonic Boom
 
@@ -494,7 +494,7 @@ Magnemite
 Level: 28
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 
@@ -543,7 +543,7 @@ Magnemite
 Level: 28
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 
@@ -592,7 +592,7 @@ Magnemite
 Level: 28
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 
@@ -648,7 +648,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Magneton
 Level: 35
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 - Swift
@@ -705,7 +705,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Magneton
 Level: 35
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 - Swift
@@ -762,7 +762,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Magneton
 Level: 34
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 - Swift
@@ -931,7 +931,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Hitmonchan
 Level: 42
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thunderpunch
+- Thunder Punch
 - Ice Punch
 - Fire Punch
 - Mach Punch
@@ -1087,7 +1087,7 @@ Aerodactyl
 Level: 46
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Wing Attack
-- Ancientpower
+- Ancient Power
 - Rock Slide
 - Hyper Beam
 
@@ -1242,7 +1242,7 @@ Electabuzz
 Level: 46
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Quick Attack
-- Thunderpunch
+- Thunder Punch
 - Light Screen
 - Thunder
 
@@ -1374,7 +1374,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Sunny Day
 - Synthesis
 - Petal Dance
-- Solarbeam
+- Solar Beam
 
 === TRAINER_JOHTO_YOUNGSTER_JOEY1 ===
 Name: JOEY
@@ -1977,7 +1977,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Vileplume
 Level: 37
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Solarbeam
+- Solar Beam
 - Sleep Powder
 - Acid
 - Moonlight
@@ -2616,7 +2616,7 @@ Level: 18
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
 - Growl
-- Thundershock
+- Thunder Shock
 - Thunder Wave
 
 Psyduck
@@ -2684,7 +2684,7 @@ Level: 21
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
 - Growl
-- Thundershock
+- Thunder Shock
 - Thunder Wave
 
 Psyduck
@@ -2716,7 +2716,7 @@ Ampharos
 Level: 29
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Thundershock
+- Thunder Shock
 - Thunder Wave
 - Cotton Spore
 
@@ -2741,7 +2741,7 @@ Ampharos
 Level: 32
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Thunderpunch
+- Thunder Punch
 - Thunder Wave
 - Cotton Spore
 
@@ -2758,7 +2758,7 @@ Ampharos
 Level: 36
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Swift
-- Thunderpunch
+- Thunder Punch
 - Thunder Wave
 - Cotton Spore
 
@@ -2944,7 +2944,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Kingler
 Level: 35
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Bubblebeam
+- Bubble Beam
 - Stomp
 - Guillotine
 - Protect
@@ -3010,7 +3010,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Electabuzz
 Level: 27
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thunderpunch
+- Thunder Punch
 - Light Screen
 - Swift
 - Screech
@@ -3060,7 +3060,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Kingler
 Level: 32
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Bubblebeam
+- Bubble Beam
 - Stomp
 - Guillotine
 - Protect
@@ -3104,7 +3104,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Leech Seed
 - Confusion
 - Sleep Powder
-- Solarbeam
+- Solar Beam
 
 === TRAINER_JOHTO_COOLTRAINERM_BRIAN ===
 Name: BRIAN
@@ -3605,7 +3605,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Absorb
 - Stun Spore
 - Acid
-- Solarbeam
+- Solar Beam
 
 === TRAINER_JOHTO_COOLTRAINERF_JENN ===
 Name: JENN
@@ -4208,7 +4208,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Rollout
 - Attract
 - Egg Bomb
-- Softboiled
+- Soft Boiled
 
 === TRAINER_JOHTO_POKEMANIAC_MILLER ===
 Name: MILLER
@@ -5533,7 +5533,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Lock On
 - Psybeam
 - Aurora Beam
-- Bubblebeam
+- Bubble Beam
 
 Remoraid
 Level: 25
@@ -5541,7 +5541,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Lock On
 - Psybeam
 - Aurora Beam
-- Bubblebeam
+- Bubble Beam
 
 === TRAINER_JOHTO_FISHER_JONAH ===
 Name: JONAH
@@ -5767,7 +5767,7 @@ Level: 38
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Psybeam
 - Aurora Beam
-- Bubblebeam
+- Bubble Beam
 - Hyper Beam
 
 === TRAINER_JOHTO_FISHER_RALPH4 ===
@@ -6644,7 +6644,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Krabby
 Level: 20
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Bubblebeam
+- Bubble Beam
 - Leer
 - Vice Grip
 - Harden
@@ -7096,7 +7096,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Magneton
 Level: 41
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 - Swift
@@ -7153,7 +7153,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Magneton
 Level: 41
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 - Swift
@@ -7210,7 +7210,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Magneton
 Level: 41
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thundershock
+- Thunder Shock
 - Sonic Boom
 - Thunder Wave
 - Swift
@@ -7882,7 +7882,7 @@ Graveler
 Level: 34
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Magnitude
-- Selfdestruct
+- Self Destruct
 - Defense Curl
 - Rollout
 
@@ -7890,7 +7890,7 @@ Golem
 Level: 36
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Magnitude
-- Selfdestruct
+- Self Destruct
 - Defense Curl
 - Rollout
 
@@ -8091,7 +8091,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Magmar
 Level: 45
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thunderpunch
+- Thunder Punch
 - Fire Punch
 - Sunny Day
 - Confuse Ray
@@ -8525,7 +8525,7 @@ Level: 38
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Headbutt
 - Swagger
-- Thunderpunch
+- Thunder Punch
 - Vital Throw
 
 Steelix
@@ -8557,7 +8557,7 @@ Hitmonchan
 Level: 27
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Comet Punch
-- Thunderpunch
+- Thunder Punch
 - Ice Punch
 - Fire Punch
 
@@ -8721,7 +8721,7 @@ Koffing
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Selfdestruct
+- Self Destruct
 - Sludge
 - Smokescreen
 
@@ -8729,7 +8729,7 @@ Koffing
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Selfdestruct
+- Self Destruct
 - Sludge
 - Smokescreen
 
@@ -8737,7 +8737,7 @@ Koffing
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Selfdestruct
+- Self Destruct
 - Sludge
 - Smokescreen
 
@@ -8753,7 +8753,7 @@ Koffing
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tackle
-- Selfdestruct
+- Self Destruct
 - Sludge
 - Smokescreen
 
@@ -9057,7 +9057,7 @@ AI: Basic Trainer
 Pikachu
 Level: 16
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Thundershock
+- Thunder Shock
 - Growl
 - Quick Attack
 - Double Team
@@ -9479,7 +9479,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Venusaur
 Level: 38
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Solarbeam
+- Solar Beam
 - Razor Leaf
 - Headbutt
 - Mud Slap
@@ -9881,7 +9881,7 @@ AI: Basic Trainer
 Graveler
 Level: 33
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Selfdestruct
+- Self Destruct
 - Rock Throw
 - Harden
 - Magnitude
@@ -9889,7 +9889,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Graveler
 Level: 33
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Selfdestruct
+- Self Destruct
 - Rock Throw
 - Harden
 - Magnitude
@@ -11033,7 +11033,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Sunny Day
 - Giga Drain
 - Synthesis
-- Solarbeam
+- Solar Beam
 
 Charizard
 Level: 77
@@ -11098,7 +11098,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Sunny Day
 - Leech Seed
 - Egg Bomb
-- Solarbeam
+- Solar Beam
 
 Arcanine
 Level: 58
