@@ -1,5 +1,7 @@
 #include "global.h"
 #include "regions.h"
+#include "event_data.h"
+#include "pokemon.h"
 
 
 static const u16 sKantoSubregionMapsecs[KANTO_SUBREGION_COUNT][30] = {
@@ -106,4 +108,10 @@ enum KantoSubRegion GetKantoSubregion(u32 mapSecId)
         }
     }
     return KANTO_SUBREGION_KANTO;
+}
+
+// Crystal's GetFirstPokemonHappiness: VAR_RESULT = friendship of the first party Pokemon.
+void JohtoGetFirstMonHappiness(void)
+{
+    gSpecialVar_Result = GetMonData(&gPlayerParty[0], MON_DATA_FRIENDSHIP);
 }
